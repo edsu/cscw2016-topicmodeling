@@ -1,0 +1,1664 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ Beyond Talking Heads: Multimedia Artifact Creation, Use, 
+
+and Sharing in Distributed Meetings 
+
+Jennifer Marlow, Scott Carter 
+FX Palo Alto Laboratory, Inc. 
+{marlow, carter}@fxpal.com 
+
+Nathan Good 
+Good Research 
+
+nathan@goodresearch.com 
+
+Jung-Wei Chen 
+
+UC Berkeley & Good Research 
+ jennifer@goodresearch.com 
+
+ 
+
+rationales  used 
+
+ 
+ABSTRACT 
+Distributed meetings can be messy, particularly when the 
+task  requires  collaboration  around  multimedia  artifacts. 
+Teams must not only share a variety of materials related 
+to  the  work  in  real  time,  but  also  need  to  refer  back  to 
+information after a meeting ends. While video tools make 
+it relatively easy to have conversations at a distance, they 
+are  less  adept  at  sharing  and  archiving  multimedia 
+content.   We conducted a survey of and interviews  with 
+members  of  distributed  teams  to  investigate  how  they 
+create, use, and share multimedia content before, during, 
+and after distributed meetings. Our findings shed light on 
+decisions  made  and 
+in  selecting 
+technologies  to  prepare  for,  conduct,  and  archive  the 
+results  of  a  video-mediated  distributed  meeting.    The 
+results  suggest  a  need  for  flexible 
+interfaces  for 
+information  sharing  in  multiple  meeting  contexts  so 
+content can be both easily referred to in the moment and 
+also found again later. 
+Author Keywords 
+Remote collaboration; Communication tools; Video 
+conferencing; Survey; Interview 
+ACM Classification Keywords  
+H.5.2 [Information Interfaces and Presentation]: User 
+Interfaces - Interaction styles.  
+General Terms  
+Human Factors; Design; Measurement.  
+INTRODUCTION 
+Collaboration technologies such as video conferencing are 
+increasingly  essential  tools  for  modern  remote  workers. 
+As  new  communication  tools  have  been  increasingly 
+adopted  in  the  workplace,  fewer  completely  face-to-face 
+teams exist in modern organizations [8]. A 2014 survey of 
+large companies  found that over  half (54%) of  meetings 
+included  remote  participants  attending  via  audio,  video 
+
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work  for 
+personal or classroom use is granted without fee provided that copies are not 
+made or distributed for profit or commercial advantage and that copies bear 
+this notice and the full citation on the first page. Copyrights for components of 
+this  work  owned  by  others  than  the  author(s)  must be  honored.  Abstracting 
+with credit is permitted. To copy otherwise, or republish, to post on servers or 
+to redistribute to lists, requires prior specific permission and/or a fee. Request 
+permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819958 
+
+1703
+
+heads” 
+
+or 
+
+on 
+
+“talking 
+
+and/or  web  conferencing  [24].  As  workforces  evolve, 
+video  streaming  and  communication  tools  are  struggling 
+to  meet  the  increasing  demands  of  modern  distributed 
+teams.    It  is  thus  important  to  understand  how  this  rich 
+and evolving medium can be better harnessed to support 
+creation and collaboration from afar.  
+Current studies of video collaboration and usage primarily 
+focus 
+person-to-person 
+communication  (e.g.,  [4]).  However,  much  remote 
+collaboration also involves people generating and sharing 
+digital  content  such  as  documents  and  other  types  of 
+media  files  [14].    Sharing  content  with  both  local  and 
+remote  participants  was  a  prevalent  behavior  mentioned 
+by  60%  of  respondents  to  a  recent  survey  about  team 
+meetings [24].  
+While video conferencing tools that support conversations 
+between  people  are  becoming  well  established,  there  is 
+limited  support  for  integrating  information  and  media 
+sharing within these tools [6]. As a result, sharing content 
+during  video-mediated  distributed  meetings  remains 
+difficult [18]. People have a variety of tools from which 
+to  choose,  but  technical  and  social  challenges  with 
+sharing information often dictate which one(s) they must 
+use to achieve their goals.  
+Our  goal  in  this  work  is  to  understand  why  this  is  so. 
+Specifically, we focus on the following questions: 
+How,  when,  and  why  do  distributed  teams  integrate 
+content sharing into video-mediated meetings?  
+What challenges exist in sharing meeting content across 
+locations?  
+To  answer  these  questions,  we  studied  a  diverse  set  of 
+remote  collaborations  of  varying  sizes  and  in  different 
+industries,  focusing  on  those  which  involved  creating 
+some  sort  of  digital  or  physical  artifact  together.  We 
+conducted  a  multi-method  study  around  the  process  of 
+sharing content in various types of distributed meetings in 
+small to medium sized companies. 
+Our work expands upon prior studies of distributed team 
+communication  by  considering  multimedia  flow  over 
+multiple  stages  of  distributed  meetings  among  teams 
+involved  in  creating  a  digital  or  physical  artifact.  In 
+contrast  to  prior  CSCW  research  on  use  of  one  type  of 
+communication  system  in  a  single  organization,  we 
+
+examine  small  companies  that  assemblage  a  variety  of 
+tools  and  applications  to  serve  their  information  sharing 
+needs  on  an  ad-hoc  basis.  We  focus  particularly  on  the 
+factors that influence tool choice for sharing  multimedia 
+content  in  a  synchronous  distributed  meeting,  the  work-
+arounds that are established to circumvent the limitations 
+of  these  tools,  and  the  implications  for  re-finding  this 
+information afterwards.  Additionally, this paper identifies 
+a set of challenges that arise when sharing and accessing 
+multimedia content across different meeting types. 
+Our findings suggest that current tools and approaches are 
+inadequate for meeting scenarios that require participants 
+to  not  only  converse  but  also  to  share  and  co-reference 
+different  types  of  multimedia  content  across  distance. 
+Participants use a mixed set of tools to support different 
+needs  within  different  types  of  meetings,  as  no  single 
+video  conferencing  tool  includes  sufficient  functionality 
+to  address  all  their  demands.  While  this  approach  may 
+currently work “well enough” for many teams, comments 
+made by study participants suggest there are still gaps in 
+effective  support  for  real-time  media  sharing,  archiving 
+and  access.  We  suggest  opportunities  for  the  design  of 
+video  conferencing  tools  that  better  integrate  real-time 
+communication with presentation materials from a variety 
+of  sources,  that  can  be  reconfigured  based  on  meeting 
+purposes and goals, and that allow individuals or groups 
+to easily access and return to content after a synchronous 
+conversation has ended.   
+RELATED WORK  
+Current state of remote collaboration 
+Collaboration  technologies  have  been  around  for  many 
+years  and  are  in  widespread  use  [1].  A  large  body  of 
+related  literature  has  studied  how  distributed  teams  use 
+such  tools  to  communicate,  build  trust,  and  so  on.  
+However,  little  work  has  focused  particularly  on  the 
+details  of  teams’  needs  for  and  practices  of  artifact 
+creation  using  these  tools,  including  the  sharing  of 
+multimedia material in real time using synchronous tools 
+such as video conferencing. 
+Recent  surveys  of  business  professionals 
+large 
+corporations have provided some overall insight into the 
+prevalence  of  collaboration  tools  [e.g.,  19].  However, 
+there is still a lack of detailed information about how and 
+why people use tools across a variety of professions, work 
+contexts, and tasks.    
+Related  work  examining  the  role  of  video  conferencing 
+tools at a large tech company looked at the role that video 
+technology  such  as  “always-on”  portals  and  dedicated 
+conference 
+distance 
+collaboration.  This work suggests that large corporations 
+with  the  resources  to  support  real-time  communication 
+can reduce the behavioral costs of communication and for 
+the  first  time  allow  tightly  coupled  remote  work  to 
+succeed  [12].  However,  it  did  not  analyze  meeting-
+
+enabling 
+
+played 
+
+rooms 
+
+in 
+
+in 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+specific practices and behaviors and the tools required to 
+assist  and  support  creation  in  those  contexts;  rather,  the 
+study focused on high-level sharing and awareness needs. 
+As  a  result,  little  is  known  about  how  teams  in  smaller 
+organizations can use video and other tools to assist them 
+in creation and to facilitate communication and sharing of 
+multimedia information.  Similarly, little is known about 
+how  video  does  or  does  not  help  distributed  teams  who 
+are  involved  in  creating  digital  or  physical  artifacts 
+perform  different  types  of  tasks.    We  were  interested  in 
+exploring the choices people in less resource-rich settings 
+make  in  terms  of  selecting  technology  for  remote 
+collaboration both to communicate and share content, and 
+in examining factors influencing these choices. 
+Sharing media in remote collaboration 
+Synchronous sharing 
+Prior work has looked at how people share content in the 
+context of synchronous communications in both personal 
+and  professionally-oriented  contexts.    On  the  personal 
+side,  work  by  Forghani  et  al.  [6]  investigated  how  and 
+why people currently share media such as pictures or web 
+pages in a call among friends/family, and developed a tool 
+to  enable  co-referencing  of  common  artifacts  of  interest 
+such as personal photos or Facebook posts.   
+In  the  professional  arena,  distributed  design  teams  have 
+provided fertile ground for study of how people share and 
+create  design  artifacts  across  distance.    Prior  work  has 
+also focused on creating specialized technological setups 
+to  support  this  process  for  collocated  groups,  such  as 
+whiteboards  and  shared  display  spaces  [7,  11,  16].  
+However,  design  teams  present  just  one  context  for 
+collaboration, which may not generalize to other areas. 
+Asynchronous sharing 
+Other  efforts  have  addressed  the  potential  need  to 
+collaborate asynchronously by allowing people to review 
+the results of past conversations.  Prior work has looked at 
+the  methods  by  which 
+to 
+communicate  and  highlight  the  importance  of  tools  that 
+provide affordances such as persistence and reviewability 
+[20].    For  example,  chat  records  such  as  those  found  in 
+Skype groups may be more lightweight than email when 
+it  comes 
+relevant  past 
+in  a  way,  as  “hallway 
+information  —  serving, 
+conversations with a history” [9] that can be useful both 
+during a meeting and for later reference. 
+Again  in  the  design  context,  the  TeleBoard  system  was 
+developed  to  record  and  store  the  results  of  design 
+discussions  (and  artifacts)  for  later  perusal  [7].    The 
+Procid  tool  was  developed  to  help  summarize  design 
+discussions  and  help  distributed  groups  reach  consensus 
+by visualizing information quickly and easily [27]. 
+Additionally,  new  integrated  communication  tools  like 
+Slack  and  Basecamp  provide  teams  with  an  activity 
+
+traversing  and  finding 
+
+teams  choose 
+
+remote 
+
+to 
+
+1704
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+resources  may  be 
+
+stream  and  historical  record  of  both 
+interpersonal 
+communications and file changes/sharing.  However, it is 
+unclear  to  what  extent  these  are  currently  utilized  in 
+remote teams. 
+Continuing challenges for remote collaboration  
+Although  the  progress  of  video  conferencing  tools  has 
+made  distributed,  real-time  communication  easier,  both 
+technical  and  social  barriers  to  sharing  information 
+remain.    Some  of  these  were  highlighted  in  work  from 
+over a decade ago [26] but persist today, including audio 
+problems (poor audio quality, people not being heard, too 
+much extraneous noise), behavior problems (speakers not 
+checking  each  other  for  understanding, 
+inadequate 
+advance  planning),  and  technical  problems  (difficult  to 
+identify  who  was  speaking,  not  everyone  could  view 
+visual  materials,  necessary  documents  not  available 
+during meeting). 
+Apart  from  these  issues,  video  conferencing  seems  to 
+work best for one single conversation among a group of 
+people.    Supporting  more  complex  interactions  like 
+sketching  remains  difficult  [12],  and  communication  in 
+videoconference  meetings  between  distributed  actors  is 
+curbed  by  the  lack  of  technology  support  for  the  sort  of 
+sidebar conversations that are often useful [5].    
+Finally, 
+smaller 
+in 
+organizations, meaning that teams could be more likely to 
+use  free  or  cheap  technological  solutions  rather  than  the 
+most  advanced  state-of-the-art  tools.  Since  working 
+across  sites  often  presents  compatibility  challenges  [17], 
+tool choices have implications for how easily sharing can 
+take  place.    The  overhead  incurred  by  sharing  different 
+types  of  information  also  varies  with  the  work  at  hand, 
+location of participants, and other factors. 
+METHOD  
+To  obtain  a  more  complete  picture  of  media  usage  in 
+meetings, it is critical to understand characteristics of the 
+meetings themselves, in particular the type and purpose of 
+the meeting as well as the distribution of participants. It is 
+equally important to understand any institutional or other 
+factors  that  influence  participants’  tool  choices.  We 
+focused on small to medium sized companies and startups 
+because  workers  in  these  settings  are  less  likely  to  have 
+access to heavyweight video conferencing technology.   
+To assess the context in which users choose to share and 
+use media, we utilized a multi-method approach including 
+surveys, interviews, and observations. 
+Survey 
+We  disseminated  a  survey  to  individuals  working  for 
+startups  and  small  to  medium  sized  companies  to  get  a 
+broad  sample  of  remote  collaboration  experiences.    We 
+began with known contacts and used snowball sampling, 
+enlisting  our  contacts  to  both  refer  others  and  post  the 
+survey  to  external  mailing  lists  to  expand  our  reach  and 
+
+limited 
+
+if 
+
+range.  We recruited people across a variety of industries 
+and job roles.  
+The  survey  was  designed 
+to  obtain  background 
+information  about  the  types,  structure,  and  general 
+purpose  of  respondents’  distributed  meetings. 
+  To 
+understand  the  most  common  configurations  of  meeting 
+participants,  we  asked  questions  about  what  types  of 
+meetings respondents had with remote others, how often 
+these occurred, and where participants were located.  We 
+also asked about the frequency and prevalence of sharing 
+different  types  of  information  and  files,  and  how  the 
+information was shared (using what types of technology).  
+Finally,  we  asked  participants  to  describe  aspects  they 
+liked and disliked about the tools they used. 
+Interviews 
+We  also  asked  survey  respondents 
+they  would 
+participate  in  a  follow-up  interview.    Of  those  who 
+responded  affirmatively,  we  contacted  and  followed  up 
+with  15  participants.    The  interview  sample  reflected 
+some  of  the  diversity  present  in  our  survey  sample: 
+Participants  worked  in  software  development  (n=5),  UX 
+design and research (n=5), and film/entertainment related 
+jobs (n=5). 
+Interviews lasted between 45 minutes and one hour.  The 
+majority  of  them  (13  out  of  15)  were  carried  out  over 
+video  conferencing  tools  such  as  Skype  or  Google 
+Hangouts,  and  the  other  two  were  conducted  in  person.  
+Participants  received  a  $25  gift  card  as  compensation.  
+The  interviews  followed  a  semi-structured  format  in 
+which we followed up in more detail about responses they 
+gave  to  our  survey.    We  explored  issues  pertaining  to 
+meeting  structure,  layout,  etc.  by  asking  interviewees  to 
+relate  examples  from  their  most  recent  meetings  with 
+remote  team  members.    Two  members  of  the  research 
+team  were  involved  in  each  interview,  with  one  leading 
+the interview and another taking notes. 
+All  interviews  were  transcribed  and  then  coded  by  two 
+members  of  the  research  team.    We  followed  an  open 
+coding  scheme,  using  qualitative  data  analysis  software 
+(Atlas.ti) to first cluster comments related to tool use and 
+sharing  information  around  broad  themes,  and  then 
+iterated  around  these  themes  to  develop  a  set  of  sub-
+themes and cross-cutting trends. 
+Meeting observations  
+Finally,  we  recruited  three  teams  who  agreed  to  let  us 
+observe a remote meeting in action.  These meetings each 
+lasted  around  one  hour.    In  one  case,  we  observed  from 
+the same room as one of the meeting members, and in two 
+others  where  this  was  not  possible,  we  joined  in  the 
+videoconference from a separate location.  Two observers 
+watched the work occurring and took detailed notes about 
+who  participated,  what  was  shared  and  how,  and  any 
+difficulties encountered in this process.   
+
+1705
+
+included 
+
+finance 
+
+represented 
+
+SURVEY RESULTS 
+Who  is  participating:  Location  and  configuration  of 
+meetings 
+We  received  53  responses  to  the  survey.    Respondents 
+were  primarily  distributed  throughout  the  United  States 
+(90%)  and  Europe  (10%).    93%  of  respondents  reported 
+working with at least one distributed team in the context 
+of their jobs.  Most of these teams were small to medium 
+sized, made up of less than 15 people [3].  Around 46% of 
+respondents  were  in  different  technical  fields;  other 
+industries 
+(16%), 
+manufacturing  (11%),  as  well  as  healthcare,  scientific 
+research, and entertainment. 
+For  each  remote  group  they  worked  with,  participants 
+provided the locations of group members and the number 
+of people in each location, providing both the distribution 
+and the configuration of groups.  There were a total of 91 
+team  meetings  provided 
+that  most  survey 
+respondents  worked  on  multiple  remote  teams).    We 
+coded  the  group  makeups  using  the  configurations 
+mentioned by [13]: Hub and spoke (e.g., 3:1), Hub to hub 
+(e.g., 2:2) and Fully distributed (e.g., 1:1:1:1).   
+Somewhat  surprisingly,  a 
+fourth  configuration  not 
+included  in  this  typology  emerged  as  the  most  frequent 
+configuration.    In  this  arrangement,  there  are  three  or 
+more  locations,  with  unequal  numbers  of  participants  in 
+each  location  (for  example,  3:2:1).    We  refer  to  this 
+configuration here as a “mixed” setup.   
+Overall, as seen in Table 1, the prevalence of the different 
+kinds of team member distributions were: 
+Mixed  
+(3+ locations, unequal numbers of participants in each 
+location) 
+Hub to hub (2 locations, roughly equal numbers in each)  29% 
+23% 
+Hub and spoke (1 location with a group, 1 location with 
+a single individual) 
+Fully distributed (single individuals in each location) 
+
+(given 
+
+41% 
+
+7% 
+
+Table 1.  Distributions of meeting participant locations 
+
+Interestingly,  few  of  the  meetings  described  were  “fully 
+distributed”.  This meant that in the majority of the cases, 
+at least one of the locations  had  multiple team  members 
+interacting  with  others 
+(also  either  collocated  or 
+distributed).    The  emergence  of  the  “mixed”  category 
+highlights the fact that a large number of  meetings  were 
+distributed  across  more  than  two  locations  (in  fact,  the 
+mean number of locations per meeting among all survey 
+responses was 2.62).   
+A  majority  (74%)  of  respondents  were  involved  with 
+multiple distributed teams (53% worked on three or more 
+distributed projects). This predominance of multiple team 
+membership  corresponds  with  other  recent  findings  that 
+
+1706
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+65-90% of knowledge workers are concurrently on more 
+than one work team [23]. 
+What is the purpose of remote meetings? 
+The  survey  asked  participants  an  open-ended  question 
+about the purpose(s) of their remote meetings.  We coded 
+responses based on the typology and descriptions used in 
+[2]:  Conversation (short, ad-hoc and informal interaction 
+that happens multiple times a day between two people or 
+among  a  small  group);  Status  update;  Presentations;  and 
+Training.  Based on the free responses provided, we also 
+added another category of “Information sharing” which is 
+similar  to  ‘conversation’  but  might  be  more  formal  and 
+scheduled than a conversation.  The breakdown of types 
+of communications (in Table 2) was: 
+Status update 
+Information sharing 
+Brainstorming 
+Conversation 
+Presentations 
+Other (social, demo, planning, training) 
+
+33% 
+18% 
+13% 
+12% 
+  9% 
+14% 
+
+Table 2.  Meeting purposes from survey respondents 
+
+The  purpose  of  a  meeting  influences  the  type  of 
+information  shared  and  the  importance  of  saving  or 
+referring to it later.  The meeting types listed above differ 
+in  terms  of  the  degree  to  which  they  involve  one  or 
+multiple  people  sharing  artifacts  during  a  meeting,  and 
+their need to access information again later.  For example, 
+the goal of a brainstorming meeting or conversation may 
+be to reach a decision (that does not need to be saved or 
+recorded).    A  status  update  or  information  sharing 
+meeting  may 
+involve  multiple  people  exchanging 
+information  or  files  that  some  individuals  need  to  keep 
+and  refer  back  to  later,  and  a  presentation  meeting  may 
+center on one person sharing information that others may 
+wish to revisit afterwards. In turn, users select tools best 
+suited to these needs. 
+Tools used to enable remote communication 
+To  assess  current  practices,  we  asked  participants  to  list 
+the tools they use to communicate remotely.   Responses 
+included  multiple  tools  and  programs  (mean  number  of 
+tools  =  3.26). 
+  We  grouped  responses  into  broad 
+categories based on the type of tool being used (Table 3).  
+While free video conferencing tools predominated, these 
+were  also  either  supplemented  with  or  replaced  by  paid 
+videoconferencing  tools,  as  well  as  less  rich  modalities 
+such  as  IM  or  phone  calls.    Some  participants  reported 
+using multiple free and paid video conferencing tools. 
+ 
+ 
+ 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Free/consumer video conferencing  
+(Skype, Google Hangouts, etc.) 
+Paid/professional video conferencing  
+(GoToMeeting, WebEx, etc.) 
+Instant messaging 
+Phone 
+
+64% 
+
+34% 
+
+25% 
+23% 
+
+Table 3.  Tools used to communicate remotely 
+
+What is being shared?  Frequency and type of media 
+sharing 
+Finally, we asked participants to rank the frequency with 
+which  they  shared  various  types  of  information  in 
+different  formats  with  remote  team  members.    Answers 
+were on a 7-point Likert scale ranging from 1=never and 
+7=every day.   
+The median ratings of media types being shared appear in 
+Table  4,  in  order  from  most  frequently  shared  to  least 
+frequently  shared.  These  responses  suggest  that  as  the 
+complexity, needed interactivity/explanation or “richness” 
+of  the  media  increases,  the  frequency  with  which  it  is 
+shared decreases.  Videos, which can be time consuming 
+to view or transfer due to their relatively large file sizes, 
+were shared least frequently, while links to webpages and 
+text (e.g., documents), which are lightweight to share and 
+view, were shared more often.   
+
+Websites (URLs) 
+Text 
+Images 
+Spreadsheets 
+Slides 
+Videos 
+
+6 
+4 
+4 
+4 
+2 
+1.5 
+
+Table 4.  Median reported frequency of sharing media types 
+One format that many synchronous meeting tools support 
+is  the  ability  to  screen  share.  Screen  sharing  was  a 
+frequently mentioned means of using video to discuss and 
+create  artifacts  in  a  variety  of  ways,  and  was  something 
+that  80%  of  respondents  did  at  least  occasionally.  The 
+main  uses  of  screen  sharing  were  to  explain  something, 
+co-reference  something,  give  a  demo,  and  interact  with 
+material like a prototype.  
+Summary of survey findings 
+From  the  survey,  we  gained  an  overall  sense  of  the 
+breadth  and  diversity  of  distributed  meetings  occurring 
+within  our  sample  of  professionals  in  small  to  medium 
+sized teams.  It is clear that a variety of factors, including 
+the nature of work, distribution of participants, and types 
+of meetings all impact what information is shared, when, 
+and  how.  The  goal  of  our  follow-up  interviews  was  to 
+examine  more closely the  needs for and challenges  with 
+sharing multimedia across a variety of meeting scenarios.  
+These examples provided insight into a set of challenges 
+
+1707
+
+the 
+
+in  sharing 
+
+and  recommendations  for  supporting  the  sharing  of 
+artifacts across a range of contexts.   
+INTERVIEW AND OBSERVATION RESULTS 
+Analysis 
+While  the  survey  data  provided  insight  about  meeting 
+types and goals, the interviews and observations allowed 
+us  to  investigate  more  specifically  how  participants 
+managed different types of media before, during, and after 
+a meeting.  
+To examine  multimedia sharing,  we coded the interview 
+transcripts  and  observation  notes  for  examples  given  of 
+instances in which content (primarily documents or other 
+types of media) was sent or shared with others.  We sub-
+coded  these  examples  around  what  was  shared,  how  it 
+was  shared,  and  comments  made  about  the  relative 
+success  or  challenges 
+information.  
+Examples  from  interviewees  are  referred  to  as  P1-P15, 
+and examples from observations are labeled Obs1-Obs3. 
+After  an  initial  round  of  open  coding,  we  used  affinity 
+diagramming  to  cluster  the  examples  around  common 
+themes  pertaining  to  different  aspects  of  the  remote 
+sharing process. These themes  guided our understanding 
+of  the  issues  that  influenced  participants’  tool  choices 
+and,  more  importantly,  how  participants  used  media  in 
+meetings.  These involved the nature of the meeting, what 
+was being shared, and the rationales for why it was shared 
+in that way. 
+In  particular,  we  found  that  the  process  of  sharing 
+information and media in a remote meeting often required 
+individuals  or  groups  to  make  various  decisions.    First, 
+they had to decide what tool or medium to use to share the 
+content.    Second,  they  had  to  decide  when  to  share  this 
+content  (before,  during,  or  after  the  meeting).    These 
+choices  then  had  implications  for  the  persistence  and 
+retrievability of the content after the meeting.   
+Tool selection:  Factors influencing program and tool 
+choice for remote collaboration 
+The specific features and capabilities of the tools used for 
+remote  collaboration  have  the  potential  to  shape  and 
+direct both the collaboration as well as how shared media 
+is  prepared  and  disseminated.  Interviewees  often  used  a 
+combination of free video conferencing tools, paid video 
+conferencing  tools,  email,  chat,  and  phone  calls  for 
+various work scenarios and tasks.  This is consistent with 
+Gonzales  et  al.’s  [10]  assertion  that  it  is  increasingly 
+anachronistic to think of user needs as being supported by 
+a  single  tool.  As  a  result,  groups  often  cobble  together 
+multiple tools and create “media toolboxes” or ecologies 
+to serve their collaboration needs [15, 21, 25].  
+At  the  very  least,  many  tools  such  as  Skype,  Google 
+Hangouts,  Join.me,  WebEx,  and  others  offer  standard 
+features  such  as  the  ability  to  screen  share,  send  files 
+(photos,  videos)  and  chat  in  real  time.    So  what  caused 
+people  to  gravitate  to  one  over  another?    We  coded  the 
+
+interviews  around  all  examples  of  synchronous  meeting 
+communication technologies used and rationales for using 
+these specific tools.   
+Four interviewees mentioned that they chose the meeting 
+tool  (Google  Hangouts)  because  it  was  “convenient”  — 
+namely,  because  they  were  already  using  the  suite  of   
+collaborative  applications  such  as  email,  documents, 
+calendar, etc. associated with Google Hangouts and so it 
+was integrated with their workflow and infrastructure.   
+Five interviewees mentioned having no choice in terms of 
+the specific program or tool they used to meet with others.  
+This  took  two  forms:    One  form  was  when  the  parent 
+company  dictated  what  programs  or  tools  its  employees 
+should  use.  Another  form  was  when  security  concerns 
+prevented  employees  from  using  open  cloud-based  tools 
+or  even  webcams  on  their  computers,  so  as  a  result  all 
+communication  had  to  be  audio-only  and  conducted 
+through an internal version of Microsoft Lync.   
+A second form of “non-choice” occurred for participants 
+who  worked  with  a  variety  of  external  clients.    In  this 
+case,  they  were  often  beholden  to  the  tools  their  clients 
+used and preferred, even when this was not optimal.   
+In the third category, seven participants had a choice over 
+the tool they used and mentioned trying out various video 
+conferencing tools over time.  In this case, when they had 
+a  choice  between  programs,  features  that  were  most 
+important  were  cost  (e.g.,  number  of  free  functionalities 
+such  as  allowing  multiple  parties  to  share  their  screen) 
+and overall reliability of the connection.   
+Thus, teams and groups may be required to use a tool that 
+is  non-optimal  for  their  needs  due  to  external  or 
+convenience reasons.  Since not all tools share the same 
+features,  sharing  and  archiving  behaviors  are  often 
+influenced by the particulars of the tool a team chooses to 
+(or has to) use.  
+Incorporating media into meetings  
+Media always plays some role in a remote meeting — at 
+the  very 
+to 
+communicate  among  the  participants  during  the  meeting 
+itself.  But  there  are  often  many  other  types  of  media  at 
+play  during  a  meeting,  from  the  preparation  of  a  slide, 
+video,  or  demo  beforehand;  photos,  files,  or  screenshots 
+(or even a secondary synchronous medium) shared during 
+the  meeting  itself;  and  meeting  notes,  videos,  or  other 
+artifacts shared after the meeting.   
+The  meetings  described  by  our  participants  occurred 
+throughout the process of building or designing an artifact 
+such  as  software,  hardware,  graphic  design,  video,  or 
+music. 
+the  examples  given  by 
+participants  and  our  observations  based  on  the  type  of 
+meeting  they  were  holding.    Overall,  there  were  13 
+information  sharing  meetings,  6  status  update  meetings, 
+and 6 presentation meetings.  Here we analyze the actions 
+
+least  a  synchronous  medium 
+
+  We  categorized 
+
+is  used 
+
+1708
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+instances 
+
+obstacles 
+
+to 
+
+sharing 
+
+in  which 
+the 
+
+taken, decisions made, and implications of these actions at 
+the  three  stages  of  a  meeting.    We  focus  on  both 
+commonalities and variations across all examples. 
+During:  Media interactions during a meeting 
+As  indicated  by  the  survey,  sharing  and  discussing 
+multimedia  material  during  a  synchronous  meeting  is  a 
+common  activity.    Screen  sharing  is  one  of  the  most 
+common  and  potentially  widely  used  features  of  most 
+video conferencing tools, and a primary means by which 
+video is used to communicate information about artifacts.  
+It is useful to promote awareness of shared referents, and 
+make  sure  everyone  is  on  the  same  page.    Twelve 
+interviewees  described  cases  in  which  someone  in  their 
+meeting used screen sharing to deliver slide presentations, 
+give demos, and share images. All three of the meetings 
+we observed also included screen sharing.  This was often 
+seen  as  more  useful  than  file  sharing  because  it  enabled 
+dynamic co-referencing of parts of an image or web page: 
+“I  figure  the  screen  sharing  has  the  advantage of  being 
+able  to  actually  interact  with  the  image  that  you’re 
+sharing,  like  I  can  see  his  mouse  when  there  is  screen 
+sharing.” (P3) 
+There  were,  however,  many 
+information 
+presented 
+collaboration.   
+Sharing  challenge  1:  Items  could  not  be  screen  shared 
+with remote participants  
+One of the most difficult issues in any remote meeting is 
+making  sure  all  participants  are  aware  and  involved  in 
+what is happening. Auxiliary media plays an outsized role 
+in this, in some cases making remote participants feel less 
+included  but  also  providing  opportunities  for 
+local 
+participants  to  help  re-establish  common  ground  with 
+remote attendees. 
+Sharing  physical 
+remote 
+participants  has  been  a  long-standing  problem  in  remote 
+collaboration.  For small items, one solution  was simply 
+to hold the object up to the webcam: e.g., comparing two 
+different stylus models (P11, info-sharing) or showing the 
+way an app looked on a mobile phone (P3, info-sharing): 
+“I deploy the application on my phone. Then we use the 
+videoconferencing so I can put the phone in front of my 
+laptop camera so you can see what it looks like.” (P3) 
+However,  sharing 
+large  physical  objects  such  as 
+information drawn on whiteboards (P1, P4) or placed on 
+posters and signs (P4) was not feasible  with the camera. 
+While some specialized whiteboard capture tools exist to 
+address this problem (e.g., [7]), these were not utilized by 
+any of the teams in our sample.  One solution could be to 
+only  keep  and  share  information  in  a  digital  format; 
+however, there was a tension between having information 
+visible to the rest of the office and visible to the remote 
+participants. 
+  For  example,  posters  and  flip  charts 
+
+(non-digital) 
+
+items  with 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+displayed in the “hub” office could be visible to others in 
+the organization outside the immediate work team. 
+“So it works great for the dev team to be able to see this 
+[list  of  tasks  online]  and  it's  good  to  communicate  with 
+management, but the physical paper board for the Sprint 
+team would be better for the office, because people could 
+see it happening.” (P4, status update) 
+In many cases, a local group switched their focus between 
+different artifacts, many of which may not be available to 
+the  remote  participants.  This  could  be  as  simple  as 
+referring  to  an  object  in  the  local  group’s  meeting  room 
+that was not within view of a remote participant’s camera. 
+Similarly,  screen  sharing  meant  that  when  the  shared 
+artifact  was  visible  on  the  screen,  it  replaced  the  video 
+feed  of  other  meeting  participants’  faces.    This  then 
+prevented  remote  participants  from  seeing  what  was 
+happening  in  the  room,  such  as  discussions  or  social 
+dynamics between participants (P4, P13) 
+“Also,  I  suppose  it's  kind  of  annoying  that  [the  remote 
+participant] can't easily both see a shared screen and the 
+video camera to people in the room. So, I guess, normally 
+he  gets  no  context  of  what's  actually  going  on  because 
+usually we're sharing the screen.” (P4, presentation) 
+“We  don't  have  the  actual  Google  Hangouts  stream  on 
+the  television,  most  often  it's  the  Hackpad  that  stays  on 
+the screen.” (P13, status update) 
+Furthermore, the social dynamics of a large group setting 
+often  make  it  difficult  for  local  participants  to  help  the 
+remote  user  maintain  awareness,  even  when  they  are 
+aware of the problem. 
+“We're  all  talking  about  this  and  something  comes  up 
+which would be useful to share with Ben that he can't see 
+on the board. So if it was just the two of us, yeah, I would 
+take the time to describe it or I'd take a picture and send 
+it  and  say  hang  on  a  second  and  I'll  just  send  you  a 
+picture.  It  never  feels  to  me  that  I  can  do  that  in  the 
+meetings. Say, “hang on” everybody and send a picture 
+to them….”  (P4, info-sharing) 
+This same participant would sometimes use media capture 
+and  sharing  in  a  backchannel  to  help  the  remote  user 
+recover some common ground that would otherwise have 
+been lost:  
+ “…we  had  a  team  meeting  with  a  presentation  last 
+Thursday,  of  which  I  called  Ben  on  my  phone.  And,  of 
+course, the person who was giving the talk doesn't work 
+with  remote  workers  and  forgot  that  we  do  have  remote 
+workers and he could send down the file in advance, and I 
+don't have enough battery on my phone to video it all to 
+ever  see  it.  So,  I  had  to  actually  take  photos  of  this 
+projected  output  during  the  meeting  and  [send  it  via] 
+WhatsApp.” (P4, presentation) 
+
+Sharing  challenge  2:  Video  files  could  not  be  screen 
+shared well 
+One of the most difficult types of media to share during 
+meetings  was  video or other  dynamic  materials (such as 
+demos).    This  was  an  issue  in  multiple  cases.    For 
+example,  many  of  our  interviewees  across  different 
+industries (P5, P7, P9, P10, P12, P14, P15) worked with 
+videos  and  needed  to  co-reference  a  video  with  remote 
+others  to  discuss  specific  points  within  the  video.  
+However, viewing video via screen sharing was not ideal: 
+“Videos don’t work very well. With the refresh rate, it just 
+doesn’t translate. If we wanted to share a video, we just 
+send out the link and then people would watch it.”  (P9, 
+info-sharing) 
+P12 was a user experience researcher who often wanted to 
+show  videos  of  usability 
+testing,  but  experienced 
+difficulty doing that over web conferencing. 
+“So how do you get whatever’s playing to be transmitted 
+over in the web conferencing system in the fidelity you’re 
+experiencing on?  
+I think the difficulty can come because you’re then relying 
+on the video to work across an audio to pickup and that 
+just  never  seems  to  happen.  Typically,  that  will  be 
+something that I’m unaware of. It’s kind of a flag, right? 
+Do I need to show something? If I do, how am I going to 
+set it up? And I don’t do it too frequently because of the 
+challenge, especially with this.” (P12, presentation) 
+In  many  cases,  participants  shared  video  with  others  via 
+third-party  file  sharing  mechanisms,  but  this  approach 
+was  still  considered  cumbersome  and  participants 
+struggled to find alternatives. 
+Sharing challenge 3:  Multiple people in a single location 
+wishing to share screens  
+Tools allow multiple people connecting to a meeting from 
+different  locations  to  take  turns  sharing  their  screen  by 
+allowing  them  to  “pass  the  ball”  or  “switch  presenter.”  
+However,  this  assumes  that  all  participants  in  a  meeting 
+are connected via their own laptops.  This was often not 
+the  case.    Particularly  when  one  location  had  multiple 
+people participating in the meeting (P3, P5, P9, P11, P12, 
+P13), the video conferencing system  was hosted on only 
+one  computer  and  the  content  could  only  be  shared 
+through  that  computer.    It  was  difficult  for  other  people 
+on  their  laptops  in  the  room  to  contribute  or  share 
+information from their personal devices.   
+“I  think  we  would  might  do  a  little  bit  more  screen 
+sharing  if  it  was  simple,  like  Julie  wants  to  throw  her 
+screen into the conversation… say we were in video and 
+[she]  wanted  to  show  it  quickly,  it’s  probably  not  her 
+computer that we’re actually connected to so and because 
+it just wouldn’t be a quick simple thing to do, we probably 
+wouldn’t do it.”  (P3, info-sharing)   
+
+1709
+
+Combining the problem of synchronously co-referencing 
+videos with a desire to allow multiple people to contribute 
+videos into a conversation, one participant expressed the 
+desire  to  seamlessly  allow  people  to  share  videos  from 
+their phones directly into the meeting. 
+“If I could do that phone to phone, and be like, “Dude, 
+watch this video,” and I could sling the phone and I could 
+sling a video but they are actually watching it. They are 
+not trying to look at a pixelated [video] via Skype. I think 
+that would be a huge, huge thing. Because then you are 
+talking about really being able to be like “Hey, can you 
+watch this cut right now?” Because right now, things are 
+slowed down with the fact that there is no instantaneous 
+way to do video.” (P5, info-sharing) 
+The  above  challenges  highlight  both  the  technical  and 
+social factors that made sharing certain kinds of material 
+difficult.    Because  the  tool  used  to  support  the  meeting 
+did not easily address some of the above scenarios, people 
+made decisions about how to integrate other content into 
+the meeting and what adjunct tools to use to do this.   
+File  transfer  was  one  way  of  dealing  with  Challenge  1 
+(items  could  not  be  screen  shared)  and  Challenge  2 
+(digital items could not be screen shared  well).  That is, 
+people  would  send  a  hard  copy  of  the  artifact  to  be 
+discussed  to  the  participants  either  through  email,  a  file 
+sharing service like Dropbox, or hosting it on another web 
+service like Vimeo (in the case of movies).   
+However, 
+required  
+“all kinds of negotiation” to figure out how to access files, 
+from uploading a file, to sharing its location, and figuring 
+out  permissions  of  who  could  access 
+if 
+information  was  uploaded  ahead  of  time,  most  people 
+didn't look at it prior to the meeting. 
+For  Challenge  1  (items  could  not  be  screen  shared)  and 
+Challenge  3  (multiple  people  in  same  room  could  not 
+share  information  via  the  video  conferencing  system), 
+another way of sharing information with others was to use 
+an  alternate 
+take 
+photographs  of  physical  or  digital  information  and  send 
+them  to  remote  participants.      Examples  of  photographs 
+shared in real-time included notebook pages, a screen of 
+statistics  in  the  office,  slides  being  presented,  mockups, 
+and screen shots. 
+As these examples indicate, it was common for people to 
+take  an  extra  action  and  use  a  supplementary  tool  to 
+effectively  share  multimedia  content  during  a  meeting.  
+However,  this  meant  that  they  had  to  make  decisions 
+about  what  tool  to  use  for  sharing.    These  tools  ranged 
+from mobile chat applications (e.g., WhatsApp) to email 
+to sending photos through the Skype chat window.   
+One  factor  influencing  decisions  about  supplementary 
+tool use was where the artifact would end up: 
+
+tool  (often  a  mobile  phone) 
+
+P14  mentioned 
+
+to 
+
+that 
+
+this 
+
+it.  Even 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+the 
+
+“I think the only case where file sharing is OK is if you 
+send  a  snapshot  that  is  easily  displayed  inside  the  tool. 
+For  example,  you  send  a  file  on  Skype,  it  needs  to  be 
+easily  visible.  If  you  send  a  photo,  that  works.  I’m  glad 
+that it’s not cluttering my inbox. For a document it’s not 
+adequate, especially if we have to look at it.”  (P3) 
+Interviewees did not necessarily always use the same tool 
+for  sharing  photographs.  Instead,  they  performed  an 
+assessment  of  whether  they  would  need  to  access  that 
+information  again  later.  The  tool  used  had  implications 
+for  the  persistence  and  re-discoverability  of  the  material 
+being shared. For example, P4 explained what influenced 
+his decision to  send a photo via a  mobile SMS program 
+(WhatsApp) or via email.  
+“Maybe  there's  a  choice  between  things  I  e-mail  and  I 
+[send via] WhatsApp. So [WhatsApp] is kind of a stream, 
+right? It's not made terribly well. I can't search it…In the 
+team  meeting  when  I  took  the  photos  of  the  projected 
+slides and just WhatsApp that, perhaps it was also partly 
+because I know we don't need a record of it…but…I might 
+e-mail that because actually I'll go back to my computer 
+and probably save that on the drive as well.” (P4) 
+Finally, 
+location  of  participants  also  made  a 
+difference.    P4  noted  that  when  all  participants  were 
+physically distributed, it was easy to know that everything 
+had  to  be  saved  in  an  online,  easy-to-refer-to  format. 
+However,  in  a  two-to-one  situation,  it  was  less  obvious 
+what needed to be preserved and what didn’t: 
+“It gets a bit scattered when there are two people in the 
+office  doing  stuff  and  one  person  is  remote.  It's  almost 
+worse than one or ten and one, because it's like where do 
+you keep the shared to do list? Will you record from these 
+meetings?  When  it  is  just  me  and  [remote  colleague],  I 
+know we have to record stuff remotely because it's going 
+to be seen so we'll make notes in the JIRA [issue tracking 
+program]  tasks  and  manage  it  all  very  carefully  there. 
+But,  when  it's  easier  for  me  to  just  talk  to  [collocated 
+colleague]  in  the  office  and  say,  “how  are  you  getting 
+along  with  that”,  then  we're  like  should  we  both  be 
+writing it down in the tasks?” (P4, status update) 
+After:    Archiving,  accessing,  and  distributing  media 
+after a meeting 
+The end of a meeting does not signal the end of meeting-
+related  media  creation  and  sharing.    In  some  instances, 
+teams had a structured way of archiving meeting minutes 
+or to-dos in an easily accessible place via persistent web 
+link, for example in Hackpad or Etherpad (Obs3, P4, P11, 
+P13). However,  minutes  typically only  were recorded or 
+updated  by  one  person  and  emailed  to  the  rest  of  the 
+group.  Slides could be shared afterwards, and often were 
+(Obs3), but the off-topic conversations that deviated from 
+the  slide  content  were  lost.  Thus,  two  sets  of  challenges 
+around archiving meeting content emerged.  
+
+1710
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Archiving  challenge  1:    Recording  not  possible  or  not 
+useful 
+Recording  can  be  especially  useful  when  the  meeting 
+itself  constitutes  useful  data.  For  example,  a  user 
+experience  researcher  (P8)  recorded  remote  usability 
+sessions conducted over video conferencing to refer back 
+to  later.  For  this  reason,  using  a  more  advanced,  paid 
+professional web conferencing tool that allowed recording 
+was advantageous: 
+“That’s  one  of  the  benefits  of  GoToMeeting.  It’s  really 
+easy just to record a session.”  
+However,  when  the  client  required  that  a  free  tool  be 
+used, this functionality was lost, and required her to rely 
+on handwritten notes as a reminder of what had happened: 
+“I  wasn’t  able  to  record  because  it  was  on  Google 
+Hangouts and I was like, “How do you record with this 
+thing?”  But  I  wasn’t  allowed 
+to  use  any  other 
+[conferencing tool], because the client required that I use 
+Google Hangouts… And then you just rush over and write 
+everything down and whatnot.”  (P8) 
+When  asked  about  how  information  from  meetings  was 
+typically saved or preserved, a common response was that 
+it  was  up  to  individuals  to  take  notes  about  what  was 
+personally  important  to  them.  Sometimes  these  notes  or 
+meetings  were  sent  around  (P5,  P6,  P9),  but  most  often 
+individuals  just  kept  them  for  themselves  and  did  not 
+share  them  with  others.  This  made  it  hard  for  team 
+members 
+remember  what  had  been 
+discussed previously: 
+Interviewer:  “Do  you  record  what  is  going  on  with  the 
+screen sharing, to be able to refer to that later”? 
+P9: 
+useful to do that, but we don’t.” 
+Interviewer:  “How  do  you  remember  the  information 
+then?” 
+P9:”I just remember it.  I don’t know”. 
+However,  the  same  interviewee  later  acknowledged  the 
+system of remembering information did not always work:   
+“Right now, I have a bunch of emails that I go through 
+and  write  them  down  and  try  to  remember  what  I  am 
+supposed  to  do.    Then,  the  next  meeting,  I  say  I  forgot, 
+and half the other people forgot, so it’s okay.” (P9, status 
+update) 
+However,  in  most  cases  meeting  summaries  or  to-dos 
+were  generated  from  personal  notes  taken  during  a 
+meeting.  In  many  cases  this  reflected  either  a  complete 
+lack of recording functionality or a poor search interface 
+for  recordings.  Therefore,  recording  meetings  was  either 
+not possible with the tool, or not seen as useful to look at 
+again  afterwards  (one  team  had  2  years’  worth  of 
+recorded meetings that they did not refer to again).   
+
+“We  don’t.    It probably  would  be  actually  very 
+
+to  accurately 
+
+ Archiving challenge 2:  Re-finding scattered information is 
+difficult 
+Apart from recording video conversations, some tools had 
+the ability to record conversation  history, such as email, 
+instant  messenger  chat  logs,  and  the  like.  This  did  not 
+require  meeting  participants  to  do  anything  extra  to 
+preserve  what  was  being  discussed.  The  problem, 
+however, was re-finding a particular piece of information 
+that  could  be  spread  across  a  variety  of  places.  For 
+example, two participants (P3, P4) struggled to remember 
+whether a photo had been shared in the Skype chat, email, 
+or elsewhere. 
+“When I go back to history to look for something, I know 
+I stored some information but I don’t remember what it is, 
+I know it’s by Skype so I can go in there and look for it. If 
+I’m not sure it was on Skype, it would be one of the places 
+I’d be looking into.” (P3, info-sharing) 
+IMPLICATIONS FOR TOOL DESIGN 
+As both our survey and interviews suggest, participants in 
+remote  meetings  have 
+to  balance  an  array  of 
+considerations.  Their  institution  or  client  may  have 
+specific requirements, they may have their own needs for 
+different types of meetings, and they may have their own 
+preferences  based  on  past  experiences.  These  issues, 
+combined with the growing number of videoconferencing, 
+file  sharing,  IM,  and  workflow  applications  being  used 
+can  make  it  necessary  to  cobble  together  and  integrate 
+information across a set of tools.  Table 4 summarizes the 
+main  findings  and  challenges  found  in  our  work  across 
+different types of meetings. 
+Some challenges, such as organizational policy issues, are 
+independent of tool functionality or usability.  However, 
+the  capability  of  sharing  and  saving  information  that 
+arises in the course of video calls is something that can be 
+added 
+tools.  Popular  video 
+conferencing  tools  are  designed  to  support  synchronous 
+conversations  between  people.  While  they  offer  some 
+ability to screen share or send files in the moment, often 
+times, once the call ends, this information is lost. Here we 
+suggest  improvements  in  video-conferencing  tools  to 
+support the issues of dispersed information and archiving. 
+Aggregation of disparate information 
+One common theme  noted across the different examples 
+of meetings in our work is that participants had to make 
+decisions  about  what  to  share  with  others  and  how,  and 
+weigh  the  tradeoffs  between  the  options  they  had  for 
+doing so. It is clear from our study that using a variety of 
+tools and programs to share different kinds of information 
+is  not  the  desired  approach  for  users,  but  as  described 
+above,  a  result  of  attempting  to  navigate  the  myriad 
+shortcomings  of  current  tools  in  the  course  of  getting 
+work done.  While they were able to deal with managing 
+this  multiplicity  of  tools,  it  often  led  to  increased 
+cognitive load of deciding what to share and where to find 
+it later.  This also implies  the need to anticipate upfront 
+
+to  currently  existing 
+
+1711
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Meeting type 
+
+Status update 
+
+Who shares and 
+what do they share? 
+
+Multiple people; 
+Minimal multimedia 
+sharing 
+
+Information 
+sharing 
+
+Multiple people; 
+Sharing of many 
+different types of 
+artifacts, both digital 
+and/or physical 
+
+Presentation 
+
+One person typically 
+screensharing digital 
+artifact (presentation) 
+
+Sharing and archiving needs and challenges 
+
+Design implications 
+
+Sharing: Mostly verbal reports; Demos of phone apps 
+may not be easily screen-shared (Sharing Challenge 1:  
+Not all items could be screen-shared) 
+Archiving: Information such as to-dos kept in a shared 
+file with a persistent online link to another application 
+(e.g., notes in Smartsheet, Hackpad, etc.)   
+
+Not all types of information can be shared well 
+(Sharing Challenge 1:  Not all items could be screen-
+shared; Sharing Challenge 2:  Video files could not be 
+shared well) 
+Multiple people may wish to show information over 
+the video feed (Sharing Challenge 3:  Multiple people 
+wishing to share information) 
+Archiving: Screenshared information or backchannel is 
+lost unless saved as a file elsewhere  
+ (Archiving Challenge 1: Recording not possible or not 
+useful) 
+Non-screenshared information is scattered about and 
+out of context (Archiving Challenge 2: Re-finding 
+scattered information is difficult)   
+Remote parties can’t see presentation if presenter 
+neglects to share slides online.  Slideshows with 
+embedded video face quality issues. 
+Not all types of information can be shared well 
+(Sharing Challenge 1: Not all items could be screen-
+shared, Sharing Challenge 2: Video files could not be 
+shared well) 
+Accessing: Screenshared information or backchannel is 
+lost unless saved as a file elsewhere  
+(Archiving Challenge 1: Recording not possible or not 
+useful) 
+
+Tool should support members’ ability to 
+synchronously contribute information 
+from different, dispersed devices 
+
+Tool should support members’ ability to 
+synchronously contribute information 
+from different, dispersed devices 
+ 
+Tool should support persistent storage 
+and access of shared information linked 
+to the video conferencing tool 
+Personalized archiving of information 
+
+Tool should support members’ ability to 
+synchronously contribute information 
+from different, dispersed devices 
+ 
+ 
+ 
+ 
+ 
+Personalized archiving of information 
+
+ 
+
+Table 4.  Sharing and archiving needs and challenges across meeting types 
+
+the extent to which meeting content will be referred to in 
+the future. 
+In  particular,  one  design  change  that  may  be  relevant 
+given  the  discussion  of  the  users  in  our  study  is 
+decoupling  video  sharing  practices  from  file  sharing 
+practices,  which  users  find  confusing  and  burdensome. 
+For  example,  most  popular  photo  sharing  applications 
+today do not require users to move photos into a separate 
+folder  for  sharing,  but  rather  allow  users  to  easily  and 
+quickly  insert  photos  into  an  ongoing  narrative  or 
+conversation,  of  which  the  other  user  can  instantly  view 
+through  their  application.  Similarly  for  video,  designers 
+may  want  to  look  into  tools  for  easily  selecting  and 
+sharing  relevant  portions  of  video/screenshots  through 
+synchronous communications. 
+To support members’ ability to synchronously contribute 
+information  from  different,  dispersed  devices  the  video 
+conferencing  tool  could  provide  a  better  means  of 
+
+1712
+
+integrating relevant information within the tool itself. On 
+the  sharing  side,  this  might  involve  improving  mobile 
+phone apps so that they can connect directly to collocated 
+meetings and allow seamless sending of information (e.g., 
+pictures) from a participant’s mobile device directly into 
+the  video  conference  tool  interface.  Such  integration  of 
+additional  devices  would  address  Sharing  Challenge  3, 
+where multiple meeting participants wished to contribute 
+material (such as a photo from their mobile phone) or into 
+the video conference without using a laptop. 
+To  address  the  design  challenge  of  how  to  support 
+persistent storage and access of shared information linked 
+to  the  video  conferencing  tool,  conferencing  programs 
+could  better  integrate  content  sharing  from  a  variety  of 
+sources,  applications,  and  devices  alongside  the  video 
+meeting.  This  could  help  reduce  users’  cognitive  burden 
+and  need  to  decide  how  to  share  something  and  then 
+remember  where  it  was  later.    Tools  like  Slack  offer 
+automatic 
+text-based 
+
+archiving 
+
+of 
+
+and 
+
+search 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in 
+
+involve  keeping  shared 
+
+information/slides/presentations 
+
+conversations, as well as the ability to share files such as 
+images.    It  could  be  possible  to  share  all  information  in 
+such  a  place  and  refer  to  it  while  on  a  video  call.  
+However,  as  we  have  seen,  this  introduces  a  tradeoff 
+between  focusing on the  meeting participants (observing 
+faces,  social  dynamics,  etc.)  and  focusing  on  a  shared 
+document.  
+Persistent archived information tied to the video tool 
+On  the  archiving  side,  better  information  integration 
+would 
+information  easily 
+accessible and address Archiving Challenge 2 (Re-finding 
+scattered information is difficult). For example, if a team 
+had  a  recurring  video  conferencing  meeting,  the  tool 
+could provide access to notes and snippets of previously 
+shared 
+the  same 
+interface  used  to  hold  the  video  conferencing  meeting. 
+This could help in situations where material was shared in 
+various  formats,  inaccessible  to  remote  participants,  or 
+when  multiple  people  wish  to  share  content  from  their 
+own  devices.    It  could  also  assist  in  the  case  where 
+individuals  have  several  recurring  meetings  and  want  to 
+have  a  record  of  key  information  from  each.    One 
+participant  described  the  potential  utility  of  having 
+persistent, archived information: 
+“One thing that would be nice to be able to keep up those 
+minutes I write in hand, to actually embed them into the 
+meeting, itself, so people can see what I am typing while 
+they are watching, so maybe a split screen feature. Or, if 
+we come back the next week, if I said I expect you to do 
+this by next week, if it could just be there in the meeting, 
+itself, that would nice.” (P9) 
+Archiving and  saving information  was also a theme that 
+came  up  often.  In  some  meetings,  information  being 
+shared  was  transient  and  there  was  no  need  to  keep  a 
+record  of  it  for  later.  In  fact,  individuals  sometimes 
+appreciated 
+that  a  photo  shared  over  chat  wasn’t 
+“cluttering my inbox” (P3).  If old information needed to 
+be accessed, it had to be made new again, for example by 
+resending the old email to the group. However, different 
+meeting  participants  might  have  different  attitudes 
+towards the same information.  
+We  saw  that  often  individuals  took  notes  to  record 
+meeting  items  that  were  pertinent  to  them.  An  artifact 
+such as information on a slide or a photo may be relevant 
+and  archivable  to  one  person  but  not  to  another.  
+Therefore, easily allowing meeting participants to have a 
+“sandbox” where they can extract or refer to relevant bits 
+of the meeting and its artifacts for either personal or group 
+use  could  provide  useful  functionality.  This  would 
+address Archiving Challenge 1, where recording an entire 
+meeting was either not possible or not seen as useful (due 
+to information overload).  It may be that only small bits of 
+useful  information  need  to  be  extracted  and  preserved 
+before the call ends and all data is lost, and these  needs 
+may be different from individual to individual.    
+
+1713
+
+to  design  a  one-size-fits-all 
+
+Modular  options  to  adapt  to  diverse  meeting  types 
+and needs 
+As  highlighted  in  Table  4,  we  also  discovered  diverse 
+meeting types and needs.  A single team may, over time, 
+participate  in  many  different  types  of  meetings,  as  our 
+survey  and  interviews  suggest.  A  presentation  meeting 
+may  not  require  much  information  sharing  beyond 
+walking  through  a  slide  deck  together.  A  brainstorming 
+session may not need to be archived; the end result of the 
+discussion during the meeting is a decision that is reached 
+and  the  process  to  get  there  is  irrelevant.  A  mixed-
+configuration meeting has different social dynamics than 
+a  hub-and-spoke  layout.    These  differences  make  it 
+challenging 
+tool,  and 
+contribute  to  the  multiplicity  of  tools  being  used  in 
+parallel.   
+To  better  support  different  meeting  types,  it  could  be 
+feasible to design a single video conferencing tool with a 
+variety  of  modules  that  could  be  mixed  and  matched 
+depending  on  the  meeting  type  and  attendees.  For 
+example,  the  default  layout  for  a  status  update  meeting 
+could include a large area for persistent note-taking, while 
+the  default  (recommended)  layout  for  an  information 
+sharing meeting could provide a space for external, non-
+screen shared content to be sent from participants’ mobile 
+devices and aggregated in one place. The tool could also 
+allow individuals to choose themselves what parts of the 
+meeting would be useful to them to record and keep later, 
+perhaps  even  allowing 
+important 
+keyframes  or  screenshots  from  the  conversation  and 
+shared references.   
+As  described  above,  significant  friction  still  exists  in 
+accessing  past  video,  and  in  using  archived  video 
+information. Tools that would facilitate an easier, simpler 
+way  of  accessing 
+information  would  allow 
+collaborators  to  spend  more  time  building  upon,  rather 
+than merely recovering, work from previous meetings.  
+The main focus of this paper is on factors and challenges 
+that  influence  sharing  multimedia  material  during  and 
+after  video  meetings  in  the  context  of  creating  artifacts. 
+The 
+to  office-based 
+knowledge  workers  who  have  a  variety  of  choices  for 
+their  communication  tools.  However,  our  work  also 
+highlights other challenges, both technical and social, that 
+arose  from  different  configurations  of  participants  and 
+varied across different job roles. In future work, we will 
+examine  more  of  these  factors  in  more  depth  through 
+collecting additional examples from various industries. 
+CONCLUSION 
+Videoconferencing, 
+and  workflow 
+applications are flooding app stores. These tools are well 
+suited  for  facilitating  conversations  between  “talking 
+heads”, but struggle to facilitate richer collaboration and 
+multimedia sharing. Our interviews and observations with 
+members  of  distributed  teams  using  those  tools  reveal 
+
+this  paper  apply 
+
+sharing, 
+
+them 
+
+to  capture 
+
+insights 
+
+in 
+
+this 
+
+file 
+
+them 
+
+their  goals  and 
+
+for  choosing  among 
+
+some insights into this phenomenon: different users have 
+peculiar  institutional,  social,  and  personal  needs,  and  no 
+one tool readily satisfies all of these. Thus, users sample 
+from  many  different  apps  to  cover  a  variety  of  different 
+contextual issues, needs, and backup scenarios.  
+This abundance of collaboration tools has in turn inspired 
+a rise of other tools, such as Slack, Glip, and others, that 
+have  as  their  main  selling  point  the  ability  to  integrate 
+other tools together in a single interface. However, while 
+those tools might make it easier to use a combination of 
+collaboration apps, they do not provide users with enough 
+guidance 
+in  different 
+circumstances, or for adapting the interface functionalities 
+and  presentations  based  on 
+tasks. 
+Similarly,  they  do  not  close  the  gap  between  video 
+content  and  what  is  preserved  from  other  asynchronous 
+communication. 
+Remote collaboration is prevalent for information workers 
+in  companies,  and  small 
+teams  of  workers  need 
+technologies to help them converse and coordinate around 
+shared  artifacts.    Finding  ways  to  bring  more  material 
+from outside the meeting into the meeting, and to capture 
+relevant  material  and  retain  access  to  it  for  future 
+reference  has  the  potential  to  help  streamline  distance 
+work for people in a variety of settings. 
+ACKNOWLEDGMENTS 
+We  thank  our  interviewees  for  taking  the  time  to 
+contribute  to  this  research.  We  also  thank  Matthew 
+Cooper for his feedback and suggestions on the paper. 
+REFERENCES  
+1.  Pernille Bjørn, Morten Esbensen, Rasmus Eskild 
+Jensen, and Stina Matthiesen. 2014. Does distance 
+still matter? Revisiting the CSCW fundamentals on 
+distributed collaboration. ACM Transactions on 
+Computer-Human Interaction (TOCHI) 21, 5, 27. 
+
+2.  Matthias Böhmer, T. Scott Saponas, and Jaime 
+
+Teevan. 2013. Smartphone use does not have to be 
+rude: making phones a collaborative presence in 
+meetings. Proc. MobileHCI, 342–351.  
+
+3.  Erin Bradner, Gloria Mark, and Tammie D. Hertel. 
+2005. Team size and technology fit: Participation, 
+awareness, and rapport in distributed teams. IEEE 
+Trans. On Professional Communication, 68–77. 
+
+4.  Jed R. Brubaker, Gina Venolia, and John C. Tang. 
+
+2012. Focusing on shared experiences: moving 
+beyond the camera in video communication. Proc. 
+DIS, 96–105.  
+
+5.  Lars Rune Christensen, Rasmus Eskild Jensen, and 
+Pernille Bjørn. 2014. Relation Work in Collocated 
+and Distributed Collaboration. Proc. COOP, 87–101.  
+
+6.  Azadeh Forghani, Gina Venolia, and Kori Inkpen. 
+2014. Media2gether: Sharing Media during a Call. 
+Proc. GROUP, 142-151.  
+
+1714
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+7.  Lutz Gericke, Raja Gumienny, and Christoph Meinel. 
+
+2012. Tele-board: Follow the traces of your design 
+process history. In Design thinking research. 
+Springer, 15–29.  
+
+8.  Jennifer L. Gibbs, J. L., & Malgorzata Boyraz. 2015. 
+International HRM’s role in managing global teams. 
+In Collings, D. G., Wood, G., & Caligiuri, P. 
+(Eds.), The Routledge companion to international 
+human resource management, 532-551. 
+
+9.  Jennifer L. Gibbs, Nik Ahmad Rozaidi, and Julia 
+
+Eisenberg. 2013. Overcoming the “ideology of 
+openness”: Probing the affordances of social media 
+for organizational knowledge sharing. Journal of 
+Computer-Mediated Communication 19, 1, 102–120. 
+
+10.  Joseph A. Gonzales, Casey Fiesler, and Amy 
+
+Bruckman. 2015. Towards an Appropriable CSCW 
+Tool Ecology: Lessons from the Greatest 
+International Scavenger Hunt the World Has Ever 
+Seen. Proc. CSCW, 946–957.  
+
+11.  Raja Gumienny, Lutz Gericke, Matthias Wenzel, and 
+
+Christoph Meinel. 2013. Supporting creative 
+collaboration in globally distributed companies. Proc. 
+CSCW, 995–1007.  
+
+12.  Demetrios Karis, Daniel Wildman, and Amir Mané. 
+2014. Improving Remote Collaboration with Video 
+Conferencing and Video Portals. Human–Computer 
+Interaction, 1–98.  
+
+13.  Benjamin Koehne, Patrick C. Shih, and Judith S. 
+
+Olson. 2012. Remote and alone: coping with being 
+the remote member on the team. Proc. CSCW, 1257–
+1266.  
+
+14.  Charlotte Massey, Thomas Lennig, and Steve 
+
+Whittaker. 2014. Cloudy forecast: an exploration of 
+the factors underlying shared repository use. Proc. 
+CHI, 2461–2470.  
+
+15.  Tara Matthews, Steve Whittaker, Thomas Moran, and 
+
+Sandra Yuen. 2011. Collaboration personas: A new 
+approach to designing workplace collaboration tools. 
+Proc. CHI, 2247–2256.  
+
+16.  Lora Oehlberg, Kyu Simm, Jasmine Jones, Alice 
+Agogino, and Björn Hartmann. 2012. Showing is 
+sharing: building shared understanding in human-
+centered design teams with dazzle. Proc. DIS, 669–
+678.  
+
+17.  Judith S. Olson and Gary M. Olson. 2014. How to 
+
+make distance work work. interactions 21, 2, 28–35. 
+
+18.  Polycom. 2014. http://www.polycom.com/ 
+
+content/dam/polycom/common/documents/guides/ 
+polycom-guide-to-collaborating-across-borders-
+enus.pdf   
+
+19.  Polycom. http://www.polycom.com/defydistance/top-
+
+10-challenges-with-remote-collaboration.html 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+20.  Jeffrey Treem and Paul Leonardi. 2012. Social media 
+
+use in organizations: Exploring the affordances of 
+visibility, editability, persistence, and association. 
+Communication Yearbook 36, 143–189. 
+
+21.  Thea Turner, Pernilla Qvarfordt, Jacob T. Biehl, 
+Gene Golovchinsky, and Maribeth Back. 2010. 
+Exploring the workplace communication ecology. 
+Proc. CHI, 841–850.  
+
+22.  Himanshu Verma, Flaviu Roman, Silvia Magrelli, 
+
+Patrick Jermann, and Pierre Dillenbourg. 2013. 
+Complementarity of input devices to achieve 
+knowledge sharing in meetings. Proc. CSCW, 701–
+714.  
+
+23.  Ruth Wageman, Heidi Gardner, and Mark 
+
+Mortensen. 2012. The changing ecology of teams: 
+New directions for teams research. Journal of 
+Organizational Behavior 33, 3, 301–315. 
+
+24.  Wainhouse Research.  2015.  The collaborative 
+
+enterprise:  How enterprises are adapting to support 
+
+the modern meeting.  White paper. 
+http://cp.wainhouse.com/content/the-collaborative-
+enterprise-paper 
+
+25.  Stephanie L. Woerner, Wanda J. Orlikowski, and J. 
+
+Yates. 2004. The media toolbox: Combining media in 
+organizational communication. Proc. Academy of 
+Management, 1-36.  
+
+26.  Nicole Yankelovich, William Walker, Patricia 
+
+Roberts, Mike Wessler, Jonathan Kaplan, and Joe 
+Provino. 2004. Meeting central: making distributed 
+meetings more effective. Proc. CSCW, 419–428. 
+
+27.  Roshanak Zilouchian Moghaddam, Zane Nicholson, 
+
+and Brian P. Bailey. 2015. Procid: Bridging 
+Consensus Building Theory with the Practice of 
+Distributed Design Discussions. Proc. CSCW, 686–
+699.  
+
+ 
+ 
+
+ 
+ 
+
+1715
+
+

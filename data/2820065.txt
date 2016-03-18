@@ -1,0 +1,1741 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Style in the Age of Instagram
+
+Predicting Success within the Fashion Industry using Social Media
+
+Jaehyuk Park
+
+Indiana University
+
+Bloomington, IN, USA
+
+jp70@indiana.edu
+
+Giovanni Luca Ciampaglia
+
+Indiana University
+
+Bloomington, IN, USA
+gciampag@indiana.edu
+
+Emilio Ferrara
+
+Indiana University
+
+Bloomington, IN, USA
+ferrarae@indiana.edu
+
+ABSTRACT
+Fashion is a multi-billion dollar industry with social and eco-
+nomic implications worldwide. To gain popularity, brands
+want to be represented by the top popular models. As new
+faces are selected using stringent (and often criticized) aes-
+thetic criteria, a priori predictions are made difﬁcult by infor-
+mation cascades and other fundamental trend-setting mecha-
+nisms. However, the increasing usage of social media within
+and without the industry may be affecting this traditional sys-
+tem. We therefore seek to understand the ingredients of suc-
+cess of fashion models in the age of Instagram. Combin-
+ing data from a comprehensive online fashion database and
+the popular mobile image-sharing platform, we apply a ma-
+chine learning framework to predict the tenure of a cohort of
+new faces for the 2015 Spring / Summer season throughout
+the subsequent 2015-16 Fall / Winter season. Our framework
+successfully predicts most of the new popular models who
+appeared in 2015. In particular, we ﬁnd that a strong social
+media presence may be more important than being under con-
+tract with a top agency, or than the aesthetic standards sought
+after by the industry.
+
+Author Keywords
+Social Media; Fashion Industry; Science of Success
+
+ACM Classiﬁcation Keywords
+Human-centered computing: Collaborative and social com-
+puting—Social media;
+Information systems: World Wide
+Web—Social networks
+
+INTRODUCTION
+The success of cultural artifacts is characterized by inher-
+ent unpredictability and inequality [40], posing fundamental
+problems for a proper understanding of markets based on the
+production of cultural goods. Fashion, and fashion model-
+ing in particular, are typical examples [2, 32]. When trying
+to cast a model for the upcoming seasons, a casting director
+is faced with a seemingly impossible task: predicting whom,
+out of the hundreds of new faces she may see at the go-see
+calls, will become the top model of the next season.
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full cita-
+tion on the ﬁrst page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or re-
+publish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW’16, February 27–March 02, 2016, San Francisco, CA, USA.
+Copyright © 2016 ACM. ISBN 978-1-4503-3592-8/16/02. . . $15.00
+DOI: http://dx.doi.org/10.1145/2818048.2820065
+
+64
+
+Modeling has in fact a very special meaning in fashion, a
+multi-billion dollar industry with strong social and economi-
+cal implications worldwide [24]. Models play the main role
+in advertisements and runways, which are, historically, the
+main ways brands communicate with their customers. They
+contribute to frame consumer experience and promote con-
+sumption, as their attractiveness becomes associated to the
+brands they work for [46]. This is especially true for luxury
+goods, whose aesthetic value is more important than practi-
+cal usage. Only those who appeal the aesthetic sensibility of
+fashion designers stand chances to become popular [10].
+
+Ethnographic studies show in fact that casting directors con-
+sider both objective physical characteristics — such as body
+size, height — and subjective considerations — the reputa-
+tion of the agency representing the model — to be important
+decision-making criteria for casting [33, 19, 32]. However,
+the same studies also uncover how information cascades are
+a critical part of what makes a model successful. Similarly to
+the careers of scientists [34], fashion models also beneﬁt from
+strong cumulative advantage effects, by which small differ-
+ences in prestige between competing individuals get ampli-
+ﬁed, for example by means of word of mouth [39, 42, 19].
+
+The job market for fashion castings has strong seasonal com-
+ponents, revolving around week-long trend-setting industry
+events (“Fashion Weeks”), during which a dense calendar of
+shows is organized in various locations in a major city. The
+four most prominent Fashion Weeks worldwide take place
+twice a year and, as of 2015, are hosted in the cities of New
+York, London, Paris, and Milan. These events facilitate net-
+working and information sharing, and are seen as a crucial
+part of the process by which the fashion industry collectively
+decides what will be the new trends and the next top models.
+
+Social media and mobile image-sharing platforms, Instagram
+in particular, are revolutionizing the fashion industry world-
+wide, as interest toward new trends, designers, and products
+increasingly unfolds online [25, 7, 26]. This has obvious im-
+plications on the job of fashion models too. Traditionally,
+models were not meant to interact directly with their cus-
+tomers [33]. It is instead now customary for spectators to use
+Instagram to upload photos or videos during runways events.
+This, in turn, has been argued to inﬂuence the way fashion de-
+signers design, shoot, and showcase their runways, especially
+for the case of luxury brands [41]. Famous designers such as
+Tommy Hilﬁger and Kenneth Cole have been reported to take
+advantage of Instagram for customer engagement [14].
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+As social media become for fashion models a far more im-
+portant showcase than magazines and billboards, we wonder
+if popularity on such platforms can be used as a proxy to pre-
+dict success, and seek to answer these research questions:
+
+RQ 1. Given data about measurable physical and profes-
+sional characteristics of a models, can we predict whether
+she will be casted for the upcoming fashion season?
+
+RQ 2. Does the addition of relevant signals of social media
+activity improve the predictability of success of models?
+
+We tackle these questions using a quantitative approach, with
+a mix of exploratory statistics and machine learning experi-
+ments. To rule out possible explanations in terms of cumula-
+tive advantage [42], we focus on data about a group of new-
+comers, who just started their career in the fashion world. As
+a simple and reasonable measure of success, we employ the
+number of catwalks a model walked.
+
+The rest of the paper is organized as follows. We give a brief
+overview of the work related to predicting success in cultural
+markets, and fashion in particular, in the next section. We
+then describe the two datasets used in the study: the “new
+faces” section of the Fashion Model Directory (FMD) web-
+site1 and Instagram.2 We then present the main results of this
+study. We start with a descriptive analysis of the FMD data,
+and estimate the degree of association between the tenure of a
+model and a number of standard industry metrics using a re-
+gression framework. Finally, we describe the machine learn-
+ing approach we employed, and the evaluation metrics used
+to assess the quality of the predictions of our statistical frame-
+work. The paper concludes describing the broader relevance
+of our ﬁndings to the emerging “Science of Success” research
+ﬁeld, and potential future directions.
+
+RELATED WORK
+In this study we are looking at predicting popularity of fash-
+ion models using data from social media activity. The study
+of trends in cultural markets has a long-standing tradition [5],
+and various researchers have exploited social data from a
+wide range of backgrounds. For example, Asur and Huber-
+man [4, 3] used Twitter data to predict the box-ofﬁce per-
+formance of newly-released blockbuster movies, and later
+Mesty´an et al. [35] improved these results using data from
+Wikipedia. Ferrara et al. [12, 13, 23] studied the emergence
+of information trends in social media settings, and the rise to
+popularity of Instagram users in photography contexts [11].
+
+in the context of fashion,
+
+it is worth noting
+In contrast,
+that practical application of trend-detection technologies has
+started to become possible only in recent years, thanks to
+the increasing availability of online user-generated data about
+fashion apparel trends [30, 29, 31, 20].
+
+Instagram was the platform selected in our study. It is a mo-
+bile image-sharing service that specializes in instant commu-
+nication of trends and visual information in general [11], in
+a way similar to Twitter, Pinterest, and Flickr. Besides the
+detection of trends, a wide range of aspects related to image
+
+1http://www.fashionmodeldirectory.com
+2http://instagram.com
+
+65
+
+Figure 1: Example of a FMD proﬁle page. Image © FMD –
+The Fashion Model Directory
+
+sharing have received attention from the research community,
+such as depression and online behavior [1, 43], situated usage
+in museums [21, 44], or organization of information through
+tags [37, 27, 18].
+
+METHODS
+
+Fashion Model Directory
+We collected data from the Fashion Model Directory (FMD)
+website, one of the largest fashion databases of professional
+female fashion models [45]. Figure 1 shows the proﬁle of one
+of the fashion models on FMD as an example. As can be seen
+from the ﬁgure, FMD proﬁles, similarly to a r´esum´e, provide
+a mix of biographical, physical, and professional experience
+information, notably casting agencies and walked runways.
+
+While the database claims to include proﬁles for over 10,000
+models, our analysis focuses only on its recent additions,
+which are listed under the category “New Faces”. We col-
+lected our dataset in December 2014, ﬁnding N = 431 new
+faces for the 2015 Spring / Summer (S / S) season.
+
+For each model the FMD data thus consists of the follow-
+ing attributes: name, hair color, eye color, height, hip size,
+dress size, waist size, shoes size, list of agencies, national-
+ity, and details about all runways the model walked on (year,
+season, and city). We discarded the data about hair and eye
+color, as the color coding was not reliable enough to allow for
+a meaningful characterization of these features. For similar
+
+SESSION: MODELING SOCIAL MEDIA
+
+Top agency Non-top agency No agency
+
+Total
+
+with Instagram
+w/o Instagram
+
+Total
+
+214
+115
+
+329
+
+33
+54
+
+87
+
+6
+9
+
+15
+
+253
+178
+
+431
+
+Table 1: New faces of the 2015 S / S season under contract
+with at least one top agency and their presence on Instagram.
+
+Instagram
+We collected data about the social media presence of our
+FMD new faces using Instagram. We found Ni = 253 In-
+stagram accounts (59%), accounting for Wi = 1181 runway
+walks (4.67 walks per model on average). Models under
+contract with a top agency are more represented on Insta-
+gram (65%) than those with a non-top agency (41%), and no
+agency at all (40%), see Table 1.
+
+Using the media endpoint of the Instagram API, we collected
+all media posted by any FMD new face in the three-month
+period before September 4th, 2014, the beginning of the New
+York Fashion Week. Metadata of each posted media include
+the number of likes and comments, as well as the the metadata
+of the ﬁrst 125 likes of each post (e.g., time stamp of the like,
+name of the liking user, etc.). We then computed the mini-
+mum, maximum, median, and average number of likes and
+comments of all posts uploaded by each new face, as well as
+the number of posts during the period, for the three months
+before and after the fashion week events. Similarly to the
+FMD data, all variables were standardized before using them
+in regressions.
+
+Sentiment Analysis
+We supplement the analysis of social media activity with sen-
+timent analysis. To do so, we selected only comments writ-
+ten in English. Language was detected using a simple Naive
+Bayes classiﬁer [36]. We extracted the comments on posts
+uploaded before the Fashion Week season, and calculated the
+average sentiment score of each model using Vader, a state-
+of-the-art, rule-based algorithm [22]. We included only those
+models who received at least one comment written in English
+to any of their posts, ﬁnding a subset of Ns = 198 models,
+who account for Ws = 1052 runway walks (5.31 walks per
+model on average). Vader is designed to deal with social me-
+dia data, as it is based on a manually-deﬁned vocabulary that
+encodes grammatical and syntactical conventions common to
+online documents.
+It is capable of capturing sentiment in-
+tensity with an accuracy of 84%, which outperforms other
+algorithms as well as individual human raters.
+
+Predictive classiﬁcation of success
+To forecast success within the new faces cohort, we per-
+formed a binary classiﬁcation exercise. Since most models
+in the cohort did not walk any runway, to avoid further class
+imbalance we consider two classes: models with zero walks
+(unpopular) and models with one or more walks (popular).
+To learn the predictive score distributions, we applied three
+widely-used machine learning algorithms, based on ensemble
+methods and boosting: Decision Tree (DT) (baseline), Ran-
+dom Forest (RF) [6], and AdaBoost (AB) [16]. We used the
+
+Figure 2: Distribution of walked runways by new faces of the
+S / S prior to the Fashion Week season.
+
+reasons, we also discarded nationality information. All body
+sizes (height, hips, dress, waist, shoes) were converted in the
+metric system. For shoe size we used the Paris point units sys-
+tem. Furthermore, the data were cleaned, substituting, in two
+cases where the data about shoe and waist size were missing,
+the missing values with the group average. Before running
+regressions, any non-categorical variable was also centered
+around the mean and standardized.
+
+To account only for a homogeneous set of runway expe-
+riences, we considered only runways occurred during the
+fashion weeks for the 2015 S / S season in New York, Lon-
+don, Paris, and Milan. These occurred during the period
+of September 2014 and were the most recent major fashion
+weeks at the time of our data collection (December 2014).
+We found that, collectively, the new faces in our sample had
+performed W = 1402 runway walks (3.25 walks per model
+on average) for B = 313 distinct branded runway events.
+
+Finally, we annotated each agency to reﬂect its reputation in
+the fashion industry. We use a simple binary classiﬁcation
+system, by which high-prestige agencies are assigned to the
+“top agency” category. Since FMD does not provide this in-
+formation, we retrieved a list of all top agencies from another
+online fashion database, Models.com,3 which collects experts
+knowledge to determine the reputation and inﬂuence of cast-
+ing agencies. As a result, 329 out of 431 models were hired
+by at a least one top agency, 87 models were not hired by any
+top agency, and 15 had no agency information in their proﬁle
+(which could indicate that either the model was not using any
+agency, or that the information was simply missing from the
+database; see Table 1).
+
+The majority of new models did not perform even a single
+runway during the four fashion weeks in September 2014;
+only around 24% of models (102 out of 431) performed at
+least one runway, with a small minority having participated
+to several runways (see Figure 2). This is not surprising, and
+further suggests that there exists a strong popularity bias in
+castings, in line with previous work [19].
+
+3http://www.models.com.
+
+66
+
+103
+102
+101
+100
+
+y
+c
+n
+e
+u
+q
+e
+r
+F
+
+0
+
+10
+
+30
+
+20
+40
+Walked Runways
+
+50
+
+60
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Height (cm) Hips (cm) Dress Waist (cm)
+
+Shoes
+
+Height
+
+Hips Dress Waist
+
+Shoes
+
+Mean
+Std. Dev
+Min.
+Median
+Max.
+
+177.48
+2.49
+167.00
+178.00
+183.00
+
+87.98
+2.33
+80.00
+88.00
+104.00
+
+33.36
+1.36
+30.00
+33.00
+40.00
+
+60.49
+2.17
+53.50
+60.00
+77.00
+
+39.44
+1.19
+36.00
+39.00
+43.00
+
+Height
+Hips
+Dress
+Waist
+Shoes
+
+1.00
+0.01
+−0.06
+0.02
+0.36
+
+1.00
+0.25
+0.58
+−0.01
+
+1.00
+0.28
+0.00
+
+1.00
+0.07
+
+1.00
+
+Table 2: Body size measures of new faces of the 2015 S / S
+season (N = 431).
+
+Table 3: Pairwise correlations between body size measures of
+the new faces of the 2015 S / S season (N = 431)
+
+implementations of scikit-learn [38], optimally tuning the pa-
+rameters as follows: entropy is used to measure the quality
+of the decision splits; all statistical models employ 25 esti-
+mators; DT and RF have a pruning setting of max-depth to 5,
+and RF adopts a maximum of 5 features. This framework al-
+lows us to evaluate the forecasting power of the various sets of
+features presented above using standard performance metrics,
+such as AUROC (Area Under the Receiver Operating Char-
+acteristic curve), and accuracy scores. We report results ob-
+tained by averaging one thousands iterations of k-Fold Cross
+Validation (k = 5) in which 80% of data is used to train the
+statistical models and the remainder 20% is used for predic-
+tion. The last experiment of this paper, however, represents a
+“real” prediction task in which we train the machine learning
+models with the previous fashion season (2015 S / S) data,
+and use them to predict the upcoming 2015-16 Fall / Winter
+(F / W) season.
+
+RESULTS
+
+Descriptive analysis
+We ﬁrst analyzed height, hips, dress, waist, and shoe size of
+the new faces group and assessed whether there is any obvi-
+ous association with the number of walked runways. Fig-
+ures 3(a)–(e) show the distribution of body size measure-
+ments and, where available (Figures 3(a)–(c)) how these fea-
+tures compare to the US female population for the closest
+age group (20–29 y.o. for height and waist size [17]; 18–25
+y.o. for hip size [47]). Here the data have been plotted be-
+fore rescaling. The variables are all distributed within narrow
+ranges, following approximately normal distributions. Un-
+surprisingly, even the shortest model in our dataset is much
+taller than the US female average. In general, as far as body
+measures are concerned, our group of new faces seems to rep-
+resent a very biased sample of the general female population.
+Table 2 reports standard descriptive statistics of the sample.
+
+We study the association between body size measures and the
+main dependent variable, the number of runways the models
+walked prior to the 2015 S / S fashion week season, using a
+regression framework.
+
+Since our measure of success is based on the count of walked
+runways, we used a Poisson regression model to estimate the
+chances of walking a single runway as a function of various
+regression features. We start by only considering physical at-
+tributes as regressors. The results are reported in Table 4 (see
+Model 1). The expected number of walked runways for the
+baseline new face is 2.25. Height is positively associated to
+increased chances of walking a runway — speciﬁcally, 2.27
+
+67
+
+times for each additional standard deviation (2.49 cm, ap-
+proximately one inch), relative to the group average baseline.
+Larger dress, hips, and shoe sizes are all negatively associated
+with the chances of walking a runway, while waist size seem
+to be not associated in either way.
+
+In Table 3 we also report correlations between all body size
+regressors, as a simple test for possible source of multi-
+collinearity. We ﬁnd that dress, waist, and hip size are pair-
+wise correlated with each other, as well as shoe size with
+height. All correlations appear to be of moderate entity.
+
+Adding the information on agencies (see Model 2), we ﬁnd
+a strong association between having a top agency and the
+number of walked runways: models with a top agency have,
+everything else being equal, nearly ten times higher chances
+(exp (2.29) = 9.87) of walking a runway, than their coun-
+terparts represented by non-top agencies. The chances of
+walking for models without a prestigious agency drop sub-
+stantially, as the expected count for the baseline is now only
+0.28 walks. This is consistent with previous research [19],
+and highlights the role of agencies in setting fashion models
+trends in the fashion industry.
+
+We then focus on models with an Instagram account (Ni =
+253) and assess how the average number of posted media,
+received likes, and comments is associated to the count of
+walked runways. Figures 3(g)–(i) show distribution his-
+tograms (log10-scaled) of these variables.
+
+Model 3 and Model 4 replicate the above ﬁndings on the
+subset of new faces with an Instagram account.
+In partic-
+ular, within this subset the gap between those with a top
+agency and those without is even more marked. Adding the
+Instagram-related variables does not change much the asso-
+ciation with height, hip size, and agency. Instagram activity
+seem to have mixed associations with runway walks. Ad-
+ditional posts over the average activity yield a 15% higher
+chances of walking a runway but, surprisingly, more likes
+tend to lower the chances of walking a runway (about 10%
+less). The average number of Instagram Likes is highly cor-
+related with the average number of comments (r = 0.82)
+yet it has a negligible correlation with the number of posts
+(r = 0.15). The number of received comments does not seem
+to be correlated with the number of posts (r = 0.00).
+
+The overall picture does not change signiﬁcantly when we
+look at the sentiment expressed by Instagram users when
+commenting on the media posted by our new faces (Model
+6, 7, and 8 of Table 4). The sentiment itself appears to be
+
+SESSION: MODELING SOCIAL MEDIA
+
+a
+
+b
+
+c
+
+d
+
+160 165 170 175 180 185
+
+Height (cm)
+
+50 60 70 80 90 100
+
+Waist (cm)
+
+80 85 90 95 100 105
+
+Hips (cm)
+
+30 32 34 36 38 40
+
+Dress size
+
+e
+
+g
+
+h
+
+i
+
+36 37 38 39 40 41 42 43
+
+Shoe size
+
+0
+
+100 200 300 400
+Instagram posts
+
+2
+
+1
+
+5
+Inst. Avg. Likes (log10)
+
+3
+
+4
+
+0.0 0.5 1.0 1.5 2.0 2.5 3.0
+
+Inst. Avg. Comments + 1 (log10)
+
+160
+140
+120
+100
+80
+60
+40
+20
+0
+
+160
+140
+120
+100
+80
+60
+40
+20
+0
+
+y
+c
+n
+e
+u
+q
+e
+r
+F
+
+Figure 3: Distribution of body size measures and Instagram activity of new faces of the 2015 S / S season (N = 431). Dashed
+lines, where shown, indicate averages computed on the closest matching age group in the US female population.
+
+positively associated to better chances of walking a runway
+(23% more), together with the overall number of comments.
+
+Naive Bayes, etc.): none yielded AUROCs or accuracy above
+60%.
+
+Including the information about agency and all Instagram-
+related variables yields better statistical models for both the
+overall sample of new faces and those with an Instagram ac-
+count, as shown by both the Akaike (AIC) and Bayesian In-
+formation criterion (BIC) scores. This indicates that all vari-
+ables potentially provide useful predictive signals. In the next
+section we describe the results of the prediction tasks in de-
+tail.
+
+Forecasting success in fashion
+For each classiﬁcation algorithm (DT, RF, and AB) we
+learned three distinct predictive models:
+(i) with only
+body size measures (height, hips, dress, waist, and shoes)
+(BODY); (ii) with physical attributes and the binary infor-
+mation about whether the fashion model has a top agencies
+or not (BODY+AGENCY); and, (iii) with body size measures,
+agency information, and Instagram-related signals —number
+of posts, average number of likes and comments received—
+(BODY+AGENCY+INSTA). For the latter statistical model, we
+restrict the training data to use only the media posted in the
+three months before the fashion week. As shown in Table 5,
+and consistently with results from the previous section, when
+trained on 2015 S / S runway walks data, social media fea-
+tures improve accuracy of the statistical model. According to
+t-tests, all improvements are statistically signiﬁcant. We also
+tried other statistical models [38] (SVM, Logistic Regression,
+
+To test the actual forecasting power of our framework based
+on the classiﬁers trained on the 2015 S / S data, we attempt
+to predict the popularity labels for the next season, the 2015-
+16 F / W Fashion Week, that is, on a completely separate test
+set. To do so, we manually collected a new and more re-
+cent dataset (May 2015) containing the new faces of the lat-
+est fashion season, and up-to-date information about runways
+performed during the 2015-16 F / W Fashion Week (February
+12–March 11, 2015). We found 15 such new face proﬁles.
+This set is roughly balanced (8 fashion models ran at least
+one top walk, 7 did not appear in any of the four main events),
+and each proﬁle links to an Instagram account, allowing us to
+employ all predictive features (BODY+AGENCY+INSTA).
+
+Social media features for the validation test set were built us-
+ing the meta-data of media posted in the three months be-
+fore the season only (November 12, 2014 to February 11,
+2015). The results for the best predictive model, Random
+Forest (RF), along with the true popularity labels (became
+popular), are shown in Table 6. Random Forest scores an
+AUROC performance above 81%: impressively, RF is able to
+correctly predict 6 out of 8 fashion models who became popu-
+lar during the 2015-16 F / W, using training data from the past
+season only. Random Forest also successfully identiﬁed 6 of
+the 7 fashion models who did not perform in any top event.
+The confusion matrix in Fig. 4 summarizes these results.
+
+68
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+All new faces
+
+(N = 431, W = 1402)
+
+w/ Instagram
+
+(Ni = 253, Wi = 1181)
+
+w/ Instagram & Sentiment
+
+(Ns = 198, Ws = 1052)
+
+Model 1 Model 2
+
+Model 3 Model 4 Model 5
+
+Model 6 Model 7 Model 8
+
+0.81∗∗∗
+0.82∗∗∗
+−0.23∗∗∗
+−0.35∗∗∗
+−0.04
+−0.38∗∗∗
+
+−1.27∗∗∗
+0.76∗∗∗
+−0.17∗∗∗
+−0.33∗∗∗
+−0.00
+−0.37∗∗∗
+2.29∗∗∗
+
+1.21∗∗∗
+0.89∗∗∗
+−0.13∗∗∗
+−0.24∗∗∗
+
+0.06∗
+
+−0.35∗∗∗
+
+−7.70∗
+
+0.85∗∗∗
+
+−0.05
+−0.28∗∗∗
+0.11∗∗∗
+−0.37∗∗∗
+9.05∗∗
+
+−7.70∗
+
+0.88∗∗∗
+
+−0.05
+−0.29∗∗∗
+0.10∗∗∗
+−0.36∗∗∗
+9.04∗∗
+0.14∗∗∗
+−0.18∗∗∗
+0.24∗∗∗
+
+1.32∗∗∗
+0.89∗∗∗
+−0.16∗∗∗
+−0.23∗∗∗
+0.10∗∗∗
+−0.41∗∗∗
+
+−7.59
+
+0.86∗∗∗
+−0.13∗∗∗
+−0.33∗∗∗
+0.18∗∗∗
+−0.44∗∗∗
+
+9.03∗
+
+−7.65∗
+
+0.90∗∗∗
+−0.12∗∗∗
+−0.36∗∗∗
+0.19∗∗∗
+−0.45∗∗∗
+9.07∗∗
+0.08∗∗
+−0.17∗∗∗
+0.21∗∗∗
+0.16∗∗∗
+
+4814.41
+1824.81
+
+4531.28
+1545.74
+
+3339.79 3064.96
+1639.85 1368.52
+
+3038.96
+1353.12
+
+2734.13 2489.47
+1426.88 1185.46
+
+2462.77
+1171.92
+
+Intercept
+Height
+Dress
+Hips
+Waist
+Shoes
+Has Top Agency
+Inst. Posts
+Inst. Likes
+Inst. Comments
+Inst. Sentiment
+
+AIC
+BIC
+
+Table 4: Poisson regression results for the new faces of the 2015 S / S season. Dependent variable is the count of runways walked.
+Legend: ∗ : p < 0.05; ∗∗ : p < 0.01; ∗∗∗ : p < 0.001.
+
+BODY
+
+BODY+AGENCY
+
+ACC
+
+ROC
+
+ACC
+
+ROC
+
+BODY+AGENCY+INSTA
+ACC
+ROC
+
+Decision Tree
+Random Forest
+Ada Boost
+
+0.596
+0.643
+0.640
+
+0.558
+0.549
+0.533
+
+0.635(+0.039)∗∗∗ 0.563(+0.005)∗∗∗ 0.694(+0.059)∗∗∗ 0.619(+0.056)∗∗∗
+0.656(+0.013)∗∗∗ 0.586(+0.037)∗∗∗ 0.733(+0.077)∗∗∗ 0.688(+0.102)∗∗∗
+0.636(-0.004)∗∗∗
+0.556(+0.023)∗∗∗ 0.692(+0.056)∗∗∗ 0.640(+0.084)∗∗∗
+
+Table 5: Accuracy (ACC) and Area Under the ROC curve (ROC) values for all classiﬁers. Increments for the classiﬁer with all
+features (BODY+AGENCY+INSTA) are computed over that without Instagram-related features (BODY+AGENCY), which is in turn
+computed over the baseline (BODY). All improvements are statistically signiﬁcant. Random Forest is the model with the best
+predictive power, scoring a top accuracy of 73.3% and an AUROC of 68.8%. Legend: ∗ : p < 0.05; ∗∗ : p < 0.01; ∗∗∗ : p < 0.001.
+
+Random Forest to fail. Fashion Model 10, the only false pos-
+itive, on the other hand shows very high social media engage-
+ment levels, yet did not perform in any top runway during the
+2015-16 F / W season. The FMD proﬁle pictures of the six
+models whose success was correctly predicted by our frame-
+work are shown in Figure 5.
+
+To understand which features contribute most to the predic-
+tive signal we compute feature importance. The contribution
+of each feature is here calculated as information gain. The
+results for Random Forest (RF) are shown in Table 7. For
+prediction purposes, we note how the three social media ac-
+tivity features contribute as much as having optimal physi-
+cal attributes and more than being under contract with a top
+agency. The top 3 features used by RF are: (i) Instagram
+#Likes, (ii) Height, and (iii) #Posts. Similar results hold for
+other classiﬁers.
+
+DISCUSSION
+Social media are increasingly used as sensors of social collec-
+tive phenomena [4, 13]. Increasingly, the usage of social data,
+often in conjunction with other data sources, proves crucial to
+be able to represent real-world events, trends, information dif-
+fusion, and social behavior. In this study we were concerned
+with understanding whether it is possible to predict fashion
+models popularity, complementing physical and professional
+information with social data.
+
+Our methodology has of course limitations, and we here re-
+port few notable ones:
+
+Figure 4: Confusion matrix of the Random Forest perfor-
+mance for the prediction task (2015-16 F / W Fashion Week).
+
+The elements of success in fashion modeling
+The analysis of the prediction task provides some interest-
+ing insights: Fashion Models 11 and 13, although having top
+agencies, did not rise to popularity; Fashion Model 5, how-
+ever, became popular even without a top agency: both of
+these dynamics have been correctly captured by our predic-
+tion framework. It is worth considering when our framework
+failed. Fashion Models 2 and 3 represent the two false neg-
+atives: they both exhibit low social media activity, a signal
+highly regarded by our predictor (see below), which induces
+
+69
+
+l
+
+r
+a
+u
+p
+o
+p
+n
+U
+
+l
+
+e
+b
+a
+
+l
+ 
+
+e
+u
+r
+T
+
+l
+
+r
+a
+u
+p
+o
+P
+
+0.86
+
+0.68
+
+0.50
+
+0.32
+
+0.14
+
+6   7 (86 %)
+
+1   7 (14 %)
+
+2   8 (25 %)
+Unpopular
+
+6   8 (75 %)
+Popular
+Predicted label
+
+SESSION: MODELING SOCIAL MEDIA
+
+Fashion
+Model ID
+
+Height Hips Waist Dress
+
+Shoes
+
+Posts
+
+Instagram Instagram Instagram Has top
+agency
+
+Comments
+
+Likes
+
+Became RF Prediction
+popular
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+178
+178
+179
+180
+175
+180
+180
+178
+183
+176
+177
+180
+169
+179
+180
+
+86.5
+86.0
+88.0
+89.0
+86.0
+89.0
+90.0
+87.0
+86.0
+87.0
+86.0
+90.0
+88.0
+94.0
+83.0
+
+58
+60
+61
+60
+58
+60
+61
+61
+62
+59
+60
+60
+60
+65
+62
+
+33
+33
+34
+34
+33
+34
+34
+33
+34
+33
+32
+33
+33
+35
+35
+
+41.0
+40.0
+39.0
+41.0
+38.0
+41.0
+40.0
+39.0
+41.0
+38.5
+38.5
+40.0
+38.0
+41.0
+43.0
+
+59
+24
+0
+52
+163
+
+2
+10
+34
+16
+17
+38
+29
+49
+58
+11
+
+4
+0
+0
+1
+2
+7
+3
+2
+2
+17
+2
+1
+9
+3
+15
+
+148
+32
+0
+93
+70
+48
+116
+90
+61
+647
+51
+59
+570
+52
+546
+
+True
+False
+True
+True
+True
+True
+True
+True
+True
+True
+True
+False
+True
+False
+False
+
+True
+True
+True
+True
+False
+True
+True
+True
+True
+False
+False
+False
+False
+False
+False
+
+True
+False
+False
+True
+False
+True
+True
+True
+True
+True
+False
+False
+False
+False
+False
+
+Table 6: Performance of our predictive models trained on 2015 S / S data, and tested on 15 new fashion models who appeared
+in the 2015-16 F / W Fashion Week. Our best classiﬁer, Random Forest, correctly predicts 6 out of 8 positive instances (became
+popular), and 6 out of 7 negative ones (not becoming popular) yielding 80% accuracy and an AUROC score of 81.25%.
+
+(a) Fashion Model 1
+
+(b) Fashion Model 4
+
+(c) Fashion Model 6
+
+(d) Fashion Model 7
+
+(e) Fashion Model 8
+
+(f) Fashion Model 9
+
+Figure 5: FMD proﬁles of the six new faces whose success (having at least one runway during 2015-16 F / W Fashion Week) was
+correctly predicted by our framework. All images © FMD – The Fashion Model Directory.
+
+• All brands during the season are equally treated. Runways
+of higher reputation brands, such as Herm`es or Chanel,
+should be reﬂected with higher weights if compared to new
+and relatively unpopular brands. We plan to incorporate
+such prestige in future revisions of our statistical models,
+and observe what effects this yields.
+
+• Our measure of popularity only takes into account the num-
+ber of runways walked. This neglects several aspects of
+popularity within the fashion industry, such as appearance
+in magazines and social events. We plan to incorporate
+further dimensions of success in future work, to determine
+how these additional dimensions play along with the suc-
+cess measured by runways.
+
+• Our “real” prediction task is tested on a very small dataset
+containing only 15 fashion models appeared during the
+2015-16 F / W Fashion Week: although this limitation is
+
+due to the intrinsic scale of fashion events and to our data
+sources, more data in the future will be needed to deter-
+mine the general performance of our framework.
+
+• Our study is conﬁned to one single online platform, Insta-
+gram: its peculiar characteristics (e.g., the mobile-oriented
+nature) might affect the dynamics of content generation
+and perceived popularity, as opposed to other platforms
+with different usage purposes, like information sharing
+(Twitter [28]) or befriending activities (Facebook [9]).
+
+• Finally, our study is limited to analyze only female fash-
+ion, while male modeling is increasingly becoming more
+mainstream.
+It will be interesting to see, when data be-
+come available, whether our results apply to the male fash-
+ion modeling market as well.
+
+70
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+CONCLUSIONS
+The ingredients to career success oftentimes remain myste-
+rious. In the fashion industry, style is often credited as that
+ineffable quality all successful individuals have. The present
+contribution shows how a number of seemingly disconnected
+characteristics are actually tightly entangled: physical at-
+tributes are required for inclusion in the modeling profession,
+but do not sufﬁce. The professional contribution of trend-
+setting top agencies play an equally important role. And, as
+we ﬁrst show in this paper, in the new era of social networks,
+online presence helps succeed, as we see by the improvement
+in the predictive power of our forecasting models.
+
+We submit a few possible explanation to this observation:
+in a world with limited attention [8], information cascades
+and the wisdom of the collectives are precious indicators for
+casting agencies, promoters, marketeers, agents, recruiters,
+and the fashion industry in general. The response of the on-
+line audience plays an increasingly important role in the of-
+ﬂine fashion industry world: a rising star in the online world
+will hardly be ignored, and will probably be noticed by a top
+agency, facts that will enhance her likelihood to succeed. In
+other words, buzz on social media is a proxy for the buzz in
+the ofﬂine world, and this reduces uncertainty on the part of
+the industry.
+
+Yet, it remains interesting that, in the regression models, in-
+creased activity on social media had only a weak association
+with heightened success (though on average fashion models
+with an Instagram account tended also to have done more
+shows). Perhaps, even these small differences have more
+chances of getting ampliﬁed due to word of mouth and collec-
+tive attention, so that social media may be just facilitating the
+information cascades mentioned before. Lacking data on the
+word of mouth among industry professionals, in this work we
+did not investigate actual information cascades, but we be-
+lieve that further research is needed to better elucidate this
+point.
+
+We also note how fashion modeling exhibits a strong winner-
+takes-all component. In an industry that seems to be governed
+by such a survival of the ﬁttest mechanism, the difference be-
+tween performing a show in a premier venue or not becomes
+crucial: while the majority of new faces will not appear in
+any prestigious avenue, having even one single runway in one
+such venue may decree the success of a new model, bring-
+
+Feature
+
+Type
+
+Importance
+
+Height
+Dress
+Hips
+Waist
+Shoes
+Has Top Agency
+Instagram Posts
+Instagram Comments
+Instagram Likes
+
+Physical
+Physical
+Physical
+Physical
+Physical
+
+Professional
+
+Social
+Social
+Social
+
+0.16
+0.05
+0.09
+0.10
+0.09
+0.05
+0.16
+0.13
+0.18
+
+Table 7: Feature importance (Random Forest model) to pre-
+dict fashion models’ success.
+
+71
+
+ing her visibility above that of 76% of her competitors.4 Our
+analysis aimed at understanding the factors that play a role in
+obtaining such popularity, including physical attributes, the
+reputation of casting agencies, and the importance of social
+media presence and reactions.
+
+Regarding our exploratory analysis (cfr. Table 4), we ﬁnd that
+thinner and slender individuals are more likely to walk in run-
+ways. Compared to the general population, models are often
+singled out for their extremely skinny and tall looks. How-
+ever, it is interesting that even among themselves, these pref-
+erences — towards skinny and tall models — are still signiﬁ-
+cantly related to the number of runways they can join. Beauty
+is notoriously a hard-to-deﬁne quality and, in the case of the
+fashion industry, largely a by-product of a collective effort,
+rather than an inherent quality [32]. While beyond the scope
+of the present work, an intriguing question that follows up
+from it is whether Instagram and other social media are in-
+deed changing the traditional notions of beauty.
+
+Research on the fashion industry thus far has been largely
+qualitative, relying on methods such as interviews with small
+number of models and casting directors [33, 19]. To the best
+of our knowledge, this is ﬁrst time a large online fashion
+database has been explored in a quantitative way, together
+with data from online social activity. As the impact of so-
+cial media — especially Instagram — becomes signiﬁcant in
+the fashion industry, predictive methods have the potential to
+leverage collective attention and the wisdom of the broader
+user population, which reﬂect some of the popularity of fash-
+ion models, to predict their career success.
+
+Fashion modeling is one of the best examples of a cultural
+market, like music, art, and literature. In all these markets,
+determining quality of cultural products is hard because of
+inherent uncertainty, and thus market actors must rely on so-
+cial conventions and buzz as a proxy for success. In the case
+of fashion models, here we show that the buzz going on social
+media (Instagram in this case) is a reliable predictor of early
+career success. Our results are in line with previous work that
+shows that social signals have a prominent role in determin-
+ing success of cultural contents [40, 4], and so we can expect
+that similar approaches to cultural predictions will work in
+other markets too. Even scientiﬁc production and the stock
+market are, to some extent, ruled by prestige and buzz [34,
+15]. Thus we expect that the essence of our ﬁndings might
+inform cultural producers and scholars well beyond the fash-
+ion industry.
+
+In conclusion, computer-mediated collectives are increas-
+ingly disrupting the way culture is consumed and produced.
+Understanding how use of internet communication platforms
+affects cultural production is just an instance of the study of
+work in computer-mediated environments and an interesting
+challenge for future research.
+
+ACKNOWLEDGEMENTS
+The authors would like to thank Bria Carter, Chela Blunt,
+and Johnny Villamil for their help with data coding; Mau-
+reen Briggs, Alessandro Flammini, and Filippo Menczer for
+
+4Only 24% of fashion models ran at least one top walk in our dataset.
+
+useful feedback. GLC was supported in part by the Swiss Na-
+tional Science Foundation (fellowship no. 142353) and the
+NSF (grant CCF-1101743). EF acknowledges the support by
+DARPA grant W911NF-12-1-0034.
+
+REFERENCES
+
+1. Nazanin Andalibi, Pinar Ozturk, and Andrea Forte.
+2015. Depression-related Imagery on Instagram. In
+Proceedings of the 18th ACM Conference Companion
+on Computer Supported Cooperative Work & Social
+Computing. ACM, 231–234.
+
+2. Patrik Aspers and Fr´ed´eric Godart. 2013. Sociology of
+
+Fashion: Order and Change. Annual Review of
+Sociology 39, 1 (2013), 171–192.
+
+3. Sitaram Asur, Bernardo A Huberman, Gabor Szabo, and
+
+Chunyan Wang. 2011. Trends in Social Media:
+Persistence and Decay. In Fifth International AAAI
+Conference on Weblogs and Social Media.
+
+4. Sitaram Asur and Bernardo A Huberman. 2010.
+Predicting the future with social media. In Web
+Intelligence and Intelligent Agent Technology (WI-IAT),
+2010 IEEE/WIC/ACM International Conference on,
+Vol. 1. IEEE, 492–499.
+
+5. Sushil Bikhchandani, David Hirshleifer, and Ivo Welch.
+
+1992. A theory of fads, fashion, custom, and cultural
+change as informational cascades. Journal of political
+Economy (1992), 992–1026.
+
+6. Leo Breiman. 2001. Random forests. Machine learning
+
+45, 1 (2001), 5–32.
+
+7. Leah Cassidy and Kate Fitch. 2013. Beyond the catwalk:
+
+Fashion public relations and social media in Australia.
+Asia Paciﬁc Public Relations Journal 15, 1 (2013).
+
+8. Giovanni Luca Ciampaglia, Alessandro Flammini, and
+Filippo Menczer. 2015. The production of information
+in the attention economy. Scientiﬁc Reports 5 (2015),
+9452.
+
+9. Pasquale De Meo, Emilio Ferrara, Giacomo Fiumara,
+
+and Alessandro Provetti. 2014. On Facebook, most ties
+are weak. Commun. ACM 57, 11 (2014), 78–84.
+
+10. Marie-Laure Djelic and Antti Ainamo. 1999. The
+
+coevolution of new organizational forms in the fashion
+industry: a historical and comparative study of France,
+Italy, and the United States. Organization Science 10, 5
+(1999), 622–637.
+
+11. Emilio Ferrara, Roberto Interdonato, and Andrea
+
+Tagarelli. 2014. Online popularity and topical interests
+through the lens of instagram. In Proceedings of the 25th
+ACM conference on Hypertext and social media. ACM,
+24–34.
+
+12. Emilio Ferrara, Mohsen JafariAsbagh, Onur Varol,
+Vahed Qazvinian, Filippo Menczer, and Alessandro
+Flammini. 2013a. Clustering memes in social media. In
+2013 IEEE/ACM International Conference on Advances
+in Social Networks Analysis and Mining. IEEE,
+548–555.
+
+72
+
+SESSION: MODELING SOCIAL MEDIA
+
+13. Emilio Ferrara, Onur Varol, Filippo Menczer, and
+
+Alessandro Flammini. 2013b. Traveling trends: social
+butterﬂies or frequent ﬂiers?. In Proceedings of the ﬁrst
+ACM conference on Online social networks. ACM,
+213–222.
+
+14. T. S. Fox. 2014. How Instagram is Changing Fashion
+
+Week. (February 2014). http://hypebeast.com/2014/
+2/how-instagram-is-changing-fashion-week
+[Online; posted 14-February-2014].
+
+15. Georg Franck. 1999. Scientiﬁc Communication–A
+
+Vanity Fair? Science 286, 5437 (1999), 53–55.
+
+16. Yoav Freund and Robert E Schapire. 1995. A
+
+desicion-theoretic generalization of on-line learning and
+an application to boosting. In Computational learning
+theory. Springer, 23–37.
+
+17. Cheryl D Fryar, Qiuping Gu, and Cynthia L Ogden.
+
+2012. Anthropometric reference data for children and
+adults: United States, 2007-2010. Vital and health
+statistics. Series 11, Data from the national health
+survey 252 (2012), 1–48.
+
+18. Eric Gilbert, Saeideh Bakhshi, Shuo Chang, and Loren
+
+Terveen. 2013. ”I Need to Try This”?: A Statistical
+Overview of Pinterest. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’13). ACM, New York, NY, USA, 2427–2436.
+
+19. Fr´ed´eric C Godart and Ashley Mears. 2009. How do
+cultural producers make creative decisions? Lessons
+from the catwalk. Social Forces 88, 2 (2009), 671–692.
+
+20. Lisa Green, Olivier Zimmer, and Yarden Horwitz. 2015.
+
+Google Fashion Trends Report (U.S.). (2015).
+https://www.thinkwithgoogle.com/features/
+
+spring-2015-fashion-trends-google-data.html
+Accessed 2015-05-18.
+
+21. Thomas Hillman and Alexandra Weilenmann. 2015.
+
+Situated Social Media Use: A Methodological Approach
+to Locating Social Media Practices and Trajectories. In
+Proceedings of the 33rd Annual ACM Conference on
+Human Factors in Computing Systems (CHI ’15). ACM,
+New York, NY, USA, 4057–4060.
+
+22. CJ Hutto and Eric Gilbert. 2014. Vader: A parsimonious
+rule-based model for sentiment analysis of social media
+text. In Eighth International AAAI Conference on
+Weblogs and Social Media.
+
+23. Mohsen JafariAsbagh, Emilio Ferrara, Onur Varol,
+Filippo Menczer, and Alessandro Flammini. 2014.
+Clustering memes in social media streams. Social
+Network Analysis and Mining 4, 1 (2014), 1–13.
+
+24. Yuniya Kawamura. 2004. Fashion-ology: an
+
+introduction to fashion studies. Berg.
+
+25. Jan H. Kietzmann, Kristopher Hermkens, Ian P.
+
+McCarthy, and Bruno S. Silvestre. 2011. Social media?
+Get serious! Understanding the functional building
+blocks of social media. Business Horizons 54, 3 (2011),
+241–251.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+26. Angella J Kim and Eunju Ko. 2012. Do social media
+
+38. Fabian Pedregosa, Ga¨el Varoquaux, Alexandre
+
+marketing activities enhance customer equity? An
+empirical study of luxury fashion brand. Journal of
+Business Research 65, 10 (2012), 1480–1486.
+
+27. Peter Klemperer, Yuan Liang, Michelle Mazurek,
+
+Manya Sleeper, Blase Ur, Lujo Bauer, Lorrie Faith
+Cranor, Nitin Gupta, and Michael Reiter. 2012. Tag, you
+can see it!: using tags for access control in photo
+sharing. In Proceedings of the SIGCHI Conference on
+Human Factors in Computing Systems. ACM, 377–386.
+
+28. Haewoon Kwak, Changhyun Lee, Hosung Park, and Sue
+Moon. 2010. What is Twitter, a social network or a news
+media?. In Proceedings of the 19th international
+conference on World wide web. ACM, 591–600.
+
+29. Yusan Lin, Heng Xu, Yilu Zhou, and Wang-Chien Lee.
+
+2015. Styles in the Fashion Social Network: An
+Analysis on Lookbook.nu. In Social Computing,
+Behavioral-Cultural Modeling, and Prediction.
+Springer, 356–361.
+
+30. Yusan Lin, Yilu Zhou, and Heng Xu. 2014. The Hidden
+Inﬂuence Network in the Fashion Industry. In The 24th
+Annual Workshop on Information Technologies and
+Systems (WITS).
+
+31. Yusan Lin, Yilu Zhou, and Heng Xu. 2015.
+
+Text-Generated Fashion Inﬂuence Model: An Empirical
+Study on Style.com. In 48th Hawaii International
+Conference on System Sciences, HICSS 2015, Kauai,
+Hawaii, USA, January 5-8, 2015. 3642–3650.
+
+32. Ashley Mears. 2011. Pricing beauty: The making of a
+
+fashion model. Univ of California Press.
+
+33. Ashley Mears and William Finlay. 2005. Not Just a
+Paper Doll How Models Manage Bodily Capital and
+Why They Perform Emotional Labor. Journal of
+Contemporary Ethnography 34, 3 (2005), 317–343.
+
+34. Robert K Merton. 1988. The Matthew effect in science,
+
+II: Cumulative advantage and the symbolism of
+intellectual property. Isis (1988), 606–623.
+
+35. M´arton Mesty´an, Taha Yasseri, and J´anos Kert´esz. 2013.
+
+Early prediction of movie box ofﬁce success based on
+Wikipedia activity big data. PloS one 8, 8 (2013),
+e71226.
+
+36. Shuyo Nakatani. 2010. Language Detection Library for
+
+Java. (2010).
+http://code.google.com/p/language-detection/
+
+37. Oded Nov, Mor Naaman, and Chen Ye. 2008. What
+
+drives content tagging: the case of photos on Flickr. In
+Proceedings of the SIGCHI conference on Human
+factors in computing systems. ACM, 1097–1100.
+
+Gramfort, Vincent Michel, Bertrand Thirion, Olivier
+Grisel, Mathieu Blondel, Peter Prettenhofer, Ron Weiss,
+Vincent Dubourg, and others. 2011. Scikit-learn:
+Machine learning in Python. The Journal of Machine
+Learning Research 12 (2011), 2825–2830.
+
+39. Alexander Michael Petersen, Santo Fortunato, Raj K.
+
+Pan, Kimmo Kaski, Orion Penner, Armando Rungi,
+Massimo Riccaboni, H. Eugene Stanley, and Fabio
+Pammolli. 2014. Reputation and impact in academic
+careers. Proceedings of the National Academy of
+Sciences 111, 43 (2014), 15316–15321.
+
+40. Matthew J. Salganik, Peter Sheridan Dodds, and
+
+Duncan J. Watts. 2006. Experimental Study of
+Inequality and Unpredictability in an Artiﬁcial Cultural
+Market. Science 311, 5762 (2006), 854–856.
+
+41. Matthew Schneier. 2014. Fashion in the Age of
+
+Instagram. (April 2014).
+http://www.nytimes.com/2014/04/10/fashion/
+
+fashion-in-the-age-of-instagram.html?_r=0
+[Online; posted 9-April-2014].
+
+42. Arnout van de Rijt, Soong Moon Kang, Michael
+
+Restivo, and Akshay Patil. 2014. Field experiments of
+success-breeds-success dynamics. Proceedings of the
+National Academy of Sciences 111, 19 (2014),
+6934–6939.
+
+43. Yiran Wang, Melissa Niiya, Gloria Mark, Stephanie M.
+
+Reich, and Mark Warschauer. 2015. Coming of Age
+(Digitally): An Ecological View of Social Media Use
+Among College Students. In Proceedings of the 18th
+ACM Conference on Computer Supported Cooperative
+Work & Social Computing (CSCW ’15). ACM, New
+York, NY, USA, 571–582.
+
+44. Alexandra Weilenmann, Thomas Hillman, and Beata
+
+Jungselius. 2013. Instagram at the museum:
+communicating the museum experience through social
+photo sharing. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems.
+ACM, 1843–1852.
+
+45. Wikipedia. 2014. Fashion Model Directory. (2014).
+http://en.wikipedia.org/w/index.php?title=
+Fashion_Model_Directory&oldid=602195571 [Online;
+accessed 20-April-2015].
+
+46. Elizabeth Wissinger. 2009. Modeling Consumption:
+
+Fashion modeling work in contemporary society.
+Journal of consumer culture 9, 2 (2009), 273–296.
+
+47. Kate Zernike. 2004. Sizing Up America: Signs of
+
+Expansion From Head to Toe. (March 2004).
+http://goo.gl/E8I8Co [Online; posted
+1-March–2004].
+
+73
+
+

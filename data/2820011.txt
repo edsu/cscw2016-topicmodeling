@@ -1,0 +1,1219 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Learnersourcing Personalized Hints
+
+Elena L. Glassman, Aaron Lin, Carrie J. Cai, Robert C. Miller
+
+MIT CSAIL
+
+Cambridge, MA USA
+
+{elg,aaronlin,cjcai,rcm}@mit.edu
+
+ABSTRACT
+Personalized support for students is a gold standard in educa-
+tion, but it scales poorly with the number of students. Prior
+work on learnersourcing presented an approach for learners
+to engage in human computation tasks while trying to learn
+a new skill. Our key insight is that students, through their
+own experience struggling with a particular problem, can
+become experts on the particular optimizations they imple-
+ment or bugs they resolve. These students can then generate
+hints for fellow students based on their new expertise. We
+present workﬂows that harvest and organize students’ collec-
+tive knowledge and advice for helping fellow novices through
+design problems in engineering. Systems embodying each
+workﬂow were evaluated in the context of a college-level
+computer architecture class with an enrollment of more than
+two hundred students each semester. We show that, given
+our design choices, students can create helpful hints for their
+peers that augment or even replace teachers’ personalized as-
+sistance, when that assistance is not available.
+
+Author Keywords
+crowdsourcing; learning at scale
+
+ACM Classiﬁcation Keywords
+H.5.m. Information Interfaces and Presentation (e.g., HCI):
+Miscellaneous
+
+INTRODUCTION
+One-on-one human tutoring is a costly gold standard in edu-
+cation. As established in Bloom’s seminal work on tutoring,
+mastery-based instruction with corrective feedback can offer
+a substantial improvement in learning outcomes over conven-
+tional classroom teaching [1]. However, personalized support
+does not scale well with the number of students enrolled. In
+large classes, it is often not feasible for students to get per-
+sonalized hints from a teacher in a timely manner. Massive
+open online courses (MOOCs) can have even worse teacher-
+to-student ratios, by orders of magnitude. Intelligent tutoring
+systems have strived to simulate the type of personalized sup-
+port received in one-on-one tutoring, but they are expensive
+and time-consuming to build.
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full citation
+on the ﬁrst page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02 $15.00
+DOI: http://dx.doi.org/10.1145/2818048.2820011
+
+1626
+
+Figure 1. In the self-reﬂection workﬂow, students generate hints by re-
+ﬂecting on an obstacle they themselves have recently overcome. In the
+comparison workﬂow, students compare their own solutions to those of
+other students, generating a hint as a byproduct of explaining how one
+might get from one solution to the other.
+
+In this paper, we ask learners to generate personalized hints
+for each other. Prior work on learnersourcing demonstrates
+how learners can collectively generate educational content for
+future learners, such as video outlines and exam questions,
+while engaging in a meaningful learning experience them-
+selves [11, 24, 15]. The proposed beneﬁt of learnersourcing
+is that learners are not only more intrinsically motivated to
+engage with the learning content to begin with, but may also
+beneﬁt pedagogically from the task itself.
+Our work builds upon learnersourcing by exploring how it
+can be applied to the generation of personalized hints during
+more complex problem solving. Whereas prior work deter-
+mined which task to present to the learner depending on what
+information was still needed [24], many educational topics
+like digital circuit design require more domain expertise, rais-
+ing the question of which learners should be assigned to gen-
+erate which hints. Beyond learnersourcing subgoals for how-
+to videos, we tackle the core challenge of generating content
+that is tailored to both the hint-receiver’s current progress and
+the hint-author’s likely level of understanding.
+We present two workﬂows for learnersourcing hints that as-
+sign hint-generating tasks to learners based on what problems
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the learner has recently solved. In the self-reﬂection work-
+ﬂow, students generate hints by reﬂecting on an obstacle they
+themselves have recently overcome. In the comparison work-
+ﬂow, students compare their own solutions to those of other
+students, generating a hint as a byproduct of explaining how
+one might get from one solution to the other. The second
+workﬂow can operate on the output of the ﬁrst, as shown in
+Figure 1. In both workﬂows, the key insight is that, through
+their own experience struggling with a particular problem,
+learners can become experts on the particular optimizations
+they implement and bugs they resolve. The workﬂows can
+take pressure off teaching staff while giving students the valu-
+able educational experiences of reﬂection and generating ex-
+planations.
+While such workﬂows could have many applications, this pa-
+per presents a speciﬁc application within a college-level com-
+puter architecture class. In this course, students implement,
+debug, and optimize simulated processors by constructing
+digital circuits. During both the debugging and optimization
+process, hints are one mechanism for teachers to help stu-
+dents ﬁx and optimize their circuits. This paper applies our
+learnersourcing workﬂows to two kinds of hints: debugging
+hints and optimization hints. A debugging hint is a student’s
+attempt to help a future student change their solution so it
+generates the expected output for a particular input. An op-
+timization hint is a student’s attempt to help a future student
+get from one correct solution to another, more optimal solu-
+tion. When hint-receivers encounter that particular situation
+during their problem-solving process, the hints can be shown
+to them as if they are the personalized hints an intelligent tu-
+toring system might generate, or that a teacher might provide
+during a one-on-one interaction.
+This paper makes the following contributions:
+• A learnersourcing workﬂow in which students generate
+hints for each other by reﬂecting on an obstacle they them-
+selves have recently overcome.
+
+• A learnersourcing workﬂow in which students generate de-
+sign hints for each other by comparing their own solutions
+to alternative designs submitted by other students.
+
+• The results of deployment in a 200-student class, and an
+in-depth lab study with 9 participants. Results from these
+studies show that personalized hints can be viably learn-
+ersourced, and that these hints serve as helpful guides to
+fellow students encountering the same obstacle or attempt-
+ing to reach the same goal.
+
+RELATED WORK
+Our work builds on prior research on delivering personalized
+support to students. It is also informed by existing research
+on the pedagogical beneﬁts of reﬂection and explanation.
+
+Personalized Support
+Several types of solutions have been deployed to help stu-
+dents get the personalized attention they need. These solu-
+tions span the spectrum from recruiting more teaching assis-
+tants from the ranks of previous students [16] to automating
+hints using intelligent tutoring systems.
+
+1627
+
+Intelligent tutoring systems can provide personalized hints
+and other assistance to each student based on a pre-
+programmed student model. For example, previous systems
+sought to provide support through the use of adaptive scripts
+[13], or cues from the student’s problem-solving actions [6].
+Despite the advantage of automated support, intelligent tutor-
+ing systems often require domain experts to design and build
+them, making them expensive to develop. Furthermore, do-
+main experts who generate these hints may also suffer from
+the “curse of knowledge”: the difﬁculty experts have when
+trying to see something from a novice’s point of view [17].
+Unlike intelligent tutoring systems, the HelpMeOut system
+[8] does not require a pre-programmed student model. It as-
+sists programmers during their debugging by suggesting code
+modiﬁcations mined from debugging performed by previous
+programmers. However, the suggestions lack explanations in
+plain language unless they are added by experts (teachers), so
+the limits imposed by the time, expense, and curse of knowl-
+edge of experts still apply.
+Discussion forums derive their value from the content pro-
+duced by the teachers and students who use them. These
+systems can harness the beneﬁts of peer learning, where stu-
+dents can beneﬁt from generating and receiving help from
+each other. However, as the system has no student model,
+the information is available to all students whether or not it is
+ultimately relevant. Students can receive personalized atten-
+tion only if they post a question and receive a response.
+
+Reﬂection and Explanation
+In this work, we aim to design opportunities for students to
+help others while simultaneously reﬂecting on their own so-
+lutions. Existing theories indicate that reﬂection is a critical
+method for triggering the transformation from conﬂict and
+doubt into clarity and coherence [5]. Turning that reﬂection
+into a self-explanation further improves understanding [2].
+According to Turns et al. [20], the absence of reﬂection in
+traditional engineering education is a signiﬁcant shortcom-
+ing.
+Novices may become confused if asked to reﬂect on their
+solution or compare it to a fellow student’s solution; this
+is not necessarily bad for learning outcomes. Piaget theo-
+rized that cognitive disequilibrium, experienced as confusion,
+could trigger learning due to the creation or restructuring of
+knowledge schema [10]. D’Mello et al. maintain that con-
+fusion can be productive, as long as it is both appropriately
+injected and resolved [7].
+Similarly, reﬂecting on a peer’s conceptual development or
+alternative solution may bring about cognitive conﬂict that
+prompts reevaluation of the student’s own beliefs and under-
+standing [9]. As such, peer instruction [14] and peer assess-
+ment [19] have not only been integrated into many classroom
+activities, but have also formed the basis of several online
+systems for peer-learning. For example, Talkabout organizes
+students into discussion groups based on characteristics such
+as gender or geographic balance [12].
+Recent work on learnersourcing proposes that learners can
+collectively generate educational content for future learners
+
+while engaging in a meaningful learning experience them-
+selves [11, 24, 15]. For example, Crowdy enables people to
+annotate how-to videos while simultaneously learning from
+the video [24]. Beyond existing work, we investigate alter-
+natives for what support students should be prompted to pro-
+vide, based on their own work as well as the needs of their
+peers. We also explore several ways to trigger productive re-
+ﬂection as a byproduct of hint creation, by prompting students
+to either self-reﬂect or compare their own solutions to those
+produced by peers.
+
+SYSTEM DESIGN
+We faced a number of decisions when designing interventions
+to collect and deliver hints. Here we discuss these decisions,
+some alternatives, and the ﬁnal workﬂow designs.
+When should learners be asked to provide hints? As soon as
+a student has resolved a bug, they may have some expertise
+about that bug that they can share with other students. If too
+much time has passed between resolving the bug and writing
+a hint, the student may forget necessary details and context, or
+forget the bug altogether. A previous learnersourcing system
+also prompted students to contribute content immediately af-
+ter having experienced it themselves, for similar reasons [24].
+How should learners access hints? Hints can be distributed
+using either a push or pull model, and can involve display-
+ing either all or some of the hints. For example, a push
+model might display hints as a constantly updating resource,
+whereas a pull model could dispense hints to individual stu-
+dents just-in-time, when a student needs help. The hints could
+be algorithmically selected based on the student’s work so far
+and the hints they have already received. We explored both
+push and pull models, using the push-all model for distribut-
+ing debugging hints and the pull-some model for distributing
+optimization hints. Generating optimization hints was a re-
+quired reﬂection activity, so the volume and redundancy of
+these hints made a push-all model potentially overwhelming.
+What hints can we ask, or allow, a student to generate? In
+cases where the student’s start state (prior to overcoming an
+obstacle) and end state (after overcoming an obstacle) are
+known, such as when a student ﬁxes a bug, we ask the stu-
+dent to create a hint helping other students encountering a
+similar bug or start state. For example, in the case of circuit
+design, we consider a student who has recently ﬁxed a bug re-
+solving a particular veriﬁcation error to be capable of writing
+a debugging hint associated with that veriﬁcation error.
+In many cases, however, a student might not face any explicit
+obstacle, or their start state may not be known. For example,
+a student might naturally arrive at a highly optimal circuit
+design without having ﬁrst tried a less optimal design. Re-
+gardless of the path to their solution, the student could gener-
+ate hints by comparing their own solution to a more optimal
+solution, or to a less optimal solution. In this paper, we ex-
+plored both of these directions by asking each student to do
+both comparisons. To keep hint generation relevant to the
+learner’s current task and to minimize cognitive load, we did
+not ask students to generate hints between pairs of solutions
+when they were familiar with neither solution.
+
+1628
+
+SESSION: CROWD WORKFLOWS
+
+How should hints be indexed? Indexing hints by a meaning-
+ful feature of student solutions allows students to more easily
+ﬁnd relevant hints in a push model of hint distribution and al-
+lows the system to deliver more relevant hints to each student
+in a pull model of hint distribution. Optimization hints could
+be indexed by the learner’s start state, end state, or both with
+respect to performance. Debugging hints could be indexed by
+veriﬁcation errors.
+During debugging, students’ solutions are run through se-
+quences of teacher-designed test inputs. A veriﬁcation error
+occurs when a student’s solution does not return the expected
+values. Because test cases have a speciﬁcation of actual and
+expected outputs for each input, we decided to index debug-
+ging hints by the tests for which the solution deviates from
+the expected output. In other words, debugging hints are as-
+sociated with the veriﬁcation error that disappears if the bug
+is resolved.
+During optimization, the goal is not simply to attain a correct
+solution, but rather to arrive at a more optimal correct solu-
+tion. We decided to index optimization hints by both start and
+end states: the leap from a less optimal solution to a more
+optimal solution that the hint is intended to inspire. These
+states, the solutions themselves, are complex circuit objects;
+we use the number of transistors in a solution as a metric of
+its optimality. In this indexing scheme, all hints written with
+the intent of helping a student with a 114-transistor solution
+create a 96-transistor solution are binned together.
+Which hints should a student receive? In the push-all model
+of hint distribution, this question is not relevant, but in the
+pull-some model of hint distribution, it may be critical. Ide-
+ally, students would receive a progression of increasingly spe-
+ciﬁc hints, following patterns of adaptive scaffolding estab-
+lished in intelligent tutoring system literature [21], helping
+them reach a more correct or optimal solution on the spec-
+trum.
+This ideal still leaves room for design choices about exactly
+which hints to deliver in a pull model of distribution. For
+example, during the optimization stage of a student’s assign-
+ment, the system could always give the student hints that help
+them create the next optimal solution found by other students
+(see Figure 2). This would hopefully be an optimization chal-
+lenge that falls within the student’s zone of proximal develop-
+ment [23]. However, this may be too cautious. If a student’s
+solution is far less optimal than the most common solution,
+then the system could give the student hints to help them leap
+directly to that most common solution, without ﬁrst creating
+any intermediate solutions. This strategy ignores how large
+a leap outside their zone of proximal development this might
+be, but it ensures that the student is exposed to the ideas, pre-
+sented in those hints, that are necessary for implementing a
+solution at least as optimal as the most common one. We
+chose this latter option, both hinting students toward the most
+common solution and hinting students with the most common
+solution toward the most optimal solution.
+Should hint creation be a required task? As discussed in Re-
+lated Work, generating hints can be a valuable part of the
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 2. Sankey diagram of hints composed between types of correct
+solutions, binned by the number of transistors they contain. The optimal
+solution has only 21 gates and 96 transistors while the most common
+solution generated by students has 24 gates and 114 transistors.
+
+learning process. We required all students to generate opti-
+mization hints as part of a reﬂection activity immediately af-
+ter submitting their ﬁrst correct circuit. We did not require
+students to generate debugging hints. This is because the
+number of bugs encountered could be large, and unlike opti-
+mizations, many bugs also may not lead to signiﬁcant concep-
+tual gain upon reﬂection. Because debugging hints are imme-
+diately pushed out to all students, we keep both hint creation
+and upvotes voluntary to minimize the signal-to-noise ratio in
+hint quality.
+How should the variation in hint quality be handled? In the
+push model of hint distribution, we used users’ upvotes to
+sort hints by quality. In the pull model of hint distribution,
+we took advantage of the redundancy of the hints, and pre-
+sented ﬁve hints at once. If one or more redundant hints were
+of poor quality, their aggregate message might still be helpful
+for a student. If most of the hints were about a feature that
+is irrelevant to the student receiving the hints, the remaining
+hint(s) might be about something different and more relevant.
+We limited each set of hints to a size of ﬁve to avoid over-
+whelming the learner with too many hints.
+How public should the hint-author be? Many systems for
+question-answering have a reputation system, where the au-
+thor is known and recognized for contributing answers. Pre-
+vious work at CSCW has examined whether reputation would
+improve class forum participation [3]. For simplicity, we
+chose to leave student identities hidden.
+Final Workﬂows In the self-reﬂection workﬂow, students
+iteratively modify their solutions to pass as many teacher-
+created tests as possible. For any veriﬁcation error revealed
+by those tests, students can look up hints for what modiﬁca-
+tions might cause their solution to pass that test case instead.
+The hints are stored in a database indexed by the veriﬁcation
+errors they are intended to address. When students ﬁx a bug in
+their own solution, they can reﬂect on their ﬁx and contribute
+a hint to the database for others struggling with the same ver-
+
+1629
+
+iﬁcation error. The self-reﬂection step turns a successful bug
+ﬁx into a shareable hint. It is effectively a self-explanation ex-
+ercise, since the hint is not a conversation starter; it is meant
+to stand alone for any future student to consult. As studied in
+prior work [2], self-explanation helps students integrate new
+information into existing knowledge.
+In the comparison workﬂow, students compare their correct
+solution to alternative correct solutions previously submitted
+by other students or teachers. They are prompted to compare
+their solution to a solution W with worse performance and
+generate an optimization hint for students who have solutions
+like W. They are then prompted to compare their solution to a
+solution B with better performance and generate an optimiza-
+tion hint for students who have solutions like their own, which
+are not yet as performant as solutions like B. In each case,
+the student is generating an optimization hint to help students
+increase the performance of their solutions. Students who re-
+ceive these hints use them as guidance while optimizing their
+own solutions. Figure 1 illustrates both workﬂows.
+
+USER INTERFACES
+We designed two user interfaces, one for each workﬂow. To
+learnersource debugging hints with the self-reﬂection work-
+ﬂow, we built and deployed Dear Beta, a Meteor web appli-
+cation that serves as a central repository of debugging advice
+for and by students in the class. The name alludes to both the
+“Dear Abby” advice column and the Beta processor that stu-
+dents create in the class. To learnersource optimization hints
+with the comparison workﬂow, we built and deployed Dear
+Gamma, a web interface students were required to ﬁll out as
+a reﬂection activity after submitting their ﬁnal correct circuit
+for a class assignment.
+
+Dear Beta
+We applied the self-reﬂection workﬂow to processor debug-
+ging. Consider students working on their Beta processors
+within the digital circuit development environment provided
+by the computer architecture class. Students run a staff-
+designed test ﬁle x on their circuit. The development environ-
+ment alerts them to a veriﬁcation error: for a particular input
+(test number n), y was the expected output and the student’s
+circuit returned z.
+Students eliminate veriﬁcation errors by ﬁxing bugs in their
+circuits. They may use trial and error, methodically examine
+internal simulated voltages, or experience a ﬂash of insight.
+On the Dear Beta website, they can post a hint for others de-
+rived from their insight and indexed by the veriﬁcation error
+it caused. In the process of creating a hint, students have a
+chance to reﬂect on their own process of resolving the error.
+Other students encountering that veriﬁcation error can look
+up these hints, upvote helpful hints, and contribute new hints.
+Hints for each error are sorted by the number of upvotes they
+receive.
+After further examining their malfunctioning processor with
+no success, some students may open the Dear Beta website
+in order to get help (Figure 3). Dear Beta displays all errors
+and hints, sorted by test ﬁle name x, then test number n. The
+
+SESSION: CROWD WORKFLOWS
+
+students, many of whom used it diligently during debugging.
+T A2 appreciated that students who did ask for her help no
+longer said, “My Beta isn’t working. Tell me why.” Instead,
+they used Dear Beta as a starting point, to help them identify
+potential locations of a bug in many pages of code. Not just
+helpful for students, T A3 was able to describe with speciﬁc
+examples how Dear Beta helped him help students quickly
+resolve common bugs.
+T A2 wondered if the extra hints were making it too easy to
+complete the lab, possibly letting students pass without un-
+derstanding. T A3 echoed this concern, but he made sure each
+student actually understood the Dear Beta hints whenever he
+personally guided them through the debugging process.
+TAs identiﬁed both strengths and weakness in Dear Beta’s de-
+sign. T A1 strongly supported Dear Beta’s existing design as
+a single scannable sorted list for quickly ﬁnding hints, rather
+than a purely search-based hint retrieval mechanism or the
+more general class forum. However, the affordances for con-
+tributing new hints in the initial prototype were not obvious
+and rarely visible on small screens. As a result, T A2 was
+concerned that the level of student involvement in producing
+hints might be too low. The ﬁnal Dear Beta design is more
+externally consistent with other participatory Q&A systems,
+has more salient buttons for contributing new hints, and a re-
+sponsive design that accommodates screens as small as that
+of a cell phone.
+T A4 was absent during most of Dear Beta’s deployment but
+still regularly recommended Dear Beta to students who asked
+for her help over email. A ﬁfth TA declined to be interviewed;
+she felt that she had not interacted with Dear Beta enough.
+
+Dear Gamma
+In order to learnersource optimization hints, we caught stu-
+dents at a different stage in their learning process: right after
+they passed all veriﬁcation tests for a particular digital cir-
+cuit, the Full Adder. Because students may have arrived at
+their solution without encountering any particular optimiza-
+tion obstacles, Dear Gamma uses the comparison workﬂow
+for learnersourcing rather than the self-reﬂection workﬂow.
+The comparison workﬂow is modiﬁed slightly, to accommo-
+date the requirements of the course lecturer, who wanted to
+make sure that all students get a chance to consider both the
+most common and the most optimal solutions. The collection
+of previous student solutions in Figure 1 was also curated by
+the lecturer.
+If a student’s solution is larger than the most
+common solution, they are not shown solutions larger than
+their own; instead, they are asked to consider both the most
+common and the most optimal solutions, so they beneﬁt from
+seeing both without doing extra work overall. Students with
+the most optimal solution only consider alternative solutions
+that are worse than theirs. Figure 5 shows an example of the
+page for a student with a 114-transistor solution.
+In this activity, students are given a pair of solutions and asked
+to give a hint to future students about how to improve from
+the less optimal solution to the more optimal solution. Stu-
+dents write hints for two such pairs of solutions. In each pair,
+one of the solutions is always their own. When the student’s
+
+Figure 3. Dear Beta serves as a central repository of debugging advice
+for and by students, indexed by veriﬁcation errors. In this ﬁgure, there
+are three learnersourced hints, sorted by upvotes, for a veriﬁcation error
+on test no. 33 in the ‘lab5/beta’ checkoff ﬁle.
+
+Figure 4. After ﬁxing a bug, students can add a hint for others, ad-
+dressing what mistake prevented their own solution from passing this
+particular veriﬁcation test.
+
+student can either scroll to ﬁnd hints for their veriﬁcation er-
+ror or jump directly to them by entering x and n into the bar
+pinned to the top of the page. If the error was not yet in the
+Dear Beta system, the error will be added and scrolled into
+view.
+If there are no hints yet, or if the hints are unhelpful, the stu-
+dent can click the “Request” button to the left of the error,
+which increments a counter. This button helps communicate
+the need for hints for a particular veriﬁcation error to poten-
+tial hint writers. This is analogous to the “Want Answers”
+button and counter on Quora, a popular question-and-answer
+site.
+If the student resolves their veriﬁcation error and feels that
+the existing hints were insufﬁcient or incomplete, they can
+click in the text box labeled “Add a hint!” so that it expands
+into a larger textbox sufﬁcient for typing out a paragraph of
+their own hint text (Figure 4). Their new hint may be a clearer
+rephrase of an existing hint or hint at yet another way to re-
+solve the veriﬁcation error. Given the variety of processor
+designs and implementations, there may be several ways any
+given veriﬁcation error may be thrown.
+
+Teacher Feedback on Early Prototypes of Dear Beta
+After deploying initial prototypes of Dear Beta for two
+semesters, we invited Teaching Assistants to share their com-
+plaints, requests, and experiences with us. Four TAs were
+interviewed, in person or by email, and their feedback and
+experiences informed Dear Beta’s ﬁnal design.
+Both T A1 and T A3 adapted to Dear Beta’s deployment by
+ﬁrst asking each help-seeking student if they had already con-
+sulted Dear Beta. If they had not, T A1 came back to them af-
+ter visiting everyone else in the lab help queue. By then, they
+had often already resolved their problem with Dear Beta’s
+hints, and had a new bug they wanted help debugging.
+Dear Beta was used as a debugging aid for both students and
+teachers. T A2 described Dear Beta as a “starting point” for
+
+1630
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 5. This is the Dear Gamma interface for a student with a solu-
+tion containing 114 transistors. In the ﬁrst comparison, they are asked
+to write a hint for a future student with a larger (less optimal) correct
+solution. In the second comparison, they are asked to write a hint for
+a future student with a solution similar to their own so that they may
+reach the smallest (most optimal) correct solution.
+
+own solution is the better solution in the pair, then the student
+can hint at what the peer might have missed. For example,
+Remember DeMorgan’s Law: you could replace the ‘OR’ of
+‘ANDs’ with a ‘NAND’ of ‘NANDs.’ When the students’ own
+solution is the poorer solution in the pair, they are challenged
+to ﬁrst understand how the better solution uses fewer transis-
+tors, and then write a hint about the insight for a peer. To aid
+the student in comparing solutions, the Dear Gamma inter-
+face displays the student’s own solution as a reminder of their
+design, as well as an alternative picked from among other stu-
+dents’ solutions.
+Speciﬁcally, if a student’s solution S is just as or more optimal
+than the most common solution, they are asked to (1) write a
+hint to help a future student with a less optimal solution reach
+solution S and (2) write a hint to help a student with solu-
+tion S reach the most optimal solution. If a student’s solution
+S is less optimal than the most common solution, they are
+asked to write a hint to help a student with solution S reach
+(1) the most common solution and (2) the most optimal solu-
+tion. This scheme ensures that all students are familiar with
+the most common solution and the most optimal solution and
+have written two hints to help future students improve the op-
+timality of their solutions.
+
+EVALUATION
+To evaluate the extent to which learnersourced hints can
+support problem solving, we deployed Dear Beta and Dear
+
+1631
+
+Gamma to the computer architecture class, which had an en-
+rollment of more than two hundred students. Dear Beta was
+deployed for 6 weeks, during which we collected student-
+generated debugging hints and observed the simultaneous us-
+age of those hints in a real-world setting. Dear Gamma’s opti-
+mization hint collection interface was released to students as
+part of a particular lab. We then conducted a lab study with
+nine students to understand how they solve a typical engineer-
+ing problem using these learnersourced optimization hints.
+The questions our evaluation sought to answer are: (1) What
+are the characteristics of student-generated hints? and (2)
+Can learners solve problems using those hints?
+
+DEAR BETA
+The Dear Beta website was released as a stand-alone addi-
+tional resource for students one week prior to the due date for
+the ﬁnal circuit design lab. Students were made aware of its
+existence through a class forum announcement and signs on
+chalkboards in the course’s computer lab. It was left up for
+the remainder of the semester for students to refer to, if com-
+pleting work late. We tracked student logins and engagement
+with the site’s features. An initial prototype of Dear Beta was
+deployed for two consecutive semesters prior to this ﬁnal sys-
+tem design and study, as well.
+
+DEAR GAMMA
+Hint Succession and Categorization
+While Dear Beta makes all hints available at all times, Dear
+Gamma is modeled on the hint-giving mechanism of an intel-
+ligent tutoring system. In prior work, sequences of hints have
+been posited to facilitate learning due to their similarity with
+sequences used in expert human tutoring, as well as their sup-
+port of human memory processes [18]. Therefore, we further
+decomposed the hints collected with Dear Gamma into the
+three kinds of hints that typically comprise a hint sequence:
+1) pointing hints direct the student’s attention to the location
+of error in case the student understood the general principle
+but did not know to apply it; 2) teaching hints explain why a
+better solution exists by stating the relevant principle or con-
+cept; 3) bottom-out hints indicate concretely what the student
+should do [21].
+Two researchers independently categorized the 435 collected
+Dear Gamma hints into six different categories: pure point-
+ing hints (p), pointing and teaching hints (pt), pure teaching
+hints (t), teaching and bottom-out hints (tb), pure bottom-out
+hints (b), and hints that are irrelevant or clearly not helpful.
+They ﬁrst independently labeled the ﬁrst 30 hints. After dis-
+cussing disagreements and iterating on their understanding of
+the hint categories, the coders then categorized the remaining
+405 hints.
+If one coder labeled a hint as a hybrid between two categories
+(i.e., teaching and pointing) while the other coder labeled it
+with only one category (i.e., pointing), we assigned the hint to
+the pure category (i.e., pointing) that was in common between
+the two coders’ labels. If there was no shared category across
+the two coders, the hint was discarded. We also excluded
+the minority of hints (3.2%) that were labeled as irrelevant or
+unhelpful.
+
+Lab Study
+Nine out of the 226 current students in the computer architec-
+ture course participated in the study. These students were re-
+cruited through a course forum post. Participants were given
+$30 for the study, which lasted one hour. We informed stu-
+dents that we were studying the effectiveness of hints for op-
+timizing circuits so that they use fewer transistors.
+During the study, we presented the hints as anonymous, po-
+tentially helpful messages. Three batches of hints were shown
+in the order of pointing, teaching, and bottom-out, but ran-
+domly selected within each category. Students began by
+opening up their previously completed lab and reviewing their
+solution. The experimenter noted down the number of tran-
+sistors in their solution, and randomly selected ﬁve pointing-
+type hints for a solution of that size from the Dear Gamma
+collection. For example, if the student had 114 transistors in
+their solution, they received ﬁve hints previously generated
+by students who had written a hint to help improve a 114-
+transistor solution. Because hints may be of variable quality,
+the researcher presented hints in batches of ﬁve to increase
+the chances that one of them might be helpful.
+The experimenter then asked the student to reduce the num-
+ber of transistors in their solution. The experimenter ex-
+plained that there were two more batches of ﬁve hints ready
+for them if they became stuck. These two batches were teach-
+ing hints and bottom-out hints. Students could consult outside
+resources like the course website and Google as well.
+After receiving each batch of hints, participants answered the
+following 7-point Likert-scale questions about each hint (1:
+strongly disagree, 7: strongly agree): (1) “This hint taught
+me something.” (2) “This hint helped me get to a more opti-
+mal circuit.” and (3) “I feel more conﬁdent that I could solve
+a similar problem in the future.” We placed these questions
+immediately after each batch of hints to capture user percep-
+tion of hints at the time they occurred. However, to avoid
+slowing down the problem-solving process, participants were
+asked to explain their answers in writing only after the study,
+in the post-study questionnaire. This rating process was re-
+peated for the teaching hints and bottom-out hints, even if
+students were able to solve the problem without asking for
+these hints.
+After the study, users completed a post-study questionnaire
+regarding their overall impressions. Because users were
+shown a batch of hints at a time, all of which were student-
+generated, in the post-study questionnaire we added addi-
+tional Likert-scale items, “I was able to ﬁnd the most help-
+ful hints and ignore the rest” and “Many hints felt repetitive,”
+to understand whether users felt they could adequately ignore
+irrelevant hints.
+
+LIMITATIONS
+Because these studies do not have control groups, we cannot
+conclude on the magnitude of the effect on student learning.
+We can only report qualitative and quantitative measures of
+teachers’ and students’ engagement with the system. Some of
+those observed behaviors and opinions may be derived from
+the participants’ sense of novelty, rather than the underlying
+
+1632
+
+SESSION: CROWD WORKFLOWS
+
+Figure 6. Between Dear Beta’s release (4/2) and the lab’s due date (4/10),
+veriﬁcation errors were consistently being entered into the system. The
+addition of hints followed close behind.
+
+value of the system. We deployed Dear Beta in a real class-
+room setting, and in the context of a real assignment, for the
+purpose of observing natural interaction with the system.
+
+RESULTS
+
+Dear Beta Study
+For the week prior to the lab assignment due date, the num-
+ber of registered unique users in the Dear Beta system rose
+linearly from 20 to 166. It plateaued at 180 by one week after
+the lab was due. For comparison, the total number of students
+in the class was 226. 119 students logged in more than once
+and many students logged in repeatedly.
+In the 9 days between Dear Beta’s release and the lab’s due
+date, users added 76 veriﬁcation errors and 57 hints as a re-
+sponse to those errors. Half of the errors received at least one
+hint. Seven errors received as many as three hints. Figure 6
+shows users’ engagement with the system over time. As soon
+as the initial stock of hints were available, students began up-
+voting them.
+Users contributed 61 upvotes and 10 downvotes on the hints
+during the same period. The highest number of upvotes (10)
+was given to the hint “When entering constants, 1#4 is 1111
+and 1’4 is the 4-bit representation of 1.” Remember that,
+while this is a teaching-type hint, it is provided as a targeted
+troubleshooting hint for students whose solution fails to pass
+a speciﬁc test case. The second most upvoted hint (5 upvotes)
+was “Make sure your ASEL logic is correct - don’t allow the
+supervisor bit to be illegally set.”
+None of the hints appear to be incorrect, though this is difﬁ-
+cult to verify, since the teachers do not have copies of the so-
+lutions from which these hints were generated. Even within a
+collection of hints for the same error, not all will be relevant
+to any particular solution.
+
+Dear Gamma Study
+With the Dear Gamma hints, six of the nine laboratory sub-
+jects were able to improve the optimality of their circuits
+within the hour that the study took place. Figure 7 illustrates
+the subjects’ revisions. One student only needed one set of
+pointing hints. Five students successfully revised their cir-
+cuits after one set of pointing and one set of teaching hints.
+Four students received a set of ﬁnal bottom-out hints as well.
+Three of those four students (S 2, S 5, and S 9) were still unable
+to successfully revise their circuits.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Hint Distribution Figure 2 is a Sankey diagram of the op-
+timization hints collected by Dear Gamma. The number of
+hints between certain key transitions, such as between the
+most common and the most optimal solutions, was far greater
+because of the lecturer’s requests for pedagogically valuable
+hint prompts that introduced hint-writers to the common and
+optimal solutions.
+The most common solution size was 114 transistors. Stu-
+dents with that common solution were randomly assigned to
+generate hints from one of the many different larger solutions
+down to theirs. These hints are pooled together with the hints
+written by students with solutions larger than 114 transistors
+who are seeing the common 114-transistor solution for the
+ﬁrst time. Less than ﬁve percent of students’ solutions were
+the most optimal (96 transistors), but, at the request of the
+lecturer, every student was asked to consider that most opti-
+mal solution and write a hint for a fellow student on how to
+optimize their solution into that most optimal solution.
+Students in the study were drawn from the same population as
+the hint-generating students, and all study subjects were of-
+fered the same number of hints (5 pointing hints, followed
+by 5 teaching hints, followed by 5 bottom-out hints) over
+the course of the hour-long session, regardless of the solution
+they started with.
+Hint Types Table 1 shows the breakdown of hints by type,
+along with representative examples. The Cohen’s κ [4] inter-
+rater reliability was 0.54, which indicated that the two coders
+had moderate agreement across the six hint categories [22].
+Hint Prompt Hint-authors interpreted the prompt to create
+a hint in different ways. Some addressed the hint-receiver
+directly (“Keep in mind that...”), while others addressed the
+teaching staff (“I would mention [to the student]...”). Some
+hint-authors did not directly write a hint, but instead wrote
+about how they would approach the situation of being a lab
+assistant for the hint-receiver: “I think ﬁrst I’d ask to make
+sure they knew what a NAND3 was, because I think a solu-
+tion like this might come from not totally understanding how it
+works.” Still others took a conversational approach, as if they
+were having an unfolding conversation with the hint-receiver.
+Interestingly, a number of hint-authors referred to “here” or
+“my circuit” in their hints, as if the hint-receiver would be
+looking at the Dear Gamma interface, with all its examples,
+rather than just the text generated by the hint-author. This
+particular assumption on the part of the hint-author was con-
+fusing for hint-receivers.
+Optimization Issues S 5 was the only student who had a stan-
+dard, optimizable solution, received hints, and had no insights
+about how to optimize the circuit within the allotted hour.
+S 1, S 2, and S 9’s forward progress was confounded by hav-
+ing near-optimal top-level architecture and very large (sub-
+optimal) implementations of the underlying modules. Dear
+Gamma only shows hint-authors the top-level architecture,
+not the underlying gate implementations, for the alternative
+solutions they compare their own solutions to. They there-
+fore found the hints, which were often about ﬁxing high-level
+architecture, irrelevant and unhelpful. Even so, S 1 was still
+
+1633
+
+Figure 7. Six of the nine lab study subjects were able to improve the
+optimality of their circuits with the help of the Dear Gamma hints. Sub-
+ject S7 was able to make two leaps–one to a common solution with 114
+transistors and another from the common solution to the most optimal
+solution at 96 transistors.
+
+able to revisit the hints and correctly extract the lesson that
+only inverting gates should be used. As a result, S 1 success-
+fully optimized their circuit.
+While working through their optimizations and hints, S 6 was
+the one student who signiﬁcantly deviated from the correct
+line of thought by removing all inverting gates.1 As soon as
+S 6 saw that their transistor count had increased rather than
+decreased, they revisited the hints, realized their mistake, and
+correctly optimized their circuit. None of the hints them-
+selves were incorrect, though some were deemed irrelevant
+or unhelpful.
+Hint Progression One student successfully optimized their
+solution from 150 transistors to the most common solution,
+114 transistors, using only pointing and teaching hints. With
+some time left in the hour-long session, the student opted to
+optimize their circuit further. The experimenter gave the stu-
+dent one last set of hints, for the transition from 114 to the op-
+timal 96-transistor solution. However, the experimenter did
+not restart the progression for this next transition; the student
+was given a set of bottom-out hints. Based on these hints, the
+student got the ﬁnal optimization step without understanding,
+and appeared to feel cheated from the satisfaction of ﬁguring
+it out himself.
+Student Reactions The six subjects without suboptimal gates
+agreed with the statement “Overall, these hints helped me get
+to a more optimal circuit” (µ=6, σ=1.1 on a 7-point Likert
+scale). The remaining three subjects with suboptimal gates
+disagreed with the same statement (µ=2.6, σ=2.1 on a 7-point
+Likert scale). Regardless of whether a subject’s solution in-
+cluded suboptimal gates, subjects on average agreed with the
+statement “Hints helped me think differently about the prob-
+lem, even if they didn’t directly help me solve the problem”
+(µ=5.4, σ=1.6).
+Some subjects commented on the redundancy within each set
+of ﬁve hints of a particular type. This was sometimes ex-
+pressed as a negative, as in “These are all hinting at the same
+thing but I want new information,” and sometimes expressed
+as a positive, as in “Several hints are mentioning X.... I should
+look into it.” One student told the experimenter that, while
+the individual hints were hard to understand, together they
+formed a clearer picture in her mind about what to do.
+
+1Optimal solutions have only inverting gates.
+
+SESSION: CROWD WORKFLOWS
+
+Hint type
+Pointing (p)
+Pointing and teaching (pt)
+
+Count
+62
+81
+
+(%) Representative examples
+14% “You don’t have to keep S and Cout as two separate/independent CMOS gates.”
+19% “Instead of making the S and Cout components individual,
+
+combine them together to save computation power.”
+
+26% “Instead of recalculating values, save computation results to save time!”
+4% “Via application of demorgan’s theorem,
+
+NAND2 (XOR A B) Cin is equivalent to NAND3(NAND2 A B) Cin.”
+
+111
+19
+
+Teaching (t)
+Teaching and
+bottom-out (tb)
+Bottom-out (b)
+Unhelpful/irrelevant
+No coder agreement
+Table 1. Breakdown of Dear Gamma hints by type. Students in the Dear Gamma lab study initially received 5 pointing hints (p), followed by 5 pure
+teaching hints (t), and ﬁnally 5 pure bottom-out hints (b), delivered whenever the student was stuck and asked for more help.
+
+18% “Use the output of a xor b for one of the nand2 gates.”
+3% “Use the hints provided by the lab, but try to improve on them.”
+16%
+
+78
+14
+70
+
+DISCUSSION
+In this section, we ﬁrst address the research questions the
+evaluation was intended to answer. We then explain that, of
+the design decisions made during the design of Dear Beta and
+Dear Gamma, the critical factors for success included prompt
+clarity, the index chosen for hints, how alternative solutions
+are represented, and the use of hint progressions.
+
+Answers to Research Questions
+Our study sought to evaluate the characteristics of student-
+generated hints. We can see from Table 1 that students, with-
+out coaching, can naturally produce hints that point, teach,
+give a bottom-out direction, or provide some combination of
+those elements. However, the number of pointing hints la-
+beled by both coders as purely pointing-type (22) was much
+smaller than the number of such hints in the teaching (75)
+and bottom-out (64) categories. Because students were not
+informed that their hint would be slotted into a progression, it
+is possible they may have felt that if they were going to give
+a future student one hint, it would need to be more substan-
+tial than just pointing to a particular location in the solution
+and hoping the hint-receiver would see the possibility of op-
+timization.
+Secondly, the studies sought to evaluate whether learners can
+solve problems using these hints. Both studies suggest that
+these student-written hints are helpful. The aggregate activity
+of students and teachers on Dear Beta indicate that the re-
+source was populated with helpful hints. The Dear Gamma
+lab study was set up based on the observed sub-optimality
+of students’ circuits at the level of choosing and arranging
+gates. Students whose solutions were suboptimal in that an-
+ticipated way rated the hints as helpful. Students whose solu-
+tions were suboptimal in unanticipated ways, i.e., at the level
+of the gates themselves, were not well-served by the hints.
+Future optimization hint workﬂows will need both (1) an op-
+timality metric that accounts for multiple common types of
+suboptimality and (2) a representation of solutions with an
+appropriate level of detail about the difference between any
+two solutions. Regardless, the Dear Gamma study suggests
+that students are helped by the hints when the optimality met-
+ric and representation are appropriate.
+
+Lessons for Self-Reﬂection and Comparison Workﬂows
+Prompt clarity appears to be critical for soliciting the high-
+est possible quality of hints from students. In Dear Gamma,
+
+hint collection and delivery were separate processes. Some
+students misunderstood the prompt and wrote hints as if their
+audience was still the teacher, not a fellow student. Others did
+not understand that the hint-receiver would only see the text
+of their hint, not the diagrams it was based on. In Dear Beta,
+hint collection and delivery were all mediated through the
+same, constantly updated interface. The appropriate audience
+for a hint was clear. Future instantiations of the self-reﬂection
+and comparison workﬂows should clarify who the audience is
+for hint-authors, perhaps by displaying what learners will see.
+The selection of an index for hints in the self-reﬂection work-
+ﬂow matters. In Dear Beta, the choice of test ﬁle name and
+test number as an index for hints worked well for a class of
+hundreds of students.
+In a MOOC-sized course, the index
+may need to include an indicator that speciﬁes how the test
+failed as well. Indices in future systems should have sufﬁcient
+information to group related hints into clusters of a manage-
+able size.
+The success of the comparison workﬂow depends not only on
+the index for solutions, but also on how these solutions are
+represented in the workﬂow’s prompt for hints. In the com-
+parison workﬂow, we found that transistor counts sometimes
+did not account for lower-level reasons for a suboptimal cir-
+cuit, resulting in hints that were unhelpful for solutions with
+lower-level suboptimality. Students will not generate hints
+that account for what has been abstracted away in the rep-
+resentation of solutions in the hint prompt. Likewise, if the
+deﬁnition of optimality used to index solutions does not ac-
+count for a certain kind of suboptimality, the hints generated
+will be unlikely to help future students with that kind of sub-
+optimality.
+Lastly, when students request hints as they did in the Dear
+Gamma lab study, conforming to the intelligent tutoring sys-
+tem model of providing progressively speciﬁc hints is rec-
+ommended. To automatically create hint progressions in the
+future, we could apply machine learning methods to estimate
+a given hint’s type. Alternatively, we could learnersource hint
+classiﬁcation.
+
+Generalization
+Although we applied these workﬂows to computer architec-
+ture problems, the self-reﬂection and comparison workﬂows
+could be extended to other domains. The workﬂows can be
+most readily applied to solutions that can be objectively tested
+
+1634
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+for satisfying a set of requirements, e.g., passing unit tests, or
+whose optimality can be objectively measured. In domains
+without objective test cases or deﬁnitions for optimality, it
+may be more difﬁcult to establish indices for clustering hints.
+In these cases, students could be asked to write what chal-
+lenge they overcame or select from a growing list, enabling
+others to search for those terms. The comparison workﬂow
+could be modiﬁed to simply pair students with solutions dif-
+ferent than their own, letting them judge for themselves which
+they think is better, the alternative solution or their own, and
+write hints based on that judgment.
+
+CONCLUSIONS AND FUTURE WORK
+This paper enriches learnersourcing by shaping the design
+space for learnersourcing personalized hints, and presenting
+two workﬂows that engage learners in hint creation while re-
+ﬂecting on their own work as well as that of peers. We built
+Dear Beta and Dear Gamma, which apply these workﬂows
+to the creation of debugging and optimization hints, match-
+ing students to the appropriate hint creation task given their
+current progress. Results from our deployment study and sub-
+sequent lab study demonstrate the feasibility of these work-
+ﬂows, and indicate that learner-generated hints are helpful to
+learners. They also shed light on critical factors that may
+impact the quality of learnersourced hints, laying the ground-
+work for future systems in this area.
+In the next academic year, we plan to expand our deploy-
+ment of Dear Beta to two new classes: a MOOC version
+of the computer architecture class in this paper and a res-
+idential college-level software engineering course taken by
+several hundred students each term. Solutions in the soft-
+ware engineering course are written in Java and tested against
+teacher-designed test suites. Each error could be speciﬁed by
+the problem set number, test name, and line number. The im-
+plementation of Dear Beta has been written generally so that
+it can simultaneously support both classes, each with their
+own schema for describing an error.
+Future work for Dear Gamma will be focused on improving
+the metric for optimality. We will also explore what Dear
+Gamma in the context of the software engineering course
+could look like, e.g., prompting students to write hints about
+the style and correctness of code written by other students.
+We plan to continue deploying iterations of these workﬂows
+in classes for students’ immediate beneﬁt, and to demonstrate
+that it can enrich the learning experience across multiple en-
+gineering domains.
+
+ACKNOWLEDGEMENTS
+We would like to thank the past and present staff of Computa-
+tion Structures (6.004), MIT’s undergraduate course on com-
+puter architecture, for their feedback and support. We also ap-
+preciate the ﬁnancial support from MIT’s Amar Bose Teach-
+ing Fellowship and Quanta Computer through the Qmulus
+Project.
+
+REFERENCES
+1. Benjamin S. Bloom. 1984. The 2 sigma problem: The
+search for methods of group instruction as effective as
+
+one-to-one tutoring. Educational Researcher (1984),
+4–16.
+
+2. Michelene T. H. Chi, Nicholas De Leeuw, Mei-Hung
+
+Chiu, and Christian Lavancher. 1994. Eliciting
+Self-Explanations Improves Understanding. Cognitive
+Science 18, 3 (1994), 439–477.
+
+3. Derrick Coetzee, Armando Fox, Marti A. Hearst, and
+
+Bj¨orn Hartmann. 2014. Should Your MOOC Forum Use
+a Reputation System?. In Proc. of the 17th ACM
+Conference on Computer Supported Cooperative Work
+and Social Computing (CSCW ’14). ACM, New York,
+NY, USA, 1176–1187.
+
+4. Jacob Cohen. 1960. A coefﬁcient of agreement for
+
+nominal scales. Educational and Psychological
+Measurement 20, 1 (1960), 37–46.
+
+5. John Dewey. 1933. How we think: A restatement of the
+relation of reﬂective thinking to the educational process.
+D.C. Heath and Company.
+
+6. Dejana Diziol, Erin Walker, Nikol Rummel, and
+
+Kenneth R. Koedinger. 2010. Using intelligent tutor
+technology to implement adaptive support for student
+collaboration. Educational Psychology Review 22, 1
+(2010), 89–102.
+
+7. Sidney D’Mello, Blair Lehman, Reinhard Pekrun, and
+
+Art Graesser. 2014. Confusion can be beneﬁcial for
+learning. Learning and Instruction 29 (2014), 153–170.
+8. Bj¨orn Hartmann, Daniel MacDougall, Joel Brandt, and
+
+Scott R. Klemmer. 2010. What would other
+programmers do: suggesting solutions to error
+messages. In Proc. of the SIGCHI Conference on Human
+Factors in Computing Systems. ACM, 1019–1028.
+
+9. Lydia Kavanagh and Liza O’Moore. 2008. Reﬂecting on
+Reﬂection - 10 Years, Engineering, and UQ. In Proc. of
+the Conf. of the Australasian Assoc. for Engineering
+Education: To Industry and Beyond. Institution of
+Engineers, Australia.
+
+10. Jackie Kibler. 2011. Cognitive Disequilibrium. In
+
+Encyclopedia of Child Behavior and Development, Sam
+Goldstein and Jack A. Naglieri (Eds.). Springer US, p.
+380.
+
+11. Juho Kim, Robert C. Miller, and Krzysztof Z. Gajos.
+
+2013. Learnersourcing subgoal labeling to support
+learning from how-to videos. In CHI’13 Extended
+Abstracts on Human Factors in Computing Systems.
+ACM, 685–690.
+
+12. Chinmay Kulkarni, Julia Cambre, Yasmine Kotturi,
+Michael S. Bernstein, and Scott R. Klemmer. 2015.
+Talkabout: Making Distance Matter with Small Groups
+in Massive Classes. In Proc. of the 18th ACM
+Conference on Computer Supported Cooperative Work
+and Social Computing (CSCW ’15). ACM, New York,
+NY, USA, 1116–1128.
+
+1635
+
+SESSION: CROWD WORKFLOWS
+
+13. Rohit Kumar, Carolyn Penstein Ros´e, Yi-Chia Wang,
+
+Mahesh Joshi, and Allen Robinson. 2007. Tutorial
+dialogue as adaptive collaborative learning support.
+Frontiers in Artiﬁcial Intelligence and Applications 158
+(2007), p. 383.
+
+14. Eric Mazur. 1997. Peer Instruction: A User’s Manual.
+
+Prentice Hall.
+
+15. Piotr Mitros. 2015. Learnersourcing of Complex
+Assessments. In Proc. of the Second (2015) ACM
+Conference on Learning @ Scale (L@S ’15). ACM,
+New York, NY, USA, 317–320.
+
+16. Kathryn Papadopoulos, Lalida Sritanyaratana, and
+
+Scott R. Klemmer. 2014. Community TAs Scale
+High-touch Learning, Provide Student-staff Brokering,
+and Build Esprit de Corps. In Proc. of the First ACM
+Conference on Learning @ Scale (L@S ’14). ACM,
+New York, NY, USA, 163–164.
+
+19. Keith Topping. 1998. Peer assessment between students
+
+in colleges and universities. Review of Educational
+Research 68, 3 (1998), 249–276.
+
+20. Jennifer Turns, Brook Sattler, Ken Yasuhara, Jim
+
+Borgford-Parnell, and Cynthia J. Atman. 2014.
+Integrating Reﬂection into Engineering Education.. In
+Proc. of the ASEE Annual Conference and Exposition.
+ACM.
+
+21. Kurt Vanlehn, Collin Lynch, Kay Schulze, Joel A.
+
+Shapiro, Robert Shelby, Linwood Taylor, Don Treacy,
+Anders Weinstein, and Mary Wintersgill. 2005. The
+Andes physics tutoring system: Lessons learned.
+International Journal of Artiﬁcial Intelligence in
+Education 15, 3 (2005), 147–204.
+
+22. Anthony J. Viera and Joanne M. Garrett. 2005.
+
+Understanding interobserver agreement: the kappa
+statistic. Fam Med 37, 5 (2005), 360–363.
+
+17. Neil J. Salkind. 2008. Encyclopedia of Educational
+
+Psychology. Number v. 1. SAGE Publications, Thousand
+Oaks, CA, USA. 327–328 pages.
+
+23. Lev Vygotsky. 1987. Zone of proximal development.
+
+Mind in society: The development of higher
+psychological processes 5291 (1987).
+
+18. Robert A Sottilare, Arthur Graesser, Xiangen Hu, and
+
+Benjamin Goldberg. 2014. Design Recommendations for
+Intelligent Tutoring Systems: Volume 2-Instructional
+Management. Vol. 2. US Army Research Laboratory.
+
+24. Sarah Weir, Juho Kim, Krzysztof Z. Gajos, and
+
+Robert C. Miller. 2015. Learnersourcing Subgoal Labels
+for How-to Videos. In Proc. of the 18th ACM
+Conference on Computer Supported Cooperative Work
+and Social Computing (CSCW ’15). ACM, New York,
+NY, USA, 405–416.
+
+1636
+
+

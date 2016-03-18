@@ -1,0 +1,1616 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Persistent Sharing of Fitness App Status on Twitter ∗
+
+Kunwoo Park
+
+KAIST
+
+South Korea
+
+kw.park@kaist.ac.kr
+
+Meeyoung Cha
+
+KAIST
+
+South Korea
+
+meeyoungcha@kaist.ac.kr
+
+Ingmar Weber
+
+QCRI
+Qatar
+
+iweber@qf.org.qa
+
+Chul Lee
+
+MyFitnessPal
+United States
+
+clee@myﬁtnesspal.com
+
+ABSTRACT
+As the world becomes more digitized and interconnected, in-
+formation that was once considered to be private such as one’s
+health status is now being shared publicly. To understand this
+new phenomenon better, it is crucial to study what types of
+health information are being shared on social media and why,
+as well as by whom. In this paper, we study the traits of users
+who share their personal health and ﬁtness related informa-
+tion on social media by analyzing ﬁtness status updates that
+MyFitnessPal users have shared via Twitter. We investigate
+how certain features like user proﬁle, ﬁtness activity, and ﬁt-
+ness network in social media can potentially impact the long-
+term engagement of ﬁtness app users. We also discuss impli-
+cations of our ﬁndings to achieve a better retention of these
+users and to promote more sharing of their status updates.
+
+Author Keywords
+Fitness engagement; social sharing;
+
+ACM Classiﬁcation Keywords
+H.5.3. Information Interfaces and Presentation: Group and
+Organization Interfaces; J.3. Life and Medial Sciences:
+Health
+
+INTRODUCTION
+Nowadays, one’s health status can be easily collected and
+shared on social media with the prevalence of mobile and
+wearable devices along with the improvement of their track-
+ing technology [10]. Popular health and ﬁtness apps such as
+Endomondo1 and Fitbit2 can now help people keep tracking
+∗The majority of the work was done while the ﬁrst author was at
+Qatar Computing Research Institute
+1http://www.endomondo.com
+2http://www.ﬁtbit.com
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full cita-
+tion on the ﬁrst page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or re-
+publish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW’16, February 27-March 02, 2016, San Francisco, CA, USA
+c(cid:13)2016 ACM. ISBN 978-1-4503-3592-8/16/02$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819921
+
+184
+
+of what they eat, when they exercise, and how well they sleep.
+These new technologies have facilitated trends like the Quan-
+tiﬁed Self movement, which refers to a group of people who
+diligently record and monitor different aspects of their daily
+life [1].
+Fitness apps provide a wide range of different functionali-
+ties such as notiﬁcation, badging, competition, and commu-
+nity support to achieve a better user retention and engage-
+ment of their users [22]. One such functionality that has been
+widely adopted is so-called social sharing, which lets ﬁtness
+app users share and broadcast their ﬁtness activity through
+their social networks. Social sharing is believed to be an ef-
+fective way of boosting overall user engagement especially
+when users can get a valuable feedback on their ﬁtness ac-
+tivity by sharing their own personal health and ﬁtness status
+updates through Social Awareness Streams (SAS) on popular
+platforms like Twitter or Facebook.
+While previous studies have examined why users would share
+personal health status updates via Twitter or Facebook and
+how such sharing may incur both positive and negative ef-
+fects, not much is known about who would continue to be
+engaged with such social sharing activity for the long-run.
+We believe that it is important to understand characteristics
+of such long-run (or persistent) social sharing since it might
+actually prolong the engagement of ﬁtness app users with
+physical activity. Therefore, the main question that we in-
+tend to ask in this paper is what are characteristics of users
+who share health and ﬁtness-related activity on social me-
+dia outlets over an extended period of time? Investigating
+which features are correlated with a persistent sharing of per-
+sonal health and ﬁtness status updates on SAS can provide
+a valuable insight for ﬁtness app designers to come up with
+some features that can help achieve the better retention of
+their users.
+This paper presents an analysis carried out over an exten-
+sive amount of Twitter data generated from one of the most
+popular ﬁtness apps, MyFitnessPal (MFP for short). MFP
+users can easily opt-in to automatically share their health and
+ﬁtness status updates via Twitter (whom we simply call as
+social opt-in users) as illustrated in Figure 1. These auto-
+generated stream of posts comprises various types of mes-
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+sages like exercise logs, weight loss updates, and diary up-
+dates. We analyze 4.7 million tweets posted by 3,169 MFP
+users to study which factors are important for the long-term
+sharing of their ﬁtness status updates.
+
+Figure 1. Illustration of Social Sharing on Twitter.
+
+Our analysis also provides a valuable opportunity to examine
+how a wide range of information like Twitter proﬁle infor-
+mation (e.g., followers, following, bio, etc), ﬁtness activity
+information (e.g., exercise or weight loss records), or ﬁtness
+network information (e.g., favorites on ﬁtness related tweets,
+friends network based on ﬁtness interests, etc) can actually
+affect the persistent engagement of ﬁtness app users. This
+research further investigates whether certain features can ac-
+tually predict their long-term engagement.
+Our ﬁndings can be summarized as follows:
+1. Persistent users tend to use Twitter in a more health-
+
+oriented way.
+
+2. Persistent users and short-lived users differ in the types of
+messages that they share via Twitter. More precisely, shar-
+ing of physical activity via Twitter is positively correlated
+with their long-term engagement.
+
+3. Persistent users and short-lived users differ in the types of
+networks they form in social media. More precisely, own-
+ing a network of friends who are interested in ﬁtness related
+topics is positively correlated with their long-term engage-
+ment.
+
+4. Popularity on Twitter (or frequently receiving favorites on
+one’s tweets) is negatively correlated with the long-term
+engagement of ﬁtness app users.
+
+We believe that our ﬁndings are important to better under-
+stand the interplay between ﬁtness apps and social media. We
+discuss possible implications of these ﬁndings as well as their
+limitations for the rest of the paper.
+
+RELATED WORK
+We review previous research related to health and ﬁtness with
+a special emphasis on the sharing of health status updates in
+Social Awareness Streams (SAS).
+
+Technological Advances in Health and Fitness
+As information and communication technologies evolve, on-
+line tools are increasingly employed to track diet and exercise
+records that are found to be in such forms like blog postings,
+forum postings, and weight management applications. Sev-
+eral studies have been conducted to efﬁciently design support
+tools for weight loss and diet planning. One study aimed to
+predict the overall success of weight loss by using content
+from weight loss blogs and found that certain linguistic fea-
+tures had correlation with weight loss [3]. Other study used
+publicly available MFP food diary data to study which types
+of foods are most often associated with weight loss or weight
+
+185
+
+gain [25]. Researchers have also examined the effectiveness
+of using support tools during a diet; the role of forums data
+during the course of a diet was studied by investigating web
+search logs of nearly 2,000 users [21]. Dieters progressively
+narrow their searches to support the progress of their diet on
+online forums. This study illustrates the overall importance of
+dieting forums for the maintenance of dieting actions. Other
+set of researchers found that community interactions are key
+drivers to make sure that somebody continues to be commit-
+ted to a diet [18].
+Other researchers investigated different types of social inter-
+actions that occur through diet forums and concluded that so-
+cial conversations would help people ﬁnd similar buddies to
+address their concerns and get feedback [11]. This means
+that social factors on diet forums are meaningful to better
+understand the mechanism for diet. Other study found that
+users do not only consume information via online forums,
+but also via social support (e.g., encouragement and motiva-
+tion) [12]. Other study showed that social networks play an
+important role for user’s engagement in health forums. It is
+found that user-created groups were socially more active than
+site-deﬁned groups as these tend to foster more persistent en-
+gagement of users in health forums [24].
+Based on these ﬁndings, the research community has also
+been contributing to a better design of effective tools to help
+people stick with their diet plans to eventually achieve weight
+loss. A study on a diet portal called Total Wellbeing Diet
+investigated which factors were associated with the user re-
+tention on its website [8]. It was also found that the usage
+level during the ﬁrst week of trial and the number of friends
+that user has were important factors for her continuous com-
+mitment to a diet.
+
+Sharing Health Status Updates in SAS
+It is increasingly common for people to share their health and
+ﬁtness status updates using Social Awareness Stream (SAS)
+platforms. Researchers have conducted various studies to un-
+derstand why users share their health status updates via social
+network and how their sharing behavior affects their future
+usage. These studies have demonstrated the importance of
+user’s social network during the course of a diet with the ul-
+timate goal of achieving weight loss.
+Some researchers investigated the overall ability of existing
+social media outlets for health interventions by deploying a
+Facebook app [16]. They discovered that people tend to ad-
+here to their apps, and are aware of others’ privacy concerns
+because they do not want to spam others’ newsfeed. Other re-
+searchers investigated why and how people share health infor-
+mation online, by interviewing those who engage with both
+online health communities and Facebook [17]. Participants
+in these interviews shared their personal health status updates
+in the pursuit of more emotional support, accountability, mo-
+tivation, advice, etc. Participants also mentioned that they
+wanted to manage their projected image to their friends as
+somebody healthy.
+Interesting enough, some negative ef-
+fects were also reported. Privacy concerns kept some partici-
+pants from uploading their health status updates to Facebook,
+
+mfp runner @mfp_runner · 26m
+burned 334 calories doing 38 minutes of Running 
+#myfitnesspal
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+which would prevent them from receiving all necessary so-
+cial support. This study suggests the importance of having
+a group of supportive, but insensitive to privacy concerns,
+friends who will keep sharing their ﬁtness status updates in
+SAS.
+A study explored how people would utilize Twitter to
+share information related to health-promoting physical activ-
+ity [13]. Relying on Twitter’s Streaming API and by ﬁltering
+exercise-related keywords such as “elliptical” and “muscle-
+strengthening”, researchers analyzed content from certain
+tweets to show what and how these were generated. Simi-
+larly, other researchers conducted n-gram and qualitative dis-
+course analyses by using public data across different social
+media outlets [2].
+Some researchers also looked into personal health and ﬁt-
+ness activities on Twitter [23]. Through a qualitative anal-
+ysis on health-related tweets, these identiﬁed different type
+of content people had shared on Twitter: Plans and Goals,
+Achieved, and Acts Avoided. They also interviewed 12 par-
+ticipants to understand their true motivation of sharing up-
+dates related to personal health-related activity. Participants
+reported accountability in sharing health progress reports to
+their audience. Unlike previous research works that have
+found certain reluctance in sharing health status on Face-
+book [17], participants in this particular study were naturally
+more open to sharing such information publicly. Other re-
+searchers investigated which features would help to get more
+responses on personal Twitter messages, and discovered that
+user-generated content retrieved way more responses (i.e., fa-
+vorite and retweet) than automatically generated ones [7].
+All above studies have found that the effect of social shar-
+ing could vary depending on the type of media (e.g., Twitter,
+Facebook) and social network. These studies, using a quali-
+tative approach, make important ﬁndings about why people
+share their own personal health information, what type of
+content gets shared, and how these people are positively or
+negatively affected by their sharing on SAS. These studies
+did not investigate whether such positive and negative effects
+were connected to persistent social sharing, which is critical
+for ﬁtness business in general. We aim to predict persistent
+users based on user proﬁle, usage and quality of network.
+RQ. What are the main characteristics of users who share
+ﬁtness app status updates on social media over a long time
+period compared to those short-lived users?
+
+DATASET AND METHODOLOGY
+This section describes MFP and its main features, as well as
+the methodology for gathering and extracting health and ﬁt-
+ness status from tweets.
+
+MyFitnessPal
+MFP is a free health and ﬁtness app that helps people set and
+achieve personalized health goals through tracking nutrition
+and physical activity.
+In 2014, MFP was the most down-
+loaded app in the Google Play Store within the category of
+health and ﬁtness.3 The MFP app helps users track exercise
+3http://tcrn.ch/1CAph7I
+
+Figure 2. Screenshots of MFP application
+
+records, dietary habits, and weight loss to get “off autopi-
+lot” and get insights that help them make smarter choices
+and create healthier habits. Upon setting a personal ﬁtness
+goal, users can visually inspect their ﬁtness and weight loss
+progress. In Figure 2, we show screenshots of MFP that illus-
+trate how a user of MFP can manage food diaries and track
+her weight-loss progress using the app. MFP operates its own
+social network, blogging platform, news feeds, and user fo-
+rums. MFP also provides an auto-sharing option for certain
+social media apps like Twitter or Facebook. We refer such
+auto-sharing option as social opt-in in this paper: any user of
+MFP can opt-in to post status updates, broadcast weight loss,
+exercise logging or announce the completion of her daily di-
+ary through Facebook or to automatically auto-post activity
+logs and user-generated messages through Twitter using the
+#myﬁtnesspal hashtag.
+
+Twitter Dataset
+For our analysis, we gathered a large collection of tweets con-
+taining the #myﬁtnesspal hashtag, which we will refer to as
+“MFP tweets” for the rest of the paper. We utilized the Dec-
+ahose service from GNIP, which provides 10% of all public
+tweets, sampled uniformly at random. During a two-month
+period from April to June in 2014, we retrieved all MFP
+tweets, corresponding to 6,047 unique users. In addition to
+the Decahose data, in June 2014, we identiﬁed 1,447 addi-
+tional MFP users who had posted at least one MFP tweet
+by using the Twitter Streaming API. Six months later, we
+crawled up to 3,200 public tweets of these users (that include
+#myﬁtnesspal tweets as well as general tweets) and all of their
+following/follower links. Note that we conduct such addi-
+tional data collection since data collected through Decahose
+and Streaming API was only limited to sampled tweets. After
+
+186
+
+(a) Food diary
+
+(b) Weight loss progress
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Tweet Example
+Burned 349 calories doing 30 minutes of running #myﬁtnesspal
+
+Type
+Exercise
+Weight loss Lost 5 lbs since her last weigh-in! MFP-USER lost 10 lbs so far. #myﬁtnesspal
+Diary
+Blog
+Usage
+
+Completed her food and exercise diary for 5/05/2014 #myﬁtnesspal
+Posted a new blog post SHORT-URL #myﬁtnesspal
+MFP-USER has logged in for 295 days in a row! #myﬁtnesspal
+Table 1. Observed types for auto-generated MFP tweets and mean fraction of each type across user
+
+Mean Fraction
+0.422
+0.228
+0.338
+0.008
+0.003
+
+excluding users who did not post any tweet over the recent
+three months to ensure users are active on Twitter, the ﬁnal
+data set comprises 10,443,988 tweets, 3,188,763 outbound
+links (following) and 2,766,024 inbound links (followers) of
+7,494 users of MFP.
+We limit our observation to a subset of English speaking
+users (to ensure consistency in the choice of cohort) who own
+no more than 10,000 followers (to ensure that those micro-
+celebrities or evangelists who exhibit distinct behaviors are
+disregarded) [20]. Furthermore, we limit our analysis to users
+for whom we could obtain at least 180 days of activity since
+their very ﬁrst MFP tweets. Finally, we constrain the analysis
+to those users who have tweeted at least a month prior to their
+ﬁrst MFP tweet (to ensure what we capture is the very ﬁrst
+MFP tweet). This step is necessary because Twitter only al-
+lows access to the most recent 3,200 tweets, which can cover
+a variable time span. These steps leave us with 3,169 users,
+and their 4,794,071 tweets. For a tweet to be considered an
+MFP tweet in this paper, we also required the “source” meta-
+data to indicate that it was generated by MFP, in addition to
+the presence of the #myﬁtnesspal hashtag.
+The MFP app generates several types of structured messages
+in tweets (Table 1). Messages are forwarded to Twitter im-
+mediately after an MFP message is generated for every social
+opt-in user. More speciﬁcally, health status updates to SAS
+include exercise records, weight loss, entries to a ﬁtness diary,
+addition to on-site community blog, and continuous usage for
+several consecutive days on MFP. For instance, a tweet ex-
+ample in Table 1 reveals the duration and calories burned for
+a given workout session, and another example shows a user
+accessed MFP for certain consecutive days. Regular expres-
+sions are utilized to extract useful information from this data,
+including the MFP user names and the amount of calories
+burned.4
+
+CHARACTERISTICS OF SOCIAL OPT-IN USERS
+This section presents characteristics of social opt-in users,
+which give insight into understanding the long-term engage-
+ment of users.
+
+Deﬁnition on Social Opt-in User
+In order to ﬁnd indicative features of long-term engagement
+in social sharing, we deﬁne a binary variable µ to represent
+the persistence of social opt-in. We set the ﬁrst 90 days since
+the very ﬁrst MFP tweet as an “observation window” and pre-
+dict which users continue to share health status on SAS up to
+4For example, to identify workout tweets containing the amount
+burned and the workout length, the following expression is uti-
+lized: ((\d*,?\d+(\.\+)?)\s(calorie|kilojoule)s?.*(\d+)\smin(ute)?s.*)|
+((\d+)\smin(ute)?s?.*\s(\*,?\d+(\.\d+)?)\s(calorie|kilojoule)s?.*)
+
+the last 90 days of data, which we call a “target window”. Fig-
+ure 3 depicts the prediction task, where we set µ=1, if a user
+posts at least one MFP tweet during the target window and
+refer such user persistent, otherwise we refer a user dormant
+as these users no longer continued to post MFP messages on
+Twitter and set µ=0. From this deﬁnition, we retrieved 2,589
+persistent users (µ=1) and 581 dormant users (µ=0), respec-
+tively. Note that we used a 3 month period in 2014 to identify
+MFP users on Twitter. Any user who posted a MFP tweet
+during the crawl period was labeled as social opt-in users.
+However, the very ﬁrst MFP tweet of these users could date
+far back in time, leading to different starting times.
+
+Figure 3. Pictorial description of user persistence (µ)
+
+A user can be labeled “dormant” for the following reasons.
+Firstly, a user may no longer use MFP, which is a common
+case of customer churn. Secondly, a user may have been inac-
+tive temporarily, although she may return to the app in a near
+future. Thirdly, a user may have disabled the auto sharing op-
+tion while still engaging in the app. All of these cases will
+result in ‘dormant’ according to Figure 3. Since we cannot
+easily distinguish one case from another only from observ-
+ing Twitter logs, the prediction task focuses on user engage-
+ment in the sharing activity but not on retention of the ﬁtness
+app itself. A measure of persistent social sharing is important
+nonetheless, because persistent sharing means one is success-
+fully retained to the app.
+
+Characteristics of Social Opt-in Users
+Whether persistent or dormant, social opt-in users had 334
+friends on average (i.e., those who follows a user) and 208
+followers, with medians of 175 friends and 84 followers, re-
+spectively. Unlike follower count that is similar to the global
+average, friends count is prominently higher than the reported
+average of 102.5 This could be because the Decahose access
+5http://www.beevolve.com/twitter-statistics
+
+187
+
+MFP tweet general tweet
+
+Observation window
+
+90 days
+
+Target window
+
+90 days
+
+1st MFP tweet
+
+a) Persistent user (   = 1)
+
+µ
+
+crawl time
+
+Observation window
+
+90 days
+
+Target window
+
+90 days
+
+1st MFP tweet
+
+(b) Dormant user (   = 0)
+
+µ
+
+crawl time
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(a) Histogram of MFP tweets
+
+(b) Number of active users per week
+
+Figure 4. Different amount of engagements of social opt-in users. (a) present histogram of MFP tweets on ﬁrst 90 days, and (b) displays active user ratio
+over ﬁrst 12 weeks.
+
+reaches a sample of tweets, but not users, and hence active
+users can be overrepresented. Alternatively it could simply
+be due to changes over time since the reference statistics was
+compiled.
+Users showed a wide range of engagement levels with MFP.
+Figure 4(a) displays the histogram of MFP tweets in the ob-
+servation window (i.e., the ﬁrst 90 days of MFP sharing).
+The most proliﬁc user posted 194 MFP tweets (i.e., 2.2 MFP
+tweets per day), whereas 27% of users posted no more than
+10 MFP tweets over the same duration. Figure 4(b) shows
+the fraction of active users as a function of time, where ac-
+tive user base decreases week by week. Note that those who
+later become dormant show a rapid drop rate as one might
+expect. Interestingly up to a quarter of dormant users still re-
+main active after week 12. This means retention rate of social
+sharing users is much higher than for a typical mobile applica-
+tion. Such tendency of slow churn may be a key characteristic
+of social opt-in users, as they might feel social accountabil-
+ity and responsibility for their previously publicized commit-
+ment, and try to share health update several more times before
+they quit.
+
+Twitter Usage of Social Opt-in Users
+Subsequent to the general characteristics of social opt-in
+users, we also investigate the set of topics these users engage
+in on Twitter. Because Twitter is an interest-based social net-
+work (i.e., people explicitly follow streams of other people
+that interest them), one’s interest on certain topics will inﬂu-
+ence how one builds their social network. Below we describe
+two approaches to analyze the topical interests of users.
+We ﬁrstly analyze hashtag usage, which can represent topi-
+cal interest of users. In order to capture how diverse one’s
+hashtags are, we compare both the Shannon’s entropy and
+the number of hashtags between persistent user and dormant
+user. To test for statistical signiﬁcance, we utilize the Mann-
+Whitney U test which does not require normality assumption.
+Not only dormant users tend to employ a larger number of
+hashtags than persistent users (34.54 and 36.95, p<0.05), but
+also their entropy in topic diversity is higher (1.88 and 2.06,
+p<0.05). This ﬁnding suggests that persistent users are more
+focused and narrow in their topical interests of Twitter.
+
+Next we checked how persistent and dormant users post
+health-related tweets except for MFP tweets. To investigate
+it,we relied on crowdsourcing. We created a job on Crowd-
+Flower6 and provided crowd workers with the screen name,
+account name, self-description, and ﬁve randomly chosen
+tweets for each user to be labeled. To ensure the test is non-
+trivial, we only used non-MFP tweets for tagging. Workers
+were asked the following question: Is this Twitter user in-
+terested in health? Each question was answered by at least
+three human coders, aggregated via majority voting. The tag-
+ging task yielded moderate agreement rates of 0.577 based
+on the Fleiss’s Kappa value.
+In case the hired coders did
+not reach an agreement, the authors manually inspected the
+user to be labeled and chose the correct answer. We ﬁnd that
+1,368 users out of 3,170 users to have noticeable interest in
+health. We test whether persistent users have a larger number
+of users who are interested in health by conducting proportion
+test with continuity correction. As a result, we ﬁnd persistent
+users are more likely to express interest in health on Twitter
+than dormant users (0.441 and 0.337, p<0.05).
+The above ﬁndings collectively suggest that having a focus
+on health topics on Twitter could be an indicator of persistent
+engagement in ﬁtness applications through social sharing.
+
+PREDICTION OF PERSISTENT ENGAGEMENT
+We aim to distinguish persistent and dormant users by em-
+ploying various features from Twitter and MFP. The predic-
+tion task is to classify users and determine which set of users,
+based on the ﬁrst 90-day logs of MFP (i.e., observation win-
+dow), will continue to share health status based on the most
+recent 90-day logs (i.e., target window).
+
+Basic Setting
+The data contained 2,589 persistent users (µ=1) and 581 dor-
+mant users (µ=0).
+In order to construct a balanced set for
+the prediction task, we up-sampled from the dormant users
+and constructed a 5,178 user set allowing repetition. This
+step enforces a 50-50 prior probability for both µ=1 and µ=0,
+which makes the classiﬁcation model meaningful. Without a
+balanced set, a model would overly be in favor of persistent
+users. While we do not claim that the real prior probabilities
+6http://www.crowdflower.com/
+
+188
+
+0.04
+
+Median:18, μ=0
+
+Median:27, μ=1
+
+0.03
+
+ 
+y
+c
+n
+e
+u
+q
+e
+r
+F
+
+0.02
+
+0.01
+
+ μ= 1 (Persistent)
+ μ= 0 (Dormant)
+
+0.00
+
+0
+
+50
+
+100
+
+150
+
+200
+
+1.0
+
+0.8
+
+0.6
+
+o
+i
+t
+a
+r
+ 
+r
+e
+s
+u
+ 
+e
+v
+i
+t
+c
+A
+
+0.4
+
+   μ=1 (Persistent)
+   μ=0 (Dormant)
+
+W1 W2 W3 W4 W5 W6 W7 W8 W9 W10 W11 W12
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Coef SE
+
+p-value
+
+Type
+
+Twitter
+Proﬁle
+
+Fitness
+Activity
+
+Fitness
+Network
+
+Predictor
+(intercept)
+tweet_count
+following
+followers
+favorite
+retweet
+exercise
+blog
+usage
+weightloss
+diary
+calorie_mean
+extime_mean
+lost_weight
+autoscaled
+mfp_adopt_date
+mfp_favorite
+mfp_retweet
+mfp_reciprocal
+ﬁtness_reciprocal
+
+Model χ2
+
+0.074
+0.030
+0.047
+0.051
+0.488
+0.852
+0.037
+0.031
+0.043
+0.033
+0.036
+0.026
+0.033
+0.032
+0.029
+0.003
+0.313
+0.955
+0.027
+0.415
+
+-0.099
+-0.048
+-0.072
+0.107
+-1.982
+-0.919
+0.276
+-0.061
+0.083
+0.007
+0.071
+-0.036
+0.055
+0.008
+-0.044
+0.008
+-0.419
+2.106
+0.066
+1.056
+265.37
+
+Mean value
+µ=0
+
+µ=1
+
+Description
+
+180.2
+337.5
+208.2
+0.052
+0.022
+12.51
+0.234
+0.055
+4.701
+12.43
+1458.6
+1.751
+16.57
+0.286
+21.31
+0.046
+0.004
+0.343
+0.034
+
+163.2 Number of general tweets
+332.6 Number of friends on Twitter
+208.1 Number of followers on Twitter
+0.031 Fraction of general tweets favorited
+0.016 Fraction of general tweets retweeted
+18.72 Number of workout tweets
+0.193 Number of blog update tweets
+0.163 Number of “consecutive usage” tweets
+5.336 Number of weightloss tweets
+16.89 Number of diary update tweets
+649.0 Mean of the burned calories
+2.040 Mean of the workout length
+18.16 Total amount of lost weight
+0.260 Fraction of auto-scaled over weightloss tweets
+23.88 Months from ﬁrst MFP tweet to last tweet
+0.028 Fraction of MFP tweets favorited
+0.004 Fraction of MFP tweets retweeted
+0.440 Number of reciprocal friends using MFP
+0.048 Fraction of reciprocal friends who have
+
+ﬁtness terms on their Twitter bio
+
+***
+
+***
+
+**
+
+*
+*
+*
+***
+
+*:p<0.05, **:p<0.01, ***:p<0.001
+Table 2. Fitted values of standardized logistic regression model for predicting persistent social opt-in user. We observed three months from the initial
+MFP usage to get features.
+
+are 50-50, the re-weighing step controls the sample size and
+helps us identify important factors of persistent engagement.
+We now describe the prediction features. Twitter data contain
+a wide range of features that represent user traits and ﬁtness
+activities. The ﬁrst set of features, which are called Twitter
+Proﬁle category in Table 2, describe the general character-
+istics of users that are independent of MFP. These features
+include the number of total days one was active on Twitter as
+well as the number of followers and friends one has. In count-
+ing tweet_count, favorite, and retweet, we only consider non-
+MFP tweets (i.e., excluding MFP’s auto-generated tweets).
+The second set of features, grouped as the Fitness Activity
+category, represents the user’s activities of MFP portrayed on
+Twitter. On top of the date when one ﬁrst shared an MFP
+tweet (mfp_adopt_date), they refer to tweets generated by the
+MFP application of the types shown in Table 1. From tweets
+of the appropriate type we also extracted the mean amount of
+calories burned by that user and the amount of exercise time,
+total lost weight, as well as the fraction of weight loss tweets
+logged via smart scales, if any exists.7
+The last set of features, grouped in the Fitness Network cat-
+egory, represents one’s social network related to ﬁtness and
+social support activities a user received from that network on
+Twitter. The features in this category include the fraction of
+MFP tweets that are retweeted or favorited. We also examine
+
+7MFP provides functions to automatically post the weights of users
+through various commercial WiFi enabled body scales such as the
+Withings Smart Body Analyzer.
+
+the effects of MFP network by measuring the number of re-
+ciprocal8 friends who also use MFP. In order to identify peers
+who are interested in ﬁtness in general (without necessarily
+sharing ﬁtness-related tweets), we consider reciprocal friends
+who explicitly mention ‘health’ or ‘ﬁtness’ in their Twitter bio
+and call this feature ﬁtness_reciprocal. This simple approach
+can capture whether one is interested in health with high pre-
+cision. We ensure that these friends are not media sources
+by excluding those who have more than 10,000 followers by
+applying the same standard to decide target users.
+
+Indicator of Persistent Social Sharing
+In order to determine which features are indicative of persis-
+tent social sharing, we utilized standardized logistic regres-
+sion algorithm and infer the relationship between variables.
+Table 2 displays the results across three feature categories
+(i.e., Twitter Proﬁle, Fitness Activity, and Fitness Network).
+The table presents the coefﬁcient, standard error, statistical
+signiﬁcance of each predictor in the logistic regression model.
+The table also shows the mean value of each variable for per-
+sistent and dormant users, as well as the chi-square value of
+the model that represents the discriminative power of predic-
+tion. We make four key observations.
+First, several features in the Fitness Activities category are
+positively associated with persistent users. Exercise was the
+only statistically signiﬁcant feature, while others (including
+even weight loss) did not show any meaningful relationship.
+This observation implies that regularly tracking and sharing
+8The “friendship” links on Twitter are, by default, uni-directional
+and may not be reciprocated.
+
+189
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+exercise (rather than posting other forms of updates like di-
+aries) is important for persistent engagement.
+Second, we investigate whether any characteristic of social
+media usage (i.e., Twitter Proﬁle category) is related to per-
+sistent users. Users who have a larger fraction of favor-
+ited tweets tend to be dormant, which may be that frequent
+favorites on general tweets make certain users more self-
+conscious and aware of their audience on Twitter. This ﬁnd-
+ing is related to a previous work that noted perceived audience
+can affect sharing of personal health behavior [17, 23].
+Third,
+the fraction of reciprocal friends on ﬁtness and
+MFP (i.e., ﬁtness_reciprocal, mfp_reciprocal) have positive
+effects on persistent user. In contrast, receiving favorites on
+MFP tweets (i.e., mfp_favorite) did not have any impact on
+persistent usage. Having an appropriate audience (i.e., having
+reciprocal friends on ﬁtness and MFP) could be more impor-
+tant than getting explicit support to maintain sharing ﬁtness
+activities. mfp_retweet is also found to be signiﬁcant, but it
+displays the opposite effect with the inﬂuence of individual
+variable. We observed the sign of the effect reverses after
+including the fraction of retweeted tweets (retweet) as a fea-
+ture. Hence, the directionality of the effect of mfp_retweet is
+potentially due to linearity effects and should be interpreted
+with caution.
+Fourth, we observe people who start to share MFP tweets ear-
+lier than others (i.e., early adopters) are more likely to con-
+tinue sharing as seen from the mfp_adopt_date feature. This
+indicates that early adopters of MFP may have distinct char-
+acteristics compared to general users.
+Subsequent to ﬁndings on features indicative of persistent
+social sharing, we investigated the importance of individual
+variables in the prediction task. The logistic regression model
+in Table 2 can explain which predictor is associated with the
+target variable after controlling any effects of the remaining
+variables. However, statistical signiﬁcance of a predictor does
+not guarantee the predictive power for a given target variable.
+Therefore, we additionally utilized the Random Forest model,
+an ensemble method constructing a number of decision trees
+and measured variable importance for predicting the persis-
+tence in social sharing.
+In order to quantify the predictive
+power of individual feature, we calculated the mean decrease
+in Shannon’s entropy of each variable. The entropy measures
+node impurity, thus a larger decrease of the value indicates
+that the variable plays an important role in the partitioning
+data.
+Figure 5 displays the variable importance across all 19 fea-
+tures. The ﬁgure shows that several features in the Twitter
+Proﬁle category (followers, following, tweet_count) have the
+highest discriminative power, against those features in the Fit-
+ness Activity and Fitness Network categories. Among them,
+interestingly, features based on the general Twitter usage (fol-
+lowers, following, tweet_count) yield high predictive power
+for persistent social sharing. This implies that persistent users
+may have characteristic traits in the general usage of Twitter
+itself that could distinguish themselves from dormant users.
+In fact, Table 2 shows that persistent users tend to post fewer
+
+Figure 5. Variable importance measured by the Shannon’s entropy for
+predicting persistent social sharing.
+
+tweets (163.2 vs. 180.2) and follow fewer accounts (332.6 vs.
+337.5). However, highly ranked features in the Twitter Pro-
+ﬁle category are not statistically signiﬁcant in Table 2, which
+implies that the differences are basically due to the effects of
+signiﬁcant variables in Fitness Activity and Fitness Network.
+Another ﬁnding we make is that several features in the Fitness
+Activity category are discriminative for persistent social shar-
+ing, which reinforces our previous ﬁnding that sharing ﬁtness
+activities frequently on social media is a strong indicator of
+persistent engagement.
+
+Evidence of Seeking Information
+The result of Table 2 highlights the importance of a ﬁtness-
+related network in persistent sharing of health status. In order
+to investigate the underlying relationship of Twitter network
+on persistent social sharing, we now focus on other features
+that are descriptive in nature such as one’s followings list
+(also called friend list). The followings list determines the
+tweets from whom a user would like to receive feeds from
+and is used for various recommendations within Twitter. As
+mentioned in [7], people can share their personal health status
+on SAS to get informational support from existing network.
+We believe seeking information can be represented by the list
+of following users, so we would like to test whether such fol-
+lowing relationship on Twitter have any predictive power on
+long-term social sharing of ﬁtness applications.
+Does following a particular account and receiving that ac-
+count’s feeds increase (or decrease) the probability of long-
+term engagement? Table 3 shows the list of top-10 discrim-
+inative accounts sorted by the chi-squared value for persis-
+tent and dormant users, respectively. The Prob column shows
+the conditional probability of persistent social sharing when
+a user follows the given account on Twitter, for a 50-50 bal-
+anced sample. The table also shows the number of users who
+follow such accounts out of 3,170 MFP users in the column
+denoted Freq.
+Persistent users (µ=1) were far more likely to follow ac-
+counts related to ﬁtness and diet such as AboutCalorie, Fit-
+nessNHappier, and AHealthyBody. These accounts appeared
+frequently among the persistent users’ lists. On the other
+hand, dormant users (µ=0) exhibited a diverse set of inter-
+ests, where many of them were related to entertainment—
+
+190
+
+250
+
+200
+
+150
+
+100
+
+ 
+
+y
+p
+r
+o
+t
+n
+E
+e
+s
+a
+e
+r
+c
+e
+D
+n
+a
+e
+M
+
+ 
+
+50
+
+0
+
+Twitter Profile
+Fitness Activity
+Fitness Network
+
+blog
+
+exercise
+mfp_reciprocal
+mfp_adopt_date
+mfp_retweet
+usage
+lost_weight
+mfp_favorite
+calorie_mean
+diary
+weightloss
+extime_mean
+retweet
+fitness_reciprocal
+tweet_count
+followers
+following
+favorite
+autoscaled
+
+Features
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Increase prob. for µ=0
+Account
+SimonCowell
+Ginofantastico
+JKCorden
+HulkHogan
+BetteMidler
+Celebjuice
+Vangsness
+
+Increase prob. for µ=1
+Account
+AboutCalorie
+DaveRamsey
+FitterNHappier
+HowManyCaloriee
+AHealtyBody
+IAMJHUD
+JoyceMeyer
+TheRealMikeEpps
+evernote
+JoeManganiello
+Table 3. Screen names of Twitter accounts that are discriminative of
+persistent and dormant user, and their probability for µ=1 and the fre-
+quency of incoming links per account.
+
+Prob Freq
+206
+142
+125
+89
+142
+147
+213
+87 WorkoutHumor
+68
+66
+
+Prob Freq
+183
+56
+129
+57
+72
+60
+52
+52
+52
+65
+
+.36
+.30
+.37
+.33
+.35
+.34
+.34
+.34
+.34
+.35
+
+.81
+.77
+.79
+.83
+.73
+.72
+.66
+.79
+.83
+.83
+
+michkeegan
+IamStevenT
+
+such as television shows, music, and movies. It is interesting
+to observe that certain celebrities such as IAMJHUD (Jeniffer
+Huddson) and TheRealMikeEpps (Mike Epps) were favored
+by persistent users, although in general television shows were
+favored by dormant users.
+
+Is Fitness Activity More Important than Fitness Network?
+Features related to both Fitness Activity and Fitness Network
+were important for persistent sharing, yet those in the Fitness
+Activity category had higher predictive power. Is Fitness Ac-
+tivity then more important that Fitness Network for persis-
+tence? If so, how important is Fitness Activity for persistent
+users compared to Fitness Network? In order to answer these
+questions, we examine the relationship between the Fitness
+Activity and Fitness Network.
+Table 4 displays the proportion of persistent users across two
+of the signiﬁcant axes: exercise-related MFP tweets and pres-
+ence of a ﬁtness support network. We consider a user belongs
+to a ‘high’ exercise group if one posted more exercise MFP
+tweets than the median value across all users. Otherwise we
+consider a user to be in a ‘low’ exercise group. In addition,
+the presence of Fitness Network is considered to be ‘high’ if
+a user falls into the upper median of either mfp_reciprocal or
+ﬁtness_reciprocal, which are two predictive features of per-
+sistent sharing. Otherwise, we consider a user has ‘low’ pres-
+ence of Fitness Network.
+
+Exercise-related MFP tweet
+Low
+
+High
+
+All
+1120
+1469
+2589
+
+Fitness
+Network
+
+Low 499 (38.2%)
+High
+624 (46.8%)
+All
+
+1123
+
+621 (56.4%)
+845 (58.7%)
+
+1466
+
+Table 4. Number of persistent users across exercise on MFP and pres-
+ence of Fitness Network. Percentages within parenthesis indicate frac-
+tion of persistent user over total social opt-in user per each group.
+
+Table 4 shows the results where each quadrant shows the raw
+and the proportion of persistent users who belong to that area.
+Between the amount of exercise MFP tweets and the presence
+of ﬁtness network, posting a higher number of exercise tweets
+is more powerful to discriminate persistent users as we found
+in Figure 5. The presence of a ﬁtness network generally in-
+creases the probability of persistent usage. However, ﬁtness
+
+191
+
+users tend to be dormant if they had posted fewer number
+of exercise tweet even when they possess a sizable ﬁtness
+network.
+In a similar vein, social opt-in users tend to be
+persistent with absence of ﬁtness network but with a higher
+number of exercises.
+In the group of 621 users in Table 4
+who posted many exercise tweets and owned a small ﬁtness
+network, we observe that 22 persistent users had zero-sized
+ﬁtness networks, and 15 of them further do not post any gen-
+eral tweets. They may not need support of ﬁtness network on
+Twitter. We hypothesize that some MFP users utilize social
+sharing for archiving purpose, which requires further investi-
+gations in future work.
+
+DISCUSSION AND CONCLUSION
+It is well known that many users of ﬁtness apps discontinue
+with their usage after a few weeks of trial, which is com-
+monly known as a user retention problem. This relatively
+low retention rate of health and ﬁtness app users has drawn
+the attention of research community [14]. Promoting social
+sharing of users has been considered to be one of many im-
+portant strategies to boost their long-term engagement level.
+Several researchers have studied different sharing behavior
+of health and ﬁtness-related activity on social media outlets.
+Some studies analyzed the type of content and motivations
+for sharing health-related activity on social media outlets [17,
+23] while others conducted a qualitative analysis of the ways
+that people think about with whom and how to share differ-
+ent types of information as they pursue social goals related
+to their personal health, including emotional support, moti-
+vation, accountability, and advice [16, 17]. One important
+issue that has been neglected within the research community,
+though, is the question of what are characteristics of users
+who share health and ﬁtness-related activity on social media
+outlets over a long period of time compared to those short-
+lived users? We believe that it is important to properly ad-
+dress this question especially when it is unknown how the
+overall effectiveness of social sharing of health-related activ-
+ity is related to the future engagement level of ﬁtness apps.
+In this paper, through a quantitative analysis of 3,169 Twitter
+users, we have found some partial answers to this question.
+Below we summarize our ﬁndings on persistent social sharing
+of health and ﬁtness-related activity and their implications.
+1. Persistent users are more likely to use Twitter in a
+health-oriented way: We observe that dormant users tend to
+be interested in a more diverse set of topics while persistent
+users tend to be interested in a more narrow set of topics that
+are usually related to ﬁtness or health. Thus, we speculate
+whether this variety of interest topics that is normally shown
+by dormant users could inhibit these from gaining appropri-
+ate audiences interested in health and ﬁtness status updates.
+We believe that this is particularly true with Twitter as it is an
+information-based social network and the topical diversity of
+user’s Twitter feed can have a certain impact on the richness
+of her network in Twitter. Possessing a ﬁtness-related social
+network has been shown to be effective for getting positive
+effects [16, 17], hence a topical diversity of their audience
+might prohibit ﬁtness app users to share their health status,
+leading them to be dormant. Our work, though, cannot pro-
+vide a deﬁnitive conclusion on such causal relationships since
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+we did not test the direct effect of having diverse interests on
+the formation of a ﬁtness related network and impact on user’s
+emotions. Future work can further delve into a better under-
+standing of how expressing diverse interests on Twitter would
+affect persistent sharing of health and ﬁtness status.
+2. Sharing exercise related tweets is positively correlated
+with the long-term engagement: We observe that persis-
+tent and dormant users differ in the type of content that they
+share on social media. More speciﬁcally, content related
+to different physical exercises is found to be prevalent in
+tweets shared by persistent users. Several studies have found
+that physical exercise is important to maintain one’s health-
+iness [6], and the most recent one found that exercising can
+even affect one’s mental health (e.g., anxiety, depression) [5].
+Our ﬁnding corroborates the importance of exercising regu-
+larly and those who do tend to show a long-term engagement
+with ﬁtness apps.
+3. Having a mutual friendship with those users who share
+health and ﬁtness related content on social media or heav-
+ily using MFP is positively correlated with persistent so-
+cial sharing: The importance of a “ﬁtness network” for per-
+sistent social sharing is a key takeaway of this paper. We
+observe the importance of one’s social network to persist
+with sharing of her health and ﬁtness status updates. While
+the explicit support of favorites one receives on tweets re-
+lated to health and ﬁtness activity was not necessarily linked
+to persistent social sharing, the fraction of MFP reciprocal
+friends (mfp_reciprocal) and ﬁtness friends on Twitter (ﬁt-
+ness_reciprocal) were found to be indicative of persistent
+social sharing. These ﬁndings imply that sustaining a sup-
+port ﬁtness network of reasonable size becomes important for
+long-term engagement, rather than just receiving explicit re-
+sponses from peers in their social network. Having a network
+of health interests may help users enjoy social support, which
+was found to be a key driver for a long-term engagement of
+users to ﬁtness activities [4] and in health forums [24].
+4. Frequently receiving favorites on tweets is negatively
+correlated with long-term social sharing: One interesting
+ﬁnding is that users who have a larger fraction of favorited
+tweets related to health and ﬁtness tend to be dormant. Since
+dormant users can result from several reasons, there can be
+many explanations of this particular ﬁnding. One possible
+explanation is that considering the delicacy of sharing health
+and ﬁtness status via social-media outlets, receiving favorites
+too frequently will make her conscious of her audience on
+Twitter. Future work could potentially analyze how those
+popular social media users feel when they receive favorites
+on their tweets, and how this would affect their long-term en-
+gagement.
+
+Towards a Better Design of Fitness Apps
+Our ﬁndings lead to a couple of guidelines that could be use-
+ful during the design of ﬁtness apps with the goal of motivat-
+ing ﬁtness app users better.
+
+1) Introduction of a rewarding program
+Our ﬁnding on the positive correlation between physical ex-
+ercise and social sharing persistence highlights the potential
+
+improvement of user engagement for ﬁtness apps by intro-
+ducing an incentive-reward program. In other words, ﬁtness
+apps could devise a reward or badge-based gamiﬁcation fea-
+tures that can motivate their users better, where some highly
+correlative user activities shown in Table 2 might get extra
+incentives by offering special badges to those users who con-
+tinuously engage with these activities [9]. Alternatively, those
+behaviors that bring beneﬁt to the whole ﬁtness eco-system
+may be rewarded with strong incentives [19]. For instance,
+posting a speciﬁc number of physical exercise related tweets,
+which is shown to have the highest predictive power in Ta-
+ble 2, should be incentivized. By encouraging their users to
+engage more with the most predictive features, ﬁtness apps
+may potentially enjoy a higher user retention rate while em-
+powering their users to be more effective with health and
+ﬁtness goals. The true effectiveness of using badges as a
+incentive-rewarding program albeit needs to be tested in prac-
+tice especially when it is reported that offering badges might
+lead to some negative effects [15].
+
+2) Connecting peers over ﬁtness application
+Our study shows that persistent users tend to own a strong
+health and ﬁtness-oriented Twitter network. Persistent users
+not only have reciprocal friends who are active in ﬁtness
+and MFP users, but also tend to follow ﬁtness-related pop-
+ular accounts and seek information. Grounded by the ﬁnd-
+ings, ﬁtness apps could potentially adopt certain features that
+would help users connect better with ﬁtness-related Twitter
+accounts. Since “Informational Support” is a primary goal
+of peer-support network as shown in [7], the nature of Twit-
+ter could easily meet this goal by recommending Twitter ac-
+counts that can act as useful sources of health and ﬁtness re-
+lated information. We do not know yet the temporal order of
+long-term engagement and ﬁtness-related network construc-
+tion. Persistent users are more likely to have strong health and
+ﬁtness network, but it is also possible that these users built up
+the supportive group by actively engaging with MFP. To over-
+come this limitation, future work could investigate this trend
+by analyzing overall dynamics of following links on Twitter
+or by conducting in-depth interviews of persistent users.
+
+Limitations
+Our work has certain limitations. First there is potential sam-
+pling bias. Since the Decahose and is a tweet-based sam-
+ple, our data are biased toward selecting users who tweet fre-
+quently. While this is a common limitation for studies em-
+ploying data APIs, we also mention that it is non-trivial to
+deﬁne what is a “good” uniform user sample on Twitter and
+the industry standard of “monthly active users”, as deﬁned
+through log in events, cannot even be observed by outsiders.
+Second is the lack of strong temporal data linkage. Several
+features such as those in the Proﬁle category were indepen-
+dent of the observation window in Figure 3, since the Twitter
+proﬁle is captured from the snapshot of crawling time. There-
+fore, we cannot be certain of the temporal order of effects of
+the social network (e.g., mfp_reciprocal, ﬁtness_reciprocal).
+Persistent social opt-in users might have ﬁtness-related au-
+diences because they have engaged in ﬁtness activities for a
+
+192
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+long time, rather than the audience leading to long-term us-
+age. In future work, we hope to better understand this tempo-
+ral order through repeated data collection and user interviews.
+
+Conclusion and Future Work
+This paper presented a quantitative study of a popular ﬁt-
+ness application, MyFitnessPal and investigated the patterns
+of sharing personal health status on Twitter. We examined
+which features of the Twitter proﬁle, the ﬁtness activities, and
+the ﬁtness network are related with persistent social sharing
+and found that a wide set of features from one’s ﬁtness activ-
+ities and ﬁtness network have positive correlations.
+We observed an interesting signal related to persistent social
+sharing, in that the date when a user ﬁrst shared a MFP tweet
+on Twitter (i.e. mfp_adopt_date) was a signiﬁcant indicator of
+persistent sharing. Early adopters may have distinct person-
+ality related to engagement. Alternatively, starting to engage
+in an application earlier than others may make them loyal to
+engage in the app for a long time. We believe that this is
+worth to investigate in the future, which could give insights
+to application providers.
+We also noticed exceptional Twitter usage patterns related to
+sharing health status. Certain users did not have any general
+tweets. That is, those users utilized Twitter only for MFP.
+While these users can be simply less active on Twitter, it is
+probable that these users created a separate Twitter account
+exclusively to broadcast their MFP tweets. We found 97 users
+who have only MFP tweets, even though the fraction of per-
+sistent users are not signiﬁcant (79 out of 97). An exciting
+future direction would be to investigate why those users have
+dedicated accounts for a ﬁtness app, and how it affects persis-
+tent engagement.
+Social opt-in users of the MFP application showed a high re-
+tention rate; 2,589 out of 3,169 users remained active persis-
+tently, which means that they were successfully retained to
+the app. We do not claim social sharing necessarily increases
+the probability of retention, because we did not test any di-
+rect effects of social sharing under controlled experiments on
+randomized samples. Nevertheless, an extremely high reten-
+tion rate seen from persistent users may be related in part to
+the positive effects of social sharing. Similar ﬁnding has been
+shown by one research group, where integrating a health ap-
+plication within a social network like Facebook increased the
+retention rate [16]. It is also possible that only more commit-
+ted users choose to opt-in to social sharing in the ﬁrst place.
+In future works, characteristics of social opt-in users and the
+effects of social sharing on user retention of the ﬁtness appli-
+cation could be investigated via controlled experiments and
+observational studies with randomized conditions on ﬁtness
+application.
+Beyond investigation of persistent social sharing on Twitter,
+a natural extension of this work would be to analyze char-
+acteristics of persistent social sharing on other social media.
+Facebook can be a good candidate for looking into persistent
+sharing of health status, because it is the leading social ser-
+vice where over billions of people engaged. Although some
+negative effects are reported when sharing a health status on
+
+193
+
+Facebook [17], it would be interesting to know the character-
+istics of usage and network patterns of Facebook users who
+share personal ﬁtness status in the long run. Instagram can
+be another good place to look into. This service is an image-
+based social network, so the users may show different usage
+and network patterns compared to general online social net-
+work such as Twitter and Facebook. It would be interesting
+to know why users share images related to ﬁtness and health
+statues, and how usage and network patterns are related to
+persistency in social sharing.
+
+ACKNOWLEDGEMENTS
+We want to thank the anonymous reviewers for their ex-
+tremely useful comments and suggestions on this paper. This
+work was partly supported by the BK21 Plus Postgradu-
+ate Organization for Content Science of Korea and Insti-
+tute for Information & communications Technology Promo-
+tion (IITP) grant funded by the Korea government (MSIP)
+(R0184-15-1037, Development of Data Mining Core Tech-
+nologies for Real-time Intelligent Information Recommenda-
+tion in Smart Spaces).
+
+REFERENCES
+1. E. Choe, N.B. Lee, B. Lee, W. Pratt, and J.A. Kientz.
+2014. Understanding quantiﬁed-selfers’ practices in
+collecting and exploring personal data. In Proc. of the
+CHI. 1143–1152.
+
+2. W.S. Chou, A. Prestin, and S. Kunath. 2014. Obesity in
+social media: a mixed methods analysis. Translational
+Behavioral Medicine (2014), 1–10.
+
+3. C.K. Chung, C. Jones, A. Liu, and J.W. Pennebaker.
+2008. Predicting Success and Failure in Weight Loss
+Blogs through Natural Language Use.. In Proc. of the
+ICWSM.
+
+4. S. Consolvo, K. Everitt, I. Smith, and J.A. Landay. 2006.
+
+Design requirements for technologies that encourage
+physical activity. In Proc. of the CHI. 457–466.
+
+5. V.L. Dos Reis and A. Culotta. 2015. Using Matched
+
+Samples to Estimate the Effects of Exercise on Mental
+Health via Twitter. In Proc. of the AAAI Conference on
+Artiﬁcal Intelligence. 182–188.
+
+6. K. Elfhag and S. Rössner. 2005. Who succeeds in
+
+maintaining weight loss? A conceptual review of factors
+associated with weight loss maintenance and weight
+regain. Obesity Reviews 6, 1 (2005), 67–85.
+
+7. D.A. Epstein, B.H. Jacobson, E. Bales, D.W. McDonald,
+
+and S.A. Munson. 2015. From “nobody cares” to “way
+to go!”: A Design Framework for Social Sharing in
+Personal Informatics. In Proc. of the CSCW. 1622–1636.
+
+8. J. Freyne, I. Saunders, E. Brindal, S. Berkovsky, and G.
+
+Smith. 2012. Factors associated with persistent
+participation in an online diet intervention. In Proc. of
+the CHI Extended Abstracts on Human Factors in
+Computing Systems. 2375–2380.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+support diet and weight loss. In Proc. of the CHI
+Extended Abstracts on Human Factors in Computing
+Systems. 3829–3834.
+
+22. M. Swan. 2009. Emerging patient-driven health care
+
+models: an examination of health social networks,
+consumer personalized medicine and quantiﬁed
+self-tracking. International Journal of Environmental
+Research and Public Health 6, 2 (2009), 492–525.
+
+23. R. Teodoro and M. Naaman. 2013. Fitter with Twitter:
+Understanding Personal Health and Fitness Activity in
+Social Media.. In Proc. of the ICWSM.
+
+24. V.G.V. Vydiswaran, Y. Liu, K. Zheng, D.A. Hanauer,
+
+and Q. Mei. 2014. User-Created Groups in Health
+Forums: What Makes Them Special?. In Proc. of the
+ICWSM.
+
+25. I. Weber and P. Achananuparp. 2016. Insights From
+
+Machine-Learned Diet Success Prediction. In Proc. of
+the Social Media Mining for Public Health Monitoring
+and Surveillance, to appear.
+
+9. T. Fritz, E.M. Huang, G.C. Murphy, and T.
+
+Zimmermann. 2014. Persuasive technology in the real
+world: a study of long-term use of activity sensing
+devices for ﬁtness. In Proc. of the CHI Conference on
+Human Factors in Computing Systems. 487–496.
+
+10. J.H. Frost and M.P. Massagli. 2008. Social Uses of
+
+Personal Health Information Within PatientsLikeMe, an
+Online Patient Community: What Can Happen When
+Patients Have Access to One Another’s Data. Journal of
+Medical Internet Research 10, 3 (2008), e15.
+
+11. F. Gao and m.c. schraefel. 2011. Social interaction
+
+around diet applications: An initial study. In Proc. of the
+PervasiveHealth. 262–265.
+
+12. K.O. Hwang, J.M. Etchegaray, C.N. Sciamanna, E.V.
+
+Bernstam, and E.J. Thomas. 2014. Structural social
+support predicts functional social support in an online
+weight loss programme. Health Expectations 17, 3
+(2014), 345–352.
+
+13. L. Kendall, A. Hartzler, P. Klasnja, and W. Pratt. 2011.
+Descriptive analysis of physical activity conversations
+on Twitter. In Proc. of the CHI Extended Abstracts on
+Human Factors in Computing Systems. 1555–1560.
+14. E. Leslie, A.L. Marshall, N. Owen, and A. Bauman.
+2005. Engagement and retention of participants in a
+physical activity website. Preventive Medicine 40, 1
+(2005), 54–59.
+
+15. S.A. Munson and S. Consolvo. 2012. Exploring
+
+goal-setting, rewards, self-monitoring, and sharing to
+motivate physical activity. In Proc. of the
+PervasiveHealth. 25–32.
+
+16. S.A. Munson, D. Lauterbach, M.W. Newman, and P.
+
+Resnick. 2010. Happier together: integrating a wellness
+application into a social network site. In Proc. of the
+Persuasive Technology. Springer, 27–39.
+
+17. M.W. Newman, D. Lauterbach, S.A. Munson, P.
+
+Resnick, and M.E. Morris. 2011. It’s not that i don’t
+have problems, i’m just not putting them on facebook:
+challenges and opportunities in using online social
+networks for health. In Proc. of the CSCW. 341–350.
+
+18. J.O. Prochaska and W.F. Velicer. 1997. The
+
+transtheoretical model of health behavior change.
+American Journal of Health Promotion 12, 1 (1997),
+38–48.
+
+19. S. Robertson, M. Vojnovic, and I. Weber. 2009.
+
+Rethinking the ESP game. In Proc. of the CHI Extended
+Abstracts on Human Factors in Computing Systems.
+3937–3942.
+
+20. D.M. Romero and J.M. Kleinberg. 2010. The Directed
+
+Closure Process in Hybrid Social-Information
+Networks, with an Analysis of Link Formation on
+Twitter. In Proc. of the ICWSM.
+
+21. m.c. schraefel, R.W. White, P. André, and D. Tan. 2009.
+
+Investigating Web search strategies and forum use to
+
+194
+
+

@@ -1,0 +1,2064 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Work and Play: An Experiment in Enterprise Gamiﬁcation
+
+Laurentiu C. Stanculescu
+
+Delft University of Technology
+
+Web Information Systems
+
+Delft, The Netherlands
+catalaur@gmail.com
+
+Alessandro Bozzon
+
+Delft University of Technology
+
+Web Information Systems
+
+Delft, The Netherlands
+a.bozzon@tudelft.nl
+
+Robert-Jan Sips
+
+IBM Benelux
+
+Centre for Advanced Studies
+Amsterdam, The Netherlands
+
+rjsips@nl.ibm.com
+
+Geert-Jan Houben
+
+Delft University of Technology
+
+Web Information Systems
+
+Delft, The Netherlands
+
+g.j.p.m.houben@tudelft.nl
+
+ABSTRACT
+In recent years, gamiﬁcation, “the use of game design el-
+ements in non-game contexts”, has drawn the attention of
+an increasing number of scientists. Although several studies
+highlighted the beneﬁts of gamiﬁcation in many applications,
+its potential in the enterprise environment still needs to be
+fully understood.
+This work contributes to the studies in enterprise gamiﬁcation
+with an experiment performed at a large multinational com-
+pany. The experiment involved 206 employees for a period of
+2 months. We describe a modular and extensible framework
+for enterprise gamiﬁcation, designed to seamlessly integrate
+with existing enterprise-class Web systems. We studied how a
+gamiﬁed tool can help to foster employees’ engagement with
+such systems, by making day-to-day tasks more stimulating.
+We show how different game mechanics can help to achieve
+two business needs, namely social interaction and learning.
+To this end, we exploited the gamiﬁcation framework to de-
+velop a Q&A Web application combined with learning, news
+sharing, and social connections capabilities. Results pro-
+vide strong evidence of how a gamiﬁed experience can foster
+learning and social behaviour in employees, and provide new
+insights about the effectiveness of several game mechanics in
+an enterprise context.
+
+Author Keywords
+Gamiﬁcation; Enterprise; Learning; Social Behaviour
+
+ACM Classiﬁcation Keywords
+H.4 Information Systems Applications: Miscellaneous
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full citation
+on the ﬁrst page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA.
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00.
+DOI: http://dx.doi.org/10.1145/2818048.2820061
+
+346
+
+INTRODUCTION
+Socialness is a fundamental value in modern enterprises, and
+a core component of their business strategies. Many organisa-
+tions take advantage of “social” Web-based systems such as
+social media or collaboration platforms for a variety of busi-
+ness purposes. For instance:
+to maintain awareness of or-
+ganisational dynamics [7]; to incentivise contribution within
+enterprise social software [12]; to leverage social connections
+within and outside the enterprise [9, 22]; and to promote con-
+tinuous education and knowledge growth of the enterprise’s
+workforce.
+Engaging employees with such tools is often challenging, and
+it is difﬁcult to make them embrace the long-term vision of
+the company without proper motivation. On the one hand,
+the pace by which companies vary their internal organisa-
+tion and policies increases with their need to respond to ever-
+changing business environments; this process is often accom-
+panied with a rapid introduction of new technologies which
+call for proper training. On the other hand, employees tend
+to resist to change: the demand for quick adaptation is often
+hindered by their need to perform their everyday activities,
+and their personal and business goals.
+Gamiﬁcation, “the use of game design elements in non-game
+contexts” [8], has been recently proposed as the “silver bul-
+let” to overcome such challenges. Points, badges, leader-
+boards, and other game mechanics are often used to make
+work-related activities enjoyable and interesting. Employees’
+engagement is an important business need, and a precondi-
+tion for motivation and retainment; team- and community-
+building; learning; and loyalty [26].
+An increasing number of studies look at how gamiﬁca-
+tion techniques can be leveraged to engage users with e-
+commerce, health, education, and learning platforms [1, 2,
+4, 10, 14, 16, 18]. Despite this great attention, only few sci-
+entiﬁc works [9, 15, 29] studied the gamiﬁcation inside the
+enterprise; thus, the question of how gamiﬁed processes can
+help enterprises with their business goals remains unclear.
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+As the adoption of gamiﬁcation techniques is foreseen to dra-
+matically increase in the upcoming years, it is of fundamental
+importance to scientiﬁcally understand whether their applica-
+tion in enterprise environments can provide beneﬁts compa-
+rable to those observed in non-enterprise contexts.
+Objective. We pursue a better understanding of how gamiﬁca-
+tion can be used to help companies achieving their business
+needs by fostering employees’ engagement with enterprise-
+class social Web-based systems. In this paper, we are inter-
+ested in investigating whether the use of gamiﬁcation tech-
+niques in an enterprise environment is positively associated
+with increased social interaction and learning behaviour. En-
+terprises strive to create a positive and inclusive working en-
+vironment, especially as the size of the workforce increases.
+In this context, it is common for employees to lack knowl-
+edge about and to feel disconnected from their colleagues,
+their company and its history, products and services.
+In this paper, we report the results of an experiment per-
+formed within the IBM corporation, one of the largest and
+most diverse enterprise workforces in the world. Our leading
+research question is:
+
+How can gamiﬁcation techniques foster employees’
+
+engagement, social interaction behaviours, and learning in
+
+an enterprise environment?
+
+Original Contributions. We introduce Work&Play, an
+application-independent framework for enterprise gamiﬁca-
+tion. The framework includes state-of-the-art features of
+gamiﬁcation system, and is designed to support the entan-
+glement of game mechanics with business activities, while
+using quantiﬁable measures of engagement to enable studies
+on their effectiveness.
+We instrumented a real-world gamiﬁcation experiment
+that involved 206 IBM employees. We instantiated the
+Work&Play framework into “How much of an IBMer are
+you” (HMIAY), a Web-based application for IBM employees
+that interfaces enterprise and public knowledge bases and so-
+cial networks to provide question answering, news sharing,
+and social interaction functionalities. We studied the effect
+of three game mechanics: a general score to summarise the
+employee’s performance in the application, leaderboards, and
+badges. By combining objective metrics with subjective as-
+sessment of employees’ perceptions on the application, this
+experiment provides an empirical demonstration of the im-
+pact that a gamiﬁed experience can have in promoting em-
+ployees’ engagement with enterprise Web systems. We show
+how the effectiveness of game mechanics differs across busi-
+ness needs and learning topics.
+Paper Structure. The remainder of the paper is organised
+as follows. After the “Related Work” Section, “Work&Play
+Gamiﬁcation Engine” and “HMIAY Application” respec-
+tively introduce the Work&Play framework and the HMIAY
+application developed for our study. Section “Experimental
+Methodology” details the applied experimental methodology;
+Section “Results” describes the outcome of the experiment
+and reports on gathered insights. Finally, Section “Conclu-
+sions and Future Work” presents our conclusions.
+
+347
+
+RELATED WORK
+In the common deﬁnition of gamiﬁcation [8], “non-game con-
+texts” are those use cases where the design elements from
+games are not employed to develop a proper game, but rather
+to stimulate user engagement, i.e. “the emotional, cogni-
+tive and behavioural connection that exists, at any point in
+time and possibly over time, between a user and a resource”
+[4]. In this context, many attributes of user engagement (e.g.,
+aesthetics, novelty, reputation, trust, incentives and beneﬁts,
+saliency) [24] play a key role in improving the user interac-
+tion with a system or application, inducing longer and more
+frequent usage, and, ultimately, a better user experience [5,
+23]. Moreover, a common phenomenon associated with gam-
+iﬁcation is the so-called social comparison, i.e. the persuasive
+power that emerges when people compare their performance
+(in terms of points and badges) amongst each other, and so
+benchmark themselves [15].
+Most of existing literature has focused on the application of
+game mechanics in the (social) Web context. The importance
+and effect of engagement attributes is often domain and ap-
+plication dependent. Gamiﬁcation is a user engagement tech-
+nique that, in order to be effective, must be tailored to the
+characteristics of both the targeted users, as well as of the tar-
+geted user behaviours [16]. Such a contextual dependency
+makes gamiﬁcation techniques elusive to generalisation, thus
+calling for ad-hoc studies. Previous work studied how to stim-
+ulate engagement and drive user behaviour in applications
+such as knowledge sharing and question answering [1, 11],
+crowdsourcing [10, 18], social media [3], and learning [2].
+Only a handful of works [14, 15, 16, 29] have studied the
+effectiveness of gamiﬁcation techniques in an enterprise en-
+vironment. Though applications and tasks (e.g. learning or
+social media) in an enterprise environment are not different
+from a public environment per se, the engagement of employ-
+ees with these processes and hence the impact of gamiﬁcation
+techniques may be different: employee behaviour in an en-
+terprise is inherently related to business goals, and monetary
+incentives play an important role.
+While paving the way for further research in the ﬁeld of en-
+terprise gamiﬁcation, previous work presents shortcomings
+such as small sample sizes, short experimental time-span, ab-
+sence of control groups, focus on single gamiﬁcation mech-
+anism, or lack of both qualitative and quantitative analysis.
+Hamari et al.
+[16] review existing literature where the us-
+age of game mechanics has been correlated with positive pat-
+terns in service use, improvement of social interaction and
+increased user activity and productivity. In an earlier work,
+Hamari [15] describes a ﬁeld experiment, where an utilitar-
+ian peer-to-peer trading service is gamiﬁed by implementing
+a single game mechanism of badges; the work shows how
+users who actively monitored their own badges and those of
+others featured increased activity. While closely related, this
+work targeted an online community (www.sharetribe.com),
+and did not consider the internal dynamics of an organisa-
+tion. Guy et al. [14] describe an experiment in which they
+gamiﬁed the registration of relationships within an enterprise
+social network, deployed within a large global enterprise.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 1: Overview of the Work&Play architecture.
+
+The authors use leaderboards to show users their current rak-
+ing among the players based on the points earned by answer-
+ing questions. The authors observe that the data stemming
+from their crowd-based game is more representative than the
+relations registered within the enterprise social network over
+In contrast Thom et
+the three years it had been deployed.
+al. [29] studied the impact of removing a gamiﬁcation fea-
+ture from an enterprise social networking system. Their work
+shows how the lack of a reward system negatively impacts the
+social behaviour of employees, measured in terms of content
+sharing.
+To the best of our knowledge, our work is the ﬁrst that studies
+the positive effect, within an enterprise context, of different
+gamiﬁcation mechanics on the learning and social behaviour
+of employees. We instrumented a rigorous experimental de-
+sign in which we adopted an open recruiting methodology, to
+ensure enrolment based on intrinsic motivations, and used a
+control group to minimise threats to the internal validity of
+the study. Thanks to a novel application-independent gamiﬁ-
+cation engine designed for the enterprise context, we ran the
+experiment for two months, to allow possible novelty effects
+to wear of.
+
+WORK&PLAY GAMIFICATION ENGINE
+This
+an application-
+section presents Work&Play,
+independent gamiﬁcation engine designed for the enterprise
+environment. We provide an in-depth description of our
+enterprise gamiﬁcation system – the ﬁrst such detailed public
+description we know of to date.
+It is important for an enterprise gamiﬁcation engine to unob-
+trusively attach gamiﬁcation functionalities to work-related
+activities, which we assume to be executed by using existing
+enterprise tools (e.g. Web, enterprise, and custom systems;
+data and knowledge repositories). Work&Play achieves this
+goal by means of a rigorous deﬁnition and organisation of the
+main components needed to gamify enterprise processes and
+applications. A high-level overview of Work&Play is de-
+picted in Figure 1. It comprises four modules, described next:
+1) game elements; 2) game mechanics; 3) an authentication
+sub-system; and 4) a routing controller.
+Game Elements. These encode the experiences that form the
+structure of what can be recognised as a game [6, 13]. Four
+1) Ac-
+types of game elements are relevant to our work:
+tions, a set of activities that have to be performed to reach
+
+a particular goal in the framework, but require efforts to be
+solved. Examples of actions relevant in an enterprise context
+are: sharing content on an enterprise or public social network;
+contributing to discussion groups; assessing the expertise of a
+colleague; completing the quiz of an on-line training course.
+2) Rewards, i.e.
+the beneﬁts obtained for having (success-
+fully) performed an action. Rewards are typically of tangi-
+ble nature (e.g. points, currency, items), and provide support
+for game mechanics. 3) Rules, prescribed guides for conduct
+or action; they deﬁne which actions (in the framework) are
+allowed for a given player, and how the execution of such
+actions map to given rewards. For instance, a user might not
+be allowed to obtain rewards for a given action unless another
+action has been successfully taken. 4) Feedback, communica-
+tion to users about changes in the gamiﬁcation engine’s state.
+Examples of feedback include acknowledgment of success-
+fully executed actions (e.g. answering a question), or mes-
+sages about the progresses of users in the platform (e.g. ob-
+taining a reward).
+We stress how Work&Play can accommodate other game
+elements (e.g. winning conditions and conﬂicts), to enable
+additional gamiﬁed experiences.
+Game Mechanics. These are tools employed by the gami-
+ﬁcation engine to guide the player toward the desired busi-
+ness goals. Game mechanics are often related to rewards el-
+ements, as they are the means by which users can inﬂuence
+game states in order to complete a goal [6, 13]. We describe
+three mechanics relevant for our experiment. 1) Points, i.e.
+numerical values that represent a measure of the skill/pro-
+gresses of a user; 2) Leaderboards i.e. ordered lists of users
+based on the points they have obtained; and 3) Badges, i.e.
+sets of designer-deﬁned tasks used to guide the users towards
+a certain goal and track their progress in a system.
+Authentication. The module contains functionalities devoted
+to the management of user identiﬁcation within the corpo-
+rate and social network providers (e.g. IBM Connections,
+LinkedIn, Facebook). It is also responsible to guarantee com-
+pliance with third-party system’s policies w.r.t. to the access
+and management of the social data therein hosted.
+Routing Controller. The Routing controller supports cus-
+tomised gamiﬁed experience, as well as targeted experiments
+like the one proposed in this paper. It links other components
+of the framework, and it regulates the access to Game Ele-
+ments and Game Mechanics.
+
+348
+
+Enterprise Tools
+
+Work&Play 
+
+Data Sources
+
+b
+e
+W
+
+ 
+
+e
+s
+i
+r
+p
+r
+e
+t
+n
+E
+m
+o
+t
+s
+u
+C
+
+Events
+
+Events
+
+Events
+
+n
+o
+i
+t
+a
+c
+i
+t
+n
+e
+h
+t
+u
+A
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+r
+e
+
+g
+n
+i
+t
+u
+o
+R
+
+l
+l
+
+o
+r
+t
+n
+o
+C
+
+Game Elements
+
+Actions Rules
+
+Rewards Feedbacks
+
+Game Mechanics
+
+Points
+
+Badges
+
+....
+
+Leader
+board
+
+Data
+
+Heuristics
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+A main requirement for a gamiﬁcation engine is its ability
+to decouple from the business logic of the gamiﬁed systems
+and applications. This allows for great ﬂexibility in terms
+of independent system co-evolution, a conditio sine qua non
+for enterprise-class software. Work&Play addresses such
+needs by means of event-driven communication abstractions.
+Events produced by third-party applications are consumed by
+Work&Play to enact the gamiﬁcation logic.
+Beyond enabling the work presented in this paper,
+Work&Play provides a strong foundation to study the effect
+on game mechanics in a variety of applications and contexts.
+In the next section, we describe how Work&Play provides a
+modular and extensible implementation of key game elements
+and mechanics; and how it can be instantiated to gamify busi-
+ness actions such as the transfer of knowledge to employees,
+and news sharing.
+
+HMIAY APPLICATION
+We introduce “How much of an IBMer are you” (HMIAY), a
+learning and social interaction Web application implemented
+on top of Work&Play. HMIAY has been developed and de-
+ployed in IBM to support our experiments.
+In the context of our work, we limit the scope of social inter-
+action to the need to build stronger professional connections,
+learn more about one’s colleagues, and spread awareness
+of the enterprise’s vision and interests by sharing company-
+related news to the outside world. Learning is targeted at
+gaining and assessing knowledge about the company’s prod-
+ucts and services and targeted markets.
+HMIAY can be accessed by all IBM employees, behind the
+company’s ﬁrewall. The application includes three mod-
+ules: 1) the Quiz; 2) the Social Hub; 3) the News Cen-
+tre. Each module is linked to one or more game elements in
+Work&Play, and it is designed to promote learning and/or
+social behaviour. Figure 2 depicts four screenshots of the
+HMIAY application.
+The quiz. This module implements a Q&A quiz.
+Its pur-
+pose is to favour the diffusion of knowledge about different
+domains. Our experiment included questions from three cat-
+egories: IBM facts, World Wide Technology and You & Your
+Network. The latter category is personalised on the social
+neighbourhood of employees, i.e. focuses on knowledge re-
+lated to their peers (the colleagues’ area of expertise) and so-
+cial connections. The other categories respectively relate with
+enterprise-speciﬁc knowledge (e.g. important ﬁgures/events
+in the history of IBM), and with facts in key business and re-
+search areas. Players interact with the module by initiating
+quiz sessions, each featuring 10 rounds. Each round contains
+a question to answer. Players can abandon the quiz at any
+point. Before a question is served, the player will have to
+choose the quiz category. On the question page, the question
+category and text are displayed together with a timer indicat-
+ing how much time is left for answering the question. The
+user has 20 seconds to choose an answer. The time constraint
+introduced by the timer puts pressure on the players, thus
+making the questions more challenging. Moreover, the timer
+lowers the chances of someone cheating by looking up the
+
+349
+
+questions’ answers. At any point during a game, the player
+is informed about the number of questions answered and the
+number of remaining questions. After the 10th question, a
+summary page with the percentage of correct answers and the
+average answering time is shown. Questions for IBM facts
+and World Wide Technology are drawn from an IBM knowl-
+edge base, common to all players. You & Your Network ques-
+tions are dynamically created for each player, according to
+a set of pre-deﬁned templates ﬁlled-in at run-time with in-
+formation coming from the player’s social neighbourhood.
+Questions are selected from the knowledge base as follows:
+ﬁrst, the game tries to pick (at random) a question that hasn’t
+been seen yet by the player; when such questions are ex-
+hausted, it picks (at random) questions that were previously
+wrongly answered. Finally, the game randomly picks from
+the pool of all questions.
+The Social Hub. It allows employees to manage their en-
+terprise (IBM Connections) and social (LinkedIn, Facebook)
+connections, with the purpose of inviting them to use the ap-
+plication. Users can voluntary link to their social account in
+order to grant the Authentication module of Work&Play ac-
+cess to their proﬁles; when the permission is granted, the
+module ﬁrst derives from the pool of social connections
+which ones are also IBM employees. Then, for each connec-
+tion, the module veriﬁes if such employee is already known to
+the system. In this case, the module gathers the information
+needed to instantiate the personalised You & Your Network
+questions.
+News Centre. The goals of this module are to keep employ-
+ees up to date with the company’s activities, and to promote
+social sharing of such news. It shows to users the latest news
+distributed by the company, for them to share on their so-
+cial networks. Instead of counting share actions immediately,
+the module periodically (e.g. once per hour) monitors em-
+ployee’ social streams, to look for the shared news. This
+asynchronous veriﬁcation mechanism has been employed to
+ensure that news gets a proper exposure on the employee’s
+network, before it gets eventually removed.
+
+Work&Play Conﬁguration For HMIAY
+We now describe how Work&Play has been conﬁgured in
+our experiment. We focus on the game elements and game
+mechanics used to gamify the HMIAY application.
+Game Elements. User activities in the application are
+mapped to action game elements in Work&Play.
+In our
+experiment, the following activities are mapped to game ac-
+tions: join the application; connect to social provider; answer
+a Quiz question; use the Social Hub to invite a colleague to
+join the application; share a news from the News Centre mod-
+ule. A set of rules, omitted for brevity’s sake, maps such ac-
+tions to one or more rewards (points). The mapping of points
+to game mechanics is described in the next section. The Feed-
+back element has been conﬁgured to access the IBM knowl-
+edge base and provide a user the correct answer to a quiz
+question, and to check if the provided answer was correct or
+incorrect. Previous studies [18] suggest that being told the
+correct answer is a more effective form of learning than only
+giving information regarding the correctness of a response.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(a) The Quiz module.
+
+(b) The News module
+
+(c) The Leaderboard page.
+
+(d) The Achievements page
+
+Figure 2: Screenshots from the “How much of an IBMer are you” application.
+
+The event from Work&Play is shown in HMIAY as in Fig-
+ure 2a: a correct answer is indicated by highlighting the cor-
+responding text in green, while an incorrect answer is indi-
+cated by highlighting the answer in red. Upon changes in the
+game mechanics’ state for a given user, Work&Play also
+triggers the Feedback module. HMIAY consumes the event
+from Work&Play in order to show a notiﬁcation message,
+thus closing the feedback loop.
+Game Mechanics. Our experiment makes use of the three
+game mechanics that are more commonly used in gamiﬁed
+applications.
+The IBMer Score summarises the user’s actions in the appli-
+cation with a positive integer.
+It serves as an incentive for
+users to perform balanced actions in the tool, and it represents
+the basis for other mechanics. Its inclusion is motivated by
+previous literature, which highlights the need for this mecha-
+nism in an enterprise environment [29]. The IBMer Score is
+displayed next to the proﬁle picture of the user (see Figure 2),
+similar to other services1. The score is built up according to
+the type, number, and frequency of the rewards obtained by
+performing actions. Intuitively, the more actions, the higher
+the score. To keep the players engaged, the score is period-
+ically re-calculated taking into account: 1) a discount factor
+that adjusts the score according to the number of days since
+their last action in the game; and 2) the overall activeness of
+all the other players in the game.
+Based on the IBMer Score, a Leaderboard displays the rank-
+ing of a user compared to other users. Figure 2c depicts a
+
+1For instance, http://www.klout.com
+
+screenshot of the leaderboard page in HMIAY. Leaderboards
+are a performance comparison game element which trigger,
+when properly implemented, competitiveness.
+It has been
+suggested that leaderboards can decrease motivation when the
+top user has a score that is considered by the current player
+to be out of reach. To overcome this, we implemented rela-
+tive leaderboards where a user’s rank is compared to her peers
+only, i.e. those employees the user is connected to on social
+networks.
+Badges are a commonly employed tool to incentivise user’s
+activity. Badges are awarded to a user for performing one
+or multiple actions of a given type, and they serve as a sum-
+mary of a user’s accomplishments. The ﬁve main categories
+of actions for which we award badges are: 1) Joining the ap-
+plication; when signing up, people receive the Proud to be
+an IBMer badge for successfully providing their email ad-
+dress. 2) Answering questions: when answering questions,
+users earn multiple badges for the ﬁrst correct answer in a cat-
+egory, or multiple (consecutive) answers. 3) Linking social
+networks: users also receive the Social as it can get badge
+for linking their Facebook and LinkedIn accounts. 4) Invit-
+ing peers: users can also receive badges when one or a num-
+ber of colleagues accept the invitation to join the application.
+5) Sharing news: when sharing news, users earn badges for
+sharing the ﬁrst, ﬁve or twenty ﬁve news articles on LinkedIn
+or Facebook. The tool shows the player the list of available
+badges, the list of earned badges, the progress towards earn-
+ing new badges, and the number of players that have earned a
+speciﬁc badge. Figure 2d depicts a screenshot of the achieve-
+ments page in HMIAY.
+
+350
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+EXPERIMENTAL METHODOLOGY
+This section describes the experimental methodology applied
+in our work. We focused on one conﬁguration aspect of the
+Work&Play framework and HMIAY application: the game
+mechanics. We organised our experiments around three main
+research questions:
+• RQ1: Which game mechanic is more effective for driving
+
+user engagement?
+
+• RQ2: Which game mechanic is more effective for promot-
+
+ing online social behaviour of employees?
+
+• RQ3: Which game mechanic is more effective for support-
+
+ing learning?
+
+We designed a between-subject post-test only control group
+experimental design, and made use of several objective and
+subjective metrics to assess (and compare) the engagement,
+social behaviour, and learning performance of participants
+during their use of the HMIAY application.
+The experiment started in the IBM Headquarters in Ams-
+terdam (the Netherlands). Initial recruitment has been per-
+formed on a voluntary base, and trough advertisement: we
+placed one banner and a few hundred ﬂyers at the IBM Head-
+quarter, inviting employees to play the HMIAY online appli-
+cation. Other participants (from other IBM buildings in the
+same or other countries) signed up to the application after re-
+ceiving an invitation email in their corporate email box from
+someone already in the application.
+Participants interacted with the experimental tool for a num-
+ber of days, depending on the signup date. Our observa-
+tion interval has been between May 12th and July 11th 2014.
+Then, we performed an objective quantitative analysis by ex-
+amining web logs and usage patterns of the HMIAY applica-
+tion. Following the objective analysis, we carried out a sub-
+jective analysis by means of a questionnaire aimed at provid-
+ing a better understanding of the quantitative data, but also
+to provide answers to research questions dealing with user
+perception. All employees who played HMIAY were sent an
+invitation to ﬁll in the questionnaire.
+
+Experimental design
+The dependent variables of the experiments are user engage-
+ment, social online behaviour, and learning. They are mea-
+sured according to the metrics described in Section “Assess-
+ment metrics”. The independent variables are the game me-
+chanics implemented in the application, and described in Sec-
+tion “Work&Play Conﬁguration For HMIAY”. To reduce the
+space of experimental conditions, we decided to provide all
+the treatment groups with the The IBMer Score mechanic.
+The ﬁnal set of independent variables included: the presence
+of a leaderboard, and the presence of badges. The resulting
+four treatment groups were organised as in Table 1. Group
+0 was the control group, and was used to give a reference
+measure of engagement for HMIAY users. Our running hy-
+pothesis was that the adoption of game mechanics would con-
+tribute to foster motivation and engagement, causing a signif-
+icant social and learning behavioural change in our subjects.
+We hypothesised that users would strive to reach one of the
+
+351
+
+top leaderboards positions, or, at least, to overcome their col-
+leagues. Also, we tested the hypothesis that badges could also
+have a positive effect on engagement, by showing users how
+many actions of a type needed to be taken to obtain a new
+achievement.
+
+Group 0 Group 1 Group 2 Group 3
+
+IBM Score
+Leaderboard
+Badges
+
+X
+-
+-
+
+X
+X
+-
+
+X
+-
+X
+
+X
+X
+X
+
+Table 1: The treatment groups used in the experiments.
+
+The between-subjects design was adopted to limit the effects
+of learning biases. Such a design presents two drawbacks:
+1) it requires a large number of participants; and 2) it intro-
+duces variability due to the distribution of individual charac-
+teristics of the participants. The ﬁrst issue has been overcome
+by deploying the tool on IBM ’s internal network, which hosts
+a large potential number of employees, and resulted in a con-
+siderable number of participants. To minimise the chances of
+bias due to subjects’ variability, at signup participants were
+randomly assigned to a treatment group. Experiments in an
+enterprise environment might suffer from the history inter-
+nal validity threat, due to participants discussing the appli-
+cation among themselves and, thus, inﬂuencing their percep-
+tions and attitudes towards the application. Such an effect
+cannot be ruled out; however, given the existence of a control
+group, and given that all experimental groups were affected
+in the same way, the impact of such threat is minimised.
+
+Assessment metrics
+The engagement and social online behaviour of employees
+were quantitatively measured by analysing HMIAY’s logs. To
+measure engagement we used: average session length, user
+retention curve, and the user life time. To measure online so-
+cial behaviour, we counted the number of invites a user sent in
+the application, and the number of shared news. A question-
+naire has been used to calculate subjective metrics such as the
+perceived engagement and perceived learning (i.e. the trans-
+fer of knowledge to employees on topics such as facts about
+IBM, technology in general, and colleagues’ skills). The em-
+ployees that agreed to ﬁll in the questionnaire were asked to
+select on a 5-point Likert scale their level of agreement with
+a set of questions.
+User Engagement. The average session length is deﬁned by
+the total time a user spent in the tool divided by the number
+of sessions, as calculated from the application logs. The aver-
+age session length falls into the online behaviour metrics and
+is a good indicative of user engagement, while normalising
+for the sign up time. The higher the value, the more engaged
+a user is. We assume activities to belong to the same session if
+their time difference is less than 15 minutes. The user reten-
+tion curve is deﬁned by the proportion of users who revisited
+the tool and the frequency of their sessions [20]. The steep-
+ness of the slope indicates the level of engagement. A steep
+slope implies that many people interacted with the application
+only a few times; a ﬂatter slope indicate that only a few people
+abandoned the application after interacting with it just a few
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+times, while many people had frequent interactions. Within
+each treatment group, we compute the number of sessions by
+all users and display a log-log plot of the data. Being an appli-
+cation independent measure, we use the user retention curve
+to compare the engagement performance of our four experi-
+mental treatments with the ones of reference gamiﬁed appli-
+cations and games with a purpose from literature2. The user
+life time represents the number of correct and incorrect quiz
+questions answered by a user. We use this metric to under-
+stand how different game mechanics inﬂuence the number of
+correct and incorrect answers submitted by a user. To subjec-
+tively measure user engagement, we use the multidimensional
+scale constructed by O’Brien et al [25], targeting the focused
+attention, perceived usability and aesthetics dimensions. We
+apply a Principal Component Analysis on the questionnaire’s
+result to select a single statement (for each of the three at-
+tributes) to use for reporting purposes. The analysis resulted
+in: 1) I found this website confusing to use (perceived usabil-
+ity); 2) The website was aesthetically appealing (aesthetics);
+3) I forgot about my immediate surroundings while playing
+on the website (focused attention).
+Social Online Behaviour. Our interest is in online ac-
+tions aimed at building stronger professional connections,
+and spread awareness of the enterprise’s vision and interests.
+We therefore have two measures. The number of invites met-
+ric measures the amount of invitations sent by a participant to
+another IBMer connected on this user’s social networks. The
+more invites a user sends, the more socially active (s)he is
+in the application. The number of shared news refers to how
+many news articles a user shared on her/his social networks
+from the tool. Both metrics closely relate to the deﬁnition of
+social online behaviour given in Section “HMIAY Applica-
+tion”.
+Learning. We used three knowledge categories: IBM Facts,
+World Wide Technology and You & Your network. To assess
+the learning effect of the application on participants, we used
+a qualitative assessment method. For each of the above cat-
+egories, employees were asked to select on a 5-point Likert
+scale their level of agreement with the following question: “I
+have learned about {TOPIC} by answering questions in the
+category {CATEGORY}”.
+
+RESULTS
+During the observation interval, 413 unique IBM employ-
+ees visited the home page of HMIAY application, as ob-
+served trough Web analytics. Out of the 250 that signed up
+for the experiment, 206 employees played the game at least
+once. They were based in nine countries and three continents:
+78.1% from The Netherlands, 8.7% Belgium, 7.8% Roma-
+nia, 1.4% United Kingdom, 1.4% United States of Amer-
+ica, and less than 1% in Argentina, France, Peru and Ger-
+many). A majority of Dutch employees was expected, as
+the application has been only physically advertised at IBM’s
+HQ in the Netherlands. As no online advertisement cam-
+paign was employed, the presence of international users has
+
+2With a slight abuse of terminology, we assimilate user sessions in
+HMIAY to players’ games in the respective GWAPs. We argue that
+such an abuse does not threat the validity of our observations.
+
+been a positive unexpected result, mainly due to the invita-
+tion mechanism in the application. 77.7% of the employees
+in our experiments were male, a ratio that reasonably ap-
+proximates IBM’s gender distribution worldwide. 20.9% of
+users were IBM managers. In terms of business units, em-
+ployees’ were distributed as follows: Global Business Ser-
+vices department (30.6%), IBM Sales & Distribution (31.5%),
+IBM Integrated Operations (17.4%), Global Technology Ser-
+vices (7.7%), IBM Software Group (8.2%), IBM Systems &
+Technology (0.5%) and IBM Integrated Supply Chain (2%).
+The random assignment yielded acceptable results, taking
+into account the given sample size. Although the number
+of female employees is not equally distributed across the
+four groups, the differences are contained. Male employ-
+ees, on the other hand, were better distributed across groups.
+The number of managers and non-managers is also well dis-
+tributed across the groups. All groups included participants
+working in different countries, and belonging to different de-
+partments.
+
+User Engagement
+This section is concerned with RQ 1: Which game me-
+chanic is more effective for driving user engagement? In
+the observed period, the HMIAY application has been used
+778 times. The number of sessions per user ranged between
+1 and 103, with 112 employees playing a single session. They
+spent in the application a total number of 66 hours, while in-
+dividual interaction time was between 1 minute and 8.3 hours.
+Employees answered a total of 2061 questions in IBM Facts,
+1720 questions in World Wide Technology and 3995 social
+questions; they submitted 553 invitations (addressed to 440
+unique colleagues), and shared company related news 299
+times.
+We answer RQ1 through three sub research questions, each
+focusing on a different aspect of user engagement.
+Which game mechanics are more effective for incentivising
+users to play longer? We look at the average session length
+in the four treatment groups and use the Mann-Whitney-
+Wilcoxon non-parametric test [21] to test for statistically sig-
+niﬁcant difference across the groups3. The resulting statistics
+for average session length are summarised in Table 2. When
+users are provided with either leaderboards (G1) or badges
+(G2) we see an improvement in the average session length.
+When we combine leaderboards and badges (G3) the effect
+is more pronounced, resulting in even longer sessions. We
+investigated the statistical signiﬁcance of the observed differ-
+ences, testing the null hypothesis that the distributions of the
+considered groups are identical. The resulting p − values are
+summarised in Table 2 (right-hand side). We have strong evi-
+dence to reject the null hypothesis that the two samples come
+from the same distribution when comparing G0 with G1, G2,
+and G3. This suggests that the users tend to stay on the web-
+site longer when they see leaderboards or receive badges.
+
+3The Mann-Whitney-Wilcoxon has been used in the study due to the
+non-normal distribution of the data.
+
+352
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+µ
+
+med.
+
+G0
+G1
+G2
+G3
+
+5.69
+7.99
+7.81
+10.46
+
+4
+6
+6
+
+8.85
+
+σ
+
+7.49
+6.30
+6.28
+9.52
+
+G0
+
+.004
+.013
+7.08e−5
+
+G1
+
+.004
+
+.812
+.098
+
+G2
+
+.013
+.812
+
+.083
+
+G3
+7.08e−5
+.098
+.083
+
+Table 2: First order statistics (left-hand side) and Mann-Whitney-
+Wilcoxon pairwise signiﬁcance test (with Holm-Bonferroni adjustment.,
+right-hand side) for average session length (in minutes) variable across
+treatment groups.
+
+Figure 3: The user retention for the four treatment groups in our exper-
+iments. Curves are linear ﬁts to the real data, and are compared with
+reference gamiﬁed applications and GWAPs in literature.
+
+The effect is even more pronounced when the two game me-
+chanics are combined. When used alone, there is no prefer-
+ence towards either leaderboards or badges.
+The previous statistics only considered average session
+length. To test the engagement of our subjects over time, we
+computed and analysed their retention curves. In Figure 3 we
+compare the slopes (calculated as linear ﬁts to the real data) of
+the lines between our four treatment groups, and with other
+reference systems from literature [20]. We observe that G1
+and G2 produce ﬂatter (almost identical) lines, compared to
+the control group G0, thus pointing to an higher level of en-
+gagement. The ﬂattest curve is the one associated with G3
+which, as for the average session length, appears to be the
+more engaging conﬁguration. Notably, G0 shows a retention
+curve comparable with the ones of applications such as ESP,
+Verbosity, and others. G1, G2, and G3, however, appears to
+provide signiﬁcantly better engagement performance.
+Which game mechanics are more effective for incentivising
+users to answer questions? We analyse the number of total
+and correct answered questions in the three targeted knowl-
+edge categories. Table 5 reports an overview of the number
+of average questions per user. As in similar studies [18], we
+investigate the effect of incentive mechanics on the number of
+answered questions by means of negative binomial regression
+[17], to account for over-dispersed data.
+Table 3 shows the coefﬁcients and the signiﬁcance levels
+computed for each treatment group by the negative binomial
+regression model. The intercepts corresponding to the control
+group are omitted from the table. In the IBM Facts category,
+
+353
+
+G0
+
+G1
+
+G2
+
+G3
+
+IBM Facts
+WWT
+YYN
+
+7.1458
+3.6458
+8.9375
+
+7
+
+7.6603
+18.9811
+
+11.0555
+8.4629
+12.4074
+
+14.6078
+13.3137
+37.0196
+
+Table 5: Average number of answered questions per question category,
+and across treatment groups.
+
+users provided with both leaderboards and badges (G3) fea-
+tured the strongest increase in the number of both correct and
+total number of questions. Both G1 and G2 do not increase
+the number of total answered questions nor the number of
+correct questions. For World Wide Technology questions, all
+treatments have a signiﬁcant effect on both increasing over-
+all participation and the number of correct answers. Badges
+provide slightly better performance for both variables. When
+combined, leaderboard and badges give the strongest effect,
+increasing the number of answered questions by 370% (1.31)
+and the number of correct questions by 448% (1.51) com-
+pared to the control group. With You & Your Network ques-
+tions, the adoption of leaderboards show an improvement in
+both total and correct answers, while badges do not have such
+an effect. As with the previous results, the combination of
+leaderboards and badges is the best for incentivising user par-
+ticipation.
+Which game mechanics stimulate better perceived user en-
+gagement? We address focused attention, perceived usabil-
+ity and aesthetics attributes of user engagement. We analyse
+the data resulting from N = 41 respondents who answered
+the questions related to user engagement. Respondents were
+split into the four treatment groups as follows: 6 participants
+in G0, 13 in G1, 10 in G2, and 12 participants in G3. To
+process the answers, we recoded the Likert scale on an ordi-
+nal scale with 1 (Strongly disagree) to 5 (Strongly agree) and
+compute basic statistics across treatment groups. We test for
+statistically signiﬁcant differences using the Mann-Whitney-
+Wilcoxon non-parametric test. Results are summarised in
+Tables 4. Treatments consistently received positive evalua-
+tion in all the engagement dimensions (in the perceived us-
+ability question, the lower the score the better), thus indi-
+cating a good feeling between our subjects and the applica-
+tion. We observe no statistically signiﬁcant difference be-
+tween groups in terms of focussed attention and perceived
+usability attributes. When analysing responses concerning
+aesthetics, we notice that users in G3 perceived the tool to
+be more visually appealing than users in the other groups.
+This is an interesting outcome, given that all conﬁgurations
+of the application shared the same look and feel. Results sug-
+gest that having both leaderboards and badges, compared to
+receiving only one of the two, have an inﬂuence on users’
+aesthetics perception.
+
+Social online behaviour
+This section is concerned with RQ 2: Which game me-
+chanic is more effective for promoting online social be-
+haviour of employees?. We analyse the number of invita-
+tions sent and the number of news shared across the treatment
+groups, and address the following three sub-questions.
+
+)
+g
+o
+l
+(
+ 
+
+i
+
+s
+n
+o
+s
+s
+e
+S
+#
+
+ 
+
+ 
+
+ 
+
+ 
+
+i
+
+g
+n
+v
+a
+H
+s
+r
+e
+s
+U
+#
+
+ 
+
+x
+
+G0
+G1
+G2
+G3
+
+Matchin
+TagATune
+ESP
+Verbosity
+
+10k
+
+1k
+
+100
+
+10
+
+1
+
+1
+
+10
+
+# of Sessions (log)
+
+100
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+IBM Facts
+
+Total
+
+Correct
+
+World Wide Technology WWT
+Total
+Correct
+
+Coeff.
+-0.02
+0.45
+0.71
+
+Signif.
+0.94
+0.11
+0.009∗∗∗
+
+Coeff.
+0.06
+0.51
+0.85
+
+Signif.
+0.94
+0.11
+0.01∗∗
+
+Coeff.
+0.74
+0.85
+1.31
+
+Signif.
+0.0325∗
+0.03∗
+0.6e−3∗∗∗
+
+Coeff.
+0.93
+0.94
+1.51
+
+Signif.
+0.021∗
+0.31∗
+1.2e−5∗∗∗
+
+Coeff.
+0.75
+0.34
+1.44
+
+G1
+G2
+G3
+
+You & Your Network YYN
+Total
+Signif.
+0.03∗
+0.32
+4.14e−5∗∗∗
+
+Coeff.
+0.80
+0.37
+1.54
+
+Correct
+
+Signif.
+0.02∗
+0.31
+1.2e−5∗∗∗
+
+Table 3: The effect of different game-mechanisms in incentivising users to answer more questions (Total) and more correct questions (Correct) per
+question categories across the treatment groups (with Holm-Bonferroni adjustment: ∗∗∗: 0.1% signiﬁcance, ∗∗: 1% signiﬁcance, ∗: 5% signiﬁcance).
+
+Aesthetics
+
+Attention
+
+Usability
+
+Statistics
+
+Signiﬁcance Test
+
+Statistics
+
+Signiﬁcance Test
+
+Statistics
+
+Signiﬁcance Test
+
+µ
+
+3.34
+4
+3.8
+4.3
+
+σ
+
+0.816
+0.707
+0.421
+0.621
+
+G0
+
+.124
+.205
+.029∗
+
+G1
+
+.124
+
+.484
+.377
+
+G2
+
+.205
+.484
+
+.071
+
+G0
+G1
+G2
+G3
+
+G3
+
+.029∗
+.377
+.071
+
+µ
+3.5
+3
+3.1
+3.1
+
+σ
+
+G0
+
+0.547
+0.707
+0.994
+0.996
+
+.160
+.513
+.953
+
+G1
+
+.160
+
+.592
+.756
+
+G2
+
+.513
+.592
+
+.808
+
+G3
+
+.322
+.953
+.808
+
+µ
+2
+2
+1.6
+1.7
+
+σ
+
+G0
+
+0.632
+0.816
+0.699
+0.492
+
+.878
+.256
+.282
+
+G1
+
+.878
+
+.229
+.319
+
+G2
+
+.256
+.229
+
+.679
+
+G3
+
+.282
+.319
+.679
+
+Table 4: First order statistics of the perceived user engagement across the four treatment groups. Mann-Whitney-Wilcoxon pair-wise signiﬁcance test
+(with Holm-Bonferroni adjustment) for perceived user engagement across the four treatment groups.
+
+Which game mechanics are more effective for incentivising
+users to invite their colleagues to play the game? 21.07%
+of the users sent at least one invitation. The skewed distribu-
+tion of data suggests the adoption of a zero-inﬂated Poisson
+regression [19]. For consistency, we want to use a negative
+binomial regression, unless the zero-inﬂated Poisson regres-
+sion mode proves statistically superior. We therefore ﬁt the
+two regressions and test how well they approximate our data
+by means of a Vuong closeness test [30]. The null hypoth-
+esis is that the two models are equally close to the actual
+model, against the alternative that one model is closer. Al-
+though the result suggests that the zero-inﬂated Poisson re-
+gression model is superior, we do not have enough evidence
+to reject the null hypothesis (p − value : 0.327). Table 6
+shows the coefﬁcients and signiﬁcance levels of ﬁtting a neg-
+ative binomial regression model on the number of sent in-
+vitations across treatments. As users receive rewards (used
+to increase their leaderboard position) and earn badges when
+invitations are accepted, we also included in the regression
+model the distribution of accepted invitations. The intercept
+corresponds to the control group and has been omitted from
+the table. While only a fraction of users sent invitations, we
+observe how leaderboards had a signiﬁcant effect, which got
+enhanced when combined with badges. The result suggests
+that game mechanics can provide a further positive inﬂuence
+on the social behaviour of already engaged users.
+
+Acc.Invit.
+G1
+G2
+G3
+
+Coeff.
+1.1787
+1.5013
+0.8515
+1.6756
+
+Signif.
+3.33e-16∗∗∗
+0.0187∗
+0.1936
+0.0090∗∗∗
+
+Table 6: The effect of different game-mechanisms in incentivising users
+to invite colleagues (with Holm-Bonferroni adjustment.: ***: 0.1% sig-
+niﬁcance, **: 1% signiﬁcance, *: 5% signiﬁcance).
+
+Do IBMers have strong ties across departments? We use the
+number of invitations sent in the application as a proxy for
+strong ties, under the assumption that employees send invita-
+tions only to those colleagues they have a strong connection
+with (intuitively, due to professional reputation, one is less
+prone to “spam” social connections in a professional environ-
+ment). A strong tie refers to friendship and familial relation-
+ships and is characterised by “the amount of time and emo-
+tions invested in a relationship” [27]. Our hypothesis is that
+employees have stronger relationships with colleagues from
+the same department, than colleagues in other departments.
+The nodes in the graph represent users (inviter or invitee) and
+the edges represent invitations sent between these users. A
+node is colour- and size-coded. The colour shows the depart-
+ment and the size represent the number of invitations sent by
+the user. The more invitations sent, the larger the node.
+From the total number of invitations sent in the application,
+48.42% were inter-department, while 51.57% were intra-
+department.
+Interestingly, we observed differences in the
+behaviour of employees across departments: employees in
+Global Technologies and Sales and Distributions sent most
+invitations to colleagues outside their departments, contrar-
+ily to employees in Global Technology Services and Global
+Business Services. These insights suggest that the user invita-
+tion action can be an effective tool to detect and trace strong
+ties across enterprise departments; such an analysis can prove
+very valuable for human resource management and organisa-
+tion purposes, and indicates interesting directions for future
+research.
+Can gamiﬁcation incentivise users to share news on their
+professional network? The 299 news sharing actions were
+performed by 5.33 % of the employees who used the applica-
+tion. Statistical signiﬁcance analysis run on the coefﬁcients
+of a zero-inﬂated Poisson regression model shows no rele-
+vant difference in the distribution of news sharing activities
+between the four treatments. We performed further inves-
+
+354
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+tigations to understand the reasons behind the low number
+of news sharing users. We studied the hypothesis that the
+new content was not appealing enough to be worthy of re-
+distribution even with an additional incentive. To test such
+hypothesis we extended our analysis to include all IBM re-
+lated news shared by user that linked they LinkedIn network.
+We included in this analysis all the posts a user made on
+her social networks that include the word “IBM”. 44 IBMers
+(21.35 % of our sample size) shared IBM-related content on
+their LinkedIn network after signing up to the application.
+We found no statistical difference in the distribution of IBM-
+related news across groups. Therefore, we don’t have suf-
+ﬁcient evidence to support the hypothesis. This shows that
+more explorations are needed into the effect of gamiﬁcation
+on this type of social behaviour.
+
+Learning
+This section focuses on RQ 3: Which game mechanic
+is more effective for supporting learning? We analyse
+the response of the 41 users that ﬁlled the questionnaire on
+perceived engagement and perceived learning. We recode
+the answers on the Likert scale on an ordinal scale from 1
+(Strongly disagree) to 5 (Strongly Agree) and compute means
+and standard deviations across the treatment groups. We use
+Mann-Whitney-Wilcoxon non-parametric test to verify statis-
+tically signiﬁcant differences between groups. The results are
+summarised in Table 7. Treatments consistently received pos-
+itive evaluation for all the knowledge categories, thus show-
+ing the positive effect on learning that a gamiﬁed experience
+can provide. We observe no statistical difference across treat-
+ments for the perceived learning in the IBM Facts and You &
+Your Network categories. In the World Wide Technology cate-
+gory, we observe a statistical difference between G2 and G3.
+Consistent with literature investigating gamiﬁcation outside
+the enterprise, the subjective data indicates that the gamiﬁed
+HMIAY tool can promote learning. The experiment did not
+show a relevant effect for the studied game mechanics, there-
+fore calling for further detailed investigations on the subject.
+
+Discussion
+We now elaborate on the results reported in the previous sec-
+tions, in the light of the research questions and experimental
+hypothesis deﬁned in Section “Experimental Methodology”.
+Recruitment and Retainment. The comparison between the
+number of employees invited by colleagues (440) and the
+number of unique employees visiting the application’s home
+page (413), points to the effectiveness of word-of-mouth and
+social sharing techniques. 60% (250) of such employees de-
+cided to subscribe to the experiment, and 82% of them played
+at least once. These outcomes suggest a signiﬁcantly diverse
+perception of the game (and its utility and goals) within the
+targeted population. We acknowledge the likelihood of a se-
+lection bias, as the nature and the requirements of HMIAY
+might have inﬂuenced the distribution of participants in the
+overall IBM employees’ population. The adoption of an open
+recruitment methodology, does not allow for deeper analysis
+on the success of the HMIAY application within IBM: intu-
+itively, we have no information about employees that will-
+ingly decided not to visit the application’s home page, or not
+
+355
+
+to enrol. The investigation on the attractive and repulsive as-
+pects of enterprise gamiﬁcation across different demograph-
+ics is therefore left for future work. On the other hand, we
+consider the 45% retainment ratio (i.e. employees that played
+more than once) a good result, especially when compared
+with other games with a purpose in literature (Figure 3).
+User Engagement. The experiment demonstrated in a con-
+sistent manner the positive effects that gamiﬁcation can pro-
+vide in an enterprise learning and social interaction tool.
+Leaderboard and badges shown a positive effect for all the
+considered objective dimensions. In terms of average session
+length, their combination is even more effective. The same
+type of additive effect is at play when considering the num-
+ber of (correctly) answered questions. However, the effect of
+only badges or only leaderboards is dependent on the type of
+questions users answer. Used alone, leaderboards are effec-
+tive only for incentivising users to answer World Wide Tech-
+nology and You & Your Network. When used alone, badges
+are only effective for incentivising users to answer questions
+in the World Wide Technology category. Noteworthy is the
+popularity of You & Your Network across all conditions. This
+is an important result, that suggests a genuine interest of em-
+ployees in discovering more about their work environment,
+an interest that is signiﬁcantly ampliﬁed by game mechanics.
+From a subjective point of view, we observed that only the
+users’ perception of aesthetics is inﬂuenced by the game me-
+chanics. The other two attributes, focussed attention and per-
+ceived usability, while showing very good assessment from
+the interview users, appear not be inﬂuenced. Given the
+amount of subjects, and the known drawbacks of user per-
+ception measures [28], results should be conservatively in-
+terpreted, and further investigations performed. Finally, it is
+worth mentioning the good results in terms of user retention
+curve for all the treatments groups (Figure 3): even account-
+ing for the more limited user base, these results suggests an
+high level of engagement, which is comparable, if not supe-
+rior to the one featured by the most popular GWAP in litera-
+ture. This is a very encouraging result, which hints to a po-
+tentially successful employment of even more “aggressive”
+forms of gamiﬁcation in the enterprise environment.
+Social Behaviour. Given the deﬁnition provided in Section
+“HMIAY Application”, we measured the number of sent invi-
+tations and shared news as an indication of social behaviour.
+The tested game mechanics provided a positive effect on the
+number of sent invitations; as for the engagement aspects, the
+combination of leaderboards and badges provides a strength-
+ened effect. As part of the analysis, we investigated the in-
+vitations graph and observed that the considered IBMers are
+well connected both intra- and inter-department. This type of
+analysis can be very useful in an enterprise environment, and
+the correct usage of game mechanics can greatly help in the
+identiﬁcation of strong organisational types.
+The analysis of shared news provided conclusive evidence
+neither about the efﬁcacy of the HMIAY tool, nor about the
+roles that game mechanics can play in driving this type of
+social behaviour. We explain this outcome as the result of a
+confounding factor of the content of the articles to be shared:
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+IBM Facts
+
+World Wide Technology
+
+You & Your Network
+
+Statistics
+
+Signiﬁcance Test
+
+Statistics
+
+Signiﬁcance Test
+
+Statistics
+
+Signiﬁcance Test
+
+µ
+4
+4
+3.7
+4.2
+
+σ
+
+0.632
+0.577
+0.823
+0.389
+
+G0
+
+1
+
+.531
+.561
+
+G1
+
+1
+
+.399
+.444
+
+G2
+
+.531
+.399
+
+.119
+
+G3
+
+.561
+.444
+.119
+
+µ
+4
+4
+3.4
+4
+
+σ
+
+0
+0.816
+.843
+0.426
+
+G0
+
+.776
+.0775
+
+1
+
+G1
+
+.776
+
+.072
+.756
+
+G2
+
+.0775
+.0723
+.039∗
+
+G0
+G1
+G2
+G3
+
+G3
+
+1
+.756
+.039∗
+
+µ
+3.3
+3.4
+3.6
+3.7
+
+σ
+
+1.211
+.869
+0.843
+0.492
+
+G0
+
+.962
+.688
+.566
+
+G1
+
+.962
+
+.422
+.198
+
+G2
+
+.688
+.422
+
+.909
+
+G3
+
+.566
+.198
+.909
+
+Table 7: First order statistics of the effect on learning across question categories and treatment groups. Mann-Whitney-Wilcoxon pair-wise signiﬁcance
+test (with Holm-Bonferroni adjustment) for perceived learning across the four treatment groups.
+
+no personalisation mechanism was included in the news shar-
+ing functionality, thus binding employees to a pre-deﬁned and
+ﬁxes set of choices. As employees are more and more active
+in managing their personal and professional identities [7], we
+hypothesise the lack of suitable news to have neutralised the
+incentive attached to the sharing action. Further investiga-
+tions on the joint effect of personalised content sharing and
+gamiﬁcation mechanisms are object of future work.
+Learning. Lastly, we look at perceived learning by analysing
+respondents’ answers to a questionnaire. While the tool has
+been consistently evaluated in a positive way, results show
+that leaderboards, badges, or the combination of the two do
+not impact learning neither negatively nor positively, excep-
+tion being made by the World Wide Technology category. This
+is also a promising result, that conﬁrm previous works in lit-
+erature: the feedback gaming element supported the learning
+experience, which wasn’t affected by the adoption of differ-
+ent game mechanics. Interestingly, the You & Your Network
+category consistently received the lowest (although positive)
+evaluation. We can interpret this result as a signal of dis-
+appointment: despite the great engagement with this type
+of questions (see Table 5), employees would have preferred
+more information about their peers. This is an encouraging
+outcome, that suggests the value of a gamiﬁed experience to
+promote the spread of information about the enterprise work-
+force.
+Legal and ethical aspects Our work bridged the gap between
+an employee’s professional and private information by com-
+bining user data from social and professional networks with
+enterprise data. Respecting user’s privacy is not only required
+from a legal and an ethical point of view, it has also been a
+critical part of system design because trust is a prerequisite
+for engagement. Our work featured the best practices con-
+cerning transparency and privacy and is compliant with the
+European Data Protection Act4. Speciﬁcally, at registration
+time, and at any moment during the usage of the application,
+users could access the “Terms of Service” , which speciﬁed
+the purpose of the tool, what kind of data was requested of the
+employees and how this data has been used. At any moment
+in time, users could also opt-out from the application, and we
+made sure that all the information about an employee asso-
+ciated with this project were permanently deleted. Notably,
+within the duration of our experiment no user took advantage
+of such an option.
+
+4http://ec.europa.eu/social/BlobServlet?docId=
+2507&langId=en
+
+CONCLUSIONS AND FUTURE WORK
+Our research aims at better understanding how gamiﬁcation
+can be used to drive user engagement with Web systems in
+an enterprise environment. In this paper we have presented
+an experiment performed at IBM, where we studied the effec-
+tiveness of various game mechanics on social interaction and
+learning.
+The experiments provided several useful insights. The “How
+much of an IBMer are you” (HMIAY) application was re-
+ceived well by employees. They quickly engaged with the
+application, answering quiz questions, inviting colleagues to
+try the application, and shared news. The level of engagement
+achieved through the tested game mechanics was, in general,
+high. We often noticed variations in the measures for the en-
+gagement dimensions according to the mechanics a group re-
+ceived. HMIAY has proven successful for promoting knowl-
+edge acquisition. Results related to social online behaviour
+are also encouraging, showing how gamiﬁcation can also be
+an effective tool for driving given types of social behaviours.
+This work provides plenty of inspirations for future research
+directions. For instance, we plan to better understand the type
+of additive relationship often shown by the combination of
+leaderboards and badges. While the two mechanics stress
+two different types of motivations, a latent effect, to be fur-
+ther studied, seems to play a role when combined. Also, we
+want to better understand which incentives can better drive
+employees with news sharing activities. Our work explicitly
+focused on leaderboards, badges and the combination of the
+two. However, the research community would beneﬁt from
+expanding these game mechanics to include the ones that are
+less popular, for instance levels and progress.
+Gamiﬁcation engines like Work&Play can potentially ac-
+cess and cross reference personal data from different sources.
+It is therefore important to protect such private data from at-
+tacks, de-anonymization and exploitation beyond the explic-
+itly allowed use. Having more means to protect one’s privacy
+can prove beneﬁcial for engagement and mass adoption of
+gamiﬁcation tools. We believe that an important direction for
+future work is to explore privacy-by-design approaches for
+gamiﬁed system.
+Finally, we recognise the obvious importance of conducting
+similar studies in other companies, to test if the conclusions
+drawn by the current work can be further generalised beyond
+the IBM use case.
+
+356
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+REFERENCES
+1. Ashton Anderson, Daniel Huttenlocher, Jon Kleinberg,
+
+and Jure Leskovec. 2013. Steering user behavior with
+badges. In Proceedings of the 22nd international
+conference on World Wide Web. International World
+Wide Web Conferences Steering Committee, 95–106.
+2. Ashton Anderson, Daniel Huttenlocher, Jon Kleinberg,
+
+and Jure Leskovec. 2014. Engaging with Massive
+Online Courses. In Proceedings of the 23rd
+International Conference on World Wide Web (WWW
+’14). ACM, New York, NY, USA, 687–698. DOI:
+http://dx.doi.org/10.1145/2566486.2568042
+
+3. Judd Antin and Elizabeth F. Churchill. 2011. Badges in
+
+Social Media: A Social Psychological Perspective. In
+Proceedings of the CHI 2011 Gamiﬁcation Workshop.
+Vancouver, BC, Canada.
+
+4. Simon Attﬁeld, Gabriella Kazai, Mounia Lalmas, and
+
+Benjamin Piwowarski. 2011. Towards a science of user
+engagement (Position Paper). In WSDM Workshop on
+User Modelling for Web Applications. ACM
+International Conference on Web Search And Data
+Mining, Hong Kong, China. http://research.
+microsoft.com/apps/pubs/default.aspx?id=183535
+5. Ricardo Baeza-Yates and Mounia Lalmas. 2012. User
+
+Engagement: The Network Effect Matters!. In
+Proceedings of the 21st ACM International Conference
+on Information and Knowledge Management (CIKM
+’12). ACM, New York, NY, USA, 1–2. DOI:
+http://dx.doi.org/10.1145/2396761.2396763
+
+6. Staffan Bjork and Jussi Holopainen. 2004. Patterns in
+
+Game Design (Game Development Series). Charles
+River Media, Inc., Rockland, MA, USA.
+
+7. Alessandro Bozzon, Hariton Efstathiades, Geert-Jan
+Houben, and Robert-Jan Sips. 2014. A Study of the
+Online Proﬁle of Enterprise Users in Professional Social
+Networks. In Proceedings of the Companion Publication
+of the 23rd International Conference on World Wide
+Web Companion (WWW Companion ’14). International
+World Wide Web Conferences Steering Committee,
+Republic and Canton of Geneva, Switzerland, 487–492.
+DOI:http://dx.doi.org/10.1145/2567948.2576938
+
+8. Sebastian Deterding, Dan Dixon, Rilla Khaled, and
+
+Lennart Nacke. 2011. From game design elements to
+gamefulness: deﬁning gamiﬁcation. In Proceedings of
+the 15th International Academic MindTrek Conference:
+Envisioning Future Media Environments. ACM, 9–15.
+9. Joan DiMicco, David R. Millen, Werner Geyer, Casey
+Dugan, Beth Brownholtz, and Michael Muller. 2008.
+Motivations for Social Networking at Work. In
+Proceedings of the 2008 ACM Conference on Computer
+Supported Cooperative Work (CSCW ’08). ACM, New
+York, NY, USA, 711–720. DOI:
+http://dx.doi.org/10.1145/1460563.1460674
+
+10. Mira Dontcheva, Robert R. Morris, Joel R. Brandt, and
+Elizabeth M. Gerber. 2014. Combining Crowdsourcing
+
+357
+
+and Learning to Improve Engagement and Performance.
+In Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’14). ACM, New
+York, NY, USA, 3379–3388. DOI:
+http://dx.doi.org/10.1145/2556288.2557217
+11. David Easley and Arpita Ghosh. 2013. Incentives,
+
+Gamiﬁcation, and Game Theory: An Economic
+Approach to Badge Design. In Proceedings of the
+Fourteenth ACM Conference on Electronic Commerce
+(EC ’13). ACM, New York, NY, USA, 359–376. DOI:
+http://dx.doi.org/10.1145/2482540.2482571
+
+12. Rosta Farzan, Joan M. DiMicco, David R. Millen, Casey
+
+Dugan, Werner Geyer, and Elizabeth A. Brownholtz.
+2008. Results from Deploying a Participation Incentive
+Mechanism Within the Enterprise. In Proceedings of the
+SIGCHI Conference on Human Factors in Computing
+Systems (CHI ’08). ACM, New York, NY, USA,
+563–572. DOI:
+http://dx.doi.org/10.1145/1357054.1357145
+
+13. Luca Galli, Piero Fraternali, and Alessandro Bozzon.
+
+2014. On the Application of Game Mechanics in
+Information Retrieval. In Proceedings of the First
+International Workshop on Gamiﬁcation for Information
+Retrieval (GamifIR ’14). ACM, New York, NY, USA,
+7–11. DOI:
+http://dx.doi.org/10.1145/2594776.2594778
+
+14. Ido Guy, Adam Perer, Tal Daniel, Ohad Greenshpan,
+
+and Itai Turbahn. 2011. Guess who?: enriching the
+social graph through a crowdsourcing game. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems. ACM, 1373–1382.
+
+15. Juho Hamari. 2013. Transforming homo economicus
+
+into homo ludens: A ﬁeld experiment on gamiﬁcation in
+a utilitarian peer-to-peer trading service. Electronic
+Commerce Research and Applications 12, 4 (2013), 236
+– 245. DOI:
+http://dx.doi.org/10.1016/j.elerap.2013.01.004
+Social Commerce- Part 2.
+
+16. Juho Hamari, Jonna Koivisto, and Harri Sarsa. 2014.
+
+Does Gamiﬁcation Work? A Literature Review of
+Empirical Studies on Gamiﬁcation. In Proceedings of
+the 47th Hawaii International Conference on System
+Sciences. HICSS.
+
+17. Joseph M Hilbe. 2011. Negative binomial regression.
+
+Cambridge University Press.
+
+18. Panagiotis G Ipeirotis and Evgeniy Gabrilovich. 2014.
+Quizz: targeted crowdsourcing with a billion (potential)
+users. In Proceedings of the 23rd international
+conference on World wide web. International World
+Wide Web Conferences Steering Committee, 143–154.
+
+19. Norman L Johnson, Adrienne W Kemp, and Samuel
+Kotz. 2005. Univariate Discrete Distributions (Wiley
+Series in Probability and Statistics). Vol. 444. John
+Wiley & Sons. DOI:
+http://dx.doi.org/10.1002/0471715816.ch6
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+20. Edith Law and Luis Von Ahn. 2009. Input-agreement: a
+
+new mechanism for collecting data using human
+computation games. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems.
+ACM, 1197–1206.
+
+21. Henry B Mann and Donald R Whitney. 1947. On a test
+of whether one of two random variables is stochastically
+larger than the other. The annals of mathematical
+statistics (1947), 50–60.
+
+22. Gloria Mark, Ido Guy, Shiri Kremer-Davidson, and
+
+Michal Jacovi. 2014. Most liked, fewest friends:
+patterns of enterprise social media use. In Proceedings
+of the 17th ACM conference on Computer supported
+cooperative work & social computing. ACM, 393–404.
+
+23. Lori McCay-Peet, Mounia Lalmas, and Vidhya
+
+Navalpakkam. 2012. On Saliency, Affect and Focused
+Attention. In Proceedings of the SIGCHI Conference on
+Human Factors in Computing Systems (CHI ’12). ACM,
+New York, NY, USA, 541–550. DOI:
+http://dx.doi.org/10.1145/2207676.2207751
+
+24. Heather L. O’Brien and Elaine G. Toms. 2008. What is
+
+User Engagement? A Conceptual Framework for
+Deﬁning User Engagement with Technology. J. Am. Soc.
+Inf. Sci. Technol. 59, 6 (April 2008), 938–955. DOI:
+http://dx.doi.org/10.1002/asi.v59:6
+
+25. Heather L O’Brien and Elaine G Toms. 2010. The
+
+development and evaluation of a survey to measure user
+engagement. Journal of the American Society for
+Information Science and Technology 61, 1 (2010),
+50–69.
+
+26. Marta Rauch. 2013. Best Practices for Using Enterprise
+Gamiﬁcation to Engage Employees and Customers. In
+Human-Computer Interaction. Applications and
+Services. Springer, 276–283.
+
+27. Martin Ruef. 2002. Strong ties, weak ties and islands:
+
+structural and cultural predictors of organizational
+innovation. Industrial and Corporate Change 11, 3
+(2002), 427–449.
+
+28. Frank E Saal, Ronald G Downey, and Mary A Lahey.
+1980. Rating the ratings: Assessing the psychometric
+quality of rating data. Psychological Bulletin 88, 2
+(1980), 413.
+
+29. Jennifer Thom, David Millen, and Joan DiMicco. 2012.
+
+Removing Gamiﬁcation from an Enterprise SNS. In
+Proceedings of the ACM 2012 Conference on Computer
+Supported Cooperative Work (CSCW ’12). ACM, New
+York, NY, USA, 1067–1070. DOI:
+http://dx.doi.org/10.1145/2145204.2145362
+
+30. Quang H Vuong. 1989. Likelihood ratio tests for model
+
+selection and non-nested hypotheses. Econometrica:
+Journal of the Econometric Society (1989), 307–333.
+
+358
+
+

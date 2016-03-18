@@ -1,0 +1,1469 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+One LED is Enough: Catalyzing Face-to-face Interactions at
+
+Conferences with a Gentle Nudge
+
+Jay Chen, Azza Abouzied
+
+New York University Abu Dhabi
+jchen@cs.nyu.edu, azza@nyu.edu
+
+ABSTRACT
+Face-to-face social interactions among strangers today are be-
+coming increasingly rare as people turn towards computer-
+mediated networking tools. Today’s tools, however, are based
+on the following assumptions: increased information encour-
+ages interaction, proﬁles are good representations of users
+to other users, and computer-mediated communications prior
+to face-to-face meetings lead to better outcomes. This pa-
+per describes CommonTies, a gentle technological nudge in
+the form of a wearable accessory, that encourages immediate,
+face-to-face, organic social interactions among strangers at
+conferences. By not exposing any proﬁle information, Com-
+monTies preserves an element of mystery and enables self-
+disclosure of information through conversation. We evaluate
+our system through a ﬁeld study at a three-day research con-
+ference - CSCW 2014. We ﬁnd that despite our information-
+scarce design, users were willing to interact with strangers
+and 74% of the interactions initiated by CommonTies were
+reported as novel and useful.
+
+Author Keywords
+matchmaking; wearables; nudge; computer-mediated
+interactions
+
+ACM Classiﬁcation Keywords
+H.5.m. Information Interfaces and Presentation (e.g. HCI):
+Miscellaneous
+
+INTRODUCTION
+Conferences are professional gatherings that enable the shar-
+ing of ideas among colleagues and peers.
+Ideally, confer-
+ences should be welcoming to new attendees. Striking up
+a conversation with a stranger, however, can be awkward
+or uncomfortable. Conferences also have additional factors
+that create barriers for interaction: large rooms of strangers
+with unknown group dynamics and social norms, existing
+social cliques, which attendees may ﬁnd hard to leave or
+join, class distinctions for example between senior and ju-
+nior researchers in an academic conference, etc. This paper
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full citation
+on the ﬁrst page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise,
+or republish, to post on servers or to redistribute to lists, requires prior speciﬁc
+permission and/or a fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02. . . $15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819969
+
+describes CommonTies, a wearable device that encourages
+face-to-face interactions in networking situations like confer-
+ences and receptions.
+There is a potential need for networking tools that enable
+face-to-face interactions. First, the increase of online interac-
+tions have made face-to-face stranger interactions less prac-
+ticed and potentially awkward. Second, in existing techno-
+logical systems, interactions transpire ﬁrst through a mobile
+device or computer medium where some information display
+(e.g. names, contact info, proﬁles, photos, etc.) attempts to
+convey the key characteristics of a stranger while missing im-
+portant social cues that are present during a face-to-face en-
+counter. Third, systems generally assume that revealing in-
+formation about matches is a requisite for encouraging an in-
+teraction, but it is unclear to what extent this is true.
+Our design of CommonTies is inspired by results of sev-
+eral psychological works by Collins and Miller [7] and
+Walther [31]. Collins and Miller (and Walther) ﬁnd that the
+act of information disclosure is nuanced, active, and intimate
+(“hyperpersonal”) and will lead to an increase in the devel-
+opment and maintenance of meaningful relationships. This
+contrasts with impersonal, automatic, and computer-mediated
+information disclosure to unknown strangers that can circum-
+vent eventual self-disclosure in conversation. In this paper,
+we attempt to reconcile these ideas by considering the pos-
+sibility that information rich proﬁles may not be necessary
+for achieving positive matchmaking outcomes in certain pre-
+ﬁltered contexts.
+Our key research contributions in this work are:
+1. We put forward the following principles for the design of
+social networking tools in curated contexts like confer-
+ences and describe them in the Design Section:
+(i) preserve privacy1 and mystery
+(ii) minimize computer mediation in human-to-human
+
+interactions
+
+(iii) easily support context, beyond proximity
+(iv) lightweight and seamless to use
+
+2. We implement these principles in CommonTies in the form
+of a small, lightweight, low-power wristband we call a
+tie. Ties have an extremely limited information display
+— only one LED that can glow one of six visually distinct
+
+1In this work, the term ‘privacy’ is used strictly in terms of privacy
+between users. Online privacy and mechanisms to secure private
+information is beyond the scope of this work.
+
+172
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 1. CommonTies - a wearable that enables social interactions among strangers via matchmaking within interaction spaces.
+
+colors. Each user receives a tie after a registration phase
+that associates the tie with the user. Proﬁles for each user
+are constructed automatically from existing online social
+networking sites such as LinkedIn and only used internally
+by the CommonTies matchmaker. The matchmaker is an
+algorithm that ranks proﬁles of inferred strangers by simi-
+larity and matches their ties (glows the ties the same color)
+if they are detected by a beacon. Each beacon deﬁnes an
+interaction space that organizers can create according to
+desired objectives. We describe these implementation de-
+tails in the Implementation Section.
+
+3. We evaluate CommonTies with a ﬁeld experiment at a con-
+ference (CSCW) in the Field Study Section to test whether
+a proﬁle-free informationally-minimalistic nudge is capa-
+ble of facilitating face-to-face interactions at conferences.
+Our evaluation shows that our social nudges were success-
+ful in that users actively engaged in locating matches when
+they noticed their ties glow. Users found their subsequent
+interactions novel and useful 74% of the time.
+
+RELATED WORK
+Our work touches upon a number of large research areas:
+networking tools, online dating, wearable devices, and “in-
+the-wild” evaluation. We outline the closely related works in
+these areas in order to contextualize our work.
+
+Networking Tools
+In the academic research space, several works use wireless
+devices to enable social interactions [9, 5, 4, 14]. Common-
+Ties differs from these systems in that it is a wearable acces-
+sory that provides no information beyond a simple visual cue
+to initiate interactions. Unlike computationally augmented
+name tags by Borovoy et. al. [4] and proximity-aware mobile
+contact exchange applications like Serendipity [9], Common-
+Ties preserves privacy between users by not revealing any in-
+formation on match reason, match quality, or match proﬁle.
+Other works have studied the use of context-based technolo-
+gies to enhance social interactions: Trainroulette [6] uses the
+context of a train and Mirkovic [22] utilizes technologies in
+a clinic to enhance patient-physician interactions. Paulos and
+
+Goodman [25] use technology to detect the presence of “fa-
+miliar strangers” [12] in public spaces. Unlike these works,
+our system is designed for conference-like events where at-
+tendees are pre-ﬁltered. Also, our technology generalizes
+across multiple organizer designed contexts — user proﬁles
+and matchmaking criteria can be easily modiﬁed for different
+situations without any change to the ties themselves.
+With respect to conference networking, speciﬁcally, Confer
+meetups [8] is most closely related to our work.
+In fact,
+we used Confer as a data source for our CSCW deployment.
+Confer lets users select papers they like from a conference
+program. Confer meetups (a special feature of Confer) sug-
+gests a list of matches to a user — other researchers who liked
+the same papers that the user did. The user is then given
+the opportunity to send an email message inviting a match
+to ‘meetup’ during the conference. CommonTies is differ-
+ent from Confer meetups in several aspects: proﬁle sharing,
+interaction mechanism, and form factor. Confer meetups pro-
+vides an especially interesting comparison point in the design
+space of conference networking tools due to these polarized
+differences.
+
+Online Dating
+CommonTies is different from online dating in at least three
+important ways. First, in a professional setting, disclosing in-
+timate and private information is considered off limits. Our
+system does not solicit, use, or display such information. Sec-
+ond, at conferences, attendees generally seek to increase their
+professional networks and to discuss their thoughts on and
+interests in the conference’s themes. Therefore, the similar-
+ity threshold for a match can be lower than for online dat-
+ing matches and attendees do not have explicit match criteria.
+Third, attendees at conferences may already be engaged in
+a conversation during a match, thus CommonTies needs to
+balance introducing many new interactions with avoiding un-
+wanted interruptions. Despite these differences, the systems
+behind online dating and CommonTies are similar in that both
+provide computer mediated matchmaking with strangers.
+Many mainstream and niche matchmaking services exist to-
+day to help people eventually meet each other in the real
+
+173
+
+RedBearLab Bluetooth Low Energy (BLE) Mini
+
+40 mm
+
+Lightweight plastic encasing 
+with light diffusion
+
+m
+m
+0
+2
+
+ 
+
+Depth: 13mm
+
+Coin Cell Battery
+
+(Backside)
+
+Flora Pixel RGB Light
+
+a tie
+
+suggested 
+
+match
+
+beacon
+
+e
+
+10-15 meters
+
+All ties within this area can 
+be matched by the beacon
+
+(a) Electronic components of a tie
+
+(b) The wearable tie
+
+(c) Operational view of CommonTies
+
+Elastic wristbands come in 
+
+three sizes: 5", 6", 7"
+
+Undetected Ties: The spatial area scanned 
+by the beacon limits the interaction space.
+
+world.2 Most online dating sites enable users to create and
+search for proﬁles, view matches, and provide means for
+computer-mediated, virtual communication through messag-
+ing, chatting, winking, liking, rating, etc., with the hopes of
+eventually transitioning from an online to a real-world inter-
+action among users.
+The matchmaking motivation of CommonTies is similar to
+online dating sites, but this is where the similarities end.
+Users give their email address to register with CommonTies,
+but do not explicitly create a proﬁle for consumption by po-
+tential matches. Instead, a hidden proﬁle for each user is auto-
+matically generated from online data and if the user chooses,
+the user’s online social network is mined to bootstrap for prior
+acquaintances. These proﬁles are used internally by Com-
+monTies and are never revealed to any user. When a match
+occurs, zero information about the match is given other than
+that they are physically nearby and glowing the same color.
+There is no online interaction; the only interaction possible
+between matches is an immediate face-to-face meeting.
+Certain dating tools do allow for immediate, face-to-face in-
+teractions through smartphone integration. GPS-enabled apps
+notify users of potential matches in their vicinity (zoosk,
+badoo, grindr). However, the lack of context-awareness in
+such apps can leave users open to awkward encounters at in-
+convenient times or locations. Other dating tools attempt to
+minimize the amount of asynchronous, computer-mediated
+interaction between strangers through organized group dates
+or parties (meetcha, grubwithus, ignighter). Our work is thus
+situated within this space of physical and temporo-spatially
+immediate systems rather than conventional online systems.
+Unlike these systems, our system is not only proximity-
+aware, but also context aware and only functions within des-
+ignated interaction spaces.
+
+Wearable Devices
+There are many projects that investigate the unique challenges
+and opportunities of different form factors and wearable de-
+vices for matchmaking [4, 11, 14, 18, 17]. We do not claim
+form factor as a contribution. However, as a result of our
+information-minimalistic design principle, our work is differ-
+ent from previous wristband matchmaking devices such as
+iBand [14] and Lovegety [17], which both suffered from user
+privacy concerns. CommonTies avoids many privacy issues
+by not requesting or revealing information.
+
+In-the-Wild Evaluation
+The signiﬁcant differences between laboratory settings and
+ﬁeld settings constrain the types of questions one can ask and
+answer. Because “laboratory studies can fail to capture many
+of the complexities of the situations in which the application
+will ultimately be placed” [27, 20], in-the-wild studies have
+become an accepted approach by the CHI, CSCW, and Ubi-
+comp communities [27, 21, 13].
+Field studies also constrain the types of data collection instru-
+ments that may be used. Several works have investigated sen-
+sor networks in the form of body sensors or wearable badge
+2eHarmony, match, okcupid, shaadi, zoosk, badoo, grindr, tinder,
+twoo
+
+174
+
+SESSION: TOWARDS PHYSICAL AND SOCIAL WELLNESS
+
+for measuring in-situ data on social gatherings [16, 24]. We
+originally intended to use a similar, but less obtrusive ap-
+proach to gather data on interactions. However, adding sen-
+sors to people or the ties themselves increased power, size,
+and other requirements beyond that of the system itself.3
+
+DESIGN
+A matchmaking system has fairly straightforward compo-
+nents: a proﬁle building component, a matching algorithm
+that determines quality of a match between two proﬁles based
+on some metrics, and a notiﬁcation mechanism. This func-
+tional description allows for many design possibilities. The
+most conventional of these designs is oriented toward maxi-
+mizing information gathering and sharing: web or mobile ap-
+plications that collect proﬁles and share proﬁles that match.
+From our review of the literature, we distilled the following
+design principles:
+1. Preserve privacy, mystery, and sense of serendipity.
+This design principle is a sharp contrast to the design of exist-
+ing commercial matchmaking services and research projects
+that present a detailed proﬁle about a person’s match and the
+reasons for the match. Gaver et. al.
+introduced the notion
+of mystery or ambiguity as a resource for design to encour-
+age closer personal engagement with systems [10]. By not
+revealing much information, we encourage a closer personal
+engagement with the device, maintain the suspenseful nature
+of meeting someone for the ﬁrst time, and also allow more
+private individuals to decide when and how much informa-
+tion they wish to reveal about themselves during face-to-face
+interactions.
+A matchmaking system should be designed to have very few,
+if any, predeﬁned notions of speciﬁc interaction outcomes.
+Sengers et al. argue “enchanting experiences may be de-
+signed only by approaching enchantment obliquely: not by
+engineering it in, but by providing opportunities where it may
+emerge,” [28]. Our users are never told why they are matched
+with someone else, what they should talk about, how they
+should interact, or whether they must interact at all. This
+open-design philosophy allows interactions to be dictated by
+the desires of the users themselves as argued by Sengers and
+Gaver [29].
+Finally, we do not expressly design for serendipity, but un-
+known elements can contribute to a feeling of serendipity.
+When users do not know how they are being matched, the
+better the match is in relation to the perceived sophistication
+of the algorithm, the greater the likelihood that they will feel
+that the match is serendipitous. For example, if the algorithm
+were considered purely random (as some of our participants
+hypothesized), then users would likely consider the match to
+serendipitous rather than a result of deliberate design. Con-
+versely, if the algorithm were thought to be highly sophisti-
+cated, then even a deeply satisfying match might be attributed
+to the algorithm. By withholding this information from our
+users, we allow users to provide their own interpretation.
+3 We did attempt to deploy a passive sniffer based positioning sys-
+tem, but indoor positioning is still an active research area [15] and
+ours failed in the conference venue’s open and crowded space.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+2. Minimize computer mediation in human-to-human inter-
+actions.
+Sociologists such as Goffman and Altman describe social
+interactions and the development of interpersonal relation-
+ships as complex, nuanced, ritualistic, and reliant upon self-
+disclosure [19, 1]. We attempt to preserve these properties
+by minimizing the interactions that take place through a com-
+puter screen or mobile phone. This design principle has im-
+plications for all aspects of the system from registration to
+notiﬁcation.
+At registration, the information gathering interface should not
+force users to exhaustively specify what their proﬁle is, their
+criteria for prospective matches, or the spatio-temporal con-
+ditions where matches can occur.
+Instead, proﬁles can be
+largely automated by relying on existing information sources
+or context-speciﬁc information.
+Match notiﬁcation should not orient users toward a screen,
+instead notiﬁcation should occur through subtle cues in the
+physical world that nudge a user to ﬁnd and interact with their
+match only when a face-to-face meeting is feasible.
+Subtle nudges can also serve the dual purpose of saving face
+in social situations where one user is more interested in so-
+cial contact than another as suggested in previous works [2,
+3]. Since a subtle nudge can be easily missed, the user has a
+ready interpretation that the other matched person simply did
+not notice the match. This interpretation and the anonymity
+of the matched person can allow the user to maintain harmony
+with themselves and the match. In contrast, interactions in-
+volving asynchronous, computer-mediated communications
+such as messaging or email, can leave users frustrated as they
+wait for a response or embarrassed when their overtures are
+unreciprocated.
+3. Support multiple contexts, beyond proximity.
+Space and time collectively deﬁne the proximity where
+matching occurs, but context is often dependent on other fac-
+tors like speciﬁc locations, situations, or conditions. Existing
+proximity aware systems match users based on proximity, but
+generally do not consider differences in context — they work
+the same way everywhere.
+In contrast, we think interaction spaces and times should be
+limited to where and when matching is expected and is con-
+venient. At a conference, for example, users may welcome
+matching during breaks and receptions, but would be both-
+ered by matching during talks or at spaces designated for
+business. Furthermore, organizers who control a space should
+be allowed to deﬁne contexts that form the basis for a match-
+ing algorithm. At a research conference, research interests
+and career goals may make sense for a matching algorithm.
+However, at a student orientation event, hobbies and selected
+majors may form the basis for a more appropriate matching
+algorithm. Other examples include: at a sports lounge, teams
+cheered; at a job fair, skills and qualiﬁcations; etc.
+Finally, the context should also include the user’s internal
+context, i.e. the user’s sociability or interaction history. For
+
+example, matching should occur at a rate that does not over-
+whelm users or interrupt interactions currently in progress.
+4. Lightweight and seamless to use.
+Connected to the goal of minimizing computer mediation, but
+more as a matter of practical interaction design is the require-
+ment that the device itself should be lightweight and seamless
+to use. The user should not be burdened with an extensive
+user interface.
+
+IMPLEMENTATION
+CommonTies consists of two physical components: a wear-
+able wristband called the ‘tie’ and a ‘beacon’ that suggests
+matches using a proﬁle-matching system called the ‘match-
+maker’. In this section, we brieﬂy describe the functionality
+of each component and gloss over the engineering details.
+
+The Tie
+We wanted our ties to have a comfortable clothing “acces-
+sory” rather than a “gadget” look and feel. Therefore, we
+built the tie as a limited-display lightweight wearable device
+to avoid screen-based, computer-like, form factors such as
+smartphones. We considered several different form factors
+including wristbands, necklaces, and conference tag acces-
+sories. We chose wristbands due to their generalizability,
+comfort, and style.
+Each tie consists of BLE Mini chip [30] by RedBearLab [26]
+connected to a Flora RGB Neopixel LED v2 [23] (See Fig-
+ure 1(a). The tie is completely stateless: no system state or
+personal information is stored on it. We implemented our tie
+functionality in 500 lines of ﬁrmware code. We then designed
+a simple 3D printed enclosure for each tie and attached elas-
+tic straps to create wristbands of three different sizes (5”, 6”,
+7”) to account for differences in wrist size. We notify users
+of their matches by diffusely lighting the LED with one of six
+distinct colors. Figure 1(b) shows an assembled tie.
+
+The Beacon
+Interaction spaces are deﬁned as the radial area around a blue-
+tooth base station we call the ‘beacon’. Depending on prop-
+agation characteristics of the environment, a typical beacon
+covers an area of roughly 300m2 (3229.17 ft2). This means
+two matched ties are at most 20m apart in an interaction space
+(See Figure 1(c)). Larger interaction spaces can be equipped
+with multiple beacons for coverage.
+The beacon asks the matchmaker for any matches within
+its interaction space.
+If a match exists, the beacon lights
+the pair of ties the same color. This is recorded in the
+matchmaker database and the match is not suggested again.
+We implemented our beacon code in approximately 800 lines
+of python code and wrapper functions.
+
+The Matchmaker
+The matchmaker is a proﬁle-matching system that builds and
+stores user proﬁles, maps users to ties, and suggests matches
+to the beacon. User proﬁles are completely private and only
+used internally by the matchmaker. Proﬁles are constructed
+
+175
+
+depending on the context. For example, at a conference, the
+organizers may decide to construct user proﬁles based on con-
+ference proceedings, registration information, and talks that
+users attend. A user at the conference will be matched based
+on this criteria. Later, at a reception the same user wearing
+the same tie may be matched based on a different user proﬁle
+constructed and different matching criteria that are speciﬁed
+by the reception’s organizers.
+For the purposes of evaluating CommonTies at the CSCW
+conference, we implemented a single context for the confer-
+ence hall. As a part of our consent form, we implemented an
+online registration form where users had the option to give
+CommonTies access to their Facebook, LinkedIn, and Con-
+fer contact lists and papers of interest through the respective
+APIs. Our matchmaker automatically generated each user
+proﬁle from these information sources and publicly available
+data (like DBLP) to determine a user’s friends, contacts and
+co-authors as well as research interests. These proﬁles were
+used by the matchmaker, but never shared with the users or
+their matches.
+For CSCW, we chose not to attempt to engineer an ‘optimal’
+matchmaking algorithm because we wanted to leave room for
+serendipitous matches of people who appear to have relatively
+little in common. After eliminating all friends, contacts and
+co-authors, each user had a list of strangers to match with.
+These pairs were ranked by a scoring function that favored in-
+teractions between strangers who (i) had higher set-similarity
+measures of papers liked on Confer, (ii) came from different
+segments of research (e.g. academia and industry), and (iii)
+were at different career levels (e.g. student and professor).
+To avoid user fatigue from too many matches, the match-
+maker only matches a person at most once every ten minutes.
+At any given time, at most six matches can occur as each
+match gets a distinct color from the set of six possible colors:
+red, green, blue, yellow, orange, and violet. Each tie is con-
+ﬁgured to turn off its LED after 3 minutes and we can reuse
+colors for another match after each interval.
+
+FIELD STUDY
+We evaluated CommonTies through a ﬁeld study at CSCW in
+Baltimore, Maryland in February, 2014.
+We decided on our eventual evaluation methodology based
+on several practical considerations. First, despite our ad-
+vertising efforts, the attendees did not register early and we
+were unsure whether we would gather enough participants
+to give enough statistical power for deﬁnitive results; split-
+ting our control and experimental groups apart and halving
+the group size would reduce the number of possible matches
+within each group by 75%. Second, our participants gener-
+ously volunteered to commit their limited conference time
+to participate in our experiment. We did not wish to give a
+control group an artifact that could waste their valuable time,
+attempt to conduct extensive interviews, or ask for lengthy
+survey responses. Third, the focus of our work was not the
+efﬁcacy of our matchmaking algorithm, but whether a sub-
+tle nudge could catalyze interactions with strangers. Finally,
+
+SESSION: TOWARDS PHYSICAL AND SOCIAL WELLNESS
+
+we were not aware of any system evaluations in conference
+matchmaking that had been subject to control conditions.
+One week before the conference, we elicited the participation
+of conference attendees through Twitter and email invitations.
+Participants were also recruited via passing out ﬂyers the day
+prior and day of the conference. Participants could register
+online or at our registration booth. Ties were then distributed
+at our booth on a ﬁrst come ﬁrst serve basis.
+After registration, participants were given only basic instruc-
+tion on the functionality of CommonTies before being given
+a tie: “A glow indicates that someone is matched nearby. Go
+talk to the person with the same color. It will work only at
+social events.” If participants asked why their social media
+information was being requested, we informed them that we
+only use their friends list to avoid spurious matches. Partici-
+pants were asked to return the ties at the end of the conference
+or when they needed to leave and to ﬁll out a survey at that
+time. We did not conduct any interviews with participants
+during or after the conference. For the duration of the study,
+one or both of the two researchers manned the registration
+desk, wrote ﬁeld notes, took photos, and made observations
+on how people responded to CommonTies.
+We recognize the potential biases with our study, especially
+given that our subjects were researchers themselves, but we
+took several measures to minimize these issues where possi-
+ble. We mention these measures here to help frame the pre-
+sentation of our results. First, we had no familiarity with the
+CSCW community: we had neither published at nor attended
+CSCW before. A handful of attendees were acquaintances
+who did not participate in the study. Second, CSCW orga-
+nizers did not help promote registration to avoid bias. Third,
+we refrained from discussions with participants about the ties
+both in terms of instruction and suggested use beyond that
+CommonTies was a matchmaking tool in order to avoid de-
+mand characteristics as much as possible. Throughout the
+study several participants asked us about the matchmaking
+algorithm, but they were politely told that the algorithm was
+a secret.
+While we did collect various social network information from
+our participants, including demographic information, we did
+not attempt to store or analyze this data past the purpose of
+matchmaking so as not to infringe on our participants’ pri-
+vacy or deter participation. We instead present results from
+our surveys and where appropriate we corroborate our data
+with our server logs and discreet observations. We observed
+by walking through the crowd and watching matches to see
+how they responded (or did not respond) to the nudge. We
+also followed interactions through their conversations, but did
+not listen in on conversations. We took ﬁeld notes on our ob-
+servations and also some photographs.
+After collection and transcription of survey data and obser-
+vational notes, we collectively looked for predetermined and
+emergent themes. We then discussed these major themes and
+organized them for presentation.
+
+Deployment
+
+176
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 2 illustrates the registration of participants over the
+course of the recruitment process. Only eight attendees regis-
+tered prior to the conference online. We recruited additional
+participants during CSCW’s workshop days prior to the con-
+ference by setting up a registration booth and distributing in-
+formation pamphlets on CommonTies. Before our ﬁrst event,
+the welcome reception, we had a total of 23 registered partic-
+ipants. By the end of the reception, this number increased to
+50 participants. By the second day of the conference, we had
+a total of 81 registered participants. We noticed another surge
+in registration during the coffee-break and poster reception
+on the ﬁrst day of the conference. Participants at registration
+often commented on how they saw the ties light up and so
+decided to participate.
+Registration stopped after we ran out of functional ties. Of
+the 95 ties we manufactured successfully, 73 survived the trip
+to Baltimore. Therefore, only 73 of the 81 registered par-
+ticipants received ties. We continued to get requests to par-
+ticipate throughout the conference even after shutting down
+registration.
+
+Figure 2. CommonTies Participation. Participation did not rise at all
+breaks, the two workshop days before the conference had no increase in
+participation despite our booth and pamphlets distributed.
+
+The conference venue ﬂoor plans are shown in Figure 3. Our
+system was setup in the West Foyer (top, blue shaded area)
+where the Welcome Reception (120 minutes the evening be-
+fore the 3-day conference), and six Coffee Breaks (30 minutes
+each) took place over a period of three days. We also setup
+in the Grand Ballroom (center, orange shaded area) during
+the Poster and Demo (45 minutes) and Interaction Reception
+(120 minutes). According to our conference context deﬁni-
+tion, CommonTies suggested matches only during the recep-
+tions, coffee breaks, and poster/demo sessions to avoid inter-
+fering with any talks.
+
+Information Disclosure
+One immediately interesting observation is how willing users
+were to provide access to personal and professional infor-
+mation to enable better matchmaking. Each registered user
+was required to only provide their full name and email. This
+allowed us to mine public information such as a user’s co-
+authors.4 In addition to public information users can option-
+4Since co-authors are not strangers, we do not match them.
+
+177
+
+Figure 3. The ﬂoor plans and capacities of two CommonTies interaction
+spaces at CSCW 2014. Any tie within the shaded areas was detected by
+the beacon.
+
+ally provide access to their LinkedIn proﬁle and ﬁrst-degree
+professional network, their Facebook proﬁle, and ﬁrst-degree
+friends network as well as access to papers liked on CSCW’s
+conference scheduling application, Confer. Table 1 summa-
+rizes the participant’s disclosure patterns.
+
+Sources of personal information
+
+Number of users (Perc.)
+
+Confer
+LinkedIn
+Facebook
+All three sources
+Only two of the three sources
+Zero sources
+Table 1. Information sources that the 81 users allowed access to.
+
+57 (70.3%)
+52 (64.2%)
+49 (60.5%)
+27 (33.3%)
+27 (33.3%)
+4 (4.9%)
+
+A surprising 60% provided access to Facebook, which holds
+more private,
+less professional, social network informa-
+tion. The main reasons for not providing access to the ad-
+ditional information sources were forgotten passwords or
+users not having LinkedIn, Facebook or Confer accounts.
+Many users preferred alternate professional network sites like
+academia.edu to LinkedIn. This willingness of users to dis-
+close personal information to a third party to enhance their
+social interactions does not imply that users are willing to
+give the same information to strangers.
+
+Did CommonTies enable interactions?
+CommonTies made 372 suggestions (186 matched pairs) over
+a total period of seven hours. We asked users to recall the
+number of times they noticed their tie glow and the number
+of matches with whom they interacted. Table 2 provides inter-
+action statistics across a subset of only forty users who thor-
+oughly reported their interactions. Thus, we can only provide
+interaction statistics on 315 of the 372 suggestions made due
+to respondents providing incomplete forms or inaccurate data.
+We also observed and photographed several interactions our-
+selves. Figure 4 illustrates one successful match we captured
+in a photograph.
+
+Noticing the glow
+Users only noticed 52% of their tie-glows. We partially at-
+tribute this low noticeability to the following:
+
+Interaction Data
+
+Matches Suggested
+
+Self-reported interactions data
+
+Glows noticed
+Interactions
+Useful interactions
+
+Mean Proportions
+
+Total∗
+
+Mean
+per user
+
+315
+
+7.88
+
+155
+58
+43
+
+3.88
+1.45
+1.08
+
+Glows noticed over matches suggested
+Interactions over matches suggested
+Interactions over glows noticed
+Useful interactions over all interactions
+Table 2. ∗Only 40 respondents provided ﬁgures for all interaction ques-
+tions — we show results only for this subset. CommonTies logged a total
+of 372 matches (186 pairs).
+
+0.52
+0.15
+0.29
+0.74
+
+Figure 4. A successful match!
+
+• Glows are too subtle: Some users commented: “Comfort-
+
+able, easy to wear. However, also easy to disregard under a long
+sleeved shirt,” “It’s not very intrusive, so that is nice. However,
+it’d be probably more eﬀective if it’d vibrate.
+I might have
+missed the lighting up once or twice.”
+
+• User fatigue: “While it was fun using it initially, I felt that it
+
+lost some of its fascination after a little while. Thus, I stopped
+using it and engaged in conversation by normal means”, “I
+mostly forgot I had it.”
+• Ties are always on: one user hid her tie in her backpack
+because she was “busy ... at the poster session” — the tie
+continued to work in such scenarios. Another commented
+“I am probably a bad data point because after day 1, I did not
+want to bother with it and quit wearing it. I did keep it with
+me, however, in my bag. If it could have notiﬁed me from my
+bag, maybe that would have helped.”
+
+Missed interactions
+The mean number of self-reported interactions per user was
+1.45. Only 15% of suggested matches concluded in self-
+reported successful interactions. Beyond simply not noticing
+the glows, which we accounted for above, we extracted the
+following reasons from user comments to explain the missed
+interactions:
+• Users engaged in conversations did not disrupt them to
+• The crowd and the large interaction space made locating a
+match challenging. We asked users to rate how easy it was
+
+look for matches.
+
+SESSION: TOWARDS PHYSICAL AND SOCIAL WELLNESS
+
+to locate a match on 5-point Likert scale from one indicat-
+ing hard to ﬁve indicating easy (Table 3). The mean rating
+was 1.97.
+• User fatigue: “I stopped looking for them after the 5th match
+
+because it got a bit too much ... BUT when I looked for them,
+I always found them at some point,”
+
+• Users who could not locate initial matches were demoti-
+vated from ﬁnding later matches. Similarly, users who did
+not notice initial glows were demotivated. For example,
+one user commented: “It did not really glow at all. So I
+stopped using it.” This user’s tie glowed ﬁve times.
+• Users who hid their ties made it impossible for their
+
+matches to locate them.
+
+A successful interaction requires that users: a) notice the
+glow, b) willingness to meet a stranger, and c) ﬁnd their
+match. It is our opinion that 15% of glows resulting in in-
+teractions was reasonably high given the sequence of barriers
+leading up to a successful interaction. When people notice
+their glows, 29% of the time users decided to take action and
+were able to ﬁnd their match. Unfortunately, we do not have
+numbers for the proportion of users who intended to ﬁnd their
+match to perfectly triangulate this process, but based on the
+comments we believe that difﬁculties ﬁnding matches was the
+limiting factor rather than willingness to be nudged.
+
+Interactions and diminishing returns
+From our data we observe that there is currently a “sweet
+spot” where the number of suggested matches would max-
+imize the number of interactions without inundating users
+with too many glows.
+
+Figure 5. Proportion of glows noticed by, and interactions for each Com-
+monTies participant.
+
+Figure 5 plots the proportion of glows reported by a user
+against the number of times the user’s tie actually glowed (cir-
+cles). Initially, as the number of suggested matches is low,
+a large but highly variable proportion of glows are noticed
+as we would expect. As the number of suggested matches
+increases this proportion tapers off. In the same ﬁgure, we
+also plot the proportion of successful interactions reported
+by a user against the number of times the user’s tie glowed
+(crosses). Here, when the number of suggested matches is
+
+178
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+low, the number of successful interactions is also low, but as
+the number of suggested matches increases, the proportion of
+interactions increases until it tapers off (and is limited by the
+dependence upon the glows ﬁrst being noticed).
+We can determine a sweet spot for our deployment of around
+10 to 15 matches suggested where users both notice glows
+and follow through with interactions. After reaching this
+point, suggesting additional matches results in diminishing
+returns on the number of interactions.
+
+Survey Responses
+Table 3 provides a summary of user responses to our survey
+questions. For each question in Table 3, users were given
+the opportunity to elaborate on their rating in free-form text.
+For the remainder of this section, we use this data to answer
+several questions regarding the response to CommonTies.
+
+Likert-Scale Survey Questions
+
+Mean Dist.
+
+I could locate my match in the time period that
+the tie glowed.
+CommonTies suggested novel & useful matches.
+Getting more information about the matches
+(name, proﬁle, etc.) would have been helpful.
+I liked the form factor (look, feel & aesthetics)
+of CommonTies.
+I enjoyed using CommonTies.
+I would use CommonTies again.
+
+1.97
+
+3.14
+3.64
+
+2.78
+
+3.24
+3.76
+
+Table 3. 62 Respondents evaluated each of the above statements on a
+5-point Likert scale from 1-Strongly Disagree to 5-Strongly Agree. Of
+these respondents, CommonTies provided match suggestions to 52 re-
+spondents and 23 respondents had at least one interaction as a result.
+
+Were the interactions novel and useful?
+Despite the challenges associated with noticing glows and lo-
+cating matches, users reported that 43 of the 58 (74%) inter-
+actions they did complete were novel and useful (Table 2).
+On a 5-point Likert scale, we asked all participants to rate
+the novelty and usefulness of their matches (Table 3). Of the
+23 participants who interacted using CommonTies, the mean
+rating was 3.14. Qualitatively, our users either reviewed their
+matches positively — “[The] second match was extremely useful
+- great conversation, access to diﬀerent literature/perspectives on
+same topic; especially useful because this person wasn’t connected
+to my existing network,” “All of [the matches were] novel, most
+two of them really useful” — or somewhat
+of them useful ...
+neutrally — “The one person I found was pretty surprising - the
+connection seemed tenuous.”
+From the user comments, we found that while all users found
+their connections mostly novel, they disagreed on their utility.
+As one user puts it “The connections made were all novel apart
+from one. Whether they were useful or not only time will tell.”
+
+How did users feel about the lack of information?
+On a 5-point Likert scale, we asked users to rate how help-
+ful they would ﬁnd getting more information about suggested
+matches from one indicating they strongly disagree to ﬁve in-
+dicating they strongly agree. The mean rating was 3.64.
+To tease apart the reasons behind requesting more informa-
+tion, we examined the users’ comments on this question and
+
+found that of the 37 people who agreed or strongly agreed to
+getting more information:
+• Seven users were actually looking for talking points: “what
+should we talk about?”, “[the] reason for match is all I wanted.
+No name or additional (possibly privacy-invading) info needed”,
+“[information] for introductions - deﬁnitely!”
+• Six users were looking for information that could help
+them locate their matches: “[a] picture would help identify
+the match,” “if we missed the match, it would be nice to know
+how to contact them later,” “[I] couldn’t ﬁnd them when my
+thing lit up. So may be who to look for would help.”
+• Six users’ were looking for proﬁles typical of online match-
+making sites. One user wanted a list of recent publications
+for each match. Two users wanted a mobile app version
+that showed more information. One user wanted a web-
+page with a list of all matches.
+
+The remaining participants provided no explanation for their
+desire for more information.
+While many users wanted more information, only six (10%)
+of them were explicitly looking for proﬁle information. Many
+users expressed appreciation for the limited information that
+CommonTies provides: “[I] kind of liked the serendipity - getting
+to know you in actual conversation [is] kind of the point!” “The
+mystery is the fun!” “I prefer not to know, it would reduce the
+fun, serendipity factor.” “I think people still prefer to introduce
+themselves normally.”
+Even amongst the participants who wanted more informa-
+tion, some recognized that “it might ‘short circuit’ the dis-
+cussion/social process of talking through and ﬁnding the overlap
+‘manually’ with a match.” At least two users disagreed to pro-
+viding more personal information to our system due to pri-
+vacy concerns.
+
+Did users like the tie’s look and feel?
+On a 5-point Likert scale, we asked users to rate the look,
+feel and aesthetics of the tie from one indicating they strongly
+disliked the tie to ﬁve indicating they strongly liked it. The
+mean rating was 2.78.
+Users were also asked to elaborate on their rating. Among
+the 28 users that negatively rated the tie, 23 users (82%) ex-
+plained that discomfort due to a tight elastic wristband or
+coarse 3D plastic was the reason behind their negative rat-
+ing. Even though we had varying wristband sizes, we allowed
+users to pick their own ties, which led to a poor allocation: “[I]
+picked a wristband that was a little too tight”.
+With respect to aesthetics, comments ranged from, “pretty
+snazzy”, “[it] looked cool. When it lit up”, “Fashion statement,
+anyone?” to “Kind of ugly and utilitarian at this stage.”
+
+Did people enjoy using CommonTies?
+We asked users to rate how much they enjoyed using Com-
+monTies on 5-point Likert scale. The mean rating was 3.24.
+We also asked users to rate how interested they would be in
+using CommonTies again. The mean rating was 3.76.
+
+179
+
+Finally, we wish to provide you with the following collec-
+tion of comments, which capture some of the responses and
+intellectual discussions that CommonTies brought to CSCW:
+• “I loved the excuse to talk to random people.
+
+I’m the kind
+of person that does not struggle to ﬁnd conversation with
+strangers, but I often lack the excuse to do so.”
+
+• “I had positive experiences with meeting people through this
+
+system, but it did disrupt my usual way of navigating conference
+social events.”
+
+one conversation I wanted to escape from.”5
+
+• “It didn’t glow. I spent a lot of time waiting in anticipation.”
+• “It was fun to glow ... meet people ... it got me out of at least
+• “I’m not sure that the matching was not 100% random and I
+• In response to whether the user would like to adjust the
+matching criteria: “Nope. Then I’d probably subconsciously
+exclude certain people.”
+• “We all found it really novel and started discussing about it
+
+think it worked just ﬁne.”
+
+and guessing if it would work. Like hacking the experiment and
+building upon it.”
+
+DISCUSSION
+We found many interesting reactions to CommonTies at
+CSCW. While some of our ﬁndings are broadly generaliz-
+able, others are likely to be speciﬁc to our deployment. Here,
+we discuss the themes and factors we observed at CSCW to
+contextualize our results.
+We believe that the fundamental driver of the level of engage-
+ment we observed was the comfortable environment of the
+conference. From our own ﬁrst-time experience at the con-
+ference, the friendly and relaxed attitude of conference at-
+tendees appeared to invite casual interactions with strangers.
+Also, the intellectual and social curiosity of the attendees also
+likely contributed to the uptake of our system and people’s
+willingness to meet strangers. Moreover, when a nudge was
+observed, our participants earnestly searched for and inter-
+acted with their suggested matches, which may not be the
+case at other conferences.
+Several limiting factors were directly attributable to our de-
+sign choice toward unobtrusiveness:
+the inability to notice
+glows, difﬁculty in ﬁnding matches, and matching already
+engaged users. The missed interactions caused by these bar-
+riers eventually resulted in user fatigue. Based on partici-
+pant feedback, we believe that these design choices should
+be shifted toward more noticeable notiﬁcations, easier match-
+making, and a do not disturb mode. These changes would bet-
+ter ﬁt user expectations and needs, and could be implemented
+without violating our design principles.
+Speciﬁc to CSCW, the 30-minute coffee breaks were too hur-
+ried to get into a relaxed and playful mood. We observed the
+most connections during the initial reception and at the demo
+session. Furthermore, a substantial reason for fatigue was the
+duration of the deployment lasting for three days. By the end
+of the conference, the novelty of CommonTies wore off.
+
+Proﬁles and Information Disclosure
+5Glad to help.
+
+180
+
+SESSION: TOWARDS PHYSICAL AND SOCIAL WELLNESS
+
+Interestingly, we found that most people were satisﬁed with
+the informationally-minimalistic interface of CommonTies.
+Furthermore, of the people who wanted more information,
+only a few wanted explicit proﬁle information. This suggests
+that up-front or visible proﬁle information may be unnec-
+essary for networking at conference-like contexts and raises
+a broader question about whether proﬁles are necessary for
+meeting strangers in other contexts.
+We suspect that three main components to the experiment led
+to our result. First, conference attendees are speciﬁcally in-
+terested in meeting new people. CSCW being such a close-
+knit community (unlike a large convention or a general public
+space) meant people felt more comfortable, and were willing
+to be more open to new people and experiences. Second, the
+conference was for a short duration. We found evidence that
+engagement with the system deteriorated as the experience
+grew longer. Third, CommonTies was small scale and de-
+signed for immediate, synchronous, face-to-face interactions.
+Large scale computer-mediated communication (CMC) sys-
+tems generally enable anonymous, asynchronous communi-
+cation at scale. The resultant abundance of choice online mo-
+tivates the introduction of mechanisms for helping users sift
+through and evaluate options (e.g. user proﬁles, sophisticated
+matchmaking, searching, ﬁltering, etc.).
+
+The Matchmaking Algorithm
+The matchmaking algorithm we employed was simple. Yet,
+despite this simplicity, people who interacted were happy
+with the novelty and usefulness of their matches. While this is
+not an argument against more sophisticated matchmaking al-
+gorithms, in a small conference context where attendees self-
+select based on similar interests or attitudes, it appears suf-
+ﬁcient for a matchmaking algorithm to capture the notion of
+strangers.
+We expect that completely random matches would be accept-
+able at a welcome reception of strangers, but would not work
+well in the CSCW context because many attendees already
+know each other. Re-matching known acquaintances would
+increase user fatigue and decrease engagement with our sys-
+tem. If we consider only randomly matching strangers, it is
+possible that more users would guess that the algorithm is ran-
+dom, leading to more serendipitous explanations. However,
+disclosing the speciﬁc matchmaking algorithm would likely
+reduce the sense of mystery.
+Other algorithmic changes should have relatively predictable
+outcomes. For example, removing the Confer data from
+matching would reduce the amount of common interests, but
+perhaps enough talking points would emerge spontaneously
+given the common interests among CSCW participants. Re-
+moving the segments and career levels would decrease the
+cross connections between the respective social groups (i.e.
+industry folks would meet fewer academics and students
+would meet fewer faculty).
+
+Mystery and Play
+Given the lack of proﬁle and matching information, as well
+as match location, the effort our participants went through to
+ﬁnd their match was exceptionally high. We believe that by
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+not revealing the matchmaking algorithm, we successfully fa-
+cilitated a sense of mystery and allowed participants to assign
+their own explanations and interpretations to the experience.
+The information-scarce design of CommonTies was not ap-
+preciated by everyone, but of the people who did engage with
+the system there was an overwhelmingly positive response to
+the mysterious and eventual game-like elements of Common-
+Ties.
+The difﬁculty of
+locating
+matches led to unanticipated
+and playful user behaviors.
+Many participants raised their
+hands and searched the inter-
+action space for their match
+creating what appeared to be a
+hide-and-seek gamiﬁcation of
+CommonTies (see Figure 6):
+“It was often diﬃcult to ﬁnd the
+‘common tie’ in a large room but
+this led to funny ‘game-like’ or
+playful exchanges where people
+would roam around holding up
+their bands to ﬁnd their ‘tie’”.
+In this game, many participants took the assistive role of ﬁnd-
+ing matched pairs and bringing them together: “A volunteer
+tracked down my match when I couldn’t ﬁnd him.” “At no time
+I could ﬁnd my match. One time some other person showed me.”
+“It was fun to see wrist bands lighting up around and seeing people
+match up and chat.”
+
+Figure 6.
+A participant
+raises his hand while he
+searches for his match.
+
+Re-orienting Interactions
+Our original inspirations for this work, Collins and Miller [7]
+and Walther [31], discuss the tensions between the implicit
+goal of ofﬂine face-to-face interaction and the convenience of
+the online medium. Walther describes how presenting abun-
+dant matches can cause “people to make lazy, ill-advised
+decisions when selecting [partners to contact]” and how
+computer-mediated communication via email or messaging
+prior to face-to-face meetings “can produce unpleasant ex-
+pectancy violations” because people have presented an ideal-
+ized version of themselves online.
+Some systems manage to cleverly balance these tradeoffs by
+using location information (e.g. GPS) to help match people
+to each other based on real-time real-world location. Unlike
+these systems, CommonTies was designed to avoid these un-
+desirable outcomes by obviating the need to sift through pro-
+ﬁles or re-orient back to the ofﬂine. Although we did not
+speciﬁcally study whether we avoided ill-advised decision
+making or unpleasant expectancy violations, we did show
+that in small conference settings the mechanisms that were
+attributed to producing these consequences (proﬁles and on-
+line interaction) were not always necessary for catalyzing in-
+teractions. Moreover, we demonstrated how the removal of
+these mechanisms could be leveraged as a design resource
+for mystery or enchantment as argued by Gaver [10] and Sen-
+gers [29].
+
+Generalizability and Limitations
+We are very cognizant of the experimental challenges demon-
+strating repeatability and generalizability of some of our re-
+sults. We have demonstrated that for CSCW-like contexts a
+gentle nudge is sufﬁcient to turn a stranger into an acquain-
+tance, but many participants were likely biased toward en-
+gaging with our system out of research curiosity. Also, re-
+deploying CommonTies at CSCW is problematic as people
+have already used the system. Other events would inevitably
+have their own nuances.
+CommonTies is designed for events where a sense of play is
+within acceptable social norms. In a museum, people may
+want to enjoy the exhibits and be left alone. We would also
+expect CommonTies to make sense in safe curated venues
+compared to large unﬁltered spaces (e.g. on a public street
+with complete strangers). We believe that for larger and less
+relaxed contexts like job fairs, efﬁciency focused systems
+would be more appropriate than mysterious designs.
+
+FUTURE WORK
+CommonTies V2.0
+Based on our results and user feedback, CommonTies could
+beneﬁt from a few simple improvements that remain in line
+with our design principles.
+First, many interaction opportunities were missed because
+users missed the subtle visual cue of the tie glowing. We
+plan on adding an initial, soft, vibration that may be muted
+by the user or during ongoing interactions (based on proxim-
+ity to other ties). Users can still choose to ignore the nudge,
+but will be less likely to miss the cue.
+Second, to enable users to locate their matches, while still
+maintaining the playfulness of searching for a match, we plan
+to have the beacons serve as gathering points glowing with
+the same color as the tie and changing the steady tie glow to
+a slow pulse that increases in frequency as users get closer.
+Third, we plan to change the matchmaking algorithm to
+avoid matching muted ties and tune the number of suggested
+matches to the level of pursued interaction. This improve-
+ment would also help reduce unﬁndable matches (e.g. in the
+case where the tie is nearby but hidden in a bag), and also
+allow CommonTies to be more sensitive to user fatigue and
+temperament.
+
+Research directions
+In addition to system improvements, there are numerous in-
+teresting research questions prompted by our analysis of the
+large CSCW ﬁeld experiment. We wish to answer some of
+these questions. First, do the ideas from CommonTies gener-
+alize past the context of tight-knit conferences into other so-
+cial contexts and interaction spaces: for example, could subtle
+nudges enable social interactions in other contexts? Second,
+we plan to study the effect of context on information disclo-
+sure: how much information are users willing to provide and
+to share to meet strangers in different settings? Third, how
+does CommonTies compare against other networking tools?
+
+CONCLUSION
+
+181
+
+In this paper, we described CommonTies, a simple techno-
+logical nudge in the form of a privacy preserving wearable
+accessory, that encourages immediate, face-to-face, social in-
+teractions among strangers at conference-like settings. We
+designed, implemented, and eventually evaluated Common-
+Ties at CSCW 2014 during a three day in-situ study. We
+demonstrated that without revealing proﬁles or any private in-
+formation about matches, users were willing to interact with
+strangers. We found that our informationally minimalistic de-
+sign coupled with a simple matchmaking algorithm was sufﬁ-
+cient to suggest novel and potentially useful meetings 74% of
+the time. Overall, there was a positive response to the myste-
+rious design and emergent game-like elements. CommonTies
+represents an interesting point in the design space of confer-
+ence networking tools.
+
+ACKNOWLEDGMENTS
+We would like to thank Juan Felipe Beltran (for video pro-
+duction), Michael Davis (for fabrication assistance), Nikolaos
+Giakoumidis (for endless soldering support), Bailey Curzadd
+(for 3D printing support), Divya Balaji (for software assis-
+tance), Anant Bhardwaj and David Karger (for Confer sup-
+port).
+
+REFERENCES
+1. Irwin Altman and Dalmas A Taylor. 1973. Social
+
+penetration: The development of interpersonal
+relationships. Holt, Rinehart & Winston.
+
+2. Paul M. Aoki and Allison Woodruff. 2005. Making
+
+Space for Stories: Ambiguity in the Design of Personal
+Communication Systems. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’05). ACM, New York, NY, USA, 181–190. DOI:
+http://dx.doi.org/10.1145/1054972.1054998
+
+3. Kirsten Boehner and Jeffrey T. Hancock. 2006.
+
+Advancing Ambiguity. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’06). ACM, New York, NY, USA, 103–106. DOI:
+http://dx.doi.org/10.1145/1124772.1124789
+
+4. R. Borovoy, M. McDonald, F. Martin, and M. Resnick.
+1996. Things That Blink: Computationally Augmented
+Name Tags. IBM Syst. J. 35, 3-4 (Sept. 1996), 488–495.
+DOI:http://dx.doi.org/10.1147/sj.353.0488
+
+5. C Braun and S Schifferle. 2005. Bluedating - dating
+
+application for bluetooth enabled mobile phones.
+Technical Report.
+
+6. Tiago Camacho, Marcus Foth, and Andry
+
+Rakotonirainy. 2013. TrainRoulette: Promoting Situated
+In-train Social Interaction Between Passengers. In
+Proceedings of the 2013 ACM Conference on Pervasive
+and Ubiquitous Computing Adjunct Publication
+(UbiComp ’13 Adjunct). ACM, New York, NY, USA,
+1385–1388. DOI:
+http://dx.doi.org/10.1145/2494091.2497360
+
+7. Nancy L Collins and Lynn Carol Miller. 1994.
+
+Self-disclosure and liking: a meta-analytic review.
+Psychological bulletin 116, 3 (1994), 457.
+
+SESSION: TOWARDS PHYSICAL AND SOCIAL WELLNESS
+
+8. Confer. http://confer.csail.mit.edu/. Accessed
+
+Feb. 2016.
+
+9. N. Eagle. 2004. Can Serendipity be Planned? MIT Sloan
+
+Management Review 46 (2004). Issue 1.
+
+10. William W. Gaver, Jacob Beaver, and Steve Benford.
+
+2003. Ambiguity As a Resource for Design. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’03). ACM, New
+York, NY, USA, 233–240. DOI:
+http://dx.doi.org/10.1145/642611.642653
+
+11. F. Gemperle, C. Kasabach, J. Stivoric, M. Bauer, and R.
+Martin. 1998. Design for Wearability. In Proceedings of
+the 2Nd IEEE International Symposium on Wearable
+Computers (ISWC ’98). IEEE Computer Society,
+Washington, DC, USA, 116–.
+http://dl.acm.org/citation.cfm?id=857199.857998
+12. Jane Jacobs. 1961. The death and life of great American
+
+cities. Vintage.
+
+13. Rose Johnson, Yvonne Rogers, Janet van der Linden,
+
+and Nadia Bianchi-Berthouze. 2012. Being in the Thick
+of In-the-wild Studies: The Challenges and Insights of
+Researcher Participation. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’12). ACM, New York, NY, USA, 1135–1144.
+DOI:http://dx.doi.org/10.1145/2207676.2208561
+14. Marije Kanis, Niall Winters, Stefan Agamanolis, Anna
+
+Gavin, and Cian Cullinan. 2005. Toward Wearable
+Social Networking with iBand. In CHI ’05 Extended
+Abstracts on Human Factors in Computing Systems
+(CHI EA ’05). ACM, New York, NY, USA, 1521–1524.
+DOI:http://dx.doi.org/10.1145/1056808.1056956
+15. Swarun Kumar, Ezzeldin Hamed, Dina Katabi, and Li
+Erran Li. 2014. LTE Radio Analytics Made Easy and
+Accessible. In Proceedings of the 6th Annual Workshop
+on Wireless of the Students, by the Students, for the
+Students (S3 ’14). ACM, New York, NY, USA, 29–30.
+DOI:http://dx.doi.org/10.1145/2645884.2645891
+16. Mathew Laibowitz, Jonathan Gips, Ryan Aylward, Alex
+
+Pentland, and Joseph A. Paradiso. 2006. A Sensor
+Network for Social Dynamics. In Proceedings of the 5th
+International Conference on Information Processing in
+Sensor Networks (IPSN ’06). ACM, New York, NY,
+USA, 483–491. DOI:
+http://dx.doi.org/10.1145/1127777.1127851
+
+17. Lovegety. http://en.wikipedia.org/wiki/Lovegety/.
+
+Accessed Feb. 2016.
+
+18. Kent Lyons, David Nguyen, Daniel Ashbrook, and Sean
+
+White. 2012. Facet: A Multi-segment Wrist Worn
+System. In Proceedings of the 25th Annual ACM
+Symposium on User Interface Software and Technology
+(UIST ’12). ACM, New York, NY, USA, 123–130.
+DOI:http://dx.doi.org/10.1145/2380116.2380134
+
+19. Philip Manning. 1992. Erving Goffman and modern
+
+sociology. Stanford University Press.
+
+182
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+20. Paul Marshall, Richard Morris, Yvonne Rogers, Stefan
+
+Kreitmayer, and Matt Davies. 2011. Rethinking
+’Multi-user’: An In-the-wild Study of How Groups
+Approach a Walk-up-and-use Tabletop Interface. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’11). ACM, New
+York, NY, USA, 3033–3042. DOI:
+http://dx.doi.org/10.1145/1978942.1979392
+
+21. Donald McMillan, Alistair Morrison, Owain Brown,
+Malcolm Hall, and Matthew Chalmers. 2010. Further
+into the Wild: Running Worldwide Trials of Mobile
+Systems. In Proceedings of the 8th International
+Conference on Pervasive Computing (Pervasive’10).
+Springer-Verlag, Berlin, Heidelberg, 210–227. DOI:
+http://dx.doi.org/10.1007/978-3-642-12654-3_13
+22. Jelena Mirkovic. 2013. Utilizing Emerging Technologies
+to Promote More Efﬁcient Face-to-face Patient-clinician
+Communication. In Proceedings of the 2013 ACM
+Conference on Pervasive and Ubiquitous Computing
+Adjunct Publication (UbiComp ’13 Adjunct). ACM,
+New York, NY, USA, 1393–1396. DOI:
+http://dx.doi.org/10.1145/2494091.2497362
+
+23. Neopixel. Adafruit Flora RGB Neopixel v2.
+
+http://www.adafruit.com/products/1260. Accessed
+Feb. 2016.
+
+24. Daniel Olgu´ın Olgu´ın, Benjamin N. Waber, Taemie
+Kim, Akshay Mohan, Koji Ara, and Alex Pentland.
+2009. Sensible Organizations: Technology and
+Methodology for Automatically Measuring
+Organizational Behavior. Trans. Sys. Man Cyber. Part B
+39, 1 (Feb. 2009), 43–55. DOI:
+http://dx.doi.org/10.1109/TSMCB.2008.2006638
+
+25. Eric Paulos and Elizabeth Goodman. 2004. The Familiar
+
+Stranger: Anxiety, Comfort, and Play in Public Places.
+In Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’04). ACM, New
+York, NY, USA, 223–230. DOI:
+http://dx.doi.org/10.1145/985692.985721
+
+26. RedBearLab. http://redbearlab.com/. Accessed Feb.
+
+2016.
+
+27. Y. Rogers and others. 2007. Why it’s worth the hassle:
+The value of in-situ studies when designing UbiComp.
+Springer.
+
+28. Phoebe Sengers, Kirsten Boehner, Michael Mateas, and
+
+Geri Gay. 2008. The Disenchantment of Affect.
+Personal Ubiquitous Comput. 12, 5 (June 2008),
+347–358. DOI:
+http://dx.doi.org/10.1007/s00779-007-0161-4
+
+29. Phoebe Sengers and Bill Gaver. 2006. Staying Open to
+Interpretation: Engaging Multiple Meanings in Design
+and Evaluation. In Proceedings of the 6th Conference on
+Designing Interactive Systems (DIS ’06). ACM, New
+York, NY, USA, 99–108. DOI:
+http://dx.doi.org/10.1145/1142405.1142422
+
+30. TI-CC2540. http://www.ti.com/product/CC2540.
+
+Accessed Feb. 2016.
+
+31. Joseph B Walther. 1996. Computer-mediated
+communication impersonal, interpersonal, and
+hyperpersonal interaction. Communication research 23,
+1 (1996), 3–43.
+
+183
+
+

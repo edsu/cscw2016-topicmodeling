@@ -1,0 +1,1687 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+How Blind People Interact with Visual Content on 
+
+Social Networking Services  
+Shaomei Wu 
+
+Shiri Azenkot 
+
+Jacobs Technion-Cornell Institute 
+
+Cornell Tech 
+
+shiri.azenkot@cornell.edu 
+
+Violeta Voykinska 
+Cornell University 
+vv238@cornell.edu 
+
+Facebook 
+
+shaomei@fb.com 
+
+Gilly Leshed 
+
+Information Science 
+Cornell University 
+gl87@cornell.edu 
+
+ABSTRACT 
+In  this  paper,  we  explore  blind  people’s  motivations, 
+challenges, 
+interactions,  and  experiences  with  visual 
+content on Social Networking Services (SNSs). We present 
+findings  from  an  interview  study  of  11  individuals  and  a 
+survey  study  of  60  individuals,  all  with  little  to  no 
+functional vision. Compared to sighted SNS users, our blind 
+participants 
+faced  profound  accessibility  challenges, 
+including  the  prevalence  of  photos  without  sufficient  text 
+descriptions.  To  overcome  the  challenges,  they  developed 
+creative strategies, including using a variety of methods to 
+access  SNS  features  (e.g.,  opening  the  mobile  site  on  a 
+desktop browser), and inferring photo content from textual 
+cues  and  social 
+interactions.  When  strategies  failed, 
+participants  reached  out  for  help  from  trusted  friends,  or 
+avoided  certain  features.  We  discuss  our  findings  in  the 
+context  of  CSCW  research  and  SNS  accessibility  as  a 
+design value. We highlight the social significance of photo 
+interactions for blind people and suggest design practices.  
+Author Keywords 
+Blind  users;  social  networking  services;  accessibility; 
+assistive technologies; qualitative study. 
+ACM Classification Keywords 
+K.4.2  [Social  Issues]:  Assistive  technologies  for  persons 
+with disabilities. 
+INTRODUCTION 
+With  1.44  billion  Facebook  users1,  300  million  Twitter 
+users2, and 360 million LinkedIn users3, enabling people of 
+diverse  backgrounds  and  abilities  to  participate  in  Social 
+Networking Services (SNSs) has become a pressing issue. 
+With  Facebook  users  uploading  350  million  photos  a  day 
+[18], sharing visual content has become a bigger part of the 
+experience,  with  which  raises  questions  about  how  people 
+with vision disabilities experience SNSs. 
+Recent statistics show that 2.3% of the U.S. population has 
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work owned by  others  than ACM must be honored. 
+Abstracting with credit  is  permitted. To copy otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02...$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2820013 
+
+1584
+
+a  visual  disability  [13].  People  with  little  to  no  functional 
+vision (from here referred to as “blind”) usually access the 
+web,  and  SNSs  in  particular  [7,45],  using  screen  readers 
+and  screen  magnifiers  on  mobile  and  desktop  platforms. 
+However, despite attempts to make the web more accessible 
+through  design  guidelines  [42],  designer  awareness  [24], 
+and  evaluation  techniques  [27],  barriers  to  access  certain 
+content remain [7,23].   
+Recent  large-scale  empirical  research  by  Wu  and  Adamic 
+found that visually impaired Facebook users engaged with 
+major  Facebook  functions  as  actively  as  other  users  did, 
+with the exception of a few minor differences: they posted 
+and shared photos, but to a smaller extent than the average 
+user, and they also connected more with other screen reader 
+users  and  used  words  related  to  visual  impairment  more 
+frequently [45].  
+As a large-scale, quantitative study, Wu and Adamic’s work 
+surfaced interesting high-level patterns of how blind people 
+use  Facebook,  but  did  not  explain 
+the  practices, 
+experiences,  and  challenges  behind  those  patterns.  Our 
+work  aims  to  gain  deeper  insights  into  these  findings  by 
+answering  questions  that  have  remained  unexplored:  How 
+do blind people engage with photos and other visual content 
+on SNSs? What strategies do they employ to overcome the 
+challenges?  How  do  challenges  related  to  visual  content 
+relate 
+their  everyday 
+interactions on SNSs?  
+To  answer  these  questions,  we  conducted  an  interview 
+study  of  11  people  and  a  survey  study  of  60  people  with 
+little to no functional vision. We asked about their everyday 
+experiences  on  SNSs,  especially  about  their  interactions 
+with  visual  content.  Our  participants  used  SNSs  daily  or 
+several  times  per  week.  Many  of  them  had  accounts  on 
+more than one SNS, and many also had experience sharing 
+and interacting with visual content in SNSs. 
+Our work leads to a better understanding of blind SNS users 
+as  a  unique  user  group,  and  uncovers  both  patterns  of 
+successful  SNS  use  and  persistent  challenges.  We 
+
+to  other  challenges 
+
+faced 
+
+in 
+
+1 newsroom.fb.com/company-info/ 
+2 about.twitter.com/company 
+3 press.linkedin.com/about-linkedin 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+contribute to the discussion of web accessibility as a design 
+value,  and  offer  design  recommendations  to  enable  blind 
+people to better engage with the increasingly visual-centric 
+web  and  social  media.  We  also  discuss  implications  for 
+future CSCW research.  
+RELATED WORK 
+Web Accessibility Today 
+Blind  users  typically  interact  with  computers  using  screen 
+readers, software that interprets what is being displayed on 
+the screen and reads it to the user. Screen readers exist for 
+both  desktop  computers  (e.g.,  JAWS  –  Job  Access  With 
+Speech  by  Freedom  Scientific),  and  mobile  devices  (e.g., 
+VoiceOver for iOS, TalkBack for Android, and Nuance for 
+Nokia  phones)  [43].  However,  a  2-dimensional  web  page 
+converted into a 1-dimensional speech stream is not easy to 
+interpret.  It  can  be  even  more  frustrating,  given  the 
+prevalence  of  websites  with  insufficient  text  labeling  of 
+graphic  content,  concurrent  events,  dynamic  elements,  or 
+infinitely scrolling pages (e.g., a stream of feeds) [1,2,23].  
+Although  web  accessibility  can  be  seen  as  a  universal 
+usability value [36], web designers do not always have the 
+resources to devote to accessibility, or do not see the value 
+in making their sites accessible [24]. Even if they do, they 
+might not know the best way to test for accessibility [27]. 
+Further,  even  applying  web  accessibility  guidelines  does 
+not  necessarily  improve  accessibility  [30].  As  a  result, 
+many  websites  continue  to  be  inaccessible  through  screen 
+readers, even those that are intended for broad access such 
+as library websites [26], universities websites [21,31], and, 
+SNSs [7].  
+Blind Users and Social Networks 
+Online  SNSs  are  places  for  people  to  connect  with  others 
+through  weak 
+to  maintain  strong  personal 
+relationships [12]. The same may be true for blind people, 
+but their offline social networks seem to be structured and 
+to function differently than those of sighted people. In terms 
+of  weak  ties,  for  example,  blind  unemployed  college 
+graduates  were  found  to  have  less  extensive  networks  to 
+help  them  find  jobs  compared  to  sighted  people  [32].  To 
+achieve 
+they  need  more  support  with 
+socialization  and  career  development  in  the  form  of 
+structured  group  activities  [33],  as  opposed  to  one-on-one 
+conversations [32]. Furthermore, blind people rely more on 
+their  physical  communities  for  help,  including  family 
+members and – in the case of older blind people – in-home 
+help [38]. In terms of strong connections, blind people who 
+receive strong support from their friends have higher self-
+esteem,  similar  to  sighted  people  [17].  Unlike  sighted 
+people,  blind  people  rely  more  on  family  [9]  and  less  on 
+friends [17] as a source of social support. 
+Despite  these  differences  in  offline  social  networks,  blind 
+people  have  significant  presence  on  SNSs  [6,45].  While 
+their networks on these sites used to be smaller, denser, and 
+more  homogenous  than  the  networks  of  sighted  users, 
+
+life  success, 
+
+ties  and 
+
+these 
+
+technologies  have  yet 
+
+recent  data  shows  that  these  differences  have  diminished 
+over  time  [45].  However,  there  are  still  some  unique 
+characteristics  of  how  blind  users  interact  with  SNSs.  For 
+instance,  they  upload  fewer  photos,  but  in  general  receive 
+more feedback on their posts [45]. They also prefer to ask 
+crowd workers instead of their networks for help, especially 
+with  questions  about  visual  content  [5].  These  findings 
+leave  some  unanswered  questions  around  the  everyday 
+motivations, experiences, and practices of blind SNS users.  
+Interacting with Visual Content 
+With  the  increasing  popularity  of  visual  content  on  SNSs 
+(more than 350 million photos uploaded daily to Facebook 
+[18])  and  visual-centric  SNSs  such  as  Instagram  and 
+Snapchat,  it  is  important  to  understand  the  ways  in  which 
+blind people interact with such content on SNSs. Advanced 
+technologies  offer  blind  people  tools  to  identify  and 
+understand  visual  content.  These  include,  for  example, 
+image  recognition  [15],  tactile  graphics  [22],  and  crowd-
+powered  systems  [3,6].  Further  interaction  with  visual 
+objects  is  supported,  for  example,  through  tools  that  help 
+blind people take better photos [8,19,40], and by improving 
+the  experience  of  photo  sharing  with  audio  augmentations 
+[16].  However, 
+to  be 
+incorporated into the designs of popular SNSs.  
+Our study, reported next, aims to gain a rich understanding 
+of  not  only  what  blind  users  do  to  interact  with  visual 
+content on SNSs, but also why and how they do it. Through 
+first-hand 
+interview  accounts  and  open-ended  survey 
+responses  of  blind  people  active  on  SNSs,  we  uncover 
+strategies  of  how  they  fully  engage  with  others  on  SNSs, 
+challenges that remain, and opportunities to better support 
+this user group.   
+METHODS 
+Pilot Study 
+We conducted an initial interview study with 12 individuals 
+(7  female,  5  male)  in  early  2014  to  understand  their 
+experience with SNSs. Participants included eight blind and 
+four  low  vision  people,  ages  22  to  63  years  (Mean=47.8, 
+SD=14.6,  Median=53),  with  a  variety  of  occupations. 
+Through  30-40  minute  phone 
+interviews,  we  asked 
+participants about the accessibility technologies they used, 
+and  general  questions  about  their  usage  of  SNSs  and  the 
+Internet.  Participants  were  compensated  with  Amazon  gift 
+cards.  
+Participants  reported  varying  levels  of  familiarity  and 
+willingness  to  engage  with  computers,  the  Internet,  and 
+SNSs. They had the same motivations for using SNSs and 
+derived  the  same  benefits  as  sighted  people:  staying  in 
+touch  with  friends,  maintaining  existing  relationships,  and 
+accessing  and  sharing  information.  However,  the  findings 
+also revealed a clear distinction between the experiences of 
+participants  who  were  blind  and  those  that  had  low,  but 
+functional vision. Low vision participants who used screen 
+magnifiers  were  generally  more  satisfied  with  SNSs,  and 
+
+1585
+
+faced  fewer  challenges  than  participants  with  little  to  no 
+functional  vision  who  only  used  screen  readers  to  access 
+SNSs.  
+Most  blind  participants  reported  that  SNS  sites  were  not 
+fully compatible with accessibility technologies due to their 
+use of JavaScript and dynamic elements. Most had trouble 
+signing  up  for  SNSs  on  their  own  due  to  the  additional 
+burden  of  poorly  labeled  input  boxes  and  a  complicated 
+multi-step validation process, confirming previous findings 
+about  Facebook  account  setup  difficulties  [7].  When  new 
+features  were  launched  without  full  accessibility  support, 
+participants  needed  to  invest  more  time  and  effort  to 
+understand how these features worked with screen readers. 
+They also had to rely on sighted individuals they trusted—a 
+close friend, a spouse, etc.—to engage with other aspects of 
+SNS use, such as uploading photos.  
+One limitation to the pilot was that we included people who 
+were not able to successfully setup and use SNS accounts at 
+all.  To  gain  a  deeper  understanding  of  blind  people’s 
+experiences  on  SNSs,  we  recruited  frequent  SNS  users  in 
+our  main  study.  We  also  decided  to  specifically  engage 
+people  with  little  to  no  functional  vision,  since  the  pilot 
+study  showed  that  this  group  of  users  faced  more  severe 
+accessibility  challenges,  particularly  when  engaging  with 
+visual  content.  Finally,  while  the  pilot  study  explored 
+general  accessibility  challenges,  interactions  with  visual 
+content emerged anecdotally through our analysis. Based on 
+these  insights  from  our  pilot  study  and  recent  findings  by 
+Wu and Adamic [45], we constructed the following survey 
+and interview study. 
+Survey Study 
+We  conducted  an  online  survey  to  gather  data  and  recruit 
+diverse  SNS  users  with  little  to  no  functional  vision. 
+Constructed on Qualtrics, an accessible survey platform, the 
+survey  was  open  for  one  month  during  February-March 
+2015.  We  recruited  survey  participants  through  email  lists 
+of various organizations including the National Federation 
+of the Blind, asking “blind” SNS users to participate.   
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+Sixty people completed the survey: 41 women, 18 men and 
+1  undisclosed.  Their  ages  ranged  between  16  and  67 
+(Mean=40.2,  SD=14.1,  Median=39).  All  had  little  to  no 
+functional  vision.  The  majority  of  the  participants  were 
+from  24  different  US  states.  The  remaining  participants 
+were from Canada, Germany, and India.  
+The  survey  took  about  10  minutes  to  complete  and  asked 
+questions about everyday use of SNSs, and interaction with 
+visual  content.  Respondents  reported  using  the  following 
+SNSs at least once a week (multiple choice was available): 
+•  Facebook: 100% 
+•  LinkedIn: 60% 
+•  Twitter: 60% 
+• 
+We  anticipated  Facebook  would  be  the  most  used  service 
+by  blind  users,  based  on  its  overall  popularity  [11],  and 
+therefore included the following open-ended questions:  
+•  If you have recently posted a photo on Facebook, please 
+tell  us  about  this  photo:  what  it  was  of,  who  took  it,  if 
+anyone helped you post it, what comments you received 
+about this photo, and any other details about it.  
+
+•  Snapchat: 7% 
+•  Tumblr: 7% 
+•  Vine: 3% 
+•  Other: 22% 
+
+Instagram: 22% 
+
+•  When a Facebook friend posts a photo, how do you know 
+what  is  in  the  photo?  Do  you  respond  to  the  photo  by 
+liking/commenting on it? Why or why not? 
+
+•  If  you  recently  posted  a  news  story  or  article  on 
+Facebook,  please  tell  us  about  it:  what  was  it  about, 
+where  did  you  find  it,  why  did  you  post  it,  what 
+comments  you  received  about  the  post,  and  any  other 
+details about it. 
+
+Participants had the option to provide further comments and 
+to enter their email address if they wished to take part in the 
+interview study. We donated $1 to the National Federation 
+of the Blind for every completed survey. 
+Interview Study 
+We recruited participants for the interview study among the 
+survey respondents. We contacted respondents who (1) had 
+
+ 
+
+Pseudonym  Gender  Age 
+Tom 
+Sophie 
+Victor 
+Naomi 
+Lisa 
+Marcus 
+Selena 
+James 
+Katie 
+Calvin 
+Darcy 
+
+21 
+25 
+26 
+28 
+28 
+32 
+35 
+40 
+49 
+60 
+65 
+
+M 
+F 
+M 
+F 
+F 
+M 
+F 
+M 
+F 
+M 
+F 
+
+k
+o
+o
+b
+e
+c
+a
+F
+X 
+Undergrad student 
+X 
+Grad student 
+Unemployed 
+X 
+Vision rehab therapist  X 
+Law student 
+X 
+Assistive tech specialist  X 
+X 
+Unemployed 
+X 
+Musician 
+X 
+X 
+X 
+
+Age of 
+Vision 
+Loss  Occupation 
+9 
+5 
+Birth 
+Birth 
+Birth 
+Birth 
+20 
+32 
+Birth  Grad student 
+Birth 
+3 
+
+Paralegal consultant 
+Writer 
+
+ 
+r
+e
+t
+t
+i
+
+w
+T
+X 
+X 
+X 
+X 
+ 
+X 
+ 
+ 
+ 
+ 
+X 
+
+ 
+
+i
+
+I
+
+n
+d
+e
+k
+n
+L
+X 
+ 
+ 
+X 
+X 
+ 
+ 
+X 
+X 
+X 
+X 
+
+ 
+
+l
+
++
+e
+g
+o
+o
+G
+ 
+ 
+ 
+ 
+X 
+ 
+ 
+ 
+ 
+ 
+X  Wordpress, Goodreads, Instagram 
+
+Other SNSs 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Table 1. Interview participants and the SNSs they reported using. 
+
+1586
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+little  to  no  functional  vision,  (2)  posted  on  one  or  more 
+SNSs  regularly  (several  times  a  week  to  several  times  a 
+day), and (3) provided their email address. Due to a lack of 
+standard  measures  to  assess  overall  technology  skill,  we 
+relied  on  the  frequency  of  SNS  use  to  recruit  uniformly 
+skilled  users.  We  continued 
+to  contact  potential 
+interviewees  and  conduct  interviews  until  we  started 
+identifying clear repetitions in the responses.  
+Eleven  individuals  participated  in  the  interview  study  (6 
+female,  5  male)  (see  Table  1).  Their  ages  ranged  between 
+21 and 65 years. Six participants were blind since birth, and 
+the others lost their vision either as children or as adults. All 
+used  Facebook  regularly  and  most  reported  using  other 
+SNSs as well. Participants reported using multiple devices 
+and  screen  reading  technologies,  including  Apple  mobile 
+devices  with  VoiceOver  (8  participants),  PCs  with  JAWS 
+(8), Macs with VoiceOver (2) and PCs with NVDA (1).  
+We  conducted  semi-structured  interviews  with  questions 
+about the following topics: 
+•  General  Facebook  use  and  challenges  experienced,  e.g., 
+do  you  post  and  respond  to  others  on  Facebook? 
+Describe your latest post.  
+
+•  Other SNSs used and challenges experienced, e.g., which 
+sites do you use and what for? What challenges do you 
+face in using these sites? 
+
+•  Engaging with photos and visual content, e.g., do you like 
+or comment on the photos of others? Do you post photos? 
+Describe the last photo you posted.  
+
+All  interviews  were  conducted  remotely  over  the  phone, 
+Skype,  or  Facetime.  We  asked  participants  to  share  their 
+screen with us or to send us screenshots of interactions we 
+discussed.  Interviews  lasted  45-60  minutes.  Interviewees 
+were compensated with a Visa gift card.  
+Data Analysis 
+We  addressed  the  limitation  of  a  small  interview  sample 
+size by analyzing both the in-depth interview data and the 
+qualitative survey. All interviews were audio recorded and 
+then  transcribed  using  professional  transcription  services. 
+We used an open-coding technique [34], iteratively reading 
+the transcripts and survey responses, highlighting excerpts, 
+and  identifying  key  insights,  themes,  and  patterns  that 
+reoccurred in the data. In the findings, we included quotes 
+from  both  the  interviews  and  the  open-ended  survey  data. 
+Survey  respondents  are 
+identified  with  assigned  ID 
+numbers preceded by the letter P for “participant,” e.g., P1, 
+P2; interviewees are identified with pseudonyms (see Table 
+1).  
+Our findings, reported next, are in two parts. The first part 
+establishes the context for blind people’s interactions with 
+visual content on SNS by reporting on general motivations, 
+accessibility  challenges,  and  the  strategies  our  participants 
+applied to overcome them. The second part reports on the 
+
+1587
+
+unique  practices  we  identified  in  interacting  with  visual 
+content on SNSs. 
+CONTEXT: SNS USE PATTERNS 
+Motivations for Using SNSs 
+We  found  that  blind  users  have  the  same  motivations  for 
+using SNSs and for engaging with visual content as sighted 
+people. Like sighted users, all of our participants used SNSs 
+to  maintain  relationships  with  friends  and  family.  In 
+addition, seven interviewees indicated that they used SNSs 
+for  career-related  purposes.  For  example,  Naomi  used 
+Facebook, Twitter, and LinkedIn to promote her cosmetics 
+sales business. Eight interviewees reported using SNSs as a 
+platform  to  discuss  their  experiences  as  blind  persons,  to 
+share  useful  news  on  the  topic,  or  to  advocate  for  visual 
+impairment awareness. However, similar to anyone with a 
+mixed  set  of  interests,  they  also  blended  their  interests 
+related  to  blindness  with  their  other  interests  (i.e.,  sports, 
+technology,  politics),  and  engaged  with  a  wide  range  of 
+topics and communities on SNSs. 
+Existing Accessibility Challenges  
+Prior  research  has  discussed  accessibility  challenges  of 
+SNSs [7], and our study focused on questions beyond web 
+accessibility.  However,  nine  of  the  interviewees  reported 
+facing  accessibility  challenges  in  SNSs,  making  this  an 
+issue  we  could  not  ignore.  We  describe  them  to  set  the 
+context for how blind users interact with visual content. 
+While a sighted user can quickly scan a webpage and click 
+links anywhere on the page to complete their goal, a screen 
+reader  user  needs  to  listen  through  each  page  element  in 
+fixed order, and cannot easily skip through items irrelevant 
+to his or her task. Visual page elements (e.g., buttons) may 
+have a mismatch between what they visually look like and 
+their  alt-text  read  by  the  screen  reader,  making  it  difficult 
+for a blind user to understand their meaning and function. 
+SNS pages with unstructured visual elements and numerous 
+links, or horizontally and vertically organized content such 
+as  photo  galleries  or  infinitely  scrolling  feeds,  make  the 
+process of listening to the screen reader even lengthier and 
+more confusing.  
+Our  participants  reported 
+the 
+aforementioned  challenges,  but  their  perceptions  of  the 
+accessibility  of  SNSs  varied.  For  example, 
+some 
+participants  tolerated  structural  complexity  to  varying 
+degrees  and  found  some  SNSs  easier  to  use  than  others. 
+Their  experiences  improved  over  time  as  they  got  used  to 
+different  features  and  developed  strategies  to  overcome 
+challenges.  However,  the  same  features  could  become 
+difficult  again  over  time  due  to  frequent  or  unexpected 
+interface changes:  
+Just  when  I  figure  out  how  to  maneuver  around,  they  go 
+and change things. Changing status, making things public 
+or  private  is  more  difficult  to  discern  than  it  used  to  be. 
+(P58)  
+
+they  experienced 
+
+that 
+
+in 
+
+Some  participants  were 
+intimidated  by  accessibility 
+challenges to such a degree that they did not even try to use 
+SNSs  features  that  they  expected  to  be  inaccessible.  For 
+example,  Selena  assumed  Facebook  games  were  not 
+accessible:  “I think there is a lot of Facebook games that 
+I’m not even aware of and I don’t think I could probably do 
+those.  I  just  assume  they’re  not  accessible,  I  don’t  even 
+know what they are though.” 
+Overall, accessibility challenges frustrated our participants, 
+and left them feeling excluded or incapable of participating 
+in what they considered cultural mainstream:  
+It  is  frustrating  for  me  to  use  these  websites  that  take  up 
+longer (much longer) to carry out simple tasks. I feel that I 
+am  missing  some  of  the  fun  stuff  on  social  media,  but  I 
+don’t want to waste too much time. (P50)  
+Strategies for Overcoming Accessibility Challenges 
+In an attempt to overcome some challenges, the majority of 
+interviewees  first  reported  accessing  SNSs  through  a 
+combination  of  interfaces  (i.e.,  the  mobile  site,  the  main 
+site,  the  mobile  app)  and  platforms  (i.e.,  mobile  and 
+desktop).  Each  of  these  interface-platform  combinations 
+had  different  strengths  and  weaknesses 
+terms  of 
+accessibility. 
+Most  participants  reported  that  the  Facebook  mobile  site 
+(m.facebook.com)  was  particularly  accessible,  and  many 
+used  it  exclusively  on  a  desktop  browser  to  avoid  the 
+structural complexity of the main site. The mobile site did 
+not support all the functions of the main site, but people still 
+used it even if this meant that they forwent functionality, or 
+resulted  in  having  to  switch  between  the  desktop  and 
+mobile  versions.  Katie  explained  an  intricate  system  she 
+used  to  access  different  functionalities  through  different 
+interfaces:  
+If  I  want  to  tag  a  specific  friend  or  a  specific  page  in  a 
+particular status update, I’ll use the … full Facebook site. 
+Then if I’m just reading and scrolling through, I’ll use the 
+mobile  version  on  the  PC.  If  I’m  posting  a  picture  or  a 
+video, I will use the iOS app… It’s much easier to upload 
+pictures  and  videos  from  the  iOS  app…  Then  if  I’m  just 
+scrolling  or  browsing,  I’ll  use  the  mobile  site  on  the  PC. 
+(Katie) 
+To reduce structure complexity, some participants reported 
+accessing  SNSs  through  other  applications.  For  example, 
+Naomi used an accessible client application for Twitter, but 
+wished  that  other  SNSs  such  as  Facebook  also  had  a 
+dedicated  desktop  client  to  “de-clutter  the  interface.” 
+Another potential access point was email. Instead of going 
+to Facebook and scrolling through updates, Calvin reported 
+entering Facebook when he got a notification of interest via 
+email. Several survey respondents also reported interacting 
+with  Facebook  friends  via  email  rather  than  through  the 
+site:  
+
+1588
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+I try to interact by replying to email as much as possible, 
+rather than going through the site, as I find FB complicated 
+and hard to navigate, even the supposedly less visual and 
+less complex mobile site. (P40) 
+A  second  strategy  for  overcoming  accessibility  challenges 
+was getting help from sighted individuals. The majority of 
+participants reached out to close friends, spouses, or other 
+family  members  to  get  help  with  challenging  tasks.  Their 
+closest friends and family knew them well and understood 
+their ways of using screen readers to assist when needed: 
+The thing that I find frustrating about LinkedIn is I cannot 
+figure out how to efficiently manage my connections. […] I 
+can’t figure out how to delete them without having sighted 
+assistance. […] I may ask a neighbor. If we’re on Skype, I 
+can share my screen and then he can see what I’m doing. 
+He’s  very  into  how  I  use  a  computer  and  how  I  use  my 
+devices versus how somebody who is sighted lives life and 
+that sort of thing. He or a couple of friends that I’m very 
+close with I’d probably ask them for help with that sort of 
+thing. (Katie) 
+Finally, when workarounds were not possible and help was 
+not  available,  participants  avoided  SNS  features  that  they 
+found inaccessible: “I do not poke, as I think it is too hard 
+to  figure  it  out.”  (P58).  Lisa  managed  to  figure  out 
+Google+, but was limited in how she used it to interact with 
+her  friends:  “I’ve  never  posted  anything.  I  only  use  it  to 
+look  at  what  my  friends,  who  I’ve  managed  to  figure  out 
+how to add, have posted. It’s completely one-sided.” Three 
+interviewees  said  that  they  did  not  use  Google+  at  all, 
+explaining  that  they  could  not  figure  out  how  to  perform 
+elementary  tasks  such  as  adding  connections.  Avoiding 
+features  and/or  entire  SNSs  prevented  them  from  having 
+more  connections  and  interactions  with  their  friends,  and 
+contributed to making them feel neglected by the designers 
+and developers of these services.  
+INTERACTING WITH VISUAL CONTENT 
+SNSs enable users to communicate through various types of 
+visual content including photos, videos, and graphics (e.g., 
+image memes, emojis). Although our participants were not 
+able to perceive the visual content in the way that sighted 
+users  did,  they  were  fully  aware  that  visual  content  is  an 
+important part of SNS experiences. As Marcus mentioned, 
+“when  it  comes  down  to  doing  things  people  do  on 
+Facebook, it’s more about the photos.”  
+Consistent  with  findings  from  previous  research  [45],  we 
+found that blind people engaged with photos on SNSs. Most 
+of  the  blind  people  we  interviewed  and  surveyed  posted 
+photos and responded to visual content that was shared by 
+their friends. However, to fully engage with visual content, 
+blind  people  needed 
+to  first  overcome  accessibility 
+challenges  associated  with  the  visual  content  through 
+workarounds  or  with  help  from  family  and  friends.  They 
+needed help to determine the content of the photos, and to 
+take  and  post  photos  of  their  own.  Due  to  these  hurdles, 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+some  chose  to  forgo  engaging  with  photos,  or  chose  to 
+selectively  do  so  when  convenient.  In  this  section,  we 
+describe  our  participants’  approach  to  visual  content,  the 
+challenges they experienced with it, and the strategies they 
+employed to overcome these challenges. 
+Taking and Posting Photos and Videos 
+Seven 
+interviewees  and  23%  of  survey  respondents 
+reported  that  they  posted  photos.  Three  interviewees 
+reported that they also posted videos. The process involved 
+composing  and  capturing  the  image,  confirming  that  they 
+had  the  right  file  selected  to  upload,  and  then  posting  it 
+online.  Each  of  these  steps  had  unique  challenges  and  all 
+participants reported seeking help from sighted individuals 
+in some parts of the process. When help was not available, 
+some either delayed the task or gave up on it altogether.  
+Taking Photos 
+To  take  a  photo,  participants  first  faced  the  challenge  of 
+composing  the  photo  and  correctly  capturing  their  target. 
+Naomi explained: “There’s just no way for me to know that 
+whatever I’m photographing has been properly centered or 
+the lens is in [focus] to take a good photo.”  Since  content 
+shared on SNSs is seen by a large audience, not just close 
+friends,  our  participants  worried  about  the  emotional  and 
+social  consequences  of  sharing  an  imperfect  photo  or  a 
+different photo than the one intended:   
+I  have  practiced  taking  selfies  and  now  I  am  quite  good 
+about  it,  but  I  am  afraid  to  share  except  [with]  my  close 
+friends, as even though I can take good selfie, it might not 
+be  perfect  as  others  would  take,  and  if  I  do  something 
+wrong I don’t want to be a joke. I do remember recently I 
+shared my selfie on WhatsApp. And I forgot to switch on the 
+front camera, and I just took the photos and shared it. My 
+close friends told me that they can see the wall and not me. 
+As  they  are  my  close  friends  and  family  members  no  one 
+laughed at me. It may not be the case with FB. (P9) 
+As a result, only a small number of participants took photos 
+by  themselves.  Most  reported  asking  friends  or  family 
+members to take photos or videos of or for them. Parents, 
+significant  others,  and  close  friends  were  particularly 
+trusted. Just like sighted people, participants cared not only 
+about  the  content  of  their  photos,  but  also  about  the 
+aesthetic elements and the quality of photography:  
+Some people don’t always understand completely that when 
+a  blind  person  asks  you  to  take  a  picture  for  them  you 
+should do it with the same the way that you would take it 
+for  yourself.  Some  people  aim  it  at  the  thing  and  take  a 
+picture  and  be  like  ‘okay  it’s  done.’  Certain  ones  of  my 
+friends  understand  that  I  care  about  the  way  things  look 
+and that sort of thing and so they’ll take it the way that they 
+would take it if they wanted to post it or if they wanted to 
+share it. (Lisa) 
+Katie  highlighted  the  crux  of  the  challenge:  “I  do  wish 
+there was a way to, for a person who is totally blind, to be 
+able to take good pictures or good videos. There’s sort of a 
+
+disconnect there.” Participants did not seem to be aware of 
+tools  developed  to  help  blind  people  take  better  photos 
+[19,40].  Further,  our  participants  cared  about  “looking 
+good”  in  the  photos,  a  judgment  that  tools  could  not 
+provide.  
+Selecting and Editing Photos 
+Once  acceptable  photos  were  taken,  participants  had  to 
+identify  the  correct  photo  from  the  photo  storage  on  their 
+phone  or  computer  to  post  and  share  online.  Accidentally 
+posting  a  different  photo  from  the  one  they  intended  had 
+negative  consequences:  “I  accidentally  posted  the  wrong 
+pic from my photo album on my phone and didn’t realize it 
+until I read the comments.” (P3) 
+In  some  situations,  participants  were  able  to  select  their 
+photo independently, for example, when the desired photo 
+was the most recent one: “I just knew it was the picture just 
+because it was the last photo that was on the camera roll.” 
+(P4) In other cases, participants reported that someone else 
+took the photo and sent it to them via email, and they were 
+able  to  identify  the  photo  because  it  was  attached  to  the 
+message. In all these cases, participants relied on non-visual 
+cues in selecting the correct photo. 
+In most cases, participants reached out to a trusted sighted 
+person to help identify the correct photo or photos to share. 
+Some waited until they had a batch of photos for posting, 
+and then sat down with a sighted friend or family member 
+to go over them. Unfortunately, this was perceived as time 
+consuming, and therefore sometimes delayed or deterred a 
+blind person from posting. Sophie described the reason for 
+not posting a set of photos: “[I need someone to] help me 
+understand which picture is that. Then I will rename it, and 
+then if there is some editing, then I have to keep on asking 
+“could you cut the picture? Could you edit it? Could you do 
+this?” … That becomes kind of difficult.”  
+As Sophie recounts, the process of selecting photos to post 
+involved  more  than  just  identifying  what  is  in  the  photo: 
+participants  wanted  their  friend  to  judge  in  which  photo 
+they  looked  best,  they  wanted  to  avoid  blurriness  or 
+incorrect  composition,  and  they  sometimes  wanted  to  edit 
+the  photo:  to  crop,  rotate,  or  to  use  other  editing  features. 
+This was only possible with the help of sighted individuals 
+they trusted, who would spend the time to help them out.  
+Posting Photos 
+Most of the participants reported sharing photos or videos 
+on Facebook more than on other SNSs, and some of them 
+were  able  to  post  photos  or  videos  without  help.  P2 
+describes  his  process  of  posting  a  photo  to  Facebook  that 
+was taken by someone else on his phone: 
+I ask a family member or friend to take the picture using my 
+iPhone’s  camera.  Once  the  photo  has  been  taken,  I  turn 
+VoiceOver  back  on  and  post  the  picture  using  the  built-in 
+sharing features in the native iOS camera app. (P2) 
+
+1589
+
+Facebook’s mobile app was considered by most participants 
+to be easier than the main site for posting photos, especially 
+because the photos were already on their phone. However, 
+additional interactions with the photo upload process, such 
+as  tagging  people,  were  considered  difficult:  “I  couldn’t 
+access  the  area  where  you  tag  friends”  (P20).  Further,  if 
+photos  needed  to  be  edited  before  being  uploaded,  for 
+example, to meet the size requirement, this was a particular 
+challenge that required help from others: 
+When I’m promoting an event, a performance of my band, I 
+can’t  generally  do  the  photographs  to  add  a  photo  to  the 
+event.  It’s  the  whole,  the-photo-has-to-be-a-certain-size 
+issue. I can’t find a way to edit it myself to make it fit into 
+the Facebook requirements. (James) 
+Following  up  on  previous  work  [45],  our  findings 
+demonstrated  that  sharing  photos  is  part  of  the  SNS 
+experience  for  blind  users,  but  that  they  did  so  through 
+unique  practices  that  almost  always  involved  getting  help 
+from trusted sighted contacts. When help was not available, 
+participants  often  delayed  or  avoided  sharing  photos, 
+resulting  in  fewer  opportunities  to  interact  with  friends 
+through photos.  
+Interpreting and Responding to Visual Content 
+Seven  interviewees—those  who  posted  photos—and  more 
+than  half  (52%)  of  survey  respondents  reported  that  they 
+tried to interpret the photos posted by their friends, and that 
+they  liked  and  commented  on  the  photos  as  a  means  of 
+interacting  with  their  friends.  However,  participants  faced 
+various  challenges 
+In 
+particular, 
+lack  of  useful  contextual 
+information  such  as  photo  descriptions  often  prevented 
+participants from engaging with most visual content.  
+Interpreting Visual Content  
+To understand the content of a photo, participants read the 
+names of individuals tagged in it, the description posted by 
+the author, comments posted by others, and the geo-tag of 
+the  photo.  Author-generated  descriptions  were  considered 
+by far the most informative:  
+When  people  include  descriptions,  it  makes  it  so  much 
+easier for somebody who’s blind to know what’s going on 
+and more fully participate in the posting of that picture or 
+responding to that picture or video. (Katie) 
+However,  participants  mentioned  that  most  photos  posted 
+on Facebook did not have clear descriptions or a description 
+at all, and included only some of the contextual information 
+described above. As a result, participants used partial clues 
+to connect the dots and make sense of the photo based on 
+the information available. For example, when faced with a 
+photo without a description, Marcus deduced that “it must 
+be from [his friends’] trip because they went to Mexico and 
+that’s  tagged  in  Mazatlán.”  Our  participants  reported 
+relying  on  very  few  clues  to  interpret  photos  in  order  to 
+participate in the interactions around them: 
+
+in  understanding 
+
+the  photos. 
+
+the 
+
+frequent 
+
+1590
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+If  a  person  leaves  a  comment  with  their  picture,  then 
+there’s something in it that gives me a [clue]… I remember 
+a friend of mine, I don’t know what it was, she said, “I hope 
+you enjoy this picture of Bill and I.” I wrote back something 
+like,  “as  long  as  you’re  together,  I  don’t  care  where  you 
+are.” I had no idea what the picture was of, but as long as 
+they were together, that’s good enough for me. (Darcy) 
+In many cases, the information provided was not sufficient 
+to  allow  the  blind  person  to  make  successful  guesses.  In 
+these cases, some sought more information, especially if the 
+photo  seemed  interesting  or  was  posted  by  a  close  friend. 
+Some reached out to a nearby friend or family member to 
+ask  them  to  describe  the  photo.  Others  reached  out  to  the 
+photo’s author, but only when the relationship was intimate 
+enough. They did so either directly, or by commenting on 
+the photo: 
+Normally I’ll do it in a teasing way because we talk about 
+accessibility  all  the  time,  my  sighted  friends  and  I. 
+Normally, if I ask them, I’ll make it into sort of a joke about 
+how I don’t know what they’re talking about. (Lisa) 
+When  no  information  was  provided  and  help  was  not 
+available, many participants ignored photos and other visual 
+content. This was common with content that was not easy 
+to  describe  with  words,  such  as  images  that  featured  text 
+(e.g.,  screenshots  or  memes),  graphics-based  emojis  that 
+were not captured by screen readers, and humorous videos:  
+Sometimes people post videos that they think are funny but 
+they’re very visual, and I don’t really understand what’s so 
+funny about it, so I don’t bother. (Naomi) 
+While many participants accepted this situation, others were 
+frustrated when their friends did not describe the photos and 
+other visual content they posted: “I have found it useless to 
+ask  family  and  friends  to  make  sure  their  photos  include 
+description,  because  they  usually  ignore  this  request.” 
+(P34)  
+Again,  they  felt  left  out  of  the  SNS  experience: “I cannot 
+see  the  photo,  and  people  rarely  ever  describe  it.  They 
+assume everyone on planet Earth has working eyes. If your 
+eyes happen not to work, too darned bad.” (P40) 
+While some emotional and humorous content in photos and 
+videos may be difficult to convey with screen readers, some 
+of 
+it  could  be  made  more  accessible  with  existing 
+technologies as we will describe in the design implications.  
+Responding to Visual Content 
+Participants’ decisions on whether to respond to a photo by 
+“liking” it or commenting on it were based on a number of 
+factors.  First,  they  generally  responded  to  photos  if  they 
+were able to interpret the photo content or context in some 
+way.  As  described  above,  participants  reported  relying  on 
+various  cues  such  as  descriptions,  comments,  or  people 
+tagged in the photo, to interpret the photo and decide if they 
+wanted  to  respond  to  it.  P9  describes  that  the  number  of 
+“likes”  on  a  photo  and  others’  comments  on  it  give  her 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the  photo  or  posted  comments  because 
+
+enough clues to determine whether to like or comment on 
+the photo: 
+I decide how to like [a photo] on the basis of the likes that 
+has received. If the photo has more than 100 likes it means 
+it’s safe to like. For commenting there [are] two parts. You 
+understand  the  context  by  looking  at  the  comments  of 
+others.  At  that  time  you  could  say  something  by  guessing 
+what  others  have  wrote.  So  for  example,  my  friend  had  a 
+haircut and many people commented so I wrote “new style 
+ha!” Secondly, if you do not understand anything mostly it 
+is  safest  to  write  “super  like,  nice  pic,  etc,  etc”.  I  think 
+having a visual tool to communicate with your friends helps 
+you a lot in socializing. (P9) 
+The  last  sentence  of  P9’s  comment  (as  shown  above) 
+demonstrates  a  second  factor  in  making  decisions  around 
+responding  to  visual  content:  building  and  maintaining 
+social  relationships.  Even  when  there  were  not  enough 
+clues to interpret the visual content, participants sometimes 
+“liked” 
+this 
+engagement provided emotional and social benefits:  
+[I like] mainly photos that I’m tagged in. If a friend posts a 
+photograph that I’m not involved in, sometimes I’ll ‘like’ it 
+if  they  mention  one  of  their  kids.  It  depends  on  how  I’m 
+feeling that day. If I see something and I say, “I miss that 
+person,” then maybe I’ll like the photograph just because of 
+that. (James) 
+Our  participants  were  aware  that  interacting  with  others 
+through visual content was an important aspect of the SNS 
+experience,  and  they  wanted  to  be  included.  As  a  result, 
+despite the challenges, they found ways to be part of these 
+interactions and experiences.  
+DISCUSSION  
+Our findings revealed that blind people engage with visual 
+content  on  SNSs  (particularly  photos)  in  various  ways, 
+consistent  with  previous  research  [45].  They  take  photos, 
+post  them,  tag  people  in  them,  comment  on  them,  and 
+“like” others’ photos. Although they cannot see the photos, 
+their  social  networks  include  a  large  portion  of  sighted 
+friends, and they want to take photos that look good, want 
+to  look  good  in  the  photos  taken  of  them,  and  want  to 
+interact with others through the visual content prevalent on 
+SNSs. 
+Photos  serve  important  social  purposes  for  all  SNS  users. 
+For  example,  posting  a  photo  from  an  event  is  a  way  to 
+document  and  notify  others  about  attending  it.  “Liking”  a 
+photo  one  has  been  tagged  in  is  a  way  to  express 
+appreciation to the poster and, consequently, to maintain the 
+relationship  with  the  poster.  Extending  previous  findings 
+from sighted Facebook users [20], our findings demonstrate 
+that  interactions  around  photos  are  crucial  to  the  SNS 
+experience and to maintaining social connections for blind 
+users, just as they are for sighted users.  
+
+Through our participants’ accounts, it became evident that 
+knowing the content of a photo is one important component 
+in  this  social  process,  but  perhaps  not  the  most  important 
+one. The metadata, such as who posted the photo, who is in 
+it,  where  it  was  taken,  and  others’  responses  to  it,  were 
+fundamental  to  their  social  interactions  with  the  photo. 
+People  have  seen  the  value  of  photo  annotations  and 
+tagging  in  the  context  of  the  audience  selection  and 
+organization  of  photos  [1];  our  findings  indicate  that  such 
+practice  can  also  make  a  significant  difference  in  blind 
+people’s experience with photos.   
+Implications for SNS Design 
+Given  the  importance  of  blind  users’  interactions  with 
+visual content on SNS, existing technologies could be used 
+to  fix  or  alleviate  challenges  that  blind  people  encounter 
+when interacting with visual content.  
+First, functionality could be incorporated into SNSs to give 
+blind  users  greater  autonomy  when  taking,  selecting, 
+editing  and  uploading  photos.  Technologies  have  been 
+developed  to  help  blind  people  take  better  photos  through 
+automatic detection of image focus, framing, rotation, and 
+lighting [8,19,40]. Recording and appending audio notes to 
+photos  can  both  remind  blind  users  of  a  photo’s  content, 
+and  serve  as  a  photo  caption  [16].  In  addition 
+to 
+incorporating such tools into SNSs, further work could take 
+the form of creating editing tools to achieve desired photo 
+quality: cropping, applying filters, and more.  
+Second,  to  allow  users  to  better  interpret  visual  content, 
+alternative text for images could be made available for all 
+relevant  visual  elements 
+the  SNS 
+including  emoji  and  Facebook  stickers. 
+experience, 
+Computer  vision  algorithms  and  Optical  Character 
+Recognition  (OCR)  technology  could  also  be  used  to 
+automatically  generate  alternative  text  for  photos  and 
+videos.  Our  findings  showed  that  blind  people  make 
+decisions  to  respond  to  visual  content  based  on  little 
+information,  so  these  technologies  have  the  potential  to 
+produce  useful  additional  information,  despite  accuracy 
+limitations.  Facebook  has  already  begun  to  consider  OCR 
+[28], but the capability should be extended to other SNSs, 
+especially  ones  that  are  image  heavy,  like  Instagram  and 
+Pinterest.  Existing  functionality  could  also  be  enhanced 
+(e.g.,  allowing  the  users  to  tag  regions  of  the  photo  with 
+comments instead of only with people), which has shown to 
+be  useful  in  helping  blind  people  explore  photo  content 
+[23,46].  
+Third,  when  faced  with  issues  that  technology  cannot  yet 
+address,  such  as  conveying  the  emotional  content  of  an 
+image  or  judging  its  aesthetics,  SNS  developers  can  still 
+support  blind  users  through  design.  For  example,  when 
+posting  a  photo,  the  design  could  make  the  caption  field 
+salient,  as  a  reminder  for  users  to  describe  the  photo. 
+Designing SNS functionality to better support photo sharing 
+within a small, intimate group within the SNS can also help 
+alleviate  blind  users’  concern  for  the  aesthetic  quality  of 
+
+that  are  part  of 
+
+1591
+
+their  photos,  and  can  make  it  more  comfortable  and 
+convenient to share and ask friends for feedback [29].  
+We summarize these design opportunities in Table 2. Many 
+would serve users with a range of abilities [14], including 
+sighted  users,  and  could  offer  new  interactions  around 
+photos and other visual materials to all SNS users. 
+Implications for CSCW Research  
+One  set  of  implications  of  our  findings  is  for  research  on 
+social processes around sustaining meaningful relationships 
+in  asynchronous  communication  media.  Unlike  most 
+empirical bases for such research, our participants only had 
+access  to  textual  cues  while  their  interaction  partners  had 
+access  to  both  textual  and  visual  cues.  This  asymmetry  in 
+access  to  information  is  an  interesting  direction  to  take  in 
+the  research  on  social  relationships  in  computer-mediated 
+communication and SNSs.  
+In  sharing  visual  content,  we  found  that  blind  users  care 
+about the aesthetics of the photos they shared, and wanted 
+to have control over the messages delivered through photos. 
+Without  seeing 
+they  shared,  blind  users 
+delegated  this  control  to  sighted  individuals  with  whom 
+they had strong, intimate relationships and therefore trusted. 
+In  other  cases,  we  saw  evidence  of  self-censorship  [37], 
+where  blind  users  chose  to  not  post  photos,  or  chose  to 
+share photos with a smaller audience, such as close friends 
+on  WhatsApp, 
+them  broadly  on 
+Facebook.  Previous  work  found  that  participants  of  group 
+interactions experienced less trust of one another and more 
+vulnerability in text-based media compared to visual-based 
+media  and  face-to-face  communication  [4].  Our  work 
+highlights  the  role  of  trust  in  a  visual-based  medium  in 
+which not all participants have access to the visual cues.  
+In  accessing  shared  visual  content,  blind  users  interpreted 
+
+instead  of  sharing 
+
+the  photos 
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+the meaning of the visual content based on textual cues in 
+metadata  about  the  photo.  Based  on  the  hyperpersonal 
+model,  communicating  through  limited-cue  channels  is 
+associated with forming more positive impressions of one’s 
+interaction  partners  [41].  Adding  a  text  description  to  a 
+photo  was  shown  to  worsen  the  impressions  of  others 
+online  [39].  In  contrast,  our  findings  suggest  that  blind 
+people prefer photos with more text descriptions. This also 
+raises  the  question  of  whether  blind  users  perceive  their 
+interaction partners the same way as sighted users do, and 
+whether this might impact the perceived social value blind 
+SNS users derive from these interactions.  
+Future  work  could  explore  these  questions  in  order  to 
+understand  the  impact  of  channel  accessibility  limitations 
+and  asymmetry 
+in  computer-mediated  communication. 
+Further,  we  call  researchers  to  continue  to  push  the 
+boundaries  of  CSCW  research  by  examining  the  use  of 
+social technology by various user groups with special needs 
+beyond those of the general population.  
+TAKING  A  STEP  BACK:  THE  LONG  JOURNEY  TO 
+ACCESSIBILITY  
+Despite  tremendous  research  efforts  on  web  accessibility 
+and  the  development  of  standards,  frameworks,  and  legal 
+requirements, our findings demonstrate that a long journey 
+lies ahead before accessibility is implemented as a universal 
+value.  Most  of  our  participants  are  comfortable  in  using 
+technology, but found it challenging to do everything they 
+wanted  to  do  on  SNSs.  Due  to  structural  complexity, 
+limitations  in  photo  selection  and  editing,  and  increasing 
+amounts  of  visual  content,  participants  had  to  use  unique 
+practices to interact with others on SNSs. 
+Participants  developed  and  used  various  strategies  and 
+workarounds  to  overcome  difficulties.  We  saw  creative 
+solutions,  such  as  opening  the  mobile  version  of  an  SNS 
+
+ Design Opportunity 
+Extend SNS functionality and design 
+practices that are successful with blind users 
+to other SNS platforms and to computer 
+mediated communication services. 
+Augment SNS functionality with existing 
+technologies to give blind users greater 
+autonomy when taking, selecting, editing 
+and uploading photos. 
+
+Augment SNS functionality with existing 
+technologies to allow blind users to better 
+interpret visual content. 
+
+Leverage design principles to tackle issues 
+that technology cannot yet address, such as 
+conveying the emotional content of images 
+or enabling blind users to pass judgment on 
+its aesthetics. 
+
+Supports blind 
+users 
+
+Impact 
+Supports all users  • Extend image-tagging capability to other SNSs, especially ones that are 
+
+Example 
+
+image heavy, like Instagram and Pinterest. 
+
+• Keep SNS API open to allow developers to create accessible tools (e.g., 
+
+Chicken Nugget Windows client for Twitter). 
+
+Supports blind 
+users but may be 
+appropriated by 
+any user 
+
+• Incorporate existing technologies that help blind people take better photos 
+through automatic detection of image focus, framing, rotation, and lighting 
+[8,19,40].  
+
+• Implement ability to record and append audio notes to photos to both remind 
+
+blind users of a photo’s content, and serve as a photo caption [16].  
+
+• Create accessible editing tools to achieve desired photo quality: cropping, 
+
+applying filters, and more. 
+
+Supports blind 
+users 
+
+• Implement alternative text for images for all relevant visual elements that are 
+
+part of the SNS experience, including emoji and Facebook stickers.  
+
+• Use Optical Character Recognition (OCR) technology to automatically 
+
+generate alternative text for photos and videos.  
+
+• Allow users to tag regions of the photo with comments, shown to be useful 
+
+in helping blind people explore photo content [23,46]. 
+
+• Make the photo caption field salient to remind users to describe a photo they 
+
+are about to post. 
+
+Table 2. Design opportunities to improve interactions with visual content. 
+
+1592
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+website on a desktop browser, and relying on geo-tags and 
+other  clues  to  interpret  photos  and  make  decisions  about 
+whether  to  respond  to  them.  In  these  ways,  participants 
+appropriated  SNS  designs  meant  for  one  use  to  another. 
+Keeping these designs open to unexpected appropriations is 
+important  [10].  For  example,  allowing  one  to  open  the 
+mobile version on a desktop browser without redirecting to 
+the full desktop version downplays the single authoritative 
+interpretation of the designers about which versions should 
+be  used  on  which  devices,  and  opens  up  new  possibilities 
+and experiences [35]. 
+However, workarounds did not always work, and help was 
+not  always  available.  Whereas  some  participants  accepted 
+that they could not fully access SNSs, others felt frustrated 
+and  discouraged,  and  that  they  were  missing  out  on  the 
+social  benefits  of  fully  participating  on  SNSs.  Our 
+participants were especially irritated when SNSs introduced 
+new  dynamic,  visually-oriented  features  without  full 
+compatibility with assistive technologies. Designers should 
+be aware of how the features and services they create work 
+for a variety of user groups: who they are designing for and 
+who they are leaving out.  
+However,  we  acknowledge  that  there  is  no  single  ideal 
+approach to designing accessible services. A recent survey 
+of screen reader users showed that over 40% of respondents 
+use the screen reader-friendly versions of websites often or 
+whenever 
+they  are  available  [43].  In  practice,  our 
+participants  reported  liking  and  using  the  mobile  site  of 
+Facebook even on desktop browsers, which serves as the de 
+facto “accessible” version of Facebook. However, there are 
+several  potential  problems  with  this  “separate-but-equal” 
+approach. Similar to previous findings [44], the participants 
+who used the mobile site on their desktop were also aware 
+that  some  features  were  missing,  and  perceived  that  they 
+were  getting  a  discounted  experience.  The  only  way  to 
+eliminate the trade-off between accessibility and richness of 
+experience  is  to  provide  a  unified,  accessible  site  for  all 
+users, sighted and blind.  
+Calls  to  create  one  universally  usable  site  highlight 
+accessibility as a design value [36]. A universal interface is 
+easier to maintain and more likely to be up-to-date with all 
+new  features,  while  separate  websites  will  require  more 
+development  and  maintenance.  Furthermore,  interacting 
+with  a  universal  interface  would  incentivize  screen  reader 
+makers to evolve their product along with web technology 
+trends. At the same time, the linear nature of screen readers 
+might  be  considered  a  constraint  to  the  aesthetics  of  the 
+design and contrary to experiences that are familiar to and 
+preferred by sighted users. Further, this approach does not 
+fare in practice with increasingly visual-centric web content 
+and SNS designs.  
+The  goal  of  this  paper  is  not  to  solve  accessibility  issues 
+related 
+technologies  and  SNSs.  Instead,  we 
+contribute  to  the  discussion  by  offering  insights  and 
+accounts  of  blind  people’s  experiences  around  visual 
+
+to  web 
+
+literature,  and 
+
+content in SNSs. By describing their practices, challenges, 
+and  creative  solutions,  we  hope  to  keep  the  discussion 
+around SNS accessibility open.  
+CONCLUSION 
+We  presented  a  qualitative  study  of  blind  people  who  use 
+SNSs,  and  explored  their  practices,  challenges,  strategies, 
+and  experiences  through  their  interactions  around  visual 
+content  in  SNSs.  Their  motivations  to  use  SNSs  were 
+similar to those of sighted people, which have been reported 
+in  prior 
+include  maintaining  social 
+relationships  and  expressing  their  identity  through  social 
+interactions. However, blind SNS users faced challenges in 
+interacting  with  SNSs  due  to  pervasive  visual  elements, 
+complicated  page  structure,  and  infinitely  scrolling  feeds 
+that  are  incompatible  with  screen  readers.  The  desire  to 
+fully  participate  in  a  mainstream  SNS  experience  that 
+centers  on  shared  visual  content  exacerbated 
+these 
+challenges.  
+Our  participants  developed  and  applied  creative  strategies 
+to overcome the difficulties they faced: they used multiple 
+devices  and  entry  points  to  access  and  interact  with 
+different  features;  they  inferred  visual  content  and  made 
+interaction  decisions  based  on  non-visual  cues  and  social 
+exchanges  around  visual  content;  and  they  ultimately 
+sought help from a small group of trusted individuals, close 
+friends,  and  family  members.  However,  when  strategies 
+failed and help was not available, participants had to forgo 
+desired interactions.  
+Our  findings  shed  light  on  the  significance  of  social 
+interactions around visual content in SNSs, but also brought 
+up  questions  about  perception  and  trust  when  interaction 
+partners  on  SNSs  have  asymmetrical  access  to  cues  in  a 
+computer  mediated  communication  service.  We  hope  to 
+enable future research and to inspire designers to consider 
+designs that would improve social networking for all users, 
+with and without disabilities.  
+ACKNOWLEDGMENTS 
+We thank all of the interviewees and survey participants for 
+their  contribution  to  this  work.  Thanks  to  Siddharth  Bajaj 
+and Jiang Jian for running the pilot study. Finally, we thank 
+Facebook for providing compensation to study participants.  
+REFERENCES 
+1. Morgan Ames and Mor Naaman. 2007. Why we tag:
+
+motivations for annotation in mobile and online media.
+In Proceedings of the SIGCHI conference on Human
+factors in computing systems (CHI ‘07), 971-980.
+http://doi.acm.org/10.1145/1240624.1240772
+Jeffrey P. Bigham, Craig M. Prince, and Richard E.
+Ladner. 2008. WebAnywhere: a screen reader on-the-
+go. In Proceedings of the 2008 international cross-
+disciplinary workshop on Web accessibility (W4A’08),
+73-82. http://doi.acm.org/10.1145/1368044.1368060
+Jeffrey P. Bigham, Samual White, Tom Yeh, et al.
+2010. VizWiz: nearly real-time answers to visual
+
+2.
+
+3.
+
+1593
+
+questions. In Proceedings of the 23nd annual ACM 
+symposium on User interface software and technology 
+(UIST ‘10), 333–342. 
+http://doi.acm.org/10.1145/1866029.1866080 
+
+4.  Nathan Bos, Judy Olson, Darren Gergle, Gary Olson, 
+
+and Zach Wright. 2002. Effects of four computer-
+mediated communications channels on trust 
+development. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems 
+(CHI '02), 135-140. 
+http://doi.acm.org/10.1145/503376.503401 
+
+5.  Erin L. Brady, Yu Zhong, Meredith Ringel Morris, and 
+
+Jeffrey P. Bigham. 2013. Investigating the 
+appropriateness of social network question asking as a 
+resource for blind users. In Proceedings of the 2013 
+conference on Computer supported cooperative work – 
+(CSCW ‘13), 1225-1236. 
+http://doi.acm.org/10.1145/2441776.2441915 
+
+6.  Erin Brady, Meredith Ringel Morris, Yu Zhong, 
+
+Samuel White, and Jeffrey P Bigham. 2013. Visual 
+challenges in the everyday lives of blind people. In 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '13), 2117–2126. 
+http://doi.acm.org/10.1145/2470654.2481291 
+
+7.  Maria Claudia Buzzi, Marina Buzzi, Barbara Leporini, 
+and Fahim Akhter. 2010. Is Facebook really “open” to 
+all? International Symposium on Technology and 
+Society, Proceedings, IEEE, 327–336.  
+
+8.  Francine Chen, Scott Carter, Laurent Denoue, and 
+Jayant Kumar. 2013. SmartDCap: semi-automatic 
+capture of higher quality document images from a 
+smartphone. In Proceedings of the 2013 international 
+conference on Intelligent user interfaces SE (IUI ‘13), 
+287–296. http://doi.acm.org/10.1145/2449396.2449433 
+9.  V R Cimarolli and K Boerner. 2005. Social support and 
+well-being in adults who are visually impaired. Journal 
+of Visual Impairment & Blindness 99, 521–534. 
+Retrieved May 20, 2015 from 
+http://www.afb.org/jvib/jvibabstractnew.asp?articleid=j
+vib990904 
+
+10.  Alan Dix. 2007. Designing for Appropriation. 27–30. 
+
+Retrieved May 20, 2015 from 
+http://eprints.lancs.ac.uk/41618/ 
+
+11.  Maeve Duggan and Joanna Brenner. 2013. The 
+
+Demographics of Social Media Users-2012. 
+PewResearchCenter, 1–14. Retrieved May 20, 2015 
+from http://pewinternet.org/Reports/2013/Social-
+media-users.aspx 
+
+12.  Nicole B. Ellison, Charles Steinfield, and Cliff Lampe. 
+
+2007. The benefits of facebook “friends:” Social 
+capital and college students’ use of online social 
+network sites. Journal of Computer-Mediated 
+Communication 12, 4, 1143–1168.  
+
+13.  W. Erickson, C. Lee, S. von Schrader. 2014. 2013 
+
+Disability Status Report: United States. Cornell 
+University Employment and Disability Institute(EDI). 
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+Retrieved July 29, 2015 from 
+http://www.disabilitystatistics.org/ 
+
+14.  T. S. Goldhaber, P. M. Langdon, P. J. Clarkson, et al. 
+2012. Designing Inclusive Systems. Springer London, 
+London.  
+
+15.  Google. Search for pictures with Google Goggles - 
+
+Search Help. Retrieved May 20, 2015 from 
+https://support.google.com/websearch/answer/166331 
+16.  Susumu Harada, Daisuke Sato, Dustin W. Adams, Sri 
+Kurniawan, Hironobu Takagi, and Chieko Asakawa. 
+2013. Accessible photo album. In Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems (CHI ‘13), 2127-2136. 
+http://doi.acm.org/10.1145/2470654.2481292 
+
+17.  Taina Maarit Huurre, Erkki Juhani Komulainen, and 
+
+Hillevi Marita Aro. 1999. Social support and self-
+esteem among adolescents with visual impairments. 
+Journal of Visual Impairment and Blindness 93, 26–37. 
+Retrieved May 20, 2015 from http://www.afb.org 
+
+18.  Internet.org. A focus on efficiency: A whitepaper from 
+
+Facebook, Ericsson and Qualcomm. (13 September 
+2013.). Retrieved May 20, 2015 from https://fbcdn-
+dragon-a.akamaihd.net/hphotos-ak-
+prn1/851575_520797877991079_393255490_n.pdf 
+
+19.  Chandrika Jayant, Hanjie Ji, Samuel White, and Jeffrey 
+
+P. Bigham. 2011. Supporting blind photography. In 
+The proceedings of the 13th international ACM 
+SIGACCESS conference on Computers and 
+accessibility (ASSETS ‘11), 203–210. 
+http://doi.acm.org/10.1145/2049536.2049573 
+
+20.  Adam N Joinson. 2008. Looking at, looking up or 
+
+keeping up with people? In Proceeding of the twenty-
+sixth annual CHI conference on Human factors in 
+computing systems CHI 08, 1027-1036. 
+DOI=10.1145/1357054.1357213 
+
+21.  Shaun K. Kane, Jessie a. Shulman, Timothy J. 
+Shockley, and Richard E. Ladner. 2007. A web 
+accessibility report card for top international university 
+web sites. In Proceedings of the 2007 international 
+cross-disciplinary conference on Web accessibility 
+(W4A ‘07), 148-156. 
+http://doi.acm.org/10.1145/1243441.1243472 
+
+22.  Richard E. Ladner, Beverly Slabosky, Andrew Martin, 
+et al. 2005. Automating tactile graphics translation. In 
+Proceedings of the 7th international ACM SIGACCESS 
+conference on Computers and accessibility (Assets 
+‘05), 150-157. 
+http://doi.acm.org/10.1145/1090785.1090814 
+
+23.  Walter S. Lasecki, Phyo Thiha, Yu Zhong, Erin Brady, 
+
+and Jeffrey P. Bigham. 2013. Answering visual 
+questions with conversational crowd assistants. In 
+Proceedings of the 15th International ACM 
+SIGACCESS Conference on Computers and 
+Accessibility (ASSETS ‘13), 1–8. 
+http://doi.acm.org/10.1145/2513383.2517033 
+
+24.  Jonathan Lazar, Alfreda Dudley-Sponaugle, and Kisha 
+Dawn Greenidge. 2004. Improving web accessibility: 
+
+1594
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Cranor. 2013. The post that wasn’t: exploring self-
+censorship on facebook. In Proceedings of the 2013 
+conference on Computer supported cooperative work 
+(CSCW ’13), 793-802. 
+http://doi.acm.org/10.1145/2441776.2441865 
+
+38.  Tien Tay, Jie Jin Wang, Richard Lindley, et al. 2007. 
+
+Sensory impairment, use of community support 
+services, and quality of life in aged care clients. 
+Journal of aging and health 19, 2, 229–241.  
+
+39.  Catalina L. Toma. 2010. Perceptions of trustworthiness 
+
+online: the role of visual and textual information. In 
+Proceedings of the 2010 ACM conference on Computer 
+supported cooperative work (CSCW '10), 13-22. 
+http://doi.acm.org/10.1145/1718918.1718923 
+
+40.  Marynel Vázquez and Aaron Steinfeld. 2012. Helping 
+
+visually impaired users properly aim a camera. In 
+Proceedings of the 14th international ACM 
+SIGACCESS conference on Computers and 
+accessibility (ASSETS ‘12), 95-102. 
+http://doi.acm.org/10.1145/2384916.2384934 
+41.  Joseph B. Walther. 1996. Computer-Mediated 
+
+Communication: Impersonal, Interpersonal, and 
+Hyperpersonal Interaction. Communication Research 
+23, 3-43. 
+
+42.  Web Accessibility Initiative. 2012. WCAG Overview. 
+
+Retrieved May 20, 2015 from 
+http://www.w3.org/WAI/intro/wcag.php 
+
+43.  WebAIM. 2014. WebAIM: Screen Reader User Survey 
+
+#5 Results. Retrieved May 20, 2015 from 
+http://webaim.org/projects/screenreadersurvey5/ 
+
+44.  Brian Wentz and Jonathan Lazar. 2011. Are separate 
+interfaces inherently unequal? In Proceedings of the 
+2011 iConference (iConference '11), 91-97. 
+http://doi.acm.org/10.1145/1940761.1940774 
+
+45.  Shaomei Wu and La Adamic. 2014. Visually impaired 
+
+users on an online social network. In Proceedings of 
+the 32nd annual ACM conference on Human factors in 
+computing systems (CHI ’14), 3133–3142. 
+http://doi.acm.org/10.1145/2556288.2557415 
+
+46.  Yu Zhong, Walter S. Lasecki, Erin Brady, and Jeffrey 
+P. Bigham. 2015. RegionSpeak: Quick Comprehensive 
+Spatial Descriptions of Complex Images for Blind 
+Users. In Proceedings of the 33rd Annual ACM 
+Conference on Human Factors in Computing Systems 
+(CHI ‘15), 2353–2362. 
+http://doi.acm.org/10.1145/2702123.2702437 
+
+A study of webmaster perceptions. Computers in 
+Human Behavior 20, 2, 269–288.  
+
+25.  Jonathan Lazar, Aaron Allen, Jason Kleinman, and 
+
+Chris Malarkey. 2007. What Frustrates Screen Reader 
+Users on the Web: A Study of 100 Blind Users. 
+International Journal of Human-Computer Interaction 
+22, 3, 247–269. 
+
+26.  Jonathan Lazar, Brian Wentz, C. Akeley, et al. 2012. 
+
+Equal access to information? Evaluating the 
+accessibility of public library web sites in the state of 
+Maryland. Designing inclusive systems: Designing 
+inclusion for real-world applications, 185–194. 
+
+27.  Jennifer Mankoff, Holly Fait, and Tu Tran. 2005. Is 
+
+your web page accessible? In Proceedings of the 
+SIGCHI conference on Human factors in computing 
+systems (CHI’05), 41-50. 
+http://doi.acm.org/10.1145/1054972.1054979 
+
+28.  Cade Metz. 2015. Meet the team that makes it possible 
+
+for the blind to use Facebook. Wired Magazine, 
+February 22, 2015. Retrieved on May 21, 2015 from 
+http://www.wired.com/2015/02/meet-team-makes-
+possible-blind-use-facebook/ 
+
+29.  Jarno Ojala and Sanna Malinen. 2012. Photo sharing in 
+
+small groups. In Proceeding of the 16th International 
+Academic MindTrek Conference (MindTrek ‘12), 69-
+76. http://doi.acm.org/10.1145/2393132.2393148 
+
+30.  Christopher Power, André Freire, Helen Petrie, and 
+
+David Swallow. 2012. Guidelines are only half of the 
+story: accessibility problems encountered by blind 
+users on the web. In Proceedings of the 2012 ACM 
+annual conference on Human Factors in Computing 
+Systems (CHI ‘12), 433–442. 
+http://doi.acm.org/10.1145/2207676.2207736 
+
+31.  Ravic Ringlaben, Marty Bray, and Abbot Packard. 
+2014. Accessibility of American University Special 
+Education Departments’ Web Sites. Universal Access 
+in the Information Society 13, 2, 249–254.  
+
+32.  Archie W. N. Roy, Gisela Dimigen, and Marcella 
+
+Taylor. 1998. The Relationship between Social 
+Networks and the Employment of Visually Impaired 
+College Graduates. Journal of Visual Impairment & 
+Blindness (JVIB) 92, 7, 423–432.  
+
+33.  Sharon Zell Sacks, Karen E. Wolffe, and Deborah 
+
+Tierney. 1998. Lifestyles of students with visual 
+impairments: Preliminary studies of social networks. 
+Exceptional Children 64, 4, 463–478.  
+
+34.  Johnny Saldana. 2008. Coding manual for qualitative 
+
+researchers. Los Angeles, CA: Sage. 
+
+35.  Phoebe Sengers and Bill Gaver. 2006. Staying open to 
+interpretation: engaging multiple meanings in design 
+and evaluation. In Proceedings of the 6th conference 
+on Designing Interactive Systems (DIS '06), 99-108. 
+http://doi.acm.org/10.1145/1142405.1142422  
+36.  Ben Shneiderman. 2000. Universal usability. 
+Communications of the ACM 43, 5, 84–91.  
+
+37.  Manya Sleeper, Rebecca Balebako, Sauvik Das, Amber 
+
+Lynn McConahy, Jason Wiese, and Lorrie Faith 
+
+1595
+
+

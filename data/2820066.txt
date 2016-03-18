@@ -1,0 +1,1284 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+What’s in a Like? Attitudes and behaviors around 
+
+receiving Likes on Facebook 
+Lauren Scissors, Moira Burke, Steven Wengrovitz 
+
+Facebook 
+
+1 Hacker Way, Menlo Park, CA, 94025 USA 
+{laurenscissors, mburke, stevew}@fb.com  
+
+ABSTRACT 
+What  social  value  do  Likes  on  Facebook  hold?  This 
+research examines people’s attitudes and behaviors related 
+to receiving one-click feedback in social media. Likes and 
+other kinds of lightweight affirmation serve as social cues 
+of acceptance and maintain interpersonal relationships, but 
+may  mean  different  things  to  different  people.  Through 
+surveys and de-identified, aggregated behavioral Facebook 
+data, we find that in general, people care more about who 
+Likes  their  posts  than  how  many  Likes  they  receive, 
+desiring  feedback  most  from  close  friends,  romantic 
+partners,  and  family  members  other  than  their  parents. 
+While  most  people  do  not  feel  strongly  that  receiving 
+“enough” Likes is important, roughly two-thirds of posters 
+regularly receive more than “enough.” We also note a “Like 
+paradox,” a phenomenon in which people’s friends receive 
+more  Likes  because  their  friends  have  more  friends  to 
+provide those Likes. Individuals with lower levels of self-
+esteem and higher levels of self-monitoring are more likely 
+to think that Likes are important and to feel bad if they do 
+not  receive  “enough”  Likes.  The  results  inform  product 
+design  and  our  understanding  of  how 
+lightweight 
+interactions shape our experiences online. 
+Author Keywords 
+Social network sites; Facebook; Likes; Like paradox; self-
+esteem; self-monitoring 
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous 
+INTRODUCTION 
+Giving  and  receiving  feedback  is  a  fundamental  part  of 
+people’s  experiences  on  social  media.  Incoming  and 
+outgoing feedback signal investment in social relationships 
+by  maintaining 
+interpersonal  bonds,  keeping  older 
+relationships active, and grooming new ones [9]. Yet social 
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work owned by  others  than ACM must be honored. 
+Abstracting with credit  is  permitted.  To  copy  otherwise,  or republish,  to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from permissions@acm.org.  
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02...$15.00 
+DOI: http://dx.doi.org/10.1145/2818048.2820066
+
+1501
+
+network  sites  afford  many  forms  of  feedback  between 
+audience  and  poster,  including  comments,  replies,  and 
+private  messages;  or  more  lightweight  actions  such  as 
+Likes,  Favorites,  or  +1s.    In  this  paper  we  focus  on  the 
+social  value  of  these  lightweight  actions,  which,  though 
+highly  prevalent  [24],  may  be  interpreted  in  a  variety  of 
+ways.  
+Lightweight,  one-click  feedback  actions  occur  on  Twitter, 
+Flickr,  Google  Plus,  and  many  other  platforms.  We  focus 
+on  Facebook  Likes  because  of  the  site’s  size  and  scope. 
+Roughly half (44%) of Facebook users Like content posted 
+by their friends at least once a day [24], generating around 
+4.5 billion Likes daily as of 2013 [10]. In addition, for some 
+people, “getting feedback on content you have posted” is a 
+major reason for using Facebook [24]. Because a Like takes 
+only  one  click  to  produce,  it  may  be  an  easy  way  for 
+acquaintances  and  more  distant  friends 
+to  maintain 
+relationships without requiring a lot of effort or context. On 
+the other hand, Likes may be perceived as less meaningful 
+than comments or posts directly on friends’ walls since they 
+are  so  easy  to  generate.  For  instance,  previous  research 
+shows  that  receiving  “composed”  content  (comments  and 
+wall posts) from friends is associated with improvements in 
+relationship  strength,  perceived  social  support,  happiness, 
+bridging social capital, mood, and loneliness, but receiving 
+Likes alone is not [2, 3].  
+Despite being a less effortful form of communication than 
+comments or messages, we view Likes as social cues  that 
+send  a  signal  both  to  the  person  who  created  the  post  as 
+well as to the poster’s network of friends. In online settings, 
+individuals use the cues available to “reduce interpersonal 
+uncertainty, form impressions, and develop affinity” ([33], 
+p.535). As such, Likes may signal social appropriateness or
+social acceptance. They may signify psychological support 
+and  empathy.  Or,  in  a  context  where  the  audience  is 
+unclear,  they  could  simply  signal  that  a  friend  has  seen  a 
+post. Peyton writes “the like button is a chimera, meaning 
+multiple things to many people” ([25], p. 116). Likes may 
+be  interpreted  and  valued  differently  by  the  Liker,  the 
+recipient, and the recipient’s friends. Given the ubiquity of 
+Likes on Facebook, their theoretical importance as a social 
+grooming 
+their 
+significance, it is important to understand the value people 
+ascribe 
+that  we  can  better  understand 
+
+this  ambiguity  around 
+
+tool  [9],  and 
+
+to  Likes  so 
+
+and  other 
+
+comments,  messages, 
+
+motivations for sharing and the role of lightweight feedback 
+in the social media ecosystem. 
+There are many open questions about people’s perceptions 
+of Likes on Facebook. For instance, how important is it for 
+people  to  get  Likes  on  their  posts?  Do  people  hope  for  a 
+certain  number  of  Likes?  If  so,  what  is  that  number?  Or 
+does it matter more who Likes a post rather than how many 
+Likes a post receives? Is a Like from a close friend valued 
+as  much  as  a  Like  from  an  acquaintance?  Using  a  survey 
+and de-identified, aggregated Facebook log data, this paper 
+explores  the  extent  to  which  Likes  are  meaningful  to 
+people,  what  aspect  of  the  Likes  are  meaningful,  and 
+whether  different  kinds  of  people  view  Likes  differently.  
+Answering  these  questions  contributes  both  to  product 
+design  and  to  our  understanding  of  how  lightweight 
+interactions shape our experiences online. 
+LITERATURE REVIEW 
+Feedback on Social Media 
+Likes, 
+types  of 
+communication  play  several  roles  in  social  network  sites. 
+The  warranting  principle  suggests  that  when  making 
+judgments about a person, we weigh information generated 
+by that person less strongly than information generated by 
+other  people,  since  other-generated  information  is  less 
+prone  to  manipulation  [33].    Therefore,  visible  actions 
+performed by others shape the impressions we make about 
+a  person.  For  example,  friends’  posts  and  comments  on  a 
+person’s wall influence others’ assessments of that person’s 
+attractiveness [34, 35] more than that person’s own content. 
+Although  a  Like  may  contain  less  text-based  information 
+than  a  comment  or  wall  post,  it  is  still  a  form  of  other-
+generated  content  and  thus  has  information  value.  In 
+particular,  the  number  of  Likes  a  person  receives  may 
+indicate  popularity  or  personality  characteristics.  For 
+instance, the more Likes a person’s status updates receive, 
+the more strangers perceive that person as extraverted [15]. 
+People who post also feel this association with popularity. 
+For  instance,  a  2014  Pew  survey  found  that  12%  of 
+Facebook  users  strongly  dislike  “pressure  to  post  content 
+that  will  be  popular  and  get  lots  of  comments/likes”  [24], 
+and a Pew focus group found that teens sometimes remove 
+photos  they’ve  posted  if  the  photos  receive  too  few  Likes 
+[21].  
+Since  people  can  see  whom  a  Like  is  from,  Likes  also 
+contain information important to relationships. Ellison and 
+Vitak describe Likes as “micro-transactions” that can “help 
+create  an  environment  in  which  reciprocal  attention  and 
+low-level  social  grooming  is  productively  enacted”  ([8], 
+p.220). On the other hand, empirical research demonstrates 
+that  receiving  Likes  is  not  associated  with  increases  in 
+relationship  closeness,  while  other  forms  of  interaction 
+(such as comments) are [4]. Therefore, simply receiving a 
+Like may be less important than whom it comes from and 
+other relationship factors.  
+
+1502
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+the 
+
+rate  of 
+
+feedback  and 
+
+People also use Likes and other feedback to estimate how 
+many people see the content they share [1]. However, they 
+often  overestimate 
+thus 
+underestimate their audience size [1]. One possible reason 
+for overestimating how much feedback they should receive 
+is  what  we  call  a  “Like  paradox,”  a  corollary  to  the 
+“friendship  paradox”  (that  people’s  friends  have  more 
+friends  than  they  do  [12,  16]).  It  is  possible  that  people’s 
+friends may receive more Likes than they do, and thus skew 
+their perspective on how much feedback to expect on their 
+own posts.  
+Previous  work  examining  motives  for  Facebook  use 
+suggests additional research is needed on the role of Likes 
+(e.g.,  [23],  [29]).  For  instance,  Smock  and  colleagues 
+examined  what  motives  (e.g.,  social  interaction,  relaxing 
+entertainment,  expressive  information  sharing)  predict  the 
+use  of  various  Facebook  features  such  as  comments,  wall 
+posts, and status updates, but did not examine what motives 
+predict using Likes [29]. In addition, Burke and colleagues 
+found that newcomers’ use of certain Facebook features is 
+associated with their friends’ use of those features, though 
+the  study  also  did  not  specifically  examine  Likes  [5]. 
+Furthermore,  little  empirical  research  has  focused  on  the 
+experience  of  receiving  feedback  on  Facebook,  how 
+important people perceive it to be, and how different types 
+of people may value feedback differently. 
+We  investigate  the  experience  of  receiving  Likes  on 
+Facebook posts via the following research questions:  
+To what extent do people care about getting Likes?  
+How many Likes on posts are “enough” and how does this 
+compare to the number of Likes people actually receive?  
+How  do  people  think  the  number  of  Likes  they  receive 
+compares to the number of Likes their friends receive? How 
+accurate are people’s perceptions? 
+To what extent do people care about number of Likes they 
+receive vs. from whom they receive the Likes? 
+What types of people (e.g., close friends, acquaintances) do 
+people care most about getting Likes from?  
+Self-Esteem,  Self-Monitoring  &  Technology-Mediated 
+Communication 
+Given  that  Likes  and  other  feedback  affect  impression 
+formation  and  are  a  publicly  displayed  element  of  one’s 
+online presence, people with certain personality traits may 
+view and value Likes differently than others. One trait that 
+may  impact  people’s  orientation  towards  Likes  is  self-
+esteem  since  it  is  largely  based  on  perceptions  of  social 
+acceptance (e.g., [18]). 
+Previous  research  suggests  that  in  some  contexts,  people 
+with lower levels of self-esteem may prefer to communicate 
+via 
+since  mediated 
+communication  can  be  less  face-threatening.  For  instance, 
+in hypothetical situations involving interpersonal risk (e.g., 
+
+face-to-face) 
+
+technology 
+
+(vs. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+for 
+
+face-to-face 
+
+asking for a pay raise, asking for a date), people with low 
+self-esteem  showed  a  stronger  preference  for  email  and  a 
+weaker  preference 
+communication 
+compared to people with higher levels of self-esteem [17]. 
+A  more  recent  study  demonstrated  that  people  with  lower 
+self-esteem  felt  more  strongly  compared  to  people  with 
+higher  self-esteem  that  Facebook  was  a  safe  place  to 
+express  themselves  [13].  People  with  lower  self-esteem 
+were also more likely to see advantages to disclosing their 
+thoughts  and  feelings  via  Facebook  rather  than  in  person. 
+Additionally,  regardless  of  trait-level  self-esteem  (a  more 
+constant  personality  characteristic),  people  who  visit 
+Facebook in times of low self-worth (such as after receiving 
+a  poor  performance  review)  feel  increases  in  shorter-term 
+state self-esteem [32]. 
+Yet, while people with lower self-esteem may be drawn to 
+sharing  on  Facebook,  they  may  share  thoughts  that  use 
+more negative language, which in turn makes them appear 
+less  likable,  at  least  to  strangers  assessing  their  posts,  and 
+garners  them  less  feedback  in  the  form  of  Likes  and 
+Comments  [13].  Furthermore,  another  study  found  that 
+people with lower levels of self-esteem were more likely to 
+prefer  the  use  of  text-based  communication  like  text 
+messaging or social network sites to discuss a conflict with 
+a  romantic  partner  even  though  the  use  of  mediated 
+communication  was  associated  with  negative  outcomes 
+[28]. Other research, however, has found that more intense 
+use  of  Facebook  was  associated  with  gains  in  bridging 
+social capital for people with lower self-esteem but not for 
+higher self-esteem [7] suggesting that technology-mediated 
+communication  can  provide  benefits  to  individuals  with 
+lower levels of self-esteem. While findings on the benefits 
+of Facebook use for people with low self-esteem is mixed, 
+it  is  important  to  examine  how  people  with  lower  self-
+esteem orient toward different Facebook features, including 
+Likes, so that we can better understand which features and 
+interactions are harmful and which are helpful.  
+Another  characteristic  that  may  influence  attitudes  about 
+Likes  is  self-monitoring,  or  the  extent  to  which  people 
+monitor  or  control  how  they  present  themselves  in  social 
+situations. People who are high self-monitors are concerned 
+with  acting  in  ways  that  are  socially  appropriate  [30].  On 
+the  other  hand,  low  self-monitors  tend  to  exhibit  more 
+consistent behavior and do not adapt their behavior across 
+social  contexts.  In  addition,  high  self-monitors  want  to 
+appear  social  and  extraverted,  and  aim 
+to  present 
+themselves  in  a  way  that  demonstrates  social  status  (see 
+[14] for a review).  
+Self-monitoring  has  been  associated  with  various  online 
+experiences  and  behaviors.  People  who  are  higher  self-
+monitors  are  more  likely  to  experience  episodes  of  online 
+turbulence,  an  instance  where  their  personal  information 
+exists beyond the boundaries that person expects or desires 
+[1].  This  may  be  due  to  context  collapse;  since  there  are 
+often  multiple  audiences  in  online  spaces,  high  self-
+
+monitors may have a hard time trying to fit their behavior to 
+multiple  audiences  at  once  [1].  Another  study  found  that 
+high  self-monitors  also  tend  to  post  a  profile  picture  at  a 
+younger age, post more frequently, and receive more Likes 
+on their status updates than do low self-monitors [15]. Since 
+high  self-monitors  are  more  concerned  with  feedback 
+signals in social contexts, it may be that they attend to and 
+care more about Likes on Facebook than low self-monitors 
+do.  Given  previous  research  on  self-esteem  and  self-
+monitoring,  we  aim  to  explore  this  additional  research 
+question: 
+How  are  self-esteem  and  self-monitoring  associated  with 
+attitudes and behaviors around Likes?  
+METHOD  
+Participants 
+Survey participants (N = 2,109; 56% female; ages 13 to 90, 
+mean = 40.3) were recruited through a banner on Facebook 
+displayed  to  English  speakers  in  the  U.S.  who  had  a 
+Facebook account for at least 12 weeks, posted any type of 
+content at least twice, and received at least two Likes in the 
+past  12  weeks.  Since  the  questionnaire  focused  largely  on 
+the experiences of receiving Likes on one’s posts, we first 
+asked  participants  how  often  they  post  to  Facebook.  Five 
+percent  (N  =  114)  of  participants  reported  that  they  never 
+post  to  Facebook  and  thus  were  excluded  from  analyses, 
+leaving a sample of N = 1,996. Participants had an average 
+of 491 friends (min = 1, max = 4,912) and had been using 
+Facebook  for  5.9  years  (min  =  97  days,  max  =  11  years). 
+During the 28 days prior to the survey, participants logged 
+in to Facebook on an average of 27.4 days (min = 2, max = 
+28).  Compared  to  a  random  sample  of  US,  English-
+speaking  Facebook  users,  our  sample  was  about  3  years 
+older,  had  13%  more  friends,  was  active  on  Facebook  2 
+more  days  out  of  the  previous  28,  and  had  a  Facebook 
+account  for  9  months  longer  on  average  (all  p’s  <  0.05). 
+Our  sample  had  3.5%  more  women.  There  was  no 
+significant  difference  in  Likes  received  per  post  between 
+our respondents and the random sample (M = 18.2 vs. M = 
+17.8, p = 0.06). 
+Behavioral data 
+Survey  responses  were  matched  to  behavioral  data  from 
+Facebook’s server logs for the prior 12 weeks. All data was 
+de-identified  and  analyzed  in  aggregate  by  Facebook 
+employees.  Behavioral  data  included  the  number  of  posts, 
+number of Likes and comments given and received, and the 
+average  number  of  Likes  and  comments  received  per  post 
+across  participants’  970,135  friends.  No  post  or  comment 
+content was analyzed as part of the research. 
+Procedure 
+Participants  filled  out  an  online  survey  with  two  sections: 
+(1) attitudes and behaviors about Likes on Facebook and (2) 
+personal  characteristics;  sections  were  presented 
+in 
+counterbalanced  order.  The  median  respondent  finished  in 
+eight minutes, and there was no compensation. 
+
+1503
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+•  “In general, how much do you care about receiving Likes 
+
+from the following types of people?” (random order: 
+Parents; Family members other than my parents; Close 
+friends; Coworkers; Acquaintances; My spouse, romantic 
+partner, or love interest; A former romantic partner; My 
+manager, teacher, or supervisor; Potential employers or 
+professional contacts; People I don't know). 
+
+Finally, we asked three questions about receiving “enough” 
+Likes per post:  
+•  “If one of your posts were to get ‘enough’ Likes, how 
+many Likes would that be? Please write in a number 
+below.” 
+
+•  “How did you arrive at that number?” (open-ended) 
+•  “How important is it for you to get ‘enough’ Likes on 
+your posts?” (1 = not at all important to 5 = extremely 
+important) 
+
+RESULTS 
+In  the  12  weeks  prior  to  taking  the  survey,  the  median 
+participant  made  5.25  posts  per  week  (mean  =  11.8), 
+“Posts” include photos, text, links, check-ins, and re-shares; 
+multi-photo  posts  were  batched  and  counted  as  a  single 
+post. The median person received 12.8 Likes per post (min 
+= 0.07, mean = 18.2, max = 692.1). Figure 1 shows the 12-
+week averages for all participants. 
+How  much  do  people  care  about  getting  “enough” 
+Likes? 
+About  half  (52.7%)  of  participants  said  that  getting 
+“enough”  Likes  was  important  to  some  extent.  Yet  only 
+16% of participants agreed with the statement “If my post 
+does  not  receive  enough  Likes,  it  makes  me  feel  bad.” 
+Though  most  respondents  did  not  feel  badly  about  not 
+getting  enough  Likes,  in  open-ended  responses  they  noted 
+they  think  their  friends  Like  their  posts  for  a  number  of 
+self-affirming reasons. Responses included: 
+•  Agreement (e.g., “Sometimes because they like or agree 
+
+with what I’ve said”) 
+
+•  Attention  (e.g.,  “Because  they  are  interested  in  what  I 
+have to say and what my feelings are about a particular 
+subject”) 
+
+•  Supportiveness  (e.g.,  “If  they  want  to  be  considerate  or 
+
+kind … or simply to be supportive”) 
+
+•  Empathy  (e.g.,  “They  understand  and/or  relate  to  what 
+
+I’ve posted”). 
+
+Measures 
+Items were measured on a 5-point Likert scale (1 = strongly 
+disagree to 5 = strongly agree) unless otherwise indicated.  
+Personal Characteristics 
+Self-esteem: Participants completed the 10-item Rosenberg 
+self-esteem  scale  [26],  which  included  items  like  “On  the 
+whole,  I  am  satisfied  with  myself,”  and  “I  take  a  positive 
+attitude toward myself” (M = 4.14, SD = .85, α = .91).  
+Self-monitoring:  Participants  completed  a  modified 
+version  of  the  self-monitoring  scale  [19].  The  four  items 
+participants completed were: “When I am uncertain how to 
+act in a social situation, I look to the behavior of others for 
+cues”; “At parties I usually try to behave in a manner that 
+makes me fit in”; “I try to pay attention to the reactions of 
+others to my behavior in order to avoid being out of place”; 
+“If I am the least bit uncertain as to how to act in a social 
+situation,  I  look  to  the  behavior  of  others  for  cues.”  (M  = 
+3.06, SD = 1.02, α = .85). 
+Extraversion: Several studies have previously investigated 
+the role of extraversion and Facebook use, including its role 
+in  group  membership  [27]  and  its  relationship  with  self-
+monitoring [15]. Therefore, we also included a measure of 
+extraversion  in  this  study.  Participants  completed  the  four 
+extraversion questions from the Big Five personality scale 
+[6] (M = 3.22, SD = 1.01, α = .82). 
+Relationship  Maintenance  Behaviors:  Participants  filled 
+out  the  Facebook  Relationship  Maintenance  Behaviors 
+scale  [9].  Example  items:  “When  I  see  a  friend  or 
+acquaintance  sharing  bad  news  on  Facebook,  I  try  to 
+respond” (M = 3.94, SD = .78, α = .81). 
+Attitudes and Behaviors about Likes 
+We  asked  people  a  series  of  questions  related  to  their 
+experiences with Likes on Facebook:  
+•  “How often do you post on Facebook (e.g., status update, 
+photo, video, link)?” (1 = never, 5 = multiple times a day) 
+
+•  “Why do you think people ‘Like’ your posts?” (open-
+
+ended) 
+
+•  “If my post does not receive enough Likes, it makes me 
+
+feel bad” (5pt agreement scale) 
+
+•  “There are certain people whose Likes I care about more 
+
+than others.” (5pt agreement scale) 
+
+•  “On average, how many Likes do your posts get 
+
+compared to your friends' posts?” (1 = my posts get far 
+fewer Likes, 3 = our posts get about the same number of 
+Likes, 5 = my posts get far more Likes) 
+
+•  “Which is usually more important to you, the number of 
+Likes you get or which people Like your posts?” (1 = The 
+number of Likes I get is much more important, 3 = 
+They're both equally important, 5 = The people who Like 
+my posts is much more important) 
+
+1504
+
+Figure 1. Average Likes received per post. 
+
+ 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 2. Responses to “enough” Likes per post. 
+
+How many Likes are enough? 
+Participants proposed a wide range of values for “enough” 
+Likes per post, with the median person volunteering that 8 
+Likes was “enough” (see Figure 2; numbers larger than 500 
+were  omitted,  excluding  3.4%  of  the  sample  from  that 
+question).  Many  of  the  participants  who  said  they  did  not 
+care  about  getting  enough  Likes  wrote  “0”  in  response  to 
+this question. Roughly ¼ of respondents reported that 1 or 2 
+Likes  was  enough,  commenting  in  open-ended  responses 
+that  they  wanted  to  be  sure  someone  had  seen  their  posts 
+(e.g.,  “If  it  gets  at  least  one  or  two  likes,  then  I  know 
+someone saw it, and that is good enough for me." and “If 
+my post can impact at least one person then I'm happy.”)  
+Beyond 1-2 Likes, people had a variety of reasons for the 
+numbers they chose:  
+“Well,  I  thought  about  how  many  I  receive  before  I  stop 
+really paying attention to how much the number increases 
+after that.” (enough = 3)  
+
+“That's how many people I would think would be interested 
+in my posts.” (enough = 5) 
+
+“6  is  probably  what  I  average,  and  I  feel  bad  when  I  get 
+less than that. With at least 6, I can get a better grasp as to 
+what different kinds of people "Like".” (enough = 6) 
+
+“15  likes  means  that  definitely  15  people  have  SEEN  that 
+post    /  But  it  also  slightly  ensures  me  that  More  than  15 
+people have SEEN the post  / People seeing my posts are 
+whats most important” (enough = 15) 
+
+“I arrived at this number by thinking about when i'm not on 
+my computer,.... it will go to my phone and blow it up lol... 
+so when my Facebook ringtone goes off 30 times i will have 
+enough...” (enough = 30) 
+
+“Anything  below  that  seems  underwhelming  since  I  don't 
+post  often  and  since  I  put  a  lot  of  thought  into  my  posts 
+(note: actual posts. not shared links)” (enough = 50) 
+
+Do people receive “enough” Likes per post?   
+Roughly  two-thirds  (62.5%)  of  participants  received  what 
+they consider to be “enough” Likes per post in the previous 
+12  weeks  (see  Figure  3).  Of  the  remaining  third,  they  fell 
+
+Figure 3. Average Likes received per post by responses to 
+
+"enough" Likes per post. (Jitter added for visibility). 
+
+short by an average of 27.9 Likes (median = 8.9). (Note that 
+this  statistic  omits  3.4%  of  respondents  who  had  values 
+greater than 500 for “enough.”) But only some people care 
+about Likes. When removing participants who said they did 
+not  care  “at  all”  about  receiving  enough  Likes,  49.9%  of 
+participants  received  what  they  consider  to  be  “enough” 
+Likes per post, with the average person receiving 6.5 more 
+likes  than  his  or  her  threshold,  and  the  median  person 
+receiving  exactly  enough  (a  difference  of  0.04  Likes  per 
+post).  For  those  who  felt  they  didn’t  receive  “enough” 
+Likes,  what  might  have  led  to  their  inflated  expectations? 
+One factor may be the Like paradox. 
+The Like Paradox 
+Similar to the friendship paradox, where most people have 
+fewer friends than their friends have [12], in this work we 
+demonstrate a “Like paradox:” people receive fewer Likes 
+on  their  posts  than  their  friends  get.  During  the  12  weeks 
+prior  to  the  survey,  participants’  friends  received  roughly 
+twice as many Likes per post (median = 23.8) as they did 
+(median = 12.8). Figure 4 shows the difference between the 
+two.  Why  did  their  friends  receive  more  Likes?  Those 
+friends  had  roughly 
+twice  as  many  friends  as  our 
+participants (see Figure 5).   
+Only some participants perceived this discrepancy in Likes 
+between themselves and their friends: 28% reported on the 
+survey  receiving  fewer  Likes  than  their  friends  and  56% 
+thought  they  got  about  the  same  number  of  Likes.  This 
+suggests  that  there  may  be  other  factors  that  influence 
+people’s  impressions  of  the  number  of  Likes  they  should 
+receive, not just how many their friends receive.  
+Preferences for who Likes your Posts 
+What matters more – how many Likes one receives or who 
+the Likes are from?  
+Participants were generally more concerned with receiving 
+Likes  from  certain  people,  rather  than  receiving  a  certain 
+number of Likes: 42.5% of participants said that who Likes 
+their posts is more important than the number of Likes on 
+their posts while only 10.5% said that the number was more 
+important;  47.0%  said 
+important. 
+Furthermore, 58.1% agreed to some extent that “There are 
+certain people whose Likes I care about more than others” 
+(25.1% disagreed, 16.8% were neutral). 
+
+they  were  equally 
+
+1505
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Figure 5. The friendship paradox: Most respondents have 
+
+smaller networks than their friends have. 
+
+ 
+
+Figure 4. Average Likes per post received by survey 
+
+ 
+
+ 
+
+respondents (x-axis) and by their friends (y-axis). Their friends 
+
+typically receive roughly twice as many Likes per post. 
+
+Who do people want Likes from? 
+Participants  most  wanted  to  receive  Likes  from  close 
+friends  (73%  “want”  or  “really  want”),  romantic  partners 
+(60%), and family other than parents (50%) (see Figure 6). 
+On the other hand, people least want to receive Likes from 
+people  they  don’t  know  (34%),  potential  employers  or 
+professional  contacts 
+(25%),  and  managers/teachers/ 
+supervisors (24%). 
+Individual differences in caring about Likes 
+There  are  a  number  of  psychological  traits  that  influence 
+the  extent  to  which  people  care  about  getting  Likes  on 
+Facebook.  Table  1  shows  three  regressions  estimating 
+responses 
+the 
+importance of getting enough Likes, (2) whether people feel 
+bad  if  they  don’t  receive  enough  Likes,  and  (3)  whether 
+they think they receive more Likes than their friends. 
+All three models control for age, gender, friend count, and 
+the number of days in the past month the participant logged 
+in  to  Facebook.  Each  model  includes  self-esteem,  self-
+monitoring,  extraversion,  and  Facebook 
+relationship 
+maintenance behaviors. Correlation between the scales was 
+low  (max  r  =  .37  between  extraversion  and  self-esteem). 
+The third regression includes an additional binary variable 
+indicating  whether  a  person  actually  received  more  Likes 
+per post than his or her friends. All continuous independent 
+variables  except  for  age  were  standardized  (age  was  only 
+
+three  survey  questions  about 
+
+(1) 
+
+to 
+
+average 
+
+self-esteem, 
+
+centered), and friend count was logged base 2 to control for 
+skew and then standardized. 
+The intercept in the first model, 1.90 (on a 5 point scale), 
+represents the response of an average woman, age 41, with 
+491 friends who logged into Facebook 27 days in the past 
+self-monitoring, 
+month  with 
+extraversion,  and  Facebook 
+relationship  maintenance 
+behaviors.  Her  response  means  that  she  thinks  receiving 
+enough likes is “slightly” important. Similarly, her intercept 
+in  the  second  model,  2.12,  means  that  she  “Somewhat 
+disagrees”  with  the  idea  that  not  receiving  enough  Likes 
+causes her to feel bad. Both of these values further confirm 
+the  finding  that  people  generally  do  not  feel  strongly  that 
+receiving  a  certain  number  of  Likes  is  important.  The 
+intercept  in  the  third  model,  -0.23  (on  a  scale  from  -2  to 
++2),  means  that  she  thinks  her  posts  get  about  the  same 
+number of Likes as her friends’ posts. 
+Some of the control variables were significantly related to 
+the  outcomes.  Older  respondents  believed  they  received 
+slightly  more  Likes  than  their  friends  (β  =  0.007,  all 
+subsequent  p’s  <  0.001  unless  otherwise  specified),  and 
+gender was not significantly related to any of the outcomes. 
+Friend  count  was  positively  associated  with  all  three 
+outcomes; a one-unit increase in friend count (roughly 295 
+friends)  is  associated  with  small  increases  in  believing 
+Likes  are  important  (β  =  0.18),  feeling  bad  about  not 
+receiving  enough  Likes  (β  =  0.10),  and  believing  you 
+
+Figure 6. Preferences for Likes from different types of Facebook friends. 
+
+ 
+
+1506
+
+  
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+
+Importance of getting 
+
+enough Likes 
+
+Feel bad if don’t get 
+
+enough Likes 
+
+Perception of # Likes 
+received compared to 
+
+β 
+
+β 
+
+SE 
+.03 
+.03 
+.02 
+.03 
+.03 
+.00 
+.05  
+.03 
+
+1.90 ** 
+−.14 ** 
+.20 ** 
+−.01 
+.09 ** 
+−.00 
+.09 
+.18 ** 
+
+Variable 
+Intercept 
+Self-esteem 
+Self-monitoring 
+Extraversion 
+FB Relationship Maintenance 
+Age 
+Gender 
+Friend Count (Log2) 
+# of days logged in over the 
+past month 
+Friends receive more Likes per 
+post  
+Adj. R-squared 
+N = 1996; * = p < .01, ** = p < .001 
+Table 1. Models predicting (1) importance of getting enough Likes, (2) feeling bad about not getting enough Likes, and 
+
+−.23 ** 
+.09 ** 
+.02  
+.16 ** 
+.05 * 
+.01 ** 
+−.02  
+.20 ** 
+.07 ** 
+
+2.12** 
+−.23** 
+.28** 
+−.05 
+−.02 
+−.00 
+−.00 
+.10** 
+.01 
+
+SE 
+.03 
+.03 
+.03 
+.03 
+.03 
+.00 
+.05 
+.03 
+
+.03 
+
+.27 ** 
+
+.05 
+
+ 
+
+ 
+
+.09  
+
+−.04 
+
+.02 
+
+ 
+
+ 
+
+.12  
+
+ 
+
+.19  
+
+friends 
+SE 
+β  
+.03 
+.02 
+.02 
+.02 
+.02 
+.00 
+.04 
+.02 
+
+.02 
+
+ 
+
+ 
+
+(3) perception of the # of Likes received compared to friends’ Likes received. 
+
+receive  more  Likes  than  your  friends  (β  =  0.20).  After 
+controlling for friend count, number of login days was only 
+significantly  associated  with  believing  you  receive  more 
+Likes  than  your  friends  (β  =  0.07).  Overall,  this  indicates 
+that  people  with  many  friends  have  higher  expectations 
+about how many Likes they’ll receive. 
+Self-esteem 
+The  lower  someone’s  self-esteem,  the  more  people  think 
+getting enough Likes is important (β = -0.14) and feel bad if 
+a  post  doesn’t  get  enough  Likes  (β  =  -0.23).  Conversely, 
+people  with  high  self-esteem  believe  they  receive  more 
+Likes than their friends. A one-unit increase in self-esteem 
+was associated with a β = -0.14 drop in believing receiving 
+enough Likes is important, and a β = -0.23 drop in feeling 
+bad  for  not  receiving  enough  Likes,  and  a  β  =  0.09  point 
+increase in perceived Likes received compared to friends.  
+Self-monitoring 
+Similar  to  individuals  with  low  self-esteem,  the  more 
+someone  monitors  his  or  her  behavior 
+for  social 
+appropriateness  the  more  sensitive  he  or  she  is  to  Likes. 
+The higher the level of self-monitoring, the more they think 
+getting enough Likes is important (β = 0.20) and feel bad if 
+they  don’t  get  enough  Likes  (β  =  0.28).  However,  self-
+monitoring  was  not  associated  with  receiving  a  different 
+number of Likes compared to friends. 
+Extraversion 
+Extraversion was not associated with a sensitivity to Likes, 
+individuals  with  high  self-esteem, 
+though  similar 
+
+to 
+
+extraverts believe they receive more Likes than their friends 
+do (β = 0.16).  
+
+Facebook relationship maintenance behaviors 
+People  who  engage 
+in  many  relational  maintenance 
+behaviors  on  Facebook  place  more  importance  on  getting 
+enough Likes (β = 0.09), though the magnitude was smaller 
+than the effects of self-esteem and self-monitoring. People 
+who  engage  in  more  relational  maintenance  behaviors  on 
+Facebook believe they receive more Likes than their friends 
+do (β = 0.05, p < .01).  
+DISCUSSION 
+Likes are one of the most ubiquitous online actions in the 
+world.  Relative  to  their  ubiquity,  there  has  been  little 
+research into how people think about receiving Likes or the 
+importance  of  Likes  in  online  communication.  While 
+previous research suggests that Likes may not be uniformly 
+meaningful,  this  work  demonstrates  that  they  do  hold 
+meaning  on  Facebook,  though  that  meaning  is  largely 
+influenced by who the Likes are from (vs. how many Likes 
+are  received)  and  who  is  receiving  those  Likes.  We  also 
+found that people infer meaning behind their friends’ Likes, 
+noting that Likes may represent signals of like-mindedness 
+or support. This echoes Burke and Kraut’s suggestion that 
+“the mere act of communication independent of its content 
+provides a symbolic message about the time and effort one 
+person is willing to invest in another” ([3], p. 4188). 
+Our research found that people care more about who Likes 
+their  Facebook  posts  than  how  many  Likes  their  posts 
+receive, and that they desire Likes more from certain types 
+
+ 
+
+1507
+
+of  relational  ties  than  others.  This  sheds  new  light  on  the 
+value of a Like and has important implications for design. 
+First,  it  suggests  that  routing  posts  to  the  “right”  people 
+might be better than simply getting as many people to see a 
+post  as  possible.  Likes  from  close  friends,  romantic 
+partners,  and  family  members  other  than  parents,  which 
+were the three most highly desired sources of Likes found 
+in  this  study,  seem  to  be  more  important  than  more 
+feedback  from  other  audiences.  It  could  also  be  the  case 
+that there is a threshold with regard to the number of Likes 
+beyond  which  there  is  diminishing  value.  Future  work 
+could  more  directly  investigate  the  relative  value  of  who 
+Likes a post vs. how many as the number of Likes on a post 
+increases. In addition, there may be some cases where Likes 
+from close ties may actually be unwanted, such as when a 
+person is embarrassed by something that only close friends 
+know about (like a lost job), and so interactions with those 
+friends may heighten embarrassment [3]. 
+That  people  care  more  about  who  Likes  their  Facebook 
+posts than how many Likes their posts receive also informs 
+what  feedback-related  information  is  most  meaningful  to 
+show  people  on  social  media  platforms.  Currently, 
+Facebook and Twitter send notifications when someone has 
+Liked or Favorited one’s post or Tweet, showing the poster 
+the  name  of  the  person  who  gave  the  feedback.  But  in  a 
+feed or profile page, who Liked or Favorited a post is more 
+obscure. Facebook often only shows a total count of Likes 
+and a viewer must click through to see who actually Liked 
+the  post.  Similarly,  Twitter  shows  how  many  Favorites  a 
+Tweet has but one must drill down to see who has Favorited 
+the  Tweet.  Social  media  platforms  that  support  one-click 
+communication  from  friends  or  followers  could  consider 
+other  more  prominent  ways  of  surfacing  the  “who”  rather 
+than the “how many” in more public displays of feedback. 
+This might lead some people to care less about the specific 
+number of Likes they receive, but might also put pressure 
+on  a  smaller  number  of  Facebook  friends  to  actively  Like  
+posts. However, it is unclear from the current study whether 
+people  want  Likes  from  certain  types  of  friends  for  their 
+own knowledge or as more of a public-facing cue to their 
+networks. Future research should examine why people want 
+Likes from specific types of people. 
+Yet about half of participants reported that they did care to 
+some extent about getting enough Likes, suggesting that the 
+number  of  Likes  may  be  more  important  if  a  certain 
+minimum is not met. Of the people who cared about getting 
+enough  Likes,  about  half  of  them  received  more  than 
+enough,  while  the  other  half  received  too  few  by  their 
+standards.  When  asked  how  many  Likes  was  “enough”, 
+people  tended  to  have  a  rationale  for  this  number,  which 
+was  higher  than  their  typical  number  of  Likes  by  about  9 
+Likes.  This  is  possibly  due  to  the  Like  paradox  whereby 
+one’s  friends  get  more  Likes  than  one  does,  or  the  feed 
+ranking  algorithm  showing  people  content  that  receives  a 
+lot of Likes [11]. 
+
+1508
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+The  finding  that  some  people  are  not  getting  what  they 
+consider to be enough Likes on their posts has implications 
+for  Facebook  in  particular,  and  for  SNSs  more  generally. 
+For  instance,  the  pressure  to  get  enough  Likes  that  some 
+people feel could be reduced by providing other social cues. 
+This could be through development of alternative one-click 
+actions  that  aren’t  public-facing,  or  signals  such  as  “read 
+receipts” to provide more insight to audience composition. 
+The pressure to get enough Likes could be also be reduced 
+by  encouraging  people  to  share  with  specific  subsets  of 
+friends, like in a closed group or on a specific friend’s wall. 
+Alternatively, other SNSs have addressed their versions of 
+the Friend paradox and/or Like paradox in other ways. For 
+example, Snapchat does not show the amount of feedback 
+on others’ content and feedback is provided in other ways 
+(namely, content production of one’s own). 
+Furthermore, it may be that not getting enough Likes on a 
+post  is  a  cue  to  the  poster  that  their  specific  post  was  not 
+agreed with or deemed acceptable in some way. While we 
+found  evidence  that  Likes  are  social  cues  that  carry 
+meaning,  there  are  still  many  more  aspects  of  Likes  to 
+understand, such as how people feel when they receive the 
+Like that gives them “enough” Likes, or what they think the 
+Likes they receive signal to the rest of their network.  
+We  also  show 
+that  self-esteem,  self-monitoring,  and 
+engaging  in  relationship  maintenance  behaviors  were  all 
+related  to  perceptions  and  attitudes  about  Likes.  That 
+people  lower  in  self-esteem  and  higher  in  self-monitoring 
+care  more  about  receiving  Likes  is  in  line  with  their 
+orientations  toward  social  cues.  People  with  low  self-
+esteem  may  view  Likes  as  validation  of  their  self-worth. 
+Similarly, high self-monitors may view Likes as a cue that 
+they’ve  behaved  appropriately  in  an  online  social  setting. 
+These  findings  suggest 
+traits 
+influence  one’s  attitudes  about  receiving  feedback  on 
+Facebook, and that what might be hollow cues to some are 
+actually important social cues to others. 
+Limitations and Future Work 
+There are several limitations to this work. First, this sample 
+is  comprised  of  only  US  English  speakers.  Given  cross-
+cultural  differences  in  reciprocity,  self-monitoring,  and 
+other related constructs, the results found here may not be 
+generalizable to other cultures. In addition, there may be a 
+social desirability bias in reports of how much people care 
+about getting enough Likes; people may not want to admit 
+that Likes are important to them. Third, we note that issues 
+of causality may be difficult to untangle. For instance, we 
+examine  how  well  stable  traits  like  self-esteem  and  self-
+monitoring  predict  attitudes  about  Likes.  However,  it  is 
+possible that people’s past experiences with receiving Likes 
+could  influence  how  they  feel  about  themselves,  or  how 
+closely they try to monitor their behavior online.  
+Another limitation is that our sample was likely comprised 
+of  “power  users.”  Previous  work  found  that  participants 
+Liked friends’ content 14 times per month on average and 
+
+that  one’s  personality 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+received  Likes  20  times  per  month  [16].  The  authors 
+attributed this imbalance to Facebook “power users”– those 
+who  perform  activities  such  as  Liking  and  commenting 
+more  often  than  the  typical  user  –  and  noted  that  most 
+Facebook users “get more than they give.” Our participants 
+had  much  higher  numbers  than  their  reported  average 
+(roughly  313  Likes  given  per  month  (median)  and  269 
+Likes  received  (median));  these  participants  are  likely  the 
+“power  users”  to  which  Hampton  and  colleagues  refer. 
+Compared  to  a  random  sample  of  U.S.,  English-speaking 
+users,  our  sample  gave  86.5  more  Likes  per  week  and 
+received 76.4 Likes more per week (p < .001).  
+Participants  were  only  asked  about  receiving  Likes  in 
+general and not about Likes on specific types of posts. For 
+instance,  people’s  attitudes  toward  receiving  Likes  on 
+articles they share may be different from their attitudes on 
+updates  about  major  life  events.  In  addition,  though 
+participants  reported  most  wanting  Likes  from  close  ties, 
+under  some  life  situations  such  as  a  lost  job,  interactions 
+from  close  friends  may  be  unwanted  [3].  Future  research 
+should  explore  people’s  attitudes  about  Likes  across 
+different  types  of  posts  and  different  emotional  states  in 
+order  to  understand  contexts  in  which  people’s  attitudes 
+about Like vary. 
+A  number  of  additional  studies  could  be  conducted  as 
+follow-up  inquiries  to  the  results  presented  in  this  paper. 
+For  instance,  researchers  could  explore  the  relationship 
+between the number of Likes received and other behaviors 
+on  Facebook,  which  was  out  of  the  scope  of  the  current 
+work.  Or, 
+role  of 
+expectations  about  Likes  and  actual  Likes  received  on 
+subsequent  Liking  or  posting  behavior.  Researchers  could 
+also  examine  whether  people  are  satisfied  when  they 
+receive  “enough”  Likes  as  well  as  how  getting  more  or 
+fewer than enough affects mood or well-being. Overall, we 
+view this work as an initial inquiry into the experience of 
+receiving  lightweight  feedback  that  can  inform  future 
+research on the role of feedback in social media.  
+CONCLUSION 
+This  work  demonstrates  that  lightweight  feedback,  despite 
+requiring  little  effort  to  produce,  is  important  to  social 
+media users. We found that many people care more about 
+whom they get feedback from, rather than the exact amount 
+of feedback received. In addition, individual traits like self-
+esteem  and  self-monitoring  influence  people’s  attitudes 
+toward lightweight feedback.  
+ACKNOWLEDGMENTS 
+We  thank  the  anonymous  reviewers  for  their  suggestions 
+and insights, which greatly improved this work. 
+REFERENCES 
+1.  Michael S. Bernstein, Eytan Bakshy, Moira Burke, and 
+Brian Karrer. 2013. Quantifying the invisible audience 
+in social networks. CHI 2013, 1462–1471.  
+
+researchers  could  examine 
+
+the 
+
+2.  Moira Burke. 2011. Reading, writing, relationships: 
+
+The impact of social network sites on relationships and 
+well-being (Doctoral dissertation, Carnegie Mellon 
+University). http://reports-
+archive.adm.cs.cmu.edu/anon/anon/usr/ftp/hcii/CMU-
+HCII-11-107.pdf 
+
+3.  Moira Burke and Robert Kraut. 2013. Using Facebook 
+
+after losing a job: Differential benefits of strong and 
+weak ties. CSCW 2013, 1419–1430. 
+
+4.  Moira Burke and & Robert Kraut. 2014. Growing 
+
+closer on Facebook: Changes in tie strength through 
+social network site use. CHI 2014, 4187–4196.  
+
+5.  Moira Burke, Cameron Marlow, and Thomas Lento. 
+2009. Feed me: motivating newcomer contribution in 
+social network sites. CHI 2009, 945–954. 
+
+6.  Brent M. Donnellan, Frederick L. Oswald, Brendan M. 
+
+Baird, and Richard E. Lucas. 2006. The mini-IPIP 
+scales: Tiny-yet-effective measures of the big five 
+factors of personality. Psychological Assessment, 
+18(2), 192–293. 
+
+7.  Ellison, N., Steinfield, C., & Lampe, C. (2007). The 
+
+Benefits of Facebook Friends:” Social Capital and 
+College Students' Use of Online Social Network Sites. 
+Journal of Computer-Mediated Communication, 12(4), 
+1143–1168.  
+
+8.  Nicole B. Ellison and Jessica Vitak. 2015. Social 
+
+network site affordances and their relationship to social 
+capital processes. In S.S. Sundar (Ed.), The Handbook 
+of the Psychology of Communication Technology (pp. 
+205–227). Hoboken, NJ: Wiley-Blackwell. 
+
+9.  Nicole B. Ellison, Jessica Vitak, Rebecca Gray, and 
+Cliff Lampe. 2014. Cultivating social resources on 
+social network sites: Facebook relationship 
+maintenance behaviors and their role in social capital 
+processes. Journal of Computer-Mediated 
+Communication, 19, 855–870. 
+
+10.  Facebook’s growth in the past year. 2013. 
+
+https://www.facebook.com/facebook/photos/a.1015190
+8376636729.1073741825.20531316728/101519083768
+31729/ 
+
+11.  Facebook Help Center. 2015. “How News Feed 
+
+Works.” 
+https://www.facebook.com/help/327131014036297/ 
+
+12.  Scott L. Feld. 1991. Why your friends have more 
+
+friends than you do. American Journal of Sociology, 
+96(6), 1464–1477. 
+
+13.  Amanda L. Forest and Joanne V. Wood. 2012. When 
+
+social networking is not working: Individuals with low 
+self-esteem recognize but do not reap the benefits of 
+self-disclosure on Facebook. Psychological Science, 
+23(3), 295–302. 
+
+14.  Paul T. Fuglestad and Mark Snyder. 2009. Self-
+
+monitoring. In M. Snyder, M. R. Leary & R. H. Hoyle 
+
+1509
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+25.  Tamara Peyton. 2014. Emotion to action?: 
+
+Deconstructing the ontological politics of the "Like" 
+button. In T. Benski & E Fisher (Eds.), Internet and 
+Emotions (pp. 113–129). New York, NY: Routledge. 
+26.  Morris Rosenberg. 1965. Society and the adolescent 
+
+self-image. Princeton, NJ: Princeton University Press. 
+
+27.  Craig Ross, Emily S. Orr, Mia Sisic, Jaime M. 
+
+Arseneault, Mary G. Simmering, and R. Robert Orr. 
+2009. Personality and motivations associated with 
+Facebook use. Computers in Human Behavior, 25, 
+578–586. 
+
+28.  Lauren Scissors, Michael Roloff, and Darren Gergle. 
+2014. Room for interpretation: The role of self-esteem 
+and CMC in romantic couple conflict. CHI 2014, 
+3953–3962.  
+
+29.  Andrew D. Smock, Nicole B. Ellison, Cliff Lampe, and 
+Donghee Yvette Wohn. 2011. Facebook as a toolkit: A 
+uses and gratification approach to unbundling feature 
+use. Computers in Human Behavior, 27, 2322–2329.  
+30.  Mark Snyder. (1974). Self-monitoring of expressive 
+
+behavior. Journal of Personality and Social 
+Psychology, 30(4), 526–537.  
+
+31.  Stephanie J. Tobin, Eric J. Vanman, Marnize 
+
+Verreynne, and Alexander K. Saeri. 2014. Threats to 
+belonging on Facebook: lurking and ostracism. Social 
+Influence, 10(1), 31–42.  
+
+32.  Catalina L. Toma and Jeffrey T. Hancock. 2013. Self-
+affirmation underlies Facebook use. Personality and 
+Social Psychology Bulletin, 39(3), 321–331. 
+
+33.  Joseph B. Walther and Malcolm R. Parks. 2002. Cues 
+
+filtered out, cues filtered in: Computer-mediated 
+communication and relationships. In M. L. Knapp & J. 
+A. Daly (Eds.), Handbook of Interpersonal 
+Communication, 3rd edition (pp. 529–563). Thousand 
+Oaks, CA: Sage. 
+
+34.  Joseph B. Walther, Brandon Van Der Heide, Sang-
+Yeon Kim, David Westerman, and Stephanie Tom 
+Tong. 2008. The role of friends' appearance and 
+behavior on evaluations of individuals' on Facebook: 
+Are we known by the company we keep? Human 
+Communication Research, 34, 28–49. 
+
+35.  Joseph B. Walther, Brandon Van Der Heide, Lauren 
+
+M. Hamel, and Hillary C. Shulman. 2009. Self-
+generated versus other-generated statements and 
+impressions in computer-mediated communication: A 
+test of warranting theory using Facebook. 
+Communication Research, 36(2), 229–253.
+
+(Eds.), Handbook of individual differences in social 
+behavior (pp. 574–591). New York, NY: Guilford 
+Press.  
+
+15.  Jeffrey A. Hall and Natalie Pennington. 2013. Self-
+monitoring, honesty, and cue use on Facebook: The 
+relationship with user extraversion and 
+conscientiousness. Computers in Human Behavior, 29, 
+1556–1564.  
+
+16.  Keith N. Hampton, Lauren Sessions Goulet, Cameron 
+Marlow, and Lee Rainie. 2012. Why most Facebook 
+users get more than they give: The effect of Facebook 
+'power users' on everybody else. Pew Research 
+Center’s Internet & American Life Project. 
+http://pewinternet.org/Reports/2012/Facebook-
+users.aspx  
+
+17.  Joinson, A. N. 2004. Self-esteem, interpersonal risk, 
+
+and preference for e-mail to face-to-face 
+communication. CyberPsychology & Behavior, 7(4), 
+479–485.  
+
+18.  Mark R. Leary, Ellen S. Tambor, Sonja K. Terdal, 
+
+Deborah L. Downs. 1995. Self-esteem as an 
+interpersonal monitor: The sociometer hypothesis. 
+Journal of Personality and Social Psychology, 68(3), 
+518–530. 
+
+19.  Richard D. Lenox and Raymond N. Wolfe. 1984. 
+Revision of the self-monitoring scale. Journal of 
+Personality and Social Psychology, 46(6), 1349–1364. 
+20.  Eden Litt and Eszter Hargittai. 2014. A bumpy ride on 
+
+the information superhighway: Exploring turbulence 
+online. Computers in Human Behavior, 36, 530–529. 
+21.  Mary Madden, Amanda Lenhart, Sandra Cortesi, Urs 
+Gasser, Maeve Duggan, Aaron Smith, and Meredith 
+Beaton. 2013. Teens, social media, and privacy. Pew 
+Research Center’s Internet & American Life Project. 
+http://www.pewinternet.org/2013/05/21/teens-social-
+media-and-privacy/ 
+
+22.  Jennifer N. Morey, Amy L. Gentzler, Brian Creasy, 
+Ann M. Oberhauser, and David Westerman. 2013. 
+Young adults’ use of communication technology 
+within their romantic relationships and associations 
+with attachment style. Computers in Human Behavior, 
+29, 1771–1778. 
+
+23.  Zizi Papacharissi and Andrew Mendelson. 2011. 
+
+Toward a new(er) sociability: Uses, gratifications and 
+social capital on Facebook. In S. Papathanassopoulos 
+(Ed.), Media Perspectives for the 21st Century (pp. 
+212–231): Routledge. 
+
+24.  Pew Internet Report. (2014) 
+
+http://www.pewresearch.org/fact-tank/2014/02/03/6-
+new-facts-about-facebook/ 
+ 
+
+1510
+
+

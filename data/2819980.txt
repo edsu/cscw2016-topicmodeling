@@ -1,0 +1,2425 @@
+Uses of Multiple Characters in Online Games 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+and Their Implications for Social Network Methods 
+Alex Leavitt 
+
+Dennis Wixon 
+
+Joshua Clark 
+
+School of Cinematic Arts,  
+Interactive Media Division,  
+
+University of Southern California 
+
+dwixon@cinema.usc.edu 
+
+Annenberg School for  
+
+Annenberg School for  
+
+Communication & Journalism, 
+University of Southern California 
+
+Communication & Journalism,  
+University of Southern California 
+
+aleavitt@usc.edu 
+
+joshuaac@usc.edu 
+
+(cid:6)(cid:7)(cid:20)(cid:21)(cid:19)(cid:6)(cid:8)(cid:21)(cid:1)
+In  most  sociotechnical  systems,  individuals  are  tracked 
+through  user  accounts.  This  paper  explores  the  various 
+ways  in  which  people  create  and  use  multiple  user 
+representations, specifically in online games. Using 8 years 
+of population data from a popular multiplayer online game, 
+EVE  Online,  we  examine  how  multiple  character  creation 
+and  use  occurs  at  scale  and  how  operationalization  of 
+individuals  between  accounts  and  characters 
+impacts 
+methods.  We  suggest  that  conceptualizing  participants  in 
+online  games  based  on  the  assumption  that  one  character 
+equals  one  individual  can  lead  to  incorrect  analyses 
+regarding the demographics or behaviors of the population. 
+Additionally,  social  network  analysis  suggests  that  a 
+character-centric,  rather  than  account-level,  viewpoint  can 
+change  the  results  of  statistical  relationships  with  network 
+metrics such as eigenvector centrality. 
+(cid:6)(cid:41)(cid:40)(cid:31)(cid:36)(cid:38)(cid:1)(cid:13)(cid:29)(cid:44)(cid:43)(cid:36)(cid:38)(cid:28)(cid:39)(cid:1)
+Multiple profile maintenance; online games; social network 
+analysis; user representations 
+(cid:6)(cid:8)(cid:15)(cid:1)(cid:8)(cid:33)(cid:26)(cid:39)(cid:39)(cid:32)(cid:30)(cid:32)(cid:27)(cid:26)(cid:40)(cid:32)(cid:36)(cid:35)(cid:1)(cid:13)(cid:29)(cid:44)(cid:43)(cid:36)(cid:38)(cid:28)(cid:39)(cid:1)
+H.5.3.  Group  and  Organization  Interfaces–Web-based 
+Interaction 
+(cid:12)(cid:16)(cid:21)(cid:19)(cid:17)(cid:9)(cid:22)(cid:8)(cid:21)(cid:12)(cid:17)(cid:16)(cid:1)
+In most sociotechnical systems, an individual must create a 
+user  account 
+the 
+technology  industry  – and  even  occasionally  academia  – 
+accept  that  trace  data  tied  to  one  account  represents  the 
+holistic  experience  of  one  individual.  Especially  as  more 
+and  more  systems  track  people’s  metadata,  engineers  and 
+researchers  continue  to  adopt  user  profiling  and  other 
+aggregated  empirical 
+to  more  accurately 
+techniques 
+reconstruct individual’s experiences. 
+However,  some  individuals  that  participate  in  online 
+systems  decide 
+to  create  multiple  representations  of 
+themselves  by  generating  more  than  one  user  account.  In 
+the  literature,  this  practice  is  known  as  multiple  profile 
+maintenance,  and  we  call  the  implementation  of  user 
+identification  in  sociotechnical  systems  “technical  user 
+representation.”  These  representations  are  then  used  for  a 
+variety  of  reasons,  though  usually  each  is  set  aside  for  a 
+Permission to make digital or hard copies of all or part of this work for personal or 
+classroom use is granted without fee provided that copies are not made or distributed 
+for  profit  or  commercial  advantage  and  that  copies  bear  this  notice  and  the  full 
+citation on the first page. Copyrights for components of this work owned by others 
+than  the  author(s)  must  be  honored.  Abstracting  with  credit  is  permitted.  To  copy 
+otherwise,  or  republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific permission and/or a fee. Request permissions from Permissions@acm.org.
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819980
+
+to  contribute.  Frequently,  we  see 
+
+648
+
+distinct  purpose.  For  instance,  one  person  may  create  a 
+more-private personal Twitter account to share updates with 
+friends  while  maintaining  another  public,  work-specific 
+account. While some research has been conducted on why 
+people separate these traces across multiple accounts, little 
+research  has  empirically  examined  how  people  separate 
+these accounts. 
+Studying how people use multiple technical representations 
+is important for understanding identity practices, but these 
+uses  also  have  important  implications  for  social  science 
+methodologies  and  theories.  If  people  create  multiple 
+representations of themselves, researchers should be aware 
+of how these practices might impact their interpretation of 
+trace data.  
+Games  constitute  one  approach  to  understanding  the 
+behaviors  of  separating  experiences  across  different 
+technical  user  representations.  Players  can  create  multiple 
+avatars  and  interact  with  the  game  environment  or  other 
+players  in  varied  ways,  generating  different  sets  of  trace 
+data  across  these  virtual  characters.  Frequently,  games 
+catalogue  each  avatar  under  one  account  per  individual, 
+uniting the characters under a common login, even though 
+they  represent  distinct  personae 
+the  game  world 
+(especially since the player often cannot use more than one 
+character at the same time).  
+Our  motivation  is  to  understand  how  the  two  different 
+representations  of  a  person  within  a  game  world  (account 
+and  character)  impact  our  understanding  of  behaviors  in 
+sociotechnical  systems.  In  this  paper,  we  focus  on  two 
+research questions, the first informing the second: 
+RQ1:  How  do  players  use  multiple  characters,  and  do 
+players create similar experiences (and trace data) across 
+multiple characters?  
+RQ2: When players use multiple characters, how do these 
+uses  affect  analyses  of  trace  data  and  interpretation  of 
+behaviors?  
+In  this  paper,  we  use  the  case  study  of  one  massively 
+multiplayer  online  game  (MMOG)  to  study  multiple 
+character  use.  First,  we  survey  the  literature  on  multiple 
+account  use;  in  particular,  we  analyze  the  current  game 
+literature’s  approach  to  multiple  character  use.  We  then 
+examine  the  entire  population  of  players  using  a  dataset 
+comprising  over  8  years  of  server  logs  since  the  game’s 
+
+in 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+launch.  In  this  data,  we  look  at  the  adoption  rates  of 
+multiple characters by players of different demographics in 
+relation to their relative gameplay experiences. Using these 
+empirical  insights,  we  then  analyze  how  trace  data  from 
+multiple technical representations impacts research methods 
+for  interpreting  sociotechnical  behaviors.  We  specifically 
+look  at  social  network  structures  and  how  account  and 
+character  perspectives  differ.  We  conclude  with  a 
+discussion of the impact that using character- and account- 
+level  data  may  have  on  the  theoretical  interpretation  of 
+individuals’ behaviors in sociotechnical systems.  
+(cid:19)(cid:10)(cid:14)(cid:6)(cid:21)(cid:10)(cid:9)(cid:1)(cid:24)(cid:17)(cid:19)(cid:13)(cid:1)
+Systems  for  defining  users  –  be  it  through  usernames, 
+account  numbers,  or  other  means  –  exist  in  almost  every 
+sociotechnical system. Many scholars have challenged how 
+technologists envision and construct “the user” (for a proper 
+overview, see  [27].) Still, these critiques go a step beyond 
+the  basic  implementation  and  applications  of  technical 
+systems  and  models  for  user  identification  [1]  which  by 
+themselves remain complicated. It is not just a question of 
+who the user could be [25] but how the user is defined at a 
+technical  level.  Individuals  can  create  one  or  multiple 
+accounts,  these  accounts  can  be  frequently  or  rarely  used, 
+and  some  accounts  can  even  be  spoofed  to  appear  like 
+individuals (e.g., via social media bots or online MMORPG 
+gold  farmers 
+[20]).  Yet  we  still  rely  on  knowing 
+“individuals” through these technical representations.  
+(cid:15)(cid:41)(cid:33)(cid:40)(cid:32)(cid:37)(cid:33)(cid:29)(cid:1)(cid:18)(cid:38)(cid:36)(cid:30)(cid:32)(cid:33)(cid:29)(cid:1)(cid:15)(cid:26)(cid:32)(cid:35)(cid:40)(cid:29)(cid:35)(cid:26)(cid:35)(cid:27)(cid:29)(cid:1)
+When individuals in sociotechnical systems split their lived 
+experience  across  multiple  accounts,  this  is  known  as 
+multiple  profile  maintenance  (MPM).  MPM  suggests  that 
+people  create  alternate 
+technical  profiles  because  of 
+boundary regulation and privacy management.  
+The ability for one person to create multiple representations 
+complicate 
+account 
+representations.  Many  types  of  decisions  result  in  the 
+creation and maintenance of multiple profiles, especially for 
+communication technologies. Gross’s study [12] of multiple 
+email  accounts  illustrates  how  users  exhibited  a  range  of 
+motivations,  from  wanting  a  variety  of  usernames  to 
+separating spheres of daily life (e.g., family, friends, work, 
+etc.).  Stutzman  &  Hartzog  [36]  find  similar  decisions  in 
+studying individuals’ MPM on the same social network site: 
+privacy remained the primary concern, followed by identity 
+management,  utility  of  separated  accounts  (to  coordinate 
+activities), and adherence to social norms. Leavitt  [21] has 
+also  shown  that  people  will  adopt  additional  temporary 
+accounts to share momentary information that they do not 
+want linked to their primary account.  
+(cid:45)(cid:15)(cid:26)(cid:32)(cid:35)(cid:46)(cid:1)(cid:42)(cid:39)(cid:4)(cid:1)(cid:45)(cid:6)(cid:33)(cid:40)(cid:46)(cid:1)(cid:8)(cid:31)(cid:26)(cid:38)(cid:26)(cid:27)(cid:40)(cid:29)(cid:38)(cid:39)(cid:1)(cid:32)(cid:35)(cid:1)(cid:23)(cid:32)(cid:28)(cid:29)(cid:36)(cid:1)(cid:11)(cid:26)(cid:34)(cid:29)(cid:39)(cid:1)
+Online video games provide another context for the creation 
+of  multiple  “profiles.”  While  communication  technologies 
+are  frequently  used  for  personal  communication,  video 
+games represent another domain of technical representation, 
+founded  in  entertainment  experiences.  Because  games  can 
+
+individuals 
+
+knowing 
+
+through 
+
+is  also  a  social  factor 
+
+revolve  around  achievement,  players  may  also  use  game 
+profiles to boast about their accomplishments in addition to 
+self-presentation (e.g., through avatars). While these players 
+will  not  necessarily  create  multiple  technical  usernames  – 
+because it is difficult to sign in and out of game interfaces, 
+and occasionally you may need to set up separate financial 
+information on each account – they may generate multiple 
+characters to experience different parts of a game in varying 
+ways (for example, to see what kind of persona or role they 
+wish to take on in the game world).  
+In  game  parlance  and  in  the  literature,  the  most-played 
+character  is  dubbed  the  “main”  while  any  additional 
+characters are known as “alts” (for “alternative” characters). 
+The  context  of  games 
+therefore  provides  different 
+motivations  for  creating  distinct  and  separate  character 
+representations.  
+Ducheneaut and Moore [9] present a qualitative framework 
+for  thinking  about  main  and  alt  characters.  Some  games 
+provide  robust  and  diverse  character  customization,  while 
+others restrict the player to only a few preset options. While 
+players  may  choose  a  range  of  characters  to  play  and 
+maintain  over  time  to  explore  different  parts  of  the  game, 
+character  creation 
+in  online 
+multiplayer  gameplay,  as  people  need  to  form  balanced 
+groups  to  progress  through  certain  areas.  As  the  authors 
+point out, though, switching between characters introduces 
+some difficulties: if the alt character is far away at another 
+location  in  the  game  world,  smooth  transitions  between 
+characters,  in  order  to  maintain  social  balance  in  a  group, 
+can be cumbersome.  
+Furthermore,  because  characters  can  be  customized,  some 
+players  connect  with  them  on  a  personal  level  (see,  for 
+example, Hitchens, Drachen, and Richards [13]). Williams, 
+Kennedy,  and  Moore  [43]  also  note  that  players  adapt 
+certain  characters 
+through 
+roleplaying: one desire in using certain characters noted by 
+players 
+interviews  revolves  around  “construct[ing] 
+character  histories  and  fantasies,"  meaning  that  players 
+could  create  multiple  characters 
+to  explore  different 
+experiences  within  the  game  world.  Poor  and  Skoric  [29] 
+illustrate cases of particular guilds where individual players 
+actually housed multiple characters (“The 1,026 characters 
+were spread over 550 user accounts, for 1.86 characters in 
+the  guild  per  account,  but  this  is  most  likely  a  long-tail 
+situation,  where  some  players  were  heavily  invested  in 
+[guild  #1]  across  multiple  characters  and  some  players 
+casually made a character and found a guild to join. [Guild 
+#2] had 42 characters and was more focused, with only 16 
+user  accounts,  for  an  average  of  2.6  characters  per 
+account...”).  
+Additionally, the authors note that reputation plays a large 
+role  in  alt  character  use.  Because  on  a  technical  level 
+creating  an  alt  character  results  in  restarting  in  the  game 
+world,  newer  characters  are  not  tied  to  older,  more 
+advanced ones: for some players, this results in a loss of in-
+
+for  personal  exploration 
+
+in 
+
+649
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in  devious  or  detrimental  ways, 
+
+game  status.  In  the  past  decade,  multiplayer  games  – 
+especially  competitive  ones  – have  suffered  because 
+advanced players will create new accounts, or “smurfs,” to 
+easily  beat  newbies  under  the  guise  of  inexperience. 
+Williams, Kennedy, & Moore [43] note that main characters 
+also  define  reputation  not  just  in  terms  of  accumulated 
+statistics  but  also  position  in  a  game  ecosystem:  because 
+main characters tend to be the representations with the most 
+minutes, this avatar tends to determine the server on which 
+the player’s set of characters resides. Other issues with alts 
+revolve  around  griefing  and  trolling,  where  players  will 
+create  alternative  representations  of  themselves  to  interact 
+with  others 
+taking 
+advantage of reputation (or lack thereof) to mess up others’ 
+experiences [3]. Consalvo [7] points out that alts introduce 
+anonymity  and  complicate  reputation;  however,  some 
+games have shaped alt use with functional mechanisms, for 
+instance allowing friends to identify each others’ alts or in 
+some cases limiting what people can do with them because 
+they cost additional subscription money to use. 
+Demographics can play a role in character representations. 
+Men  and  women  may  exhibit  differences  in  character 
+creation, due to different in-game motivations (like combat 
+or  roleplay),  financial  situations,  maintaining  anonymity, 
+etc.  [22,40].  As  an  example,  female  players  often  find 
+themselves  facing  harassment  or  other  cultural  barriers 
+within  predominantly  male  games  [10].  As  a  result  there 
+may  be  an  incentive  to  avoid  "feminine"  behaviors  or 
+avatars in some online games in order to circumvent these 
+issues  [31].  Second,  players  from  different  locations  may 
+differ in character creation. Players may approach exploring 
+a  game  differently  depending  on  the  geographical  and 
+cultural  context  of  play  outside  and  inside  the  game. 
+Frequently, players from different geographies are placed in 
+different servers (a process known as sharding), in order to 
+preserve  quality  play  and  reduce  lag.  However,  cross-
+cultural  interactions  can  produce  tensions  [37].  Finally, 
+players  from  different  age  groups  may  differ  in  character 
+creation.  Younger  players  tend  to  have  more  free  time  to 
+play,  though  older  players  may  have  more  financial 
+resources  to  spend  on  games.  Styles  of  gameplay  also 
+change  as  players  age,  with  older  participants  generally 
+drifting  away  from  violent  elements  of  the  game  towards 
+more  strategic  parts  of  the  overall  experience  [11].  These 
+contexts lead us to hypothesize: 
+H1. Players that are male will create more characters. 
+H2.  Players  that  are  from  English-speaking  countries  will 
+create more characters. 
+H3. Players that are younger will create more characters. 
+The  creation  of  a  character  –  or  even  switching  between 
+multiple characters – may also depend heavily on technical 
+and social entry and exit costs [14]. Communities depend on 
+high entry costs to gate the admittance of new members and 
+maintain  order  through  social  norms,  and  members  of 
+
+650
+
+communities  face  exit  costs  by  losing  access  to  the 
+resources  and  social  connections  of  the  group.  Games 
+involve  similar  costs  in  that  new  players  must  learn  the 
+norms  of  the  player  ecosystem,  and  older  players  – by 
+creating new characters – potentially lose out on markers of 
+reputation,  accumulated  resources,  and  coded  connections 
+to other players and groups. The game mechanics and code 
+of particular games may also affect decisions around costs: 
+for  example,  some  games  only  allow  a  set  number  of 
+character  slots  to  be  filled,  and  older  characters  must  be 
+deleted to create new ones. Many games also have imposed 
+limitations  on  how  far  players  can  progress,  so  restarting 
+the  game  with  new  characters  is  a  way  to  continue 
+exploring  the  game  world  without  encountering  boredom 
+through  non-progression  at  the  highest  achievable  levels, 
+though again this introduces a potential loss of reputation. 
+Social  activities  in  games  may  also  relate  to  character 
+creation. When players interact in team and guild settings, 
+they sometimes coordinate with each other to create certain 
+characters that will fulfill tasks and goals. Players’ positions 
+in  a  social  network  may  also  relate  to  the  amount  of 
+characters they create, as they become more involved with 
+influential  and  well-connected  people  [30,32].  These 
+contexts lead us to hypothesize: 
+H4.  Accounts  that  are  well  connected  to  other  well-
+connected  accounts  (have  higher  eigenvector  centrality) 
+will create more characters. 
+(cid:9)(cid:32)(cid:24)(cid:31)(cid:22)(cid:28)(cid:24)(cid:18)(cid:1)(cid:6)(cid:21)(cid:15)(cid:29)(cid:15)(cid:16)(cid:31)(cid:18)(cid:29)(cid:30)(cid:1)(cid:22)(cid:26)(cid:1)(cid:11)(cid:18)(cid:30)(cid:18)(cid:15)(cid:29)(cid:16)(cid:21)(cid:1)(cid:9)(cid:18)(cid:31)(cid:21)(cid:27)(cid:17)(cid:30)(cid:1)
+While  the  use  of  main  and  alt  characters  in  video  games 
+revolves  around  many  gameplay  experiences,  it  also 
+becomes a confound in conducting game research.  
+Some  research  uses  alts  for  context  and  triangulation  in 
+understanding  player  motivations  and  experiences.  For 
+example, Nardi and Harris [26] use alts as a method in their 
+ethnographic 
+the  variety  of 
+individuals’  game  experiences  in  World  of  Warcraft 
+(Ducheneaut et al. [9] uses a similar approach). Focusing on 
+the  role  of  collaborative  social  in  WoW,  they  note  that 
+some  players  that  pursued  this  trajectory  in  the  game  felt 
+that playing at the highest-achievable level was not as fun 
+as  surveying  the  diverse  range  of  characters  and  their 
+respective  classes,  roles,  and  lore,  even  if  it  meant 
+essentially starting from scratch. Some players even found 
+pleasure in creating new characters and helping other new 
+players that they encountered, drawing from their previous 
+experiences. 
+More  recently,  as  game  research  adapts  trace  data  for 
+various  analyses  [41]  the  question  of  multiple  characters 
+grows  into  a  larger  issue  of  interpretation:  namely,  if  the 
+translation  of  one  character  equals  one  human.  This  is 
+especially  problematic  when  researchers  use  games  as 
+proxies  for  general  human  behavior  [10].  While  alt 
+characters  play  an  important  role  in  the  exploratory  and 
+social  experiences  of  online  video  games,  they  also 
+introduce complications in research about understanding  
+
+for  exploring 
+
+research 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Unit 
+Analysis 
+
+of 
+
+Discusses 
+Alts? 
+
+Operationalization 
+
+Account 
+
+Yes  (6  total 
+papers) 
+
+(or, 
+
+recent) 
+
+if 
+Uses  most-played  character 
+[[42]];  All 
+several,  most 
+characters  collapsed 
+into  meta-values 
+[40];  Aggregated  data  across  characters 
+into  account-level 
+(though 
+unclear  how) 
+Identified  main 
+character  per  player  [30];  Connects 
+characters 
+in  network 
+analysis  [2];  Uses  primary  character 
+(most time spent playing) [38].  
+
+to  accounts 
+
+statistics 
+
+[16]; 
+
+Account 
+
+Yes, 
+(1) 
+
+but… 
+
+But does not consider multiple characters 
+per player in analysis  [24]. 
+
+Account 
+
+No (4) 
+
+Character 
+
+Yes (1) 
+
+Character 
+
+but… 
+
+Yes, 
+(4) 
+
+Only  uses  total  hours  played  per  player 
+[5];  Uses  account-level  variables,  but 
+uses  characters  to  create  network  for 
+analysis,  and  removes  housing  network 
+ties between characters on same account 
+[34];  Only  uses  time  &  play  sessions 
+across  all  characters    [4];  Only  methods 
+discussion, but no mention [45] 
+
+Uses  all  characters  (though 
+includes 
+limitation  about  nested  characters  per 
+player)  [33] 
+
+Uses  characters  but  without  accounting 
+for  alts  (even  when  mentioned)  [17]; 
+Character-level  calculations  but  unclear 
+if  accounted  for  alts  [8];  Creates  ties 
+between  characters  (but  as  ‘players’) 
+[15];  Characters  on  teams,  but  doesn’t 
+account 
+(though 
+mentions occurrences in discussion) [28]. 
+
+for  multiple 
+
+alts 
+
+Character 
+
+No (3) 
+
+Unclear 
+
+No (2) 
+
+Uses  sample  of  characters  (unclear  how 
+many characters per player, and refers to 
+‘players’) [18]; Uses characters based on 
+account-identified  gold  farmers  [20]; 
+Uses 
+account-level 
+demographic data [32]. 
+
+characters  with 
+
+Pairs  player-  and  character-level  data 
+with  no  mention  of  multiple  characters 
+[23];  Seems  to  use  characters  (though 
+discusses as players) [35] 
+
+Table 1. Survey of "alt" character discussion in game 
+
+literature employing server log data. 
+
+mediated experiences. As Nardi and Harris [26] note, “[I]t is 
+common to have alts which the logging [of social ties in a 
+research study] cannot account for. Because of alts, offline 
+friends  may  still  play  together,  providing  a  highly  social 
+experience.  We  had  several  such  cases  among  our 
+informants. Friends at different levels continue to chat. And 
+a lower level player may request advice or assistance from a 
+higher level friend.” Wood et al. [44] note that players can 
+
+651
+
+have multiple alts, but in their discussion of methodological 
+issues in online game research, they do not actually discuss 
+mapping multiple alts to individual players as a problem. 
+Sampling  of  characters  can  duplicate  individuals  by  using 
+more than one of that player’s characters. It is also unclear 
+on  an  empirical  level  how  often  and  how  much  alt 
+characters  are  played  and  how  much  they  would  skew 
+distributions of gameplay data. Notably, Williams et al. [42] 
+remark, after using only one character per player (or most 
+recent  characters  if  multiple  characters  were  used  often), 
+that: 
+
+This  [decision]  highlights  the  need  for  better  controls  when 
+considering low-centrality players. A metric reflecting a player’s 
+centrality  over  a  longer  period  of  time  for  example  would  have 
+been  particularly  useful.  Also  problematic  was  the  confound  of 
+main  versus  alt  characters.  Most  WoW  players  have  multiple 
+characters even when they primarily play only one. Yet these alts 
+were  counted  as  equivalent  in  our  initial  player  census  efforts. 
+Their mere presence helped establish cut-points for what a high- 
+or low-centrality player is. So, although we are confident that our 
+high-centrality players are high because we set a high numerical 
+floor for them, we are hesitant to offer strong conclusions about 
+the roles and habits of low-centrality players. 
+
+in  different 
+
+To  test  whether  accounts  and  characters  impact  social 
+networks, we also hypothesize: 
+H5.  Account-level  networks  will  result 
+statistical coefficients than character-level networks. 
+Furthermore,  statistical  analyses  employing  character  data 
+might not necessarily account for the personal limitations of 
+playing multiple characters (e.g., having to play one at the 
+expense  of  another).  While  some  peer-reviewed  research 
+accounts  for  multiple  characters,  not  all  publications  do, 
+and  sometimes  it  is  difficult  to  even  parse  if,  and  which, 
+characters belong to which players. For instance, Williams 
+et al. [42] use only one main character per player, because 
+they  admit  that  they  “were  not  able  to  separate  real-life 
+players from the multiple characters they played” (344).  
+In  Table  1,  we  present  a  summary  of  how  research  that 
+employs analysis of game server log data has dealt with the 
+multiple-character issue. Overall, there has been no holistic 
+consensus  about  proper  methods  to  account  for  multiple 
+technical  representation  use.  Therefore,  in  the  rest  of  this 
+paper,  we  focus  on  the  implications  of  these  uses  in 
+operationalizing  behavioral  analysis 
+in  MMOGs.  We 
+present  empirical  analysis  of  players  drawn  from  a 
+population  sample  – every  character  ever  created  – in  one 
+popular  multiplayer  game.  From  this  foundation,  we  then 
+show how the distinction between accounts and characters 
+impact  methods  for  studying  social  interactions  in  these 
+types  of  games,  using  social  networks  as  a  point  of 
+comparison.  Afterward,  we  conclude  with  a  discussion  of 
+these  differences  on  our  theoretical  understanding  of 
+multiple technical representations.  
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(cid:9)(cid:6)(cid:21)(cid:6)(cid:1)
+This  paper  uses  the  case  study  of  EVE  Online,  a  massive 
+multiplayer online game. EVE was created by CCP Games 
+and launched in 2003; as of early 2013, the game boasts of 
+500,000 dedicated, paying subscriptions.1 
+EVE  is  a  space-based  MMORPG,  where  players  pilot  a 
+character through various galaxies, encountering numerous 
+worlds and thousands of other players. The game provides 
+the  choice  of  creating  a  detailed  custom  avatar  in  one  of 
+four unique “races”: Gallente, Amarr, Caldari, or Minmatar. 
+Unlike other MMORPGs, where the player must spend time 
+exploring  the  world  and  attacking  enemies  to  level  up 
+(“grinding”),  EVE  allows  players  to  select  one  skill  every 
+24  hours  and  set  a  countdown  timer  to  train  on  that  skill 
+(though  the  account  must  have  at  that  point  paid  for  an 
+account  subscription).  Players  explore  the  world  as  their 
+skills progress. However, you can only be logged into one 
+character  at  a  time,  and  to  train  the  skills  of  multiple 
+characters  at  the  same  time,  you  must  pay  additional  in-
+game  or  real  currency  (or  create  another  account  with  an 
+entirely  separate  character).2 The  game  is  notorious  for  its 
+initial  difficulty:  many  video  game  players  have  left  the 
+game after a few days because of its steep learning curve. 
+Also, EVE also runs on a single server. Unlike over games, 
+where players are usually separated by geographic location 
+to reduce server load, all characters inhabit the same game 
+world and have the potential to interact with each other.  
+
+Variables 
+Gender 
+
+Counts/Percentages (some NAs not included) 
+Male 
+5109617 
+
+Female 
+282068 
+5.231% 
+Non-English 
+2624645 
+
+48.68% 
+ 24  &  Under 
+1676794 
+31.10% 
+Max 
+407 
+
+25-29 
+1230823 
+
+22.83% 
+Mean 
+1.875 
+
+30+ 
+1542173 
+28.6% 
+SD 
+2.289707 
+
+English-
+Language 
+Countries 
+
+English 
+2767040 
+
+Years Old 
+
+(1978) 
+941895 
+
+Min 
+1 
+
+# Characters 
+N = 5391685 
+
+Table 2. Account demographics for account population. 
+
+(cid:1)http://www.eurogamer.net/articles/2013-02-28-eve-online-500k-
+subscribers-and-what-ccp-learnt-along-the-way  
+2 http://www.reddit.com/r/Eve/comments/2ovg7i/quick_question_on_multi
+character_system/  
+
+652
+
+first,  we 
+
+For  this  paper,  we  analyzed  a  dataset  of  game  server  logs 
+from  EVE  Online,  collected  and  provided  by  CCP.  The 
+dataset  spans  over  8  years  of  server  logs,  from  May  06, 
+2003 
+to  July  06,  2011.  The  dataset  represents  an 
+anonymized  population  of  EVE  players,  along  with 
+demographic  data  (gender,  age,  location)  and  aggregated 
+gameplay data (active account [Y/N], minutes played, skill 
+points earned, teams joined, etc.), in addition to a snapshot 
+of the character friendship (directed edge) network taken on 
+the  last  day  of  the  collection  period.  In  total,  we  look  at 
+5,391,685 players accounts that created an account to play 
+the  game  at  some  point,  as  well  as  10,110,558  characters 
+created by individuals using those accounts.  
+This paper presents a holistic account of players and their 
+characters,  though  some  data  cleaning  occurred.  To  bin 
+accounts  into  clusters,  we  removed  outliers  based  on 
+excessive  minutes  played  or  number  of  friends  in  the 
+network. 
+(cid:6)(cid:16)(cid:6)(cid:14)(cid:25)(cid:20)(cid:12)(cid:20)(cid:1)
+Our analysis of the EVE player population is split into two 
+sections: 
+look  at  comparisons  of  player 
+demographics from all characters. This examination sets an 
+empirical baseline for multiple technical representations at 
+scale.  Then,  we  look  at  a  sample  of  active  players  to 
+compare their demographics, gameplay statistics, and social 
+network  connections,  showing  how  methods  should  deal 
+with  account-  and  character-level  differences  for  players 
+who use multiple representations. 
+(cid:18)(cid:33)(cid:26)(cid:44)(cid:29)(cid:38)(cid:1)(cid:18)(cid:36)(cid:37)(cid:41)(cid:33)(cid:26)(cid:40)(cid:32)(cid:36)(cid:35)(cid:1)
+First, we present descriptive statistics of all player accounts, 
+shown in Table 2.  
+Players  may  create  as  many  characters  as  they  want,  but 
+EVE restricts accounts from keeping more than 3 characters 
+active. Players may delete prior characters in order to create 
+new ones. The mean number of characters created is 1.875, 
+and  the  highest  number  of  total  characters  created  by  any 
+one  account  in  our  dataset  is  407.  The  number  of  players 
+with N characters follows a long-tail distribution: there are 
+3,485,807 accounts with only 1 character, 879,636 accounts 
+with  2  characters  created,  and  521,560  accounts  with  3 
+characters created. There are still 193,340 accounts that had 
+created 4 characters (meaning they had deleted one to open 
+up  a  character  slot).  64.65%  of  accounts  created  only  1 
+character compared to 35.35% that created more than one. 
+When players sign up for EVE and create an account, they 
+are  asked  basic  demographic  information,  like,  gender, 
+location, and date of birth. Like other MMOGs, the gender 
+skews  toward  male,  but  there  are  only  about  5%  self-
+reported female accounts.  
+EVE  boasts  a  single  server  on  which  all  players  reside; 
+while the most accounts identify as residing in the United 
+States  (1,834,541,  or  34%),  the  top  ten  countries  also 
+include  the  United  Kingdom  (515,655),  Russia  (422,810), 
+Germany    (371,582),  Canada  (267,670),  China  (254,998), 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+France  (134,565),  Australia  (128,370),  Sweden  (122,459), 
+and the Netherlands (98,395). A number of teams in EVE 
+draw  players  from  similar  geographies  and  languages,  but 
+the major language of the game remains English. Based on 
+these self-reported locations, we coded the major English-
+language  countries  (United  States,  United  Kingdom, 
+Canada, Australia, and New Zealand) to compare English-
+language accounts’ practices in character creation.  
+Calculating players’ ages is complicated. When players sign 
+up for an account on EVE, they are asked to input their date 
+of  birth.  However,  the  form  presents  the  year  1978  as  the 
+default  year.  A  significant  portion  of  accounts  input  their 
+year  as  1978,  meaning  that  these  accounts  may  be 
+inaccurate  as  far  as  reporting  the  age  of  the  player. 
+Therefore,  we  separated  any  account  with  1978  in  the 
+analysis.  Accounts  that  input  1978  as  their  year  of  birth 
+may  be  an  artifact  of  accounts  that  were  created  quickly 
+with no intention of playing (and therefore there may be a 
+correlation  with  the  default  birth  year  with  one-character 
+accounts).  
+(cid:6)(cid:27)(cid:40)(cid:32)(cid:42)(cid:29)(cid:1)(cid:6)(cid:27)(cid:27)(cid:36)(cid:41)(cid:35)(cid:40)(cid:39)(cid:1)(cid:2)(cid:1)(cid:8)(cid:31)(cid:26)(cid:38)(cid:26)(cid:27)(cid:40)(cid:29)(cid:38)(cid:1)(cid:21)(cid:38)(cid:32)(cid:26)(cid:28)(cid:39)(cid:1)
+While some studies have examined alt use qualitatively, no 
+studies  have  looked  at  alts  at  scale.  More  importantly, 
+comparison  across  alt  characters  has  not  been  conducted. 
+Below,  we  look  at  accounts  that  have  created  multiple 
+characters,  in  particular  accounts  with  three  characters,  to 
+look  at  how  demographics 
+to  show 
+comparisons across characters. 
+Active accounts are any that pay to sign in to the game at 
+the time of the dataset snapshot. Amongst active accounts 
+with characters in active character slots, there were 156863 
+accounts  with  1  character,  123899  accounts  with  2 
+characters,  and  132228  accounts  with  3  characters.  Our 
+regressions and network comparisons draw from all active 
+accounts  and  characters,  but  to  compare  trace  data  across 
+characters,  we  specifically  focus  on  comparisons  of 
+accounts with 3 active characters.  
+In EVE, players are able to hold active characters in three 
+slots and any previously-created characters must be deleted 
+to make room for new ones. Players can delete characters, 
+but they will be marked as not active, and therefore are not 
+included in this analysis. Characters that remain in an active 
+slot, even with 0 minutes played, are still considered active 
+characters. Characters also are tagged with a character rank, 
+or the relative order in which the character was created on 
+the  account.  To  combine  these  concepts  of  activity  and 
+rank,  consider  an  account  that  created  5  characters  in  its 
+lifetime.  If  this  account  deleted  the  second  and  third 
+characters, the active characters for this account would be 
+first, fourth, and fifth. 
+
+interact  and 
+
+Rank 1 
+
+Rank 2 
+
+Rank 3 
+
+Total Number of Accounts 
+
+1 
+
+1 
+
+2 
+
+1 
+
+1 
+
+2 
+
+2 
+
+3 
+
+3 
+
+1 
+
+1 
+
+1 
+
+1 
+
+2 
+
+2 
+
+NA 
+
+2 
+
+1 
+
+2 
+
+3 
+
+3 
+
+1 
+
+2 
+
+1 
+
+4 
+
+4 
+
+3 
+
+2 
+
+1 
+
+4 
+
+NA 
+
+NA 
+
+NA 
+
+3 
+
+2 
+
+1 
+
+3 
+
+1 
+
+2 
+
+3 
+
+2 
+
+4 
+
+4 
+
+4 
+
+1 
+
+3485807 
+
+540881 
+
+338755 
+
+159021 
+
+147734 
+
+84186 
+
+82934 
+
+58408 
+
+51743 
+
+22848 
+
+21929 
+
+19730 
+
+17784 
+
+11268 
+
+10063 
+
+Table 3. Most Common Permutations of Character Rank. 
+
+Characters 
+
+Minutes 
+
+Friends 
+
+Gender 
+English 
+Language 
+Country 
+Years Old 
+
+Min 
+3 
+
+Max 
+227 
+
+Mean 
+5.386 
+
+SD 
+4.23 
+
+Median 
+
+4 
+
+0 
+
+0 
+
+1 
+
+1 
+
+3299412 
+
+145071.29 
+
+144963.59 
+
+102548 
+
+5939 
+
+2 
+
+2 
+
+53.134 
+
+1.961 
+
+1.437 
+
+70.14 
+
+0.194 
+
+0.496 
+
+33 
+
+2 
+
+1 
+
+3 
+
+1 
+
+4 
+
+(Bin) 
+Table 4. Descriptive statistics of account-level variables. 
+
+3.093 
+
+1.035 
+
+For  context  about  character  creation  in  relation  to  active 
+character  use,  in  Table  3,  we  show  which  characters  in 
+order  of  creation  per  account  (based  on  the  top  15 
+combinations) have been held in the top 3 ranked character 
+slots (by most minutes played). Overall, the first 3 created 
+characters  are  the  most  played,  and  even  more  the  first 
+character created tends to be the most played overall. Only 
+until  the  10th  combination  of  characters  do  we  see  a  4th 
+character appear (meaning that one character at some point 
+was deleted that had fewer minutes than the 4th). 
+
+653
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Dependent Variable: Number of Characters Created 
+
+Minutes 
+
+# Friends 
+
+Gender a 
+
+Country Language b 
+
+24 and Underc 
+
+25-29c 
+
+30+c 
+
+Constant 
+
+Observations 
+Log Likelihood 
+
+1.0000759*** 
+
+(0) 
+
+1.0015790*** 
+(-0.00002) 
+1.1274052*** 
+
+(-0.005) 
+
+0.9791297*** 
+
+(-0.002) 
+
+0.8405719*** 
+
+(-0.004) 
+
+0.9297656*** 
+
+(-0.004) 
+
+0.9435625*** 
+
+(-0.004) 
+
+2.3569338*** 
+
+(-0.006) 
+391,669 
+
+-735,826.70 
+
+Note: *p<0.1; **p<0.05; ***p<0.01 
+
+N = 412,990(cid:1)
+
+a Reference category= Female(cid:1)
+
+b Reference category= English-Speaking Country(cid:1)
+
+c  Reference category= “1978” default year(cid:1)
+
+Table 5. Negative binomial regression predicting 
+
+number of characters created. 
+
+show 
+
+the 
+
+relationship  between 
+
+(cid:6)(cid:27)(cid:25)(cid:28)(cid:15)(cid:29)(cid:22)(cid:26)(cid:20)(cid:1)(cid:7)(cid:18)(cid:25)(cid:27)(cid:20)(cid:29)(cid:15)(cid:28)(cid:21)(cid:22)(cid:16)(cid:30)(cid:1)
+Earlier, we presented descriptive statistics showing for each 
+account  in  the  game  the  self-reported  demographics  of 
+players.  To 
+those 
+demographics,  we  ran  a  negative  binomial  regression  to 
+predict  the  count  of  characters  created  by  active  player 
+accounts. We relate account gender, country language, and 
+age to each other, controlling for minutes played total and 
+number of friends total for all characters on the account. 
+In  Table  5,  we  show 
+incident  rate  ratio  (or 
+exponentiated  beta;  with  standard  error  in  parentheses). 
+These results support all three of our hypotheses (H1-H3). 
+The  model  demonstrates  that  creating  more  characters  is 
+significantly related to (H1) being male (exp(β) = 1.127, or 
+1.127 times more likely per increase in # characters), (H2) 
+being from an English-language country (exp(β) = 0.979, or 
+0.979 times less likely to be non-English per increase in # 
+characters),  and  (H3)  being  a  younger  player  (exp(β)  = 
+
+the 
+
+0.840,  or  0.840  less  likely  to  be  the  default  1978  when 
+compared  to  24  and  Under).  Further,  creating  more 
+characters  was  significantly  related  to  our  controls:  more 
+minutes played and more friend connections made (though 
+the coefficients for these variables were very small).  
+(cid:6)(cid:27)(cid:25)(cid:28)(cid:15)(cid:29)(cid:22)(cid:26)(cid:20)(cid:1)(cid:8)(cid:15)(cid:25)(cid:18)(cid:28)(cid:24)(cid:15)(cid:35)(cid:1)(cid:4)(cid:16)(cid:29)(cid:27)(cid:30)(cid:30)(cid:1)(cid:6)(cid:21)(cid:15)(cid:29)(cid:15)(cid:16)(cid:31)(cid:18)(cid:29)(cid:1)(cid:14)(cid:30)(cid:18)(cid:1)
+To look at the differences across gameplay experiences, we 
+first bin accounts by character use.3 We use active accounts 
+that  have  three  active  character  slots  filled.  Ordering  each 
+character  by  the  total  number  of  minutes  played  per 
+account,  we  employ  unsupervised  k-means  clustering  to 
+separate player accounts into k=5 clusters based on the total 
+number  of  minutes  played  per  character4.  This  technique 
+resulted 
+in  an  automatic  separation,  based  on 
+the 
+relationship  across  characters,  between  accounts 
+that 
+primarily play with 1 character (in low, medium, and high 
+amounts),  accounts  that  mainly  use  2  characters,  and 
+accounts that use 3 characters. The distribution of accounts 
+in  each  of  these  clusters  is  presented  in  Figure  1  below. 
+This allows us to break all active accounts into five binned 
+groups for further analysis. 
+(cid:13)(cid:22)(cid:25)(cid:18)(cid:3)(cid:1)(cid:9)(cid:22)(cid:26)(cid:32)(cid:31)(cid:18)(cid:30)(cid:1)(cid:2)(cid:1)(cid:12)(cid:23)(cid:22)(cid:24)(cid:24)(cid:28)(cid:27)(cid:22)(cid:26)(cid:31)(cid:30)(cid:1)
+The  k-means  algorithm  separated  each  of  the  five  clusters 
+based  on  minutes  per  active  character.  In  Figure  2,  we 
+illustrate  the  breakdown  per  character  of  minutes  played 
+based on these clusters. As we described above, we see the 
+breakdown  of  the  clusters  illustrated:  one  group  of  low 
+engagement accounts, two groups with accounts that focus 
+on  one  character  (medium  and  high  minutes  of  play, 
+respectively), one group that focuses on two characters, and 
+a final group that focuses on three characters.  
+Next,  we  examine  accumulated  skill  points.  In  EVE, 
+players can train particular skills of their characters in order 
+to  progress  further  through  various  parts  of  the  game. 
+Unlike  other  MMORPGs,  players  in  EVE  do  not  attack 
+enemies  to  level  up.  Instead,  they  activate  a  timed 
+countdown. Players can walk away from this “training” and 
+even  shut  down  their  computer  while  the  countdown 
+progresses.  However,  only  one  character  per  account  may 
+train  a  skill  at  a  time  (unless  the  user  pays  money  to  do 
+more).  Still,  higher  numbers  of  skill  points  act  as  another 
+marker  of  dedication  to  a  particular  character.  We  show 
+total skill points per character per cluster in Figure 3. 
+
+3 Using  accounts  with  three  created  active  characters  allows  us  to  more-
+easily  compare  across  character  trace  data.  We  recognize  that  accounts 
+with  two  characters  could  be  compared  as  well,  but  accounts  with  three 
+active character slots illustrate a good range of single, double, and triple 
+character use cases.  
+4 Five  clusters  were  chosen  based  on  the  results  of  calculating  principal
+components in a scree plot. 
+
+654
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Figure 1. Number of accounts per cluster. 
+
+games 
+
+provide 
+
+to 
+
+correspond 
+
+(cid:4)(cid:33)(cid:15)(cid:31)(cid:15)(cid:29)(cid:3)(cid:1)(cid:8)(cid:18)(cid:26)(cid:17)(cid:18)(cid:29)(cid:1)(cid:2)(cid:1)(cid:11)(cid:15)(cid:16)(cid:18)(cid:1)
+Avatars play an important role in MMORPGs, because they 
+are  the  visual  representation  of  the  player  in  the  game 
+world.  Most  modern 
+advanced 
+customization of avatar design and fashion, and avatars do 
+not  need 
+to  out-of-game  human 
+characteristics.  Therefore,  different  avatar  designs  across 
+multiple  characters  may  act  as  a  marker  of  exploration  of 
+different facets of a game. We compare multiple characters 
+regarding differing in-game character design. 
+While  most  games  tend  to  revolve  around  male  or  female 
+avatars,  players  do  swap  the  gender  of  their  characters 
+compared to the gender of themselves. Research has shown 
+that  men  tend  to  change  avatar  gender  more  than  women 
+[19]  though  both  sides  exhibit  this  behavior  to  a  small 
+degree.  In  Figure  4  and  Table  6,  we  show  how  character 
+gender changes across multiple characters. For each cluster, 
+and  for  all  character  pairs, we  see  that  most  of  the  time 
+players will stick with the same character gender.  
+ 
+
+ 
+
+Figure 2. Distribution of minutes played per active character 
+
+across clusters. 
+
+Figure 3. Distribution of skillpoints per active character across 
+
+cluster. 
+
+Figure 4. Differences in paired-character gender choices for 
+
+accounts with three active character slots. 
+
+Characters 
+
+1 & 2 
+
+Characters    
+
+1 & 3 
+
+Characters 
+
+2 & 3 
+
+Same 
+
+Same 
+
+Different 
+
+Different 
+
+Same 
+
+Same 
+
+Same 
+
+Different 
+
+Different 
+
+Different 
+
+Same 
+
+Different 
+
+N 
+
+58421 
+
+25843 
+
+24894 
+
+22902 
+
+Table 6. Most common permutations of character gender. 
+
+ 
+
+ 
+
+655
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+Figure 5. Differences in paired-character race choices for 
+
+accounts with three active character slots. 
+
+Characters 
+
+1 & 2 
+Different 
+Same 
+Different 
+Different 
+Same 
+
+Characters 
+
+1 & 3 
+Different 
+Different 
+Same 
+Different 
+Same 
+
+Characters 
+
+2 & 3 
+Different 
+Different 
+Different 
+Same 
+Same 
+
+N 
+
+46003 
+24104 
+23318 
+20221 
+18414 
+
+Table 7. Most common permutations of character race. 
+
+Character  race  is  another  mechanic  through  which  players 
+can  explore  different  aspects  of  the  game  world.  Unlike 
+gender, in MMORPGs a character’s race, lineage, and other 
+sociocultural  attributes  tend  to  be  more  diverse  and 
+imaginative.  Frequently,  game  designers  will 
+link  a 
+character  trait  like  race  to  different  or  at  least  varied 
+gameplay  styles.  This  is  the  case  in  EVE,  where  different 
+races lead to different classes of ships and other gameplay 
+content. In Figure 5 and Table 7, we explore how character 
+race  changes  across  multiple  characters.  For  each  cluster, 
+and  for  all  character  pairs, we  see  that  most  of  the  time 
+players will alter their character’s race. 
+(cid:11)(cid:18)(cid:24)(cid:15)(cid:31)(cid:22)(cid:27)(cid:26)(cid:30)(cid:21)(cid:22)(cid:28)(cid:30)(cid:3)(cid:1)(cid:13)(cid:18)(cid:15)(cid:25)(cid:1)(cid:7)(cid:22)(cid:33)(cid:18)(cid:29)(cid:30)(cid:22)(cid:31)(cid:35)(cid:1)(cid:2)(cid:1)(cid:12)(cid:27)(cid:16)(cid:22)(cid:15)(cid:24)(cid:1)(cid:10)(cid:18)(cid:31)(cid:34)(cid:27)(cid:29)(cid:23)(cid:1)(cid:12)(cid:31)(cid:29)(cid:32)(cid:16)(cid:31)(cid:32)(cid:29)(cid:18)(cid:1)
+In many multiplayer online games, players are given ways 
+to express connections to friends, enemies, and teammates.  
+Guilds  and  social  networks  can  be  constructed  as 
+representations  of  these  relationships.  Teams  are  frequent 
+occurrences in online multiplayer games, because they help 
+retain  players  while  also  adding  additional  limitations  to 
+progression  (namely  that  you  need  to  work  with  other 
+people to beat difficult areas). Games also help players  
+
+Figure 6. Number of users with characters in the same in-
+
+game organization per cluster. 
+
+ 
+
+Figure 7. Number of friends per cluster. 
+
+connect  with  each  other,  through  in-game  chat,  trade, 
+combat, and other mechanisms for marking social relations. 
+In  EVE,  players  may  create  their  own  guilds  called 
+"corporations."  Corporations  allow  teammates  to  work 
+together  to  collect  resources  and  fight  other  teams  in 
+combat.  To  look  at  guilds,  we  take  each  character  per 
+account in each of the five clusters and compare at the time 
+of the snapshot if each pair of characters was in the same 
+guild,  a  different  guild,  or  no  guild.  The  results  are 
+presented in Figure 6. Overall, the data shows that as more 
+characters are used, the placement in the same guild occurs 
+more frequently across all three characters. Also, as fewer 
+characters  are  used,  the  chance  of  one  of  those  characters 
+not being in any player-created guild increases.  
+
+656
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Figure 8. Path length per character pair per cluster. 
+
+In-game  interactions,  such  as  chatting  with  one  another, 
+trading  items  between  players,  or  even  sharing  private 
+living  quarters  can  also  connect  players 
+in  similar 
+networked  relationships.  Though  little  research  has  been 
+conducted  on  players’  motivations  to  create  (or  to  refuse 
+making) traces of connections between acquaintances, both 
+offline and in-game social networks greatly impact the way 
+that  players  experience  games  [33].  Therefore, 
+these 
+networks have been used as markers of social connections 
+and proxies for social value (like social capital) [35].  
+Since social networks can represent an important part of the 
+player  experience,  one  question  we  ask  is  how  much  do 
+players  replicate  social  connections  across  their  multiple 
+characters.  Do  players  keep  their  alts  close,  or  do  they 
+explore  far  reaches  of  the  game  world  using  distinct  and 
+separate trajectories? 
+First, we look at how many friends an account’s characters 
+possess; these numbers are presented in Figure 7. Just like 
+with minutes and skill points, we see a similar distribution 
+of friendship numbers: for one-character accounts, the other 
+two  characters  do  not  have  many  friendships  with  other 
+players,  while  for  two-  and  three-character  accounts, 
+friendship connections are made more frequently on the alt 
+characters.  Also,  we  again  see  accounts  that  are  highly 
+active  with  one  character  generally  creating  more 
+friendships  than  the  two-  and  three-character  accounts, 
+which fits with the results of our earlier regression.  
+Keeping these differences in mind, to examine the way in 
+which  characters  are  connected  to  each  other  in  the 
+friendship  network,  we  created  a  large  social  network 
+graph, where characters are nodes and edges are friendship 
+connections.  These  friendship  connections  were  any 
+friendships  established  at  the  time  of  the  data  collection 
+snapshot. For characters with no friendship connections, we 
+include them in the graph as unconnected isolates. In total, 
+there  are  801,346  nodes  (222,837  of  which  are  isolates) 
+with  6,453,627 edges.  
+
+In order to examine how characters are relatively connected 
+in the social network, we look at "path distance" as a metric 
+of  closeness  within  the  network.  The  path  in  a  network 
+graph is the number of edges between two nodes, and path 
+distance generally describes how "far apart" two nodes are 
+in a network. If nodes are well-connected, the path distance 
+will  be  lower;  if  path  distance  is  high,  nodes  are  less 
+connected (and may suffer from issues like structural holes 
+[26]). If the user's characters are not connected within the 
+social  graph  they  are  assigned  a  distance  of  infinity.  In 
+general players pursue a mixed strategy, forming closed and 
+tightly  knit  groups  with  trusted  companions  but  still 
+reaching out and forming new relationships as a source of 
+novelty  or  information  [34];  however,  it  is  unclear  how 
+multiple character use affects social network structure.  
+We illustrate path distance in the EVE friendship network 
+in  Figure  8.  Generally,  for  accounts  that  focus  on  one 
+character,  we  see  high  rates  of  unconnectedness  (mainly 
+due to the fact that many of the alt characters have few to 
+no  friendship  connections,  or  if  they  do,  they  are  likely 
+isolated  from  the  primary  network  component).  The  path 
+length  occurrences  increase  for  two-  and  three-  character 
+accounts.  More  importantly,  though,  for  those  characters 
+that  are  connected,  we  tend  to  see  an  account's  characters 
+connected at path distances less than 3. A path length of 1 
+means that characters are direct friends; a path distance of 2 
+means they are connected indirectly, by one other character. 
+Surprisingly, the results show a high rate of path distance 2, 
+particularly  for  the  second-to-third  character  pairing.  This 
+means  that  instead  of  a  well-connected  triad  between  all 
+three  of  an  account's  characters,  we  see  a  relatively  high 
+rate of direct connection between first-and-second and first-
+and-third characters. In other words, instead of a connected 
+triangle,  alt  accounts  tend  to  be  connected  in  a  hub-and-
+spoke  model 
+the  main  account  acts  as  a 
+"headquarters"  for  the  friendship  connections  to  the  other 
+characters).  In  network  terms,  we  see  a  higher  rate  of 
+brokerage than triadic closure [34,39]. 
+
+(where 
+
+657
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Dependent variable: Number of characters created 
+
+  
+Eigenvector Centrality 
+  
+Days Played 
+  
+Gender a 
+  
+Country Language b 
+  
+24 and Underc 
+  
+25-29c 
+  
+30+c 
+  
+Constant 
+  
+Observations 
+Log Likelihood 
+
+User Graph 
+1.1250816*** 
+
+(-0.025) 
+
+1.0018179*** 
+
+-0.00004 
+
+1.1525448*** 
+
+-0.021 
+
+0.9932292 
+
+-0.007 
+
+0.9195538*** 
+
+-0.014 
+
+0.9630993*** 
+
+-0.014 
+
+0.9843754 
+
+-0.013 
+
+3.2192247*** 
+
+-0.025 
+35,255 
+
+-83,504.24 
+
+Character Graph 
+
+0.9353637*** 
+
+(-0.02) 
+
+1.0013727*** 
+
+-0.00004 
+
+1.1328196*** 
+
+-0.02 
+
+1.0025698 
+
+-0.007 
+
+0.8846117*** 
+
+-0.014 
+
+0.9379363*** 
+
+-0.013 
+
+0.9908913 
+
+-0.012 
+
+3.7055173*** 
+
+-0.023 
+38,003 
+
+-91,142.18 
+
+Note:*p<0.1; **p<0.05; ***p<0.01 
+
+a Reference category= Female 
+
+b Reference category= English-Speaking Country 
+
+c  Reference category= “1978” default year 
+
+Table 8. Negative binomial regression, predicting number of 
+
+characters created, in two types of social network graphs 
+
+To further test the discrepancy between operationalizations 
+of  players,  we  ran  two  regressions  predicting  number  of 
+characters created, first using a social network made up of 
+characters and then a social network made up of users (with 
+aggregated statistics). The results demonstrate a difference 
+between networks constructed from account- vs. character-
+level  perspectives.  Subgraphs  for  active  accounts  and 
+characters were created from this original network graph for 
+these analyses. 
+Given  the  size  of  the  social  network,  analyzing  the  entire 
+structure  is  a  challenge.  However,  the  social  context  of 
+EVE Online – namely, that players coordinate frequently in 
+teams  without  interacting  with  many  other  players  in  the 
+entire universe – suggests that we focus our efforts not on 
+the entire graph but on subsections of it. Because a player 
+may  be  on  the  periphery  of  the  entire  in-game  graph  but 
+quite central or influential within their own local team, we 
+draw subgraphs of networks from a range of in-game teams.  
+When  calculating  network  centrality  measurements  and 
+other statistics, we generally favor either local metrics such 
+as  degree  (total  number  of  connections  per  account)  and 
+clustering (how many of an account’s friends are connected 
+to each other) or establish broader centrality scores within a 
+player’s team and allies. Therefore, we chose to select 222 
+subgraphs,  representing  the  largest  in-game  player  team 
+
+networks (each with over a hundred members), to establish 
+centrality  scores  on  a  team  level  as  opposed  to  the  entire 
+graph.  This  approach  ensures  that  each  centrality  score 
+reported  represents  how  influential  or  well-connected  an 
+account  is  within  its  immediate  and  more-relevant  social 
+setting. 
+The model on the left side of the table takes every user as a 
+node within a series of subgraphs drawn from the top teams 
+within EVE, while the model on the right uses characters as 
+the basic unit of representation. Most of the findings align 
+across network models in magnitude and direction, with the 
+exception of eigenvector centrality. In the model based off 
+of  the  user  graph,  eigenvector  centrality  is  positively 
+associated (exp(β) = 1.1251) with creating more characters 
+within  EVE.  Importantly,  the  effect  is  reversed  for  the 
+character graph (exp(β) = 0.9354). Thus, we do see support 
+for  H5:  that  account-level  and  character-level  network 
+centrality coefficients will differ. This finding complicates 
+H4  – that  higher  eigenvector  centrality  will  be  related  to 
+more characters – because depending on the technical user 
+representation theory and approach applied to the statistical 
+model, conflicting results emerge.  
+(cid:9)(cid:12)(cid:20)(cid:8)(cid:22)(cid:20)(cid:20)(cid:12)(cid:17)(cid:16)(cid:1)
+This  paper  uses  the  case  study  of  a  large  MMORPG  to 
+illustrate  the  creation  and  use  of  multiple  technical  user 
+representations  (accounts  and  their  respective  characters). 
+We examine a population of users from EVE Online across 
+8  years  of  player  data  since  the  game’s  launch,  showing 
+empirical  evidence  for  multiple  character  use  at  scale  and 
+demonstrating  –  from  a  methodological perspective – how 
+multiple  characters  can  complicate 
+tests, 
+especially when it comes to social networks.  
+(cid:15)(cid:26)(cid:32)(cid:35)(cid:39)(cid:1)(cid:26)(cid:35)(cid:28)(cid:1)(cid:6)(cid:33)(cid:40)(cid:39)(cid:5)(cid:1)(cid:8)(cid:38)(cid:29)(cid:26)(cid:40)(cid:32)(cid:36)(cid:35)(cid:1)(cid:2)(cid:1)(cid:22)(cid:39)(cid:29)(cid:3)(cid:1)(cid:15)(cid:29)(cid:40)(cid:31)(cid:36)(cid:28)(cid:1)(cid:2)(cid:1)(cid:21)(cid:31)(cid:29)(cid:36)(cid:38)(cid:44)(cid:1)
+The first half of this paper showed that accounts still tend to 
+create only one character. However, it is not uncommon to 
+fill out the three possible character slots, and there remains 
+a  long  tail  of  multiple  character  use.  Earlier  in  this  paper, 
+we pointed to scholars that had mentioned or examined alts 
+qualitatively,  showing  that  it  was  certainly  a  practice 
+amongst  many  game  players,  but  they  could  not  describe 
+exactly how common the practice was at scale. This finding 
+confirms  most  of  the  qualitative  insights  from  interviews 
+and coincides with prior sampling distributions, but it is the 
+first time a holistic set of statistics for the use of multiple 
+technical representations has been calculated. 
+The  question  then  is  how  much  and  in  what  ways  these 
+characters are played. Players that dedicated themselves to 
+more than one character, as we show above, are definitely 
+in  the  minority,  but  they  provide  us  insight  into  the 
+differences across characters when multiple are used. There 
+are  also  distinctive  differentiating  trends  amongst  player 
+demographics regarding character creation. We show above 
+that  there  is  a  statistically  significant  difference  between 
+men and women, players at different ages, and players from 
+primarily-English-language countries. In general, it appears 
+
+statistical 
+
+658
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+that  all  types  of  players  are  willing  to  explore  creating 
+multiple  technical  representations.  While  we  do  not  have 
+data  related  to  gameplay  styles,  the  next  step  in  future 
+research would be to examine demographic differences and 
+how  they  relate  to  multiple  character  use  as  far  as 
+motivations  and  gameplay  choices,  to  see  how  these 
+multiple characters are used in different ways. 
+The second half of this paper examined how gameplay and 
+social  relationships  differed  across  multiple  character  use. 
+Looking  at  all  active  accounts  that  had  created  three 
+characters  at  the  time  of  the  data  collection  snapshot,  we 
+clustered and generated five general categories of accounts: 
+three that primarily use one character to varying degrees, a 
+fourth that primarily focused on two characters, and a fifth 
+where all three characters are used to a large extent.  
+(cid:7)(cid:22)(cid:19)(cid:19)(cid:18)(cid:29)(cid:18)(cid:26)(cid:16)(cid:18)(cid:30)(cid:1)(cid:22)(cid:26)(cid:1)(cid:6)(cid:21)(cid:15)(cid:29)(cid:15)(cid:16)(cid:31)(cid:18)(cid:29)(cid:1)(cid:6)(cid:21)(cid:27)(cid:22)(cid:16)(cid:18)(cid:1)(cid:15)(cid:26)(cid:17)(cid:1)(cid:14)(cid:30)(cid:18)(cid:1)
+First, we explore the question of activity, related to minutes 
+spent  playing  and  skill  point  accumulated  on  each 
+character.  Because 
+the  clusters  were  generated  from 
+minutes played, we see a distinct separation related to how 
+characters are used in comparing all three characters across 
+the  five  clusters.  Again,  this  clustering  technique  looks  at 
+the relationship between all three characters (so while some 
+players may play with one character just as much as another 
+cluster,  their  second  and  third  characters  differ  between 
+clusters). We also see a similar trend in relative skill points 
+accumulated per character across the five account clusters. 
+The interesting insight into multiple character use related to 
+playtime minutes and skill points is that accounts that tend 
+to dedicate gameplay to one main character play more and 
+gain more skill points than accounts focused on two or three 
+characters.  Of  course,  this  finding  relates  back  to  our 
+coverage  of  entry  costs  at  the  beginning  of  the  paper: 
+dedicating time to alts means not being able to play on the 
+main character.  
+For  avatar-related  decisions,  we  do  not  see  any  great 
+difference across multiple character use related to character 
+gender  and  race.  Overall,  the  general  trend  remains  the 
+same whether an account focuses on one main or multiple 
+alts:  the  character  gender  will  frequently  be  the  same,  but 
+the  character  race  will  frequently  be  different.  Character 
+race directly relates to how players progress at a gameplay 
+level  in  EVE:  therefore,  choosing  different  races  in  EVE 
+likely reflects players' needs to explore more of the game. 
+On  the  other  hand,  for  gender,  it  appears  that  this  avatar 
+attribute reflects a personal level in the game, since gender 
+has  no  impact  on  gameplay.  This  large-scale  empirical 
+finding falls in line with the qualitative and smaller survey 
+literature  on  avatars,  gender,  and  roleplay  [6,19,40,43], 
+where exploring gender is not a common practice.  
+(cid:7)(cid:22)(cid:19)(cid:19)(cid:18)(cid:29)(cid:18)(cid:26)(cid:16)(cid:18)(cid:30)(cid:1)(cid:22)(cid:26)(cid:1)(cid:12)(cid:27)(cid:16)(cid:22)(cid:15)(cid:24)(cid:1)(cid:5)(cid:18)(cid:21)(cid:15)(cid:33)(cid:22)(cid:27)(cid:29)(cid:1)(cid:15)(cid:26)(cid:17)(cid:1)(cid:10)(cid:18)(cid:31)(cid:34)(cid:27)(cid:29)(cid:23)(cid:30)(cid:1)
+Finally, and most importantly, we do see differences related 
+to multiple character use in how these characters are used 
+socially.  Just  like  minutes  and  skill  points,  friendships 
+
+659
+
+this 
+
+time  played  and  demographics 
+
+increase  as  one-character  accounts  are  played  more,  and 
+decrease slightly for two- and three-character accounts. We 
+also see much better-connected characters as the number of 
+minutes and alt characters increases. However, and this is a 
+critical  finding  for  the  interpretation  of  in-game  social 
+networks: we see much more brokerage (path distance of 2, 
+reflecting a hub-and-spoke model) than triadic closure (path 
+distance  of  1  between  all  three  characters).  This  may 
+explain previous findings which correlated brokerage with 
+in-game  success  [34].  Instead  of  representing  characters 
+interacting with disparate parts of the social graph within a 
+game  inter-character  brokerage  demonstrates  how  a  single 
+user can use multiple characters as supports for one primary 
+account. 
+The network comparison provides the most critical point in 
+considering  an  individual’s  technical  representation.  The 
+regression  results  presented  in  Table  8  generally  confirm 
+the  findings  from  Table  5  regarding  the  relationship 
+between 
+to  character 
+creation.  However, 
+table  demonstrates  different 
+operationalizations  of  technical  user  representations  and 
+shows how they can influence the results of a given study.  
+As  we  stated  earlier,  the  eigenvector  results  reverse  given 
+account-  or  character-level  construction  of  the  network. 
+This  change  can  be  explained  as  an  interaction  between 
+player  behavior  and  the  way  eigenvector  centrality  is 
+calculated.  As  demonstrated  in  Figure  10,  active  players 
+tend  to  keep  their  alternative  accounts  adjacent  to  each 
+other  within  the  in-game  social  network.  This  inflates  the 
+number  of  ties  between  their  characters  and  thus  changes 
+each  character’s  eigenvector  centrality,  creating  a 
+correlation between an account having more characters and 
+an  account’s  network  position.  In  other  words:  the  more-
+active  alt  characters  that  the  player  has  close  by  in  the 
+network, the higher their centrality.  
+To  note,  this  result  is  complicated  by  the  technical 
+limitations  put  in  place  by  the  game  developers.  Each 
+account is limited to only three active character slots, so a 
+character  with  three  alts  will  have  the  highest  rate  of 
+centrality  inflation  but  also  the  highest  cost  to  creating  a 
+new  character  (as  they  will  have  to  delete  on  of  their 
+existing avatars to make room for a new one). This situation 
+results  in  a  negative  association  between  eigenvector 
+centrality  and  total  characters  because  as  centrality  is 
+inflated, the cost of creating a new character multiplies. 
+Collapsing  the  network  so  that  nodes  represent  users  does 
+away with this inflation and demonstrates that more-central 
+players are more likely to have more characters. While the 
+exact  mechanism  behind  this  correlation  requires  further 
+study, we speculate that this may be a case where the total 
+number  of  characters  created  serves  as  a  proxy  for 
+experience or expertise within the game, leading to greater 
+influence and status within the in-game social network. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Our 
+
+theories 
+
+about 
+
+Beyond  time  dedicated  to  characters,  the  use  of  multiple 
+characters has important implications for gameplay choices 
+and  especially  the  interpretation  of  server  log  data  at  an 
+account  level.  Below,  we  dive  deeper  into  the  differences 
+across the gameplay clusters. 
+The finding about path distance has critical implications for 
+the  analysis  of  in-game  social  networks.  Social  network 
+analysis  can  suffer  from  sampling  and  ideally  should  be 
+conducted with the entire network; however, even with an 
+entire  network,  multiple  character  use 
+introduces  a 
+confound  of  ego  network  structure  that  may  skew  social 
+network  results  significantly  by  inflating  the  rate  of 
+brokerage seen in structural surveys of in-game networks. 
+The phenomenon of multiple character use is an important 
+cultural  and  methodological  hurdle 
+to  understanding 
+technical  user  representation  and  behavioral  interpretation 
+from server log data. Based on the results, especially when 
+employing  social  network  analysis,  we  recommend  that 
+future research control for multiple characters per account. 
+Beyond  methodology,  however,  sociotechnical  theories 
+should also consider these implications to a higher degree.  
+When we conceptualize participants within a sociotechnical 
+system,  we  need  to  challenge  the  ease  of  mapping  one 
+individual with one user account with the evolving practices 
+of  using  multiple  profiles,  characters,  and  other 
+representations. 
+individual 
+representation currently focus on a wide array of emergent 
+practices  (again,  see 
+the 
+beginning),  but  on  a  quantitative  level,  we  do  little  to 
+support 
+around 
+multiplicative  identity.  This  paper  contributes  to  our 
+theoretical 
+technical 
+representations  by  establishing  a  baseline  for  how  often 
+these behaviors occur and how we can further think about 
+their 
+in 
+sociotechnical systems. 
+(cid:14)(cid:32)(cid:34)(cid:32)(cid:40)(cid:26)(cid:40)(cid:32)(cid:36)(cid:35)(cid:39)(cid:1)
+While this paper provides an empirical and methodological 
+contribution 
+technical  user 
+representations, it does have some limitations. First, while 
+we were granted access to a large portion of the server log 
+data from the population of EVE players, we did not have 
+granular, 
+in-game  actions. 
+Therefore, while we use the snapshot of gameplay statistics 
+taken at the end of the collection period, more varied data 
+would illuminate the variations in gameplay styles that we 
+could not discuss in this paper. Also, additional population 
+data across a variety of games – and especially other social 
+media  platforms, 
+for  generalizability  – would  allow 
+comparisons as to how the design of account and character 
+creation,  as  well  as  in-game  mechanics,  influence  the  rate 
+of adoption and methods of use of multiple avatars. 
+Second,  while  players  can  create  multiple  characters,  they 
+can also create multiple user accounts. The motivations in 
+
+influence  on  participants  and 
+
+longitudinal  data  about 
+
+the 
+
+literature  on  MPM  at 
+
+in 
+
+the  use  of  multiple 
+
+of  multiple 
+
+understanding 
+
+or 
+
+challenge 
+
+emergent 
+
+practices 
+
+researchers 
+
+an MMOG setting for creating multiple accounts are varied: 
+for example, limitations on character creation, the structure 
+of monetary transactions to pay for additional characters, or 
+other game mechanics that limit gameplay in certain ways 
+may  lead  players  to  adopt  multiple,  separate  accounts.  In 
+the case of EVE, players cannot train multiple characters at 
+the same time, so creating multiple accounts is one method 
+to achieving better characters. Further, there is an additional 
+financial  incentive,  where  players  can  pay  money  to  train 
+multiple  characters. 5  Finally,  the  cultural  atmosphere  of 
+intrigue  and  spying  within  the  EVE  universe  may  prompt 
+some players to adopt multiple accounts to hide themselves 
+when  conducting  covert  operations  against  other  players. 
+Players sometimes boast they own multiple accounts.6 Our 
+analysis of the dataset cannot tease apart multiple accounts 
+owned by distinct individuals.  
+Finally, because we only look at server log data, we do not 
+have insights into the motivations and strategies that players 
+exhibit  and  employ  when  creating  and  using  multiple 
+character avatars. Future research could pair server log data 
+with survey data to examine at a high level and large scale 
+what  kinds  of  personalities  and  decisions  lead  to  the 
+adoption  of  different  technical  identities.  Another  possible 
+limitation is the possibility that one account may represent 
+multiple  people  sharing  characters.  Further  survey  and 
+interview research is needed to establish its prevalence. 
+(cid:8)(cid:17)(cid:16)(cid:8)(cid:14)(cid:22)(cid:20)(cid:12)(cid:17)(cid:16)(cid:1)
+People use multiple accounts, profiles, and characters for a 
+variety  of  reasons,  from  privacy  to  exploration.  Even  as 
+sociotechnical  systems  continue  to  evolve  and  introduce 
+new  designs  for  identity,  emergent  behaviors  -  like  the 
+creation  of  multiple  technical  user  representations  -  will 
+introduce  unique  practices  and  keep  challenging  research 
+into human behavior. This paper explores the creation and 
+use  of  main  and  alt  characters  in  a  massively  multiplayer 
+online  game  to  present  an  empirical  study  of  alternative 
+character use at a population level. We show the differences 
+across different amount of character use, particularly related 
+to  behavioral  data,  and  argue  that  not  accounting  for 
+multiple characters can skew the results of certain analysis, 
+such as that of social networks.  
+(cid:6)(cid:8)(cid:13)(cid:16)(cid:17)(cid:24)(cid:14)(cid:10)(cid:9)(cid:11)(cid:10)(cid:15)(cid:10)(cid:16)(cid:21)(cid:20)(cid:1)
+We would like to thank Dmitri Williams and Brian Keegan 
+for  reviewing  early  drafts  of  this  paper,  as  well  as  our 
+anonymous reviewers and Eric Gilbert. Thank you also to 
+CCP for providing the data for this paper. This research has 
+been supported by USC Annenberg Graduate Fellowships. 
+
+                                                             
+(cid:2) 
+http://www.reddit.com/r/Eve/comments/2tolq9/ccp_please_enable_the_abi
+lity_to_login_multiple/  
+(cid:3) For example, see 
+http://www.reddit.com/r/Eve/comments/2zowjf/how_many_accounts_do_
+you_have_and_what_alts/  
+
+660
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+(cid:24)(cid:17)(cid:19)(cid:13)(cid:20)(cid:1)(cid:8)(cid:12)(cid:21)(cid:10)(cid:9)(cid:1)
+1.  Philip  E.  Agre.  1995.  The  Social  and  Interactional 
+Dimensions of Human-computer Interfaces. In Peter J. 
+Thomas (ed.). Cambridge University Press, New York, 
+NY,  USA,  67–106.  Retrieved  May  8,  2015  from 
+http://dl.acm.org/citation.cfm?id=214811.214823 
+
+2.  Muhammad Aurangzeb Ahmad, Brian Keegan, Dmitri 
+Williams,  Jaideep  Srivastava,  and  Noshir  Contractor. 
+2011.  Trust  Amongst  Rogues?  A  Hypergraph 
+Approach for Comparing Clandestine Trust Networks 
+in  MMOGs.  Fifth  International  AAAI  Conference  on 
+Weblogs  and  Social  Media.  Retrieved  May  9,  2015 
+from 
+http://www.aaai.org/ocs/index.php/ICWSM/ICWSM11
+/paper/view/2845 
+
+3.  Burcu  S.  Bakioğlu.  2012.  Negotiating  governance  in 
+virtual worlds: grief play, hacktivism, and LeakOps in 
+Second  Life®.  New  Review  of  Hypermedia  and 
+Multimedia 
+237–259. 
+http://doi.org/10.1080/13614568.2012.746742 
+
+4.  Christian  Bauckhage,  Kristian  Kersting,  Rafet  Sifa, 
+Christian  Thurau,  Anders  Drachen,  and  Alessandro 
+Canossa. 2012. How players lose interest in playing a 
+game:  An  empirical  study  based  on  distributions  of 
+times.  2012  IEEE  Conference  on 
+total  playing 
+Computational  Intelligence  and  Games  (CIG),  139–
+146. http://doi.org/10.1109/CIG.2012.6374148 
+
+5.  Scott  Caplan,  Dmitri  Williams,  and  Nick  Yee.  2009. 
+Problematic  Internet  use  and  psychosocial  well-being 
+among MMO players. Computers in Human Behavior 
+25, 
+1312–1319. 
+http://doi.org/10.1016/j.chb.2009.06.006 
+
+6.  Marcus  Carter,  Martin  Gibbs,  and  Michael  Arnold. 
+2012.  Avatars,  characters,  players  and  users:  multiple 
+identities at/in play. Proceedings of the 24th Australian 
+Computer-Human  Interaction  Conference,  ACM,  68–
+71. 
+
+7.  Mia Consalvo. 2007. Cheating: Gaining Advantage in 
+
+18, 
+
+6: 
+
+4: 
+
+Videogames. MIT Press. 
+
+and 
+
+8.  Anders Drachen, Rafet Sifa, Christian Bauckhage, and 
+Christian  Thurau.  2012.  Guns,  swords  and  data: 
+Clustering of player behavior in computer games in the 
+wild.  2012  IEEE  Conference  on  Computational 
+Intelligence 
+(CIG), 
+163–170. 
+http://doi.org/10.1109/CIG.2012.6374152 
+
+Games 
+
+9.  Nicolas  Ducheneaut  and  Robert  J.  Moore.  2004.  The 
+Social Side of Gaming: A Study of Interaction Patterns 
+in a Massively Multiplayer Online Game. Proceedings 
+of the 2004 ACM Conference on Computer Supported 
+Cooperative 
+360–369. 
+http://doi.org/10.1145/1031607.1031667 
+
+ACM, 
+
+Work, 
+
+10.  Jesse Fox and Wai Yen Tang. 2014. Sexism in online 
+video  games:  The  role  of  conformity  to  masculine 
+norms and social dominance orientation. Computers in 
+Human 
+314–320. 
+http://doi.org/10.1016/j.chb.2013.07.014 
+
+Behavior 
+
+33: 
+
+661
+
+1: 
+
+27, 
+
+11.  Mark  D.  Griffiths,  Mark  N.  O’Davies,  and  Darren 
+a 
+Chappell.  2004.  Online 
+comparison of adolescent and adult gamers. Journal of 
+Adolescence 
+87–96. 
+http://doi.org/10.1016/j.adolescence.2003.10.007 
+
+computer  gaming: 
+
+12.  Benjamin  M.  Gross.  2009.  Names  of  Our  Lives. 
+Proceedings  of  the  2009  International  Conference  on 
+Computational Science and Engineering - Volume 04, 
+IEEE 
+Society, 
+747–752. 
+http://doi.org/10.1109/CSE.2009.474 
+
+Computer 
+
+13.  Michael  Hitchens,  Anders  Drachen,  and  Deborah 
+Richards.  2012.  An  Investigation  of  Player  to  Player 
+Character 
+Identification  via  Personal  Pronouns. 
+Proceedings  of  The  8th  Australasian  Conference  on 
+Interactive  Entertainment:  Playing  the  System,  ACM, 
+11:1–11:11. http://doi.org/10.1145/2336727.2336738 
+
+14.  Philip  N.  Howard  and  Steve  Jones.  2004.  Society 
+
+online. SAGE. 
+
+4: 
+
+55, 
+
+’09, 
+
+CSE 
+
+2009. 
+
+15.  Yun  Huang,  Cuihua  Shen,  and  Noshir  S.  Contractor. 
+2013.  Distance  matters:  Exploring  proximity  and 
+homophily in virtual world networks. Decision Support 
+Systems 
+969–977. 
+http://doi.org/10.1016/j.dss.2013.01.006 
+
+16.  Yun  Huang,  Cuihua  Shen,  D.  Williams,  and  N. 
+2009.  Virtually  There:  Exploring 
+Contractor. 
+Proximity  and  Homophily 
+in  a  Virtual  World. 
+International  Conference  on  Computational  Science 
+and  Engineering,  2009.  CSE 
+’09,  354–359. 
+http://doi.org/10.1109/CSE.2009.471 
+
+17.  Yun  Huang,  Mengxiao  Zhu,  Jing  Wang,  et  al.  2009. 
+The  Formation  of  Task-Oriented  Groups:  Exploring 
+Combat  Activities  in  Online  Games.  International 
+Conference 
+and 
+Engineering, 
+122–127. 
+http://doi.org/10.1109/CSE.2009.465 
+
+on  Computational 
+
+Science 
+
+18.  David Huffaker, Jing Wang, Jeffery Treem, et al. 2009. 
+The  Social  Behaviors  of  Experts 
+in  Massive 
+Multiplayer Online Role-Playing Games. International 
+and 
+Conference 
+Engineering, 
+326–331. 
+http://doi.org/10.1109/CSE.2009.13 
+
+on  Computational 
+
+Science 
+
+19.  Searle  Huh  and  Dmitri  Williams.  2010.  Dude  Looks 
+like a Lady: Gender Swapping in an Online Game. In 
+Online  Worlds:  Convergence  of  the  Real  and  the 
+Virtual,  William  Sims  Bainbridge  (ed.).  Springer 
+London,  161–174.  Retrieved  May  10,  2015  from 
+http://link.springer.com/chapter/10.1007/978-1-84882-
+825-4_13 
+
+20.  Brian Keegan, Muhammad Aurangzeb Ahmed, Dmitri 
+Williams,  Jaideep  Srivastava,  and  Noshir  Contractor. 
+2010. Dark Gold: Statistical Properties of Clandestine 
+Networks  in  Massively  Multiplayer  Online  Games. 
+2010 IEEE Second International Conference on Social 
+Computing 
+201 
+–208. 
+http://doi.org/10.1109/SocialCom.2010.36 
+
+(SocialCom), 
+
+21.  Alex  Leavitt.  2015.  “This  is  a  Throwaway  Account”: 
+Temporary  Technical  Identities  and  Perceptions  of 
+
+2009. 
+
+CSE 
+
+’09, 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in  a  Massive  Online  Community. 
+Anonymity 
+the  18th  ACM  Conference  on 
+Proceedings  of 
+Computer Supported Cooperative Work &#38; Social 
+Computing, 
+317–327. 
+http://doi.org/10.1145/2675133.2675175 
+
+ACM, 
+
+3: 
+
+22.  Vili  Lehdonvirta,  Rabindra  A.  Ratan,  Tracy  L.  M. 
+Kennedy,  and  Dmitri  Williams.  2014.  Pink  and  Blue 
+Pixel$:  Gender  and  Economic  Disparity  in  Two 
+Massive Online Games. The Information Society 30, 4: 
+243–255. 
+http://doi.org/10.1080/01972243.2014.915277 
+
+23.  Li  Lu,  Cuihua  Shen,  and  Dmitri  Williams.  2014. 
+Friending your way up the ladder: Connecting massive 
+multiplayer  online  game  behaviors  with  offline 
+leadership. Computers in Human Behavior 35: 54–60. 
+http://doi.org/10.1016/j.chb.2014.02.013 
+
+24.  Hani  S.  Mahmassani,  Roger  B.  Chen,  Yun  Huang, 
+Dmitri Williams, and Noshir Contractor. 2010. Time to 
+Play?:  Activity  Engagement  in  Multiplayer  Online 
+Role-Playing Games. Transportation research record, 
+2157: 129–137. 
+
+25.  Adrienne L. Massanari. 2010. Designing for imaginary 
+friends:  information  architecture,  personas  and  the 
+politics of user-centered design. New Media & Society 
+12, 
+401–416. 
+http://doi.org/10.1177/1461444809346722 
+
+Press, 
+
+26.  Bonnie  Nardi  and  Justin  Harris.  2006.  Strangers  and 
+friends: collaborative play in world of warcraft. CSCW 
+’06:  Proceedings  of 
+the  2006  20th  anniversary 
+conference on Computer supported cooperative work, 
+ACM, 
+from 
+http://doi.acm.org/10.1145/1180875.1180898 
+
+Retrieved 
+
+149–158. 
+
+27.  Nelly Oudshoorn and Trevor Pinch (eds.). 2005. How 
+Users  Matter:  The  Co-Construction  of  Users  and 
+Technology. 
+Cambridge, 
+Mass. ;London. 
+
+The  MIT 
+
+28.  Nathaniel  Poor.  2014.  Collaboration  via  Cooperation 
+and  Competition:  Small  Community  Clustering  in  an 
+MMO. 2014 47th Hawaii International Conference on 
+System 
+1695–1704. 
+http://doi.org/10.1109/HICSS.2014.217 
+
+(HICSS), 
+
+Sciences 
+
+29.  Nathaniel Poor and Marko M. Skoric. 2014. Death of a 
+Guild,  Birth  of  a  Network  Online  Community  Ties 
+Within  and  Beyond  Code.  Games  and  Culture  9,  3: 
+182–202. http://doi.org/10.1177/1555412014537401 
+
+30.  Rabindra  A.  Ratan,  Jae  Eun  Chung,  Cuihua  Shen, 
+Dmitri  Williams,  and  Marshall  Scott  Poole.  2010. 
+Schmoozing  and  Smiting:  Trust,  Social  Institutions, 
+and Communication Patterns in an MMOG. . Journal 
+of Computer Mediated Communication 16, 1: 93–114. 
+http://doi.org/10.1111/j.1083-6101.2010.01534.x 
+
+31.  Rabindra A. Ratan, Nicholas Taylor, Jameson Hogan, 
+Tracy Kennedy, and Dmitri Williams. 2015. Stand by 
+Your  Man  An  Examination  of  Gender  Disparity  in 
+and  Culture: 
+League 
+1555412014567228. 
+http://doi.org/10.1177/1555412014567228 
+
+of  Legends.  Games 
+
+662
+
+ 
+
+4: 
+
+10, 
+
+16, 
+
+2015 
+
+32.  Cuihua  Shen.  2014.  Network  patterns  and  social 
+architecture  in  Massively  Multiplayer  Online  Games: 
+Mapping the social world of EverQuest II. New Media 
+& 
+672–691. 
+http://doi.org/10.1177/1461444813489507 
+
+Society 
+
+33.  Cuihua  Shen.  The  patterns,  effects  and  evolution  of 
+player social networks in online gaming communities :: 
+University  of  Southern  California  Dissertations  and 
+Theses. 
+from 
+http://digitallibrary.usc.edu/cdm/ref/collection/p15799
+coll127/id/394587 
+
+Retrieved  May 
+
+34.  Cuihua  Shen,  Peter  Monge,  and  Dmitri  Williams. 
+2012.  Virtual  Brokerage  and  Closure:  Network 
+Structure  and  Social  Capital 
+in  a  Massively 
+Multiplayer  Online  Game.  Communication  Research. 
+http://doi.org/10.1177/0093650212455197 
+
+35.  Cuihua  Shen,  Peter  Monge,  and  Dmitri  Williams. 
+2014.  The  evolution  of  social 
+ties  online:  A 
+longitudinal  study  in  a  massively  multiplayer  online 
+game.  Journal  of  the  Association  for  Information 
+Science  and  Technology  65,  10:  2127–2137. 
+http://doi.org/10.1002/asi.23129 
+
+36.  Frederic  Stutzman  and  Woodrow  Hartzog.  2012. 
+Boundary Regulation in Social Media. Proceedings of 
+the  ACM  2012  Conference  on  Computer  Supported 
+Cooperative 
+769–778. 
+http://doi.org/10.1145/2145204.2145320 
+
+ACM, 
+
+Work, 
+
+37.  Douglas  Thomas.  2008.  KPK,  Inc.:  race,  nation,  and 
+emergent  culture  in  online  games.  Learning  race  and 
+ethnicity: Youth and digital media: 155–174. 
+
+38.  Jing  Wang,  David  A.  Huffaker,  Jeffrey  W.  Treem,  et 
+al.  2011.  Focused  on  the  prize:  Characteristics  of 
+experts  in  massive  multiplayer  online  games.  First 
+Monday  16,  8.  Retrieved  May  9,  2015 
+from 
+http://journals.uic.edu/ojs/index.php/fm/article/view/36
+72 
+
+39.  Stanley Wasserman and Katherine Faust. 1994. Social 
+Network  Analysis:  Methods  and  Applications. 
+Cambridge University Press. 
+
+40.  Dmitri  Williams,  Mia  Consalvo,  Scott  Caplan,  and 
+Nick  Yee.  2009.  Looking  for  Gender:  Gender  Roles 
+and  Behaviors  Among  Online  Gamers.  Journal  of 
+Communication 
+700–725. 
+http://doi.org/10.1111/j.1460-2466.2009.01453.x 
+
+41.  Dmitri  Williams,  Noshir  Contractor,  Marshall  Scott 
+Poole,  Jaideep  Srivastava,  and  Dora  Cai.  2011.  The 
+Virtual  Worlds  Exploratorium:  Using  Large-Scale 
+Data 
+for 
+Communication  Research.  Communication  Methods 
+and 
+163–180. 
+http://doi.org/10.1080/19312458.2011.568373 
+
+Computational 
+
+Techniques 
+
+Measures 
+
+42.  Dmitri  Williams,  Nicolas  Ducheneaut,  Li  Xiong, 
+Yuanyuan  Zhang,  Nick  Yee,  and  Eric  Nickell.  2006. 
+From  Tree  House  to  Barracks:  The  Social  Life  of 
+Guilds in World of Warcraft. Games and Culture 1, 4: 
+338–361. 
+
+and 
+
+5, 
+
+2: 
+
+59, 
+
+4: 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+and 
+
+6, 
+
+ 
+43.  Dmitri Williams, Tracy L. M. Kennedy, and Robert J. 
+Moore.  2011.  Behind 
+the  Avatar:  The  Patterns, 
+Practices,  and  Functions  of  Role  Playing  in  MMOs. 
+Games 
+2: 
+171–200. 
+http://doi.org/10.1177/1555412010364983 
+
+Culture 
+
+44.  Richard T. A. Wood, Mark D. Griffiths, and Virginia 
+Eatough.  2004.  Online  data  collection  from  video 
+game players: methodological issues. Cyberpsychology 
+&  Behavior:  The  Impact  of  the  Internet,  Multimedia 
+and Virtual Reality on Behavior and Society 7, 5: 511–
+518. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+45.  Georgios  N.  Yannakakis,  Pieter  Spronck,  Daniele 
+Loiacono,  and  Elisabeth  André.  2013.  Player 
+Modeling. Artificial and Computational Intelligence in 
+Games 6: 45–59. 
+
+ 
+
+663
+
+

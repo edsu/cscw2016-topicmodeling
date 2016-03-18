@@ -1,0 +1,1891 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+You  Get  Who  You  Pay  for:    
+
+The  Impact  of  Incentives  on  Participation  Bias  
+
+Gary Hsieh, Rafal Kocielnik 
+
+Human Centered Design and Engineering 
+
+University of Washington 
+{garyhs, rkoc}@uw.edu 
+
+ 
+
+ 
+
+two  empirical 
+
+studies 
+
+in 
+
+found 
+
+ABSTRACT  
+Designing  effective  incentives  is  a  challenge  across  many 
+social computing contexts, from attracting crowdworkers to 
+sustaining  online  contributions.  However,  one  aspect  of 
+incentivizing  that  has  been  understudied  is  its  impact  on 
+participation  bias,  as  different  incentives  may  attract 
+different  subsets  of  the  population  to  participate.  In  this 
+paper,  we  present 
+the 
+crowdworking context that show that the incentive offered 
+influence  who  participates  in  the  task.  Using  the  Basic 
+Human  Values,  we  found  that  a  lottery  reward  attracted 
+participants  who  held  stronger  openness-to-change  values 
+while  a  charity  reward  attracted  those  with  stronger  self-
+transcendence  orientation.  Further,  we 
+that 
+participation  self-selection  resulted  in  differences  in  the 
+task  outcomes.  Through  attracting  more  self-directed 
+individuals,  the  lottery  reward  resulted  in  more  ideas 
+generated  in  a  brainstorming  task.  Design  implications 
+include utilizing rewards to  target  desired participants  and 
+using diverse incentives to improve participation diversity.  
+Author  Keywords  
+Incentives; participation bias; values; tailoring; nonresponse 
+bias; study participation; crowdsourcing. 
+ACM  Classification  Keywords  
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous.  
+INTRODUCTION  
+Whether it is encouraging crowd generated content in social 
+systems, 
+in  behavior  change 
+technologies,  or  attracting  participants  in  studies  and 
+surveys,  getting  people  to  participate  is  a  critical  problem 
+that  is  prevalent  in  many  human-computer  interaction 
+(HCI)  domains.  This  problem  is  perhaps  even  more 
+pronounced in the CSCW, Social Computing context, as the 
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must  be  honored. 
+Abstracting with credit is permitted. To copy otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00 
+DOI: http://dx.doi.org/10.1145/2818048.2819936  
+
+increasing  compliance 
+
+(a)                             (b)                             (c)  
+
+Figure 1. (a) Without incentives, a small percentage of the 
+
+population may voluntarily participate (as denoted by 
+solid dots). (b) & (c) Specific incentives may increase 
+participation but only appeal to certain types of people.  
+
+ 
+
+value of the technology depends on a critical mass of users 
+[18]. Various strategies have been researched to encourage 
+participation and quality contributions. Many have explored 
+the  use  of  theories  from  psychology,  economics,  and 
+communication  to  help  solve  this  problem  [e.g.,  29]. 
+Commercial sites also use a variety of technology-mediated 
+motivators  that  offer  badges,  points,  votes,  awards,  gifts, 
+lotteries or money to motivate its users. 
+Existing research has focused on the question of whether or 
+not  these  incentives  do  work,  and  which  reward  is  better. 
+For  practitioners,  these  studies  help  them  focus  on  which 
+reward  to  use  to  maximize  participation  and  task  effort. 
+[e.g., 1,11,15,23,29]. However, what is critically missing is 
+the  study  on  how  the  variety  of  incentives  influence  who 
+participates.  People  are  heterogeneously  motivated;  they 
+hold  different  values  and  have  different  needs.  At  the 
+individual level, this means that the effects of the different 
+rewards  or  strategies  are  not  uniform  across  all  possible 
+users.  For  example,  some  people  may  find  the  act  of 
+participation itself sufficiently rewarding, while others may 
+be  more  motivated 
+financially 
+compensated,  and  yet  another  group  may  find  it  most 
+rewarding when their participation is recognized by others. 
+Further,  offering  a  reward  could  act  as  disincentives  to 
+others who prefer not to be associated with the reward (e.g., 
+getting paid when the participants rather help pro bono).  
+Thus,  any  given  reward  may  motivate  only  a  subgroup  of 
+participants  who  value  that  reward,  but  may  have  little  or 
+
+to  participate  when 
+
+823
+
+negative  impact  on  others  who  are  not  interested  in  said 
+reward  (Figure  1).  This  raises  an  important  and  critical 
+issue  at  the  system  level  when  the  use  of  incentives  may 
+influence  more  people  to  participate,  but  attract  only  a 
+specific  type  of  participants.  This  could  be  a  problem  for 
+tasks  that  desire  specific  types  of  participants,  or  systems 
+trying to attract a diverse set of users.  
+In this work, we provide empirical evidence that people are 
+drawn to different incentives and their preferences can lead 
+to  systematic  differences  in  participant  composition  and 
+participation  results.  We  present  two  experiments  on  how 
+individuals’ personal values influences self-selection into a 
+brainstorming  task  that  offered  fixed  financial  rewards, 
+lottery  rewards  or  charity  rewards  (when  a  charitable 
+contribution is made on behalf of the participants). We then 
+examine  how  the  task  efforts  of  the  different  groups  of 
+participants  differed.  We  found  that  the  lottery  reward 
+attracted  users  who  value  openness-to-change 
+(self-
+the  charity  reward 
+direction  and  stimulation),  while 
+attracted  users  who  value  self-transcendence  (benevolence 
+and  universalism).  In  the  brainstorming  task,  the  reward 
+that  attracted  more  participants  valuing  self-direction 
+resulted in more ideas generated.  
+These  results  hold  numerous  design  and 
+theoretical 
+implications.  They  demonstrate  that  incentives  offered 
+affect  participation  decisions,  and  highlight  the  need  to 
+consider  participation  bias  when  using  different  rewards, 
+aside from the prevalent focus on maximizing response rate 
+or task performance. It also suggests the potential of using 
+diverse  rewards  as  a  way  to  improve  the  often  desired 
+participation  diversity  [34].  In  addition,  our  findings 
+uncover  a  number  of  nuanced  links  between  individual’s 
+values  and  reward  preferences.  These  findings  may  help 
+future  research 
+to  attract  more 
+participants  or  for  maximizing  different  tasks-goals  (e.g., 
+lottery reward for creative tasks).  
+BACKGROUND  AND  HYPOTHESES  
+The  primary  research  questions  are  whether  and  how 
+people’s participation decisions are impacted by the offered 
+incentives.  And  if  so,  could  task  outcomes  be  affected  by 
+the resulting participants? For scope, our research focus on 
+three types of postpaid rewards that are often used in both 
+research  and  commercial  applications:  fixed,  lottery,  and 
+charity  rewards  [47].  The  fixed  reward  represents  the 
+standard 
+to 
+participants. The lottery incentive enters participants into a 
+drawing  for  one  or  more  prizes.  Often,  and  in  our  work, 
+participants are told what the prizes are (e.g., $25) and the 
+odds  of  winning  (e.g.,  1  out  of  10).  Finally,  the  charity 
+reward differs from the fixed reward in that instead of being 
+paid, that money is instead donated to a charity.  
+RQ1.  Does  offering  fixed,  lottery  or  charity  rewards 
+influence who chooses to participate? 
+
+tailoring  rewards 
+
+reward  offered 
+
+(fixed-amount) 
+
+financial 
+
+in 
+
+824
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+tend 
+
+rewards 
+
+to  offer 
+
+these  premiums  or  rewards 
+
+RQ2.  Can  the  participation  bias  due  to  incentives 
+influence task outcomes? 
+An  area  where  researchers  have  directly  compared  these 
+rewards  to  each  other  is  in  research  on  survey  design, 
+studying  how 
+influence 
+response  rates.  In  general,  offering  money  seem  to  be  the 
+most effective in increasing survey responses [27]. Lottery 
+rewards  also  do  generally  increase  responses  [30,16,33]. 
+However,  for  charity  rewards,  studies  have  found  that  the 
+charity-related 
+little  or  no 
+improvement  over  not  offering  an  incentive  for  response 
+rates, and often perform worse than offering direct pay [14]. 
+In defense of the charity reward, some have suggested that 
+an  altruistic  appeal  can  be  more  effective  than  an  egoistic 
+appeal  [7,22],  and  that  it  could  be  more  cost  effective  as 
+“fewer checks had to be written” [36]. 
+However, the focus on general response rates overlooks the 
+more intricate question on how these incentives affect who 
+responds.  Survey  researchers  are  interested  in  sample 
+composition, often through the focus on non-response bias, 
+where they sought to know if the answers from respondents 
+may  differ  from  the  potential  answers  of  non-respondents 
+[38].  Much  work  has  studied  the  non-response  bias  of 
+general  survey  (e.g.,  mail  vs.  online)  [e.g.,  38],  but  in 
+comparison, the research linking incentives to response bias 
+is sparse. One reason is that the goal of studying response 
+bias is to help surveys achieve a representative sample, but 
+that  “most  commonly  recommended  protection  against 
+nonresponse  bias  has  been  the  reduction  of  nonresponse 
+itself.” [2]. Therefore, the studies of incentives on surveys 
+often focus on participation rate as the outcome of interest 
+and  not  on  understanding  who  chooses  into  participation 
+due to the incentives [28].  
+Of  the  survey  research  that  has  looked  at  how  different 
+people may be attracted to different rewards, the results are 
+not conclusive. For example, one experiment suggests that 
+monetary  incentives  may  diminish  responses  from  those 
+who  are  interested  in  the  survey  topic,  as  the  incentives 
+attracts respondents who are not just intrinsically interested 
+in  the  survey  topic  [17].  Some  recent  web-based  research 
+also 
+their 
+regression  models  and  found  that  lottery  has  a  stronger 
+effect  on  women  than  men  [33],  but  that  a  charity  reward 
+does not bias towards the sex, marital status, education or 
+household income of participants [36]. Part of the challenge 
+here is it is hard knowing a-priori what to compare, hence 
+most  studies  resort  back  to  comparing  the  more  “known” 
+statistics of the population (e.g., age, income) [2].  
+Thus,  one  of  our  goals  is  to  identify  what  are  some 
+individual characteristics that can be used to predict reward 
+preferences.  The  first  factor  we  study  is  individual’s  risk 
+attitude. Prospect theory suggests that risk-preference could 
+lead  people  to  prefer  the  lottery  option  over  a  fixed-pay 
+option, when the expected payouts are the same (e.g., $0.50 
+or  a  lottery  of  $50  with  1/100  chance  of  winning)  [26]. 
+
+included  basic  demographic  variables 
+
+in 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+it  may  also 
+
+incentives,  we  believe 
+
+Thus, we hypothesize that those who are more risk-seeking 
+would be more likely to choose to participate a task offering 
+the non-guaranteed, lottery reward.  
+H1. Risk-seeking  attitude  predict  a  preference  towards 
+lottery reward.  
+Values  and  Incentives  
+Another  potential  factor  influencing  reward  preferences  is 
+individuals’  personal  values.  Values  are  defined  as 
+“desirable,  trans-situational  goals,  varying  in  importance 
+that  serve  as  guiding  principles  in  people’s  lives”  [40]. 
+Research has shown that values can influence a number of 
+aspects  of  our  lives  [39].  Though  it  has  not  been  used  to 
+study 
+influence 
+participation decisions when incentives are offered.  
+Several  general  personal  values  dimensions  have  been 
+proposed  [21,37].  We  focus  on  Schwartz’s  Basic  Human 
+Values  for  a  number  of  reasons.  First,  Schwartz’s  values 
+discriminate  among  individual  people  instead  of  national 
+cultures. Second, Schwartz’s values are not limited to work 
+but also include values from different life domains. Third, 
+they have been well studied and tested. They have also been 
+included in the European Social Survey [39]. According to 
+the Basic Human Values developed by Schwartz, there are 
+10 basic human values, which then map onto 5 higher-level 
+values  (Figure  2).  The  closer  any  two  values  are  to  one 
+another, the more similar their underlying motivations.  
+In  this  work,  we  focus  on  two  higher-level  values: 
+openness-to-change  and  self-transcendence.  Openness-to-
+change encompasses two basic human values related to the 
+desire for independence and new experience (self-direction 
+and  stimulation).  Self-transcendence  encompasses 
+two 
+basic human values involving concern for the welfare  and 
+interests  of  others  (universalism  and  benevolence).  While 
+hedonism  is  sometimes  coded  as  an  openness-to-change 
+value, because it shares both elements of openness and self-
+enhancement  [39],  we  treat  it  as  a  separate  higher-level 
+value in our work.  
+Using Schwartz’s value, we first hypothesize that there is a 
+link  between  a  lottery  reward  and  the  openness-to-change 
+values  of  self-direction  and  stimulation.  These  are 
+individuals  who  value  stimulation  and  novelty.  They  are 
+willing  to  explore,  interested  in  taking  on  challenges,  and 
+are  also  less  likely  to  need  security  and  certainty.  Hence 
+their  valuation  for  a  lottery  reward  may  be  higher  than 
+others who are less inclined towards risk.  
+H2.  Openness-to-change  values  predict  a  preference 
+towards lottery reward. 
+What is interesting about the openness-to-change values is 
+that  they  also  have  been  associated  with  creativity  and 
+innovation [3]. The more an individual attaches to openness 
+to change over conservative values (on the opposite end of 
+the  value  structure),  the  higher  their  innovativeness  [44]. 
+Specifically, 
+largest 
+
+self-direction  values  have 
+
+the 
+
+825
+
+Figure 2. Schwartz’ Basic Human Values 
+
+ 
+
+correlation  with  creative  accomplishments  [12].  This 
+suggests  that  if  given  a  creative,  brainstorming  task  [32], 
+those  who  hold  strong  openness-to-change  values  may 
+enjoy  and  be  more  intrinsically  motivated  to  work  on  the 
+task. Prior research often assessed this motivation through a 
+free-choice measure, or how much they worked on the task 
+when they were no longer paid to [11]. In a brainstorming 
+context,  we  thus  examined  the  number  of  ideas  generated 
+beyond  what  was  asked.  We  also  studied  performance  on 
+task through the creativity of ideas generated.  
+H2a.  People  who  choose  lottery  reward  generate  more 
+ideas in a brainstorming task.  
+H2b.  People  who  choose  lottery  reward  generate  more 
+creative ideas in a brainstorming task. 
+Schwartz’s  value  may  also  predict  another  link  between 
+people  and  incentives:  those  individuals  who  value  self-
+transcendence, 
+and 
+transcendence of self interests” [39], may be more likely to 
+value and participate in a task offering the charity reward. 
+Much  prior  research  has  shown  the  relationship  between 
+these values and helping and prosocial behaviors [41].  
+H3.  Self-transcendence  values  predict  a  preference 
+towards charity reward.  
+EXPERIMENT  1  
+The goal of this first experiment is to demonstrate that these 
+aforementioned 
+influence 
+people’s  preference  for  rewards.  To  do  so,  we  presented 
+participants with two rewards – choosing between a lottery 
+reward and a fixed payment (lottery condition), or between 
+a charity reward and a fixed payment (charity condition).  
+Participants  from  Mechanical  Turk,  an  online  marketplace 
+for  work,  were  invited  to  participate  in  a  $1  survey  that 
+
+individual  differences  can 
+
+“enhancement 
+
+others 
+
+of 
+
+or 
+
+assessed their values and personality. In this first stage, they 
+were  asked  to  fill  out  questionnaires  about  their  value-
+orientation,  personality,  and  general  demographics  of  age, 
+gender, education level and income (Figure 3, top). 
+They  were  then  invited  to  participate  in  an  optional  paid 
+study  on  brainstorming  and  creativity.  If  they  chose  to 
+participate, they were then told which reward options they 
+had  (randomly  assigned).  Half  of  the  participants  chose 
+between a lottery reward and a fixed payment, and the other 
+half  between  a  charity  reward  and  a  fixed  payment.  The 
+financial cost for all the rewards was $0.25. For the lottery 
+condition,  they  would  be  entered  into  a  drawing  for  $25 
+(1/100 chance of winning). And in the donation condition, 
+they  would  donate  that  $0.25  to  a  charity  out  of  the  ten 
+possible charity choices (e.g., American Red Cross, NPR).  
+Similar  to  a  recent  study  of  creativity  on  an  online 
+marketplace for work, participants were asked to complete 
+the  Guilford’s  Alternative  Uses  Task  [32].  The  task 
+required them to generate as many unusual uses as possible 
+for  a  common  object  (in  this  study,  a  quarter),  using  the 
+same instruction as [32]. Our participants were required to 
+enter in 5 responses, but had the option of entering up to 10.  
+Finally, participants were asked to report their reasons for 
+choosing  the  reward,  their  reasons  for  participating  in  an 
+online marketplace for work, and their attitudes toward risk.  
+To be on par with US minimum wage, we priced the survey 
+portion of the study to be $1 (the survey took on average 8 
+minutes).  The  challenge  with  selecting  the  second  study 
+price  is  to  pick  one  that  would  lead  to  some  variation  in 
+decision;  we  do  not  want  to  offer  too  much  so  that  all  or 
+none of the workers participate. Thus we chose it to be one-
+fourth  of  the  $1  offered,  $0.25  (the  second  part  also  took 
+less  time).  The  choice  of  the  lottery  odds  (1:100)  is  two 
+folds. One, to make it a large enough contrast with the fixed 
+award ($25 vs. $0.25). Two, to make it easy for people to 
+compute  the  expected  value  and  see  that  it  is  the  same  as 
+the fixed reward (we also told them this explicitly). 
+ 
+Experiment 1 Design 
+
+Values'&'
+
+Demographics'
+
+Survey
+
+Participate'in'
+2nd study?
+
+Yes
+
+Choose'a'
+reward?
+
+Creativity'Task
+
+ 
+
+Experiment 2 Design 
+
+Participate'in'
+2nd study'given'
+
+a'reward?
+
+Yes
+
+Creativity'Task
+
+Values'&'
+
+Demographics'
+
+Survey
+
+ 
+Figure 3. Experiment flow. (1) Experiment 1: after deciding to 
+
+participate, participants chose between lottery and fixed or 
+charity and fixed. (2) Experiment 2: participants were offered 
+1 of 7 rewards to participate in the second task; no incentive 
+
+baseline and 6 incentive conditions (3 types x 2 levels). 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+There are a few things to note in this experimental design. 
+First, having the participants choose the incentive after an 
+initial survey (as opposed to doing that immediately for the 
+study) allowed us to collect data on those who did not opt 
+into  the  second  task.  This  gave  us  a  better  baseline 
+comparison  of  non-response  bias  to  the  second  task. 
+Second, this design is different from prior survey-incentive 
+studies where participants were offered a single reward and 
+decided whether or not to participate. Our “baseline” is the 
+fixed  reward  and  the  participants  decided  between  two 
+rewards. We chose our design as it separated the decisions 
+of  “whether  or  not  to  participate”  with  “which  reward  to 
+participate  with,”  which  enabled  us  to  focus  directly  on 
+incentive preferences. But we do test the true no incentives 
+baseline  in  Experiment  2.  Third,  we  chose  to  conduct  our 
+study on Mechanical Turk as how to effectively incentivize 
+crowdwork  is  an  active  area  of  research  [e.g.,1].  Our 
+findings  would  allow  us  to  directly  contribute  to  current 
+practices  in  this  context.  Further,  research  has  shown  that 
+Mechanical Turk is as diverse as other stand subject pools 
+and  is  being  used  as  subject  pools  for  many  experiments 
+[4,10], hence we also believe that our findings on incentive 
+decision  processes  can  be  extended  to  other  contexts.  We 
+will revisit this issue in the limitations section of this paper.  
+Participants  
+Participation  was  restricted  to  Mechanical  Turk  workers 
+based in the US with an approval rate higher than 90% and 
+have completed more than 50 tasks on MTurk. This was to 
+ensure English proficiency and task compliance.  
+For our final analyses, we had 190 participants. 228 people 
+started  the  study,  10  dropped  out  of  the  first  task.  Of  the 
+218  who  completed  the  first  task,  28  failed  consistency 
+checks  that  we  had  incorporated  into  the  survey  (e.g.,  “If 
+you  are  reading  this  question,  please  select  6  as  the 
+response”).  Of  the  190  left,  12  chose  not  to  participate  in 
+the optional second task (before seeing the award options) 
+and  10  chose  not  to  participate  after  seeing  the  award 
+options (without selecting a reward). Of those who chose to 
+participate in the second task, 3 did not complete the task (1 
+in  the  lottery  condition,  and  2  in  the  donation  condition). 
+Data 
+the 
+brainstorming task was used for our analyses.   
+62%  of  our  participants  were  female.  Participants’  mean 
+age is 37. The majority of them had an annual income less 
+than  $35,000  (61%),  was  Caucasian  (71.6%),  and  had  a 
+college or advanced degree (55%). These demographics are 
+comparable 
+to  prior  study  samples  of  experiments 
+conducted on Mechanical Turk [1]. 
+Measures  
+For  the  first  hypothesis  on  risks,  we  used  a  risk-aversion 
+measure (the domain-specific risk-attitude scale [48]) in the 
+post-study  survey.  We  used  two  items  from  the  gambling 
+and one item from the investment subscales (α=0.74). The 
+reported α, or the Cronbach’s alpha, is a standard measure 
+of internal consistency reliability. 
+
+remaining  165  who  completed 
+
+from 
+
+the 
+
+826
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(5 
+
+intended 
+
+level  values  of  openness-to-change  (4 
+
+To  assess  values,  we  use  the  Portrait  Value  Questionnaire 
+(PVQ) developed by Schwartz [39]. Participants were asked 
+to fill out all 10 value dimensions with 21 questions, but for 
+our  analyses,  we  focus  on  the  values  of  self-direction  (2 
+items:  α=0.48),  stimulation  (2  items:  α=0.81),  and  the 
+higher 
+items: 
+α=0.69),  self-transcendence 
+items:  α=0.77),  self-
+enhancement  (4  items:  α=0.83),  conservatism  (6  items: 
+α=0.71).  Note  that  while  the  individual  values’  alpha 
+reliability are not very high, Schwartz does argue that this is 
+reasonable due to the different aspects of the values the sub-
+items  are 
+to  represent  different  conceptual 
+components  [39].  As  recommended  by  Schwartz,  for 
+analyses, we normalized the ratings by individuals’ average 
+across the 21 items. In other words, we took the difference 
+between  each  rating  and  the  21-item  average,  we  then 
+calculated the value scores from these normalized scores.  
+To examine the quality difference in the creativity task, we 
+coded  the  ideas  for  quarter  use  given  by  the  participants 
+into 132 distinct categories. Adapting the procedure used in 
+[13],  three  independent  reviewers  evaluated  the  quality  of 
+each idea in terms of its originality and feasibility using a 5-
+point  Likert  scale.  The  coders  were  able  to  reach  a  high 
+agreement for originality (α=0.80) and feasibility (α=0.73). 
+We then calculated the average score for each idea for both 
+dimensions, and then calculated the average originality and 
+feasibility of ideas generated per individual participant.  
+In  addition,  we  wanted  to  explore  the  diversity  of  ideas 
+given  by  participants,  such  that  multiple  ideas  for  similar 
+use from a single participant are discounted. To do this, we 
+grouped  the  ideas  into  13  distinct  thematic  areas  covering 
+ideas about different conceptual uses of the quarter (e.g., as 
+
+discussed 
+
+discrepancies  were 
+
+a  jewelry  piece  or  a  music  instrument).  We  then  counted 
+how many of these distinct thematic areas were covered by 
+the ideas generated by each participant. 
+Finally, we analyzed participants’ open-ended response for 
+why they chose their reward over the other option available. 
+Based on the similarity between the free text responses we 
+devised a coding with 18 separate categories grouped into 6 
+thematic  areas.  Two  reviewers  independently  assigned  the 
+categories  to  the  comments.  After  this  initial  coding,  any 
+categorization 
+and 
+subsequently resolved between the reviewers.  
+Analyses  
+For  our  analyses,  we  split  our  dataset  into  the  lottery 
+condition and the charity condition. To explore the research 
+questions  and  to  test  our  hypotheses  H1-H3,  we  first 
+conducted  a  series  of  t-tests,  comparing  the  differences 
+between  the  two  groups  of  participants  within  each 
+incentive pairs (lottery and fixed; donation and fixed). We 
+also built two separate logistic regression models predicting 
+the  decision  (choosing  lottery  over  fixed  payment  and 
+choosing  donation  over  fixed  payment),  focusing  on  the 
+values,  openness-to-change  value 
+self-
+transcendence  value  (H3),  as  the  primary  independent 
+variables.  We  included  general  demographics  as  control 
+variables: gender, age, education level, and income level.  
+While their results are similar, we report both the t-test and 
+the regression results in this paper as they answer different 
+questions.  The  t-tests  show  if  there  “are  there  differences 
+between  groups”  whereas  the  logistic  regressions  show 
+“what, and how strong are the influencers in the decision.”  
+To  examine  difference  in  task  outcomes,  we  analyzed  the 
+
+(H2), 
+
+and 
+
+Lottery or Fixed Payment 
+
+ 
+
+Risk-Seeking (H1) *** 
+Openness-to-change (H2) * 
+Self-Trans 
+Self-Enhancement 
+Conservatism 
+Hedonism 
+Age 
+Gender (Female) 
+Income Level (1-8) 
+
+Ideas Generated (H2a) * 
+Categories of Ideas * 
+Avg. Originality ** 
+Avg. Feasibility 
+*** P<0.001, ** p<0.01, * p<0.05 
+
+Lottery  
+Mean (sd) 
+1.99 (0.71) 
+0.35 (0.79) 
+0.64 (0.49) 
+-0.80 (0.75) 
+-0.14 (0.79) 
+-0.26 (0.89) 
+37.1 (10.9) 
+0.68 (0.47) 
+2.71 (1.88)  
+
+6.53 (1.94) 
+4.61 (1.23) 
+2.90 (0.37) 
+4.14 (0.38) 
+
+ 
+
+Fixed Pay 
+Mean (sd) 
+1.48 (0.41)  Risk-Seeking  
+-0.05 (0.68)  Openness-to-change  
+0.77 (0.73)  Self-Trans (H3) *** 
+-0.54 (0.73)  Self-Enhancement *** 
+-0.10 (0.73)  Conservatism 
+-0.45 (1.12)  Hedonism *** 
+38.8 (14.1)  Age * 
+0.68 (0.47)  Gender (Female) * 
+2.66 (1.90) 
+Income Level (1-8) 
+
+Charity or Fixed Payment 
+Charity 
+Mean (sd) 
+1.61 (0.56) 
+0.18 (0.73) 
+1.06 (0.56) 
+-0.96 (0.78) 
+0.01 (0.84) 
+-1.10 (0.99) 
+42.2 (11.0) 
+0.79 (0.41) 
+2.34 (1.31) 
+
+Ideas Generated 
+
+5.70 (1.44) 
+4.02 (1.10)  Categories of Ideas 
+2.63 (0.43)  Avg. Originality 
+4.31 (0.43)  Avg. Feasibility 
+
+6.37 (2.06) 
+4.00 (1.50) 
+2.74 (0.49) 
+4.30 (0.40) 
+
+Fixed Pay 
+Mean (sd) 
+1.71 (0.75) 
+0.14 (0.69) 
+0.44 (0.77) 
+-0.27 (0.77) 
+-0.22 (0.73) 
+-0.23 (1.08) 
+34.4 (10.3) 
+0.53 (0.50) 
+2.36 (1.68) 
+
+6.13 (1.68) 
+4.35 (1.08) 
+2.72 (0.42) 
+4.31 (0.43) 
+
+Table 1. Mean and t-test results for sample and task performance between conditions (Experiment 1).  
+
+827
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+ 
+
+ 
+
+Select  
+Lottery 
+Model 2 
+Exp(B) 
+
+Model 3 
+Exp(B) 
+
+Model 1 
+Exp(B) 
+
+Select 
+
+Donation 
+Exp(B) 
+
+ 
+ 
+
+Risk-Seeking (H1)  
+Open.-to-chan (H2)  
+   Self-Direction 
+   Stimulation 
+Self-Trans. (H3) 
+Age 
+Gender (Female) 
+** P<0.01, * p<=0.05, † p<=0.10 
+
+8.26** 
+1.78** 
+ 
+** 
+1.09** 
+0.98** 
+1.31** 
+
+** 
+2.30** 
+* 
+ 
+
+* 
+* 
+1.20** 
+1.75** 
+0.78 *          0.80** 
+1.00** 
+1.00 * 
+1.35 * 
+1.37** 
+
+ 
+1.16** 
+** 
+ 
+2.99** 
+1.06** 
+2.41** 
+
+Table 2. Factors predicting reward-selection decision. 
+
+free choice effort and quality. For the free choice effort, we 
+used the number of ideas generated over the 5 required as 
+the  dependent  variable.  Since  it  is  a  count  variable,  a 
+Poisson  regression  is  used.  The  independent  variables  are 
+the  decision  choice  and  the  openness-to-change  values  of 
+self-direction  and  stimulation.  To  evaluate  the  quality,  we 
+compared the average originality and feasibility ratings (as 
+coded  by  the  authors).  We  also  compared  the  number  of 
+thematic categories of ideas generated. 
+Results  
+We separate our analyses into the two: on lottery/fixed and 
+on  charity/fixed.  In  the  lottery  condition,  36%  (30  out  of 
+83) chose the lottery reward over fixed pay. In the charity 
+condition, 33% (27 out of 82) chose the charity reward.    
+Lottery  
+Comparing  users  through  various  measures  between  those 
+who chose lottery instead of fixed pay, we noticed a couple 
+of key differences (Table 1). First, participants who chose 
+the lottery reported a higher risk-seeking rating (M=1.99 to 
+M=1.48 in a 1-5 Likert scale, supporting H1). Furthermore, 
+they were more strongly oriented towards the openness-to-
+change  values  (M=0.35  to  M=-0.05),  supporting  H2.  But 
+there  appeared  not  to  be  any  demographic  differences 
+between the two groups.  
+To  further  examine  these  factors’  predictive  power  on 
+participants’  decision,  we  focus  on  the  logistic  regression 
+model  (Table  2).  Our  analyses  indicate  that  when  risk-
+seeking  attitude  is  used  in  the  model,  it  is  the  primary 
+predictor  of  the  lottery  selection  decision  (Model  1).  For 
+each  unit  increase  in  the  risk-attitude  rating,  participants 
+were  8.3  times  more  likely  to  choose  the  lottery  reward. 
+Once removed, openness-to-change becomes the significant 
+predictor (Model 2). In post-hoc analyses, we used the two 
+subscales of openness into the analyses (Model 3), showing 
+that  stimulation  value  is  a  significant  predictor  (p=0.02) 
+while  self-direction  value  is  not  (p=0.47).  These  results 
+show  that  the  openness-to-change  values,  specifically, 
+stimulation, is related to risk-seeking (correlation: ρ=0.20). 
+This is not too surprising as one of the PVQ questions for 
+
+828
+
+Task Effort 
+Model 2 
+Exp(B) 
+ 
+1.49** 
+ 
+ 
+1.01†* 
+1.66†*  
+
+Model 1 
+Exp(B) 
+2.06** 
+1.23** 
+ 
+ 
+1.02†* 
+1.58†* 
+
+Chose Lottery 
+Open.-to-change  
+   Self-Direction 
+   Stimulation 
+Age 
+Gender (Female) 
+** P<0.01, * p<0.05, † p<0.10 
+Table 3. Factors predicting task effort for the Lottery/Fixed 
+
+Model 3 
+Exp(B) 
+ 
+** 
+1.49** 
+1.08** 
+1.00** 
+1.59†* 
+
+pay condition (H2a). 
+
+stimulation  is  specifically  about  risk:  “She  likes  to  take 
+risks. She is always looking for adventures.”  
+Related to our H2 about openness-to-change, we posit that 
+because individuals who hold these values tend to be more 
+creative and innovative, they would also be more interested 
+in a creativity task (H2a). Testing their free choice efforts 
+on  tasks  (how  many  ideas  they  generated  over  the  5 
+required),  we  found  that  compared  to  the  fixed-pay, 
+participants  who  chose  the  lottery  generated  more  ideas. 
+Specifically,  those  who  chose  the  lottery  rated  ~2  times 
+more additional ideas (M=1.53 to M=0.70, Table 3). These 
+results  support  our  hypothesis  that  those  who  chose  the 
+lottery reward put more effort into the creativity task (H1a). 
+Further evaluation of the quality of the ideas revealed that 
+the  participants  who  chose  lottery  reward  generated  ideas 
+that were more original (M=2.90 to M=2.63, p<0.01). They 
+also  generated  a  more  diverse  set  of  ideas  in  terms  of 
+thematic  categories  (M=4.61  to  M=4.02,  p=0.04).  The 
+feasibility difference was not significant, though in general 
+it seems that the more unique ideas tend to be less feasible.  
+As  an  exploratory  follow-up,  we  also  tested  separate 
+models  removing  openness-to-change  values  and  reward 
+selection decision (Table 3). Results indicate that (1) self-
+direction  but  not  stimulation  more  strongly  predicts  ideas 
+generated  and  more  importantly  that  (2)  the  reward 
+selection mediates self-direction’s effect on the numbers of 
+ideas  generated  –  that  choosing  the  lottery  mediates  the 
+effect of openness-to-change on the task effort (RQ2). 
+Our  qualitative  analyses  of  participants’  explanations  for 
+their  decisions  also  complement  our  quantitative  analyses. 
+84% of the participants who preferred fixed payment gave 
+reasons  related  to  their  general  attitude  towards  gambling 
+and  low  chances  of  winning.  For  example:  “rather  cash 
+than chance for nothing” and “Because I hate raffles”. The 
+participants  who  chose  the  lottery  reward  instead  either 
+discounted the smaller reward, and or thought their odds of 
+winning  were  good.  For  example:  “I  would  rather  take  a 
+chance on the $25 than .25 cents” and “the chances were 
+good and it opens up another channel for money to come to 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+increase 
+
+reward  selection.  A  unit 
+
+me”.  21%  of  those  who  chose  lottery  also  mentioned 
+specifically that they enjoyed gambling and taking risks. 
+Charity  
+The  differences  between  those  who  chose  the  charity 
+reward and the fixed payment are reported in Table 1. As 
+hypothesized (H3), those who chose the charity reward held 
+stronger self-transcendent values (M=1.06 to M=0.44).  
+Individuals who are older and female are also more likely to 
+select  the  charity  reward  option.  While  we  did  not 
+hypothesize it, there also appeared to be a difference in self-
+enhancement  values  across  the  two  groups.  Those  who 
+chose  the  fixed  payment  held  stronger  self-enhancement 
+values.  Perhaps  the  most  direct  explanation  for  this 
+difference  is  that  self-transcendence  and  self-enhancement 
+are  negatively  correlated  and  conceptually  reside  on 
+different  ends  of  the  dimension  on  self-  versus  other-
+oriented.  Those  who  are  other-oriented  are  more  inclined 
+towards donation, whereas those more self-oriented are not.  
+In the logistic regression model (Table 2), we found that, as 
+hypothesized,  self-transcendence  does  strongly  predict 
+charity 
+in  self-
+transcendence  rating  means  3  times  more  likely  that  an 
+individual will choose the charity reward.  
+While  we  had  not  hypothesized  any  relationship  between 
+the charity reward selection and task performance, we did 
+explore  their  relationships.  Reward  selection  did  not 
+influence task performance. But like the lottery model, self-
+direction 
+task 
+performance. Again, signifying the link between this value 
+and intrinsic interest in the task.  
+The  participants  who  decided  to  donate  the  money  to  a 
+charity gave reasons related to their attitude towards giving, 
+charities or the cause in general (other-oriented). The most 
+common single reason for donating was their willingness to 
+help and be generous (38% of those donated). For example: 
+“It's good to give.” and “Because the charity needs it.”  On 
+the other hand, those who selected fixed payment attributed 
+it  mostly  to  the  importance  of  money  to  them  and  their 
+immediate  need  for  money  (self-oriented).  For  example: 
+“Because I'm poor and would rather have the money!” and 
+“Because I need every penny I can make right now.”  
+Discussion  
+In  this  experiment,  we  found  that  openness-to-change 
+values  and  risk-seeking  attitude  predicted  a  preference 
+towards  the  lottery  reward  over  the  fixed  reward  and  that 
+those who chose the lottery reward put more effort on the 
+creativity task and gave more original ideas than those who 
+chose the fixed reward. But more nuanced analyses showed 
+that  it  is  the  stimulation  value  that  influenced  the  reward 
+choice, and that the self-direction value that predicted task 
+effort.  For  the  charity  reward,  the  self-transcendent  values 
+predicted a preference towards it over the fixed reward.  
+
+is  a  significant  positive  predictor  of 
+
+829
+
+to 
+
+One  potential  concern  with  our  findings  is  that  the  task 
+outcomes  may  be  due  to  the  different  rewards  having  a 
+differential effect on participation, and not the participation 
+self-selection. For example, prior research has shown how 
+offering  money  can  undermine  effort  on  task  [11].  In  our 
+case,  through  additional  analyses  with  values  and  the 
+decision,  we  found  that  the  openness-to-change  values 
+(specifically,  self-direction)  is  a  direct  predictor  of  task 
+effort,  suggesting  that  at  least  part  of  the  observed  task 
+effort  differences  can  be  attributed 
+the  resulting 
+difference in the participant composition.  
+EXPERIMENT  2  
+One  of  the  main  limitations  of  experiment  1  is  that  it 
+pitched  lottery  or  donation  against  the  fixed  payment. 
+While this allowed us to show that people have a preference 
+for certain rewards, it did not directly answer the research 
+question:  do  people  of  certain  types  choose  to  participate 
+because of the rewards offered. 
+Thus, for the second experiment, we use the similar setup as 
+used in Experiment 1, but instead of asking participants to 
+choose between two rewards, participants were offered one 
+reward for the second task, and asked to decide whether or 
+not to participate. Further, instead of just two conditions in 
+Experiment  1,  we  had  seven  conditions:  baseline  no 
+payment  condition;  $0.05  fixed;  $0.25  fixed;  $5  lottery 
+(1:100  chance  of  winning);  $25  lottery  (1:100  chance  of 
+winning);  $0.05  donation;  and  $0.25  donation.  These 
+conditions represented a true baseline of no rewards, and 6 
+reward  conditions  3  types  x  2  payment  levels  (Figure  3, 
+bottom).  The  higher  reward  value  ($0.25)  was  chosen  to 
+match the incentive levels used in Experiment 1. The lower 
+reward value was chosen to give a lower value comparison.  
+The same task is used, but instead of brainstorming creative 
+ways  to  use  a  quarter,  participants  were  asked  to  generate 
+ideas for a brick (also used in [32]).  
+Participants  
+We  used  the  same  conditions  to  screen  participants  on 
+the 
+Mechanical  Turk.  In  addition,  we  also 
+experiment 
+in 
+Experiment  1  (based  on  user  id).  In  all,  we  had  927  who 
+started  our  survey.  32  did  not  finish  the  first  survey.  Of 
+those who finished, 48 failed our consistency checks. Of the 
+847 left, 30 failed our manipulation check (i.e., what reward 
+they  were  offered  for  participating  in  the  second  task). 
+Those  that  did  not  complete  the  first  survey  or  failed  our 
+checks were removed from further analyses.  
+Of  the  817  left  and  used  for  analyses,  385  opted  not  to 
+participate  in  the  second  task  with  the  randomly  assigned 
+incentive  (47%).  Those  who  opted  out  were  asked  to 
+provide a reason. While their reasons varied, the majority of 
+the  comments  were:  “I  don’t  have  time”  “the  pay  is  too 
+low”, and “I am not good at brainstorming.”  
+Of 
+the 
+brainstorming  task  after  clicking  on  the  continue  button 
+
+limited 
+those  who  have  not  participated 
+
+those  who  continued,  40  did  not  complete 
+
+to 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Figure 5. Experiment 2 additional ideas generated across 
+
+conditions. 
+
+ 
+
+the 
+
+incentive 
+
+types 
+
+the 
+
+incentive 
+
+level  across 
+
+in  a  logistic  regression  analysis  comparing  the  group  who 
+participated in the creativity task against those who did not. 
+As an alternative test, we compared the self-reported risk-
+seeking 
+through  an 
+ANOVA.  There  was  no  significance  difference  across 
+conditions (H1 not supported). One possible explanation for 
+the  difference  between  our  two  experiments,  as  we  will 
+discuss later, is that the contrast between lottery and fixed 
+in experiment 1 may have led to a stronger emphasis on the 
+risk part of the incentive.  
+To  test  the  relationships  between  values  and  participation 
+decision  (H2  and  H3),  we  built  4  separate  logistic 
+regression  models  for  each  of 
+types 
+(combining  the  2  price  levels  of  incentives  together).  The 
+decision  to  continue  (yes/no)  was  the  dependent  variable. 
+We used the same set of variables for the independent and 
+control variables in Experiment 1. In addition, we included 
+the reward level as an independent variable. 
+The  results  support  both  our  hypotheses  and  replicates 
+findings  from  Experiment  1  (H2  &  H3).  Openness-to-
+change  values  positively  predicts  participation  in  a  task 
+when  the  reward  is  a  lottery,  while  self-transcendence 
+values positively predicts participation when the reward is a 
+charity  reward  (Table  4).  Further,  as  visible  in  Figure  3, 
+offering  the  higher  valued  reward  was  effective  in  Fixed, 
+but not in the Charity condition.  
+Through additional post-hoc analyses, we found that when 
+we  using  the  lower-level  values  of  self-direction  and 
+stimulation values directly, the stimulation value was not a 
+significant  predictor  (while  it  was  in  Experiment  1).  This, 
+we  believe,  may  further  support  the  finding  that  the 
+emphasis on risk was weaker in this experiment.  
+Also to note is that openness-to-change had about the same 
+effect  in  the  no  pay  condition  as  the  lottery  condition  in 
+attracting participation. This is likely due to the fact that the 
+task is on creativity  and  brainstorming.  Participants, when 
+not  offered  rewards,  may  have  self-selected  into  the  task 
+because they were intrinsically interested in the task.    
+
+Figure 4. Experiment 2 participation rate across conditions. 
+
+(4 
+
+and 
+
+items:  α=0.71), 
+
+ 
+(9%  of  those  who  started).  Consistent  with  Experiment  1, 
+we  coded  these  participants  as  not  participating  in  the 
+second task. In other words, our outcome measure used in 
+the analyses was not whether participants said they would 
+continue, but rather if they did.   
+60%  of  our  participants  were  female;  mean  age  was  35. 
+About a third of them had an annual household income of 
+less than $35,000 (35%)1, was Caucasian (76.2%), and had 
+a  college  or  advanced  degree  (54%).  These  demographics 
+closely resemble participants from Experiment 1. 
+Measures  
+The  same  measures  used  in  Experiment  1  were  used  in 
+Experiment  2.  The  reliability  of  these  measures  were 
+comparable  to  Experiment  1:  risk-aversion  (α=0.68);  self-
+direction  (2  items: α=0.48),  stimulation  (2  items:  α=0.79), 
+openness-to-change 
+self-
+transcendence  (5  items:  α=0.74).  Our  coding  of  ideas  for 
+brick  use  resulted  in  329  distinct  categories.  The  three 
+independent reviewers evaluated the quality of each idea in 
+terms of its originality (α=0.69) and feasibility (α=0.67).  
+Results  
+First,  we  examined  the  participation  rate  per  condition 
+(Figure  3).  While  our  focus  is  not  on  the  impact  of 
+incentives  on  attracting  participants,  the  result  supports 
+prior  findings:  money  is  the  most  effective  at  attracting 
+participants,  then  lottery,  and  then  donation.  Compared  to 
+the baseline no incentive condition, the donation conditions 
+actually  had  a  lower  participation  rate.  Further,  while  the 
+higher  fixed  and  lottery  incentives  had  the  general  effect 
+increasing participation rate, the charity rewards did not.  
+Incentives  and  Participation  Decision  
+In  this  section,  we  focus  on  RQ1  to  see  if  the  different 
+incentives  attract  different  participants.  In  other  words,  if 
+there is a participation bias when the incentives are used.  
+Because  we  posed  the  risk-attitude  question  at  the  end  of 
+the creativity task, we were not able to include that measure 
+                                                             
+1  We  changed  this  measure  from  individual  to  household 
+income between Experiments, thus the “higher” value here.  
+
+ 
+
+ 
+
+830
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+ 
+
+ 
+
+No Pay 
+Exp(B) 
+
+Fixed 
+Exp(B) 
+
+Lottery 
+Exp(B) 
+
+Donate 
+Exp(B) 
+
+1.58** 
+Open-to-chan. (H2) 
+1.34** 
+Self-trans. (H3) 
+ 
+High Reward $0.25 
+1.00†* 
+Age 
+Gender (Female) 
+1.73†* 
+** P<0.01, * p<0.05, † p<0.10 
+
+1.32** 
+1.32** 
+1.88** 
+1.04** 
+1.81†* 
+
+1.40†* 
+1.12** 
+1.34** 
+1.02†* 
+1.38** 
+
+1.04** 
+1.68** 
+0.94** 
+1.03** 
+1.05** 
+
+Table 4. Factors predicting participation decision. 
+
+Incentives  and  Task  Outcomes    
+Next, we focus on how participation bias may impact task 
+outcomes  (H2a  &  H2b).  Figure  4  shows  the  mean  ideas 
+generated per condition beyond the initial 5 required.  
+For  this  analyses,  we  again  used  a  Poisson  regression  for 
+the count variable. Because we did not have a full factorial 
+(the no incentive model only had one value, $0), we instead 
+coded  the  incentive  condition  into  7  groups,  comparing 
+against the baseline no incentive.  
+The  results  support  H2a  at  the  high  value  level.  For  these 
+higher  value  rewards  ($0.25,  $25 
+lottery  and  $0.25 
+donation), the fixed and donation were significantly lower 
+than the baseline. The lottery condition generated 1.2 times 
+more  additional  ideas  than  those  in  the  baseline  condition 
+(but  this  relationship  was  not  significant  in  our  model, 
+p=0.18),  while  participants  in  the  fixed  and  donation 
+generated  0.63  times  (p<0.01)  and  0.50  times  (p<0.01)  as 
+many  additional  ideas  than  the  baseline  no  incentive 
+condition  (Table  5).  Again,  self-direction  seems  to  be  a 
+stronger predictor of ideas generated, although stimulation 
+was  also  a  positive  predictor  in  this  Experiment.  Also, 
+similar to Experiment 1, the older the participants were, the 
+more ideas they generated. 
+Results  for  the  low  reward  levels  ($0.05,  $5  lottery  and 
+$0.05 donation) were not significantly different from the no 
+incentive  condition.  This  suggests  that  when  the  value  of 
+the incentives were low, their impact were weak. Both the 
+participation  rate  and  the  subsequent  outcomes  were  not 
+significantly different across these low reward conditions.   
+Contrary  to  experiment  1;  however,  neither  the  originality 
+score  nor  the  feasibility  score  were  significantly  different 
+across  conditions 
+lottery 
+incentives  conditions  had  the  highest  average  originality 
+(M=2.17)  to  the  baseline  no  pay’s  (M=2.10),  but  the 
+difference  was  small  and  non-significant.  It  is  hard  to 
+speculate  on  the  reason  for  the  null  result  here,  but  it  is 
+important  to  note  that  the  observed  originality  score 
+difference  in  Experiment  1  was  also  not  large  (0.30 
+difference on a 5 pt. rating). 
+DISCUSSION  
+Existing research has largely focused on using incentives as 
+to  encourage  more  participation.  But  we 
+a  way 
+hypothesized  and  found  that  offering  incentives  can  also 
+
+(H2b  not  supported).  The 
+
+Task Effort 
+Model 2 
+Exp(B) 
+ 
+ 
+ 
+ 
+ 
+ 
+1.27** 
+ 
+ 
+1.01** 
+1.05**  
+
+Model 3 
+Exp(B) 
+ 
+ 
+ 
+ 
+ 
+ 
+** 
+1.12** 
+1.29** 
+1.01** 
+1.06†* 
+
+Model 1 
+Exp(B) 
+0.78** 
+1.02** 
+0.98** 
+0.63** 
+1.23†* 
+0.50** 
+ 
+ 
+ 
+1.01** 
+1.08†* 
+
+$0.05 
+Lottery $5 
+Donate $0.05 
+$0.25 
+Lottery $25 
+Donate $0.25 
+Open.-to-change  
+   Self-Direction 
+   Stimulation 
+Age 
+Gender (Female) 
+** P<0.01, * p<0.05, † p<0.10 
+Table 5. Factors predicting task effort (H2a) where baseline 
+
+contrast is the no incentive condition. 
+
+ 
+
+impact  who  participates.  Specifically,  we  found  that  risk-
+seeking,  and  values  of  openness-to-change,  are  likely  to 
+encourage the participation decision under a lottery reward; 
+and that values of self-transcendence are likely to influence 
+participation decision under a charity reward (H1, H2, H3).  
+Our  results  show  that  this  participation  bias  due  to 
+incentives is critical to consider. The observed effects were 
+not small. Participants holding certain values were 1.5 to 3 
+times  more  likely  to  participate  in  the  task  given  the 
+appropriate  incentives.  Further,  those  self-selected,  self-
+directed  participants  generated  1.2-1.5 
+times  more 
+additional  ideas  in  a  brainstorming  task.  The  overall  task 
+result quality was also higher in Experiment 1 (though not 
+different in Experiment 2). While offering money was most 
+effective  in  getting  participation,  our  result  show  that 
+different rewards could attract a larger group of individuals 
+who are more intrinsically interested in the task. In a system 
+or a large crowdsource context, they can have a big impact 
+on  the  composition  of  participants  and  the  task  outcome 
+(20+  additional  ideas  in  a  crowd  of  100).  The  same  point 
+also goes to the use of the charity reward. While this type of 
+reward was a lot less useful in getting more participants, it 
+could  still  be  very  impactful  in  attracting  a  specific  set  of 
+individuals who value benevolence and universalism. These 
+individuals  have  been  shown  to  serve  particular  roles  in 
+certain systems, such as helping out newcomers [25]. 
+For the rest of this section, we will discuss more nuanced 
+implications of our work.   
+Incentives  and  Participation  Decisions  
+One  way  to  discuss  the  findings  regarding  incentive  and 
+participation  bias  is  through  a  formal  model,  such  as  one 
+presented by Bénebou and Tirole for modeling the impact 
+of incentives on (prosocial) behaviors [3].   
+
+𝑣")𝑎+(𝑣’𝑦𝑎−𝐶(𝑎)	   
+
+831
+
+represents an individuals’ intrinsic valuation of the activity; 
+
+activity.  The  basic  intuition  is  that  the  more  an  individual 
+values  the  activity  and/or  the  reward,  the  more  likely  she 
+will  participate  because  the  activity  will  be  more  valuable 
+
+In their model, 𝑎 denotes participating level for an activity, 
+which  in  our  case  is  discreet  (to  participate  or  not). 𝑣" 
+𝑣’ represents her valuation of the incentive amount, and 𝑦 
+the  amount. 𝐶(𝑎)	    is  the  cost  for  participating  in  the 
+than the cost of participating, 𝐶(𝑎).  
+baseline condition (𝑦=0), we found that openness-to-change 
+value the task (e.g., high 𝑣", or those who are intrinsically 
+incentive  rate  is  low  (𝑦=$0.05),  the  incentives  attracted 
+Then, at the high incentive level (𝑦=$0.25), the incentives 
+
+some  participants  who  value  the  rewards,  but  their  effects 
+were  not  strong  and  the  differences  were  not  significant. 
+
+had  a  positive  effect  on  participation  decision.  When  no 
+incentives  are  offered,  people  who  decided  to  participate 
+
+Our  empirical  findings  support  this  general  model.  In  the 
+
+motivated). This was also suggested in [17]. Then, when the 
+
+became  a  key  force  in  driving  the  participation  decision. 
+This  is  where  we  observed  the  biggest  differences  across 
+conditions.  
+But this model also highlights our concern that prior work 
+overlooks  the  differences  across  incentive  types  and  treat 
+them  all  as  interchangeable  tools  to  increase  participation 
+rate.  This  model  does  not  account  for  differences  in 
+people’s valuation of different types of incentives. In other 
+
+words,  there  is  no  way  to  account  for  different 𝑣’  for 
+
+individuals’ valuation of the rate, given there are different 
+
+different 
+incentives.  And  as  we  have  found,  while 
+increasing  the  financial  incentive  from  $0.05  to  $0.25 
+increased  participation  rate,  the  same  $0.20  increase  for 
+charity  reward  did  not  affect  participation.  Related 
+experiment  has  also  shown  that  when  using  candies  as 
+incentives,  offering  more  candies  did  not  influence  task 
+performance [20]. A modification to their model to account 
+
+for this is to change 𝑣’𝑦, to 𝑣,𝑖 to highlight differences in 
+types of incentives, i.  𝑣")𝑎+(𝑣,𝑖𝑎−𝐶(𝑎)	   
+𝑉,𝑎,𝑖 −𝐶(𝑎)
+
+Further,  to  accommodate  the  different  kinds  of  positive 
+incentives used concurrently, including the intrinsic reward 
+from performing the action, a summation can be used where 
+I denotes all the different incentives offered.  
+
+,∈1
+
+ 
+
+Another point to discuss about incentives and participation 
+decision  is  the  relationship  between  risk-attitude  and 
+participation  when  lottery  reward  is  offered.  It  seems  that 
+risk-attitude, like values, can add to one’s valuation of the 
+lottery  incentive.  However,  we  found  that  while  it  was  a 
+factor in participation decision in Experiment 1, it was not 
+in experiment 2. One explanation is that participants in the 
+first experiment chose between a lottery or a fixed reward, 
+
+832
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+talk  about 
+
+whereas  in  the  second  experiment,  they  chose  between 
+participating  with  the  lottery  reward  or  not.  Research  has 
+shown  that  offering  alternatives  does  influence  decision 
+making;  they  focus  on  tradeoff  contrasts  [43].  Contrasting 
+with  a  guaranteed  pay,  the  potential  for  “loss”  was  made 
+more salient in Experiment 1.  
+We  should  also  briefly 
+incentives  and 
+participation bias in terms of general demographics. We did 
+not  find  any  consistent  demographic  differences  across 
+incentive conditions. We found that individuals who chose 
+a charity reward over a fixed tended to be older in the first 
+experiment,  but  that  was  not  replicated  in  the  second 
+experiment. While prior work seems to agree that age does 
+positively correlate with charitable giving, the relationship 
+between general demographics and giving is complex [19]. 
+Controlling  for  many  other  variables,  some  of  these 
+differences  may  no  longer  be  discernible  [6].  Further,  we 
+should  point  out  with  lottery,  prior  work  actually  suggest 
+that  it  would  have  a  stronger  effect  on  women  than  men 
+[15], but we did not find a significant difference.  
+Values,  Incentives  &  Creativity  
+Another contribution of this work is the insights we add to 
+our understanding of personal values and their relationships 
+with incentives and creativity.  
+Despite the number of personality characteristics to explore, 
+we  chose  to  focus  on  a  motivational  construct,  values, 
+which has been shown to influence our behaviors in many 
+different contexts [41]. We argue that to examine responses 
+to  different  motivators, 
+to  examine 
+individuals’  motivations  –  and  values  offer  a  way  to 
+categorize  the  different  types  of  motivations.  And  indeed, 
+our  findings  do  demonstrate  that  these  value  dimensions 
+can help us understand preference towards certain rewards.  
+But  with  the  lottery  reward,  the  effects  of  values  may  be 
+more  nuanced.  Our  analyses 
+the 
+is 
+stimulation  sub-dimension  of  openness-to-change 
+that 
+predicts  interests  in  the  lottery  (especially  when  risk  is 
+highlighted). This is the value that is associated with risks 
+and  seeking  variety  and  challenges  in  life.  But  the  main 
+predictor between value and the creativity task performance 
+is self-direction, the other half of openness-to-change. This 
+is  the  value  associated  with  individuals  who  care  about 
+independent  thought,  freedom  of  choice,  and  exploration. 
+Our analyses also attempt to address the concern that it was 
+the different incentives that (directly) caused the difference 
+in  task  outcomes.  In  our  model  we  see  that  these  values 
+predicted  free  choice  effort,  indicating  that  these  values 
+signal intrinsic interests in the creativity task.  
+Incentivizing  for  Diversity    
+From  a  practical  side,  our  results  also  hold  important 
+implications for using incentives to improve diversity.  
+In  many  contexts,  the  goal  of  attracting  more  participants 
+may be to maximize a certain output, and our results show 
+that  using  the  right  incentives  can  help  the  designers  to 
+
+it  makes  sense 
+
+indicate 
+
+that 
+
+it 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+resources 
+
+the  different  skills  and 
+
+target  those  goals  more  effectively  (e.g.,  lottery  reward  to 
+get  more  ideas  generated).  But  in  some  contexts,  having 
+diversity is more critical. For example, from a community 
+design perspective, having a more diverse group of people 
+may  ensure  more  perspectives  being  presented  while 
+maximizing 
+that 
+individuals  bring.  This  would  minimize  problems  such  as 
+filter bubble [35] and at the same time maximizing benefits 
+such as fostering innovations [13].  
+While prior research has explored strategies to help attract 
+more newcomers and participants, our finding suggests that 
+offering any single reward may lead to a more homogenous 
+sample.  Money,  lottery  rewards,  or  donation  incentives, 
+when used individually, will attract a subset of participants 
+who  are  drawn  to  those  rewards,  making  the  resulting 
+participants  more  similar in some dimensions (as depicted 
+in Figure 1). This suggests that there may not be any single 
+incentive  that  can  be  used  to  ensure  a  diverse  system. 
+Simply not offering anything is also not a solution, as not 
+offering any incentives may also only attract a certain type 
+of  individuals  (e.g.,  those  who  value  the  task  intrinsically 
+and/or  incur  low  costs  from  participation).  As  Thaler  and 
+Sunstein points out, the default is also a design [45].  
+A  potential  solution  is  to  design  systems  that  allow 
+participants the option to choose from different rewards to 
+increase  participation,  which  may  help  attract  participants 
+from  different  strata  of  the  population.  But  another, 
+potentially  more  effective  approach, 
+the 
+incentives  to  the  individuals.  Our  research  contributes  to 
+this idea of incentive tailoring by pointing out critical links 
+between individuals and the reward they prefer (e.g., lottery 
+and 
+self-
+transcendence).  With  a  better  understanding  of  people’s 
+preference towards the different rewards, we may be able to 
+attract different types of individuals through incentives.  
+LIMITATIONS  AND  FUTURE  DIRECTIONS  
+Studying  incentives  and  motivations  on  Mechanical  Turk 
+has  its  limitations.  We  did  this  because,  one,  testing  their 
+effects in this setting supports the ecological validity of our 
+work  as  our  results  may  be  directly  applied  back  to 
+Mechanical  Turk.  Two,  our  focus  is  on  basic  human 
+judgment  and  decision  processes.  Mechanical  Turk  offers 
+us access to just as diverse, if not more, group of subjects 
+than  other  subject  pools  [4,10].  It  is  certainly  true  that 
+Mechanical Turk, by design, also attracts a certain types of 
+users.  However,  that  might  further  strengthen  our  general 
+claims about incentives and selection bias since with a more 
+diverse  group  of  participants, 
+there  may  be  more 
+pronounced  differences  between  those  who  chose  to 
+participate  versus  those  who  do  not.  Nonetheless,  more 
+research is needed to examine these participation biases in 
+different contexts, using types of tasks and types and levels 
+of incentives.  
+
+openness-to-change, 
+
+charity 
+
+is 
+
+to 
+
+tailor 
+
+and 
+
+and 
+
+CONCLUSION  
+In  this  paper  we  explore  the  influence  of  incentives  on 
+participation  bias.  While  existing  research  has  largely 
+focused  on  using  incentives  as  a  way  to  encourage  more 
+participation, we demonstrate that the choice of incentives 
+may also introduce a bias to the demographics of attracted 
+participants. Furthermore, because the incentives can affect 
+the composition of people who choose to participate, it can 
+also result in differences in task outcomes.  
+Our results offer many important insights for incentivizing 
+participation,  but  also  highlights  the  critical  need  for  a 
+better  understanding  of  incentives  and  participation.  We 
+hope that our findings will advance research in this area and 
+lead to more informed and effective use of incentives.  
+ACKNOWLEDGMENTS  
+We would like to thank Lisa Hu and Stella Ding with their 
+help  with  the  experiments,  and  Michael  Yu  and  the 
+Prosocial  Computing  Group  for  their  feedback  on  this 
+project.  This  work  was  in  part  supported  by  National 
+Science Foundation grant #1348543.  
+REFERENCES  
+1.  
+
+Judd Antin and Aaron Shaw. 2012. Social desirability 
+bias and self-reports of motivation: a study of amazon 
+mechanical turk in the US and India. In Proceedings of 
+the SIGCHI Conference on Human Factors in 
+Computing Systems (CHI '12). ACM, New York, NY, 
+USA, 2925-2934. DOI:10.1145/2207676.2208699  
+J. Scott Armstrong and Terry S. Overton. 1977. 
+Estimating nonresponse bias in mail surveys. Journal 
+of Marketing Research 14, 396-402. DOI: 
+10.2307/3150783 
+
+2.  
+
+3.   Roland Bénabou and Jean Tirole. 2006. Incentives and 
+
+Prosocial Behavior. American Economic Review, 
+96(5), 1652-1678. DOI: 10.1257/aer.96.5.1652  
+
+4.   Michael Buhrmester, Tracy Kwang, and Samuel D. 
+
+Gosling. 2011. Amazon's Mechanical Turk a new 
+source of inexpensive, yet high-quality, data?. 
+Perspectives on Psychological Science 6, 1, 3-5. DOI: 
+10.1177/1745691610393980 
+
+5.   Steven M. Burgess. 1992. Personal values and 
+
+consumer research: An historical perspective. Research 
+in Marketing 11, 1, 35-79. 
+
+6.   Mary Ellen S. Capek. 2001. Women and philanthropy: 
+
+Old stereotypes, new challenges. Monograph Series. 
+
+7.   Dean J. Champion and Alan M. Sear. 1968. 
+
+Questionnaire response rate: A methodological 
+analysis. Soc. F., 47, 335.  
+
+8.   Allan H. Church. 1993. Estimating the effect of 
+incentives on mail survey response rates: A meta-
+analysis. Public Opinion Quarterly 57, 1, 62-79. DOI: 
+10.1086/269355 
+
+833
+
+9.   Philip J. Cook, and Charles T. Clotfelter. 1991. The 
+
+peculiar scale economies of lotto (No. w3766). 
+National Bureau of Economic Research. 
+
+10.   Matthew J. C. Crump , John V. McDonnell, and Todd 
+M. Gureckis. 2013. Evaluating Amazon's Mechanical 
+Turk as a tool for experimental behavioral research. 
+PloS one 8, 3, e57410. 
+DOI:10.1371/journal.pone.0057410 
+
+11.   Edward L. Deci, Richard Koestner, and Richard M. 
+Ryan. 1999. A meta-analytic review of experiments 
+examining the effects of extrinsic rewards on intrinsic 
+motivation. Psychological Bulletin 125, 6, 627. 
+
+12.   Stephen J. Dollinger, Philip A. Burke, and Nathaniel 
+
+W. Gump. 2007. Creativity and values. Creativity 
+Research Journal 19, 2-3, 91-103. 
+
+13.   Maryann P. Feldman and David B. Audretsch. 1999. 
+
+Innovation in cities:: Science-based diversity, 
+specialization and localized competition. European 
+economic review 43, 2, 409-429. DOI:10.1016/S0014-
+2921(98)00047-6 
+
+14.   David H. Furse and David W. Stewart. 1982. Monetary 
+
+incentives versus promised contribution to charity: 
+New evidence on mail survey response. Journal of 
+Marketing Research 19, 3, 375-380. 
+DOI:10.2307/3151572 
+
+15.   Anja S. Goritz. 2004. The impact of material incentives 
+
+on response quantity, response quality, sample 
+composition, survey outcome and cost in online access 
+panels. International Journal of Market Research 46, 
+3, 327-346. 
+
+16.   Anja S. Göritz and Hans-Georg Wolff. 2007. Lotteries 
+
+as incentives in longitudinal web studies. Social 
+Science Computer Review 25, 1, 99-110. DOI: 
+10.1177/0894439306292268 
+
+17.   Robert M. Groves. 2006. Nonresponse rates and 
+
+nonresponse bias in household surveys. Public Opinion 
+Quarterly 70, 5, 646-675. DOI:10.1093/poq/nfl033 
+
+18.   Jonathan Grudin. 1994. Groupware and social 
+
+dynamics: eight challenges for developers. Commun. 
+ACM 37, 1 (January 1994), 92-105. 
+DOI:10.1145/175222.175230 
+
+19.   John J. Havens, Mary A. O’Herlihy, and Paul G. 
+
+Schervish. 2006. Charitable giving: How much, by 
+whom, to what, and how. The nonprofit sector: A 
+research handbook, 2, 542-567. 
+
+20.   James Heyman and Dan Ariely. 2004. Effort for 
+
+payment a tale of two markets. Psychological science 
+15, 11, 787-793.  
+DOI:10.1111/j.0956-7976.2004.00757.x 
+
+21.   Geert Hofstede. 1980. Culture’s consequences: 
+International differences in work-related values. 
+Beverly Hills, CA: Sage 1980. 
+
+834
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+22.   Michael J. Houston and John R. Nevin. 1977. The 
+
+effects of source and appeal on mail survey response 
+patterns. Journal of Marketing Research 14, 3, 374-
+378. DOI:10.2307/3150777 
+
+23.   Gary Hsieh, Robert E. Kraut, and Scott E. Hudson. 
+2010. Why pay?: exploring how financial incentives 
+are used for question & answer. In Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems (CHI '10). ACM, New York, NY, USA, 305-
+314. DOI:10.1145/1753326.1753373  
+
+24.   Gary Hsieh, Scott E. Hudson, and Robert E. Kraut. 
+
+2011. Donate for credibility: how contribution 
+incentives can improve credibility. In Proceedings of 
+the SIGCHI Conference on Human Factors in 
+Computing Systems (CHI '11). ACM, New York, NY, 
+USA, 3435-3438. DOI:10.1145/1978942.1979454 
+25.   Gary Hsieh, Youyang Hou, Ian Chen, and Khai N. 
+
+Truong. 2013. "Welcome!": social and psychological 
+predictors of volunteer socializers in online 
+communities. In Proceedings of the 2013 conference 
+on Computer supported cooperative work (CSCW '13). 
+ACM, New York, NY, USA, 827-838. 
+DOI:10.1145/2441776.2441870 
+
+26.   Daniel Kahneman and Amos Tversky. 1979. Prospect 
+
+theory: An analysis of decision under risk. 
+Econometrica: Journal of the Econometric Society 47, 
+2, 263-291. 
+
+27.   Leslie Kanuk and Conrad Berenson. 1975. Mail 
+surveys and response rates: A literature review. 
+Journal of Marketing Research 12, 4, 440-453. 
+DOI:10.2307/3151093 
+
+28.   Ronald C. Kessler, Roderick J.A. Little, and Robert M.. 
+
+1995. Advances in strategies for minimizing and 
+adjusting for survey nonresponse. Epidemiologic 
+Reviews 17, 1, 192-204. 
+
+29.   Robert E. Kraut, Paul Resnick, Sara Kiesler, Moira 
+
+Burke, Yan Chen, Anikt Kittur, and John Riedl. 2012. 
+Building successful online communities: Evidence-
+based social design. MIT Press (2012). 
+
+30.   Jerold S. Laguilles, Elizabeth A. Williams, and Daniel 
+
+B. Saunders. 2011. Can lottery incentives boost web 
+survey response rates? Findings from four experiments. 
+Research in Higher Education 52, 5, 537-553. 
+31.   Desmond Lam. 2007. An exploratory study of 
+
+gambling motivations and their impact on the purchase 
+frequencies of various gambling products. Psychology 
+& Marketing 24, 9, 815-827. DOI:10.1002/mar.20185 
+32.   Sheena Lewis, Mira Dontcheva, and Elizabeth Gerber. 
+2011. Affective computational priming and creativity. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '11). ACM, New 
+York, NY, USA, 735-744. 
+DOI:10.1145/1978942.1979048 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+47.   Keith Warriner, John Goyder, Heidi Gjertsen, Paula 
+
+Hohner, and Kathleen McSpurren. 1996. Charities, no; 
+Lotteries, no; Cash, yes main effects and interactions in 
+a Canadian incentives experiment. Public Opinion 
+Quarterly 60, 4, 542-562. DOI:10.1086/297772 
+2002. A domain-specific risk-attitude scale: 
+Measuring risk perceptions and risk behaviors. Journal 
+of Behavioral Decision Making, 15, 4, 263-290. 
+
+48.   Elke U Weber, Ann-Renee Blais, and Nancy E. Betz. 
+
+33.   Katja Lozar Manfreda, Michael Bosnjak, Jernej 
+
+Berzelak, Iris Haas, and Vasja Vehovar. 2008. Web 
+surveys versus other survey modes: A meta-analysis 
+comparing response rates. Journal of the Market 
+Research Society 50, 1, 79-104. 
+
+34.   Scott E. Page. 2008. The difference: How the power of 
+
+diversity creates better groups, firms, schools, and 
+societies. Princeton University Press (2008). 
+
+35.   Eli Pariser. 2011. The filter bubble: How the new 
+
+personalized Web is changing what we read and how 
+we think. Penguin (2011). 
+
+36.   Dan H. Robertson and Danny N. Bellenger. 1978. New 
+
+method of increasing mail survey responses: 
+Contributions to charity. Journal of Marketing 
+Research 15, 4, 632-633. 
+
+37.   Milton Rokeach. 1973. The Nature of Human Values. 
+
+Free Press (1973) 
+
+38.   Linda J. Sax, Shannon K. Gilmartin, and Alyssa N. 
+
+Bryant. 2003. Assessing response rates and 
+nonresponse bias in web and paper surveys. Research 
+in higher education 44, 4, 409-432. 
+DOI:10.1023/A:1024232915870 
+
+39.   Shalom H. Schwartz. 2003. A Proposal for Measuring 
+
+Value Orientations across Nations. Chapter 7 in the 
+Questionnaire Development Package of the European 
+Social Survey, 259-290. 
+
+40.   Shalom H. Schwartz. 2006. Basic human values: 
+
+theory, measurement, and applications. Revue 
+Française de Sociologie 47, 4, 249-288 
+
+41.   Shalom H. Schwartz. 2012. An overview of the 
+
+Schwartz theory of basic values. Online Readings in 
+Psychology and Culture 2, 1, 11. DOI:10.9707/2307-
+0919.1116 
+
+42.   Maurice Schweitzer, David A. Asch. 1995. Timing 
+
+payments to subjects of mail surveys: cost-
+effectiveness and bias. Journal of Clinical 
+Epidemiology 48, 11, 1325-1329. 
+
+43.   Itamar Simonson, and Amos Tversky. 1992. Choice in 
+
+context: Tradeoff contrast and extremeness aversion. 
+Journal of Marketing Research 29, 3, 281.  
+
+44.   Jan-Benedict EM Steenkamp, Frenkel ter Hofstede, 
+
+and Michel Wedel. 1999. Cross-national investigation 
+into the individual and national cultural antecedents of 
+consumer innovativeness. The Journal of Marketing 
+63, 2, 55-69. DOI:10.2307/1251945 
+
+45.   Richard H. Thaler and Cass R. Sunstein. 2008. Nudge. 
+
+Yale University Press. 
+
+46.   Amos Tversky, and Daniel Kahneman. 1992. Advances 
+
+in prospect theory: Cumulative representation of 
+uncertainty. Journal of Risk and Uncertainty 5, 4, 297-
+323. DOI:10.1007/BF00122574 
+
+835
+
+

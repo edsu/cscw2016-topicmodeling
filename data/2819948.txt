@@ -1,0 +1,1651 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+
+Automatic Archiving versus Default Deletion: What 
+Snapchat Tells Us About Ephemerality in Design 
+Bin Xu1, Pamara Chang2, Christopher L Welker3, Natalya N. Bazarova2, Dan Cosley1 
+
+1Department of Information Science 
+
+2Department of Communication 
+
+3Department of Psychology 
+
+Cornell University 
+
+Ithaca NY 14850 USA 
+
+[bx55, pfc46, clw222, nnb8, drc44]@cornell.edu 
+
+ 
+
+ABSTRACT 
+Unlike  most  social  media,  where  automatic  archiving  of 
+data  is  the  default,  Snapchat  defaults  to  ephemerality: 
+deleting  content  shortly  after  it  is  viewed  by  a  receiver. 
+Interviews with 25 Snapchat users show that ephemerality 
+plays  a  key  role  in  shaping  their  practices.  Along  with 
+friend-adding  features  that  facilitate  a  network  of  mostly 
+close relations, default deletion affords everyday, mundane 
+talk  and  reduces  self-consciousness  while  encouraging 
+playful  interaction.  Further,  although  receivers  can  save 
+content  through  screenshots,  senders  are  notified;  this 
+selective  saving  with  notification  supports  complex 
+information  norms  that  preserve  the  feel  of  ephemeral 
+communication while supporting the capture of meaningful 
+content.  This  dance  of  giving  and  taking,  sharing  and 
+showing,  and  agency  for  both  senders  and  receivers 
+provides  the  basis  for  a  rich  design  space  of  mechanisms, 
+levels, and domains for ephemerality. 
+Author Keywords 
+Ephemerality; ownership; permanence; privacy; Snapchat 
+ACM Classification Keywords 
+H.5.3.  Information  interfaces  and  presentation  (e.g.,  HCI): 
+Group and Organization Interfaces 
+INTRODUCTION 
+With the ongoing rapid drops in price for storage, including 
+cloud  technologies,  retaining  data  has  never  been  so  easy. 
+In  most  online  systems,  permanent  data  retention  is  the 
+
+Permission to  make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission 
+from 
+Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to 
+ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819948 
+
+fee.  Request  permissions 
+
+and/or 
+
+a 
+
+useful 
+
+aspects, 
+
+supporting 
+
+default. Our chat log is saved on Facebook Messenger, and 
+when  we  post  pictures  in  Instagram,  they  will  stay  there 
+‘forever.’  Besides  its  business  value  to  the  companies  for 
+modeling  users’  interests,  such  automatic  archiving  has 
+many 
+coordination, 
+collaboration, reminiscing, and life-logging [5, 8, 23, 38].  
+Automatic  archiving  also  creates  challenges.  In  particular, 
+there are tensions between self-presentation and archiving, 
+in part because systems might “exhibit” data in unintended 
+ways  [19].  Such  older  data  can  cause  conflicts  with  the 
+presentation  of  the  current  self  and  lead  to  serious  issues 
+and  active  work  to  remove  data  from  the  archive  [43]. 
+Studies of digital possessions also found that users need to 
+actively  decide  what  data  to  preserve  and  dispose  of  in 
+order to maintain a meaningful collection of digital artifacts 
+[29, 35]. Overall, automatic archiving requires active self-
+management about which data should be persistent. 
+Ephemerality as an Alternative to Permanence 
+Recent  scholarship  has  used  these  challenges  to  call 
+attention  to  the  opposite  of  persistence:  ephemerality. 
+Bannon calls out forgetting as an important human activity 
+and  ability,  arguing  that  HCI  and  ubiquitous  computing 
+researchers  should  think about when forgetting  in systems 
+is  “a  feature,  not  a  bug”  [1].  Mayer-Schönberger  further 
+argues  that  persistence  of  data  without  users’  control  can 
+lead  to  serious  personal  consequences,  both  in  terms  of 
+others’  perceptions  and  their  own  ability  to  remember  the 
+past in ways that support their evolving personal and social 
+needs [26]. 
+Thus,  a  design  alternative  to  automatic  archiving  arises: 
+default  deletion.  Mayer-Schönberger  proposed  to  let  users 
+set  an  expiration  date  for  digital  information  [26],  while 
+Bannon  proposed  the  notion  of  self-destructing  data  [1]—
+an  idea  realized  in  Chi  et  al.’s  prototype  “burning  your 
+memory  away:  a  matchstick-like  video  recording  and 
+storage device that burns itself away after being used [6].” 
+Here, rather than protecting future selves’ identity, the idea 
+is  that  scarcity  has  value:  less  available  objects  are  more 
+special  [6,  7].  That  prototype  was  never  implemented, 
+
+1662
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+
+ 
+
+ 
+
+   
+
+(a)                                 (b)                                            (c)                                      (d)                                   (e) 
+
+Figure 1. Key Snapchat interface elements. (a) Users can take photos (“snaps”) and draw on them or add captions. They can also 
+
+set an expiration time in seconds, save a copy of the photo to the phone, or add the snap to their Story. (b) Receivers get 
+
+notifications through their snap list, which shows unopened snaps, opened snaps, and sent snaps. (c) Receivers must hold the 
+screen to view the snap; a countdown on the upper right corner shows when snap will be deleted. (d) Receivers can also take a 
+screenshot while viewing the snap; here for example, by pressing the power button and home buttons of an iPhone. (e) When a 
+
+screenshot is taken, senders are notified via their contact list (the arrow with three dots next to “B” at the top).  
+
+although  Odom  et  al.  did  build  a  device  that  provided 
+limited  access  to  past  digital  content  and  showed  that  in 
+family life contexts such scarcity was seen as valuable [29].  
+These  ideas  have  also  percolated  into  industry,  with  tools 
+like  Snapchat,  Wickr,  and  iDelete  making  data  ephemeral 
+through default deletion. Among these, Snapchat has grown 
+quickly among younger users, and as of March 2015, is the 
+third  most  popular  social  medium  behind  Facebook  and 
+Instagram [36]. The adoption of these systems suggests that 
+people find real value in ephemeral communication.  
+In this study we explore this value, and how the affordance 
+of  default  deletion  supports  it,  by  interviewing  Snapchat 
+users  about  their  practices  and  goals  in  using  the  system. 
+Their  responses  indicate  that  much  of  Snapchat’s  value 
+comes from its support of mundane, everyday conversation 
+among close friends; ephemerality plays a key role in this 
+by  preventing 
+the  accumulation  of  meaningless  and 
+potentially embarrassing content. This, in turn, affects self-
+presentation. With fears of inadvertent distribution reduced, 
+behavior  on  Snapchat  has  less  front-stage  self-censorship 
+and more “be-yourself” back-stage performance [14]: being 
+fun,  funny,  informal,  and  interesting  are  key  values  that 
+ephemerality  affords.  Still,  sometimes  both  performances 
+and particular mundane-but-meaningful moments are worth 
+saving.  People  who  receive  content  can  capture  it  with 
+screenshots,  circumventing  default  deletion—but 
+the 
+system  notifies  senders  when  this  happens.  This  selective 
+saving  with  notification  leads  to  a  complex  set  of  norms 
+around  what  should  be  captured  and  shared,  by  and  to 
+whom.  Taken 
+these  findings  suggest  both 
+theoretical  lenses  for  how  ephemerality  affects  interaction 
+and ideas for system designs that use it as a feature. 
+
+together, 
+
+THE DESIGN OF SNAPCHAT 
+To ground the discussion, we start with a brief overview of 
+the  Snapchat  interface  as  of  March  2015,  illuminating  the 
+elements that study participants commonly mentioned. 
+Snapchat  is  an  application  for  iOS  and  Android  phones; 
+there is no web or desktop version. Its core feature allows 
+users to send pictures to other Snapchat users that they have 
+added  as  friends.  Users  can  only  add  friends  by  entering 
+their  Snapchat  username  or  by  searching  through  their 
+mobile phone contacts for other Snapchat users. This design 
+limits  people’s  ability  to  add  acquaintances,  leading  to 
+smaller  networks  of  closer  friends  than  most  other  social 
+media. 
+Sending Snaps and Stories 
+When  a  user  wants  to  send  a  picture  to  a  friend  (a  snap), 
+they  use  their  phone  camera  to  take  a  picture  from  inside 
+the  app:  pictures  stored  in  the  phone  can’t  be  sent  as  a 
+snap1.  Senders  then  choose  a  receiver,  and  can  optionally 
+customize  the  snap  by  adding  a  brief  caption  or  drawing 
+(Figure 1a). They can also set the lifespan of a snap, which 
+is  how  long  the  receiver  has  after  opening  it  before  it  is 
+automatically  deleted,  to  between  1  and  10  seconds;  the 
+default is 10. Senders can also send a short video, although 
+this is less common.  
+In addition to snaps sent to individuals, Snapchat provides a 
+Story function that allows users to send snaps to their whole 
+network.  Story  snaps  last  for  24  hours—similar  to  the 
+default expirations proposed by Mayer-Schönberger [26]—
+and  any  friend  of  the  user  can  view  the  snap  during  that 
+                                                             
+1 Another interface named Chat allows users to send pictures saved in their 
+phones, but it cannot be done in the Snap interface. 
+
+1663
+
+they 
+
+ 
+time  period.  Stories,  and  notifications  of  Stories,  live  in  a 
+separate part of the app from person-to-person snaps. 
+Snapchat has other, less commonly used features, including 
+Chat, Video Chat, Snapcash, Discover, and Our Story. Chat 
+provides  text  messaging, but  conversations  disappear  after 
+users leave the chat. Video Chat allows users to video chat 
+simultaneously.  Snapcash  permits  users  to  send  money  to 
+each other. Discover is similar to Stories, except that they 
+are  created  by  news  and  entertainment  companies  like 
+CNN. Our Story allows people to  post  snaps for location-
+based Stories that Snapchat curates. 
+Receivers, Ephemerality, Deletion, and Selective Saving 
+Receivers  are  notified  when 
+receive  a  snap 
+individually or when someone posts a snap to a Story they 
+follow.  To  see  the  snap,  the  receiver  must  press  the 
+notification icon and hold the screen for the duration of the 
+snap (Figure 1c). After the sender-set time expires, the snap 
+is deleted from the receiver’s view and cannot be retrieved, 
+much as in the burn your memory away idea [6]. 
+However, this ephemerality is not absolute. Mobile phones 
+can  take  screenshots,  and  although  in  Snapchat  this  is  not 
+easy  because  receivers  must  also  hold  the  screen,  it  is 
+possible  (Figure  1d).  In  addition  to  being  physically 
+awkward,  it  can  be  socially  awkward,  because  Snapchat 
+detects the screenshot and notifies the sender (Figure 1e).  
+Summarizing  the  overview  of  the  Snapchat  interface,  we 
+see its ephemerality as strongly emphasizing the affordance 
+of  default  deletion,  while  screenshots  afford  selective 
+saving  with  notification.  These  affordances  are  quite 
+different  from  other  media,  where  persistence  [5,  38]  and 
+permanence 
+recordability, 
+reviewability, and replicability [8]. Thus, we would expect 
+practices  in  Snapchat  to  be  quite  different  than  in  other 
+social media, and in fact a recent study identified that one 
+key difference of Snapchat is to allow people to “share the 
+moments”  with  close  relationships  [2].  Our  goal  is  to 
+understand  why  and  how  this  occurs,  focusing  on  these 
+affordances around deletion and selective saving.  
+METHOD 
+Snapchat’s ephemerality makes it difficult to collect actual 
+message content; further, analyzing the content itself would 
+give  limited  insight  into  users’  perceptions  of  Snapchat 
+affordances, their motivations for using Snapchat, and their 
+subjective experiences with it. Thus, we chose to conduct a 
+series  of  semi-structured 
+interviews  about  people’s 
+Snapchat use and motivations. 
+Participants 
+Participants were recruited in Spring 2015 from a large east 
+cost  U.S.  university  through  an  online  research  recruiting 
+system.  We  chose  college  students  as  our  participants 
+because  they  are  the  most  frequent  Snapchat  users.  In  all, 
+we we recruited 25 Snapchat users, 8 male and 17 female, 
+
+typically 
+
+[39] 
+
+afford 
+
+1664
+
+SESSION: MOBILE DESIGN AND USAGE
+
+lasted 
+
+from  28–54  minutes 
+
+all aged 18–24, 60% Caucasian, 16% Asian, 12% South or 
+Central  American,  8%  European,  and  4%  African-
+American.  Participants  received  either  two  experimental 
+participation credits or $10 as compensation for their time. 
+Data Analysis 
+Through  a  number  of  pilot  interviews,  we  developed  an 
+interview  guide  that  asked  participants  general  questions 
+about their Snapchat use, characteristics of their contacts on 
+Snapchat,  communication  content  and  goals  in  Snapchat, 
+comparisons  of  Snapchat  to  other  tools  and  social  media, 
+and reflections on why and how they use Snapchat.  
+(M=42:31, 
+Interviews 
+SD=7:01). They were audio-recorded, transcribed verbatim, 
+and  edited  to  remove  identifiers  and  other  references  that 
+may identify the participants and/or anyone they mentioned 
+during  the  interview.  Each  transcript  was  then  numbered, 
+and quotes are reported as (Pn) in the sections below. 
+After  reading  the  transcripts  multiple  times  to  become 
+acquainted with the data, transcripts were imported into the 
+Dedoose  qualitative  data  analysis  tool  and  divided  into 
+meaningful  units.  Two  of  the  authors  then  did  a  close 
+reading  of  the  transcripts  while  writing  memos  and 
+identifying key themes, as a part of an open-coding process 
+[35] in which we coded distinct concepts and categories in 
+the data. The two authors met several times to discuss and 
+reconcile these codes. Once the final codebook was set, two 
+authors  independently  coded  a  random  subsample  of  the 
+data,  with  good  interrater  reliability  (Cohen’s  kappa  of 
+.806). 
+After open-coding, the two authors did axial coding where 
+they  examined  relationships  between  key  themes,  to  help 
+refine  categories  as  well  as  ensure  a  close  association 
+between  participants’  responses  and  emerging  analyses. 
+This  axial  coding  process  allowed  us  to  organize  and  re-
+organize  the  codes  based  on  the  relationship  between  the 
+codes and themes that connected them; in this process, we 
+also  drew  on  existing  theories  to  inform  the  organization 
+and  interpretation  of  the  themes.  Lastly,  we  did  selective 
+coding [7, 35] to illuminate themes and organize the results.  
+PRACTICES AROUND EPHEMERALITY IN SNAPCHAT 
+Four  main  themes  emerged  from  the  data  that  were  both 
+connected  to  ephemerality  and  frequently  mentioned  by 
+participants:  the  presence  of  more  intimate  networks;  the 
+prevalence  of  mundane  communication  with  those  close 
+contacts;  the  reduction  in  self-consciousness  in  such 
+communication; and the negotiation around saving what is 
+normally ephemeral content. We discuss each in turn. 
+Smaller, More Intimate Networks 
+Perhaps because people must have a screen name or phone 
+number of another Snapchat user in order to be able to add 
+this person as their contact, Snapchat contacts are closer on 
+average than they are in most other media [2]: “Facebook is 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+a lot more acquaintances. Mostly people in my sorority that 
+I’m not trying to be friends with, I think...Snapchat is more 
+close  friends  and  romantic  interests  (P10).”  Snapchat 
+contact networks are also much smaller in size: “I only have 
+50 friends on Snapchat but on Facebook I have over 1,100 
+‘friends,’  acquaintances…  I  use  that  as  more  of  a 
+networking site (P1).” These differences help shape the way 
+participants see Snapchat versus other channels: 
+E-mails are for professors. E-mails are for presidents, vice 
+presidents, or an e-board member that I do need to reach 
+out  to.  E-mails  are  for  a  kid  in  the  library  or  something. 
+Text  messages  are  for  my  family  or  my  best  friend  who  I 
+can always reach out to. Text messages or calls you expect 
+them to get back to you within hours, you know?...Snapchat 
+is definitely for just my age group, especially ones who are 
+close to me and who know me very well. Facebook is just 
+for everyone else. (P16) 
+Overall,  participants  use  Snapchat  for  interacting  with  a 
+select  group  of  people,  those  with  whom  they  are  closely 
+connected. As the above quote suggests, Snapchat is not the 
+only  way  close  relations  connect,  but  it  is  common: 
+participants  considered  Snapchat  as  one  of  their  most 
+frequently used social applications on their mobile phones, 
+along  with  Facebook,  messaging  tools  like  GroupMe  and 
+other social media like Instagram. 
+Everyday Talk with Close Relationships 
+Compared to those tools, participants described Snapchat as 
+particularly  well-suited  for  everyday  talk.  The  idea  of 
+everyday talk is closely related to “the mundane, everyday 
+interaction  between 
+that  constitutes  a 
+majority of offline conversations in daily life [9, 16]. Such 
+talk  takes  many  forms,  but  can  be  broadly  classified  into 
+supragenres of superficial talk, informal talk, task talk, and 
+deep  talk  [9,  40].  Participants  described  using  Snapchat 
+primarily for superficial and informal types of talk, types of 
+talk that are associated with close relationships [16, 40]. 
+Superficial  talk  refers  to  conversation  focused  on  the 
+discussion  of  topics  of  limited  depth  with  the  purpose  of 
+passing  time.  Examples  of  superficial  talk  include  topics 
+like current events, the weather, or a kind of talk to avoid 
+being  rude.  Superficial  talk  on  Snapchat  can  be  a  catalyst 
+for initiating and maintaining connections:  
+[Snapchat  interactions  mostly  are]  just  one  or  two  snaps 
+back  and  forth,  you  see  their  face,  you  exchange  a  laugh 
+even  though  it’s  not  like  personally  ...  A  little  with  just 
+keeping connected but like I said before it’s I think it’s kind 
+of on superficial level. (P11) 
+Informal talk refers to conversation devoted to topics such 
+as  catching  up  on  daily  events,  joking,  and  other  light 
+conversations  between  friends.  Informal 
+is  also 
+common in Snapchat: “I don’t know. I feel like texting is a 
+
+two  partners” 
+
+talk 
+
+1665
+
+talk 
+
+that 
+
+talk  refers 
+
+require  more 
+
+to  conversations 
+
+things.  Knowing 
+
+bit more formal, where Snapchat … is a lot less formal like, 
+‘Oh, I sent you this.’ (P17).” 
+Participants were much less likely to use Snapchat for kinds 
+of 
+intense  coordination  or 
+communication. Task talk refers to conversation regarding 
+decision-making and instructions for accomplishing a task. 
+Such  talk  occurs  less  on  Snapchat  than  on  text-messaging 
+platforms like iMessage or GroupMe: 
+I  don’t  plan  through  Snapchat.  I  definitely  do  more  plans 
+through text, or GroupMe. Or, if I have a funny comment to 
+say, I’ll post it to the group. Mostly plans. (P18) 
+Deep 
+involving  sharing 
+problems,  complaining,  and  having  serious  discussions 
+about personal and important topics. Participants highlight 
+the  lack  of  deep  talk  on  Snapchat  and  explain  that  most 
+deep talk occurs in other systems like SMS: “If something 
+was  actually  wrong,  someone  would  like,  you  would  text 
+someone about it versus snapchatting them about it (P6).” 
+Deletion Makes Space for the Mundane 
+One  reason  for  the  prevalence  of  everyday,  informal 
+communication in Snapchat is that default deletion supports 
+sharing  mundane 
+that  content  will 
+disappear  quickly  gives  people  the  license  to  share  more 
+than they would in a more ‘permanent’ medium: 
+If  I  really  think  I  look  good  on  that  day,  I  will  send  it  to 
+everyone. Snapchat is only five seconds long and I feel it’s 
+more acceptable than Facebook. (P16) 
+Default deletion also matches well with the idea that not all 
+digital  possessions  are  equally  worth  saving  [22,  24,  25, 
+30].  Some  preserved  digital  objects  are  valuable  for 
+triggering  reminiscence  [22,  24],  but  in  daily  family  life, 
+digital objects are perceived as less salient [25]. This may 
+be because much digital content has its primary value in the 
+moment: 
+I won’t look back at someone’s old photos. I don’t do that 
+frequently.  I’m  just  interested  in  the  moment  and  I  don’t 
+care about it after I see it, so Facebook, I’m not going to 
+look  back  on  someone’s  old  photos.  A  Snap  story  will  go 
+away.  I  don’t  really  want  to  see  it  again.  In  a  week  from 
+now I don’t really care what someone did last weekend, but 
+in the moment it’s nice to see what they’re doing. (P23) 
+Automatic  archiving  takes  up  both  device  and  mental 
+resources  [29].  People  do  not  want 
+to  accumulate 
+meaningless  content  in  their  digital  collection,  making 
+Snapchat more appropriate than more permanent media for 
+this  sort  of  everyday  talk:  “I  wouldn’t  want  all  those 
+random pictures or messages taking memory space...it’s a 
+little overwhelming sometimes I guess. (P22).” 
+It  is  also  considered  inappropriate  to  fill  others’  digital 
+collections  with  less  meaningful  artifacts.  Snapchat  helps 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+Through  sharing  mundane  content  and  funny  everyday 
+moments, these conversations support relational continuity, 
+acting  as  “symbolic  forces  for  creating,  sustaining,  and 
+manifesting  relationships”  [9].  Ephemerality’s  support  of 
+mundane  interaction  and  the  friend  adding  interface  that 
+encourages  people  to  articulate  mainly  close  relationships 
+work together to meet relationship maintenance goals: 
+Snapchat  is  more  like  a  convenient  easy  way  to  tell  your 
+really  good  friends  what  you’re  doing  right  now,  quickly, 
+easy, because they’re your friends you care about it. (P14) 
+Performance with Less Self-consciousness 
+Sending ugly faces is an example of a more general theme 
+that  emerged,  that  Snapchat  allows  people  to  “let  [their] 
+guard  down  (P02).”  Concerns  over  self-presentation  were 
+less salient than in other communication tools: 
+There  are  definitely  things  on  Snapchat  that  people  will 
+video  or  take  a  picture  of  me  that  I  wouldn’t  want  on 
+Instagram or Facebook. ... Especially Facebook, I want to 
+take cute photos to make them think that I’m somewhat put 
+together… (P10) 
+We  use  Goffman’s  dramaturgical  “front  stage/back  stage” 
+metaphor  [15]  and  Hogan’s  exhibition  metaphor  [19], 
+which have been used to conceptualize self-presentation in 
+social media [42, 43], to better understand the relationship 
+between affordances of Snapchat and users’ goals. 
+Letting One’s Guard Down with Familiar Audiences 
+Goffman conceptualizes self-presentation as a “front stage” 
+performance for audiences where people selectively present 
+themselves  based  on  social  norms,  expectations,  and 
+audience preferences. In contrast, the “back stage” refers to 
+a behavioral setting in which people rehearse what goes on 
+a  front  stage  and  are  comfortable  lowering  their  guard. 
+Developed  for  face-to-face  interactions,  the  metaphor  has 
+been  applied  in  social  media  with  friends  and  with 
+followers playing the role of audience [3]. 
+One factor that influences participants’ lowered concern of 
+self-presentation  in  Snapchat  is  the  composition  of  a 
+network.  As  discussed  earlier,  audiences  in  Snapchat  are 
+typically people users know well and who are specifically 
+targeted for particular snaps: 
+I feel a lot of self-presentation on Snapchat is like it’s not as 
+much a priority when you’re just sending individual snaps 
+to  people  just  because  the  people  I  usually  send  to  are 
+people I’m really comfortable with talking to and also the 
+stuff I send is going to be gone after a while. (P8) 
+In other media, audiences are much broader, leading to self-
+presentation concerns: 
+Yeah,  there’s  definitely  things  you  put  on  Snapchat  ...and 
+you  might  be  a  little  drunk  or  something  or  just  you 
+
+ 
+here  because  “Snapchats only last for around ten seconds 
+and  then  you  can  choose.  If  you  found  something  really 
+funny, you can choose to screenshot it and save it but for a 
+Facebook  post  or  a  message,  it  lasts  forever  pretty  much. 
+It’s  always  on  the  list  of  all  the  posts  so  it  just  can  get  a 
+little overwhelming with the long long list of posts (P22).” 
+Few Affordances for the Meaningful 
+Default  deletion  also  acts  as  a  constraint  to  discourage 
+more involved communication. It restricts archiving, which 
+supports  reference  and  grounding  activities 
+that  are 
+important to task talk and deep talk: 
+I feel like, if I’m going to have like, a real conversation over 
+text with someone, or like a more, a relatively more serious 
+conversation or like, even organize or plan something. I’d 
+rather  do  it  over  text,  just  because  like,  it’s  there  to  like, 
+look back at. Or reference. (P06) 
+Other Snapchat affordances also work against task and deep 
+talk.  Pictures  are  not  seen  as  well-suited  for  the  longer 
+conversations  that  can  accompany  these  kinds  of  talk:  “I 
+usually  won’t  have  a  long  conversation  through  pictures 
+(P23),” and in the text accompanying pictures, people “only 
+have space of one line to talk (P11).” 
+Mundaneness Supports Relationship Maintenance 
+The relative prevalence of mundane talk points to the kinds 
+of  communication  functions  Snapchat  supports  best.  In 
+particular, mundane talk is important for maintaining close 
+relationships  because 
+feeling  of 
+interactional  co-presence  [9,  16],  even  when  partners  are 
+not  physically  co-present  [33].  This  type  of  talk  enables 
+people  to  implicitly  participate  in  each  other’s  lives  and 
+keep relational continuity [9]. The very occurrence of such 
+talk, not only its content, can create a sense of connection 
+and  closeness,  which  can  lead  to  deeper  interpersonal 
+relationships 
+[36,  37].  Participants  described  using 
+Snapchat in these ways: 
+To inform others who you’re with, where you are. To share 
+information.  To  make  someone  laugh.  Reconnect  with 
+somebody. It’s easy for long distance to keep in touch with 
+my  friends  from  other  schools,  to  keep  them  updated  with 
+what’s going on without me having to take a lot of time out 
+of my and explain what’s new. (P23) 
+The point about laughing is also important, as participants 
+often described wanting to share fun, humor, or creativity, 
+to  make  people  laugh  and  “smile  throughout  the  day 
+(P03).”  Sharing  enjoyable  content  has  value  for  both  self 
+and others, especially in close relationship contexts [13]. In 
+Snapchat,  mundane  content  like  a  funny  face  becomes  a 
+powerful vehicle to deliver these positive emotions. 
+We  have  a  thing  where  we  send  each  other  really  really 
+ugly  faces  and  we’ll  do  it  a  couple  of  minutes  at  a  time, 
+send each other time photos. That’s really fun. (P08)  
+
+it  helps  create  a 
+
+1666
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+wouldn’t  want  that  to  be  on  Facebook  for  employers  and 
+family members. (P2) 
+Ephemerality Mitigates Long-term Exhibition Concerns 
+Ephemerality  also  plays  a  key  role  in  people’s  self-
+presentation, as indicated by P8’s comment above that “sent 
+stuff”  disappears.  The  typical  social  media  affordance  of 
+automatic  archiving  means  that  communication  content, 
+such  as  posting  a  status  on  Facebook,  uploading  a  picture 
+on  Instagram,  or  writing  a  tweet  on  Twitter,  will  leave 
+records in the system unless users intentionally delete them. 
+Hogan  distinguishes  between 
+the  ephemeral  act  and 
+recorded  act,  and  argues  that  digital  traces  also  have 
+presentation functions [19]. He uses an exhibition metaphor 
+to make an ontological distinction: a performance in a strict 
+sense is a real-time synchronous presentation of behaviors, 
+while  an  exhibition  is  an  asynchronous  presentation  of 
+digital artifacts. The metaphor highlights that that system is 
+usually in charge of the presentation situation, which incites 
+fear  of  permanent  display  that  leads  to  self-censorship  in 
+the moment [43]:  
+Comparing it to Snapchat, I would say you need to be much 
+more careful about how you use Facebook messenger than 
+Snapchat,  because,  like,  [on]  Facebook  stories,  you  can 
+scroll through the log with everyone you ever talked to on 
+Facebook, and look what was said. (P7) 
+If we strictly abide by Hogan’s definition of exhibition, all 
+asynchronous viewing practices, including Snapchat, would 
+be  considered  “exhibitions.”  However,  several  aspects  of 
+the design and use of Snapchat lead these exhibitions to be 
+read as performances. First, even though the snap is viewed 
+later, it is situated in sender’s present status: “[Snapchat] is 
+just  like  I’m  here  right  now,  it’s  I’m  doing  this  right  now 
+(P14).” We argue that this is in part because pictures must 
+be captured through the Snapchat interface and thus reflect 
+current, situated activities [2], and in part because although 
+people do view the snap asynchronously, the delay is often 
+short  because  people  tend  to  attend  to  snaps  quickly:  “I 
+check [Snapchat] periodically throughout the day …when I 
+receive a snap chat, and then I’ll send one back (P18).” 
+Second, default deletion makes Snapchat unlike most social 
+media systems where users’ content persists and other users 
+might  access  it  or  the  system  might  re-present  it.  Instead, 
+the  user  has  control  of  the  duration  of  the  exhibition;  the 
+system  enforces  the  user’s  decisions.  This  combination  of 
+short-term  display  and  user  control  also  reduces  self-
+consciousness: 
+If  it’s  …  a  boy  you  like,  you  don’t  want  to  send  just  a 
+picture [through text messaging], because he’s gonna have 
+it and he’s like ‘oh, girl, if I look at it for a longer time, she 
+doesn’t look that [good-looking]’—whatever, you know, but 
+if it’s Snapchat, you can even put like oh three seconds only 
+and then they’re oh and it’s already gone. (P14) 
+
+1667
+
+similar 
+
+to  a 
+
+In  this  sense,  the  affordance  of  ephemerality  makes 
+Snapchat  communication  more 
+live 
+performance  rather  than  a  recorded  act,  and  this  expands 
+people’s range of potential performances. People described 
+being  at  liberty  to  do  things  they  might  not  do  in  other 
+situations,  even  face  to  face—“When I’m Snapchatting my 
+friends  I  would  just  make  silly  faces  and  break  out  of  my 
+own shell. Outside of my comfort zone. Whereas when I go 
+out  in  regular  clothes,  interacting  with  regular  people,  I 
+would  keep  it  together  (P16).”—and  even  at  their  own 
+expense,  as  with  the  “ugly  faces”  mentioned  earlier.  This 
+freedom  provides  additional  support  for  the  kinds  of 
+everyday  talk  and  relationally  oriented  communication 
+described earlier. 
+At  a  theoretical  level,  Snapchat  helps  illuminate  the 
+boundary between performance and exhibition. The nature 
+and duration of the content, along with the locus of control 
+over presentation and audience, all help in shaping people’s 
+understanding of communication tools. 
+To Screenshot or not to Screenshot: Selective Saving 
+So far we have focused on the ephemerality that is built into 
+Snapchat  by  the  default  deletion  affordance  and  how  it 
+influences  people  to  enact  mundane  communication  while 
+lowering  concerns  of  self-presentation.  However, 
+the 
+potential for screenshotting in Snapchat clearly violates the 
+promise  of  ephemerality  and  the  sender’s  control  over  the 
+interaction. Why, then, do people still largely behave as if 
+the data were truly ephemeral?  
+One answer is that, because people recognize the value of 
+the ephemerality and practices that we have described, the 
+default  norm  is  to  not  screenshot:  “Snapchat  is  to  send 
+things that get deleted, disappear after five, eight seconds. 
+If you screenshot it then you defeat the purpose of it (P24).” 
+However, this norm is not absolute: 
+If [the snap] is of some funny contents I took a snap of a 
+funny poster, that’s completely fine, or if it’s something else 
+that’s funny or something’s name, there’s nothing they can 
+do with that to cause any kind of harm or anything bad to 
+the sender but as soon as it involves any kind of information 
+that  you  wouldn’t  want  someone  else  to  have  saved,  then 
+it’s bad. ...And then it also depends who does the snapshot. 
+If  it’s  one  of  your  best  friends  and  snapshots  one  of  that, 
+you’re not really worried. But then if it’s someone random, 
+that’s—by  random  I  mean  a  friend  that  you’re  close  with 
+but not that close with, it doesn’t, or someone that you’re 
+not even that friendly with, it doesn’t make sense for them 
+to Snapchat something personal to the sender. So then it’s, 
+it  would  mostly  require  you  to  text  them  like  yo,  why’d 
+you—you’ll delete that, or why’d you snapshot that? Why’d 
+you snapshot that? (P12) 
+In this section, we unpack this norm, and the exceptions to 
+it, 
+lens  of  Nissenbaum’s  framework  of 
+
+through 
+
+the 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+to  be 
+
+later:  “if 
+
+remembered 
+
+cool  picture...  Something  that  you  want  to  look  at  in  the 
+future (P15).” 
+Thus, content with archival value was more likely to be fair 
+game. This might include fun or creative content: “I would 
+[screenshot] a personal message if I thought it was funny, 
+assuming that it’s not super personal (P1),” or content that 
+there’s  some 
+needed 
+information  that  probably  should  have  been  sent  as  an 
+iMessage  like  a  location  or  something  then  I  would 
+screenshot it just to remember it (P22).” 
+Archival Value Versus Respecting Others’ Rights 
+Overall,  these  norms  around  screenshotting  are  aimed  at 
+balancing the value of saving with the potential for harm to 
+the  sender.  When  the  potential  for  harm  is  high,  as  with 
+personally  revealing  content2,  the  norm  is  clearly  not  to 
+share:  “If  anyone  sent  me  anything  of  them  naked  or 
+something, I would never [screenshot] (P2).” 
+Otherwise, as with P1 above, people weighed the value of 
+the content with the concerns of the sender: “another case 
+is when someone sends … something you'd want to have at 
+a  later  date,  but  not  necessarily  something  that  was 
+unflattering  to  the  person  that  was  sending  it,  or  anyone 
+else (P7).” The fact that information could, in principle, be 
+transmitted was in the back of people’s minds: 
+I  feel  like  a  lot  of  people  will  do  that.  Like  send  gross 
+pictures because it’s funny which I wouldn’t do otherwise. 
+So  I  guess  that’s  kind  of  fun  and  you  can  send  whatever. 
+But  you  can  also  screenshot  it  so  it’s  not  that  reassuring 
+that they go away. (P25)  
+Granular Alignment of Affordances with Norms 
+Still, Snapchat users walk this line and usually succeed. We 
+believe this is because the affordances of Snapchat—default 
+deletion and selective saving with notification—help people 
+negotiate  these  values  more  seamlessly  than  in  most 
+systems. 
+For  example,  Hull  et  al.  applied  the  contextual  integrity 
+framework to analyze how Facebook’s interface and access 
+control  features  lead  to  privacy  management  issues  [20]. 
+There,  violations  of  norms  happen  most  often  in  joint 
+contexts, such as when a user shares a photo that also has 
+her friends in it. In this case, privacy concerns are not just 
+with  the  person  who  shared  the  photo,  but  also  with  her 
+friends,  especially  if  they  have  been  tagged  by  the  photo 
+owner.  From 
+integrity, 
+distribution norms indicate that it is generally acceptable to 
+
+the  perspective  of  contextual 
+
+                                                             
+2 We  did  not  see  evidence  supporting  media  critiques  about  Snapchat 
+encouraging activities like sexting. Participants did not report any sexting 
+in  their  use  and  stated  that  no-sexting  is  a  norm  for  appropriate  use  of 
+Snapchat,  consistent  with  findings  from  a  recent  survey  [34]  and  recent 
+media reports. 
+
+sender, 
+
+(types 
+
+attributes 
+
+recipient), 
+
+that  pose  different  norms 
+
+ 
+contextual integrity [27]. Nissenbaum posits that norms are 
+highly context-specific and that individuals move in and out 
+of  distinct  contexts 
+for 
+information  sharing.  “Distribution,”  which  refers  to  the 
+transfer of information between parties, is a key concern of 
+these  norms,  influenced  by  three  main  forces:  “actors 
+(subject, 
+of 
+information), and transmission principles (constraints under 
+which information flows) [28].” 
+Ephemerality Drives the Default Norm: Don’t 
+The default deletion affordance leads to a key transmission 
+principle  that  drives  the  no-screenshots  norm:  snaps  are 
+meant to be temporarily seen but not saved, in part because 
+of the risk of distribution to third parties: “If someone takes 
+a Snapshot of my photo, then I can guess…that they’ll most 
+likely show it to someone else (P23).” 
+When  this  norm  is  violated  and  the  receiver  saves  the 
+information  without  the  sender  wanting  them  to,  this 
+violates the transmission principle. In response, participants 
+often reported confronting the violator, which is also in line 
+with the contextual integrity framework [27]. 
+I would confront the person, either text them or in person, 
+just in a mature way say, ‘It’s really important to me that 
+you delete that photo,’ and hope that they delete it. (P23) 
+However,  ephemerality  is  not  the  only  factor  defining  the 
+context  in  terms  of  privacy  management  in  Snapchat.  In 
+many cases screenshotting is allowed or even expected. 
+Screenshots are for Closer Friends 
+The  main  actors  around  screenshotting  norms  are  senders 
+and  recipients,  and  the  nature  of  their  relationship  helps 
+determine  whether  the  no-screenshotting  norm  applies. 
+Participants  reported  that  for  the  same  snap,  it  would  be 
+okay for some contacts to take a screenshot but not others. 
+Relationship  closeness  was  the  main  criterion,  because 
+although  on  average  Snapchat  friends  are  close,  not  all  of 
+them  are:  “I  wouldn’t  screenshot  if  it  was  someone  I  was 
+not close with. That’s reserved for close friends (P10).” 
+Other actors’ factors, such as the gender of the sender and 
+receiver, could also affect these norms: 
+I would never screenshot something a boy sent me. That’s 
+weird, 
+think  I’m  weird  because  I 
+they’re  going 
+screenshotted it. (P10) 
+Selective Saving is for Meaningful, Appropriate Content 
+Participants also reported that content attributes influenced 
+norms  around  screenshotting.  In  general,  saving  mundane 
+content  was  inappropriate,  even  for  close  friends:  “If 
+they’re boring, just saying ‘hello,’ then I wouldn’t have any 
+use  for  screenshotting  that  (P15).”  Instead,  saved  content 
+should  be  “out  of  the  ordinary.  Not  just  a  picture  of 
+someone’s face and hello. Either like a funny message or a 
+
+to 
+
+1668
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in  fact, 
+
+that  arise 
+
+third  parties—and, 
+
+from  default  deletion  mean 
+
+ 
+share  photos  of  one’s  social  life  with  one’s  friends. 
+However, tagging her friends and putting the photo on her 
+newsfeed results in much wider distribution than the friends 
+may  expect.  The  problem  is  that  although  this  could  be 
+perceived  as  a  violation  of  expectancy,  it  is  not  clearly  a 
+violation of the norm of the system [20]—and this is hard to 
+disentangle  in  a  system  like  Facebook  with  design  goals 
+around sharing with networks. 
+These  kinds  of  situations  can  arise  in  Snapchat  as  well. 
+Photos  may  contain 
+the 
+distribution  norms  of  Snapchat  suggest  these  sometimes 
+should be shared if those third parties would get value out 
+of  it:  “I  think  that’s  okay,  in  a  basis  that  the  person  who 
+screenshots  that  is  showing  the  third  person  in  order  to 
+prove  something  good  about  this  person  (P16).”  But  the 
+norms 
+that 
+information  about  third  parties  disappears  quickly  unless 
+there are real reasons to keep the photos and keeping them 
+is unlikely to harm others. 
+These norms, combined with the directedness of snaps and 
+the  smaller  networks  in  Snapchat  versus  Facebook,  make 
+the  affordances  and  effects  of  information  sharing  much 
+more transparent in Snapchat than Facebook. Ephemerality 
+defines  the  default  information  flow,  where  sharing  does 
+not  imply  co-ownership,  with  the  default  of  not  to 
+screenshot.  If  a  receiver  assumes  ownership,  which  opens 
+the  possibility  of  transmitting  it  to  others,  the  original 
+owner  is  notified.  In  this  sense,  sharing  and  information 
+flows  are  similar 
+to  face-to-face  because  of  shared 
+awareness  around  shared  content:  everyone  knows  who 
+knows  what.  This  translucence  around  ownership  and 
+transmission rules [10], plus its relatively direct mapping to 
+the  way  people  negotiate  sharing  information  in  face-to-
+face settings, helps explain why many people have adopted 
+Snapchat 
+informal  but  personal 
+communication with friends they have offline. 
+Summary and Limitations 
+In 
+findings  on 
+communicative  practices  in  Snapchat  and  how  they  are 
+influenced  by  ephemerality:  the  co-existence  of  default 
+deletion  by  the  system  and  intentional  archiving  by  users 
+shapes  social  interaction,  affecting  users’  motivation,  self-
+consciousness, 
+and  privacy  management  behavior. 
+Snapchat’s  ephemerality  is  perceived  as  less  effective  for 
+formal  conversations,  so  participants 
+to  share 
+everyday,  mundane  talk  for  maintaining  relationships. 
+Default deletion is seen to avoid unintended audiences and 
+long-term  exhibition  of  content,  encouraging  kinds  of 
+sharing  rare  in  other  social  media.  The  closer  contact 
+network  in  Snapchat  also  encourages  everyday  talk  and 
+self-unconsciousness.  
+
+summarize  our 
+
+section,  we 
+
+to  have 
+
+frequent 
+
+this 
+
+tend 
+
+than  most 
+
+three  main 
+
+systems,  which 
+
+Note that, as Bayer et al. also did [2], we recruited college 
+students  at  one  university,  and  although  several  of  our 
+findings align well with theirs, it’s possible that both studies 
+are  biased  by  this  sampling  strategy.  Several  participants 
+remarked about differences in use between college students 
+and teenagers; younger users may think of risks and norms 
+differently and studying this would be an interesting avenue 
+for future work. A few participants also mentioned that they 
+used  Snapchat  differently  with  close  friends  versus 
+romantic partners. Looking more closely at how perceptions 
+and  norms  differ  based  on  the  specifics  of  particular 
+relationships  would  be  another  interesting  line  of  future 
+work. 
+DESIGNING EPHEMERALITY 
+Using  Snapchat  as  a 
+lens,  our  findings  show  how 
+ephemerality and default deletion lead to different practices 
+and  values 
+implement 
+permanence.  However,  ephemerality  is  not  new:  most  of 
+our  offline  interactions  are  ephemeral.  What  is  new  is  the 
+intentional  design  choice  of  ephemerality  in  an  era  when 
+persistence  is  common.  By  deleting  messages  quickly  and 
+implements  a  straightforward 
+automatically,  Snapchat 
+notion  of  ephemerality.  However,  ephemerality 
+is  a 
+nuanced  concept  that  can  be  realized  in  many  different 
+ways.  In  this  section  we  discuss  realizing  ephemerality 
+along 
+for 
+implementing  ephemerality,  degrees  of  ephemerality,  and 
+ephemerality not of content, but of articulated network ties. 
+Mechanisms of Ephemerality: Interfaces vs. Data 
+Instead of deleting data, many systems make it essentially 
+ephemeral  through  aspects  of  their  interface  design.  For 
+example, 
+the 
+Facebook newsfeed interface makes it hard to retrieve old 
+content. In other parts of the Facebook interface, the view is 
+less  ephemeral:  Graph  Search  and  Timelines  both  provide 
+more  access  to  past  data  [21].  However,  because  the 
+newsfeed  is  the  primary  interface  element,  its  temporal 
+limitation-based  ephemerality  encourages  people 
+to 
+perceive data that crosses beyond recent feed as “the past” 
+and less interesting [43]. Temporal restrictions also play a 
+role  in  increasing  value  and  specialness  in  Odom  et  al.’s 
+digital  heirlooms  work  [29]  and  Chi  et  al.’s  memory 
+matchstick [6]. 
+Another natural way to implement ephemerality—one that 
+might  align  well  with  our  experiences  of  older  physical 
+content—would  be  to  degrade  the  precision  of  older  data. 
+This 
+is  sometimes  proposed  as  a  privacy-preserving 
+mechanism in the database domain [12], but is largely un-
+explored in user interfaces. Gulotta et al. designed a series 
+of  prototypes  that  presented  digital  data  as  decaying  over 
+time, with portions fading out or being literally replaced by 
+their constituent bits [17]. In that study’s context of digital 
+legacy,  participants  were  confounded  by  these  interfaces, 
+
+the  reverse  chronological  scrolling  of 
+
+dimensions:  mechanisms 
+
+1669
+
+SESSION: MOBILE DESIGN AND USAGE
+
+ Figure 2. Ephemerality as a nuanced concept can be 
+realized in different dimensions, including (1) data 
+ephemerality, (2) interface ephemerality, and (3) 
+
+contact/network ephemerality. Further, these are not 
+
+binary choices, but matters of degree. 
+
+appropriate for which lifespans? More generally, the idea of 
+degrees  of  ephemerality,  or  fidelity,  or  access,  might  be  a 
+better fit for the way humans actually experience memory. 
+Associations  and  details  fade,  while  recall  is  altered  by 
+current circumstances and psychological needs [4]. To fully 
+explore this space, not only prototyping and user studies are 
+needed,  but  also  theoretical  work  on  psychological  and 
+sociological meanings of physical versus digital belongings 
+[31], as well as human memory versus digital memory. 
+Ephemeral Contacts and Other Spaces for Ephemerality 
+So  far  we  have  discussed  ephemerality  primarily  around 
+data, and in so doing assumed that contacts are permanent. 
+However, in our daily life, contacts and networks are often 
+not  persistent  but  ephemeral,  especially  at  the  beginning. 
+We might talk to strangers in social events like conferences, 
+parties, and workplaces, building an acquaintance—but not 
+interact  with  them  until  next  we  meet.  Many  people 
+articulate  these  connections  in  networks  like  Facebook, 
+Twitter, or LinkedIn. However, for all the reasons described 
+earlier around exhibition, context collapse of large, diverse 
+networks,  and  risks  of  unwanted  information  distribution, 
+this  can  negatively  affect  people’s  ability  to  communicate 
+on  these  networks.  Further,  this  can  lead  to  unwanted  or 
+inappropriate  communication:  imagine  that  a  person  you 
+meet in a conference keeps sending you pictures about what 
+she is doing—which Facebook actually affords, but which 
+the focus on closer relationships in Snapchat largely avoids. 
+One  potential  solution  is  to  bound  the  interaction  by 
+connecting  only  in  relevant  contexts,  around  relevant  data 
+and  issues;  here,  ephemerality  may  play  a  role.  Imagine  a 
+context-based  social  networking  system  where  a  digital 
+connection (following, friending) only exists in the current 
+context where the connection has meaning, and disappears 
+outside  of  the  context.  Such  a  design  may  make  the 
+interactions  in  the  current  context  more  salient,  and  help 
+people manage their audiences in Goffman’s metaphor [15]. 
+Facebook Groups and Google+ Circles offer these benefits, 
+but in a persistent way that requires user effort. 
+
+ 
+wondering why they would be appropriate—but in a design 
+context where temporary showing has value, interfaces like 
+this  that  make  data  permanent  but  limited  start  to  make 
+more sense. Snapchat, for instance, could choose to highly 
+blur  expired  snaps  rather  than  delete  them  entirely.  This 
+might  better  support  the  conveyance  of  connection  that 
+makes everyday talk powerful for maintaining relationships, 
+while  still  being  a  safe  platform 
+for  performative 
+communication  that  minimizes  worry  about  information 
+leakage.  
+We  can  imagine  other  ways  to  implement  ephemerality. 
+Snapchat deletes snaps after one view: what about a system 
+“You  Only  Live  Twice”  that  affords  viewing  content  a 
+small  number  of  times?3 Would  being  able  to  preview  the 
+nature of the content, then review it once at leisure before it 
+disappears,  be  helpful?  Confusing?  Redundant  with 
+screenshots?  A  more  speculative  idea  would  be  to  add  an 
+explicit  cost  for  looking  into  the  past,  especially  at  data 
+created by other people. Like YouTube, a system might ask 
+people to watch a five second ad; many systems ask people 
+to  complete  microtasks  via  captchas;  a  very  popular 
+business  model  for  apps  is  to  encourage  purchases  that 
+increase  one’s  access  or  capabilities  (Candy  Crush, 
+anyone?). People might  use  these in ways that might help 
+systems identify more meaningful older content; they might 
+avoid 
+the 
+ephemerality of systems; or might see them as the worst of 
+worlds, where they can’t view the past but future employers 
+can. The point isn’t that these particular ideas are good or 
+bad; the point is that there is a large design space to explore 
+around mechanisms of ephemerality. 
+Degrees of Ephemerality 
+Ephemerality can also be a matter of degree. In Snapchat, 
+where  ephemerality 
+through  default 
+deletion,  the  range  is  fairly  wide:  person-to-person  Snaps 
+last  less  than  10  seconds,  while  snaps  on  stories  last  24 
+hours.  Even  in  the  range  of  1  to  10  seconds,  people 
+perceived  differences:  “If  you’re  putting  a  picture,  don’t 
+make it 10 seconds long. I think that’s annoying. I used to 
+do 5 but now I’m down to 3 because even 3 seconds, that’s 
+a  long  time.  No  one’s  going  to  look  at  my  picture  for  3 
+seconds (P25).” Participants also reported setting very short 
+times for particular snaps to indicate that they were not for 
+screenshotting.  
+This raises the question of what the effect of ranges of time 
+(or rates of blur, or cost) would be. When should a message 
+disappear in one hour, one week, one month, or one year? 
+What does that mean to users, and what kinds of content are 
+                                                             
+3 Snapchat  does  have  a  “replay”  feature  that  allows  users  can  replay  an 
+opened  snap,  but  only  once  per  day  per  user.  Further,  since  the  original 
+version  of  this  paper  was  written,  Snapchat  added  the  idea  of  charging 
+people to replay Snaps. It will be interesting to see how that is received. 
+
+them,  which  would 
+
+implemented 
+
+is 
+
+in  practice 
+
+increase 
+
+1670
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+Instead,  systems  might  automatically  create  ephemeral 
+networks or ephemeral connections to networks. Location-
+based  networks  such  as  YikYak  demonstrate  the  potential 
+value  of  ephemeral  connection  to  a  group.  The  automatic 
+creation of networks or groups specific to locations, times, 
+or events might more effectively support people’s needs to 
+both separate audiences and to communicate with them. For 
+example, it might be interesting to have a “newsfeed view” 
+of the people in a group, or at an event, to give members a 
+glimpse into the lives of other members before, during, and 
+perhaps shortly after the event the group was created for.  
+Designing for contact ephemerality also raises questions of 
+mechanism  and  extent.  Should  ephemeral  contacts  be 
+deleted,  de-emphasized,  or  hidden?  When  should  the 
+system do this: based on expiration time—for example, one 
+day  after  the  context  is  over—or  based  on  interaction 
+inactivity?  And,  as  with  saving  meaningful  content  in 
+Snapchat, designing for ephemeral contacts should consider 
+how  to  help  people  move  from  ephemeral  contacts  to 
+persistent, articulated ties. Some ephemeral interactions are 
+associated  with  more  permanent  goals  like  relationship 
+development, collaboration, and building social capital. For 
+instance,  a  new    acquaintance  in  a  conference  could  be  a 
+future friend or collaborator, and we might want to save her 
+as a permanent contact, at least at a certain point. Secondly, 
+even  in  situations  where  networking  goals  are  not  salient 
+initially,  inadvertent  but  repeated  interactions  could  be  a 
+foundation  of  social  networking,  as  represented  in  the 
+“everyday encounter” concept. Motorcyclists build a sense 
+of community belonging based on traffic encounters on the 
+road [11], and company employees tend to become online 
+friends if they encounter each other more frequently in the 
+workspace [41].  
+Thus,  we  argue  that  careful  designs  that  help  people 
+articulate  ephemeral  contacts  into  permanent  ones  are 
+important.  Systems  like  Facebook  and  LinkedIn  support 
+this,  but  at  a  coarse  level.  What  we  emphasize  here  is 
+designs  that  support  the  ephemeral  stages  that  most 
+relationships  develop  from,  helping  people  increase  the 
+value  and  reduce  the  problems  that  come  from  digitally 
+articulating relationships. 
+BE  EPHEMERAL  OR  BE  PERSISTENT:  OWNING, 
+GIVING, SHARING, SHOWING, AND TAKING 
+So  far,  we  have  focused  on  the  value  of  ephemerality, 
+addressing  why  people  value  it  and  how  designers  might 
+achieve  it.  But  we  don’t  argue  that  we  should  all  start  to 
+design for ephemerality and replace persistence as a system 
+default.  We  see  ephemerality  as  a  feature,  a  property  or  a 
+“materiality”  of  a  system,  which  exists  independent  of 
+users, but whether and how it works relies on its perceived 
+utility,  as  seen  and  acted  on  by  users.  This  is  captured 
+through the affordance perspective [14], which we use next 
+to  discuss  theoretical  implications  of  this  tension  between 
+
+1671
+
+ 
+Figure 3. In Email and SMS, the sender is the owner; sending 
+a message creates a copy that gives the receiver ownership of 
+the copy. In Instagram, or Facebook Wall, the uploader is the 
+owner, who can share persistent access with the receiver. The 
+
+receiver can take ownership of a copy of the digital object 
+
+(e.g., save function, screenshots), but the sender is not 
+
+notified. In Snapchat, the digital object is ephemeral, and 
+both sender and receiver only have temporary access, unless 
+they screenshot to take ownership and the sender is notified. 
+ephemerality  and  persistence  that  go  beyond  specific 
+systems (which eventually become obsolete). 
+Previous  research  has  shown  that  persistence  affords 
+recordability  [18]  and  reviewability  [8],  which  influence 
+information  sharing  in  an  organizational  context  [38],  the 
+ability to pass on digital artifacts in families [29], and long-
+term  exhibition  of  self  on  social  media  [19].  What  does 
+ephemerality afford in these processes? More studies need 
+to  address  this  question  to  have  a  clear  answer;  here  we 
+outline an ownership perspective for thinking about the role 
+and nature of ephemerality in a given context.  
+In traditional media like text messages or email, the content 
+generator  is  the  original  owner,  and  when  she  sends  a 
+message to a receiver, a digital copy is sent to the receiver’s 
+mailbox, SMS client, or other data repository. This giving a 
+copy of the object makes the receiver also an owner of the 
+associated content [32]. In data-persistent social media like 
+Instagram, uploading a picture creates a data access point in 
+the  system’s  server.  The  picture  uploader,  as  the  original 
+owner,  shares  persistent  access  to  the  object  with  others 
+rather than giving them a digital copy. In this situation, it is 
+not  clear  whether  sharing  access  to  the  object  also  means 
+giving  (in  Facebook,  tagging  a  photo  with  someone  who 
+later  puts  the  photo  in  her  Timeline  is  more  like  giving, 
+though  the  original  owner  still  has  the  right  to  delete  it, 
+removing it from others’ Timelines). As long as it is visible 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+coordination,  information  sharing,  and  “deep”  kinds  of 
+relationship  talk—further  cementing  it  as  a  place  for 
+informal,  everyday  interaction.  The  fact  that  Snapchat’s 
+design  leads  to  a  network  populated  mostly  with  closer 
+relationships  also  contributes  to  these  findings  around 
+everyday talk and self-unconsciousness.  
+These  effects  of  ephemerality  persist  despite  the  potential 
+for screenshots, in which receivers come to own their own 
+copy of content. This is because Snapchat notifies senders 
+when  the  copy  is  made;  such  awareness  supports  nuanced 
+norms  around  who  is  allowed  to  capture  which  data,  and 
+when,  and  leads  to  repair  activities  when  norms  are 
+violated. The combination of default deletion and selective 
+saving  with  notification  raises  a  number  of  useful 
+distinctions  around  ownership  of  digital  content:  the 
+difference  between  sharing  and  showing  information,  and 
+between senders giving and receivers taking ownership. 
+Finally,  although  default  deletion  is  a  big  departure  from 
+automatic  archiving,  it  only  scratches  the  surface  of  how 
+ephemerality  might  support  users’  goals  and  interactions. 
+Designs  might  vary  the  duration,  fidelity,  and  cost  of 
+accessing  data,  modifying  either  the  data  itself  or  its 
+presentation.  Content  is  not  the  only  domain  that  might 
+benefit 
+from  ephemerality;  group  memberships  and 
+personal  relationships,  too,  might  usefully  fade  over  time. 
+Building  on  other  work  around  ephemerality  and  digital 
+possessions,  this  study  helps  to  illuminate  a  rich  design 
+space  for  people  and  systems  to  work  together  in  sharing 
+data to support individual, platform, and social needs. 
+ACKNOWLEDGMENTS 
+This  work  is  supported  in  part  by  the  National  Science 
+Foundation through IIS-0910664 and IIS-1405634. We also 
+thank  Jessie  Taft  and  Olivia  Wherry  for  help  with  the 
+research,  as  well  as  our  anonymous  reviewers  for  helpful 
+comments on previous versions of the paper. 
+REFERENCES 
+1.  Liam J. Bannon. 2006. Forgetting as a feature, not a 
+
+2. 
+
+bug: the duality of memory and implications for 
+ubiquitous computing. CoDesign 2, 1: 3–15. 
+DOI=http://dx.doi.org/10.1080/15710880600608230 
+Joseph B. Bayer, Nicole Ellison, Sarita Y. 
+Schoenebeck, Emily B. Falk. 2015. Sharing the Small 
+Moments: Ephemeral Social Interaction on Snapchat. 
+Information, Communication & Society, 1-22. 
+DOI=http://dx.doi.org/10.1080/1369118X.2015.10843
+49 
+
+3.  Natalya N. Bazarova, Jessie G. Taft, Yoon Hyung 
+
+Choi, and Dan Cosley. 2012. Managing impressions 
+and relationships on Facebook: Self-presentational and 
+relational concerns revealed through the analysis of 
+language style. Language and Social Psychology 32, 2:  
+
+showing  practices 
+
+ 
+to  others,  however,  they  can  take a copy  anytime  without 
+letting  the  original  sender  know  (for  example,  taking  a 
+screenshot  of  a  picture  in  Facebook  does  not  notify  the 
+original poster). 
+However, the flow is different in Snapchat. Here we point 
+out  a  distinction  between  temporary  access  and  persistent 
+ownership. By default, snaps disappear quickly for both the 
+sender and receiver. Therefore in the default situation, both 
+sides  will  have  a  very  short  temporary  access  to  the  data 
+and neither has persistent ownership. Instead, the sender is 
+just  showing  the  data  to  the  receiver.  The  sender  can 
+convert  her  temporary  access  to  persistent  ownership  by 
+saving the snap to her mobile phone memory. The receiver 
+can also take persistent ownership and become an owner of 
+their  own  copy  by  screenshotting  the  snap,  though,  unlike 
+Facebook,  the  sender  is  notified  that  the  receiver  has 
+become an owner. 
+Figure  3  illustrates  how  system  features  like  copying, 
+access control, and saving afford a number of different data 
+distribution practices: giving ownership by sending a copy, 
+sharing by granting persistent access, showing by granting 
+temporary  access,  and 
+taking  ownership  by  saving 
+accessible  data.  These  practices  have  different  values.  For 
+example, 
+in  Snapchat  encourage 
+mundane  communication  in  close  relationships,  provide 
+less  pressure  on  self-presentation,  and  motivate  users  to 
+perform for values they described such as being funny and 
+interesting. 
+By  highlighting  sharing  versus  giving,  temporary  versus 
+permanent,  and  receiver  versus  sender  agency,  Snapchat 
+helps  to  both  illustrate  and  address  some  of  the  issues 
+Odom  el  al.  unpack  around  the  ownership  of  digital 
+possessions  [31].  Most  such  work  around  information 
+sharing in social media focuses on the agency of the sender; 
+Snapchat makes plain the space for receivers to take agency 
+as  well,  leading  to  complex  distributional  norms  around 
+taking  ownership  by  screenshotting.  How  these  ideas 
+translate to other contexts will be interesting future work in 
+both theory and design.  
+CONCLUSION 
+Ephemerality  as  instantiated  in  Snapchat  has  a  number  of 
+effects  on  communication.  Default  deletion  of  content 
+makes  it  easier  to  share  everyday,  mundane  talk  that  is 
+valuable  in  the  moment  for  maintaining  relationships  but 
+not  worth  saving.  Knowing  that  content  disappears  by 
+default  also  reduces  self-consciousness  in  communication: 
+with  less  need  to  worry  about  unintended  audiences  and 
+long-term exhibition of content, people are freer to “let their 
+guard  down”  and  share  creative,  funny,  even  self-
+deprecating  content  they  would  hesitate  to  put  on  other 
+social  media.  The  fact  that  content  disappears  makes 
+Snapchat 
+talk  around 
+
+task-oriented 
+
+less  useful 
+
+for 
+
+1672
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+
+121–141. 
+DOI=http://dx.doi.org/10.1177/0261927X12456384 
+4.  Susan Bluck and Nicole Alea. 2002. Exploring the 
+functions of autobiographical memory: Why do I 
+remember the autumn. In Critical advances in 
+reminiscence work: From theory to application, Jeffrey 
+Dean Webster and Barbara K. Haight (eds.). Springer 
+Publishing Company, 61–75. 
+
+5.  Alvan Bregman and C Haythornwaite. 2001. Radicals 
+
+of presentation in persistent conversation. In 
+Proceedings of the 34th Annual Hawaii International 
+Conference on System Sciences, 1-10. 
+DOI=http://dx.doi.org/10.1109/HICSS.2001.926499 
+
+6.  Pei-Yu Chi, Xiao Xiao, Keywon Chung, and Carnaven 
+
+Chiu. 2009. Burn your memory away: one-time use 
+video capture and storage device to encourage memory 
+appreciation. In CHI '09 Extended Abstracts on Human 
+Factors in Computing Systems (CHI EA '09). ACM, 
+New York, NY, USA, 2397-2406. 
+DOI=http://dx.doi.org/10.1145/1520340.1520342 
+
+7.  Robert B. Cialdini. 1993. Inﬂuence: The psychology of 
+
+persuasion. New York: Morrow. 
+
+8.  Herbert H. Clark and Susan E. Brennan. 1991. 
+
+Grounding in communication. In Perspectives on 
+Socially Shared Cognition, Lauren B. Resnick, John M. 
+Levine and Stephanie D. Teasley (eds.).  American 
+Psychological Association, 127–149.  
+
+9.  Steve Duck, Deborah J. Rutt, Margaret H. Hurst, and 
+
+Heather Strejc. 1991. Some evident truths about 
+conversations in everyday relationships: All 
+communications are not created equal. Human 
+Communication Research 18, 2: 228–267. 
+DOI=http://dx.doi.org/ 10.1111/j.1468-
+2958.1991.tb00545.x 
+
+10.  Thomas Erickson and Wendy A. Kellogg. 2000. Social 
+
+translucence: an approach to designing systems that 
+support social processes. ACM Trans. Comput.-Hum. 
+Interact. 7, 1 (March 2000), 59-83. 
+DOI=http://dx.doi.org/10.1145/344949.345004 
+11.  Mattias Esbjörnsson, Oskar Juhlin, and Mattias 
+
+Östergen. 2003. Motorcycling and social interaction: 
+design for the enjoyment of brief traffic encounters. 
+In Proceedings of the 2003 international ACM 
+SIGGROUP conference on Supporting group 
+work (GROUP '03). ACM, New York, NY, USA, 85-
+94. DOI=http://dx.doi.org/10.1145/958160.958174 
+
+12.  Benjamin C. M. Fung, Ke Wang, Rui Chen, and Philip 
+
+S. Yu. 2010. Privacy-preserving data publishing: A 
+survey of recent developments. ACM Comput. 
+Surv. 42, 4, Article 14 (June 2010), 53 pages. 
+DOI=http://dx.doi.org/10.1145/1749603.1749605 
+
+1673
+
+13.  Shelly L. Gable, Harry T. Reis, Emily A. Impett, and 
+Evan R. Asher. 2004. What do you do when things go 
+right? The intrapersonal and interpersonal benefits of 
+sharing positive events. Personality and Social 
+Psychology 87, 2: 228. 
+http://psycnet.apa.org/doi/10.1037/0022-3514.87.2.228 
+
+14.  William W. Gaver. 1991. Technology affordances. 
+
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '91), Scott P. 
+Robertson, Gary M. Olson, and Judith S. Olson (Eds.). 
+ACM, New York, NY, USA, 79-84. 
+DOI=http://dx.doi.org/10.1145/108844.108856 
+
+15.  Erving Goffman. 1959. The presentation of self in 
+
+everyday life. Random House. 
+
+16.  Daena J. Goldsmith and Leslie A. Baxter. 1996. 
+
+Constituting relationships in talk a taxonomy of speech 
+events in social and personal relationships. Human 
+Communication Research 23, 1: 87–114. 
+DOI=http://dx.doi.org/10.1111/j.1468-
+2958.1996.tb00388.x 
+
+17.  Rebecca Gulotta, William Odom, Jodi Forlizzi, and 
+
+Haakon Faste. 2013. Digital artifacts as legacy: 
+exploring the lifespan and value of digital data. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '13). ACM, New 
+York, NY, USA, 1813-1822. 
+DOI=http://dx.doi.org/10.1145/2470654.2466240 
+
+18.  Jeffrey T. Hancock, Catalina Toma, and Nicole Ellison. 
+
+2007. The truth about lying in online dating profiles. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '07). ACM, New 
+York, NY, USA, 449-452. 
+DOI=http://dx.doi.org/10.1145/1240624.1240697 
+
+19.  Bernie Hogan. 2010. The presentation of self in the age 
+
+of social media: Distinguishing performances and 
+exhibitions online. Bulletin of Science, Technology & 
+Society 30, 6: 377-386. DOI=http://dx.doi.org/ 
+10.1177/0270467610385893 
+
+20.  Gordon Hull, Heather Richter Lipford, and Celine 
+Latulipe. 2011. Contextual gaps: Privacy issues on 
+Facebook. Ethics and Information Technology 13, 4: 
+289–302. DOI=http://dx.doi.org/10.1007/s10676-010-
+9224-8 
+
+21.  Anne Kaun, and Stiernstedt Fredrik. 2014. Facebook 
+time: Technological and institutional affordances for 
+media memories. New Media & Society 16, 7: 1154–
+1168. 
+DOI=http://dx.doi.org/10.1177/1461444814544001 
+22.  David S. Kirk and Abigail Sellen. 2010. On human 
+
+remains: Values and practice in the home archiving of 
+cherished objects. ACM Trans. Comput.-Hum. 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+ 
+
+Interact. 17, 3, Article 10 (July 2010), 43 pages. 
+DOI=http://dx.doi.org/10.1145/1806923.1806924  
+
+32.   Sandra Petronio. 2012. Boundaries of privacy: 
+
+Dialectics of disclosure. Suny Press. 
+
+23.  Paul M. Leonardi and Diane E. Bailey. 2008. 
+
+Transformational technologies and the creation of new 
+work practices: Making implicit knowledge explicit in 
+task-based offshoring. Management Information 
+Systems Quarterly 32, 2: 411–436. 
+
+24.  Michael Massimi and Ronald M. Baecker. 2011. 
+
+Dealing with death in design: developing systems for 
+the bereaved. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing 
+Systems (CHI '11). ACM, New York, NY, USA, 1001-
+1010. 
+DOI=http://dx.doi.org/10.1145/1978942.1979092 
+
+25.  Michael Massimi, William Odom, Richard Banks, and 
+
+David Kirk. 2011. Matters of life and death: locating 
+the end of life in lifespan-oriented hci research. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '11). ACM, New 
+York, NY, USA, 987-996. 
+DOI=http://dx.doi.org/10.1145/1978942.1979090 
+
+26.  Viktor Mayer-Schönberger. 2011. Delete: the virtue of 
+
+forgetting in the digital age. Princeton University 
+Press. 
+
+27.  Helen Nissenbaum. 2009. Privacy in context: 
+
+Technology, policy, and the integrity of social life. 
+Stanford University Press. 
+
+28.  Helen Nissenbaum. 2011. A contextual approach to 
+
+privacy online. Daedalus 140, 4: 32–48. 
+
+29.  William Odom, Richard Banks, David Kirk, Richard 
+
+Harper, Siân Lindley, and Abigail Sellen. 2012. 
+Technology heirlooms?: considerations for passing 
+down and inheriting digital materials. InProceedings of 
+the SIGCHI Conference on Human Factors in 
+Computing Systems (CHI '12). ACM, New York, NY, 
+USA, 337-346. 
+DOI=http://dx.doi.org/10.1145/2207676.2207723 
+
+30.  William Odom, James Pierce, Erik Stolterman, and Eli 
+
+Blevis. 2009. Understanding why we preserve some 
+things and discard others in the context of interaction 
+design. In Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems (CHI '09). 
+ACM, New York, NY, USA, 1053-1062. 
+DOI=http://dx.doi.org/10.1145/1518701.1518862 
+
+31.  William Odom, Abi Sellen, Richard Harper, and Eno 
+Thereska. 2012. Lost in translation: understanding the 
+possession of digital things in the cloud. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '12). ACM, New 
+York, NY, USA, 781-790. 
+DOI=http://dx.doi.org/10.1145/2207676.2207789 
+
+1674
+
+33.  Artemio Ramirez and Kathy Broneck. 2009. ‘IM me’: 
+
+Instant messaging as relational maintenance and 
+everyday communication. Social and Personal 
+Relationships 26, 2–3: 291–314. 
+DOI=http://dx.doi.org/ 10.1177/0265407509106719 
+
+34.  Franziska Roesner, Gill T. Brian, and Tadayoshi 
+
+Kohno. 2014. Sex, lies, or kittens? Investigating the 
+use of snapchat’s self-destructing messages. Financial 
+Cryptography and Data Security, 8437: 64–76. 
+DOI=http://dx.doi.org/10.1007/978-3-662-45472-5_5 
+35.  Abigail J. Sellen and Steve Whittaker. 2010. Beyond 
+
+total capture: a constructive critique of 
+lifelogging. Commun. ACM 53, 5 (May 2010), 70-77. 
+DOI=http://dx.doi.org/10.1145/1735223.1735243 
+
+36.  Stuart J. Sigman. 1991. Handling the Discontinuous 
+Aspects of Continuous Social Relationships: Toward 
+Research on the Persistence of Social Forms. 
+Communication Theory 1, 2: 106–127. 
+DOI=http://dx.doi.org/10.1111/j.1468-
+2885.1991.tb00008.x 
+
+37.  Victoria Schwanda Sosik and Natalya N. Bazarova. 
+
+2014. Relational maintenance on social network sites: 
+How Facebook communication predicts relational 
+escalation. Computers in Human Behavior 35:124–131. 
+DOI=http://dx.doi.org/10.1016/j.chb.2014.02.044 
+
+38.  Jeffrey W. Treem and Paul M. Leonardi. 2012. Social 
+media use in organizations: Exploring the affordances 
+of visibility, editability, persistence, and association. 
+Communication Yearbook 36: 143–189. 
+DOI=http://dx.doi.org/10.2139/ssrn.2129853 
+
+39.  Steve Whittaker. 2003. Theories and methods in 
+
+mediated communication. In The Handbook of 
+Discourse Processes, Arthur C. Graesser, Morton Ann 
+Gernsbacher and Susan R. Goldman (eds.). Routledge, 
+243–286. 
+
+40.  Scott Wright. 2012. From third place to third space: 
+Everyday political talk in non-political online spaces. 
+Javnost-the Public 19, 3: 5–20. DOI=http://dx.doi.org/ 
+10.1080/13183222.2012.11009088 
+
+41.  Bin Xu, Alvin Chin, Hao Wang, Lele Chang, Ke 
+
+Zhang, Fangxi Yin, Hao Wang, Li Zhang. Physical 
+Proximity and Online User Behavior in an Indoor 
+Mobile Social Networking Application. In Proceedings 
+of the IEEE International Conference on Cyber, 
+Physical and Social Computing (CPSCom 2011). 
+IEEE, 273–282. 
+DOI=http://dx.doi.org/10.1109/iThings/CPSCom.2011.
+74 
+
+through use: understanding the personal value of social 
+media. In Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems(CHI '14). ACM, 
+New York, NY, USA, 2431-2440. 
+DOI=http://dx.doi.org/10.1145/2556288.2557291 
+43.  Xuan Zhao, Niloufar Salehi, Sasha Naranjit, Sara 
+
+Alwaalan, Stephen Voida, and Dan Cosley. 2013. The 
+
+ 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+42.  Xuan Zhao and Siân E. Lindley. 2014. Curation 
+
+many faces of facebook: experiencing social media as 
+performance, exhibition, and personal archive. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '13). ACM, New 
+York, NY, USA, 1-10. 
+DOI=http://dx.doi.org/10.1145/2470654.2470656 
+
+1675
+
+

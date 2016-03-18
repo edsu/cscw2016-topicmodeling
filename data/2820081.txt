@@ -1,0 +1,1659 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Strangers on Your Phone: Why People Use Anonymous 
+
+Communication Applications  
+
+Katherine Sutton 
+
+Vassar College 
+
+Poughkeepsie, NY 12604 
+
+kasutton@vassar.edu 
+
+ 
+Figure 1. An example post on Whisper 
+
+[16]  but  not 
+
+users  seek  anonymity  in  their  activities  online  [16]. 
+Anonymous  communication  applications  such  as  Whisper 
+(Figure 1), Secret (now closed), and YikYak provide ways 
+for  people  to  connect  through  smartphones  and  interact 
+anonymously  on  any  topic  to  an  anonymous  audience. 
+Previous work has documented broad motivations for being 
+anonymous  online 
+looked  at  how 
+communication tools empower these motivations.  
+We  need  to  reexamine  anonymous  communication  now 
+because  the  communication  landscape  has  dramatically 
+changed from the early days of the Internet.  Many  people 
+are  constantly  connected  through  multiple  social  media  to 
+almost  everyone  in  their  lives  everywhere  they  go  [10]. 
+Social  media  users  on  Facebook  and  Twitter  experience 
+context-collapse  as  their  communications  across  each 
+channel  hit  multiple  audiences,  each  related  to  a  different 
+social  identity  for  the  user  with  different  expectations  of 
+behavior  [39].  People  may  choose 
+to  communicate 
+anonymously  with  certain  friends  or  acquaintances,  or  a 
+deviant or hobby group, to keep those interactions separate 
+and secret from other people they know [2,16]. Earlier work 
+described  how  people  communicate  on  their  computers  in 
+web-based MUDs, Usenet, and Second Life [9, 35, 39], but 
+the rise of mobile devices and apps has made casual, even 
+constant, 
+communication 
+possible.  This  technological  change  leads  us  to  ask  how 
+
+location-based 
+
+anonymous 
+
+Ruogu Kang 
+
+Laura Dabbish 
+
+Carnegie Mellon University 
+
+Carnegie Mellon University 
+
+Pittsburgh, PA 15213 
+ruoguk@cs.cmu.edu 
+
+ 
+
+Pittsburgh, PA 15213 
+dabbish@cmu.edu 
+
+to 
+
+ABSTRACT 
+Anonymity  online  is  important  to  people  at  times  in  their 
+lives.  Anonymous  communication  applications  such  as 
+Whisper  and  YikYak  enable  people  to  communicate  with 
+strangers  anonymously  through  their  smartphones.  We 
+report results from semi-structured interviews with 18 users 
+of  these  apps.  The  goal  of  our  study  was  to  identify  why 
+and how people use anonymous apps, their perceptions of 
+their audience and interactions on the apps, and how these 
+apps  compare  with  other  online  social  communities.  We 
+present  a  typology  of  the  content  people  share,  and  their 
+motivations  for  participation  in  anonymous  apps.  People 
+share  various  types  of  content  that  range  from  deep 
+confessions  and 
+jokes  and 
+momentary  feelings.  An  important  driver  for  participation 
+and  posting  is  to  get  social  validation  from  others,  even 
+though  they  are  anonymous  strangers.  We  also  find  that 
+participants  believe  these  anonymous  apps  allow  more 
+honesty,  openness,  and  diversity  of  opinion  than  they  can 
+find  elsewhere.  Our  results  provide  implications  for  how 
+anonymity  in  mobile  apps  can  encourage  expressiveness 
+and interaction among users. 
+Author Keywords 
+Anonymous  communication,  anonymity,  self-disclosure, 
+computer-mediated communication, privacy, social media.  
+ACM Classification Keywords 
+H.5.3. Group and Organization Interfaces. 
+INTRODUCTION 
+
+lighthearted 
+
+secrets 
+
+“Solitude  is  fine  but  you  need  someone  to  tell  that 
+solitude is fine.” 
+
+― Honoré de Balzac 
+Given  the  proliferation  of  communication  platforms  and 
+traceability of online activities, most people believe that it 
+is difficult to be completely anonymous online without any 
+identifying  trace  [28].  At  the  same  time,  many  Internet 
+Permission to  make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must  be  honored. 
+Abstracting with  credit  is  permitted. To copy  otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02$15.00 
+DOI: http://dx.doi.org/10.1145/2818048.2820081 
+ 
+
+359
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+anonymously 
+
+in 
+
+for  people 
+
+find  community 
+
+interact  with  others 
+
+people 
+through 
+smartphones and why they do so. What benefits do people 
+get  out  of  mobile  communication  without  identification? 
+Can  people 
+these  anonymous 
+communication apps?  
+In  this  study  we  extend  our  understanding  of  motivations 
+for  anonymity  by  analyzing  users’  activities  and 
+motivations on anonymous communication applications on 
+their smartphones. We find that these applications provide a 
+place 
+to  share  personal  emotions  and 
+experiences,  positive  or  negative,  without  their  needing  to 
+track  their  disclosure  boundaries  and  to  fear  negative 
+reputational  consequences. Unlike  designated  confessional 
+online  communities 
+in  which  people  mainly  share 
+confessions and secrets [36], people using mobile apps such 
+as  Whisper  also  share  funny,  entertaining  posts.  Also, 
+despite  the  lack  of  a  cohesive  and  persistent  set  of 
+identifiers,  as  users  have  in  many  online  communities, 
+people in our sample reported that these apps provide social 
+support  and  validation  for  their  feelings,  experiences,  and 
+self-identity. They said people are honest and open in this 
+setting.  They  said  they  were  able  to  open  themselves 
+because of the lack of accountability for what they said and 
+lack  of  connection  to  their  real  world  identity.  These 
+benefits  have  been  observed  in  studies  of  some  online 
+communities but in the case of anonymous mobile apps, the 
+benefits  occurred  even  without  such  pro-social  features  as 
+moderation  and  group 
+those 
+communities [18, p.79-83].  
+Anonymous Communication Applications 
+Anonymous  communication  applications  (e.g.,  Whisper, 
+YikYak,  and  Secret)  are  software  programs  designed 
+mainly  for  mobile  devices.  They  allow  people  to  share 
+messages with other users of the same application without 
+any  connection  to  their  identity  or  among  their  messages. 
+Unlike  the  quasi-anonymous  email  and  Web  communities 
+that  support  group  identity  and  specific  topics  such  as 
+financial  trading,  transgender  transition,  new  motherhood, 
+or cancer treatment (which often require moderation and/or 
+registration),  anonymous  mobile  apps  are  designed  for 
+crowds without an agenda or specific topic. Users can find 
+very little identity information on these apps except others’ 
+general location at the city or state level. Previous research 
+on  these  apps  suggests  that  people  using  Whisper  interact 
+more often with co-located than with distant users [38].   
+Research  so  far  indicates  that  people  disclose  personal 
+information and express their personal needs and wishes on 
+these apps. Linguistic analysis of Whispers shows a higher 
+frequency of first person pronouns in Whisper posts than in 
+other  social  media  such  as  Facebook  and  Twitter  [7,38]. 
+The  social  psychological  literature  suggests  that  self-
+disclosure may be motivated by social approval, intimacy, 
+relief of distress, social control, or identity clarification [8]. 
+People  are  more  willing  to  disclose  to  strangers  because 
+doing so can mitigate some disclosure risks [30]. Disclosure 
+
+identity  markers  of 
+
+“confessions,” 
+
+category  was 
+
+[5].  People  may 
+
+risks  include  rejection  by  listeners,  reduction  of  one’s 
+autonomy  and  personal  integrity,  loss  of  control  or  self-
+efficacy,  and  the  possibility  of  hurting  or  embarrassing 
+others  [24].  Disclosing  online  can  feel  safer.  People 
+disclose more about the self in the online context compared 
+to what they do in the offline context [15], and they disclose 
+more  online  when  the  medium  contains  less  information 
+about  real  identity  [27].  Correa  et  al  [7]  asked  MTurk 
+workers to annotate 477 Whisper posts, and found the most 
+popular 
+followed  by 
+“relationships,” “meetup,” and “QnA/Advice.” Along with 
+self-disclosure,  questions  and  advice  seeking  posts  are 
+common  in  Whisper  [38],  as  they  are  in  4chan/b/  [4]  and 
+Facebook  Confession  Board 
+feel 
+anonymous  advice  is  more  honest  than  advice  from 
+identified sources [22].   
+Ephemerality 
+is  another  characteristic  of  anonymous 
+communication.  According  to  Bernstein  et  al.  [4],  the 
+median life of a post on 4chan /b/ is 3.9 minutes, and 43% 
+of the posts do not receive any reply. The authors propose 
+that  ephemerality  removes  a  “rich  get  richer”  effect  and 
+raises  community  participation  because  users  have  to 
+quickly  reply  to  a  thread  to  keep  it  alive.  Similarly,  more 
+than 50% of Whispers receive no replies, and most replies 
+arrive  within  1  day  after  a  post  has  been  made  [38]. 
+Although  Whisper  posts  do  not  automatically  expire,  a 
+significantly higher proportion of this content gets deleted 
+either  by  moderators  or  by  users  themselves  than  other 
+social media (18% vs. 4% on Twitter).  
+There is limited qualitative work delving into the subjective 
+experiences  of  users  of  anonymous  apps;  most  existing 
+research  uses  text  analyses  to  detect  behavioral  patterns. 
+There remain open questions about the nature and form of 
+participation  in  these  apps  given  their  limited  affordances 
+for  developing  interpersonal  bonds  or  common  group 
+identity,  two  theoretical  factors  that  sustain  social  groups 
+online [29].  
+Identity in Online Communities 
+In  online  communities  that  lack  persistent  user  identifiers, 
+group  identity  can  play  an  important  role.  There  is  rich 
+literature  on  self-expression  and 
+image  management 
+associated  with  one’s  self-identity  [12].  Online  identity 
+signals  the  credibility  of  an  information  source,  helps  to 
+build  trust  between  group  members,  and  motivates  people 
+to  contribute  to  online  communities  in  order  to  build 
+reputation.  In  Donath’s  study  of  Usenet  groups  [9], 
+anonymous  accounts  were  commonly  used  when  people 
+wanted  to  reveal  personal  information  or  discuss  legal 
+matters, or when they just wanted to keep their participation 
+secret from others they knew. Studies of anonymity in the 
+early days of the Internet suggested it could be a dangerous 
+medium  leading  to  angry,  antisocial  behavior  towards 
+others,  such  as  “flaming”  –  angry  or  hateful  speech  [17]. 
+Nonetheless,  researchers  also  discussed  the  benefits  of 
+anonymity  for  equalizing  participation  in  groups  [17],  for 
+
+360
+
+SESSION: RELATIONSHIPS AND ROMANCE
+
+the 
+
+anonymity  of 
+
+encouraging communications among weak ties [39], and for 
+the freedom to share ideas and be open and honest without 
+social constraint (e.g. GDSS research by [23]).  
+The 
+Internet  provides  people 
+opportunities  for  identity  experimentation.  Gross  [14] 
+proposed the Internet as a so-called identity playground for 
+teens. Half of the students in their study had pretended to be 
+someone  other  than  themselves  on  the  Internet  –  mainly 
+someone  older –  a  desired  or  future  identity.  Similarly,  in 
+Stern’s  work 
+[32],  adolescents  constructed  personal 
+websites  as  “touched-up  versions  of  themselves.”  (p.106) 
+Using the shield of online anonymity to explore alternative 
+identities  is  not  only  seen  in  teens,  but  also  in  adults.  In 
+Turkle’s early work of MUDs [35], she describes the virtual 
+communities  as  “laboratories”  for  people  to  explore  and 
+experiment  with their different selves  (p.12).  Recent  work 
+shows that people create online dating profiles to reflect an 
+“ideal  self”  instead  of  their  actual  self  [11].  On  the  other 
+hand, Bargh et al. [2] argued that people are more able to 
+disclose their so-called true self on the Internet because the 
+anonymous environment reduces expectations and the risks 
+of  social  sanction  that  exists  in  face-to-face  interactions. 
+The disinhibiting effect of anonymity online can lead to a 
+higher  level  of  self-disclosure  [2],  discussion  of  taboo 
+topics    and  unpopular  opinions  [5],  and  unusual  acts  of 
+generosity [34]. 
+To  explore  how  anonymity  influences  communication  on 
+mobile anonymous communication apps, we asked: 
+RQ  1.  How  and  what  do  people  post  on  anonymous 
+communication apps?  
+We also wanted to examine why people participated. 
+RQ 2. What experiences or contexts motivate people to use 
+anonymous communication apps?  
+Community Development 
+Wellman and Gulia’s work in the beginning days of online 
+communities explored the question of whether or not people 
+can form communities in the virtual world [39]. They found 
+that Usenet, IRC channels, and discussion groups not only 
+served  the  purpose  of  information  exchange,  but  also 
+provided  emotional  support  and  companionship  for  their 
+members.  In  Turkle’s  book,  Alone  Together  [36],  she 
+explored how people use anonymous confessional sites like 
+PostSecret.  She  observed 
+these  sites  are  not 
+communities  because  “communities  are  places  where  one 
+feels  safe  enough  to  take  the  good  and  the  bad.”  (p.238) 
+Some  users  she  interviewed  were  discouraged  by  the 
+amount of criticism and negativity they experienced on the 
+site.  We  hope  to  explore  the  same  question  as  applied  to 
+these new anonymous communication apps. 
+To explore whether or not these anonymous communication 
+apps encourage community among the members, we asked: 
+RQ  3.  Are  there  virtual  communities  in  these  anonymous 
+communication apps?  
+
+that 
+
+introduced, 
+
+people 
+sharing 
+
+Anonymous vs. Identified Online Communication 
+Social  network  sites  like  Facebook  allow  people  to  build 
+their  images  and  history  online  and  maintain  relationships 
+with real life connections. Over the years since these sites 
+have 
+were 
+however, 
+become 
+increasingly  cautious  about 
+their  personal 
+information or opinions on social network sites because of 
+the  higher  risks  associated  with  their  identity  tied  to  the 
+content they post [33]. Disclosure on Facebook carries risks 
+such  as  social  rejection  and  damage  to  self-presentation 
+[20,37]. Others may block or unfriend posters because they 
+post  too  often  about  politics  [31].  Participants  in  some 
+studies describe how they attempt to mitigate posting risks 
+by moving communication to other channels [37]. Marwick 
+&  boyd  [21]  describes  how,  in  order  to  manage  different 
+social boundaries, adults and teens both use different sites 
+(e.g.,  Facebook  and  MySpace)  to  communicate  with 
+different  connections,  or  to  switch  among  communication 
+channels  (e.g.,  post  in  Facebook  vs.  text  message).  In 
+addition  to  maneuvering  in  identified  social  networks  to 
+protect  their  identity  and  privacy,  some  people  choose  to 
+share anonymously without their real names attached to the 
+content they post. Leavitt [19] describes how Reddit users 
+use  anonymous  throwaway  accounts  to  disclose  personal 
+information  (such  as  asking  for  advice  or  feedback  about 
+controversial problems), and to manage boundaries between 
+their different accounts on reddit.  
+To  explore  these  phenomena  as  they  might  or  might  not 
+apply  to  anonymous  communication  apps,  we  posed  the 
+following research question: 
+RQ  4.  How  do  people  choose 
+communication apps versus identified social networks? 
+METHOD 
+We  conducted  eighteen  semi-structured  interviews  with 
+anonymous  communication  application  users  to  better 
+understand  how  and  why  people  participate  in  these  apps. 
+The  first  thirteen  interviews  (P1-P13)  were  condcuted  in 
+Summer 2014, and the last 5 interviews were conducted in 
+Spring  2015  (P14-P18).  The  findings  were  not  different 
+across  these  two  time  periods,  so  the  data  have  been 
+combined. Participants were recruited through flyers posted 
+in a major city in the east coast of U.S., a participant pool of 
+a  research  university  in  the  east  coast,  and  through 
+Craigslist postings. We recruited participants who had used 
+at  least  one  of  the  anonymous  communication  apps 
+Whisper,  Secret,  and  YikYak.  The  majority  of  our 
+participants used Whisper.  
+Each  interview  session  lasted  approximately one  hour and 
+focused on how participants used the application, the posts 
+they  made  and  viewed,  and  their  perceptions  of  the 
+application dynamics and other users of the application. We 
+conducted interviews in person (4 out of the 18 interviews) 
+or  over  the  phone,  Gtalk  or  Skype.  Participants  also  sent 
+specific posts mentioned during the interview via email for 
+later reference during analysis and coding. 
+
+to  use  anonymous 
+
+361
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ID  Gender  Age  Occupation 
+
+Anonymous 
+app(s) they use 
+Whisper, Secret 
+Whisper 
+Whisper, Secret 
+
+Whisper 
+Whisper 
+Whisper 
+Whisper 
+Whisper, Secret 
+Whisper  
+
+Whisper 
+
+Student 
+Student 
+
+19 
+20 
+22  Hospitality 
+
+worker 
+19 
+Student 
+22 
+Student 
+23 
+Student 
+21 
+Student 
+26 
+Student 
+29  Admin. 
+assistant 
+27  Admin. 
+assistant  
+Student 
+
+Features of The Apps 
+All  three  applications  were  available  on  iOS  and  Android 
+smartphones. Users could only post via their smartphones. 
+Whisper  had  a  website  displaying  popular  whispers  and 
+various  categories  of  whispers  that  people  can  access  on 
+their  computers  (https://whisper.sh/). 
+  Users  on  both 
+Whisper and YikYak were not connected to other users on 
+any  existing  social  networks.    Posts  on  both  Whisper  and 
+YikYak contained location information: each Whisper post 
+displayed city level location information, and each YikYak 
+post  showed  a  blurred  area  map  in  the  background.  
+Whisper posts always had a background image and texts on 
+top  of  the  image.  Each  reply  also  included  a  background 
+image. YikYak posts only contained text. Secret connected 
+users with their friends and friends of their friends based on 
+existing  social  networks  such  as  email  contacts.  Secret 
+posts that were not from a friendship circle were displayed 
+with  city-level  location  information.  At  the  time  when  we 
+conducted  the  first  12  interviews,  Secret  allowed  users  to 
+add a background image but later they removed that feature.  
+Whisper  randomly  assigned  a  username  to  each  user  at 
+initial signup, but users could change their usernames any 
+time.  The  default  setting  for  posting  on  YikYak  did  not 
+require users to attach a username to their posts, and replies 
+on  YikYak  were  identified  by  random  avatars.  YikYak 
+users  had  the  option  of  editing  a  “handle”  if  they  want  to 
+added an identifier to each post. Secret posts did not have 
+usernames attached, and replies were identified by avatars 
+randomly  assigned  to  each  user.  Users’  avatars  changed 
+every time they replied to a different post. 
+Users  interacted  with  others  in  three  ways:  posting, 
+acknowledging another’s post (hearting a post on Whisper 
+or Secret; upvoting or downvoting in YiYak), replying to a 
+post  (on  Whisper,  YikYak,  and  Secret),  or  sending  direct 
+messages to another person (only available on Whisper and 
+Secret).  Users could flag posts on all three apps.  
+Participants 
+Participants in the study reported ages between 19 and 29 
+(mean  age  23.5  years);  11  were  female  participants  and  7 
+were  male  participants.  Our  sample  is  typical  of  the 
+demographic  breakdown  of  Whisper,  according  to  a  prior 
+count by [7], who reported that most of Whisper users are 
+between age 17 and 28 and 70% of them are women. Table 
+1 shows some demographic information of our participants 
+and 
+they  use. 
+Seventeen participants used Whisper and 5 participants had 
+also tried Secret (but they mainly talked about their usage 
+of  Whisper  during  the  interviews).  One  user  used  the 
+application YikYak. Nine participants also mentioned using 
+other  anonymous  communication  services  during 
+the 
+interview, including TextSecure (a private messaging app), 
+PostSecret,  FML 
+(http://www.fmylife.com/),  Facebook 
+confession board, and Reddit. Our sample used a variety of 
+other social apps  as well (16/18 used Facebook, 11/18 used 
+Twitter, 11/18 used Instagram, and 8/18 used Snapchat).  
+
+the  anonymous  communication  apps 
+
+362
+
+P1 
+P2 
+P3 
+
+P4 
+P5 
+P6 
+P7 
+P8 
+P9 
+
+P10 
+
+P11 
+P12 
+P13 
+P14 
+P15 
+P16 
+P17 
+
+P18 
+
+M 
+M 
+F 
+
+F 
+F 
+F 
+M 
+M 
+F 
+
+F 
+
+F 
+F 
+M 
+M 
+M 
+F 
+F 
+
+F 
+
+Whisper  
+
+22 
+29  Yoga teacher  Whisper, Secret 
+23 
+23 
+22 
+22 
+29 
+
+Whisper 
+Whisper 
+Whisper 
+YikYak 
+Whisper 
+
+Student 
+Student 
+Student 
+Student 
+Research 
+specialist 
+Student 
+
+24 
+
+Whisper, Secret 
+
+Table 1. Study participants. 
+
+In recruiting, we stratified our sample across usage duration 
+with one third of our sample being new users (1-3 months 
+in  the  app),  one  third  being  moderate  duration  users  (4-8 
+months  in  the  app),  and  one  third  long  term  users  (12 
+months or more). We also split our sample across users who 
+had posted in the application (10/18) versus those who only 
+browsed and read posts by others (8/18). 
+Interview Analysis  
+We  transcribed  our  interview  audio  records  and  analyzed 
+the  transcripts  following  a  grounded  theory  approach  [6]. 
+The 
+transcripts  were  coded  using  Dedoose  software 
+(http://dedoose.com/).  Within  the  interviews  we  identified 
+descriptions  of  application  usage,  the  posting  and  reading 
+behavior.  Two  researchers  independently  coded  subsets  of 
+the  interviews,  discussed  and  resolved  differences,  and 
+clarified  code  definitions.  We  first  open  coded  participant 
+responses about their motivations for using the application, 
+posts  they  made  and  viewed  on  the  site,  and  social 
+perceptions.  We  then  performed  axial  coding,  conducted 
+affinity  diagramming  to  group  categories  of  concepts,  and 
+developed a series of themes on each topic: application use, 
+types  of  posts  people  made  and  why,  and  types  of  posts 
+they 
+the 
+application,  perceptions  of 
+the 
+applications  and  contrasts  with  other  social  media.    We 
+refined the themes during the writing process.  
+Post-Coding 
+We supplemented our interview responses with qualitative 
+analysis  of  posts  on  the  applications.  The  posts  we  coded 
+
+liked  and  disliked,  motivations  for  using 
+the  other  users  of 
+
+SESSION: RELATIONSHIPS AND ROMANCE
+
+were from three sources: we randomly collected 125 posts 
+from the applications Whisper and Secret in June 2014; we 
+also  coded  the  posts  that  our  participants  had  posted  on 
+those  applications;  and  we  extracted  the  posts  that  our 
+participants  reported  seeing  on  those  applications.  Three 
+researchers worked together to code the posts according to 
+their topic, to the emotion expressed, and to the motivations 
+that seemed to be behind the posts. We used the categories 
+from  this  analysis  to  confirm  and  extend  the  themes  from 
+our  interview  analysis,  and  to  validate  the  types  of  posts 
+that participants described in our interviews. Table 2 below 
+summarizes the result of the integrated coding of posts we 
+collected from the applications and posts mentioned during 
+interviews.  
+RESULTS 
+We  found  that  participants  interacted  on  anonymous 
+communication  apps  to  disclose  predominantly  personal 
+information  or  emotions  (positive  and  negative),  and  that 
+they  felt  short-lived  connections  with  other  users  in 
+response to content or aspects of content they could relate 
+to.  In  the  following  sections,  we  first  present  how  people 
+used Whisper, YikYak, and Secret, the types of posts they 
+made in the applications, their motivations for making posts 
+and  what  they  got  out  of  reading  others’  posts,  and  their 
+perceptions  of  community  on  the  app.  Lastly,  we  discuss 
+how  participants  viewed  anonymous  communication  apps 
+versus identified social networking sites. 
+How People Used the Apps  
+Anonymous  apps  provided  a  periodic  distraction  and 
+diversion from everyday life for the participants, but also an 
+
+emotional outlet without social consequences.  A majority 
+of  our  participants  (browsers  and  posters)  visited  the  app 
+for  five  to  fifteen  minutes  a  day.  They  reported  browsing 
+and  liking  posts  before  they  went  to  bed,  or  to  pass  time  
+when  they  had  some  downtime  throughout  the  day,  e.g. 
+when they were on the bus or waiting in line. They tended 
+to  look  at  popular  posts,  nearby  posts,  and  occasionally 
+search for topics, such as music, technology, and fashion, in 
+which they were interested. 
+Some participants in our sample reported their usage of the 
+apps declined over time. Two longer-term users of Whisper 
+mentioned  that  they  visited  the  app  very  frequently  when 
+they  first  started  using  it  (several  times  a  day)  but  used  it 
+much  less  now  (two  to  three  times  a  week)  because  were 
+irritated  by  seeing  lots  of  rude  argumentative  or  overly 
+sexual  posts  (P17  and  P18).  Participants  who  posted 
+frequently  early  on  also  said  they  posted  less  frequently 
+over  time,  especially  after  getting  unwanted  responses  to 
+their  posts.  For  example,  P1  who  posted  when  he  first 
+began  using  Whisper  had  switched  to  only  browsing 
+because he received too many direct messages and requests 
+for further contact in response to the posts he made.  
+What People Posted on Anonymous Applications 
+We  next  examined  the  types  of  posts  people  made  on  the 
+applications. Table 2 summarizes main categories of posts 
+revealed  in  our  analysis.  Our  findings  echo  prior  research 
+showing 
+the  majority  of  posts  were  personal 
+disclosures  [7,38].  Many  of  these  posts  expressed  strong 
+personal  opinions,  or 
+shared  personal  experiences, 
+confessions, and negative feelings such as anger or sadness 
+
+that 
+
+Types of posts 
+Personal 
+Distress release 
+
+Social venting 
+
+Self-expression 
+
+Entertaining confession 
+
+Positive stories 
+
+Seeking interaction 
+
+Impersonal 
+General entertainment 
+
+Information sharing  
+
+Subcategories 
+
+Example posts 
+
+Sad, negative emotions, 
+confessions of bad behavior, bad 
+experiences 
+Conflict, relationship problems 
+
+Self-reflection about identity, 
+personal opinions, aspirational 
+
+Funny self-observations, funny 
+habits, pranks 
+Overcoming challenges, 
+achievements, positive 
+experiences, news 
+Meet-ups, asking for advice, 
+question discussion starters 
+
+Non-personal jokes, quotes, 
+observations 
+Interests, facts, local information 
+
+“I was like I can't believe I wanted to get through school to 
+work full-time.” (posted by P17) 
+
+“You’re extremely difficult to work with. I wish I could 
+clone you make them your manager so you know how 
+much you suck.” (Seen by P3) 
+“I love being a solitary human being. I enjoy reading in a 
+park, the library, at a bar, at a restaurant. I don’t need 
+many friends to have fun.” (posted by P3) 
+“I swear about my bosses all of the time in a language I 
+know they don’t speak. Their dog too.” (posted by P10) 
+“I’ve got five kids and I’m a single mom. I woke up to my 
+oldest son helping his younger siblings clean their rooms 
+and get read. Parenting done right.” (seen by P5) 
+“I never know what to do with my hair – What’s a 
+hairstyle that works for curly hair?” (posted by P12) 
+
+“Summertime and the living is easy” (posted by P16) 
+
+“I like Game of Thrones.  I can’t wait until next season.” 
+(seen by P2) 
+
+Table 2. Post categories identified in our study. (These categories are not mutually exclusive.) 
+
+363
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+and 
+
+admissions  of 
+
+(coded  in  Table  2  as  distress  release  and  social  venting). 
+Some posts served the purpose of identity clarification and 
+did  not  always  contain  strong  emotions  (Table  2;  self-
+expression).  People  also  shared  posts  that  were  more 
+lighthearted,  fun,  and  entertaining  (Table  2;  entertaining 
+confessions  &  positive  stories).  Many  posts  were  made 
+seeking  responses  (Table  2;  seeking  interaction)  either  in 
+person, in replies and one-on-one messages, or chat in other 
+channels.  People  also  made  impersonal  posts  with  quotes, 
+facts,  or  information  about  topical  interests  (Table  2; 
+general entertainment, Information sharing).  
+Why People Post on Anonymous Applications 
+Despite  the  lack  of  affordances  for  social  identity  or 
+relationship  development,  participants  had  mainly  social 
+reasons for posting on the applications.  Sometimes people 
+explicitly  sought  social  interaction,  asking  for  replies  to 
+their  posts  or  interactions  outside  of  the  app  such  as 
+chatting  or  a  “meetup”.  Sometimes  they  just  wanted  to 
+share their personal stories or momentary feelings without 
+any expectation of responses.  
+Using The Crowd for Social Validation 
+According to participants, a primary motivation for creating 
+posts  in  the  apps  was  to  obtain  social  validation  from  the 
+crowd of application users. They used the diffuse members 
+of the application as a social litmus test of their behaviors, 
+frailty  or  unusual 
+opinions, 
+characteristics.  They  wanted 
+their 
+opinions  or  thoughts  were  normal,  whether  people  would 
+disapprove of something they had done, how bad it would 
+seem to others, or how a wide set of people thought about 
+an issue of personal relevance.    
+For example, a 22-year-old hospitality worker posted about 
+being a solitary person (Figure 1; Table 2, self-expression 
+category example post) and said she posted it on Whisper to 
+see whether others were like that too. She said she always 
+felt pressured to go out with friends and colleagues in real 
+life but what she really enjoyed was reading by herself. The 
+hearts to her post made her feel like there were other people 
+who felt the same way. She said: 
+“It’s nice to have some validation that you aren’t the only 
+one that feels that way.”(P3) 
+Despite the anonymity in the apps, participants sometimes 
+sought  opinions  about  their  own  behavior  indirectly. 
+Seemingly impersonal questions to the crowd or statements 
+were another way to acquire opinions about the user’s own 
+behavior.  For  example,  after  P4  got  a  tattoo,  she  posted  a 
+question  to  get  people’s  opinions  about  tattoos.  The  post 
+read  “tattoos  on  a  girl  yes  or  no?”  not  revealing  anything 
+about herself or the fact that she had one. As she said: “it's 
+interesting to figure out what people think about that.”  
+Participants  used  the  apps  to  get  opinions  from  the 
+(presumably)  more  diverse  and  more  objective  audience 
+than  they  would  find  on  their  other  social  media.  For 
+instance, P6 said: 
+
+to  know  whether 
+
+“I  guess  anyone  who  has  Whisper  can  check  it  so  it's 
+beyond  your  Facebook  friends,  1,000  people  you  already 
+know.  So they might have other interests, might be cooler 
+to  like  Lord  of  the  Rings  on  Whisper  than  to  like  it  on 
+Facebook.” (P6) 
+Nevertheless, participants were aware that anonymity took 
+away  accountability  and  responsibility.  Two  participants 
+said that they did not want advice from random strangers on 
+the  Internet  and  they  would  prefer  advice  from  friends 
+because they knew them better. 
+The  social  validation  motivation  for  posting  we  observed 
+seems  similar  to  the  approval  and  identity  clarification 
+goals  described  in  the  previous  literature  mainly  among 
+teenagers.  Teenagers  share  personal  information  on  their 
+personal  webpages  for  the  purpose  of  seeking  connection 
+and  validation  [32];  we  found  young  adults  doing  so  on 
+these  apps.  According  to  prior  work,  a  goal  of  self-
+disclosure is to be liked or accepted by others, and previous 
+work has found these disclosures can help communicators 
+clarify  their  identity  by  allowing  them  to  convey  accurate 
+information  about  themselves  [3,8].  In  the  anonymous 
+applications,  people  shared  their  personal  opinions,  habits 
+or  stories  even  without  sustained  interaction.  When  the 
+anonymous  audience  responded  positively  with  hearts  or 
+upvotes,  even  with  no  further  conversation,  they  felt  they 
+were not alone and that their behavior was acceptable.  
+Making Short-Term Connections 
+Although  it  was  unusual  in  our  sample  of  interviewees, 
+many posts on the anonymous applications were explicitly 
+looking  for  interactions  or  “hookups”  with  other  users. 
+These  could  be  online  one-on-one  chat  interactions  or 
+meetings in real life. For example, P1 had used the app to 
+talk to people online and to meet them in real life. He had 
+also  posted  specifically  to  get  responses  from  people  who 
+wanted to chat one-on-one, with a post saying, “if anybody 
+wants  to  chat,  message  me.”  It  seems  like  most  of  these 
+posts  were  seeking  short-term  communication  or  sex,  but 
+we  do  not  have  evidence  to  discover  whether  these 
+interactions  ever  developed  into  longer-term,  intimate 
+relationships.  Four  participants,  all  female,  expressed  an 
+aversion to this type of posts, saying they were “spammy,” 
+“disgusting,” or defeated “the purpose of the app.”  
+Some of our participants responded to requests for contact. 
+For example, P2 sent a direct message to another user in his 
+local  area  asking  if  anyone  had  Game  of  Thrones  DVDs 
+and  offering  to  buy  them.  Posts  aiming  at  making 
+connections may have a higher level of risk of exposing the 
+poster,  and  these  posts  were  more  likely  to  include 
+identifying  information  such  as  selfies  (photos  of  the 
+poster),  or  the  poster’s  location,  or  personal  interests.  For 
+example, P7 saw a friend posting a selfie on a post that said 
+“Anyone in [his city] want to talk or something?” using the 
+“Nearby” feature of Whisper (Figure 2).  
+
+364
+
+SESSION: RELATIONSHIPS AND ROMANCE
+
+in 
+
+their 
+
+Avoiding Social Risk and Context Collapse  
+Participants  also  used  the  apps  to  release  emotions  or 
+secrets  without  risking  social  consequences  such  as 
+offending  others,  secrets  being  found  out  by  others,  or 
+harming  one’s  image  online.  In  the  social  psychology 
+literature,  it  has  been  reported  that  writing  about  a  secret 
+can  improve  people’s  health  conditions  [26].  Turkle  [35]  
+has  argued  that  the  virtual  world  is  a  “safer  place  to 
+ventilate” (p.199), This motivation seemed to be prominent 
+in  the  posts  coded  as  distress  release  and  social  venting 
+(Table 2). For example, P18 complained about work-related 
+issues on Whisper, and said she did not care about getting 
+feedback  or  responses  because  she  just  needed  to  get  her 
+opinion out there.  
+lack  of  social  boundaries  on  Whisper  meant 
+The 
+participants  did  not  have 
+to  deal  with  conflicting 
+expectations  from  different  social  groups,  or  the  context 
+collapse  problem 
+in  social  media  [21].  The  above 
+participant  P18  indicated  that  she  posted  her  complaints 
+about her work on Whisper rather than other social media 
+because  her  coworkers  were  friends  on  the  other  social 
+media she used (Facebook and Instagram). This motivation 
+is  similar  to  what  Kang  et  al.  [16]  reported  about  the 
+motivations  to  seek  anonymity.  They  reported  that  people 
+used  anonymity  as  a  way  to  manage  overlapping  and 
+difficult  social  boundaries 
+lives,  essentially 
+eschewing all of them by being completely anonymous. An 
+administrative  assistant 
+from 
+differential audience expectations on Whisper versus other 
+social media: 
+“I  didn’t  really  have  an  audience  in  mind.  It’s  one  of  the 
+things  I  like  about  Whisper  is  that  I  don’t  have  to  think 
+about  that.  When  I  post  to  Facebook,  et  cetera,  because  I 
+have so many family members and then people that I’m sort 
+of in touch… I have to always make really careful decisions 
+about what’s public vs. what’s for just these people.” (P10) 
+In  addition  to  removing  the  concern  of  managing  one’s 
+social  boundaries,  sharing  on  anonymous  communication 
+apps, as implied in the above quote, did not require as much 
+effort  to  construct  or  polish  one’s  post  as  did  posting  on 
+identified social networking sites.  
+Participants  said  they  did  not  need  to  consider  how  to 
+manage their online image on these apps. P1, who also used 
+Tinder  to  find  connections,  said  he  cared  less  about  his 
+grammar  on  Whisper  as  compared  with  Tinder;  when  he 
+talked  to  others  on  Tinder,  he  would  phrase  his  words 
+better.  A  woman  who  had  shared  her  story  about  an 
+unrequited  love  to  PostSecret  thought  posts  on  Whisper 
+were easy to make, in contrast to the effort required when 
+she had to buy a post card, write her secret down, and mail 
+the post card to PostSecret (P9).  
+Sharing Momentary Information  
+Some participants posted to share feelings or thoughts they 
+had  that  were  stimulated  by  the  situation  they  were  in  at 
+
+talked  about 
+
+freedom 
+
+365
+
+ 
+
+Figure 2. View of the Nearby tab in Whisper app 
+
+that moment. For example, P15 posted a joke in frustration 
+while  she  was  driving  and  stuck  in  traffic  because  of 
+construction  she  saw  everywhere  on  the  road.  Her  post 
+read: “In [her town] it’s either winter or construction.” She 
+said  she  wouldn’t  post  something  like  that  on  Facebook 
+because  it  wasn’t  important  enough,  expressing  that  some 
+things are not “monumental enough to post on Facebook.”  
+These in-situ posts often involved observations or thoughts 
+about  people  around  the  poster  that  couldn’t  be  shared  or 
+said out loud. Frustration was a common driver for these in-
+situ  posts.  They  also  included  posts  about  conflicts  or 
+arguments with other people (Table 2, social venting). The 
+administrative  assistant  also  posted  after  a  drunken  fight 
+with  her  husband,  saying  that,  “I’m  pretty  sure  I  made  a 
+mistake  marrying  my  husband  but  I  have  two  more 
+weddings  to  get  through  before  I  can  get  a  divorce.”  She 
+appreciated  the  anonymity  of  this  post  the  next  morning 
+because there were no real consequences.  She said: 
+“In  the  morning  I  look  at  this  and  even  though  I  know  it 
+doesn’t  matter  because  nobody’s  seen  it  I’m  just  kind  of 
+mortified  that  I  even  thought  that…  But  that’s  why  I  like 
+Whisper is you can post something like that and there’s not 
+really consequences since it is anonymous.”(P10) 
+How People View Anonymous Communications 
+The majority of our participants used the apps for browsing 
+posts  made  by  others.  We  were  interested  in  why  they 
+enjoyed reading posts from others and what benefit they got 
+out of reading these posts, given the barriers of anonymity 
+and ephemerality to forming relationships with the posters. 
+We  found  that  participants’  motivations  for  reading  posts 
+fell  into  three  main  categories:  connection,  entertainment, 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+they  had  gone 
+
+and  social  comparison.  We  also  noticed  aversion  towards 
+offensive content people saw on the site. 
+Feeling Connected to People Like Me 
+Our  participants  liked  the  posts  that  sparked  feelings  of 
+similarity  or  empathy,  and  estimated  that  the  posts  they 
+could resonate with were more likely to get popular. These 
+posts  were  about  funny  habits,  similar  life  experiences,  or 
+similar  problems 
+through  or  were 
+experiencing  (such  as  the  loss  of  a  close  relative,  being 
+saddled  with  student  loans).  Three  participants  mentioned 
+they  liked  to  see  people  overcoming  difficulties  in  their 
+lives that seemed relevant to their own lives. For example, 
+P5  liked  a  post  by  a  single  mom  about  raising  five  kids 
+(Table 2, positive stories) because she had a big family and 
+could empathize with how hard that situation must be: 
+“It’s  nice  to  see  that  people  are  fighting  through  things, 
+and like in this situation that would really stink. I’m a child 
+of four, and so I know how crazy it gets just from both of 
+our parents.  So then it’s like someone with five kids I’d be 
+like wow. I’d give them props.”(P5) 
+People also resonated with objective topics that signaled a 
+common  social  identity  outside  of  the  app,  such  as  posts 
+about the school attended, local news, or local restaurants. 
+Participants  did  not  restrict  their  activity  or  viewing  to  a 
+single  topic  or  interest,  but  especially  liked  posts  that 
+connected  with  their  own  interests.  Some  participants 
+mentioned  they  were  more  attracted  to  posts  about  music, 
+fashion,  technology,  or  TV  shows  that  matched  their  own 
+interests.  On  the  other  hand,  the  anonymous  apps  did  not 
+seem  to  serve  interest-based  information  needs  very  well. 
+Two participants mentioned searching for things they were 
+interested in but failed to find satisfying results.  
+Being entertained 
+Participants  enjoyed  reading  entertaining  or  sensational 
+posts made by others for their amusement or shock value. 
+Several  participants  enjoyed  reading  personal  negative 
+confession  posts  for  their  shock  value  (Table  2,  distress 
+relief and social venting). For example, P18 said: “it’s like a 
+reality TV on your phone.” P13, an undergraduate student 
+majoring  in  engineering,  said:  “It’s  kind  of  a  madhouse. 
+Like,  people  will  post  some  of  their  deepest,  darkest 
+secrets.”  He  liked  reading  about  people’s  “life-changing 
+problems”  because  he  believed  people  were  sharing  the 
+actual problems they had.  
+Half  of  the  participants  said  they  enjoyed  reading  more 
+lighthearted  confessions  and  entertaining  posts 
+for 
+amusement. For example, P11 said:  
+“A lot of people just post these really intense confessions, 
+or things like that. And it’s kind of good to see that people 
+can also just post these really funny things on it.”(P11) 
+Aiding Downward Social Comparison 
+Distressing  posts  also 
+social 
+comparison  or  schaudenfreude  [40].  Two  participants  (P5 
+
+stimulated  downward 
+
+366
+
+and  P11)  said  learning  about  other  people’s  problems 
+helped them put their own lives into perspective, and made 
+them feel more motivated to handle their own problems.  
+“It  kind  of  put  things  in  perspective  for  me...  There  were 
+times where I would be like oh my gosh in my life. And then 
+I would see other people and their issues, and then I would 
+be thankful for what I have, and like myself.” (P5) 
+Disliking Misinformation and Offensive Content 
+An  obvious  drawback  of  anonymity  is  that  it  lacks  social 
+(and  legal)  accountability  for  rumors,  misinformation,  and 
+offensive  content.  Several  participants  complained  about 
+seeing  posts  that  were  offensive  to  women,  posts  that 
+included  nudity  or  overly  sexual  content,  and  prejudicial 
+posts about people’s religion or race. As in Turkle’s work 
+[36],  a  few  of  our  participants  doubted  the  truthfulness  of 
+posts and mentioned that stories they saw on Whisper were 
+farfetched  and  did  not  seem  realistic.  The  engineering 
+student (P13) thought popular posts he saw were “presented 
+in  a  way  that  can  grab  your  attention.”  P4  said,  “some 
+people  might  just  exaggerate  details  to  get  people  to  feel 
+sorry for them.”  
+Perceptions of the Crowd and Level of Community  
+We were interested in whether there really was a sense of 
+community among users of this application despite the lack 
+of  affordances  for  connection  and  identification.  Users  in 
+the  application  couldn’t  associate  individuals  with  posts 
+most of the time and posts didn’t persist for long periods in 
+the application. It was often difficult to refind a particular 
+post seen in the past. Our analysis of posts and responses to 
+posts revealed, perhaps counter intuitively, that participants 
+still felt connection to the messages and emotions of other 
+users sometimes motivating direct interaction.  
+User Identities  
+Our participants perceived other users of the applications to 
+be mostly teenagers or young adults. Some described user 
+identities  using  specific  demographics  such  as  “LGBT 
+group, female.”  Most of them made this estimation based 
+on the type of content they saw in the app. One said, “It's a 
+lot of people talking about things like hooking up and like 
+meeting people out at bars and stuff. It makes me think of a 
+younger population (P18).” The YikYak user guessed there 
+were  other  college  students  on  the  application  because  of 
+her location (a college neighborhood) and the fact that the 
+application used her location to show nearby posts.  
+Location provided an identity signal unique to these apps in 
+comparison to other web-based online communities. Posters 
+could use the “nearby” feature of Whisper and YikYak to 
+focus their attention on the people geographically close to 
+them.  This  shared 
+level  of 
+informational  or  emotional  support  they  gained  from 
+interaction.  There  were  other  ways  of  signaling  identity 
+through  posts,  such  as  by  indicating  special  interests  or 
+affiliations.  For  example,  one  participant  posted  about  a 
+local  baseball  team,  using  a  phrase  that  only  fans  would 
+
+increased 
+
+identity 
+
+the 
+
+SESSION: RELATIONSHIPS AND ROMANCE
+
+themselves  by  posting  selfies  as 
+
+understand,  signaling  he  was  a  fan  and  intended  to  elicit 
+responses from other fans (P16).  
+We  asked  participants  to  estimate  how  anonymous  they 
+were on the site, and most of them were quite confident that 
+they were anonymous. One exception was the woman who 
+also  used  PostSecret;  she  thought  Whisper  was  not  as 
+anonymous  as  PostSecret  because  Whisper  posts  could 
+potentially  be 
+tracked  electronically.  The  engineering 
+student  (P13)  even  took  additional  steps  to  anonymize  his 
+identity  such  as  using  a  Burner  app  to  create  temporary 
+phone  number  for  Tinder  or  Craigslist  and  using  an  app 
+TextSecure to send encrypted messages. 
+Self-deanonymizing  and  deanonymizing  others  were 
+frowned upon by our respondents, and not something they 
+had  done  through  their  posts  in  the  app.  One  participant 
+(P7)  deanonymized  a  friend  on  Whisper  when  he 
+recognized him, later deleting his identifying reply because 
+the  original  poster  became  upset  after  being  publicly 
+deanonymized  and  he  did  not  want  to  hurt  his  friend’s 
+feelings. Our participants observed other users occasionally 
+deanonymizing 
+the 
+background of their posts, typically in posts requesting in-
+person meetups. 
+User Interactions 
+Participants  mentioned  seeing  a  variety  of  replies  ranging 
+from supportive and encouraging messages, suggestions, to 
+extreme  opinions,  criticism,  and  offensive  comments.  P7 
+said Whisper was similar to a “giant psychologist” whereby 
+people  unload  their  problems  and  others  console  them.  
+People  seem  to  bond  with  others  based  on  the  similar 
+problems they have experienced or on their shared interests, 
+but  this  connection  may  be  weak  and  short-lived.  As 
+described  earlier,  hearts  (or  upvotes  on  YikYak)  could 
+signal validation or support, and people tended to heart (or 
+upvote) posts that they felt were relevant to them or funny 
+posts they liked. However, the meaning of “heart” could be 
+ambiguous (similar to the ambiguity of likes on FCB [5]). 
+P11  said  she  usually  hearted  funny  posts  on  Whisper,  but 
+would feel awkward if she hearted sad posts.  
+It can be challenging to keep one’s interactions appropriate 
+while using anonymous communication apps because of the 
+disinhibiting  effect  of  anonymity.  The  engineering  student 
+noted regarding some spiteful replies he saw to a woman’s 
+post: “These people were just digging into this woman and 
+showing absolutely no remorse” (P13). Replies on Whisper 
+usually  consisted  of  personal  opinions,  which  sometimes 
+could be considered as crossing the line of appropriateness, 
+especially  because  they  were  coming  from  complete 
+strangers.  For  instance,  P4  posted  about  her  relationship 
+problems  on  Whisper,  but  erased  her  original  posts  after 
+getting inappropriate responses from other men. She said:  
+"They  were  just  people  putting  their  two  cents  in  about 
+things that I didn't post about.  People were saying, "Oh, he 
+must not be making you happy in other ways," and things 
+
+367
+
+information,  and  not 
+
+that I didn't say anything about, so just people looking way 
+too  far  into  the  situation.   And  this  feels  really  personal 
+really fast for things that I wasn't asking for. " (P4)  
+Whisper allowed people to send direct messages to others, 
+usually initiated by posts. Some people used them to seek 
+further  interactions  such  as  meeting  in  real  life.  These 
+interaction  requests  sometimes  drove  people  away  when 
+they were unwanted or inappropriate.  The college student 
+who  was  looking  for  responses  on  her  tattoo  received 
+replies  asking  for  her  ASL  (age,  sex  and  location),  and 
+pictures  of  her  tattoo.  Eventually  she  stopped  replying  to 
+the  messages  when  they  got  “too  personal”  (P4).    P1 
+enjoyed  messaging  others  on  Whisper,  but  did  not  pursue 
+further interactions when a 30-year old guy asked him out.  
+Rules to Behave on Anonymous Apps 
+Maintaining  anonymity  on 
+the  apps  was  considered 
+important by a lot of users. Several people mentioned that 
+they  would  advise  newcomers  not  to  disclose  overly 
+personal 
+to  post  pictures  of 
+themselves.  In  general  people  tended  to  say  there  was  no 
+rule or norm in the community, because it should be a place 
+where people can say whatever they like to say. However, 
+vulgarity, explicit sexual language, spam, and harsh replies 
+showed  some  negative  effects  on 
+the  community. 
+Sometimes  these  types  of  content  made  people  leave  the 
+app. P18 used Whisper less frequently now because she was 
+turned off by too much sexual content on the site; P17 used 
+it less because she was irritated by some posts and replies.  
+People  had  conflicting  views  of  what  the  purpose  of  the 
+community  was.  P5  thought  Whisper  was  a  serious  app, 
+saying “everyone is vulnerable here.” P8 said the purpose 
+of the app was for getting support from other people or just 
+for getting something off your chest. On the contrary, P15 
+would  advise  new  comers  to  not  to  take  Whisper  too 
+seriously,  because  anonymity  makes  it  untrustworthy.  P4 
+also held similar view of Whisper - “I would never use [it] 
+for  really  intimate  parts  of  my  life.”  Several  participants 
+were mainly using the apps for entertainment purposes. P7 
+even  deleted  one  of  his  posts  when  he  thought  the  replies 
+overstepped the fun boundary. The YikYak user P16 didn’t 
+think people should post serious opinions on the app at all.  
+Comparison with Other Communities 
+Each  anonymous  communication  app  had  some  unique 
+characteristics  that  were  different  from  other  anonymous 
+applications or communities that had different appeal. Our 
+participants  reported  being  anonymous  on  other  systems 
+like reddit, Tumblr, Facebook Confession Board, FML app, 
+and  PostSecret  but  sometimes  for  different  reasons.  Three 
+Whisper users also used Tumblr, but they thought Whisper 
+was  designed  for  people  to  vent  about  their  problems, 
+whereas  Tumblr  was  for  entertainment  purposes  and 
+sharing  impersonal  fun  stuff  (such  as  fandom  and  artistic 
+content).  P3  noted  that  she  has  Tumblr  friends  in  real  life 
+and even meets them or connects with them on Facebook, 
+but  she  would  never  do  that  with  other  users  on  Whisper. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+P11  thought  Whisper  was  similar  to  FML  in  serving  the 
+purpose  of  making  people  feel  better  about  their  lives  by 
+looking  at  others’  problems,  but  the  stories  on  FML  were 
+more extreme, and probably only happened to one person, 
+whereas the posts on Whisper were more common.  
+All  but  two  participants  we  interviewed  had  Facebook 
+accounts.  Four  participants  mentioned  that  they  used 
+Facebook  much  less  frequently  recently  and  rarely  shared 
+their personal status. They considered Facebook as a place 
+for the “older generation,” and they only shared big events 
+or links and photos on it. On average, each participant used 
+3  other  social  sites  or  apps.  When  we  asked  them  to 
+compare 
+the  anonymous  communication  apps  with 
+identified  communities,  participants  said  anonymous  posts 
+were more personal, more open and more honest – “you can 
+be yourself because there’s no retribution (P9).” P1 thought 
+people were more honest and truthful on Whisper because 
+they  did  not  need  to  worry  about  managing  others’ 
+impressions of them. Participants thought the communities 
+on  anonymous  communication  apps  tolerated  different 
+religious  and  political  beliefs  than  the  more  identified 
+communities they were in and had a more diverse audience. 
+As in previous research [22], our participants reported that 
+the feedback they received on Facebook was more personal 
+and in-depth than anonymous feedback (P2). Some people 
+said  they  saw  similar  types  of  posts  and  interactions  on 
+Whisper  and  Facebook  or  Twitter,  such  as  quotes,  and 
+encouraging responses like “good job.” 
+DISCUSSION AND IMPLICATIONS 
+Our  study  shows  that  many  people  share  their  personal 
+opinions,  experiences  and  confessions  with  others  on 
+anonymous  applications,  for  the  reasons  of  seeking  or 
+providing social validation, building connections, avoiding 
+problems  of  context  collapse  and  impression  management 
+on identified social media, and sharing momentary feelings. 
+A lack of accountability can mar interactions in these apps, 
+but the unique interaction patterns and the benefits people 
+gain from using these apps suggest design implications for 
+online communities and social networking sites. 
+Exchanging Social Support Without Identification 
+The main anonymous feature on these apps is that there is 
+usually no consistent username or handle. Unlike previous 
+work  [35]  in  which  users  adopt  different  identities  with 
+different  personalities  in  the  virtual  world,  people  cannot 
+build consistent identity or reputation on these apps. There 
+is no need to play an “ideal self” on these apps since there 
+is no reputation or personal history. People likely use these 
+apps to disclose fragments of their multifaceted identity or 
+the  unconventional  parts  of  themselves.  It  is  known  that 
+self-disclosure  increases  intimacy  among  group  members 
+[8, 37]. We also found people easily bond with a complete 
+stranger on these apps when they share similar experiences 
+or feelings.  
+A  primary  reason  that  people  post  and  view  anonymous 
+posts is to gain social validation and social support from the 
+
+community.  Our  finding  suggests  that  social  support  and 
+social approval can be provided by strangers in anonymous 
+communities.  This  finding  strikingly  resembles  early 
+research on Usenet nearly 20 years ago [39] – online groups 
+often are supportive in nature. Hearts and upvotes in these 
+apps  are  lightweight  methods  to  signal  validation  and 
+connection. However, we do not know whether or not the 
+connections  users  find  on  these  apps  would  evolve  into 
+longer-term, intimate relationships. Even the veteran users 
+we  interviewed  have  only  used  the  apps  for  about  a  year. 
+Future  research  should  examine  whether  or  not  this 
+temporary support and connection lasts, and whether or not 
+it contributes to users’ well-being in the long run. 
+The Ephemerality of Anonymous Communication 
+The new form of location-based interaction on smartphones 
+enables  momentary  and  in-situ  information  sharing  which 
+was  previously  impossible  in  web-based  communication. 
+Our  finding  suggests  that  some  user-generated  content 
+might be ephemeral by nature and could be shaped by the 
+design  of  the  communication  media.  For  instance,  our 
+participants  reported  that  they  seldom  went  back  to  find 
+previous posts they have made on Whisper or YikYak. An 
+important self-disclosure goal on identified social networks 
+such as Facebook is to keep a record of personal history for 
+one’s  own  use  [37,41].  These  anonymous  communication 
+apps may not support this purpose. P9 compared Whisper to 
+reddit, and pointed out the lack of history in Whisper: “It’s 
+kind  of  meteor  flashes  in  the  pan.” The  fact  that  people’s 
+identities are not tied to the content they created also makes 
+it  impossible  to  establish  reputation  or  history  as  in  other 
+online communities. The recent demise of Secret [1] raises 
+the  question  of  the  sustainability  of  these  communication 
+apps. Post ephemerality might contribute to decreased user 
+engagement: without a reputation attached to a community, 
+it is easy for user to quit and join other communities. 
+The lack of identity association, however, also reduces the 
+burden of generating and sharing content, which could lead 
+to  more  content  generation.  People  sometimes  post  very 
+momentary  feelings,  and  these  types  of  content  may  not 
+need  to  stay  long  on  the  Internet.  SnapChat’s  feature  of 
+allowing user to set how long their content lives before they 
+share  it  with  their  friends  seems  to  support  this  need  for 
+ephemerality. An important design question is: can people 
+accurately  estimate  how  long  their  data  need  to  persist 
+before they share the content?  
+Mitigating Negative Interactions 
+The  challenge  of  introducing  anonymity  into  other  online 
+communities is  how to mitigate  negative interactions such 
+as offensive or sexually explicit content. Birnholtz et al [5] 
+shows  that  using  anonymity  in  a  localized  identified 
+community  (FCB)  only  produces  a  small  amount  of 
+negative  comments,  but  the  responders  on  FCB  are 
+identified by their own Facebook profile. We could expect 
+the amount of negativity to increase if the identities of those 
+who responded are removed. A possible solution is to use 
+
+368
+
+SESSION: RELATIONSHIPS AND ROMANCE
+
+identity  signals  to  mitigate  the  negativity  of  anonymous 
+communication,  such  as  location,  affiliation,  or  domain  of 
+interest.  Our  findings  also  suggest  that  shared  identities 
+such  as  location  or  school  might  motivate  more  positive 
+interactions in anonymous communications.  
+Future  work  could  conduct  experiments  to  examine  the 
+relationship  between  the  level  of  identification  and  the 
+amount of negativity people receive in anonymous or quasi-
+anonymous  online  communication  environments.  Some 
+existing  communities  already  give  users  the  choice  of 
+temporary anonymity such as Quora (an online Q&A site), 
+and a significant minority chooses to be anonymous when 
+replying or following certain questions [25]. 
+Limitations 
+A  limitation  of  our  work  is  that  we  did  not  get  rich  data 
+about  negative  interactions  on  these  apps.  A  few  of  our 
+participants  talked  about  their  discomfort  when  received 
+unwanted  connecting  requests  or  harsh  comments,  but  we 
+did not talk to anyone who has sent these messages. Social 
+desirability  bias  might  make  this  problem  challenging  for 
+qualitative research: people tend to under-report behaviors 
+that may be viewed unfavorable by others. Future research 
+could examine the characteristics of negative or undesirable 
+interactions on these apps or on other communities such as 
+Quora or reddit. The result of these studies could help build 
+automatic content filters of these apps.  
+Another  limitation  is  that  we  have  a  comparatively  small 
+sample size, and most of our participants lived in the same 
+city.  Although  our  sample  matches  the  demographic 
+characteristics  of  Whisper  users  described  in  other  larger 
+scale study [7], our small sample size may prevent us from 
+detecting  all  possible  reasons  that  motivate  people  to  use 
+these  apps.  Individual  demographic  differences  such  as 
+gender identity, profession, and location may also influence 
+people’s behavior and motivations. These questions can be 
+more  appropriately  answered  in  a  larger-scale  quantitative 
+study using methods such as online survey.  
+CONCLUSION 
+We have conducted an interview study to explore how and 
+why people use anonymous, location-based communication 
+apps. Many people share personal experiences, confessions, 
+or opinions on these apps to gain social validation from the 
+anonymous  crowd.  People  also  benefit  from  sharing  or 
+reading 
+lighthearted,  entertaining  posts.  Anonymous 
+responses  are  sometimes  considered  as  more  honest  and 
+valuable than what people would get from identified social 
+networks. 
+incorporating 
+anonymity  and  ephemerality  in  online  communities  may 
+foster  content  generation,  and  raise  some  future  research 
+questions  of  how  to  manage  undesired  interactions  in 
+anonymous communication.   
+ACKNOWLEDGEMENTS 
+Rebecca  Weir  was  very  helpful 
+the 
+interviews.  We  also  thank  Sara  Kiesler  for  editorial 
+
+findings  suggest 
+
+in  conducting 
+
+  Our 
+
+that 
+
+suggestions,  and  thank  the  anonymous  participants  for 
+sharing  their  stories  with  us.  This  work  was  supported  by 
+NSF grants CNS1040801, CNS1345305, and CNS1221006. 
+REFERENCES 
+1.  Secret Shuts Down. Retrieved from 
+
+http://techcrunch.com/2015/04/29/psst/ 
+
+2.  John A. Bargh, K.Y.A. McKenna, and G.M. Fitzsimons. 
+
+2002. Can You See the Real Me  ? Activation and 
+Expression of the “ True Self ” on the Internet. Journal 
+of social issues 58, 1, 33–48.  
+
+3.  Roy F Baumeister. 1982. A self-presentational view of 
+
+social phenomena. Psychological bulletin 91, 1, 3. 
+
+4.  Micheal S Bernstein, A Monroy-Hernández, D Harry, P 
+André, K Panovich, and G Vargas. 2011. 4chan and/b: 
+An Analysis of Anonymity and Ephemerality in a Large 
+Online Community. In Proc. of ICWSM '11, 50-57. 
+
+5.  Jeremy Birnholtz, Nicholas Aaron, Ross Merola, and 
+
+Arindam Paul. 2015. “ Is it Weird to Still Be a 
+Virgin  ?:” Anonymous , Locally Targeted Questions on 
+Facebook Confession Boards. In Proc. of CHI '15, 
+2613-2622.  
+
+6.  Juliet M Corbin and A L Strauss. 2008. Basics of 
+
+qualitative research: Techniques and procedures for 
+developing grounded theory. Sage Publications, Inc. 
+
+7.  Denzil Correa, Leandro Araújo Silva, Mainack Mondal, 
+
+Fabrício Benevenuto, and Krishna P Gummadi. The 
+Many Shades of Anonymity  : Characterizing 
+Anonymous Social Media Content. In Proc. of ICWSM 
+'15, 71-80. 
+
+8.  Valerian J Derlega, Janusz Grzelak, and others. 1979. 
+
+Appropriateness of self-disclosure. Self-disclosure: 
+Origins, patterns, and implications of openness in 
+interpersonal relationships, 151–176. 
+
+9.  Judith S Donath. 1999. Identity and deception in the 
+
+virtual community. Communities in Cyberspace 1996, 
+London, 29–59.  
+
+10. Maeve Duggan, N Ellison, C Lampe, A Lenhart, and M 
+
+Madden. 2015. Social Media Update 2014. Retrieved 
+from http://www.pewinternet.org/2015/01/09/social-
+media-update-2014/ 
+
+11. Nicole Ellison, R Heino, and J Gibbs. 2006. Managing 
+Impressions Online: Self-Presentation Processes in the 
+Online Dating Environment. Journal of Computer-
+Mediated Communication 11, 2, 415–441. 
+
+12. Erving Goffman. 1959. The presentation of self in 
+
+everyday life. Anchor Books, New York, 1959. 
+
+13. Mark S Granovetter. 1973. The strength of weak ties. 
+
+American journal of sociology, 1360–1380. 
+
+14. Elisheva F. Gross. 2004. Adolescent internet use: What 
+
+we expect, what teens report. Journal of Applied 
+Developmental Psychology 25, 6 SPEC. ISS., 633–649. 
+
+369
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+15. Adam N. Joinson. 2001. Self-disclosure in computer-
+mediated communication: The role of self-awareness 
+and visual anonymity. European Journal of Social 
+Psychology 31, 2, 177–192.  
+
+16. Ruogu Kang, Stephanie Brown, and Sara Kiesler. 2013. 
+
+Why Do People Seek Anonymity on the Internet?: 
+Informing Policy and Design. In Proc. of CHI '13, 
+ACM, 2657–2666.  
+
+17. Sara Kiesler, Jane Siegel, and Timothy W. McGuire. 
+
+1984. Social psychological aspects of computer-
+mediated communication. American Psychologist 39, 
+10, 1123–1134.  
+
+18. Robert E Kraut and P Resnick. 2011. Building 
+
+Successful Online Communities: Evidence-Based Social 
+Design. The MIT Press, Cambridge, Massachusetts 
+London, England. 
+
+19. Alex Leavitt. 2015. “ This is a Throwaway Account ”: 
+
+Temporary Technical Identities and Perceptions of 
+Anonymity in a Massive Online Community. In Proc. of 
+CSCW '15, 317-327. 
+
+20. Eden Litt, Erin Spottswood, Jeremy Birnholtz, Jeff 
+
+Hancock, Madeline E Smith, and Lindsay Reynolds. 
+2014. Awkward Encounters of an “Other” Kind: 
+Collective Self-Presentation and Face Threat on 
+Facebook. In Proc. of CSCW '14, 449–460.  
+
+21. Alice E Marwick and danah boyd. 2011. I tweet 
+
+honestly, I tweet passionately: Twitter users, context 
+collapse, and the imagined audience. New media & 
+society 13, 1, 114–133. 
+
+22. Meredith Ringel Morris, Kori Inkpen, and Gina Venolia. 
+
+2014. Remote Shopping Advice  : Enhancing In-Store 
+Shopping with Social Technologies. In Proc. of CSCW 
+'14, 662–673.  
+
+23. Jay F Nunamaker, Lynda M Applegate, and Benn R 
+
+Konsynski. 1988. Computer-Aided Deliberation: Model 
+Management and Group Decision Support: Special 
+Focus Article. Operations Research 36, 6, 826–848. 
+24. Julia Omarzu. 2000. A Disclosure Decision Model: 
+Determining How and When Individuals Will Self-
+Disclose. Personality and Social Psychology Review 4, 
+2, 174–185.  
+
+25. Sai Teja Peddinti, Aleksandra Korolova, Elie Bursztein, 
+and Geetanjali Sampemane. 2014. Cloak and Swagger: 
+Understanding Data Sensitivity Through the Lens of 
+User Anonymity. S&P’14, 493–508.  
+
+26. James W Pennebaker, Janice K Kiecolt-Glaser, and 
+
+Ronald Glaser. 1988. Disclosure of traumas and immune 
+function: health implications for psychotherapy. Journal 
+of consulting and clinical psychology 56, 2, 239. 
+
+27. Hua Qian and Craig R. Scott. 2007. Anonymity and 
+
+self-disclosure on weblogs. Journal of Computer-
+Mediated Communication 12, 4, 1428–1451.  
+
+28. Lee Rainie, S. Kiesler, R. Kang, et al. 2013. Anonymity, 
+
+privacy, and security online. Pew Research Center. 
+Retrieved from 
+http://www.pewinternet.org/2013/09/05/anonymity-
+privacy-and-security-online/ 
+
+29. Yuqing Ren, Robert Kraut, and Sara Kiesler. 2007. 
+
+Applying common identity and bond theory to design of 
+online communities. Organization studies 28, 3, 377–
+408. 
+
+30. Zick Rubin. 1975. Disclosing oneself to a stranger: 
+Reciprocity and its limits. Journal of Experimental 
+Social Psychology 11, 3, 233–260.  
+
+31. Christopher Sibona and Steven Walczak. 2011. 
+
+Unfriending on facebook: Friend request and 
+online/offline behavior analysis. Proceedings of the 
+Annual Hawaii International Conference on System 
+Sciences, 1–10.  
+
+32. Susannah Stern. 2007. Producing Sites, Exploring 
+
+Identities: Youth Online Authorship. In Youth, Identity, 
+and Digital Media, David Buckingham (ed.). The MIT 
+Press, Cambridge, MA, 95–117.  
+
+33. Fred Stutzman, Ralph Gross, and Alessandro Acquisti. 
+
+2013. Silent Listeners: The Evolution of Privacy and 
+Disclosure on Facebook. Journal of Privacy and 
+Confidentiality 2, 7–41.  
+
+34. John Suler. 2004. The online disinhibition effect. 
+Cyberpsychology & behavior  : the impact of the 
+Internet, multimedia and virtual reality on behavior and 
+society 7, 3, 321–6.  
+
+35. Sherry Turkle. 1995. Life on the Screen. Identity in the 
+Age of the Age of Internet. Touchstone, NY, NY, USA. 
+
+36. Sherry Turkle. 2012. Alone together: Why we expect 
+more from technology and less from each other. Basic 
+books, NY, NY, USA. 
+
+37. Jessica Vitak and Jinyoung Kim. 2014. “You can’t 
+block people offline”: examining how facebook’s 
+affordances shape the disclosure process. In Proc. 
+CSCW ’14, 461–474.  
+
+38. Gang Wang, Bolun Wang, Tianyi Wang, Ana Nika, 
+
+Haitao Zheng, and Ben Y Zhao. Whispers in the Dark  : 
+Analysis of an Anonymous Social Network Categories 
+and Subject Descriptors. In Proc. of IMC '14, 137-150. 
+
+39. Barry Wellman and Milena Gulia. 1998. Net surfers 
+
+don’t ride alone: Virtual communities as communities. 
+Communities in Cyberspace, 167–193.  
+
+40. Thomas A Wills. 1981. Downward comparison 
+
+principles in social psychology. Psychological bulletin 
+90, 2, 245. 
+
+41. Xuan Zhao, Niloufar Salehi, and Sasha Naranjit. 2013. 
+
+The many faces of Facebook: Experiencing social media 
+as performance, exhibition, and personal archive. Proc. 
+of CHI '13, 1–10.  
+
+370
+
+

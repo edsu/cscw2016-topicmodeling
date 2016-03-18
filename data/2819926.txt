@@ -1,0 +1,5108 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(cid:7)(cid:42)(cid:47)(cid:41)(cid:31)(cid:28)(cid:44)(cid:51)(cid:1)(cid:18)(cid:32)(cid:34)(cid:42)(cid:46)(cid:36)(cid:28)(cid:46)(cid:36)(cid:41)(cid:34)(cid:1)(cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)(cid:36)(cid:41)(cid:1)(cid:20)(cid:32)(cid:44)(cid:45)(cid:42)(cid:41)(cid:28)(cid:39)(cid:1)(cid:14)(cid:41)(cid:33)(cid:42)(cid:44)(cid:40)(cid:28)(cid:46)(cid:36)(cid:30)(cid:45)(cid:4)(cid:1)(cid:1)
+
+(cid:20)(cid:28)(cid:46)(cid:36)(cid:32)(cid:41)(cid:46)(cid:3)(cid:20)(cid:44)(cid:42)(cid:48)(cid:36)(cid:31)(cid:32)(cid:44)(cid:1)(cid:8)(cid:42)(cid:39)(cid:39)(cid:28)(cid:29)(cid:42)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:49)(cid:36)(cid:46)(cid:35)(cid:1)(cid:20)(cid:28)(cid:46)(cid:36)(cid:32)(cid:41)(cid:46)(cid:3)(cid:12)(cid:32)(cid:41)(cid:32)(cid:44)(cid:28)(cid:46)(cid:32)(cid:31)(cid:1)(cid:9)(cid:28)(cid:46)(cid:28)(cid:1)(cid:1)
+Chia-Fang Chung1, Kristin Dew1, Allison Cole2, Jasmine Zia3, James Fogarty4, Julie A. Kientz1,4, Sean A. Munson1,4 
+
+1Human Centered Design & Engineering, 2Family Medicine,  
+
+3Division of Gastroenterology, 4Computer Science & Engineering 
+
+{cfchung, kndew, acole2, jasmine, jaf1978, jkientz, smunson}@uw.edu  
+
+DUB Group, University of Washington 
+
+(cid:6)(cid:7)(cid:22)(cid:23)(cid:21)(cid:6)(cid:8)(cid:23)(cid:1)
+Patient-generated  data  is  increasingly  common  in  chronic 
+disease  care  management.  Smartphone  applications  and 
+wearable  sensors  help  patients  more  easily  collect  health 
+information. However, current commercial tools often do not 
+effectively  support  patients  and  providers  in  collaboration 
+surrounding 
+these  data.  This  paper  examines  patient 
+expectations  and  current  collaboration  practices  around 
+patient-generated data. We survey 211 patients, interview 18 
+patients, and re-analyze a dataset of 21 provider interviews. 
+We  find  that  collaboration  occurs  in  every  stage  of  self-
+tracking  and  that  patients  and  providers  create  boundary 
+negotiating  artifacts  to  support  the  collaboration.  Building 
+upon current practices with patient-generated data, we use 
+these  theories  of  patient  and  provider  collaboration  to 
+analyze misunderstandings and privacy concerns as well as 
+identify opportunities to better support these collaborations. 
+We  reflect  on 
+the  social  nature  of  patient-provider 
+collaboration  to  suggest  future  development  of  the  stage-
+based  model  of  personal  informatics  and  the  theory  of 
+boundary negotiating artifacts.  
+(cid:6)(cid:47)(cid:46)(cid:35)(cid:42)(cid:44)(cid:1)(cid:15)(cid:32)(cid:51)(cid:49)(cid:42)(cid:44)(cid:31)(cid:45)(cid:1)
+Personal informatics; self-tracking; patient-generated data; 
+patient-provider collaboration; chronic disease management; 
+boundary negotiating artifacts. 
+(cid:6)(cid:8)(cid:17)(cid:1)(cid:8)(cid:39)(cid:28)(cid:45)(cid:45)(cid:36)(cid:33)(cid:36)(cid:30)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:15)(cid:32)(cid:51)(cid:49)(cid:42)(cid:44)(cid:31)(cid:45)(cid:1)
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous. 
+(cid:14)(cid:18)(cid:23)(cid:21)(cid:19)(cid:9)(cid:24)(cid:8)(cid:23)(cid:14)(cid:19)(cid:18)(cid:1)
+To better address individual health concerns and coordinate 
+long-term care planning, chronic disease care is moving from 
+clinical care to home care [18] with increased focus on, use 
+of,  and  even  reliance  on  patient-generated  data  [14].  The 
+
+Permission to make digital or hard copies of all or part of this work for personal or 
+classroom  use  is  granted  without  fee  provided  that  copies  are  not  made  or 
+distributed for profit or commercial advantage and that copies bear this notice and 
+the full citation on the first page. Copyrights for components of this work owned 
+by others than the author(s) must be honored. Abstracting with credit is permitted. 
+To  copy  otherwise,  or  republish,  to  post  on  servers  or  to  redistribute  to  lists, 
+requires  prior  specific  permission  and/or  a  fee.  Request  permissions  from 
+Permissions@acm.org.
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819926
+
+smartphone 
+
+prevalence  of 
+self-tracking  applications 
+(e.g., MyFitnessPal, WeightWatchers) and wearable sensing 
+devices (e.g., Fitbit, Apple Watch, Microsoft Band) increases 
+patient capacity for collecting health data and engaging with 
+that data to support personal health and wellness goals.  
+These  data  have  the  potential  to  complement  standard 
+measures in the clinic with rich, everyday health behavior 
+information.  However,  of 
+the  one-third  of  current 
+self-trackers who share data with providers, most reported 
+dissatisfaction with provider engagement with the data [24].  
+For  patients  with  irritable  bowel  syndrome  (IBS)  or 
+overweight  and  obesity,  managing  these  conditions  and 
+achieving  desired  health  outcomes  relies  upon  everyday 
+lifestyle  choices  and  monitoring  to  identify  individual 
+symptom triggers or weight loss barriers. Self-management 
+programs and lifestyle counseling are clinically effective in 
+these two populations [25,61], and both of these approaches 
+encourage  self-tracking.  However, 
+time  and 
+resources  inhibit  providers  in  clinical  practice  from  fully 
+engaging with and reviewing data collected by patients. As a 
+result, patients are dissatisfied with feedback received from 
+healthcare providers on data obtained from such diaries [28]. 
+In addition, most commercially available self-tracking tools 
+were not designed to support sharing or collaboration within 
+or outside of the clinic visit, which makes the collaboration 
+even more time-consuming and infeasible [10]. 
+This paper examines how to support providers and patients 
+in  their  engagement  with  patient  self-tracking  data  by 
+answering the following questions: 
+•(cid:1) How  do  self-tracking  tools  and  patient-generated  data
+
+limited 
+
+currently support patient-provider interaction? 
+
+•(cid:1) How do these tools and data currently support patients
+
+coordinating between self-care and care in the clinic? 
+
+We explore patient goals for sharing self-tracking data with 
+their providers in a survey of 211 patients and more in-depth 
+follow-up  interviews  with  18  patients.  We  also  contrast 
+patient views with provider perspectives in a re-analysis of 
+21  healthcare  provider  interviews  [10].  We  examine  these 
+combined  datasets  through  the  lenses  of  the  stage-based 
+model of personal informatics [34] and boundary negotiating 
+artifacts [32]. Specifically, we contribute an understanding of: 
+•(cid:1) Patient  expectations  for  sharing  self-tracking  data  with
+
+their healthcare providers; 
+
+770
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+•(cid:1) How current collaboration practices across self-tracking 
+stages  support  or  fail  to  support  patient  and  provider 
+expectations; and 
+
+•(cid:1) How boundary negotiating artifacts are created and used 
+to support interaction during the collaboration process, as 
+well as privacy perceptions around these objects. 
+
+Patients  describe  expectations 
+that  collaboration  with 
+patient-generated data will support diagnosis and treatment 
+needs  as  well  as  affective  needs,  consistent  with  prior 
+analysis  of  provider  goals  [10].  Toward  diagnosis  and 
+treatment,  patients  expect  providers  to  have  a  complete 
+picture of their daily life, to help make sense of the tracking 
+data,  and  to  provide  a  personalized  and  actionable  plan. 
+Toward  affective  needs,  patients 
+seek  motivation, 
+accountability,  recognition,  and  empathy.  We  find  that 
+collaboration in all stages of self-tracking is influenced by 
+whether tracking is patient-initiated or provider-initiated. We 
+also find tracking tools and data are used as or transformed 
+into  various  types  of  boundary  negotiating  artifacts  to 
+support the collaboration. However, there is a lack of means 
+to address privacy concerns that change across the evolving 
+collaboration  context.  We  draw  upon  these  findings  to 
+identify  design  opportunities  in  this  space  and  to  suggest 
+future development of theories. 
+(cid:7)(cid:6)(cid:8)(cid:15)(cid:12)(cid:21)(cid:19)(cid:24)(cid:18)(cid:9)(cid:1)
+Prior  research  in  the  CSCW  and  CHI  communities  has 
+examined  personal  informatics  tools  and  patient-provider 
+interaction. This section reviews some of the most relevant 
+literature and related theoretical models. 
+(cid:20)(cid:28)(cid:46)(cid:36)(cid:32)(cid:41)(cid:46)(cid:3)(cid:20)(cid:44)(cid:42)(cid:48)(cid:36)(cid:31)(cid:32)(cid:44)(cid:1)(cid:8)(cid:42)(cid:39)(cid:39)(cid:28)(cid:29)(cid:42)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:9)(cid:28)(cid:46)(cid:28)(cid:1)
+An  increasing  number  of  systems  support  patient-provider 
+collaboration  with  patient-generated  data.  Telemonitoring 
+systems allow patients to collect their physiological data and 
+allow providers to remotely monitor data and communicate 
+with patients. Mamykina et al. conducted a series of studies 
+showing  the  value  of  using  tracked  data  in  diabetes  care 
+between patients and their care team and how patients used 
+the  data  and  tools  to  make  sense  of  their  illness  and  care 
+management  trajectories  [38,39].  Many  of  these  systems 
+have demonstrated that features supporting collaboration can 
+successfully  provide  necessary  contextual  information  for 
+diagnosis  [55],  facilitate  communication  [2,47,52],  engage 
+patients  in  the  shared  decision-making  process  [3],  and 
+support long-term care management [31,50,56].  
+On  the  other  hand,  personal  informatics  systems  allow 
+individuals to collect and reflect on personal information. As 
+these  systems  become  more  prevalent,  many  people  are 
+tracking  their  health  data  without  provider  instruction  or 
+involvement.  These  tools  are  designed  to  help  people 
+independently correlate and reflect on lifestyle factors and 
+health status [5,30] and to promote healthy behavior [12,37]. 
+Knowing  the  value  of  everyday  self-tracking  data,  many 
+self-trackers  have  begun  to  share  these  data  with  their 
+healthcare  providers  [24].  However,  these  self-tracker 
+
+771
+
+about 
+
+patients: 
+
+also 
+
+(3) 
+
+(1) 
+
+Supporting 
+
+Providers 
+
+suggestions. 
+
+initiated  attempts  at  collaboration  often  fail  to  engage 
+providers, which can lead to frustrating experiences [8,24].  
+In our previous study [10], providers recognized the value 
+and benefit of self-tracking data to help achieve five major 
+diagnosis:  Providers  want 
+goals: 
+patient-generated  data  to  help  identify  barriers  for  weight 
+management or triggers to IBS symptoms, which are difficult 
+to diagnose without long-term observation. (2) Personalizing 
+treatment: Similar to trigger identification, treatment choices 
+are also subject to personal lifestyles and symptoms. Patient 
+preferences  and  personal  choices  also  influence  behavior 
+Increasing  motivation  and 
+change 
+accountability:  Self-tracking  can  be  difficult.  Providers 
+found that proper instructions, followed by requesting and 
+reviewing  the  data,  helps  patients  overcome  motivational 
+barriers  and  be  accountable  for  their  health  issues.  (4) 
+Learning 
+use 
+patient-generated data to understand unarticulated goals or 
+values in order to build rapport. (5) Facilitating discussion 
+and  managing  visits:  Having  patient-generated  data  helps 
+providers to plan the agenda or manage conversations in a 
+visit.  However,  providers  also  reported  barriers  in  current 
+self-tracking  systems,  preventing  them  from  using  data  to 
+their fullest capacity. In another recent study, primary care 
+providers  also  reported  that  electronic  dietary  assessment 
+tools  can  improve  patient  awareness  and  motivation  and 
+increase efficiency in assessing diet [6].  
+To further understand when and how collaboration between 
+providers and patients around self-tracking data occurs and 
+breaks down, it is important to understand how self-trackers 
+collect  and  reflect  on  their  personal  information.  Li  et  al. 
+proposed a stage-based model of personal informatics [34] 
+that  describes  practices  and  barriers  when  self-trackers 
+prepare,  collect,  integrate,  reflect,  and  act  around  their 
+personal  information.  Bringing  self-tracking  to  the  clinic 
+encourages collaborative reflection [40], but we believe that 
+patient-provider  interaction  will  also  influence  tracking 
+behavior  and  decisions  in  other  stages.  Other  extended 
+personal informatics models also proposed reflection across 
+stages:  By 
+studying  quantified-selfer  practices  and 
+experiences, Choe noted that reflections often occur during 
+data collection [9]. Epstein et al. [16] focused on self-tracker 
+decisions about starting, stopping, and resuming tracking and 
+found  that  these  moments  often  include  opportunities  for 
+reflection and advice. These models provide us a framework 
+to  explore  patient-provider  collaboration  in  light  of  self-
+tracking processes.  
+(cid:7)(cid:42)(cid:47)(cid:41)(cid:31)(cid:28)(cid:44)(cid:51)(cid:1) (cid:19)(cid:29)(cid:37)(cid:32)(cid:30)(cid:46)(cid:45)(cid:1) (cid:28)(cid:41)(cid:31)(cid:1) (cid:7)(cid:42)(cid:47)(cid:41)(cid:31)(cid:28)(cid:44)(cid:51)(cid:1) (cid:18)(cid:32)(cid:34)(cid:42)(cid:46)(cid:36)(cid:28)(cid:46)(cid:36)(cid:41)(cid:34)(cid:1) (cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)
+Collaboration  around  patient-generated  data 
+requires 
+knowledge and expertise from both patients and providers. 
+Patients  are  the  experts  of  their  routine,  lifestyle,  and  
+day-to-day  health  and  wellbeing  [4],  while  providers  can 
+help  interpret  data  with  their  medical  expertise  and 
+knowledge.  Technology  to  bridge  provider  and  patient 
+expertise and experience is not new in the CSCW and CHI 
+
+community, with many using the boundary object [e.g., 2] or 
+boundary negotiating artifacts [e.g., 1] to describe extending 
+health information technology to home care. The concept of 
+boundary object was first proposed by Star and Griesemer 
+[54]  to  coordinate  collaboration  work  between  various 
+practices. To account for collaboration lacking standardized 
+structure, Lee later proposed boundary negotiating artifacts: 
+artifacts that can be used for practices not necessarily agreed 
+upon by the people who use them, that can facilitate crossing 
+and pushing boundaries, that can change with context, that 
+can  be  incorporated  into  another  artifact,  and  that  can  be 
+transformed into boundary objects [32]. We argue that the 
+use of self-tracking data in patient-provider collaboration can 
+be  seen  as  the  process  of  creating  and  using  boundary 
+negotiating  artifacts  to  navigate  tensions  and  boundaries 
+between the patient and provider spheres of expertise. 
+(cid:22)(cid:35)(cid:28)(cid:44)(cid:32)(cid:31)(cid:1)(cid:22)(cid:32)(cid:39)(cid:33)(cid:3)(cid:23)(cid:44)(cid:28)(cid:30)(cid:38)(cid:36)(cid:41)(cid:34)(cid:1)(cid:9)(cid:28)(cid:46)(cid:28)(cid:1)(cid:28)(cid:41)(cid:31)(cid:1)(cid:20)(cid:44)(cid:36)(cid:48)(cid:28)(cid:30)(cid:51)(cid:1)
+Moving  data  collected  daily  in  a  private  setting  into  the 
+health care provider’s office raises questions about patient 
+rights  to  control  what  data  is  shared  and  how  it  is  used. 
+Personal  data  sharing  preferences  are  motivated  to  a  great 
+extent by an individual’s relationship to the person receiving 
+the  shared  information  [44,63].  While  explicit  regulations 
+exist to protect patient privacy with rules about how medical 
+data can be stored and shared, they have been interpreted to 
+apply  to  data  created  and  kept  in  a  clinical  context;  in 
+contrast, patient self-tracking data falls into a gray area [22]. 
+We  can  better  understand  privacy  questions  surrounding 
+shared self-tracking data as contextual integrity, or the idea 
+that every space is governed by information-sharing norms, 
+both implicit and explicit [43]. Previous work has explored 
+the  socio-technical  dimensions  of  privacy  in  location 
+disclosure  [13]  and  collaborative  awareness  systems  [48], 
+while  numerous  context-aware  privacy  frameworks  have 
+been proposed [e.g., 21,27,29]. Rawasizzadeh [51] has also 
+advanced  a  secure  sharing  model  for  self-tracking  data  in 
+social networking applications. However, these systems do 
+not address the unique complexities of the healthcare context 
+and patient-provider collaboration with self-tracking data. 
+(cid:26)(cid:32)(cid:36)(cid:34)(cid:35)(cid:46)(cid:1)(cid:17)(cid:28)(cid:41)(cid:28)(cid:34)(cid:32)(cid:40)(cid:32)(cid:41)(cid:46)(cid:1)(cid:28)(cid:41)(cid:31)(cid:1)(cid:14)(cid:7)(cid:22)(cid:1)
+Obesity  and  IBS  are  resource-intensive  chronic  illnesses 
+affecting  a  large  proportion  of  the  US  population  and 
+requiring lifelong monitoring and management. More than a 
+third of the US adult population is obese, having a body mass 
+index (BMI) of 30 or more [19], while IBS is estimated to 
+affect  10-20%  [53].  Both  are  associated  with  high  total 
+healthcare  costs.  Direct  and  indirect  healthcare  costs 
+associated  with  obesity  in  the  US  were  estimated  at  $75 
+billion in 2003 and projected to increase by $22 billion by 
+2020 and $66 billion by 2030 [62]; direct and indirect costs 
+of  IBS  in  the  US  have  been  estimated  at  $1.9  billion  and 
+$19.2 billion, respectively [53]. 
+Both illnesses are associated with multiple factors, numerous 
+comorbidities,  and  lower  quality  of  life  [20,41].  Patients 
+typically work with a multidisciplinary team of providers – 
+
+SESSION: HEALTHCARE PROVIDERS
+
+including  primary  care  physicians,  gastroenterologists, 
+dietitians, psychologists and/or psychiatrists – to identify and 
+manage the causes and symptoms. Behavioral interventions 
+and  self-management  are  integral  to  effective  treatment 
+[25,61],  so  patients  may  be  asked  to  record  food  intake, 
+exercise,  stress,  abdominal  pain,  heart  rate,  and  sleep 
+patterns, among other indicators. Prior work has examined 
+self-tracking  tools  in  various  domains  [e.g.,  myFitnessPal, 
+58;  SleepCycle,  30],  but  their  use  in  patient-provider 
+collaboration is not well understood.  
+(cid:17)(cid:10)(cid:23)(cid:13)(cid:19)(cid:9)(cid:22)(cid:1)
+To understand patient and provider collaboration and use of 
+self-generated data in IBS and weight management, we used 
+a combination of surveys and interviews with patients. We 
+chose  to  focus  on  weight  management  and  IBS  patients 
+because  these  two  conditions  are  frequently  affected  by 
+lifestyle choices; IBS patients and providers commonly use 
+lifestyle  diaries  to  identify  and  manage  individualized 
+symptom  triggers,  while  self-monitoring  diaries  and  tools 
+help  overweight/obese  patients  to  identify  barriers  to 
+lifestyle  changes  and  maintenance.  Our  prior  research 
+focused on provider expectations for using patient-generated 
+data in care for IBS and weight management [10]. We draw 
+on these results and re-analyzed the data collected for that 
+study in light of this paper’s research questions.  
+(cid:7)(cid:9)(cid:25)(cid:16)(cid:13)(cid:20)(cid:25)(cid:1)(cid:24)(cid:26)(cid:23)(cid:27)(cid:13)(cid:29)(cid:3) We designed a patient survey to understand 
+how patients currently track and share their tracked data with 
+their healthcare providers and what they expect from this.  
+We  recruited  survey  participants  by  pre-screening  the 
+medical  records  of  a  large  academic  medical  system  for 
+patients with BMI greater than 26 or suspected to have IBS. 
+This medical system serves both urban and rural areas, with 
+a diverse patient population. We sent 1841 email invitations 
+and  received  237  responses  (13%  response  rate).  We 
+compensated  each  participant  who  passed  the  screener 
+questions and completed the survey with a $5 gift card. 
+
+Figure 1. Patient survey flow. 
+
+772
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+The survey started with screener questions including gender, 
+age, BMI and whether the participants have been diagnosed 
+with IBS. If potential participants had a BMI of less than 26 
+and had not been diagnosed with IBS, they were excluded 
+from the survey. The main survey consisted of a combination 
+of  open-  and  close-ended  questions  asking  patients  about 
+their  experience  of  tracking  and  sharing  with  healthcare 
+providers and their expectations and concerns while sharing. 
+The survey took around 20-30 minutes to complete. Figure 1 
+summarizes the survey question flow1. 
+After excluding 26 responses that did not pass the screener 
+survey, we had 211 valid responses. There were 147 (70%) 
+females, 63 males, and 1 reported as other. Average age is 44 
+(SD  =  11.8,  Median  =  45).  151  (72%)  participants  are 
+overweight  (BMI  >=  26),  97  (45%)  have  been  diagnosed 
+with IBS, and 23 (11%) have IBS-like symptoms but have 
+never been officially diagnosed with IBS; this includes 66 
+patients  who  are  overweight  and  have  IBS  or  IBS-like 
+symptoms.  The  gender  ratio  and  age  distribution  are 
+consistent with our samples in pre-screened medical records.  
+There  were  157  (74%)  participants  who  are  currently 
+tracking  or  have  previously  tracked  one  or  more  health 
+indicators, 36 (17%) who have considered tracking but never 
+tried  it,  and  18  (9%)  who  never  tried  tracking.  This 
+ID  Gender  Age  Overweight or IBS?  Data they shared 
+
+percentage  is  similar  to  a  recent  nationwide  survey  [17]. 
+Among  participants  who  have  previously  tracked  or  are 
+currently tracking, 117 (75%) have experience sharing the 
+tracked data with a healthcare provider.  
+To  analyze  the  open-ended  survey  responses,  the  research 
+team first coded 20 responses using a priori codes related to 
+our research questions, and then met to discuss consistencies 
+and added or refined codes based on emergent themes. We 
+iteratively  coded  all  responses  and  focused  on  patient 
+expectations  and  experiences  of  sharing  tracked  data  with 
+healthcare  providers.  The  research  team  also  created  an 
+affinity  diagram  to  identify  any  emergent  themes.  We 
+transformed survey responses related to experiences sharing 
+self-tracked  data  with  health  providers  into  approximately 
+350 affinity notes. We discussed the themes identified in the 
+affinity diagram analysis in light of those identified in the 
+coding process.  
+(cid:7)(cid:9)(cid:25)(cid:16)(cid:13)(cid:20)(cid:25)(cid:1) (cid:16)(cid:20)(cid:25)(cid:13)(cid:23)(cid:27)(cid:16)(cid:13)(cid:28)(cid:24)(cid:3)  Among  the  117  participants  who  had 
+experience  sharing  their  tracking  data  with  healthcare 
+providers,  overweight  patients  most  often  shared  their 
+tracking  data  with  primary  care  physicians,  dietitians,  and 
+nurses;  IBS  patients  most  often  shared  with  primary  care 
+physicians,  gastroenterologists,  and  dietitians.  Across  all 
+sharing experiences with providers, 39% of patients reported 
+
+Providers with whom they shared 
+
+female 
+
+P1 
+P2  male 
+P3  male 
+P4  male 
+P5 
+P6 
+P7
+
+female 
+female 
+female
+
+54  IBS 
+39  IBS 
+48  overweight 
+46  overweight 
+61  overweight 
+56  overweight 
+44 overweight
+
+P8  male 
+
+57  overweight 
+
+P9 
+
+female 
+
+58  overweight 
+
+gastroenterologist 
+
+abdominal pain, food intake, physical activity, sleep, 
+weight  
+abdominal pain, acid reflux, food intake, medication  naturopathic physician 
+dietitian, social worker 
+food intake 
+dietitian, primary care physician 
+calorie intake, physical activity, weight  
+dietitian 
+food intake 
+food intake, weight 
+dietitian 
+dietitian, primary care physician
+food intake, heart rate, physical activity, weight
+dietitian, gastric bypass physician, nurse, primary 
+care physician  
+dietitian, nurse, primary care physician, social 
+worker  
+gastroenterologist, primary care physician, 
+naturopathic doctor 
+
+food intake, weight 
+food intake, medication, pain level, physical activity, 
+sleep, symptoms, weight   
+
+food intake, physical activity, weight 
+
+P10  female 
+
+P11  female 
+
+44  overweight and IBS 
+50  overweight and IBS  bowel movements, food intake, sleep, stress, weight  dietitian, internal medicine physician, primary 
+
+P12  female 
+
+59  overweight and IBS  medical history record, physical activity, weight  
+
+P13  female 
+
+P14  female 
+P15  male 
+P16  female 
+
+abdominal pain, fatigue, food intake, heart rate, 
+54  overweight and IBS 
+nausea, physical activity,  sleep, stress, weight 
+56  overweight and IBS  blood pressure, food intake, heart rate, physical 
+25  overweight and IBS 
+46  overweight and IBS 
+
+activity, symptoms, temperature  
+abdominal pain, weight 
+abdominal pain, nausea, weight  
+
+P17  male 
+
+37  overweight and IBS 
+
+P18  male 
+
+45  overweight and IBS 
+
+food intake, medication, symptom, weight 
+abdominal pain, bowel movement, nausea, physical 
+activity, sleep
+
+care physician, psychologist, social worker 
+gastroenterologist, primary care physician, 
+medical assistant, nurse, psychologist 
+gastroenterologist, internal medicine physician, 
+nurse, primary care physician  
+gastroenterologist, internal medicine physician 
+Primary care physician 
+dietitian, gastroenterologist, primary care 
+physician,  
+dietitian, gastroenterologist, pain management 
+physician, primary care physician  
+gastroenterologist, internal medicine physician, 
+nurse, primary care physician
+
+Table 1. Interview participants tracked a variety of health factors and shared with a variety of providers. 
+
+                                        
+1 Available at: http://doi.org/10.5281/zenodo.30102 
+
+773
+
+SESSION: HEALTHCARE PROVIDERS
+
+(cid:26)(cid:13)(cid:6)(cid:23)(cid:1) (cid:9)(cid:19)(cid:1) (cid:20)(cid:6)(cid:23)(cid:14)(cid:10)(cid:18)(cid:23)(cid:22)(cid:1) (cid:10)(cid:27)(cid:20)(cid:10)(cid:8)(cid:23)(cid:1) (cid:11)(cid:21)(cid:19)(cid:17)(cid:1) (cid:21)(cid:10)(cid:25)(cid:14)(cid:10)(cid:26)(cid:14)(cid:18)(cid:12)(cid:1)
+(cid:23)(cid:21)(cid:6)(cid:8)(cid:15)(cid:14)(cid:18)(cid:12)(cid:1)(cid:9)(cid:6)(cid:23)(cid:6)(cid:5)(cid:1)
+To understand collaboration using patient-generated data, it 
+is  important  to  start  with  an  understanding  of  patient  and 
+provider expectations for care within and outside of clinic 
+visits, for their current practices of using patient-generated 
+data,  and  for  future  uses  of  such  data.  Patients  described 
+several  intertwined  expectations,  spanning  self-reflective, 
+action-oriented  and  affective  aims,  in  tracking  health  data 
+and  in  sharing  it  with  their  providers.  We analyzed survey 
+responses regarding patient expectations and patient interviews. 
+(cid:10)(cid:50)(cid:43)(cid:32)(cid:30)(cid:46)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:45)(cid:1)(cid:46)(cid:42)(cid:1)(cid:45)(cid:47)(cid:43)(cid:43)(cid:42)(cid:44)(cid:46)(cid:1)(cid:31)(cid:36)(cid:28)(cid:34)(cid:41)(cid:42)(cid:45)(cid:36)(cid:45)(cid:1)(cid:28)(cid:41)(cid:31)(cid:1)(cid:46)(cid:44)(cid:32)(cid:28)(cid:46)(cid:40)(cid:32)(cid:41)(cid:46)(cid:1)
+(cid:5)(cid:13)(cid:25)(cid:25)(cid:16)(cid:20)(cid:15)(cid:1) (cid:9)(cid:1) (cid:11)(cid:21)(cid:19)(cid:22)(cid:18)(cid:13)(cid:25)(cid:13)(cid:1) (cid:22)(cid:16)(cid:11)(cid:25)(cid:26)(cid:23)(cid:13)(cid:1) (cid:21)(cid:14)(cid:1) (cid:12)(cid:9)(cid:16)(cid:18)(cid:29)(cid:1) (cid:18)(cid:16)(cid:14)(cid:13)(cid:3)  Patients  shared 
+with providers to give them a more complete picture of their 
+daily life between visits and guide discussion during visits. 
+“[I shared data with my provider to] assist my healthcare 
+provider  with  health  trends  over  time  rather  than  the  few 
+samples  gathered  during  infrequent  office  visits.”  -  P19.  
+In this way, self-tracking data is an important part of bridging 
+the clinical and home care contexts. Patients also used the 
+data  to  supplement  their  narratives  during  office  visits, 
+providing  empirical  support  for 
+their  anecdotes  and 
+discussion:  “Objective  data  about  issues  rather  than  just 
+subjective verbal reporting.” - P20. 
+(cid:6)(cid:9)(cid:17)(cid:16)(cid:20)(cid:15)(cid:1) (cid:24)(cid:13)(cid:20)(cid:24)(cid:13)(cid:1) (cid:21)(cid:14)(cid:1) (cid:12)(cid:9)(cid:25)(cid:9)(cid:3)  Many  patients  reported  wanting 
+provider input to help make sense of the data. “[It can] help 
+highlight areas I believe I need assistance with looking for 
+input  from  them  to  help.”  -  P7.  They  wanted  actionable 
+insights  into  the  connections  between  their  symptoms  and 
+their  behavior  or  medication:  “I  would  hope  they  could 
+review it and make recommendations on ways to improve or 
+help look for patterns that may cause my abdominal pains.” 
+- P256. Some wanted help to see patterns and correlations 
+among their multiple health issues or to use the data to look 
+for  undiagnosed  problems:  “maybe  shed  some  light  into 
+other health issues.” - P21. 
+(cid:7)(cid:23)(cid:21)(cid:27)(cid:16)(cid:12)(cid:16)(cid:20)(cid:15)(cid:1)(cid:22)(cid:13)(cid:23)(cid:24)(cid:21)(cid:20)(cid:9)(cid:18)(cid:16)(cid:30)(cid:13)(cid:12)(cid:1)(cid:9)(cid:20)(cid:12)(cid:1)(cid:9)(cid:11)(cid:25)(cid:16)(cid:21)(cid:20)(cid:9)(cid:10)(cid:18)(cid:13)(cid:1)(cid:22)(cid:18)(cid:9)(cid:20)(cid:3) Patients also 
+expected  providers  to  engage  with  the  data  and  provide  a 
+personalized  treatment  plan.  “That  they  might  tell  me 
+specifically  what  to  stop  eating  or  how  much  exercise  my 
+specific  body  required.”  -  P22.  Patients  wanted  concrete 
+feedback and suggestions about what they should change in 
+accordance with the provider’s interpretation of the data and 
+their personalized treatment plans; they wanted guidance on 
+lifestyle  modifications  they  can  make  between  visits: 
+“knowledge  of  what  things  I  can  change  in  my  daily 
+routine/habits that will be of benefit to me being more active 
+and healthy.” - P23.  
+(cid:10)(cid:50)(cid:43)(cid:32)(cid:30)(cid:46)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:45)(cid:1)(cid:46)(cid:42)(cid:1)(cid:45)(cid:47)(cid:43)(cid:43)(cid:42)(cid:44)(cid:46)(cid:1)(cid:28)(cid:33)(cid:33)(cid:32)(cid:30)(cid:46)(cid:36)(cid:48)(cid:32)(cid:1)(cid:41)(cid:32)(cid:32)(cid:31)(cid:45)(cid:1)
+Patients  also  detailed  affective  goals  in  sharing  their  data 
+with  providers,  such  as  self-awareness,  accountability, 
+seeking recognition, and a desire for emotional support.  
+
+initiating  the  sharing,  38%  of  patients  reported  that  their 
+providers initiated the sharing, and 23% of patients did not 
+recall  who  suggested  the  sharing.  To  further  answer 
+questions around collaboration during the tracking process, 
+we  conducted  follow-up 
+interviews  with  18  survey 
+participants who had experience tracking and sharing their 
+tracked  data  with  healthcare  providers  (Table  1).  We 
+purposefully  sampled  potential  interviewees  to  strive  for 
+variety of symptoms, self-tracking tools, as well as sharing 
+data,  targets,  and  experiences.  We  compensated  each 
+participant with a $25 gift card. 
+We  conducted  an  hour-long  (range:  40-75  minutes)  
+semi-structured phone interview with each participant. We 
+developed  our  interview  protocol  to  focus  on  patient 
+experience  of  tracking  and  sharing  tracked  data  with  their 
+healthcare providers2. We asked participants to describe one 
+or  more  experiences  when  they  reviewed  tracking  data  in 
+clinic  visits  and  probed  with  details  about  how  they 
+interacted  with  their  healthcare  provider  and  the  tracking 
+data.  We  also  asked  questions  about  sharing  tracking  data 
+outside the clinic visit and among medical team members. 
+We audio-recorded and transcribed all interviews. We used 
+the stage-based model of personal informatics systems  [34] 
+to  analyze  the  data  to  help  us  understand  when  and  how 
+collaboration occurs throughout the tracking process.  
+
+(cid:4)(cid:21)(cid:18)(cid:18)(cid:9)(cid:10)(cid:21)(cid:23)(cid:9)(cid:25)(cid:16)(cid:21)(cid:20)(cid:1) (cid:14)(cid:23)(cid:21)(cid:19)(cid:1) (cid:22)(cid:9)(cid:25)(cid:16)(cid:13)(cid:20)(cid:25)(cid:1) (cid:9)(cid:20)(cid:12)(cid:1) (cid:22)(cid:23)(cid:21)(cid:27)(cid:16)(cid:12)(cid:13)(cid:23)(cid:1) (cid:22)(cid:13)(cid:23)(cid:24)(cid:22)(cid:13)(cid:11)(cid:25)(cid:16)(cid:27)(cid:13)(cid:24)(cid:3)(cid:1)
+We  reanalyzed  the  interviews  from  our  previous  study  of 
+health provider goals and practices [10] to complement these 
+interviews, focusing on patient experiences and perceptions 
+of  the  collaboration  process.  The  dataset  included  21 
+providers  who  work  with  people  managing  their  weight 
+and/or  IBS  patients  in  four  different  health  organizations 
+(two  academic  medical  systems,  one  health  maintenance 
+organization,  and  one 
+independent  provider).  These 
+providers 
+included  six  primary  care  providers,  five 
+gastroenterologists, seven dietitians, one nurse practitioner, 
+one behavioral psychologist, and one health navigator (who 
+helps patients find resources to support their care plan). In 
+these  hour-long 
+their 
+experiences,  expectations,  and  concerns  of  using  patient 
+collected lifelog data in clinical care. 
+As  we  will  discuss  later  in  this  paper,  Lee’s  model  of 
+boundary negotiating artifacts [32] characterized much of the 
+collaboration  activity  between  patients  and  providers.  To 
+understand how tools and practices support these activities, 
+we re-analyzed our patient survey and interviews, alongside 
+our prior interviews with health providers [10], through the 
+lens of boundary negotiating artifacts.  
+
+interviews,  providers 
+
+reported 
+
+                                                             
+2 Available at: http://doi.org/10.5281/zenodo.30102 
+
+774
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(cid:8)(cid:13)(cid:18)(cid:14)(cid:2)(cid:9)(cid:28)(cid:9)(cid:23)(cid:13)(cid:20)(cid:13)(cid:24)(cid:24)(cid:3)  As  described  in  personal  informatics 
+literature, patients looked to their data for self-awareness of 
+their  current  lifestyle  and  described  its  value  in  terms  of 
+helping them see their habits [35]. “I clearly understand my 
+current condition and behaviors, which I feel is important as 
+I try to improve my diet and exercise habits,” - P4. 
+(cid:8)(cid:26)(cid:22)(cid:22)(cid:21)(cid:23)(cid:25)(cid:16)(cid:20)(cid:15)(cid:1)(cid:9)(cid:11)(cid:11)(cid:21)(cid:26)(cid:20)(cid:25)(cid:9)(cid:10)(cid:16)(cid:18)(cid:16)(cid:25)(cid:29)(cid:1)(cid:9)(cid:20)(cid:12)(cid:1)(cid:19)(cid:21)(cid:25)(cid:16)(cid:27)(cid:9)(cid:25)(cid:16)(cid:21)(cid:20)(cid:3) Many patients 
+could independently use tracking to regulate their progress 
+towards  their  goals:  “I  struggle  with  weight.  I  have  to 
+monitor to hold myself accountable.” - P7. Other patients felt 
+they needed to share tracked data with their providers to feel 
+accountable for adhering to treatment plans: “Failure to keep 
+accurate data over an extended period of time might annoy 
+or disappoint my doctor. I tend to look up to them.” - P24. 
+tracking  data  with  providers  also  “provides 
+Sharing 
+motivation  and  positive  reinforcement.”  -  P25.  This  is 
+important  for  setting  and  meeting  goals:  “it  would  solicit 
+praise  when  I  met  each  individual  goal  and  thus  provide 
+external motivation.” - P26. 
+(cid:8)(cid:13)(cid:13)(cid:17)(cid:16)(cid:20)(cid:15)(cid:1)(cid:23)(cid:13)(cid:11)(cid:21)(cid:15)(cid:20)(cid:16)(cid:25)(cid:16)(cid:21)(cid:20)(cid:1)(cid:9)(cid:20)(cid:12)(cid:1)(cid:13)(cid:19)(cid:21)(cid:25)(cid:16)(cid:21)(cid:20)(cid:9)(cid:18)(cid:1)(cid:24)(cid:26)(cid:22)(cid:22)(cid:21)(cid:23)(cid:25)(cid:3) Patients also 
+wanted to use their data to get recognition for their efforts 
+and to show their doctor they take their health plan seriously: 
+“I just wanted them to know that I wasn't ignoring my weight 
+and my fitness.” - P27. Patients may also desire emotional 
+support or empathy from their providers when sharing their 
+data: “to help them understand what I am going through” - 
+P13.  They  also  used  their  health  data  as  evidence  of  a 
+problem,  particularly  if  they  perceived  a  lack  of  empathy 
+from their providers: “... he took my concerns more seriously 
+when  he  saw  the  amount  of  time  I  was  sick  and  my 
+symptoms.” - P28. 
+(cid:13)(cid:19)(cid:26)(cid:1) (cid:9)(cid:19)(cid:1) (cid:20)(cid:21)(cid:19)(cid:25)(cid:14)(cid:9)(cid:10)(cid:21)(cid:22)(cid:1) (cid:6)(cid:18)(cid:9)(cid:1) (cid:20)(cid:6)(cid:23)(cid:14)(cid:10)(cid:18)(cid:23)(cid:22)(cid:1) (cid:8)(cid:19)(cid:16)(cid:16)(cid:6)(cid:7)(cid:19)(cid:21)(cid:6)(cid:23)(cid:10)(cid:1)
+(cid:9)(cid:24)(cid:21)(cid:14)(cid:18)(cid:12)(cid:1)(cid:23)(cid:13)(cid:10)(cid:1)(cid:23)(cid:21)(cid:6)(cid:8)(cid:15)(cid:14)(cid:18)(cid:12)(cid:1)(cid:20)(cid:21)(cid:19)(cid:8)(cid:10)(cid:22)(cid:22)(cid:5)(cid:1)
+Understanding patient and provider expectations of sharing 
+and  reviewing  tracking  data  provides  insights  into  how 
+patients and providers want to collaborate. We next turn our 
+into  how  providers  and  patients  currently 
+attention 
+collaborate, how tracking data practices are collaboratively 
+set  up,  collected,  and  reflected  on,  and  whether  these 
+collaborations  support  their  goals.  Using  the  stage-based 
+personal informatics model by Li et al. [34], we analyzed the 
+117  survey  responses  from  patients  who  had  experience 
+sharing  data,  18  patient 
+transcripts,  and 
+reanalyzed dataset from 21 provider interviews to understand 
+the  collaboration  process.  In  this  section,  we  first  present 
+case  studies  of  four  patients  who  experienced  different 
+interactions  with  their  providers  and  how  experiences  of 
+patient-initiated  tracking  are  similar  to  or  different  from 
+those  of  provider-initiated  tracking.  These  case  studies 
+present scenarios representative of those reported across all 
+participants.  We  then  discuss  how  these  experiences 
+illustrate collaboration in each tracking stage of the personal 
+informatics model [34]. 
+
+interviews 
+
+775
+
+(cid:20)(cid:28)(cid:46)(cid:36)(cid:32)(cid:41)(cid:46)(cid:1)(cid:32)(cid:50)(cid:43)(cid:32)(cid:44)(cid:36)(cid:32)(cid:41)(cid:30)(cid:32)(cid:45)(cid:1)(cid:46)(cid:44)(cid:28)(cid:30)(cid:38)(cid:36)(cid:41)(cid:34)(cid:1)(cid:28)(cid:41)(cid:31)(cid:1)(cid:45)(cid:35)(cid:28)(cid:44)(cid:36)(cid:41)(cid:34)(cid:1)(cid:31)(cid:28)(cid:46)(cid:28)(cid:1)(cid:42)(cid:41)(cid:1)(cid:46)(cid:35)(cid:32)(cid:36)(cid:44)(cid:1)(cid:42)(cid:49)(cid:41)(cid:1)
+Some  patients  started  tracking  and  sharing  on  their  own. 
+However, their goals of sharing guided them throughout the 
+tracking process and the interaction with their providers. 
+Case Study 1: P4 had been in different weight loss programs 
+for six years. During the past six years he had been tracking 
+his weight, calorie intake, and physical activity on and off. 
+He used FatSecret to record his calorie intake, a wristband to 
+count his steps, and a scale and a spreadsheet to record his 
+weight. He stopped tracking around two years ago because 
+he felt his weight was under control. He started to feel the 
+need to track again and bring in the data to his primary care 
+doctor because he felt the weight he got from the clinic scale 
+did not represent his everyday life and did not help his doctor 
+to understand his problem. Therefore, he plotted data (weight 
+and calorie intake) on a chart (Figure 2, middle) and brought 
+it to the clinic. His doctor was impressed and would look at 
+the data before assessing it against the weight measurement 
+in the office and used the calorie data to talk about if there is 
+anything P4 needed to change. Because P4 did not plot his 
+step  count  in  the  chart,  he  would  normally  just  verbally 
+summarize  the  average  activity  level  when  they  had  the 
+conversation about physical activity. 
+P4’s experience shows how his goals of sharing a complete 
+picture  of  everyday  life  with  providers  motivated  him  to 
+prepare and collect tracking data and how different ways of 
+integration  influenced  his  interaction  with  providers  when 
+reviewing tracking data. 
+Case Study 2: P17 had been fighting with IBS symptoms, 
+such  as  severe  abdominal  pain  and  chronic  diarrhea,  for 
+almost a year. He had experience and learned about how to 
+track food intake after his bariatric surgery around 10 years 
+ago. He did not keep tracking himself until recently, after he 
+started  to  have  IBS  symptoms.  He  used  MyFitnessPal  to 
+track  his  food  intake,  medications,  and  symptoms  (using 
+custom  entries).  He  shared 
+the  data  with  his  pain 
+management 
+and 
+gastroenterologist  because  he  wanted  to  prove  that  the 
+medication did not help. All three doctors reviewed his data 
+but  with  different 
+levels  of  engagement.  His  pain 
+management  doctor  went  through  his  data  thoroughly  and 
+took  notes  in  the  medical  record.  She  also  printed  out  her 
+notes  for  P17  to  reference  her  suggestion  about  vitamin 
+supplements and instruction for pain medication. P17 put all 
+the  notes  on  his  clipboard  at  home  as  a  reminder  and 
+reference.  His  gastroenterologist  always  reviewed  the  data 
+and the notes from other doctors and spent some time having 
+a conversation with him about food intake, medication, and 
+symptoms. His primary care doctor read the notes from other 
+two doctors and asked him about the latest status, but did not 
+directly read the data he brought. 
+P17  had  a  different  goal  for  sharing  tracking  data  with 
+providers:  providing  evidence  of  his  lack  of  response  to  a 
+specific treatment. To achieve this goal, he shared data with 
+multiple medical team members, and each interacted with the 
+
+primary 
+
+doctor, 
+
+care 
+
+doctor, 
+
+data differently. These providers coordinated with each other 
+using notes in the electronic medical record (EMR) system. 
+ 
+(cid:20)(cid:28)(cid:46)(cid:36)(cid:32)(cid:41)(cid:46)(cid:1) (cid:32)(cid:50)(cid:43)(cid:32)(cid:44)(cid:36)(cid:32)(cid:41)(cid:30)(cid:32)(cid:45)(cid:1) (cid:46)(cid:44)(cid:28)(cid:30)(cid:38)(cid:36)(cid:41)(cid:34)(cid:1) (cid:28)(cid:41)(cid:31)(cid:1) (cid:45)(cid:35)(cid:28)(cid:44)(cid:36)(cid:41)(cid:34)(cid:1) (cid:29)(cid:51)(cid:1) (cid:43)(cid:44)(cid:42)(cid:48)(cid:36)(cid:31)(cid:32)(cid:44)(cid:1)
+(cid:36)(cid:41)(cid:45)(cid:46)(cid:44)(cid:47)(cid:30)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)
+Some  patients  started  tracking  because  their  providers 
+instructed  them  to  do  so.  These  providers  often  provided 
+detailed  instructions  on  how  and  what  to  track,  suggested 
+their  preferred  tools,  or  communicated  their  goals  for 
+reviewing  tracking  data.  The  communication  influenced 
+patient tracking behavior and interaction with providers. 
+Case Study 3: P6 was in a weight loss program. She had 
+been working with one dietitian, Katy (pseudonym), for two 
+years. She visited Katy every six to eight weeks. Katy taught 
+her to keep a record of her weight, beverages, and food intake 
+one day in a week. Katy introduced MyFitnessPal to her and 
+explained how to use the app in detail. Katy also answered 
+her questions about using the app during each clinic visit.  
+In the clinic, Katy would use P6’s phone to login into her 
+MyFitnessPal and review the data in detail. Katy would also 
+ask for clarification about the data. Katy then took notes from 
+the  data  and  plotted  the  data  into  her  spreadsheet  on  her 
+computer.  Then  Katy  would  show  P6  the  trend  and  the 
+pattern of her data and explain those to her. If Katy thought 
+they needed to change the diet plan or calorie goal, she would 
+just change that directly on P6’s phone so she could follow 
+the plan at home. 
+P6’s  dietitian  worked  with  her  in  configuring  the  tools, 
+answering questions while she collected data, showing her 
+how  to  review  data,  reading  through  data,  and  directly 
+inputting  suggestions  into  her  tools.  These  experiences 
+provided  the  patient  with  knowledge  about  the  tool  and  her 
+health status, managed her expectations about reviewing data 
+with the dietitian, and helped her follow advice outside of visits. 
+Case  Study  4:  P2  had  suffered  from  excessive  bowel 
+movement, constant bloating, and acid reflux for over a year. 
+He worked with one naturopathic doctor, Jeff (pseudonym), 
+to start an elimination diet and keep track of his food intake. 
+In the first session, Jeff gave P2 a paper for him to record the 
+data. However, P2 felt it was too troublesome to keep records 
+on paper and he gave up on it in one day. He started to try 
+different  tools  including  Excel  and  various  apps  in  the 
+market. He gave up using most of them in less than three days 
+until  he  found  mySymptoms.  He  used  the  app  to  keep 
+records.  The  analysis  function  allowed  him  to  reflect  on 
+possible  correlations  between  food  and  his  symptoms.  He 
+printed  out  one  report  using  the  standardized  feature  and 
+brought  it  to  the  follow-up  visit  in  three  weeks.  P2  went 
+through his diet record with Jeff. Jeff then gave him some 
+high-level comments to ensure he had at least three-to-four 
+day rotations on foods and his diet was balanced. He went 
+back  to  see  Jeff  after  another  three  weeks  with  his  data. 
+However,  Jeff  did  not  look  through  his  data  this  time  and 
+asked him to describe his diet verbally. After this experience, 
+P2 stopped bringing in his data to Jeff. 
+
+776
+
+SESSION: HEALTHCARE PROVIDERS
+
+Sometimes, even when tracking was instructed by providers, 
+patients  like  P2  still  make  their  own  decisions  about  tool 
+options  and  what  specifically  to  track.  However,  P2’s 
+experiences showed that his providers had a different goal 
+for  reviewing  data  (empowering  P2  to  understand  his  diet 
+plan) than from what he had (monitoring treatment plans and 
+effects). This conflict resulted in termination of collaborative 
+review before P2 was ready. 
+(cid:8)(cid:42)(cid:39)(cid:39)(cid:28)(cid:29)(cid:42)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:46)(cid:35)(cid:44)(cid:42)(cid:47)(cid:34)(cid:35)(cid:42)(cid:47)(cid:46)(cid:1)(cid:46)(cid:35)(cid:32)(cid:1)(cid:20)(cid:32)(cid:44)(cid:45)(cid:42)(cid:41)(cid:28)(cid:39)(cid:1)(cid:14)(cid:41)(cid:33)(cid:42)(cid:44)(cid:40)(cid:28)(cid:46)(cid:36)(cid:30)(cid:45)(cid:1)(cid:17)(cid:42)(cid:31)(cid:32)(cid:39)(cid:1)
+The experiences presented in the case studies depict different 
+types  of  patient-provider  interactions  with  shared  patient-
+collected  data  in  current  clinical  practice.  To  further 
+understand  when  and  how  these  collaborations  take  place, 
+we present the results of our analysis based on the five-stage 
+model  for  personal  informatics  from  Li  et  al.  [34]: 
+preparation,  collection,  integration,  reflection,  and  action. 
+We  describe  how  sharing  occurs  between  patients  and 
+providers  on  self-tracked  data  and  how  sharing  influences 
+tracking  behavior  in  all  stages.  To  illustrate  a  range  of 
+experiences  in  patient-provider  collaboration,  we  describe 
+representative  as  well  as  suggestive  examples  from 
+interviews and surveys.(cid:1)
+(cid:5)(cid:17)(cid:9)(cid:16)(cid:7)(cid:17)(cid:7)(cid:18)(cid:12)(cid:15)(cid:14)(cid:1)
+People plan for what and how they want to track in this stage. 
+However,  knowing  what  and  how  to  track  are  common 
+barriers for people to start tracking. Epstein et al. [16] further 
+divided  the  preparation  stage  into  deciding  to  track  and 
+selecting tools. 
+For  provider-initiated  tracking  and  sharing,  patients  were 
+normally given adequate motivations to track: monitoring for 
+a  specific  treatment  (e.g.,  elimination  diet  for  P17)  or  for 
+long-term  performance  (e.g.,  weight  loss  performance  for 
+P6).  Patients  also  reported  being  asked  to  track  their  food 
+intake  to  get  approval  for  bariatric  surgery  (P9,  P17,  P29, 
+P30,  P31,  P32,  P33,  P34,  P35,  P36,  P37,  P38)  or  gastric 
+pacemaker  implantation  (P14,  P39).  For  patients  being 
+considered for bariatric surgery, they were asked to do a trial 
+of the recommended post-operative dietary guidelines and to 
+track  their  diet  for  a  defined  time  period  for  compliance. 
+Greater weight loss, and maintenance of this weight loss, is 
+more promising for patients able to adhere to this diet post-
+operatively. For gastric pacemaker implantation in patients 
+with gastroparesis (slow emptying of the stomach), providers 
+reported wanting to make sure that patients have “maximized 
+medical  therapy,”  which  includes  dietary  management. 
+These patients are therefore also asked to track their diet for 
+compliance prior to being considered for a gastric pacemaker. 
+Providers sometimes recommended tracking tools to patients 
+for  clinical  diagnosis  and  management.  These  included 
+traditional  paper-based  diaries  (e.g.,  bariatric  surgery 
+handbook,  P8),  a  specific  application  (e.g.,  MyFitnessPal, 
+P6), and, for one participant, a list of popular applications 
+(P3).  However,  patients  do  not  always  follow  those 
+recommendations. Some patients have tools with which they 
+are  already  familiar  (P3,  P9)  or  follow  suggestions  from 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+Figure 2. Patients integrated data before sharing with providers. Left: P10 used red pens to circle and wrote annotation on her 
+paper diary. Middle: P4 put weight and calorie intake in the same chart to show correlation. Right: P8 created a personal 
+report of his daily food intake and physical activity. 
+
+       
+
+      
+
+friends or family (P40, P41). They may also have specific 
+needs that the provider-recommended tool does not fulfill. 
+For example, P2 hoped to self-identify correlations between 
+his  food  intake,  medication,  and  symptoms.  However,  he 
+found it difficult to use the paper diary provided by his doctor 
+and therefore used mySymptoms app instead. Tools selected 
+by  patients,  however,  do  not  always  support  collaborative 
+review in the clinic. Many providers still preferred a paper 
+diary for better interaction affordance [10]. This sometimes 
+created a tension for later collaboration in the reflection stage. 
+For patients who initiated tracking on their own, some chose 
+specific  items  to  track  with  eventual  sharing  in  mind.  For 
+example,  P4  started  to  track  his  weight  and  calorie  intake 
+again because he wanted to show his doctor his day-by-day 
+effort toward weight loss. He did not feel that weighing in at 
+the clinic every six weeks was enough to represent “what’s 
+going on in his life”. He also chose a tool that allowed him 
+to later integrate his data to support collaborative reflection 
+in the later stage. 
+(cid:3)(cid:15)(cid:13)(cid:13)(cid:9)(cid:8)(cid:18)(cid:12)(cid:15)(cid:14)
+In  the  collection  stage,  people  start  to  record  their  own 
+information.  This  almost  always  only  involved  patients 
+themselves.  However,  some  patients  said  that  having  the 
+ability to send questions to providers through a patient portal 
+or email helped them to overcome barriers around tool use 
+and accuracy. For example, P10 described sending how she 
+was  feeling  and  questions  about  perplexing  data  to  her 
+provider.  Having  the  expectation  of  provider  review  also 
+increased  patient  accountability  and  motivation.  For 
+example, P5 mentioned in the interview “knowing someone 
+will look over the data forces me to be more aware of what I 
+eat and what I write down.” P8 said he kept a more detailed 
+record because he knew his dietitian and nurse cared about 
+these data and would read through the data carefully. 
+(cid:4)(cid:14)(cid:18)(cid:9)(cid:11)(cid:17)(cid:7)(cid:18)(cid:12)(cid:15)(cid:14)(cid:1)
+People integrate their tracking data to support reflection in 
+the  later  stage  of  the  personal  informatics  model.  Some 
+patients  did  not  need  to  spend  much  effort  on  integration 
+because  the  apps  they  used  supported  this  step.  P2  used 
+
+mySymptoms,  which  provides  correlation  features,  and 
+others used tools that include an integrated dashboard (e.g., 
+MyFitnessPal, P6; LoseIt, P9). Some patients created their 
+own integration by making their own report (e.g., P4 [Figure 
+2, middle], P8 [Figure 2, right]). One patient selected specific 
+records  to  print  for  providers  (P5).  Others  highlighted 
+particular  entries  in  their  paper  records  to  help  focus  the 
+conversation (e.g., P1, P10 [Figure 2, left]). Other patients 
+read  through  their  notes  and  integrated  data  in  their  head 
+before the clinic visit, where they provided a verbal summary 
+to their health providers (e.g., P15, P16, P18). 
+To support collaborative reflection, patients need to integrate 
+data  based  on  both  provider  and  patient  goals.  However, 
+patients  and  providers  did  not  always  understand  each 
+other’s  goal  well.  For  example,  providers  sometimes 
+encouraged patients to track to be aware of their own health 
+issues.  Thus,  they  did  not  plan  to  thoroughly  review  the 
+information and just had the goal of providing affirmation 
+and  emotional  support.  Patients,  on  the  other  hand,  might 
+expect  providers  to  help  make  sense  of  their  data  and 
+therefore bring pages of data to the visit. Some patients felt 
+frustrated afterwards when this goal was not obtained (e.g., 
+P2, P10, P42). It was also difficult for patients who initiated 
+tracking  and  sharing  to  anticipate  their  provider’s  goal 
+beforehand,  or  providers  might  not  have  specific  goals 
+before seeing patient-tracked data. 
+(cid:6)(cid:9)(cid:10)(cid:13)(cid:9)(cid:8)(cid:18)(cid:12)(cid:15)(cid:14)(cid:1)
+In  the  reflection  stage,  people  review  their  collected  and 
+integrated  dataset  to  make  sense  of  it.  Patients  in  our 
+interviews  reported  spending  an  average  of  five  minutes 
+(approximately 25% of the clinic visit) reviewing their data 
+with their primary care physicians or gastroenterologists and 
+10-20 minutes (25% of the clinic visit) with their dietitians, 
+consistent with our previous study with providers [10]. 
+Patients also often reviewed the data with multiple healthcare 
+providers.  Different  providers  might  have  had  different 
+review goals and therefore different approaches to reviewing 
+patient-generated  data.  P17  described  having  a  thorough 
+review  with  one  doctor  and  a  brief  verbal  review  with 
+
+777
+
+transformed 
+
+another. Similarly, P8’s dietitian spent 20 minutes focusing 
+on reviewing his day-to-day food intake while his bariatric 
+nurse was more interested in his overall health. She therefore 
+distributed her review time across a food diary, an exercise 
+log, and other lab test results. 
+The  reflection  stage  may  also  lead  to  another  preparation 
+stage  where  providers  and  patients  decide  on  a  change  in 
+treatment  or  a  need  for  new  treatment  in  response  to 
+monitoring. In this case, providers may suggest that patients 
+track different items to help with better treatment. 
+(cid:2)(cid:8)(cid:18)(cid:12)(cid:15)(cid:14)(cid:1)
+People decide what actions to take based on findings from 
+reflection  on  the  tracking  record.  Because  chronic  disease 
+such as overweight/obesity and IBS require long-term care, 
+patients might start another care cycle [7] at this stage. Some 
+patients used notes they took (e.g., P16, P18) or were printed 
+by  providers  (e.g.,  P11,  P17)  to  assist  them  to  follow  the 
+treatment plan or track new data points.  
+(cid:23)(cid:21)(cid:6)(cid:8)(cid:15)(cid:14)(cid:18)(cid:12)(cid:1) (cid:9)(cid:6)(cid:23)(cid:6)(cid:1) (cid:6)(cid:18)(cid:9)(cid:1) (cid:23)(cid:19)(cid:19)(cid:16)(cid:22)(cid:1) (cid:23)(cid:13)(cid:21)(cid:19)(cid:24)(cid:12)(cid:13)(cid:19)(cid:24)(cid:23)(cid:1) (cid:23)(cid:13)(cid:10)(cid:1)
+(cid:8)(cid:19)(cid:16)(cid:16)(cid:6)(cid:7)(cid:19)(cid:21)(cid:6)(cid:23)(cid:14)(cid:25)(cid:10)(cid:1)(cid:23)(cid:21)(cid:6)(cid:8)(cid:15)(cid:14)(cid:18)(cid:12)(cid:1)(cid:20)(cid:21)(cid:19)(cid:8)(cid:10)(cid:22)(cid:22)(cid:1)
+Based  on  our  findings  of  how  providers  and  patients 
+collaborate, we started to analyze how tracking data and tools 
+support  collaboration  in  these  stages.  As  patients  and 
+providers  went  through  different  collaboration  stages, 
+patient-generated  data  was 
+into  different 
+physical or conceptual forms to support collaboration. We 
+adopted the framework of boundary negotiating artifacts by 
+Lee  [32] 
+the  survey  responses,  patient 
+interviews, and provider interviews.  
+Lee defined five types of boundary negotiating artifacts that 
+facilitate  information  transmission  and  collaboration:  self-
+explanation  artifacts, 
+inclusion  artifacts,  compilation 
+artifacts,  structuring  artifacts,  and  borrowed  artifacts.  We 
+found different privacy needs and perceptions, as framed by 
+the concept of contextual integrity, evolved while using and 
+sharing  these  data  over  time.  Upholding  privacy  as 
+contextual integrity [43] requires that the information shared 
+be appropriate to the context; it also requires the information 
+be distributed in a way that respects the norms of the context. 
+As Nissenbaum [43] notes, the norms of appropriateness and 
+distribution are complex in the healthcare domain. Looking 
+at patient self-tracking data as boundary negotiating artifacts 
+allows a clearer view of privacy questions. In patient-provider 
+interactions with self-tracking data, discretion over what type 
+and  amount  of  information  is  shared  is  fluid;  the  provider 
+may request data for diagnostic and treatment purposes, or 
+the patient may offer her own data in order to optimize her 
+care.  As  patient-provider  collaboration  recasts  self-tracking 
+data as different types of boundary negotiating artifacts, patient 
+privacy expectations and needs change accordingly. 
+In the following section, we present a summary of the use of 
+four  types  of  boundary  negotiating  artifacts  in  patient-
+provider collaboration around self-tracked data. Appendix 1 
+also summarizes these results with examples.  
+
+to  reanalyze 
+
+SESSION: HEALTHCARE PROVIDERS
+
+(cid:22)(cid:32)(cid:39)(cid:33)(cid:3)(cid:10)(cid:50)(cid:43)(cid:39)(cid:28)(cid:41)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)
+Self-explanation artifacts are those created for personal use. 
+The  practice  around  the  creation  of  this  type  of  artifact  is 
+normally  based  on  personal  expertise  and  experience. 
+Examples of self-explanation artifacts from Lee [32] include 
+personal sketches and notes that help to record, organize, and 
+analyze personal ideas. Patient-generated data can function 
+as  self-explanation  artifacts,  particularly  when  patients 
+initiate self-tracking themselves. Patients are the experts of 
+their own life routines, and after years of managing weight 
+and IBS, they also become experts of their personal health 
+issues.  They  create  tracking  data  that  manifest  these 
+experiences and knowledge about themselves. These data do 
+not  necessarily  come  with  a  standardized  format  and 
+sometimes  are  highly  personalized  based  on  individual 
+health issues and their definition of meaningful, even when 
+patients use the same tools. For example, P10 chose to record 
+using  paper  notes  because  she  was  undergoing  complex 
+symptoms and following a diet plan, which made it hard for 
+her to use a general tracking tool.  
+When patients create the tracking record, they start with a set 
+of  privacy  expectations  −  while  their  data  are  still  a  self-
+explanation boundary artifact. In the case of patient-initiated 
+tracking, initially they might not expect to share the data with 
+others,  even  their  health  care  providers.  For  provider-
+initiated  tracking,  patients  expect  that  someone  will  read 
+their data and this might change their behavior around the 
+creation  of  this  artifact.  Alternatively,  patients  might  not 
+want to be judged for certain behavior so they either change 
+that behavior or choose not to record it. For example, P3’s 
+worst  sharing  experience  was  feeling  blamed  for  having  a 
+beer after work. He gave up the habit of drinking because he 
+was  tired  of  explaining,  but  he  still  considered  that  an 
+unpleasant sharing experience.  
+Patients who initiate tracking themselves might also gather 
+too  much  or  irrelevant  data.  Or,  they  might  collect  data 
+relevant for their personal use but irrelevant in the sharing. If 
+the self-explanation artifact is later incorporated in a provider 
+interaction,  patients  risk  exposing  information  that  is  not 
+needed in the context at hand. Viewed through the lens of 
+contextual integrity, a patient collects data he or she deems 
+appropriate for the context in which he or she is tracking; 
+incorporating these data in a provider visit may reveal self-
+explanation  data  that  is  out  of  the  healthcare  context, 
+particularly  if  they  initiated  the  self-tracking  process.  It  is 
+only  after  considering  sharing  or  interacting  with  their 
+providers  that  these  patients  can  select  the  most  relevant 
+information  to  gather  and  share.  Furthermore,  for  patients 
+whose providers requested they start tracking, patients may 
+not be fully aware of the privacy implications of self-tracking 
+or the features of the tools they are asked to use, affecting 
+their ability to provide informed consent to track and for their 
+provider to access sensitive information. 
+
+778
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+triggers 
+
+and 
+
+between 
+
+(cid:14)(cid:41)(cid:30)(cid:39)(cid:47)(cid:45)(cid:36)(cid:42)(cid:41)(cid:1)(cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)
+Inclusion artifacts are created from self-explanation artifacts 
+or other artifacts through a negotiation process to facilitate 
+the  discussion  of  new  ideas.  The  inclusion  process  might 
+involve presenting, accepting, and rejecting what comprises 
+the  inclusion  artifacts.  Patients  create  inclusion  artifacts 
+when  they  bring  their  data  to  the  clinic  visit.  Verbal 
+summaries play an important role in presenting their tracking 
+data because they help explain it with personal narrative. In 
+comparison to measurements in the clinic, patients believe 
+the data provide a more accurate, day-to-day record of their 
+health  and  wellness  (e.g.,  weight  and  blood  pressure), 
+relationships 
+symptoms  
+(e.g., certain foods and abdominal pain), and proof of their 
+effort towards certain health outcomes (e.g., physical activity 
+and weight loss performance). They also expect that the data 
+will help their health care providers better understand their 
+daily life and create more personalized treatment plans.  
+For data that transitions from a self-explanation artifact to an 
+inclusion  artifact,  contextual  integrity  highlights  questions 
+surrounding distribution of the data. Here there is a tension 
+between the patient’s right to control the disclosure of their 
+own  data  and  the  provider’s  authority  to  request  such 
+information. Many patients believe being honest and open to 
+their  provider  is  necessary  and  rely  on  providers  to  direct 
+them about what to share or what not to share. For example, 
+when asked why they did not share a particular type of data, 
+some patients said that it was because their providers “did 
+not ask for it” - P43.   
+Distributing confidential information via narrative is a norm 
+in  the  healthcare  context.  Patients  have  traditionally  done 
+this by verbally filtering and summarizing their experiences, 
+leaving what they reveal at their discretion, even when asked 
+explicitly  for  information  by  their  provider.  Self-tracking 
+data,  particularly  when  it  is  difficult  to  edit  or  filter,  can 
+inhibit patient abilities to distribute their health information 
+at  their  own  discretion.  For  example,  P5  only  trusted  one 
+dietitian, with whom she had worked for six years, to review 
+her data. She thought her food and symptom diary were very 
+personal and she did not think she had the same relationship 
+with other providers; therefore, she only verbally described 
+the data to them. 
+(cid:8)(cid:42)(cid:40)(cid:43)(cid:36)(cid:39)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)
+Compilation  artifacts  are  used  to  facilitate  sharing  and 
+coordinating  information  among  parties.  The  process  of 
+creating  compilation  artifacts  might  include  collecting 
+information 
+from  different  sources,  organizing  and 
+discussing in a shareable state, and presenting and explaining 
+the information to align the goals of all parties involved. This 
+compilation process might also involve practices to resolve 
+conflict and confusion. By reviewing patient-generated data, 
+test results, disease history, and other clinical information, 
+providers  created  a  compilation  artifact.  These  different 
+sources  of  inclusion  information  sometimes  conflict  with 
+each other or are unclear for medical decision-making, and 
+
+therefore require that providers and patients collaboratively 
+interpret  the  data.  This  process  also  sometimes  involves 
+multiple medical team members. The compilation object is 
+commonly presented as a clinical note in the medical record, 
+accessible  by  all  healthcare  providers  caring  for  the  same 
+patient (e.g., P14, P17) or as printed patient instructions given 
+to patients following a clinical encounter (e.g., P2, P4, P10).  
+Uncertainties  around  appropriateness  and  distribution  are 
+further  compounded  when  self-tracking  data  becomes  a 
+compilation artifact. Once shared in a clinic visit, the data 
+may be re-shared or visible to other parties [e.g., 23,49,57]. 
+Although  providers  and  patients  work  together  to  create 
+compilation  objects,  patients  might  not  feel  comfortable 
+sharing the same information with every provider. However, 
+with  EMRs,  self-tracking  data  can  be  shared  among 
+collaborating  doctors  without  patient  knowledge,  or  even 
+many years later with providers who are not working with 
+the patients, violating norms of appropriateness. For example, 
+mental health data discussed in a primary care provider visit 
+and captured in an EMR during that visit may later be visible 
+to a gastroenterologist, for whom the only appropriate self-
+tracking data to review may be food intake and abdominal 
+symptoms. This can disturb the patient’s contextual integrity 
+by overriding distribution norms (e.g., moving data collected 
+in one context to many other healthcare spheres without their 
+knowledge or explicit permission).  
+These  privacy  questions  are  compounded  by  regulatory 
+uncertainty  about  self-tracking  data.  Under  the  Health 
+Insurance  Portability  and  Accountability  Act  (HIPAA) 
+guidelines, an individual’s confidential information such as 
+that contained in self-tracking data should only be accessed 
+by  the  individual  or  their  provider.  While  personal  health 
+information (PHI) found in EMRs and other clinical datasets 
+are protected by HIPAA, the regulations and best practices 
+surrounding  self-tracking  data  brought  into  the  clinical 
+environment  are  less  clear  [22].  The  Food  and  Drug 
+Administration  (FDA)  has  put  forth  guidelines  on  mobile 
+apps being used like medical devices, but has said it will not 
+regulate them [60]. Self-tracking data may not be considered 
+PHI under current regulation  [22], and patients in our study 
+were  confused  about  whether  these  data  are  protected  by 
+HIPPA  (P44,  P45). 
+  More  clarity  is  needed  around  
+self-tracked data transfer and storage in a clinical setting. If 
+self-tracked data are requested by the provider, these issues 
+may become even murkier. 
+(cid:22)(cid:46)(cid:44)(cid:47)(cid:30)(cid:46)(cid:47)(cid:44)(cid:36)(cid:41)(cid:34)(cid:1)(cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)
+Structuring  artifacts  are  created  to  coordinate  information 
+use  and  to  direct  and  coordinate  the  activity  of  parties 
+involved  in  the  collaboration.  It  might  also  be  used  to 
+structure  the  final  product  but  depending  on  the  view  of 
+participating  parties,  it  might  be  used  differently.  After 
+negotiating and compiling health information, providers and 
+patients  reached  decisions  that  could  then  generate  a 
+structuring  artifact  or  a  new  inclusion  artifact.  This  often 
+included a new plan or a new setup for tracking, a checklist 
+
+779
+
+of diet suggestions, a referral to other medical providers (e.g. 
+a behavioral psychologist or a physical therapist), a physical 
+activity  prescription,  or  a  change  in  medication.  The  old 
+records might now carry notes or annotations from providers 
+and serve as a structuring object for patients to refer to as 
+they  engage  in  behavior  change  at  home.  Some  other 
+artifacts, such as a printout of the provider’s notes, an email, 
+or  patient  notes  on  their  own  phones,  can  also  function 
+similarly to aid patients in executing the new plan.  
+(cid:7)(cid:42)(cid:44)(cid:44)(cid:42)(cid:49)(cid:32)(cid:31)(cid:1)(cid:6)(cid:44)(cid:46)(cid:36)(cid:33)(cid:28)(cid:30)(cid:46)(cid:45)(cid:1)
+Lee’s  [32]  boundary  negotiating  artifacts  also  include 
+borrowed artifacts, which are those taken from the creator, 
+augmented  with  other  interpretation,  and  used  in  an 
+unanticipated way. However, we did not identify the creation 
+or use of borrowed artifacts in our analysis. 
+(cid:9)(cid:14)(cid:22)(cid:8)(cid:24)(cid:22)(cid:22)(cid:14)(cid:19)(cid:18)(cid:1)
+Collaboration  occurred  in  all  stages  of  the  personal 
+informatics  model  according  to  our  patient  and  provider 
+surveys and interviews; however, some of the collaborative 
+activities are less supported by current commercial tools. Our 
+results  identify  opportunities  for  designers  to  support 
+provider and patient goal implementation in the preparation 
+and collection stage, goal-oriented and privacy-sensitive data 
+curation in the integration stage, and tailored visualizations 
+and  interfaces  to  support  collaborative  review  within  and 
+outside  of  clinic  visits  in  the  reflection  stage.  We  also 
+identify  opportunities  for  researchers  to  further  develop 
+theories to support patient-provider collaborations. 
+(cid:12)(cid:42)(cid:28)(cid:39)(cid:1)(cid:14)(cid:40)(cid:43)(cid:39)(cid:32)(cid:40)(cid:32)(cid:41)(cid:46)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:31)(cid:47)(cid:44)(cid:36)(cid:41)(cid:34)(cid:1)(cid:20)(cid:44)(cid:32)(cid:43)(cid:28)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:28)(cid:41)(cid:31)(cid:1)(cid:8)(cid:42)(cid:39)(cid:39)(cid:32)(cid:30)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)
+The  decision  to  share  tracking  data  with  providers  can 
+change patient tracking practices in both provider-initiated 
+tracking  and  patient-initiated  tracking.  However,  without 
+clear communication about each other’s goals, providers are 
+overwhelmed by the excessive amount of data to review, and 
+patients  are  frustrated  by  providers  not  valuing  their 
+collected data per their expectations [14].  
+We do not claim that providers do not spend enough time and 
+effort  to  communicate  with  their  patients.  Many  of  our 
+participants, in fact, thought their providers have been very 
+open to communication, despite frustration with their sharing 
+experiences. What we do claim, however, is providers and 
+patients lack a mechanism to reach mutual expectations and 
+goals during the process of sharing patient-generated data. 
+For  example,  even  when  providers  specifically  instruct 
+patients  to  only  record  a  specific  type  of  food,  the  apps 
+patients use may still require or encourage them to input and 
+display other unnecessary information (e.g., calories [11]), 
+thereby creating barriers of high burden and excessive data 
+for effective review. Systems instead could allow providers 
+and patients to configure personalized templates for tracking. 
+Similar  to  medication  prescriptions  and  what  Patel  et  al. 
+proposed for cancer patient symptom tracking [47], patients 
+and providers could set up specific parameters for tracking, 
+such  as  items  and  frequency,  based  on  their  sharing  and 
+reviewing goals. Lifestyle behavior tracking, however, often 
+
+780
+
+SESSION: HEALTHCARE PROVIDERS
+
+lacks standard metrics, which is different from medication or 
+symptom tracking. Therefore, guiding template design with 
+communication  around  provider  and  patient  goals 
+is 
+necessary. For example, if the goal is to identify a specific 
+trigger, patients and their providers can decide to only record 
+the  specific  type  of  food  with  a  three-day  elimination  and 
+three-day introduction. These templates could also be shared 
+with  self-trackers  without  having  to  meet  with  providers 
+beforehand.  For  example,  if  one  self-tracker  suspects  his 
+abdominal pain is triggered from a certain food and would 
+like an official evaluation, he can use the template to track his 
+food and abdominal pain with adequate detail and frequency. 
+(cid:12)(cid:42)(cid:28)(cid:39)(cid:3)(cid:42)(cid:44)(cid:36)(cid:32)(cid:41)(cid:46)(cid:32)(cid:31)(cid:1)(cid:28)(cid:41)(cid:31)(cid:1)(cid:20)(cid:44)(cid:36)(cid:48)(cid:28)(cid:30)(cid:51)(cid:3)(cid:45)(cid:32)(cid:41)(cid:45)(cid:36)(cid:46)(cid:36)(cid:48)(cid:32)(cid:1)(cid:9)(cid:28)(cid:46)(cid:28)(cid:1)(cid:8)(cid:47)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)
+To support their expectations regarding collaborative review 
+with  providers,  our  participants  used  various  methods  to 
+curate  their  tracking  data.  Curation  between  tracking  and 
+review is important for patients to achieve their goals and 
+resolve 
+their  privacy  concerns.  This  creates  design 
+opportunities to better support these activities.  
+For a system to support goal-oriented data curation, it could 
+provide mechanisms to integrate and summarize data from 
+multiple sources, and to curate and filter data based on the 
+goals and targets of sharing [15]. This provides flexibility for 
+patients  to  use  their  preferred  tracking  tools  that  fit  their 
+preference and routine, but still allows them to achieve their 
+goal  − sharing and review with their providers. Similar to 
+myRecord [3] and Tag-it-Yourself [55], during the curation 
+period, these systems could also help patients annotate and 
+highlight data with questions or exceptional events to share 
+with their providers. This could facilitate agenda setting if it 
+is shared before the visit [59], or supply additional contextual 
+information necessary to support conversations in the visit.  
+For  a  system  to  support  privacy-sensitive  data  curation,  it 
+could  provide  sharing  profiles  based  on  the  patient’s 
+relationship  with  the  data  recipient.  Similar  to  privacy 
+settings in social sharing [e.g., Facebook, 46], users should 
+be  able  to  tailor  their  sharing  content  based  on  which 
+providers they would want to share and what their sharing 
+goals are. This is particularly important for systems seeking 
+to  integrate  tracking  data  into  EMR  systems.  Without  the 
+options  to  curate  data  before  integration,  it  might  infringe 
+patient privacy of data sharing without their notice. 
+(cid:23)(cid:28)(cid:36)(cid:39)(cid:42)(cid:44)(cid:32)(cid:31)(cid:1)(cid:25)(cid:36)(cid:45)(cid:47)(cid:28)(cid:39)(cid:36)(cid:52)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:45)(cid:1)(cid:2)(cid:1)(cid:14)(cid:41)(cid:46)(cid:32)(cid:44)(cid:33)(cid:28)(cid:30)(cid:32)(cid:45)(cid:1)(cid:33)(cid:42)(cid:44)(cid:1)(cid:8)(cid:42)(cid:39)(cid:39)(cid:28)(cid:29)(cid:42)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)
+Time  is  one  of  the  most  limited  resources  for  reviewing 
+tracking data in clinic visits. However, when asked whether 
+there  is  sufficient  time  to  review  data,  many  patients  we 
+interviewed  felt  they  were  given  enough  time,  but  were 
+frustrated about not being able to focus on the questions in 
+which they were interested (e.g., P17). This demonstrates a 
+design opportunity to create goal-oriented visualizations or 
+summaries  to  help  focus  the  collaborative  review.  For 
+example, if providers and patients want to focus on calorie 
+intake and weight for weight loss, there may be no need to 
+present nutritional content. On the other hand, if the goal is 
+to  identify  potential  food  triggers,  then  specific  food 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+and 
+
+patients 
+
+providers 
+
+collaborate 
+
+nutrients or components are more important to analyze and 
+present than calories.  
+To help with motivation and accountability, systems could 
+also  support  reflection  on  missing  data.  Features  such  as 
+anomaly  identification  have  been  used  to  help  users  self-
+identify  their  mistakes  and  explain  irregular  behaviors  
+[e.g.,  33].  Similar  features  can  support  patient-provider 
+conversations  during  collaborative  review.  For  instance, 
+combining  patient  annotation  and  contextual  information 
+about  their  routines,  such  as  calendar  events,  could  better 
+allow  providers  and  patients  to  identify  barriers  and 
+challenges in tracking (e.g., frequent travel disrupting their 
+tracking or actual routines), better manage their care outside 
+of the clinic office, and provide opportunities to personalize 
+the patient’s care plan. Systems could also support patient 
+reflection on unarticulated events in their lives by flagging 
+missing data for their consideration, instead of just treating it 
+as “bad” or “incomplete” data. 
+(cid:21)(cid:32)(cid:33)(cid:39)(cid:32)(cid:30)(cid:46)(cid:36)(cid:41)(cid:34)(cid:1)(cid:8)(cid:42)(cid:39)(cid:39)(cid:28)(cid:29)(cid:42)(cid:44)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:1)(cid:36)(cid:41)(cid:1)(cid:23)(cid:35)(cid:32)(cid:42)(cid:44)(cid:36)(cid:32)(cid:45)(cid:1)
+Using  the  stage-based  model  of  personal  informatics  [34] 
+and boundary negotiating artifacts [32] helped us understand 
+how 
+using  
+patient-generated  data.  However,  we  also  found  a  need  to 
+address  issues  uncovered  for  applying  these  models  and 
+theories  to  patient-provider  collaboration  with  self-tracked 
+data. In this section, we reflect on the nature and process of 
+patient-provider  collaboration  in  tracking  and  sharing 
+patient-generated  data  to  suggest  considerations  for  future 
+development of these theories and models. 
+Reflecting on the stage-based model of personal informatics, 
+we observe a need to extend the model with individual roles 
+in each stage of what is, for many, a social and collaborative 
+process. Although collaboration occurs in every stage of the 
+personal informatics model, individuals might play different 
+roles and conduct different types of activity independently 
+and collaboratively. For example, in the preparation stage, 
+providers might plan to educate patients about what and how 
+to  track  while  patients  might  plan  to  adopt  the  tracking 
+process  into  their  daily  routines;  together  they  make  a 
+feasible  tracking  plan.  Similarly,  when  collaboratively 
+reviewing data, providers might examine tracking data for 
+common symptom triggers while patients might reflect on 
+contextual factors that affect their exposure to those triggers. 
+When integrating both analyses, providers and patients can 
+adopt actionable treatment plans and lifestyle changes. 
+There is also a need to plan for lapsing and stopping when 
+applying 
+to  patient-provider 
+collaboration on tracking and reviewing. Collaboration can 
+be  terminated  by  either  party  during  or  between  stages. 
+Patients might lapse in collecting data [16]. Providers, facing 
+time and compensation constraints, might not be incentivized 
+to review the data as thoroughly or at all. This might in turn 
+cause patients to stop bringing their data to the clinic. The 
+lived 
+informatics  model  by  Epstein  et  al.  suggests 
+opportunities  and  possible  strategies  for  designing  for 
+
+the  stage-based  model 
+
+that 
+
+transformed 
+
+lapsing  and  resuming  tracking  [16].  We  emphasize  the 
+importance of designing not just for lapses in and resumption 
+of  individual  tracking,  but  also  in  collaborative  tracking. 
+Further, it is possible for parties to asymmetrically lapse or 
+resume. As seen among our participants, a provider might 
+lapse in reviewing data before a patient is ready. A patient, 
+facing a flare up in symptoms or weight gain, might resume 
+tracking  but  without  the  provider  support  he  or  she 
+previously had.  
+The social nature of collaboration work inevitably leads to 
+privacy  concerns,  particularly  in  the  context  of  health 
+information.  As  different  boundary  negotiating  artifacts  are 
+formed  and 
+from  patient-generated  data 
+throughout the collaboration process, patient perspectives of 
+privacy  change  and  need  to  be  addressed  accordingly. 
+Reflecting on Nissenbaum’s privacy as contextual integrity 
+[43], we caution practitioners and researchers to be attentive 
+to the complex norms of appropriateness and distribution of 
+patient-provider collaboration when applying both models. 
+Future  research  should  also  extend  collaboration  around 
+patient-generated data to include other members of their peer 
+support and care networks and further develop the theories 
+based on these nuances. While our study focuses on IBS and 
+weight  management  populations,  we  believe 
+the 
+opportunities to apply and extend current models and theory 
+will  be  informative  for  other  forms  of  collaboration  using 
+self-tracking  data.  For  example,  financial  advisors  review 
+client financial data, personal trainers prepare workout plans 
+and review journals, and many families review budgets and 
+bills together. 
+(cid:16)(cid:36)(cid:40)(cid:36)(cid:46)(cid:28)(cid:46)(cid:36)(cid:42)(cid:41)(cid:45)(cid:1)
+Our survey samples could have self-selection bias in favor of 
+patients and providers who are more open to or interested in 
+use of self-tracking data. However, these samples provided 
+us an in-depth understanding of what currently happens in 
+patient-generated data sharing with providers in populations 
+with obesity and IBS. Our study is also limited to an analysis 
+of  self-reported  patient  and  provider  experiences  and 
+perceptions  of  their  experiences  with  shared  data.  The 
+collaborative experiences likely built upon the typical long-
+term relationships between the providers and patients in our 
+study and organizational factors of the health system from 
+which  we  recruited.  Future  observational  studies  could 
+provide more insights on patient-provider interactions with 
+self-tracking data in various clinical settings.  
+(cid:8)(cid:19)(cid:18)(cid:8)(cid:16)(cid:24)(cid:22)(cid:14)(cid:19)(cid:18)(cid:1)
+Building on the stage-based model of personal informatics, 
+we observe and present patient expectations for sharing self-
+tracking  data  with  their  health  care  providers  and  how 
+collaboration takes place in different stages. In addition, we 
+adopted  the  theory  of  boundary  negotiating  artifacts  to 
+describe how current tracking tools and data support provider 
+and  patient  collaboration.  Grounded  in  these  theories,  our 
+study contributes an understanding of the design and use of 
+self-tracking data in IBS and weight management patients. 
+
+781
+
+SESSION: HEALTHCARE PROVIDERS
+
+2.(cid:1) Rikke Aarhus, Stinne Aaløkke Ballegaard and Thomas 
+
+Riisgaard Hansen. 2009. The eDiary: Bridging home 
+and hospital through healthcare technology. In 
+proceedings of the 11th European Conference on 
+Computer Supported Cooperative Work (ECSCW 
+2009), 63-83.  
+https://doi.org/10.1007/978-1-84882-854-4_4 
+
+3.(cid:1) Tariq Andersen, Pernille Bjørn, Finn Kensing, and 
+
+Jonas Moll. 2011. Designing for collaborative 
+interpretation in telemonitoring: Reintroducing patients 
+as diagnostic agents. Int J Med Inform; 80(8). 
+http://dx.doi.org/10.1016/j.ijmedinf.2010.09.010 
+
+4.(cid:1) Stinne Aaløkke Ballegaard, Thomas Riisgaard Hansen, 
+
+and Morten Kyng. 2008. Healthcare in everyday life: 
+designing healthcare services for daily life. In 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '08). ACM, New 
+York, NY, USA, 1807-1816. 
+http://doi.acm.org/10.1145/1357054.1357336 
+
+5.(cid:1) Frank Bentley, Konrad Tollmar, Peter Stephenson, 
+Laura Levy, Brian Jones, Scott Robertson, Ed Price, 
+Richard Catrambone, and Jeff Wilson. 2013. Health 
+Mashups: Presenting Statistical Patterns between Well-
+being Data and Context in Natural Language to Promote 
+Behavior Change. ACM Trans. Comput.-Hum. Interact; 
+20(5): 30. http://doi.acm.org/10.1145/2503823 
+
+6.(cid:1) Carolina Bonilla, Paula Braur, Dawna Royall, Heather 
+Keller, Rhona M. Hanning, and Alba DiCenso. 2015. 
+Use of electronic dietary assessment tools in primary 
+care: an interdisciplinary perspective. BMC medical 
+informatics and decision making 2015; 15(1):14. 
+https://doi.org/ 10.1186/s12911-015-0138-6(cid:1) 
+
+7.(cid:1) Yunan Chen. 2011. Health information use in chronic 
+
+care cycles. In Proceedings of the ACM 2011 
+Conference on Computer Supported Cooperative Work 
+(CSCW '11). ACM, New York, NY, USA, 485-488. 
+http://doi.acm.org/10.1145/1958824.1958898 
+
+8.(cid:1) Eun Kyoung Choe, Nicole B. Lee, Bongshin Lee, 
+
+Wanda Pratt, and Julie A. Kientz. 2014. Understanding 
+quantified-selfers' practices in collecting and exploring 
+personal data. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems 
+(CHI '14). ACM, New York, NY, USA, 1143-1152. 
+http://doi.acm.org/10.1145/2556288.2557372 
+
+9.(cid:1) Eun Kyoung Choe. 2014. Designing Self-Monitoring 
+Technology to Promote Data Capture and Reflection. 
+Ph.D. Dissertation, The Information School, University 
+of Washington, Seattle WA. 
+
+10.(cid:1)Chia-Fang Chung, Jonathan Cook, Elizabeth Bales, 
+
+Jasmine Zia, and Sean A. Munson. (2015). More Than 
+Telemonitoring: Health Provider Use and Non-Use of 
+Lifelog Data in Irritable Bowel Syndrome and Weight 
+Management. J Med Internet Res 2015; 17(8):e203. 
+http://doi.org/10.2196/jmir.4364 
+
+Despite  successful  use  cases,  many  barriers  and  concerns 
+prevent each party from performing individual activities or 
+from collaborating effectively with each other.  Designers of 
+personal informatics systems should work to include features 
+that  better  support  patient-provider  collaboration.  These 
+features  should  support  goal 
+implementation  during 
+preparation and collection stages, goal oriented and privacy-
+sensitive  data  curation  during  the  integration  stage,  and 
+tailored visualizations and interfaces for collaborative review 
+during the reflection stage. 
+To avoid miscommunication, healthcare providers and patients 
+should have explicit conversations about intended use of the 
+data  by  each  party.  Healthcare  providers  who  integrate 
+patient self-tracking data into their practice should consider 
+the different roles their patients and they play in initiating, 
+supporting, and terminating the collaboration. They should 
+also  be  conscious  of  patient  privacy  needs  and  suggest 
+appropriate granularity and duration of tracking and sharing. 
+We also suggest further development of models of personal 
+informatics and the theory of boundary negotiating artifacts 
+based on the social nature of patient-provider collaboration. 
+Researchers should elaborate on personal informatics models 
+(e.g.,  [16,34])  to  reflect  the  role  self-trackers  and  their 
+collaborators,  including  experts,  play  in  each  stage  of  the 
+process  and  how  these  roles  may  shift.  CSCW researchers 
+should place importance on the norms, uses, and privacy needs 
+associated  with  data  when  applying  the  theory  of  boundary 
+negotiating 
+patient-provider 
+collaboration and other collaborations involving personal data. 
+(cid:6)(cid:8)(cid:15)(cid:18)(cid:19)(cid:26)(cid:16)(cid:10)(cid:9)(cid:12)(cid:17)(cid:10)(cid:18)(cid:23)(cid:22)(cid:1)
+We thank Ricky Basconcillo, Yuriana Garcia, Sayna Parsi, 
+Visavakorn Toongtong, Lucie Wu, and Frank Xu for their 
+contributions on survey design, patient interview, and data 
+analysis. We thank Yen Truong for guidance and support on 
+participant  recruitment.  We  also  thank  Gary  Hsieh,  Roger 
+Vilardaga,  Andrew  Berry,  Ravi  Karkar,  Jessie  Schroeder, 
+Lucas  Colusso  and  anonymous  reviewers  for  thoughtful 
+critique on earlier versions of this paper. This research was 
+funded in part by the Intel Science and Technology Center 
+for  Pervasive  Computing,  the  Agency  for  Healthcare 
+Research  and  Quality  (project  #1R21HS023654),  and  the 
+National Science Foundation (project #s OAI-1028195 and 
+IIS-1344613). 
+(cid:21)(cid:10)(cid:11)(cid:10)(cid:21)(cid:10)(cid:18)(cid:8)(cid:10)(cid:22)(cid:1)
+1.(cid:1) Rikke Aarhus and Stinne Aaløkke Ballegaard. 2010. 
+
+understand 
+
+artifacts 
+
+to 
+
+Negotiating Boundaries: Managing Disease at Home. In 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '10). ACM, New 
+York, NY, USA, 1223-1232. 
+http://doi.acm.org/10.1145/1753326.1753509 
+
+782
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+11.(cid:1)Felicia Cordeiro, Daniel A. Epstein, Edison Thomaz, 
+Elizabeth Bales, Arvind K. Jagannathan, Gregory D. 
+Abowd, and James Fogarty. 2015. Barriers and Negative 
+Nudges: Exploring Challenges in Food Journaling. 
+In Proceedings of the 33rd Annual ACM Conference on 
+Human Factors in Computing Systems (CHI '15). ACM, 
+New York, NY, USA, 1159-1162.  
+http://doi.acm.org /10.1145/2702123.2702155 
+
+12.(cid:1)Sunny Consolvo, David W. McDonald, Tammy Toscos, 
+Mike Y. Chen, Jon Froehlich, Beverly Harrison, Predrag 
+Klasnja, Anthony LaMarca, Louis LeGrand, Ryan 
+Libby, Ian Smith, and James A. Landay. 2008. Activity 
+Sensing in the Wild: a Field Trial of UbiFit Garden. In 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '08). ACM, New 
+York, NY, USA, 1797-1806. 
+http://doi.acm.org/10.1145/1357054.1357335(cid:1) 
+
+13.(cid:1)Sunny Consolvo, Ian E. Smith, Tara Matthews, Anthony 
+
+LaMarca, Jason Tabert, and Pauline Powledge. 2005. 
+Location disclosure to social relations: why, when, & 
+what people want to share. In Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems (CHI '05). ACM, New York, NY, USA, 81-90. 
+http://doi.acm.org/10.1145/1054972.1054985 
+
+14.(cid:1)Mary Jo Deering, Erin Siminerio, and Scott Weinstein. 
+2013. Issue Brief: Patient-Generated Health Data and 
+Health IT. Office of the National Coordinator for Health 
+Information Technology. 
+
+15.(cid:1)Daniel A. Epstein, Alan Borning, and James Fogarty. 
+2013. Fine-grained sharing of sensed physical activity: 
+A value sensitive approach. In Proceedings of the 2013 
+ACM international joint conference on Pervasive and 
+ubiquitous computing (UbiComp '13). ACM, New 
+York, NY, USA, 489-498.  
+http://doi.acm.org /10.1145/2493432.2493433 
+
+16.(cid:1)Daniel A. Epstein, An Ping, James Fogarty, and Sean A. 
+Munson. 2015. A Lived Informatics Model of Personal 
+Informatics. In Proceedings of the 2015 ACM 
+International Joint Conference on Pervasive and 
+Ubiquitous Computing (UbiComp '15). ACM, New 
+York, NY, USA, 731-742. 
+http://doi.acm.org/10.1145/2750858.2804250 
+
+17.(cid:1)Susannah Fox and Maeve Duggan. Tracking for Health. 
+
+2013. Pew Internet and American Life Project. (cid:1)  
+
+18.(cid:1)Geraldine Fitzpatrick and Gunnar Ellingsen. 2012. A 
+review of 25 years of CSCW research in healthcare: 
+Contributions, challenges and future agendas. Comput. 
+Supported Coop. Work; 22(4-6):609-665. 
+http://dx.doi.org/10.1007/s10606-012-9168-0 
+
+19.(cid:1)Katherine M. Flegal, Margaret D. Carroll, Brian K. Kit, 
+and Cynthia L. Ogden. 2012. Prevalence of obesity and 
+trends in the distribution of body mass index among US 
+adults, 1999-2010. JAMA; 307(5): 491-497. 
+http://doi.org/10.1001/jama.2012.39 
+
+20.(cid:1)K. R. Fontaine and Ian Barofsky. 2001. Obesity and 
+
+health-related quality of life. Obesity reviews; 2(3): 173-
+182. http://doi.org/10.1046/j.1467-789x.2001.00032.x 
+
+783
+
+21.(cid:1)Fabien L. Gandon and Norman M. Sadeh. 2003. A 
+
+Semantic E-wallet to Reconcile Privacy and Context 
+Awareness. In Proceedings of the 2nd International 
+Semantic Web Conference (ISWC2003), 385-401. 
+http://doi.org/10.1007/978-3-540-39718-2_25 
+
+22.(cid:1)Timothy S. Hall. 2009. The Quantified Self Movement: 
+
+Legal Challenges and Benefits of Personal Biometric 
+Data Tracking. Akron Intell. Prop. J;7(2014): 27. 
+23.(cid:1)Sebastian Haas, Sven Wohlgemuth, Isao Echizen, 
+
+Noboru Sonehara, and Günter Müller. 2011. Aspects of 
+privacy for electronic health records. Int J Med 
+Inform; 80(2): e26-e31. 
+http://dx.doi.org/10.1016/j.ijmedinf.2010.10.001 
+
+24.(cid:1)Health Data Exploration Project. 2014. Personal Data 
+
+for the Public Good: New Opportunities to Enrich 
+Understanding of Individual and Population Health. A 
+report of the Robert Wood Johnson Foundation. (cid:1)  
+
+25.(cid:1)Margaret M. Heitkemper, Monica E. Jarrett, Rona L. 
+Levy, Kevin  C. Cain, Robert L. Burr, Andrew Feld, 
+Pam Barney and Pam Weisman. 2004. Self-
+management for women with irritable bowel 
+syndrome. Clinical Gastroenterology and 
+Hepatology; 2(7): 585-596.  
+http://dx.doi.org /10.1016/S1542-3565(04)00242-3 
+
+26.(cid:1)Gary Hsieh, Karen P. Tang, Wai Yong Low and Jason I. 
+Hong. 2007. Field Deployment of IMBuddy: A Study of 
+Privacy Control and Feedback Mechanisms for 
+Contextual Instant Messengers. In Proceedings of the 
+9th international conference on Ubiquitous computing 
+(UbiComp '07), 91-108.  
+http://doi.org/10.1007/978-3-540-74853-3_6 
+
+27.(cid:1)Richard Hull, Bharat Kumar, Daniel Lieuwen, Peter F. 
+Patel-Schneider, Arnaud Sahuguet, Sriram Varadarajan, 
+and Avinash Vyas. 2004. Enabling context-aware and 
+privacy-conscious user data sharing. In Proceedings of 
+Mobile Data Management 2004, 187-198. 
+http://dx.doi.org/10.1109/MDM.2004.1263065 
+
+28.(cid:1)Anne E. Jamieson, Paula C. Fletcher and Margaret 
+
+Schneider. 2007. Seeking control through the 
+determination of diet: a qualitative investigation of 
+women with irritable bowel syndrome and inflammatory 
+bowel disease. Clinical Nurse Specialist; 21(3):152-160. 
+http://doi.org/10.1097/01.NUR.0000270015.97457.9c 
+29.(cid:1)Xiaodong Jiang and James A. Landay. 2002. Modeling 
+
+privacy control in context-aware systems. IEEE 
+Pervasive Computing 2002; 1(3): 59-63. 
+http://doi.org/10.1109/MPRV.2002.1037723 
+
+30.(cid:1)Matthew Kay, Eun Kyoung Choe, Jesse Shepherd, 
+
+Benjamin Greenstein, Nathaniel Watson, Sunny 
+Consolvo, Julie A. Kientz. 2012. Lullaby: a capture & 
+access system for understanding the sleep environment. 
+In Proceedings of the 2012 ACM Conference on 
+Ubiquitous Computing (UbiComp '12). ACM, New 
+York, NY, USA, 226-234. 
+http://doi.acm.org/10.1145/2370216.2370253 
+
+31.(cid:1)Mars Lan, Lauren Samy, Nabil Alshurafa, Myung-
+
+Kyung Suh, Hassan Ghasemzadeh, Aurelia Macabasco-
+O'Connell and Majid Sarrafzadeh. 2012. WANDA: an 
+end-to-end remote health monitoring and analytics 
+system for heart failure patients. In Proceedings of the 
+conference on Wireless Health (WH '12). ACM, New 
+York, NY, USA, Article 9 , 8 pages. 
+http://doi.acm.org/10.1145/2448096.2448105 (cid:1)  
+
+32.(cid:1)Charlotte P. Lee. 2007. Boundary Negotiating Artifacts: 
+
+Unbinding the Routine of Boundary Objects and 
+Embracing Chaos in Collaborative Work. Comput. 
+Supported Coop. Work; 16(3): 307-339. 
+http://dx.doi.org/10.1007/s10606-007-9044-5 
+
+33.(cid:1)Matthew L. Lee and Anind K. Dey. 2011. Reflecting on 
+pills and phone use: supporting awareness of functional 
+abilities for older adults. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems 
+(CHI '11). ACM, New York, NY, USA, 2095-2104. 
+http://doi.acm.org/10.1145/1978942.1979247 
+
+34.(cid:1)Ian Li, Anind K. Dey and Jodi Forlizzi. 2010. A stage-
+
+based model of personal informatics systems. In 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '10). ACM, New 
+York, NY, USA, 557-566. 
+http://doi.acm.org/10.1145/1753326.1753409 
+35.(cid:1)Ian Li, Anind K. Dey and Jodi Forlizzi. 2011. 
+
+Understanding my data, myself: supporting self-
+reflection with ubicomp technologies. In Proceedings of 
+the 13th international conference on Ubiquitous 
+computing (UbiComp '11). ACM, New York, NY, USA, 
+405-414. http://doi.acm.org/10.1145/2030112.2030166 
+
+36.(cid:1)Uri Ladabaum, Erin Boyd, Wei K. Zhao, Ajitha 
+
+Mannalithara, Annie Sharabidze, Gurkirpal Singh, 
+Elaine Chung, and Theodore R. Levin. 2012. Diagnosis, 
+comorbidities, and management of irritable bowel 
+syndrome in patients in a large health maintenance 
+organization. Clinical Gastroenterology and 
+Hepatology; 10(1): 37-45. 
+http://dx.doi.org/10.1016/j.cgh.2011.08.015 
+
+37.(cid:1)James J. Lin, Lena Mamykina, Silvia Lindtner, Gregory 
+
+Delajoux, and Henry B. Strub. 2006. Fish’n’Steps: 
+Encouraging physical activity with an interactive 
+computer game. In Proceedings of the 8th international 
+conference on Ubiquitous Computing (UbiComp'06), 
+Springer-Verlag, Berlin, Heidelberg, 261-278. 
+http://dx.doi.org /10.1007/11853565_16 
+
+38.(cid:1)Lena Mamykina, Arlene M. Smaldone, and Suzanne R. 
+Bakken. 2015. Adopting the sensemaking perspective 
+for chronic disease self-management. Journal of 
+biomedical informatics; 56(2015):406–417. 
+http://dx.doi.org/10.1016/j.jbi.2015.06.006 
+
+SESSION: HEALTHCARE PROVIDERS
+
+39.(cid:1)Lena Mamykina, Elizabeth Mynatt, Patricia Davidson, 
+and Daniel Greenblatt. 2008. MAHI: investigation of 
+social scaffolding for reflective thinking in diabetes 
+management. In Proceedings of the SIGCHI Conference 
+on Human Factors in Computing Systems (CHI '08). 
+ACM, New York, NY, USA, 477-486. 
+http://doi.acm.org /10.1145/1357054.1357131 
+
+40.(cid:1)Gabriela Marcu, Anind K. Dey and Sara Kiesler. 2014. 
+Designing for collaborative reflection. In Proceedings of 
+the 8th International Conference on Pervasive 
+Computing Technologies for Healthcare 
+(PervasiveHealth '14). ICST, Brussels, Belgium, 9-16. 
+http://dx.doi.org/10.4108/icst.pervasivehealth.2014.254987  
+
+41.(cid:1)Debanjali Mitra, Keith L. Davis, Robert W. Baran. 
+2011. All-cause healthcare charges among managed 
+care patients with constipation and comorbid irritable 
+bowel syndrome. Postgrad Med; 123(3): 122-32. 
+http://doi.org/10.3810/pgm.2011.05.2290 
+
+42.(cid:1)Virginia A. Moyer. 2012. Screening for and 
+
+management of obesity in adults: US Preventive 
+Services Task Force recommendation statement. Annals 
+of internal medicine; 157.5: 373-378. 
+http://doi.org/10.7326/0003-4819-157-5-201209040-00475 
+
+43.(cid:1)Helen Nissenbaum. 2004. Privacy as contextual 
+
+integrity. Washington Law Review; 79(1).  
+
+44.(cid:1)Judith S, Olson, Jonathan Grudin, and Eric Horvitz. 
+
+2005. A study of preferences for sharing and privacy. In 
+CHI '05 Extended Abstracts on Human Factors in 
+Computing Systems (CHI EA '05). ACM, New York, 
+NY, USA, 1985-1988. 
+http://doi.acm.org/10.1145/1056808.1057073 
+
+45.(cid:1)Lucille ML Ong, Johanna CJM De Haes, Alaysia M. 
+
+Hoos, and Lammes FB. 1995. Doctor patient 
+communication: a review of the literature. Social science 
+& medicine; 40(7): 903918. 
+http://dx.doi.org/10.1016/0277-9536(94)00155-M 
+
+46.(cid:1)Sun Young Park and Yunan Chen. 2015. Individual and 
+
+Social Recognition: Challenges and Opportunities in 
+Migraine Management. In Proceedings of the 18th ACM 
+Conference on Computer Supported Cooperative Work 
+& Social Computing (CSCW '15). ACM, New York, 
+NY, USA, 1540-1551. 
+http://doi.acm.org/10.1145/2675133.2675248 
+
+47.(cid:1)Rupa A. Patel, Predrag Klasnja, Andrea Hartzler, 
+
+Kenton T. Unruh, and Wanda Pratt. 2012. Probing the 
+benefits of real-time tracking during cancer care. In 
+AMIA Annual Symposium Proceedings (Vol. 2012, p. 
+1340). American Medical Informatics Association. 
+
+48.(cid:1)Sameer Patil and Jennifer Lai. 2005. Who gets to know 
+
+what when: configuring privacy permissions in an 
+awareness application. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems 
+(CHI '05). ACM, New York, NY, USA, 101-110. 
+http://doi.acm.org/10.1145/1054972.1054987 
+
+784
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+49.(cid:1)Gihan Perera, Anne Holbrook, Lehana Thabane, Gary 
+Foster, and Donald J. Willison. 2011. Views on health 
+information sharing and privacy from primary care 
+practices using electronic medical records. Int J Med 
+Inform; 80(2): 94-101. 
+http://dx.doi.org/10.1016/j.ijmedinf.2010.11.005 
+
+50.(cid:1)Kavita Radhakrishnan, Kathryn Bowles, Alexandra 
+Hanlon, Maxim Topaz, and Jesse Chit-tams. 2013. A 
+Retrospective Study on Patient Characteristics and 
+Telehealth Alerts Indicative of Key Medical Events for 
+Heart Failure Patients at a Home Health Agency. 
+Telemedicine and E- Health; 19(9): 664-670. 
+http://doi.org/10.1089/tmj.2012.0307 
+
+51.(cid:1)Reza Rawassizadeh. 2010. Securing shareable life-logs. 
+
+In Social Computing (SocialCom), 2010 IEEE Second 
+International Conference, 1105-1110. 
+http://dx.doi.org/10.1109/SocialCom.2010.164 
+52.(cid:1)Brian K. Smith, Jeana Frost, Meltem Albayrak, 
+
+Rajneesh Sudhaka. 2007. Integrating glucometers and 
+digital photography as experience capture tools to 
+enhance patient understanding and communication of 
+diabetes self-management practices. Personal and 
+Ubiquitous Computing; 11(4): 273-286. 
+http://dx.doi.org/10.1007/s00779-006-0087-2 
+
+53.(cid:1)Spiegel Brennan. 2009. The burden of IBS: looking at 
+metrics. Current gastroenterology reports; 11(4): 265-
+269. http://doi.org/10.1007/s11894-009-0039-x 
+54.(cid:1)Susan Leigh Star and James R. Griesemer. 1989. 
+
+Institutional Ecology, ‘Translations’ and Boundary 
+Objects: Amateurs and Professionals in Berkeley's 
+Museum of Vertebrate Zoology, 1907-39. Social Studies 
+of Science; 19(3): 387-420. 
+http://doi.org/10.1177/030631289019003001 
+
+55.(cid:1)Cristiano Storni. 2011. Complexity in an uncertain and 
+
+cosmopolitan world. Rethinking personal health 
+technology in diabetes with the Tag-it-Yourself. 
+PsychNology Journal; 9(2): 165-185. 
+
+56.(cid:1)Paul C. Tang, J. Marc Overhage, Albert Solomon Chan, 
+
+Nancy L. Brown, Bahar Aghighi, Martin P. Entwistle, 
+Siu Lui Hui, Shauna M. Hyde, Linda H. Klieman, 
+Charlotte J. Mitchell, Anthony J. Perkins, Lubna S. 
+Qureshi, Tanya A. Waltimyer, Leigha J. Winters, 
+Charles Y. Young. 2013. Online disease management of 
+diabetes: Engaging and Motivating Patients Online With 
+Enhanced Resources-Diabetes (EMPOWER-D),  
+a randomized controlled trial. JAMIA; 20(3): 526-534. 
+http://doi.org/10.1136/amiajnl-2012-001263 
+
+ 
+
+57.(cid:1)Nicholas P. Terry and Leslie P. Francis. 2007. Ensuring 
+
+the privacy and confidentiality of electronic health 
+records. U. Ill. L.; Rev., 681. 
+
+58.(cid:1)Christopher C. Tsai, Gunny Lee, Fred Raab, Gregory J. 
+
+Norman, Timothy Sohn, William G. Griswold, and 
+Kevin Patrick. 2007. Usability and feasibility of PmEB: 
+a mobile phone application for monitoring real time 
+caloric balance. Mobile networks and 
+applications; 12(2-3): 173-184. 
+http://dx.doi.org/10.1007/s11036-007-0014-4 
+
+59.(cid:1)Kenton T. Unruh, Meredith Skeels, Andrea Civan-
+
+Hartzler, and Wanda Pratt. 2010. Transforming clinic 
+environments into information workspaces for patients. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '10). ACM, New 
+York, NY, USA, 183-192. 
+http://doi.acm.org/10.1145/1753326.1753354 
+
+60.(cid:1)U.S. Dept. of Health and Human Services. 2013. Mobile 
+
+Medical Applications: Guidance for Food and Drug 
+Administration Staff.  
+
+61.(cid:1)Charlotte DW Vinkers, Marieke A. Adriaanse, Floor M. 
+
+Kroese, and Denise TD de Ridder. 2014. Efficacy of a 
+self-management intervention for weight control in 
+overweight and obese adults: a randomized controlled 
+trial. Journal of behavioral medicine;37(4): 781-792. 
+http://doi.org/10.1007/s10865-013-9530-9 
+
+62.(cid:1)Y. Claire Wang, Klim McPherson, Tim Marsh, Steven 
+
+L. Gortmaker, and Martin Brown. 2011. Health and 
+economic burden of the projected obesity trends in the 
+USA and the UK. The Lancet; 378(9793): 815-825. 
+http://dx.doi.org /10.1016/S0140-6736(11)60814-3 
+
+63.(cid:1)Jason Wiese, Patrick Gage Kelly, Lorrie Faith Cranor, 
+Laura Dabbish, Jason I. Hong, and John Zimmerman. 
+2011. Are you close with me? are you nearby?: 
+investigating social groups, closeness, and willingness 
+to share. In Proceedings of the 13th international 
+conference on Ubiquitous computing (UbiComp '11). 
+ACM, New York, NY, USA, 197-206. 
+http://doi.acm.org/10.1145/2030112.2030140
+
+785
+
+ 
+d
+o
+o
+f
+ 
+e
+h
+t
+ 
+d
+e
+t
+a
+t
+o
+n
+n
+a
+
+ 
+n
+o
+ 
+d
+e
+s
+a
+b
+ 
+s
+l
+a
+n
+r
+u
+o
+j
+
+ 
+n
+o
+ 
+d
+n
+a
+ 
+e
+s
+i
+t
+r
+e
+p
+x
+e
+ 
+r
+e
+h
+
+ 
+l
+a
+b
+r
+e
+v
+ 
+s
+’
+t
+n
+e
+i
+t
+a
+p
+ 
+e
+h
+t
+
+ 
+r
+e
+d
+i
+v
+o
+r
+p
+ 
+e
+n
+O
+
+.
+n
+o
+i
+t
+p
+i
+r
+c
+s
+e
+d
+
+ 
+
+(cid:1)
+
+(cid:1)
+
+ 
+
+g
+n
+i
+w
+e
+i
+v
+e
+r
+ 
+e
+l
+i
+h
+w
+ 
+s
+e
+t
+o
+n
+
+ 
+
+k
+o
+o
+t
+ 
+r
+e
+d
+i
+v
+o
+r
+p
+ 
+e
+n
+O
+
+ 
+e
+h
+t
+ 
+s
+l
+i
+a
+t
+e
+d
+
+ 
+
+d
+e
+d
+u
+l
+c
+n
+i
+
+ 
+s
+e
+t
+o
+n
+ 
+e
+h
+T
+
+ 
+.
+a
+t
+a
+d
+
+ 
+e
+h
+t
+ 
+
+d
+n
+a
+ 
+
+ 
+
+y
+l
+l
+a
+b
+r
+e
+v
+
+ 
+t
+n
+e
+i
+t
+a
+p
+
+d
+e
+t
+n
+e
+m
+e
+l
+p
+p
+u
+s
+
+ 
+l
+a
+c
+i
+d
+e
+m
+
+ 
+s
+’
+r
+e
+d
+i
+v
+o
+r
+p
+
+ 
+.
+t
+n
+e
+m
+
+s
+s
+e
+s
+s
+a
+
+ 
+e
+s
+u
+ 
+s
+t
+n
+e
+i
+t
+a
+p
+ 
+e
+m
+o
+S
+
+s
+e
+i
+r
+a
+i
+d
+ 
+r
+e
+p
+a
+p
+
+ 
+h
+t
+l
+a
+e
+h
+ 
+y
+b
+ 
+d
+e
+d
+i
+v
+o
+r
+p
+
+ 
+,
+k
+c
+a
+r
+t
+ 
+o
+t
+ 
+s
+r
+e
+d
+i
+v
+o
+r
+p
+
+ 
+y
+r
+a
+i
+d
+ 
+s
+i
+h
+t
+ 
+s
+a
+ 
+h
+c
+u
+s
+
+ 
+d
+n
+a
+ 
+e
+k
+a
+t
+n
+i
+ 
+d
+o
+o
+f
+ 
+r
+o
+f
+
+ 
+.
+s
+
+m
+o
+t
+p
+m
+y
+s
+
+ 
+
+n
+w
+o
+
+ 
+r
+i
+e
+h
+t
+ 
+e
+t
+a
+e
+r
+c
+ 
+s
+t
+n
+e
+i
+t
+a
+p
+ 
+e
+m
+o
+S
+
+ 
+ 
+.
+s
+n
+o
+i
+t
+a
+c
+i
+d
+e
+m
+
+ 
+
+d
+e
+s
+u
+ 
+t
+n
+e
+i
+t
+a
+p
+ 
+s
+i
+h
+T
+
+ 
+.
+s
+e
+v
+l
+e
+s
+
+m
+e
+h
+t
+
+ 
+
+d
+o
+o
+f
+ 
+
+ 
+
+k
+c
+a
+r
+t
+ 
+
+d
+n
+a
+ 
+,
+s
+
+o
+t
+ 
+s
+
+m
+o
+t
+p
+m
+y
+S
+y
+m
+
+m
+o
+t
+p
+m
+y
+s
+ 
+,
+e
+k
+a
+t
+n
+i
+
+ 
+s
+l
+o
+o
+t
+ 
+
+d
+n
+i
+f
+ 
+r
+o
+ 
+s
+e
+i
+r
+a
+i
+d
+
+SESSION: HEALTHCARE PROVIDERS
+
+ 
+
+ 
+
+m
+o
+t
+p
+m
+y
+s
+ 
+d
+n
+a
+ 
+d
+o
+o
+f
+ 
+s
+’
+t
+n
+e
+i
+t
+a
+p
+ 
+g
+n
+i
+w
+e
+i
+v
+e
+r
+ 
+r
+e
+t
+f
+a
+ 
+t
+e
+i
+d
+ 
+P
+A
+M
+D
+O
+F
+
+w
+o
+l
+ 
+e
+h
+t
+ 
+t
+p
+o
+d
+a
+ 
+o
+t
+ 
+d
+e
+d
+i
+c
+e
+d
+ 
+t
+n
+e
+i
+t
+a
+p
+ 
+r
+e
+h
+ 
+d
+n
+a
+ 
+r
+e
+d
+i
+v
+o
+r
+p
+ 
+e
+n
+O
+
+ 
+e
+b
+ 
+t
+h
+g
+i
+m
+
+ 
+s
+
+ 
+e
+h
+T
+
+m
+o
+t
+p
+m
+y
+s
+ 
+s
+’
+t
+n
+e
+i
+t
+a
+p
+ 
+d
+e
+t
+s
+e
+g
+g
+u
+s
+ 
+w
+e
+i
+v
+e
+r
+ 
+e
+h
+T
+
+ 
+.
+d
+o
+o
+f
+ 
+P
+A
+M
+D
+O
+F
+ 
+f
+o
+ 
+n
+o
+i
+t
+p
+r
+o
+s
+b
+a
+ 
+r
+o
+o
+p
+ 
+f
+o
+
+ 
+t
+l
+u
+s
+e
+r
+ 
+a
+
+ 
+.
+
+y
+r
+a
+i
+d
+
+ 
+p
+l
+e
+h
+ 
+o
+t
+ 
+r
+e
+f
+e
+r
+ 
+d
+l
+u
+o
+c
+ 
+t
+n
+e
+i
+t
+a
+p
+ 
+e
+h
+t
+ 
+t
+u
+o
+d
+n
+a
+h
+ 
+a
+ 
+d
+e
+t
+n
+i
+r
+p
+
+ 
+r
+e
+d
+i
+v
+o
+r
+p
+
+ 
+.
+n
+a
+l
+p
+ 
+t
+e
+i
+d
+ 
+e
+h
+t
+ 
+
+w
+o
+l
+l
+o
+f
+
+ 
+l
+a
+c
+i
+d
+e
+m
+
+ 
+s
+u
+o
+i
+v
+e
+r
+p
+ 
+,
+s
+s
+e
+n
+l
+l
+i
+ 
+t
+n
+e
+r
+r
+u
+c
+ 
+s
+’
+t
+n
+e
+i
+t
+a
+p
+ 
+e
+h
+t
+ 
+f
+o
+
+ 
+
+n
+o
+i
+t
+p
+i
+r
+c
+s
+e
+d
+
+ 
+a
+ 
+e
+d
+u
+l
+c
+n
+i
+ 
+
+o
+s
+l
+a
+ 
+
+d
+r
+o
+c
+e
+r
+ 
+l
+a
+c
+i
+d
+e
+m
+ 
+e
+h
+t
+ 
+
+n
+i
+ 
+s
+e
+t
+o
+n
+
+ 
+e
+h
+T
+
+ 
+.
+t
+i
+s
+i
+v
+e
+r
+ 
+d
+n
+a
+ 
+t
+n
+e
+m
+t
+a
+e
+r
+t
+ 
+r
+e
+h
+t
+r
+u
+f
+ 
+r
+o
+f
+ 
+n
+o
+i
+t
+a
+d
+n
+e
+m
+m
+o
+c
+e
+r
+ 
+
+d
+n
+a
+ 
+,
+
+n
+o
+i
+t
+a
+c
+i
+d
+e
+m
+
+ 
+,
+s
+t
+l
+u
+s
+e
+r
+ 
+t
+s
+e
+t
+ 
+f
+o
+
+ 
+s
+e
+i
+r
+e
+s
+ 
+a
+ 
+,
+
+y
+r
+o
+t
+s
+i
+h
+
+ 
+
+(cid:1)
+(cid:34)
+(cid:29)
+(cid:31)
+(cid:35)
+(cid:32)
+(cid:29)
+(cid:39)
+(cid:34)
+(cid:1)
+(cid:23)
+(cid:30)
+(cid:30)
+(cid:21)
+(cid:34)
+(cid:33)
+(cid:31)
+(cid:38)
+(cid:1)
+(cid:24)
+(cid:35)
+(cid:25)
+
+(cid:25)
+
+(cid:38)
+
+(cid:28)
+
+(cid:1)
+(cid:35)
+(cid:17)
+(cid:24)
+(cid:35)
+(cid:1)
+(cid:20)
+(cid:21)
+(cid:17)
+(cid:21)
+(cid:37)
+(cid:21)
+(cid:33)
+(cid:1)
+(cid:39)
+(cid:17)
+(cid:20)
+(cid:31)
+(cid:35)
+(cid:1)
+(cid:33)
+(cid:21)
+(cid:24)
+(cid:1)
+(cid:24)
+(cid:35)
+(cid:25)
+
+(cid:38)
+
+(cid:1)
+(cid:35)
+
+(cid:24)
+(cid:23)
+(cid:36)
+(cid:31)
+(cid:33)
+(cid:18)
+
+(cid:1)
+
+(cid:21)
+(cid:24)
+(cid:34)
+(cid:1)
+(cid:35)
+
+(cid:28)
+
+(cid:1)
+(cid:24)
+(cid:19)
+(cid:36)
+(cid:34)
+(cid:1)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+(cid:22)
+(cid:1)
+(cid:20)
+(cid:21)
+(cid:20)
+(cid:36)
+(cid:19)
+(cid:30)
+(cid:25)
+(cid:1)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+(cid:22)
+(cid:1)
+(cid:35)
+(cid:17)
+(cid:22)
+(cid:4)
+(cid:24)
+(cid:23)
+(cid:10)
+
+(cid:25)
+
+(cid:28)
+
+(cid:1)
+(cid:5)
+(cid:30)
+(cid:21)
+(cid:35)
+(cid:36)
+(cid:23)
+(cid:1)
+(cid:20)
+(cid:30)
+(cid:17)
+(cid:1)
+(cid:34)
+(cid:13)
+(cid:6)
+(cid:11)
+(cid:7)
+(cid:12)
+(cid:8)
+
+(cid:2)
+
+(cid:1)
+(cid:3)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+
+(cid:22)
+(cid:1)
+(cid:35)
+
+(cid:17)
+
+(cid:22)
+(cid:1)
+
+(cid:24)
+(cid:23)
+(cid:24)
+
+(cid:25)
+
+(cid:1)
+(cid:22)
+
+(cid:31)
+
+(cid:1)
+
+(cid:17)
+(cid:24)
+
+(cid:35)
+(cid:1)
+(cid:28)
+
+(cid:17)
+(cid:30)
+(cid:33)
+(cid:36)
+(cid:31)
+
+(cid:26)
+(cid:1)
+
+(cid:29)
+(cid:31)
+
+(cid:35)
+
+(cid:32)
+(cid:29)
+(cid:39)
+(cid:34)
+(cid:1)
+
+(cid:20)
+(cid:31)
+(cid:31)
+
+(cid:22)
+(cid:1)
+(cid:33)
+(cid:21)
+(cid:24)
+
+(cid:1)
+(cid:22)
+
+(cid:1)
+
+(cid:31)
+(cid:38)
+(cid:21)
+(cid:37)
+(cid:21)
+(cid:14)
+
+(cid:25)
+
+(cid:21)
+(cid:33)
+(cid:31)
+(cid:29)
+(cid:20)
+(cid:21)
+
+(cid:1)
+
+(cid:25)
+
+(cid:35)
+(cid:34)
+(cid:34)
+(cid:30)
+(cid:31)
+(cid:19)
+(cid:1)
+(cid:35)
+
+(cid:21)
+(cid:20)
+
+(cid:25)
+
+(cid:1)
+(cid:34)
+(cid:2)
+(cid:35)
+
+(cid:30)
+(cid:21)
+
+(cid:25)
+(cid:35)
+
+(cid:17)
+(cid:32)
+
+(cid:1)
+
+(cid:21)
+(cid:24)
+
+(cid:35)
+
+(cid:1)
+(cid:34)
+(cid:35)
+(cid:19)
+(cid:36)
+(cid:20)
+(cid:31)
+(cid:33)
+(cid:32)
+(cid:1)
+(cid:30)
+(cid:21)
+(cid:35)
+(cid:36)
+(cid:9)
+
+(cid:28)
+
+(cid:1)
+(cid:5)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+(cid:22)
+(cid:1)
+(cid:39)
+(cid:33)
+(cid:17)
+(cid:23)
+(cid:36)
+(cid:34)
+(cid:1)
+(cid:20)
+(cid:30)
+(cid:17)
+(cid:1)
+(cid:3)
+(cid:33)
+(cid:21)
+(cid:18)
+(cid:29)
+(cid:36)
+(cid:19)
+(cid:36)
+(cid:19)
+(cid:1)
+(cid:3)
+(cid:34)
+(cid:30)
+(cid:31)
+(cid:30)
+(cid:31)
+
+(cid:25)
+
+(cid:1)
+(cid:3)
+(cid:34)
+(cid:29)
+(cid:31)
+(cid:35)
+(cid:32)
+(cid:29)
+(cid:39)
+(cid:34)
+(cid:1)
+(cid:20)
+(cid:21)
+(cid:35)
+(cid:17)
+(cid:37)
+(cid:17)
+(cid:33)
+(cid:23)
+(cid:23)
+(cid:17)
+(cid:1)
+(cid:23)
+(cid:30)
+(cid:37)
+(cid:17)
+(cid:24)
+(cid:1)
+(cid:35)
+(cid:31)
+(cid:30)
+(cid:1)
+(cid:34)
+(cid:17)
+(cid:38)
+(cid:1)
+(cid:21)
+(cid:24)
+(cid:34)
+(cid:1)
+(cid:30)
+(cid:21)
+(cid:24)
+(cid:38)
+
+(cid:25)
+
+(cid:1)
+
+(cid:20)
+(cid:21)
+(cid:20)
+(cid:36)
+(cid:19)
+(cid:30)
+
+(cid:28)
+
+(cid:25)
+(cid:1)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+
+(cid:1)
+(cid:35)
+
+(cid:21)
+(cid:20)
+
+(cid:25)
+
+(cid:1)
+(cid:33)
+(cid:21)
+(cid:24)
+
+(cid:1)
+
+(cid:31)
+
+(cid:35)
+(cid:1)
+
+(cid:20)
+(cid:21)
+(cid:33)
+(cid:17)
+(cid:32)
+(cid:29)
+(cid:31)
+(cid:19)
+(cid:1)
+(cid:34)
+(cid:17)
+(cid:38)
+(cid:1)
+(cid:34)
+(cid:24)
+
+(cid:25)
+
+(cid:35)
+(cid:1)
+
+(cid:30)
+(cid:21)
+(cid:24)
+(cid:16)
+
+(cid:28)
+
+(cid:1)
+(cid:5)
+(cid:34)
+(cid:21)
+(cid:23)
+(cid:17)
+(cid:18)
+
+(cid:1)
+
+(cid:20)
+(cid:21)
+(cid:20)
+(cid:36)
+(cid:19)
+(cid:30)
+
+(cid:28)
+
+(cid:22)
+(cid:1)
+
+(cid:13)
+(cid:6)
+(cid:11)
+(cid:7)
+(cid:12)
+(cid:8)
+(cid:24)
+(cid:23)
+(cid:10)
+
+(cid:1)
+
+(cid:25)
+
+(cid:1)
+(cid:5)
+(cid:34)
+(cid:18)
+(cid:25)
+(cid:33)
+(cid:1)
+
+(cid:21)
+(cid:36)
+(cid:19)
+(cid:21)
+(cid:18)
+(cid:33)
+(cid:17)
+(cid:18)
+
+(cid:1)
+(cid:3)
+(cid:27)
+(cid:17)
+(cid:21)
+
+(cid:35)
+(cid:34)
+(cid:1)
+(cid:34)
+(cid:17)
+
+(cid:25)
+
+(cid:25)
+
+(cid:1)
+(cid:35)
+(cid:17)
+(cid:22)
+(cid:4)
+(cid:24)
+(cid:23)
+(cid:24)
+(cid:1)
+(cid:21)
+(cid:34)
+(cid:21)
+(cid:24)
+(cid:15)
+
+(cid:2)
+
+(cid:1)
+(cid:5)
+(cid:34)
+(cid:13)
+(cid:6)
+(cid:11)
+(cid:7)
+(cid:12)
+(cid:8)
+(cid:1)
+(cid:34)
+(cid:34)
+(cid:21)
+(cid:28)
+(cid:1)
+(cid:35)
+(cid:36)
+(cid:18)
+(cid:1)
+(cid:34)
+(cid:35)
+(cid:19)
+(cid:36)
+(cid:20)
+(cid:31)
+(cid:33)
+(cid:32)
+(cid:1)
+(cid:30)
+(cid:21)
+(cid:35)
+(cid:36)
+(cid:23)
+
+(cid:28)
+
+(cid:1)
+
+(cid:20)
+(cid:30)
+(cid:17)
+
+(cid:1)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+
+(cid:22)
+(cid:1)
+(cid:35)
+
+(cid:17)
+
+(cid:22)
+(cid:4)
+(cid:24)
+(cid:23)
+(cid:24)
+
+(cid:25)
+
+(cid:1)
+
+(cid:21)
+(cid:29)
+(cid:31)
+(cid:34)
+(cid:1)
+(cid:22)
+
+(cid:31)
+
+(cid:1)
+
+(cid:21)
+(cid:19)
+(cid:30)
+(cid:21)
+(cid:20)
+(cid:37)
+(cid:21)
+
+(cid:25)
+
+(cid:1)
+
+(cid:20)
+(cid:17)
+(cid:24)
+
+(cid:1)
+
+(cid:31)
+(cid:34)
+(cid:17)
+
+(cid:28)
+
+(cid:1)
+(cid:35)
+
+(cid:30)
+(cid:21)
+
+(cid:25)
+(cid:35)
+
+(cid:17)
+(cid:32)
+
+(cid:25)
+
+(cid:1)
+(cid:1)
+(cid:5)
+(cid:34)
+(cid:30)
+(cid:31)
+(cid:30)
+(cid:31)
+(cid:1)
+(cid:20)
+(cid:21)
+(cid:20)
+(cid:36)
+(cid:19)
+(cid:30)
+(cid:25)
+(cid:1)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+
+(cid:28)
+
+(cid:22)
+(cid:1)
+
+(cid:13)
+(cid:6)
+(cid:11)
+(cid:7)
+(cid:12)
+(cid:8)
+(cid:24)
+(cid:23)
+(cid:10)
+
+(cid:1)
+
+(cid:25)
+
+(cid:1)
+(cid:5)
+(cid:35)
+(cid:34)
+(cid:17)
+(cid:31)
+(cid:33)
+(cid:1)
+(cid:27)
+(cid:33)
+(cid:31)
+(cid:32)
+
+(cid:1)
+
+(cid:20)
+(cid:30)
+(cid:17)
+
+(cid:1)
+
+(cid:21)
+(cid:23)
+(cid:17)
+(cid:34)
+(cid:36)
+(cid:17)
+(cid:34)
+(cid:1)
+
+(cid:20)
+(cid:21)
+(cid:20)
+(cid:36)
+(cid:19)
+(cid:30)
+
+(cid:28)
+
+(cid:25)
+(cid:1)
+(cid:34)
+(cid:20)
+(cid:31)
+(cid:31)
+
+(cid:22)
+
+ 
+:
+d
+r
+o
+c
+e
+r
+ 
+l
+a
+c
+i
+d
+e
+m
+ 
+e
+h
+t
+ 
+
+n
+i
+ 
+
+y
+r
+a
+i
+d
+
+ 
+t
+n
+e
+i
+t
+a
+p
+
+ 
+
+ 
+a
+ 
+f
+o
+w
+e
+i
+v
+e
+r
+ 
+r
+e
+h
+
+ 
+
+d
+e
+z
+i
+r
+a
+m
+m
+u
+s
+ 
+r
+e
+d
+i
+v
+o
+r
+p
+
+ 
+e
+n
+O
+
+(cid:1)
+
+ 
+
+ 
+
+ 
+d
+o
+o
+f
+ 
+k
+c
+a
+r
+t
+ 
+y
+l
+l
+a
+u
+s
+u
+ 
+s
+t
+n
+e
+i
+t
+a
+P
+
+g
+n
+i
+s
+u
+ 
+s
+m
+o
+t
+p
+m
+y
+s
+ 
+d
+n
+a
+ 
+e
+k
+a
+t
+n
+i
+
+ 
+d
+n
+a
+ 
+s
+l
+o
+o
+t
+ 
+d
+e
+r
+r
+e
+f
+e
+r
+p
+ 
+r
+i
+e
+h
+t
+
+ 
+e
+s
+u
+ 
+s
+e
+m
+
+i
+t
+e
+m
+o
+s
+ 
+t
+u
+b
+ 
+,
+t
+a
+m
+r
+o
+f
+
+ 
+r
+i
+e
+h
+t
+ 
+y
+b
+ 
+d
+e
+t
+s
+e
+g
+g
+u
+s
+ 
+s
+l
+o
+o
+t
+
+ 
+.
+r
+e
+d
+i
+v
+o
+r
+p
+ 
+h
+t
+l
+a
+e
+h
+
+ 
+r
+o
+f
+ 
+d
+e
+t
+a
+e
+r
+c
+ 
+s
+t
+c
+a
+f
+i
+t
+r
+
+A
+
+ 
+.
+e
+s
+u
+ 
+l
+a
+n
+o
+s
+r
+e
+p
+
+ 
+a
+ 
+h
+g
+u
+o
+r
+h
+t
+ 
+d
+e
+t
+a
+e
+r
+c
+ 
+s
+t
+c
+a
+f
+i
+t
+r
+
+A
+
+ 
+o
+t
+ 
+s
+s
+e
+c
+o
+r
+p
+ 
+n
+o
+i
+t
+a
+i
+t
+o
+g
+e
+n
+
+ 
+.
+n
+o
+i
+s
+s
+u
+c
+s
+i
+d
+ 
+e
+t
+a
+t
+i
+l
+i
+c
+a
+f
+
+ 
+e
+l
+
+p
+m
+a
+x
+E
+
+ 
+e
+s
+o
+p
+r
+u
+P
+
+ 
+
+ 
+.
+c
+i
+n
+i
+l
+c
+ 
+e
+h
+t
+ 
+n
+i
+ 
+a
+t
+a
+d
+ 
+g
+n
+i
+k
+c
+a
+r
+t
+-
+f
+l
+e
+s
+
+o
+t
+ 
+s
+e
+t
+o
+n
+ 
+e
+k
+a
+m
+ 
+n
+e
+t
+f
+o
+ 
+s
+r
+e
+d
+i
+v
+o
+r
+P
+
+ 
+s
+s
+u
+c
+s
+i
+d
+ 
+d
+n
+a
+ 
+t
+n
+e
+s
+e
+r
+p
+ 
+s
+t
+n
+e
+i
+t
+a
+P
+
+ 
+ 
+.
+a
+t
+a
+d
+ 
+d
+e
+k
+c
+a
+r
+t
+ 
+s
+t
+n
+e
+m
+e
+l
+p
+m
+o
+c
+
+ 
+t
+a
+h
+t
+ 
+n
+o
+i
+t
+a
+m
+r
+o
+f
+n
+i
+ 
+e
+r
+u
+t
+p
+a
+c
+
+ 
+e
+t
+a
+t
+i
+l
+i
+c
+a
+f
+ 
+o
+t
+ 
+d
+e
+s
+u
+ 
+s
+t
+c
+a
+f
+i
+t
+r
+
+A
+
+ 
+e
+t
+a
+n
+i
+d
+r
+o
+o
+c
+ 
+d
+n
+a
+ 
+g
+n
+i
+r
+a
+h
+s
+
+ 
+.
+s
+e
+i
+t
+r
+a
+p
+ 
+g
+n
+o
+m
+a
+ 
+n
+o
+i
+t
+a
+m
+r
+o
+f
+n
+i
+
+ 
+
+g
+n
+i
+s
+s
+e
+s
+s
+a
+ 
+d
+n
+a
+ 
+a
+t
+a
+d
+ 
+d
+e
+k
+c
+a
+r
+t
+
+ 
+t
+n
+e
+i
+t
+a
+p
+ 
+g
+n
+i
+w
+e
+i
+v
+e
+r
+ 
+r
+e
+t
+f
+
+A
+
+ 
+t
+s
+e
+t
+ 
+d
+n
+a
+ 
+y
+r
+o
+t
+s
+i
+h
+ 
+l
+a
+c
+i
+d
+e
+m
+
+ 
+e
+t
+a
+e
+r
+c
+ 
+s
+r
+e
+d
+i
+v
+o
+r
+p
+ 
+,
+s
+t
+l
+u
+s
+e
+r
+
+ 
+ 
+.
+s
+t
+c
+a
+f
+i
+t
+r
+a
+ 
+n
+o
+i
+t
+a
+l
+i
+p
+m
+o
+c
+
+ 
+e
+s
+u
+ 
+n
+o
+i
+t
+a
+m
+r
+o
+f
+n
+i
+ 
+e
+t
+a
+n
+i
+d
+r
+o
+o
+c
+
+ 
+n
+i
+ 
+d
+e
+v
+l
+o
+v
+n
+i
+ 
+s
+e
+i
+t
+i
+v
+i
+t
+c
+a
+ 
+d
+n
+a
+
+ 
+o
+t
+ 
+d
+e
+t
+a
+e
+r
+c
+ 
+s
+t
+c
+a
+f
+i
+t
+r
+
+A
+
+ 
+ 
+.
+n
+o
+i
+t
+a
+r
+o
+b
+a
+l
+l
+o
+c
+ 
+e
+h
+t
+
+ 
+e
+t
+a
+e
+r
+c
+ 
+s
+t
+n
+e
+i
+t
+a
+p
+ 
+d
+n
+a
+ 
+s
+r
+e
+d
+i
+v
+o
+r
+P
+
+ 
+d
+n
+a
+ 
+g
+n
+i
+t
+a
+i
+t
+o
+g
+e
+n
+ 
+r
+e
+t
+f
+a
+ 
+s
+n
+a
+l
+p
+
+ 
+.
+n
+o
+i
+t
+a
+m
+r
+o
+f
+n
+i
+ 
+g
+n
+i
+l
+i
+p
+m
+o
+c
+
+ 
+t
+a
+h
+t
+ 
+s
+t
+u
+o
+d
+n
+a
+h
+ 
+r
+e
+f
+f
+o
+ 
+s
+r
+e
+d
+i
+v
+o
+r
+P
+
+ 
+o
+t
+ 
+s
+t
+c
+a
+f
+i
+t
+r
+a
+ 
+g
+n
+i
+r
+u
+t
+c
+u
+r
+t
+s
+ 
+e
+b
+ 
+n
+a
+c
+
+ 
+.
+s
+n
+a
+l
+p
+ 
+w
+o
+l
+l
+o
+f
+ 
+s
+t
+n
+e
+i
+t
+a
+p
+ 
+p
+l
+e
+h
+
+ 
+ 
+n
+o
+i
+t
+a
+n
+a
+l
+p
+x
+e
+-
+f
+l
+e
+S
+
+ 
+e
+p
+y
+t
+ 
+t
+c
+a
+f
+i
+t
+r
+A
+
+ 
+ 
+
+n
+o
+i
+s
+u
+l
+c
+n
+I
+
+ 
+ 
+
+n
+o
+i
+t
+a
+l
+i
+p
+m
+o
+C
+
+786
+
+ 
+ 
+
+g
+n
+i
+r
+u
+t
+c
+u
+r
+t
+
+S
+
+(cid:1)
+
+(cid:1)
+
+(cid:7)
+(cid:23)
+(cid:7)
+(cid:10)
+(cid:10)
+(cid:11)
+(cid:23)
+(cid:7)
+(cid:21)
+(cid:11)
+(cid:18)
+(cid:11)
+(cid:13)
+(cid:2)
+(cid:23)
+(cid:18)
+(cid:11)
+
+(cid:15)
+(cid:23)
+(cid:7)
+(cid:20)
+(cid:14)
+(cid:23)
+(cid:15)
+
+(cid:1)
+
+(cid:1)
+
+(cid:26)
+(cid:18)
+(cid:19)
+(cid:15)
+(cid:23)
+(cid:7)
+(cid:21)
+(cid:19)
+(cid:8)
+(cid:7)
+
+(cid:16)
+(cid:16)
+
+(cid:19)
+(cid:9)
+
+(cid:1)
+(cid:23)
+(cid:18)
+(cid:11)
+
+(cid:15)
+(cid:23)
+(cid:7)
+(cid:20)
+(cid:2)
+(cid:21)
+(cid:11)
+(cid:10)
+(cid:25)
+(cid:19)
+(cid:21)
+(cid:20)
+(cid:18)
+
+(cid:15)
+
+(cid:1)
+
+(cid:15)
+(cid:1)
+
+(cid:1)
+
+(cid:10)
+(cid:11)
+(cid:22)
+(cid:24)
+(cid:22)
+(cid:23)
+(cid:9)
+(cid:7)
+(cid:12)
+(cid:15)
+(cid:23)
+(cid:21)
+(cid:7)
+(cid:13)
+(cid:18)
+(cid:15)
+(cid:23)
+(cid:7)
+
+(cid:1)
+
+(cid:15)
+(cid:23)
+(cid:19)
+(cid:13)
+(cid:11)
+(cid:18)
+(cid:1)
+(cid:28)
+(cid:21)
+(cid:7)
+(cid:10)
+(cid:18)
+(cid:24)
+(cid:19)
+(cid:8)
+(cid:1)
+(cid:12)
+(cid:19)
+(cid:1)
+(cid:22)
+(cid:11)
+(cid:16)
+(cid:20)
+(cid:17)
+(cid:7)
+(cid:27)
+(cid:6)
+
+(cid:1)
+(cid:4)
+(cid:3)
+
+(cid:1)
+
+(cid:15)
+
+(cid:27)
+(cid:10)
+(cid:18)
+(cid:11)
+(cid:20)
+(cid:20)
+(cid:5)
+
+

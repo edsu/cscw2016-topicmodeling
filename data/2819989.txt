@@ -1,0 +1,1315 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Finding Weather Photos: Community-Supervised Methods
+
+for Editorial Curation of Online Sources
+Li-Jia Li
+Snapchat
+
+Lyndon Kennedy
+
+∗
+
+Yahoo Labs
+110 5th Street
+
+San Francisco, California USA
+
+lyndonk@yahoo-inc.com
+
+63 Market Street
+
+Venice, California USA
+lijiali@cs.stanford.edu
+
+Haojian Jin
+Yahoo Labs
+
+701 First Avenue
+
+Sunnyvale, California USA
+haojian@yahoo-inc.com
+
+Jeff Yuan
+Yahoo Labs
+
+701 First Avenue
+
+Sunnyvale, California USA
+
+jyuan@yahoo-inc.com
+
+San Francisco, California USA
+
+David A. Shamma
+
+Yahoo Labs
+110 5th Street
+
+aymans@acm.org
+Bart Thomee
+Yahoo Labs
+110 5th Street
+
+San Francisco, California USA
+
+bthomee@yahoo-inc.com
+
+ABSTRACT
+There are many cues that can be used to curate media from
+social networking websites. Beyond metadata, group behavior
+provide a strong community-based signal for surfacing images,
+which we show in a user-deﬁned curatorial task. In a departure
+from mirco-task crowdwork, we observe that the curation in-
+herent in online photo communities guides the discoverability
+and consumption of the media, which in turn provides a strong
+signal that can be used in new editorial tasks in a community-
+supervised manner. We use this approach in tandem with
+other more conventional multimedia methods (i.e. computer
+vision and contextual metadata) to form a broad multimodal
+approach to retrieval and recommendation. We present a large-
+scale system implementation on a real-world curative task for
+weather images on a web-scale dataset. Finally, we conduct an
+evaluation of this system using professional editors and ﬁnd
+substantial improvements in editorial efﬁciency.
+
+ACM Classiﬁcation Keywords
+H.5.3 Group Organization Interfaces: Collaborative Comput-
+ing; H.4 Information Systems Applications: Miscellaneous;
+I.4.0 Image Processing and Computer Vision: General—Im-
+age processing software
+
+General Terms
+Human Factors, Experimentation
+
+Author Keywords
+Community, Learning, Weather, Editorial, Retrieval, Social,
+Content Analysis, Human Centered Computing, Community
+Supervised, Flickr, Photos
+∗
+
+Author was at Yahoo Labs when work was performed.
+
+Permission to make digital or hard copies of all or part of this work 
+for personal or classroom use is granted without fee provided that 
+copies are not made or distributed for proﬁt or commercial 
+advantage and that copies bear this notice and the full citation on 
+the ﬁrst page. Copyrights for components of this work owned by 
+others than the author(s) must be honored. Abstracting with credit 
+is permitted. To copy otherwise, or republish, to post on servers or 
+to redistribute to lists, requires prior speciﬁc permission and/or a 
+fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27–March 02, 2016, San Francisco, CA, USA
+Copyright is held by the owner/author(s). Publication rights licensed 
+to ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819989
+
+86
+
+Figure 1. Screenshot of Yahoo Project Weather application illustrating
+a desirable weather image in Singapore. The curated images must not
+interfere with text overlays in the mobile application.
+
+INTRODUCTION
+In many real world applications, editors are tasked with select-
+ing sets of images to accompany other pieces of information,
+such as news articles, geographic points of interest, and trend-
+ing events. At the professional level, this requires editors to
+be experts at search and retrieval in highly curated corpora—
+typically large professional commercial image databases such
+as Getty and Reuters. However, more recently, editors have
+begun to utilize the growing wealth of social network sites
+(SNS) where images can be posted and shared, sites such as
+Flickr, Instagram, Google Photos, and Twitter. On these sites,
+the data is often less annotated without much universal coor-
+dination or formalization. This presents a challenge in that
+editors functionally have to sift through huge collections of
+images to ﬁnd topically and aesthetically appropriate images.
+Traditionally, the problems related to search and retrieval in
+visual collections have been addressed through keyword-based
+search, through visual search, or through some mixture thereof.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+With keywords, search is performed over textual data associ-
+ated with images; this can cause problems as text is often not
+sufﬁciently descriptive of the visual content or simply missing
+entirely. Many research systems over the years, and recently
+some commercial ones, have aimed to solve these issues with
+text keywords by developing techniques to model the seman-
+tic meaning of the visual content directly from the pixels of
+the image itself. This approach, still an established area of
+research itself, has had varying levels of success, but with
+corpora in the size of tens of billions of images, targeting and
+ﬁnding quality and diversity can be arduous.
+In this paper, we detail the design, evaluation, and deployment
+of one such editorial system designed to ﬁnd weather photos
+from an online social photography site, Flickr, that are apropos
+for the displayed location and atmospheric condition for use
+in a mobile application (see Figure 1). We accomplish this
+through a human-centered cooperative work approach that
+utilizes the tacit structure of viewing patterns inherit within
+the Flickr community to identify a candidate set of visually
+appealing weather photos. Second, we turn to recent advance-
+ments in computer vision to ﬁnd photos relevant to what the
+editors are seeking. Finally, we ﬁlter the photos without proper
+localized longitude and latitude geo-stamped accuracy. We
+then evaluate this system in situ with the editors themselves
+and show improvement in the human editorial process. We
+apply this system towards the problem of selecting images
+that demonstrate local weather conditions from a web-scale
+collection of 12 billion images from 120 million individuals.
+In particular, we describe the primary contributions as: a) a
+community-supervised technique for utilizing online commu-
+nity structures and social actions to assist machine learning;
+b) a system and method for selecting images from a descriptor
+comprised of a pattern of human behavior on a social net-
+work; and c) an in situ evaluation method based on real world
+performance by human editors.
+
+RELATED WORK
+Photo curation refers to activities, such as reviewing, select-
+ing, organizing, and sorting, that people perform on their own
+photos or those captured by others to produce sets of pho-
+tos related to a common theme. In this paper, we focus on
+the relationship between professional curation, in which pro-
+fessionally trained editors perform the curation, and social
+curation, in which generally inexperienced social media users
+perform the curation; the latter can also be considered a form
+of collaborative ﬁltering.
+Broadly, curation has been addressed in recent human-
+computer interaction research. This includes work on new
+interfaces for ideation and discovery [23, 47] to ﬁnding pat-
+terns in popular curation websites [12, 5] to the perception
+and consequences of algorithmic curation of social feeds [10,
+30]. In professional environments, Wolff and Mulholland [40]
+detailed museum curation as a curatorial inquiry learning
+cycle whose output can reveal new discovery and recuration.
+Diakopoulos [9] examined user-generated comments on New
+York Times articles and found connections between relevance
+and post time which has implications for editorial selection.
+Our work is most related to that of Wolff and Mulholland and
+
+Diakopoulos, because it is also aimed at professional curation,
+editors, and community, and not efﬁcacy of the user-interface’s
+design. We also turn to understanding the editors’ practice, as
+well as, understanding the community signals.
+One of the most important phases of professional editorial
+curation of photos is assessing their quality. To assess the
+visual quality and aesthetics of photos, in the past decade re-
+search has turned to designing algorithms that automatically
+learn features that correlate with quality [7, 36, 21, 25]. More
+recently efforts have been taken to learn how to improve the
+quality of photos [2, 46], for instance by incorporating tra-
+ditional measures of quality, such as the composition rule of
+thirds [43]. Others have turned to crowdsourcing to assess
+image content, aesthetics, and quality [19, 32, 42, 16, 33],
+due to the inherently subjective nature associated with under-
+standing what makes certain images appealing and others not.
+Yet, quality control of crowdsource workers in this context
+is difﬁcult [31], as performing crowdsourcing at web-scale
+introduces new issues in worker recruitment and high-speed
+interfaces [29, 3].
+In this work, we forgo hired crowd workers and instead com-
+bine automatic quality assessment with group work generated
+via feedback from the social curators on Flickr that main-
+tain weather-related photo groups and collections. We couple
+this with learning from photo browsing patterns to surface
+additional candidate weather photos that together form an au-
+tomatically curated pool from which professionally trained
+editors ultimately pick the best photos. Analogous to previous
+work in online video [34], we leverage the collective action of
+people viewing and sharing photographs to surface inherent se-
+mantics and classiﬁcation. Ishiguro et al. [17] also used social
+curation by exploiting social and content signals from curated
+collections for the purpose of predicting the view count of
+photos not yet part of a curated set. Our approach is similar
+in essence, but instead of just predicting view count we rather
+aim to appraise the photos along multiple dimensions, such
+as visual quality, weather-related content, and spatiotemporal
+suitability.
+
+PROPOSED METHOD
+We propose that the approach to the problem of editorial im-
+age curation is a hybrid of social computing methods and
+computer vision techniques. First, we use a Human-Centered
+Computing (HCC) model to frame how we will identify the
+workﬂow and goals of the human editors. We then brieﬂy
+discuss several machine learning methods that address human
+computation and crowd computing [35] and ﬁnally we propose
+our method, a community-supervised technique that utilizes
+the actions of an existing group of people interacting in an
+existing cooperative work task.
+We take an HCC approach stemming from Suchman’s [38]
+and Clancey’s [6] work on situated cognition. In particular,
+our work is inspired from cognitive task analysis [45] where
+we observed the current practice of professional editors (ex-
+perts), as well as, the current activities of an online community
+(Flickr). We then design an overall system (Figure 2) to ﬁnd
+and surface relevant images to the editors. It is important to
+note the aim of this work is not to remove the human editors
+
+87
+
+from the process, but rather to build a system that enables them
+to do their job more effectively and at a greater capacity [11,
+15]. The goal the editors stated was to increase the quantity
+of photos and the geographic coverage worldwide. They do
+have a minimum quality for acceptance but, aside from a few
+targeted regions, the minimum quality is an acceptable one.
+The editors had a variety of tools used to curate photos into
+their larger collection. This included routine checking for
+resolution, size, proper geo-tagging, as well as ensuring there
+are no faces, borders or watermarks in the photo. Any of
+these compromise the photo when used in conjunction with
+displaying the weather.
+For example, if it is a sunny day in Chicago, one does not
+want to see a photo with a photographer’s watermark or a
+large border as it compromises the ﬁnal layout. Borders and
+people in photos was their stated top reason for rejecting im-
+ages. Beyond their standard tool, the editors would manu-
+ally browse several (around 50) existing community groups
+on Flickr where people were known to share high quality
+weather photographs. Depending on the editor, she or he
+would bookmark or favorite a photo if they thought it was
+a likely candidate for curation. Later, they would add each
+of their bookmarks or favorites into an ingesting pool where
+either themselves or other editors could check the photo using
+their toolkit (which is a web browser plugin) and then invite it
+into their curated group.
+Each of these Flickr weather groups is very active and grows
+daily. We observed there were under 75,000 photos that editors
+had marked from that corpus already. But what about the good
+weather photos that are not in these groups? Often, group own-
+ers on Flickr would invite them into the group with a comment
+(the same mechanism our editors used to invite weather photos
+into the application as the editors themselves are simply own-
+ers of a standard Flickr group). This suggests group owners,
+like editors, are browsing and searching Flickr for high quality
+content for inclusion to their groups as well. We thought to
+use this behavior, seen from the broader community as well
+as the editors, as a primary method for semi-automated photo
+discovery. Figure 3 details how editor selections are connected
+and expanded dominate community members who have taken
+action on similar themed images, which in turn will be marked
+as editorial candidates.
+
+EXPERIMENTS
+With the knowledge of how editors and Flickr group adminis-
+trators navigate and discover, we turn to the task of curating
+photographs to display alongside weather forecasts, which is a
+common practice on many weather services, such as Weather
+Underground, Yahoo Weather, and Accuweather. First we will
+address speciﬁc requirements:
+a) the photographs be taken within the geographic boundaries
+
+of the city for the requested forecast;
+
+b) the photographs are outdoor shots;
+
+c) the photographs show some sky (and, therefore, reﬂecting
+
+some weather condition in that location);
+
+SESSION: MODELING SOCIAL MEDIA
+
+d) the photographs meet aesthetic requirements (i.e. no borders,
+text, watermarks) as that may obstruct or confuse the ﬁnal
+presentation of the image (see Figure 1); and
+
+e) the photographs do not have clear faces presented, in part
+for the previous reason, and in part for privacy restrictions.
+Examples of undesirable images are shown in Figure 4(b).
+Items d) and e) were the primary concern of the editors.
+The ﬁrst goal of this work is to ﬁlter what is billions of photos
+available down to a more manageable set that can be inspected
+and conﬁrmed by human editors. Second, we wish to further
+enrich this data by predicting the depicted weather conditions
+based on the visual content of the images and improve the
+accuracy and utility of the associated timestamps and geolo-
+cation information. Ultimately, the ﬁnal goal is to provide
+an assistive pipeline for editors to discover images that are
+most likely to meet their requirements both in terms of visual
+content and aesthetics.
+
+Data
+We are using a snapshot of 75,000 public Flickr photos from
+the Project Weather group1 on Flickr. We also pulled the
+positive judgments from the editors’ public group on Flickr.
+The snapshot photos also have associated metadata, such as
+textual titles, descriptions, and tags added by the user; EXIF
+information from the capture device; timestamps; and geolo-
+cations. There is also metadata about the social sharing and
+consumption of these images, such as which groups they have
+been shared to, sets and galleries that they are included in,
+and who has marked them as a favorite or commented on
+them. Finally, our snapshot also included the logs of browsing
+behavior—anonymized traces of people navigating through
+the site and viewing various photographs; the log snapshot was
+not restricted to just the views of the photos in the snapshot,
+but was representative to broad browsing behavior on site.
+The editor judgments contained 140,000 positive examples
+of images that meet the speciﬁcations of quality and appro-
+priate geographic metadata. These images were curated by
+editors who are trained to assess image quality. In addition to
+surfacing them in known weather groups on site, the editors
+also surfaced the photos using Flickr’s native search interface
+to issue queries to ﬁnd weather-, landscape-, and cityscape-
+related images via keyword search. Found images are visually
+inspected to ensure that they meet the aforementioned content
+and aesthetic requirements. The metadata is checked to assure
+that the images contain the appropriate geotags and are of high
+enough resolution. The editors further labeled each image with
+the conditions displayed in the photo. Each photo is labeled as
+either “daytime” or “nighttime” and the weather conditions are
+labeled as one of “clear,” “rain,” “snow,” “storm,” or “cloudy.”
+Examples of photos under each of these conditions are shown
+in Figure 4(a).
+
+System Design and Flow
+There are three main components to the overall system. First,
+we use social consumption patterns to ﬁnd likely candidates
+1https://www.flickr.com/groups/projectweather accessed Octo-
+ber 2015.
+
+88
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Humans
+
+Machine Learning
+
+Heuristics
+
+Humans
+
+App
+
+Editorial Curation
+
+Train Visual Models
+
+Editorial Veriﬁcation
+
+E1
+
+(cid:2)
+
+(cid:1)
+
+(cid:1)
+
+(cid:1)
+
+E2
+
+(cid:1)
+
+(cid:2)
+
+Candidate Images
+
+U1
+
+U2
+
+U3
+
+U4
+
+U5
+
+Ranked
+
+Apply Visual Models
+Correct Timestamps
+
+Geo Adustments
+
+Community Viewing Patterns
+
+day, cloud, 
+new york
+
+day, clear, 
+barcelona
+
+day, rain
+san francisco
+
+night, storm,
+tokyo
+
+day, clear
+edinburgh
+
+day, clear
+shanghai
+
+day, cloud
+trento
+
+Figure 2. The overall system system architecture for curating weather photos. A seed set of images from editors is expanded by looking at the joint
+community work, see Figure 3 for more detail. This is then used for Machine Learning, Training, and Ranking. Next some requirements are applied.
+Finally, similarly-viewed images are found and tagged with visual and contextual labels and presented for editorial veriﬁcation before they are sent to
+the live mobile application for use.
+
+E1
+
+(cid:1)
+
+(cid:2)
+
+(cid:1)
+
+(cid:1)
+
+E2
+
+(cid:1)
+
+(cid:2)
+
+U1
+
+U2
+
+U3
+
+U4
+
+U5
+
+(a)
+
+(b)
+
+(c)
+
+Figure 3. The ﬁrst step in the overall system involves (a) editors (E1–E2) curating images. Those images have been (b) implicitly or explicitly acted upon
+(viewed, favorited, commented) by people on site (U1–U5). Those users have acted on other media objects/photos elsewhere on site (c), which might be
+relevant to the editors. As E1 and E2 did not select photos acted upon by U1 and U5, their further actions do not impact the ranking of other images on
+site.
+
+89
+
+SESSION: MODELING SOCIAL MEDIA
+
+clear day
+
+cloudy day
+
+snowy day
+
+storm day
+
+rainy day
+
+clear night
+
+cloudy night
+
+snowy night
+
+(a) Desired Images
+
+storm night
+
+rainy night
+
+border added
+
+watermark
+
+not weather-related
+
+indoors
+
+(b) Non-Desired Images
+
+Figure 4. Examples of images encountered with the algorithm. (a) Weather-related photos are labeled with weather conditions and time (day or night).
+(b) Undesirable images might have borders or watermarks or otherwise not depict weather-related scenes.
+
+based on peoples’ browsing patterns (see “Community View-
+ing Patterns” in Figure 2 and its inset in Figure 3). Second,
+we turn to computer vision to reduce the candidates ﬁnd the
+weather relevant photos based on labeled judgments from edi-
+tors (see “Train Visual Models” in Figure 2). Next, we ﬁlter
+based on these visual models, geo-corrected longitude and
+latitude, timestamps, and size/resolution (see “Heuristics” in
+Figure 2). Finally, we add the resulting candidate image set
+to the editors queue for veriﬁcation (see “Editorial Veriﬁca-
+tion” in Figure 2 which is discussed further in the Evaluation
+section).
+
+Community Viewing Patterns
+The primary feature driving this system is the use of the social
+consumption patterns of users on the site to curate photographs.
+We do this by analyzing the browsing logs to ﬁnd images that
+have similar viewing patterns to the set curated by the editors.
+Essentially, we consider the entire collection of images as
+a (giant) Markov network. If a user is currently viewing a
+given image Ii at time t, there is a transition probability, pi j,
+of he or she moving next (at time t + 1) to another image in
+the network, Ij. We calculate these transition probabilities
+by counting the transitions between images that occur during
+users’ browsing sessions in the logs. Speciﬁcally, we count the
+number of times that any user has landed on image Ij as #(Ii,t )
+and then count the number of times that a user has proceeded
+to image Ij immediately after viewing image Ii as #(Ij,t+1|Ii,t ).
+The probability of transitioning between the two, pi j, is then
+
+simply estimated as the ratio between the two:
+
+pi j = #(Ij,t+1|Ii,t )
+
+#(Ii,t )
+
+.
+
+(1)
+
+We calculate this network over all images with any viewing
+activity observed in the browsing logs. We then seed the
+network with the set of curated images, C, provided by the
+editors. We then estimate the probability p j,C of landing on
+an image Ij starting from an image sampled from within the
+set C as the sum of the transition probabilities from all images
+in C:
+
+(2)
+
+p j,C = ∑
+i∈C
+
+pi j · pi
+
+where pi is the prior probability of beginning at any particular
+image, which we estimate to be uniformly distributed over all
+of the images in C. Finally, we can rank all images by their
+resulting score to pass back to editors for evaluation.
+Intuitively, images that are viewed frequently directly after
+images that have already been approved and selected by editors
+are likely to be relevant to the editors and are good candidates
+to be added to the curated set. This modeling of browsing
+behavior as a Markov model provides a natural method for
+capturing this intuition that has the beneﬁt of being straight-
+forward to calculate on standard parallel computing platforms.
+
+90
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Visual Models
+To further understand the image beyond metadata and brows-
+ing patterns, we turn to computer vision. Here, we represent
+the visual content of the image using a deep convolutional
+neural network (CNN) [24], which learns a discriminative vi-
+sual feature representation from a large collection of training
+images. The speciﬁc network that we use is trained using Ima-
+geNet [8] and provided pre-trained by the Caffe deep learning
+framework [18]. We use the output of the last fully-connected
+layer (fc7) to yield a 4096-dimensional feature representation.
+For each of the weather conditions (“clear,” “rain,” “snow,”
+“storm,” or “cloudy”) as well as a “non-weather” class, we
+train a linear support vector machine [39] using the labels
+provided by editors as training data. We conduct a 5-fold
+cross-validation on the labeled data and ﬁnd a multi-way clas-
+siﬁcation accuracy of 73%. We then apply these models to
+images suggested by the social consumption patterns to pro-
+vide the editors with labeled weather conditions to verify.
+
+Time and Geo-location
+A key component of the system is displaying images under
+the correct time conditions: daytime images for daytime fore-
+casts, and nighttime images for nighttime forecasts. All of
+the images in the Flickr dataset have at least one associated
+timestamp, but they can be inaccurate and/or conﬂicting. In
+particular, cameras often have a time setting that needs to be
+manually set, which can become slightly inaccurate after a
+daylight savings switch or very inaccurate due to failing to
+adjust the clock while traveling across time zones. For relia-
+bility we therefore opted to visually classify “night” and “day”
+using a CNN.
+Finally, we focus on photos that have been labeled with geo-
+graphic longitude and latitude coordinates. This geotagging
+can be done manually by the user, for example on the Flickr
+website by dragging the photo onto a map, or automatically
+by a GPS sensor built into the capture device or smartphone.
+While algorithms exist that in many instances are able to ac-
+curately estimate the location where a photo was taken when
+no geotag is available [28], their median-case error (39% error
+within 10 km) is too large for user-facing products that de-
+mand near-perfect precision. We therefore do not use photos
+for which no geotags are available.
+To associate geotagged photos with locations for which
+weather information is available, we perform reverse geocod-
+ing by using a gazetteer to reconstruct the place name hierarchy
+(e.g. Neighborhood → City → State → Country) where each
+photo was taken. As the world is constantly in ﬂux and peo-
+ple feel strongly about mistakes involving the (ofﬁcial and/or
+colloquial) boundaries of places [44], we opted to use a com-
+mercially available gazetteer2, which gets updated regularly
+with the latest administrative boundary deﬁnitions. Finally, we
+remove photos that do not match the stated requirements. It is
+important to note that we did not remove these photos before-
+hand from our snapshot of public Flickr photos, since images
+with incorrect or missing timestamps and geotags provide
+important connectivity information in the network of social
+consumption patterns.
+2http://yhoo.it/1JJPZuJ, accessed May 2015.
+
+EVALUATION
+As part of our HCC approach, we use a practical application
+driven evaluation metric which includes the editors themselves.
+Eight editors and one managing editor were handed our can-
+didate images over 5 months from November 2013 to April
+2014. This was done as part of their standard workﬂow and
+presented in the same tools and interface they used for their
+daily job. We further tracked our candidate images in the
+editorial pool to measure efﬁcacy.
+
+Evaluation Objectives
+A primary objective of the system is to limit the amount of
+time that editors spend triaging questionable images. Ideally,
+the editors see mostly images that are clearly of the desired
+type and they can easily choose to accept them with minimal
+cognitive load and completely avoid evaluating images that are
+unacceptable. We quantitatively evaluate our progress towards
+this goal by measuring the rate at which editors can evaluate
+and approve images above the acceptable threshold and the
+percentage of evaluated photos that end up being approved. We
+further quantify the reasons for rejection in order to understand
+the system’s areas of improvement for further iterations. We
+qualitatively evaluate the system through interviews with the
+editors in order to understand more speciﬁcally the types of
+problematic images that they encounter in their task and their
+overall feelings about the system’s ability to reliably provide
+diverse, and relevant images.
+
+Assistive Curation Evaluation
+The seed set of 140,000 images provided by the editors was ex-
+panded into 6.2 million candidate images with similar viewing
+patterns using our social consumption method. This candidate
+set was then reduced to 1.3 million images using the com-
+puter vision and deep learning and then further reduced to
+approximately 1 million images using the geographic and time
+methods. Considering that all of Flickr is on the order of 10
+billion images, this winnowing down to 1 million images rep-
+resents a several orders of magnitude reduction in the number
+of images to be considered.
+From the 1 million candidates, we presented a sample of 500
+recommended images to the editors in their feed of images in
+an interface wherein they can evaluate the quality and subject
+matter of the images along with the suggested tags and then
+choose to either accept or reject the image. The editors accept
+these photos at a rate of 30%, compared to a rate of much less
+than 1% for randomly-selected photos from the target groups
+they were monitoring. Furthermore, we see that this approach
+allows editors to ﬁnd appropriate photos at a much more rapid
+rate, allowing a single editor to ﬁnd 100 acceptable images in
+an hour, whereas the previously-employed approach of man-
+ually searching through Flickr would yield less than a dozen
+per hour. These two aspects taken together yield a manyfold
+decrease in the amount of unacceptable images inspected and
+a signiﬁcant overall increase in editorial throughput.
+The accepted and rejected images were logged for further
+evaluation for two reasons. First, future extension of this work
+could further use the editor judgments for tuning in an active
+learning environment. Second, we wanted to investigate how
+
+91
+
+Percent of Rejected Photos By Reason
+
+Reason
+
+Incorrect geo
+Has people/faces
+Incorrect Size
+Has watermark/border
+Not marquee quality
+General low content/quality
+
+100%
+
+75%
+
+50%
+
+25%
+
+0%
+
+Nov 2013
+
+Dec 2013
+
+Jan 2014
+
+Feb 2014 Mar 2014
+
+Apr 2014
+
+Figure 5. The reason for rejected photo by percentage showed general
+content was the main issue. The spike in ‘not marquee quality’ relates to
+a targeted sprint the editors were doing for a speciﬁc geographic region
+during February of 2014.
+
+the editors perceived the quality of the recommended photos,
+as well as, gain insights into why photos were being rejected.
+To do this, we had the editors keep track of a sample of the
+rejected images with a base reason as free text which we coded
+into a ﬁnite set of categories, see Figure 5.
+We periodically interviewed four of the editors and the one
+managing editor about the recommended images. Each in-
+terview lasted approximately 30 minutes and was repeated
+two or three times over the course of ﬁve months as we were
+constrained by the editor’s availability. During the interview,
+we used the accepted photos as prompts [14, 13] for the elicita-
+tion [37, 20] to surface: why was this photo accepted/rejected?;
+how much diversity was represented for the photo’s geographic
+region?; what is the expectation of quality for a photo and
+photo region?. Borders and watermarks surfaced in approx-
+imately 10% of the photos; pedestrians, faces, geo, and size
+issues were minimal if at all present. These problems were
+their primary issues before our algorithm and method was de-
+veloped. Beyond this, all of the editors said they found more
+diversity and quality in the semi-automatic curated images
+from our algorithm versus the photos they found with their
+two-pass manual method.
+However, there was also a problem of workload and quantity.
+Having to process a million images with a current system
+that was designed for tens of thousands did introduce some
+difﬁculty and suggested their editor toolkit needed to be up-
+dated for the newer scale. In doing so, new requests surfaced
+that were not typically requirements per se, but asks for new
+ways to navigate the candidate photos. One such request was
+geo-targeting to ﬁnd images in a speciﬁc geographic region.
+Figure 5 shows the effect of one such targeted editorial as the
+spike in February of 2014 in “not marquee quality” rejects.
+Overall, our method and algorithm was integrated into the
+editors platform. This subsequently introduced new UI de-
+signs to handle larger editorial scale and workﬂow. Finally,
+we should note our method of track and code and triage of
+
+92
+
+SESSION: MODELING SOCIAL MEDIA
+
+rejected images continued as a practice among the editors for
+the year following this work.
+
+DISCUSSION
+A result, and indeed a contribution, of this work is the power
+of social features to recommend images that are highly likely
+to be aesthetically and semantically similar to the images in
+a seeded example set. In the past, this has been attributed to
+collaborative sharing coupled with the affordances of SNS
+interfaces [34, 4, 27] and we have designed a system to exploit
+the inherent collective action on site instead of designing a
+crowd work system to augment the editorial process. We assert
+this technique is presented in one embodiment (that of geo-
+located weather photos for editorial) but more broadly there
+are implications for collaborative ﬁltering and community-
+supervised learning algorithms.
+
+Collaborative Filtering
+At its core, this is a basic application of collaborative ﬁltering:
+users who viewed the positive example images also viewed
+these other images, which we hence suggest to the editors.
+However, there is also more nuance to the underlying structure
+of the social media site that gives rise to the power of this
+effect. This is due to two distinct but interrelated elements of
+the social media system: a) users are limited by the system
+design in the ways that they can discover media, and b) the
+system design affords users with methods for curating media
+to make it discoverable by other users. Speciﬁcally on Flickr,
+the photos are curated and organized by the community at
+large. People place their own photos into sets and collect
+other users’ photos into galleries. Many people contribute
+their photos to pools within groups formed around common
+topics or interests. People also enrich their photos with tags,
+geo-locations, and other metadata. Further, movement from
+photo to photo on Flickr is constrained by the contexts in
+which the photo appears. Most typically, users move from
+one photo to the next photo sequentially in the photographer’s
+photostream, but they also browse through search results of
+similarly-tagged photos, or through curated galleries, sets, and
+group pools. The plurality of contexts that a photo belongs to
+is displayed on the photo’s main page and a user can switch
+contexts with a single click.
+
+Community-Supervised Techniques
+If our model for relating images to each other is based on
+viewing patterns of users, it is inﬂuenced greatly by the under-
+lying system design and curation practices that inﬂuence those
+viewing patterns (and the subset of curation patterns by group
+admins). We refer to this technique as community-supervised.
+When editors are tasked with curating a collection of images,
+there might not be an exact community-curated match of im-
+ages available, but there will most likely be many overlapping
+sets of images that match different aspects of the target topic.
+Taking the union of these image collections can give rise to
+a pool of images likely to contain relevant images. The im-
+ages that intersect across these collections might be the most
+relevant of all. So, in effect, the types of images requested
+can be modeled based on a combination of the curation efforts
+already put forth by an active online community.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(a) Human-to-Media: Shared Consumption (e.g. viewing, fa-
+voriting, commenting)
+
+(b) Media-to-Media: Shared Curation (e.g. sets, groups, gal-
+leries)
+
+geolocation
+
+tags
+
+time/event
+
+visual content
+
+(c) Media-to-Media: Shared Content and Context (e.g. location,
+events, tags, semantics)
+
+Figure 6. As a pivot of Figure 2, we illustrate different methods of discovering related media with community-supervised learning. (a) Human-to-
+Media: different users have taken similar actions on the media. (b) Media-to-Media shared curation: users have grouped the media together. (c)
+Media-to-Media context and content: the media share similar metadata or visual content.
+
+93
+
+In the speciﬁc example of collecting weather-related photos,
+there existed a large number of groups formed around appro-
+priate topics like landscapes and cityscapes accepting pho-
+tographs of all kinds. By curating a set of photographs that
+were topically and aesthetically desirable, we were able to
+ﬁnd photos that appear more frequently in contexts with like-
+minded community aesthetics, such as the types of photog-
+raphers (and viewers) who ﬁnd it distasteful to add elements
+like watermarks and borders to their photos. In effect, a visual
+requirement is solved by leveraging community formation
+around similar aesthetic tastes. While the curation patterns dis-
+cussed here are unique to Flickr, there are analogous practices
+on other social media sites that might yield similar effects. On
+YouTube, users curate playlists of videos around speciﬁc top-
+ics or interests. On Twitter, communities form rapidly around
+emerging topics via shared hashtags. On Instagram, commu-
+nities persist under hashtags related to various interest top-
+ics. All of these practices are ripe for community-supervised
+techniques that can be leveraged similar to the one we have
+proposed to assist in curation from those resources.
+
+Beyond Geographic Weather Images
+In this work, we have demonstrated an application of using
+a mixture of social browsing, visual models, and metadata
+ﬁltering for the speciﬁc scenario of ﬁnding and organizing
+weather-related images for assistive curation; however, the
+principles presented can be applied in a wide variety of other
+curation tasks. Interest communities form around a variety of
+topics in social media sites and individuals come together to
+post and consume media related to those topics in informal
+groups or galleries or around tags. Figure 6 illustrates the
+various types of group sub-curation tasks that users undertake
+to add structure and context to media collections, including
+their consumption behaviors, Figure 6(a), media groupings,
+Figure 6(b), and media labeling and categorization, Figure 6(c).
+Each of these, or in our case their combination, represents an
+applicable area for community-supervised systems in a broader
+application context.
+Broadly speaking, social media sharing sites provide users
+with a ﬁnite set of tools for browsing, organizing, or curat-
+ing the media posted to the site [26, 23, 34]. These methods,
+themselves, then directly impact and constrain the ways in
+which media can be subsequently encountered and discov-
+ered by other users. This is the fundamental reason why our
+proposed method of mining community viewing patterns to
+ﬁnd related images works: the set of possible permutations
+of viewing patterns is informed by the curation actions that
+have already been applied the the media by the community
+at large. If a user encounters a photo in the context of topic
+group or a tag, the next photo that the user views is likely
+to also exist in that very same context. If we start with a
+set of editorially-selected images and mine the contextually-
+related, and therefore similarly-consumed, images, we are able
+to leverage the micro-curation tasks that have been done by
+the community in order to ﬁnd more topically-related images.
+Given a topical or aesthetic objective, such as grafﬁti im-
+ages around the world, architecture, extreme sports or speciﬁc
+events, among many others, curators can expect to ﬁnd an
+
+94
+
+SESSION: MODELING SOCIAL MEDIA
+
+engaged community whose consumption and organization
+patterns can be leveraged using the techniques that we have
+described here to uncover a wealth of relevant media. Sim-
+ilarly, curation tasks might not require the same geographic
+constraints that we have demonstrated, but might be otherwise
+constrained by other structured metadata associated with the
+media, such as the speciﬁc type of camera used to capture the
+media, the time of year, the venue or event, or an application
+used to to edit, ﬁlter, or post the photos.
+
+Limitations
+In our evaluation, we focused on the editors for the overall
+system evaluation. There are, of course, traditional metrics,
+like F1 score, for testing precision and recall. However, our
+task was to improve the editors throughput and not to ﬁnd
+all weather photos in the corpus. It should be noted that not
+all 10 billion photos in the corpora are reﬂected in the log
+ﬁles that were used to expand the 140,000 seed to 6.2 million
+as there are photos that receive zero views.
+In particular,
+this mostly poses an issue to recall as there might be, for
+example, highly applicable photos of lightning that have zero
+views and hence will be invisible to our method; however we
+assert that this problem is more generally indicative of recall
+in large web-scale corpora [1]. Given proper data access,
+further investigation could reveal the loss of recall, especially
+in context to the editorial acceptance.
+
+CONCLUSIONS AND FUTURE WORK
+We described a system for human-centered cooperative work
+to assist editors searching for user contributed weather photos
+on Flickr. Our method utilizes community-supervised tech-
+niques to ﬁnd engaging photos based on the inherent viewing
+and social patterns of the existing weather-photo enthusiast
+community online. This is in contrast to crowd source tech-
+niques where workers are handed explicit tasks. We then
+positioned an in-situ evaluation with the editors to evaluate
+our method’s overall efﬁcacy within a real-world application
+as a broader cognitive tool [11, 15]. Our technique and method
+takes an initial step to critically address a recent class of mul-
+timedia and AI related problems that utilize a human-in-the-
+loop [41, 22].
+
+ACKNOWLEDGMENTS
+All images used in this article are under c b license from
+Flickr—a full listing of all the attributions is found in the
+supplemental material. We would like to also thank the editors
+from the Yahoo Project Weather team.
+
+REFERENCES
+1. Ricardo Baeza-Yates, Berthier Ribeiro-Neto, and Yoelle
+
+Maarek. 2011. Modern Information Retrieval: The
+Concepts and Technology behind Search.
+Addison-Wesley, Chapter Web Retrieval.
+
+2. Subhabrata Bhattacharya, Rahul Sukthankar, and
+
+Mubarak Shah. 2011. A Holistic Approach to Aesthetic
+Enhancement of Photographs. ACM Transactions on
+Multimedia Computing, Communications, and
+Applications 7S, 1, Article 21 (Nov. 2011), 21 pages.
+DOI:http://dx.doi.org/10.1145/2037676.2037678
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+3. Donald E. Broadbent and Margaret H.P. Broadbent. 1987.
+
+From detection to identiﬁcation: Response to multiple
+targets in rapid serial visual presentation. Perception &
+Psychophysics 42, 2 (1987), 105–113. DOI:
+http://dx.doi.org/10.3758/BF03210498
+
+4. Dick C. A. Bulterman, Pablo Cesar, and Rodrigo Laiola
+Guimar˜aes. 2013. Socially-aware Multimedia Authoring:
+Past, Present, and Future. ACM Transactions on
+Multimedia Computing, Communications, and
+Applications 9, 1s, Article 35 (Oct. 2013), 23 pages. DOI:
+http://dx.doi.org/10.1145/2491893
+
+5. Shuo Chang, Vikas Kumar, Eric Gilbert, and Loren G.
+
+Terveen. 2014. Specialization, Homophily, and Gender in
+a Social Curation Site: Findings from Pinterest. In
+Proceedings of the 17th ACM Conference on Computer
+Supported Cooperative Work & Social Computing
+(CSCW ’14). ACM, New York, NY, USA, 674–686. DOI:
+http://dx.doi.org/10.1145/2531602.2531660
+
+6. William J Clancey. 1997. Situated cognition: On human
+
+knowledge and computer representations. Cambridge
+University Press.
+
+7. Ritendra Datta, Dhiraj Joshi, Jia Li, and James Z Wang.
+2006. Studying Aesthetics in Photographic Images Using
+a Computational Approach. In Proceedings of the
+European Conference on Computer Vision, Vol. 3.
+288–301.
+
+8. J. Deng, W. Dong, R. Socher, L.-J. Li, K. Li, and L.
+
+Fei-Fei. 2009. ImageNet: A Large-Scale Hierarchical
+Image Database. In Proceedings of the IEEE
+International Conference on Computer Vision and
+Pattern Recognition.
+
+9. Nicholas A. Diakopoulos. 2015. The Editor’s Eye:
+Curation and Comment Relevance on the New York
+Times. In Proceedings of the 18th ACM Conference on
+Computer Supported Cooperative Work & Social
+Computing (CSCW ’15). ACM, New York, NY, USA,
+1153–1157. DOI:
+http://dx.doi.org/10.1145/2675133.2675160
+
+10. Motahhare Eslami, Aimee Rickman, Kristen Vaccaro,
+
+Amirhossein Aleyasen, Andy Vuong, Karrie Karahalios,
+Kevin Hamilton, and Christian Sandvig. 2015. ”I Always
+Assumed That I Wasn’T Really That Close to [Her]”:
+Reasoning About Invisible Algorithms in News Feeds. In
+Proceedings of the 33rd Annual ACM Conference on
+Human Factors in Computing Systems (CHI ’15). ACM,
+New York, NY, USA, 153–162. DOI:
+http://dx.doi.org/10.1145/2702123.2702556
+
+11. Kenneth M. Ford, Clark Glymour, and Patrick J. Hayes.
+
+1997. On the Other Hand - Cognitive Prostheses. AI
+Magazine 18, 3 (1997), 104.
+
+12. Eric Gilbert, Saeideh Bakhshi, Shuo Chang, and Loren
+
+Terveen. 2013. ”I Need to Try This”?: A Statistical
+Overview of Pinterest. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’13). ACM, New York, NY, USA, 2427–2436. DOI:
+http://dx.doi.org/10.1145/2470654.2481336
+
+95
+
+13. Rebecca Gulotta, Haakon Faste, and Jennifer Mankoff.
+2012. Curation, Provocation, and Digital Identity: Risks
+and Motivations for Sharing Provocative Images Online.
+In Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’12). ACM, New
+York, NY, USA, 387–390. DOI:
+http://dx.doi.org/10.1145/2207676.2207729
+
+14. Douglas Harper. 2002. Talking about pictures: A case for
+
+photo elicitation. Visual studies 17, 1 (2002), 13–26.
+
+15. R.R. Hoffman, P.J. Hayes, and K.M. Ford. 2001.
+
+Human-centered computing: thinking in and out of the
+box. IEEE Intelligent Systems 16, 5 (Sep 2001), 76–78.
+DOI:http://dx.doi.org/10.1109/5254.956085
+
+16. Liang-Chi Hsieh, W. H. Hsu, and Hao-Chuan Wang.
+2014. Investigating and predicting social and visual
+image interestingness on social media by crowdsourcing.
+In Proceedings of the IEEE International Conference on
+Acoustics, Speech and Signal Processing. 4309–4313.
+
+17. Katsuhiko Ishiguro, Akisato Kimura, and Koh Takeuchi.
+
+2012. Towards Automatic Image Understanding and
+Mining via Social Curation. In Proceedings of the IEEE
+International Conference on Data Mining. 906–911.
+18. Yangqing Jia, Evan Shelhamer, Jeff Donahue, Sergey
+
+Karayev, Jonathan Long, Ross Girshick, Sergio
+Guadarrama, and Trevor Darrell. 2014. Caffe:
+Convolutional Architecture for Fast Feature Embedding.
+arXiv preprint arXiv:1408.5093 (2014).
+
+19. Justin Johnson, Ranjay Krishna, Michael Stark, Li-Jia Li,
+
+David A. Shamma, Michael Bernstein, and Li Fei-Fei.
+2015. Image Retrieval using Scene Graphs. In
+Proceedings of the IEEE Conference on Computer Vision
+and Pattern Recognition. 3668–3678.
+
+20. Joseph B. Kadane and Lara J. Wolfson. 1998.
+
+Experiences in Elicitation. Journal of the Royal
+Statistical Society. Series D (The Statistician) 47, 1
+(1998), pp. 3–19. http://www.jstor.org/stable/2988424
+21. Yan Ke, Xiaoou Tang, and Feng Jing. 2006. The Design
+of High-Level Features for Photo Quality Assessment. In
+Proceedings of the IEEE Conference on Computer Vision
+and Pattern Recognition. 419–426.
+
+22. Aisling Kelliher. 2014. Critical Multimedia. IEEE
+
+MultiMedia 21, 4 (Oct 2014), 4–7. DOI:
+http://dx.doi.org/10.1109/MMUL.2014.58
+
+23. Andruid Kerne, Andrew M. Webb, Steven M. Smith,
+Rhema Linder, Nic Lupfer, Yin Qu, Jon Moeller, and
+Sashikanth Damaraju. 2014. Using Metrics of Curation to
+Evaluate Information-Based Ideation. ACM Trans.
+Comput.-Hum. Interact. 21, 3, Article 14 (June 2014), 48
+pages. DOI:http://dx.doi.org/10.1145/2591677
+
+24. Alex Krizhevsky, Ilya Sutskever, and Geoffrey E. Hinton.
+
+2012. Imagenet classiﬁcation with deep convolutional
+neural networks. In Advances in Neural Information
+Processing Systems.
+
+25. Yiwen Luo and Xiaoou Tang. 2008. Photo and Video
+
+Quality Evaluation: Focusing on the Subject. In
+Proceedings of the European Conference on Computer
+Vision, Vol. 3. 386–399.
+
+26. Catherine C Marshall and Frank M Shipman III. 1995.
+
+Spatial hypertext: designing for change. Commun. ACM
+38, 8 (1995), 88–97.
+
+27. Mor Naaman. 2012. Social Multimedia: Highlighting
+
+Opportunities for Search and Mining of Multimedia Data
+in Social Media Applications. Multimedia Tools and
+Applications 56, 1 (Jan. 2012), 9–34. DOI:
+http://dx.doi.org/10.1007/s11042-010-0538-7
+
+28. Adrian Popescu, Symeon Papadopoulos, and Ioannis
+
+Kompatsiaris. 2014. USEMP at MediaEval Placing Task.
+Working notes of MediaEval. (2014).
+
+29. Mary C. Potter. 1976. Short-term conceptual memory for
+
+pictures. Journal of Experimental Psychology: Human
+Learning and Memory 2, 5 (September 1976), 509–522.
+30. Emilee Rader and Rebecca Gray. 2015. Understanding
+
+User Beliefs About Algorithmic Curation in the
+Facebook News Feed. In Proceedings of the 33rd Annual
+ACM Conference on Human Factors in Computing
+Systems (CHI ’15). ACM, New York, NY, USA, 173–182.
+DOI:http://dx.doi.org/10.1145/2702123.2702174
+
+31. Judith Alice Redi, Tobias Hoßfeld, Pavel Korshunov,
+
+Filippo Mazza, Isabel Povoa, and Christian Keimel. 2013.
+Crowdsourcing-based Multimedia Subjective
+Evaluations: A Case Study on Image Recognizability and
+Aesthetic Appeal. In Proceedings of the ACM
+International Workshop on Crowdsourcing for
+Multimedia (CrowdMM ’13). ACM, New York, NY, USA,
+29–34. DOI:http://dx.doi.org/10.1145/2506364.2506368
+
+32. F. Ribeiro, D. Florencio, and V. Nascimento. 2011.
+
+Crowdsourcing subjective image quality evaluation. In
+Proceedings of the IEEE International Conference on
+Image Processing. 3097–3100.
+
+33. S. Rudinac, M. Larson, and A. Hanjalic. 2013. Learning
+
+Crowdsourced User Preferences for Visual
+Summarization of Image Collections. IEEE Transactions
+on Multimedia 15, 6 (Oct 2013), 1231–1243. DOI:
+http://dx.doi.org/10.1109/TMM.2013.2261481
+
+34. David A. Shamma, Ryan Shaw, Peter L. Shafton, and
+
+Yiming Liu. 2007. Watch What I Watch: Using
+Community Activity to Understand Content. In
+Proceedings of the International Workshop on Workshop
+on Multimedia Information Retrieval (MIR ’07). ACM,
+New York, NY, USA, 275–284. DOI:
+http://dx.doi.org/10.1145/1290082.1290120
+
+35. Aaron Shaw, Haoqi Zhang, Andr´es Monroy-Hern´andez,
+
+Sean Munson, Benjamin Mako Hill, Elizabeth Gerber,
+Peter Kinnaird, and Patrick Minder. 2014. Computer
+Supported Collective Action. ACM interactions 21, 2
+(March 2014), 74–77. DOI:
+http://dx.doi.org/10.1145/2576875
+
+96
+
+SESSION: MODELING SOCIAL MEDIA
+
+36. H. R. Sheikh, A. C. Bovik, and G. de Veciana. 2005. An
+
+information ﬁdelity criterion for image quality
+assessment using natural scene statistics. IEEE
+Transactions on Image Processing 14, 12 (2005),
+2117–2128.
+
+37. Zoe Strickler. 1999. Elicitation Methods in Experimental
+Design Research. Design Issues 15, 2 (1999), pp. 27–39.
+http://www.jstor.org/stable/1511840
+
+38. Lucy A. Suchman. 1987. Plans and Situated Actions: The
+Problem of Human-machine Communication. Cambridge
+University Press, New York, NY, USA.
+
+39. Vladimir Vapnik. 1998. Statistical Learning Theory.
+
+Wiley, New York.
+
+40. Annika Wolff and Paul Mulholland. 2013. Curation,
+
+Curation, Curation. In Proceedings of the 3rd Narrative
+and Hypertext Workshop (NHT ’13). ACM, New York,
+NY, USA, Article 1, 5 pages. DOI:
+http://dx.doi.org/10.1145/2462216.2462217
+
+41. Lexing Xie, David A. Shamma, and Cees Snoek. 2014.
+Content is Dead. . . Long Live Content: The New Age of
+Multimedia-Hard Problems. IEEE MultiMedia 21, 1 (Jan
+2014), 4–8. DOI:http://dx.doi.org/10.1109/MMUL.2014.5
+
+42. Qianqian Xu, Qingming Huang, and Yuan Yao. 2012.
+
+Online crowdsourcing subjective image quality
+assessment. In Proceedings of the ACM International
+Conference on Multimedia. 359–368.
+
+43. Yan Xu, Joshua Ratcliff, James Scovell, Gheric Speiginer,
+
+and Ronald Azuma. 2015. Real-time Guidance Camera
+Interface to Enhance Photo Aesthetic Quality. In
+Proceedings of the 33rd Annual ACM Conference on
+Human Factors in Computing Systems (CHI ’15). ACM,
+New York, NY, USA, 1183–1186. DOI:
+http://dx.doi.org/10.1145/2702123.2702418
+
+44. Keiji Yanai, Keita Yaegashi, and Bingyu Qiu. 2009.
+
+Detecting Cultural Differences Using
+Consumer-generated Geotagged Photos. In Proceedings
+of the International Workshop on Location and the Web
+(LOCWEB ’09). ACM, New York, NY, USA, Article 12,
+4 pages. DOI:
+http://dx.doi.org/10.1145/1507136.1507148
+
+45. Wayne Zachary, Robert Hoffman, Beth Crandall, Tom
+
+Miller, and Christopher Nemeth. 2012. “Rapidized”
+Cognitive Task Analysis. IEEE Intelligent Systems 27, 2
+(March 2012), 61–66. DOI:
+http://dx.doi.org/10.1109/MIS.2012.29
+
+46. Fang-Lue Zhang, Miao Wang, and Shi-Min Hu. 2013.
+Aesthetic Image Enhancement by Dependence-Aware
+Object Recomposition. IEEE Transactions on Multimedia
+15, 7 (2013), 1480–1490.
+
+47. Xuan Zhao and Siˆan E. Lindley. 2014. Curation Through
+Use: Understanding the Personal Value of Social Media.
+In Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’14). ACM, New
+York, NY, USA, 2431–2440. DOI:
+http://dx.doi.org/10.1145/2556288.2557291
+
+

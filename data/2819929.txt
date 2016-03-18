@@ -1,0 +1,1359 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+TryFilm: Situated Support for Interactive Media 
+
+Productions 
+
+Tom Bartindale1, Guy Schofield2, Clara Crivellaro1, Peter Wright1  
+
+1Culture Lab, Newcastle University, Newcastle Upon Tyne, United Kingdom 
+
+2Department of Theatre Film and Television, University of York, York, United Kingdom 
+
+tom@bartindale.com, guy.schofield@york.ac.uk, c.crivellaro@ncl.ac.uk, p.c.wright@ncl.ac.uk 
+
+is  changing 
+
+the  media  production 
+
+ABSTRACT 
+The emergence of participatory, on-demand and interactive 
+media 
+landscape. 
+Producing  interactive  media  is  often  more  complex  than 
+creating  traditional  linear  films,  resulting  in  increased 
+pressure for production teams. In this paper we explore what 
+implications this has for cast and crew who participate in the 
+production  of  such  new  media.  We  explore  how 
+collaborative technologies can support creative practitioners, 
+within  these  challenging  settings.  We  present  TryFilm,  a 
+collaborative  editing  system,  designed  by  the  authors  and 
+deployed  during  an  interactive  film  shoot  by  a  small  film 
+company featuring a cast of early career actors. 
+.  
+
+Author Keywords 
+Editing; Video; Production; Participation; Actors; Complex 
+Environments; Pro-am; Tangible; Tabletop; Collaborative 
+
+ACM Classification Keywords 
+H.5.1 Video (e.g., tape, disk, DVI) 
+
+INTRODUCTION 
+The  convergence  of  broadcast  TV  and  film,  Web  2.0 
+generally  and  social  media  in  particular  [10]  have  together 
+reconfigured  the  landscape  of  film  and  TV  production  for 
+amateur  and  professional  makers  alike.  The  rise  of  a 
+participatory culture of media production through online and 
+user-generated content services such as YouTube, has begun 
+to  democratize  the  process  of  media  production  and 
+distribution: an industry previously dominated by large well-
+funded production houses and broadcast corporations.  
+
+infrastructure. Freed from the prohibitive costs of chemical 
+film  stock,  cameras  and  processing,  these  companies  can 
+take  advantage  of  ‘all-digital’  production  workflows:  in 
+which footage is shot, edited and distributed entirely through 
+digital means.  
+
+teams  have  remained 
+
+Although  digital  technology  is  increasingly  used  in  the 
+production and distribution of video, the workflows used by 
+production 
+largely  unchanged. 
+Planning often takes place on paper, with a single document 
+- the only record of an intricate set of tasks that need to be 
+performed.  The  organizational  structure  of  the  production 
+team is crucial to the success of the project and crews often 
+rely on a standardized set of working practices in which each 
+member  has  a  strictly  specialized  role  within  a  complex 
+hierarchy.  
+
+Small  independent  film  companies,  besides  using  highly-
+trained but relatively inexperienced crews - fresh from film 
+schools,  often  use  new  (unknown)  acting  talent.  By 
+definition,  Early  Career  Actors  (referred  to  here  as  ECAs) 
+often do not have a body of skills and experience to perform 
+at their best in complex new media film shoots.  
+
+In  a  number  of  previous  research  projects,  including 
+StoryCrate [1],  we have explored how collaborative digital 
+systems  can  support  media  production  workflows.  On  the 
+basis  of  this  research  we  were  approached  by  a  small 
+independent 
+in 
+technologies to support their small film crews and ECAs in 
+facing the challenges typical  of low-budget  film shoots for 
+interactive media. In particular, they wished to explore how 
+
+film  company  who  were 
+
+interested 
+
+Developments in digital video technology are empowering a 
+new  generation  of  independent  film  companies  who  are 
+producing high quality  media within the constraints of low 
+budgets, 
+technical 
+
+timeframes  and 
+
+limited 
+
+limited 
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies 
+are not made or distributed for profit or commercial advantage and that 
+copies bear this notice and the full citation on the first page. Copyrights 
+for  components  of  this  work  owned  by  others  than  ACM  must  be 
+honored. Abstracting with credit is permitted. To copy otherwise, or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires prior 
+specific  permission  and/or  a  fee.  Request  permissions  from 
+Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819929 
+ 
+
+ 
+
+1412
+
+Figure 1. The TryFilm system deployed on location 
+
+ 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+technology  could  help 
+them  better  manage  complex 
+branching  narrative  productions  by  promoting  better 
+communication and coordination between cast and crew.  
+
+To  achieve  this  we  developed  ‘TryFilm’  (see  Figure  1)  -  a 
+situated collaborative editing and playback tool, which uses 
+a  hybrid  interaction  modality  combining  a  multi-touch 
+surface and tangibles. Regularly  updated  with  new  footage 
+from the shoot, the system not only allows instant playback 
+of the ‘rushes’ (unedited footage, straight from the camera), 
+but  also  offers  the  ability  to  trial  edits  within  a  branching 
+narrative.  Most  significantly  for  the  production  team, 
+TryFilm was designed to be accessible to all members of the 
+cast and crew, enabling them to maintain a shared awareness 
+of the state of the production as it progressed. The research 
+aim of the project was to ascertain whether facilitating group 
+communication, reflection and learning through technology 
+could enable a reconfiguring of traditional production roles 
+and  allow  cast  and  crew  to  better  manage  the  production 
+while developing actors’ skills.   
+
+THE CASE STUDY 
+Trylife are an independent film company who produce high 
+quality,  branching-narrative  fiction  films  that  are  delivered 
+to  audiences  via  an  interactive  website.  These  films 
+approximate  the  format  of  a  ‘choose-your-own-adventure’ 
+novel.  At  key  points  in  the  narrative,  viewers  can  make 
+decisions for the protagonists, the results of  which have an 
+effect on the outcome of the drama. Each ~22 minute episode 
+presents  approximately  15  different  choices  to  the  viewer. 
+Funded and supported by charities and social organizations, 
+Trylife’s films are intended to engage young audiences with 
+social issues relevant to them (e.g. sexual health, drugs and 
+knife-crime)  and  to  discuss  the  consequences  of  personal 
+decisions relating to these issues.  
+
+the  distribution  phase  of 
+
+Trylife are a typical example of the recent generation of film 
+companies empowered through low-cost digital technology. 
+Their  use  of  an  all-digital  workflow  and  early  career 
+production teams has enabled them to build a reputation for 
+producing innovative, high-quality interactive films despite 
+having  very  limited  budgets.  Trylife’s  Executive  Producer 
+approached  us  during 
+the 
+company’s  first  interactive  film,  as  a  second  episode  was 
+being  planned.  Reflecting  on  this  first  production,  the 
+company  had  identified  a  number  of  areas  in  which  the 
+production team had struggled, which they speculated might 
+be solved through improving communication, reflection and 
+engagement  within  the  production  team.  We  saw  this 
+partnership as providing an ideal case study through which 
+to  explore  how  digital  technologies,  which  facilitate  and 
+promote collaboration and learning might be used to support 
+complex media productions. 
+
+To thoroughly understand the company’s situation, we began 
+by  undertaking  interviews  and  in-depth  discussions  with  a 
+cross-section  of  the  Trylife  production  team  and  ECAs 
+involved in the production of previous Trylife episodes. The 
+Executive  Producer,  Director, 
+lead  actor  and  Social 
+
+ 
+
+1413
+
+in 
+
+involved 
+
+Engagement  Manager  were 
+five  group 
+discussions in which they guided us through the production 
+process  of  their  previous  episode  chronologically;  here  we 
+supported the group envisioning not only a perfect workflow, 
+but  also  an  ideal  experience  for  the  cast  and  crew,  which 
+would ensure that the cast were kept informed, engaged and 
+mentored while at the same time, a high quality episode was 
+produced. After each session, we discussed and fed back our 
+interpretation  of  their  experiences,  verifying  that  we  had 
+understood the specifics of their practice.  
+
+in 
+
+strict 
+
+sequence 
+
+CHALLENGES OF PARTICIPATORY NEW MEDIA 
+PRODUCTIONS 
+A  typical  film  production  workflow,  as  used  by  most 
+professional production companies consists of a number of 
+phases  occurring 
+[20].  Usually 
+commissioned on the basis of a script or treatment, an initial 
+pre-production  phase  involves  planning  in  great  detail. 
+Documents such as storyboards and lists of shots are drawn 
+up, cast and crew are hired and equipment and locations are 
+secured.  In  the  production  phase,  the  cast  and  crew  are 
+deployed and the film is shot. This latter phase is typically 
+the  most  demanding  in  terms  of  logistics,  as  it  involves  a 
+large  number  of  people  with  different  skill-sets  (who  may 
+never have met before) working together to perform a huge 
+number  of  specialized  tasks.  After  the  film  is  shot,  the 
+footage is processed, edited and prepared for distribution.  
+
+This rigid workflow has, over many years, become standard 
+practice, largely due to the historical constraints of shooting 
+on  chemical  film.  The  expense  of  film  stock,  necessity  for 
+powerful  lighting,  the  number  of  crew  required  to  operate 
+each camera and the fact that footage cannot be played back 
+until  after  processing  has  meant  that  film  crews  consist  of 
+many specialists who rarely share roles and rely on capturing 
+footage in as few ‘takes’ as possible, avoiding reshooting at 
+all costs.  
+
+Perhaps surprisingly given the youth of their cast and crew 
+and  their  use  of  exclusively  digital  formats,  Trylife’s 
+production  workflow  was  based  heavily  on  this  traditional 
+method and took little advantage of the affordances of digital 
+technology, which might allow playback, continual checking 
+and more flexible roles. Footage was occasionally reviewed 
+on-set by the director and DoP (Director of Photography) and 
+the producer, director and DoP would watch the rushes at the 
+end of each day off-site, but other members of the cast and 
+crew were excluded from these sessions. 
+
+Three  main  challenges  emerged  from  our  workshops  with 
+Trylife:  increased  production  demands,  the  shoot  as  an 
+opportunity  for  shared  learning,  and  the  problem  of 
+maintaining situational awareness for everyone on location.  
+
+Assisting with increased Production Demands 
+Digital video has freed many film crews such as Trylife from 
+the expense of buying and processing chemical  film  stock, 
+however  this  phenomenon  has  meant  directors  are  able  to 
+shoot more takes, generating substantially more footage than 
+
+previously possible.  
+
+Web  2.0  is  also  providing  a  platform  for  new  forms  of 
+storytelling;  for  example,  the  use  of  branching  narratives 
+actively engages viewers by allowing them to choose how a 
+film  plot  evolves  [4].  However  these  new  formats  present 
+significant challenges for production crew and actors both in 
+terms of the complexity of projects and the sheer amount of 
+content  required.  Most  of  these  difficulties  arise  from  the 
+necessity  to  shoot  more  footage  (more  scenes,  more 
+locations, and more possible combinations of content) than 
+traditional  productions,  often  within  the  same  limited 
+budgets and timeframes.  
+
+As an example, Trylife's second episode was 22 minutes long 
+but required 172 pages of script in 75 scenes, requiring over 
+100 hours of footage to be shot. In real terms, this translates 
+to more days shooting, more location changes, more takes of 
+similar  scenes  and  more  time  on  set  -  factors  that 
+significantly impact both  the  ECA and crew experience on 
+location. 
+
+The  design  challenge  presented  here  was  to  develop  a 
+technology that supported cast and crew to better monitor 
+the  progress  of  the  shoot,  helping  with  continuity  and 
+management of the schedule for cast and crew. 
+
+Supporting Learning for Early Career Actors  
+As a socially engaged film company, Trylife were committed 
+to  maximizing  the  learning  opportunities  available  to  the 
+young  actors  participating  in  the  shoot.  These  learning 
+opportunities  not  only  concerned  Trylife  promoting 
+discussion  about  the  social  issues  depicted  in  the  films  but 
+also  involved  helping  the  actors  develop  their  acting  skills 
+and  CVs.  Supporting  continued  ECA  learning  was  of 
+particular importance as for many of the cast, this was their 
+first experience of a real-world production.  
+
+Self-Reflection and Peer Support  
+Institutions  that  teach  acting  typically  do  so  through  a 
+process  that  has  been  described  as  situated  learning  [14]. 
+This  process  focuses  on  communities  of  practice  in  which 
+people learn from one another through a complex balance of 
+instruction,  apprenticeship,  and 
+learning-through-doing. 
+Within drama schools this involves promoting concepts such 
+as self-reflection, visualization of action from the audience’s 
+perspective, and empathic understanding of characters [15]. 
+Peer  interaction  [2]  is  used  to  motivate,  teach  and  inform 
+groups  of  actors  as  part  of  this  situated  learning  process. 
+Specific  techniques  such  as  recording  and  playing  back 
+monologues  to  perform  micro-analysis  and  annotation  on 
+personal 
+during 
+rehearsals; and performing group critique sessions with other 
+actors,  are  used  not  just  during  training  but  throughout 
+actors’ careers.  
+
+performances; 
+
+real-time 
+
+feedback 
+
+The move from drama school to the film set can be a difficult 
+transition,  particularly  when  ECAs  begin  to  work  in 
+independent  film  making  contexts.  Only  recently,  through 
+digital video technology has it even been technically possible 
+
+ 
+
+1414
+
+SESSION: MULTIMEDIA CREATION AND REMIXING
+
+to playback footage whilst still on location in order to review 
+footage. On some crews, a Digital Imaging Technician (DIT) 
+is employed to manage data storage and assist with camera 
+settings and image integrity, necessitating that high-quality 
+monitors and computers for playback (often using annotation 
+tools  such  as  Adobe  OnLocation)  are  present  on  set.  The 
+organizational  hierarchies  present  in  traditional  production 
+teams  however,  usually  prevent  most  of  the  cast  and  crew 
+having access to content on location. It is therefore difficult 
+for actors to receive feedback and to engage in the kinds of 
+reflective  practices  -  in  particular  visualization  of  action  - 
+which they have been taught to use in training.  
+
+The most common practice in these situations (although still 
+rare) is daily group feedback sessions led by the director, in 
+which  feedback  for  each  actor  is  given  from  the  director’s 
+notes. This strategy only allows actors to adjust their practice 
+for the following day’s shoot rather than in response to their 
+performance  throughout  the  day.  Similarly,  the  crew  also 
+lacks the tools to reflect on their approach and the influence 
+of their own work on the generated footage.  
+
+On previous shoots Trylife observed that amongst the ECA 
+cast,  peer  support  was  an  important  part  of  the  learning 
+process,  increasing  crew  cohesion  and  supporting  team 
+building  and  personal  improvement.  This  however  was 
+difficult  to  maintain  in  a  high-pressure  environment  where 
+many scenes are shot with a small subset of the actors, whilst 
+others prepare or are at alternative locations. 
+
+Similarly,  mentoring  relationships  were  important  to  the 
+learning  process  for  ECAs.  However,  since  the  cast  of 
+Trylife’s productions consisted mainly of ECAs, the number 
+of experienced cast members capable of providing mentoring 
+was limited and their time was at a premium: they therefore 
+were unable to offer personal attention to each cast member. 
+Trylife  noted  that  the  few  opportunities  for  professional 
+mentoring  were  greatly  valued  by  the  ECAs,  who  were 
+sometimes  overwhelmed  by  the  pressures  and  complex 
+nature of the production.  
+
+Engagement with Social Issues  
+Trylife’s branching narrative enables the viewer to try out a 
+variety  of  different  routes  through  the  story  depending  on 
+character choices. To support discussion about these choices 
+with the ECAs, Trylife employed a number of youth workers 
+to  be  on  location.  Film  sets  are  often  challenging, 
+intimidating and confusing environments. Furthermore, the 
+demands of film production scheduling mean that filming of 
+scenes rarely takes place in the same order as the narrative. 
+Trylife  found  that  the  ECAs  were  struggling  to  understand 
+how  their  characters’  roles  and  the  decisions  made  in  the 
+narrative affected the different outcomes of each scene that 
+they were asked to play. 
+
+The design challenge presented here was to consider ways 
+in  which  ECAs  could  access  the  branching  narrative 
+format in a way that would support peer learning and self-
+reflection  but  would  also  help  the  cast  engage  with  the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+social issues raised in the film.  
+
+Facilitating Situational Awareness 
+Film shoots are complex situations in which each member of 
+the production team  works chiefly to fulfill  his or her own 
+role, and in the majority of cases, has little interaction with 
+the  cast.  Cast  members  may  be  performing  20-30  scenes  a 
+day  and  are  required  to  perform  similar  scenes  repeatedly 
+with only subtle changes in dialog or action, in addition to 
+multiple takes of the same scene.  
+
+Continuity is a term used in the film industry to refer to the 
+necessity  for  consistency  in  the  characteristic  of  objects  or 
+actions  in  a  scene:  for  example  ensuring  that  the  level  of 
+water in a glass does not change between consecutive shots. 
+In Trylife’s previous episode, continuity tracking became a 
+major cause for concern due to the large volume of potential 
+combinations in which each set of scenes could be viewed. 
+This led to a constant state of uncertainty for both cast and 
+crew, whereby the cast often lost track of where they were in 
+the  narrative,  and  the  context  in  which  their  character  was 
+performing. The pressure and pace of the  filming schedule 
+also made it difficult for the cast to understand which scene 
+was being shot, which location they were moving to next and 
+where they were within the wider production cycle.  
+
+As  discussed,  cast  and  crew  are  active  at  different  times 
+throughout each day, often interspersed with long periods of 
+waiting.  Trylife  had  commented  that  during  their  previous 
+shoot, it had been difficult to keep the cast to maintain their 
+characters  over  the  course  of  filming,  leading  to  longer 
+shooting times as actors re-entered roles and re-familiarized 
+themselves  with  the  context.  In  addition  to  the  main 
+characters,  Trylife  used  a  variety  of  non-speaking  ‘extras’, 
+employed day-to-day. It  was  found to be a difficult task to 
+keep this group up-to-date with the shoot over long working 
+hours and multiple days given their intermittent attendance. 
+Given appropriate support, Trylife suggested that they might 
+be able to use these ‘down time’ periods as opportunities for 
+personal  development  or  engagement  of  ECAs  with  the 
+content. 
+
+The  design  challenge  here  was  to  develop  a  system  that 
+allowed cast members to review footage quickly and easily, 
+annotate  it  and  review  how  the  viewer  would  see  it, 
+providing a context for their acting work,  reinforcing the 
+relationship between takes and helping to motivate cast not 
+present when related footage was shot. 
+
+and 
+
+their 
+
+limitations.  To 
+
+THE TRYFILM DESIGN 
+In designing for these requirements we considered available 
+technologies 
+encourage 
+collaboration  we  rejected  single-user  setups  such  as  large 
+screens  connected  to  a  single  computer  with  mouse  and 
+keyboard as this might preclude multi-user and collaborative 
+use. Likewise, simple off-the-shelf editing software such as 
+iMovie  and  Windows  Movie  Maker  lacked  many  of  the 
+features  required (such as being able to quickly search and 
+catalog  complex  scenes  and  annotate  footage)  while 
+
+professional editing suites such as Premiere or Final Cut Pro 
+were  considered  too  unwieldy  for  cast  and  crew  to  use 
+without  training.  Furthermore,  none  of  these  solutions 
+allowed the exploration of branching narrative structures and 
+individual scenes in a single environment. 
+
+Our response was to develop the TryFilm system (see Figure 
+1).  Designed  for  deployment  at  a  film  shoot,  TryFilm  is  a 
+large (1.5m long) playback and editing system with a multi-
+modal  touch  and  tangible  interface  (Samsung  Pixelsense). 
+The  self-contained  flight-cased  unit  contains  a  40” 
+interactive tabletop display and integrated computer, above 
+which is mounted a 40” LCD display at right angles. It has 
+removable legs and is easily transportable as a vertical unit 
+on wheels, taking around 5 minutes to assemble by a pair of 
+crew members.  
+
+Interaction 
+The  design  of  TryFilm  draws  from  a  corpus  of  previous 
+research that demonstrates the benefits of tangible, tabletop 
+interfaces  for  use  in  collaborative  settings.  This  work 
+establishes  the  value  of  tabletop  interfaces  for  supporting 
+group  learning  and  discussion  around  specific  topics  [13]. 
+Large tabletops have been found to promote understanding 
+and  coherence  of  gestural  actions  amongst  groups  of  users 
+[6],  and  large,  high-resolution  displays  are  well  suited  to 
+hosting  complex  data-sets  and  large  amounts  of  media. 
+Indeed,  physical  or  tangible  controls,  or  representations  of 
+data  have  been  shown  to  offer  advantage  for  group 
+interaction over purely digital representation [21]. 
+
+Tabletops and tangibles can be an easily-accessible  way of 
+supporting shared activities [8]. Physical control objects can 
+be used to embody interface control structures, enforce group 
+communication  and  control  over  functionality  while 
+fostering  mutual  awareness  amongst  the  group  [9].  To 
+support  group  awareness  of  actions,  Gutwin  et  al.  [7] 
+emphasize the need to design visual feedback cues into the 
+system  to  balance  the  individual  and  group  interaction 
+paradigms present. 
+
+In  other  learning  environments  and  in  traditional  (non-
+branching)  media  production  there  has  already  been  work 
+done to explore how new forms of situated technology can 
+support  peer  learning.  For  example,  the  use  of  digital 
+technologies  (specifically 
+in 
+supporting  direct  engagement,  self-directed  learning,  self-
+reflection and peer support is well documented [13, 17]. In 
+particular this community has recognized the affordances of 
+shared large-scale interfaces such as tabletops in supporting 
+learning  tasks,  and  in  particular  self-directed  learning 
+through reflection [12]. 
+
+tabletops  and 
+
+tangibles) 
+
+As  discussed  previously,  TryFilm  builds  on  previous 
+research  by  the  authors  in  which  collaborative  interfaces 
+have been developed to explore alternative working models 
+for  media  production.  In  particular  it  builds  on  the  [1] 
+StoryCrate project, in which a collaborative tabletop editing 
+system  was  developed  and  deployed  to  support  a  linear 
+
+ 
+
+1415
+
+drama  shoot.  StoryCrate  enabled  crew  members  to  upload 
+and edit footage within minutes of shooting, allowing them 
+to continually visualize the film as it developed.  
+
+Users  interact  with  TryFilm  through  a  hybrid  scheme  of 
+tangibles and touch. Functions which change or manipulate 
+content or switch between display modes are performed by 
+manipulating  tangible  tiles  (Figure  2).  More  subtle  actions 
+such  as  list-scrolling,  drawing,  and  view-scrolling  are 
+performed  using  simple  and  intuitive  single-touch  gestures 
+on the table surface. These interaction modes can be used in 
+tandem  and  bi-manually  to  create  a  rich  and  intuitive 
+interaction experience for the user.  
+
+ 
+
+Figure 2. Tangible Controls Used in TryFilm 
+
+Media  is  represented  throughout  the  system  as  static 
+thumbnails  overlaid  with  icons  representing  the  attached 
+metadata  and  currently  available  media.  The  interface 
+consists of three levels of detail: tree view, storyboard view 
+and clip edit view representing the shoot wide status, specific 
+scene status and individual performance status respectively. 
+Prior to a shoot, TryFilm is loaded with a representation of 
+the branching narrative by the crew including the script and 
+some meta-data about shoot locations and a brief description 
+of the scene content.  
+
+These clips can be viewed individually, or within the context 
+of a scene by placing them in a timeline (see Figure 3). Alone 
+however,  the  single  scene  visual  representation  is  not  rich 
+enough  to  represent  the  complex  branching  narrative,  so  a 
+tree-like visualization of the narrative is rendered where each 
+‘leaf’ is a scene, and ‘branches’ are routes viewers could take 
+through the narrative (see Figure 3). Relationships between 
+specific scenes are created in the open-source mind-mapping 
+tool FreeMind and visualized as a color-coded tree on system 
+startup.  
+
+Drawing from the design configuration of StoryCrate [1], a 
+digitized pen and pad, wireless keyboard and a memory card 
+reader border the tabletop for input of sketches, metadata and 
+also  video  and  images  from  camera  memory  cards. 
+Leveraging the ECAs’ and crew’s familiarity with pictorial 
+storyboards, the TryFilm interface is built around the visual 
+representation of a film timeline.  
+
+As TryFilm was primarily targeted at users with little prior 
+experience operating production equipment, it was important 
+to  design  coherent  and  easy-to-learn  interaction  techniques 
+
+ 
+
+1416
+
+SESSION: MULTIMEDIA CREATION AND REMIXING
+
+that could be understood immediately.  For example, as the 
+preview  and  clip-edit  functions  influence  playback  on  the 
+same  screen,  the  tangible  controls  initiating  playback  are 
+physically attached to each other with a cord to enforce this 
+constraint.  Rather  than  enter  freeform  content  using  the 
+inaccurate method of finger interaction, an Anoto pen is used 
+for  drawing  new  timeline  content.  This  allows  the  user  to 
+work  away  from  the  interface  and  keep  the  paper  copy  for 
+his or her reference.  
+
+Throughout the shoot, video content enters TryFilm without 
+affecting  the  existing  workflow:  the  crew  inserts  memory 
+cards directly from each camera, usually when memory cards 
+are  changed  for  backup  (2-3  times  a  day).  Attached  to 
+TryFilm’s  interactive  tabletop  is  a  large  non-interactive 
+display.  The  use  of  such  displays  for  supporting  group 
+learning tasks by  focusing the group on a large centralized 
+vertically  mounted  display  is  common  practice,  and  often 
+found  in  the  form  of  electronic  whiteboards  [18]  where 
+simultaneous group interaction with content is undesirable.  
+
+Robustness 
+Emphasizing  the  importance  of  reliability,  three  levels  of 
+technology  are  described  by  Buxton;  “standard  spec., 
+military  spec.,  and  artist  spec”  [5].  ECAs  working  in  a 
+situated  environment  within  a  highly  constrained  and 
+pressured workflow clearly require the third level of robust 
+design.  As  such,  key  design  paradigms  drawn  from  music 
+and  production  technology  were  included  in  TryFilm  both 
+for  practicality  and  to  give  credibility  to  the  system  on 
+location.  Auto-save,  rollback  and  restore  of  the  interface 
+state were implemented alongside a startup system designed 
+for rapid user feedback and background loading. TryFilm’s 
+editing  is  non-destructive,  working  on  a  copy  of  the  raw 
+footage, and clips can be reset at any time. A confirmation is 
+required  to  ‘delete’  clips  from  the  interface.  The  sensitive 
+optical  tracking  technology  and  lack  of  weather  proofing 
+required us to provide a 1.5m x 1.5m black-out waterproof 
+gazebo  enabling  use 
+in  all  weather  conditions,  and 
+deployment  outside  the  immediate  shoot  location  where 
+space is at a premium. Deployment of the gazebo increases 
+setup  time  of  the  system  from  five  to  fifteen  minutes  on 
+average. 
+
+Supporting Self-Reflection, Discussion and Coaching 
+Supporting  self-reflection  for  ECAs  is  facilitated  primarily 
+through  playback  of  individual  clips  or  edited  sequences. 
+Clips arrive and are collected onto a re-useable ‘shelf’ area 
+at the top of the display. This shelf is a common storage area 
+between  all  scenes,  supporting  easy  copy,  paste  and  move 
+operations  across  multiple  scenes.  Clips  can  be  moved 
+between the timeline and the shelf to perform editing.  
+
+Although  TryFilm  supports  complex  editing  tasks,  we 
+designed the action of playback to be as simple as placing the 
+preview tangible onto a thumbnail of the clip. Once a specific 
+clip is found, pinning it to the surface and lifting the tangible 
+control adds this clip to the ‘shelf’ area of the interface for 
+organization  or  further  manipulation  or  placement  on  the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+timeline. Once clips are associated with a scene storyboard, 
+they can be recalled at any time by viewing the timeline for 
+that scene.  
+
+TryFilm offers a random access model for playback. Rapid 
+access  of  clips  from  any  day  of  the  shoot  allows  the 
+comparison  of  shots  filmed  previously  with  recent  ones, 
+supporting comparison and analysis of acting over the length 
+of the shoot. All clips that have been imported are stored in 
+the file-menu control. Any clip from any day of the shoot can 
+be  recalled  quickly  by  placing  this  tangible  control,  which 
+displays  clips  in  a  paged,  date-ordered  list  grouped  by  the 
+relevant shoot day.  
+
+In clip-edit mode, a single time scale is displayed on the table 
+surface, and the chosen clip is looped onto the preview output 
+display. Placing and moving the in and out controls onto the 
+display alters the start and end position of the clip, which is 
+reflected in the playback. This view acts a ‘focused’ mode, 
+easily  supporting  repeated  playback  of  a  single  clip,  and 
+takes  over  the  interaction  space  of  the  tabletop  preventing 
+other actions. 
+
+Each  recording  or  ‘take’  of  a  scene  may  involve  slight 
+variations in an actor’s performance  which  need reviewing 
+in  the  context  of  the  director’s  comments  during  shooting. 
+TryFilm allows users to stack these multiple takes vertically 
+on  the  timeline,  and  then  switch  between  them  by  placing 
+and  rotating  the  switch-take  control  on  a  vertical  stack  of 
+clips. This allows for the rapid review of footage of different 
+performances  of  the  same  scene.  By  making  possible  for 
+ECAs  to  scrutinize  all  of  the  footage  that  was  shot  (even 
+those  deemed  un-usable  by  the  crew),  ECAs  are  able  to 
+engage with the crew decisions, roles and methods of judging 
+success in moments of down-time. 
+
+Supporting Situational Awareness 
+Facilitating ECAs’ awareness of the current shoot progress 
+(which scene is being shot, how many are left remaining) is 
+key to support them gaining an understanding of their own 
+role within the production and preventing boredom. TryFilm 
+is  designed  with  a  large  vertically  mounted  display  which 
+can  be  seen  from  most  places  on  location  when  others  are 
+playing back footage.  
+
+This breaks with the traditional compartmentalized model of 
+production in which only the director and producer can view 
+footage on location, and supports building of ownership of 
+content by the rest of the cast and crew. Users can add key-
+value text notes as metadata to any media in the system by 
+placing  a  tangible  on  the  item  and  selecting  from  a  pre-set 
+list or adding custom terms using the keyboard. These notes 
+can be viewed by any user of the system, allowing others to 
+input  into  the  notes  made  individually,  and  support  users 
+keeping  notes  and  tagging  clips  with  reminders  relevant  to 
+their practice.  
+
+For  more  expressive  creative  input  into  TryFilm,  two 
+drawing interactions are supported. A digital Bluetooth pen 
+mounted on the interface can be used to draw new content 
+
+ 
+
+1417
+
+frames  on  the  supplied  paper  pad  at  any  point  during  the 
+shoot.  These  frames  appear  as  still  image  tiles  identical  to 
+video clips and can be used as in-place notes, placeholders 
+for  new  or  missing  content,  or  visual  descriptors.  The 
+Annotation control can place the tree-view into a ‘drawing’ 
+mode, which allows users to draw onto the background of the 
+tree  with  their  fingers  to  annotate  and  markup  the  data  for 
+reference.  
+
+A progress bar on each node indicates how much of the scene 
+footage has been shot, and nodes change color depending on 
+the  last  shot  added  to  them,  helping  to  visualize  shoot 
+progress. In Scene Edit mode, TryFilm presents a multi-track 
+linear timeline onto which video clips can be placed, edited 
+and then played back. The clip editing window overlays the 
+entire  interface  when  editing  single  clips,  allowing  for 
+accurate manipulation of tangible controls that change the in 
+and out points of the clip, supporting instant scrubbing and 
+accurate playback of individual performances. The ability to 
+see each decisions  made aims to drive each crew-members 
+understanding of how the content will be used and how the 
+rest  of  the  crew  is  performing  to  produce  the  content, 
+fostering an appreciation of other roles within the team. 
+
+Supporting Engagement 
+ECA’s  engagement  in  the  film  production  environment  is 
+often  overlooked,  however  it  is  important  for  ECAs  to 
+appreciate the value of their contribution and experience the 
+sense of collective achievement that comes with contributing 
+to a larger production. 
+
+TryFilm, besides providing access to footage shot throughout 
+the production, also enabled cast and crew to try out different 
+versions  of  the  narrative.  Clips  can  be  assembled  onto  the 
+timeline of any of the scenes, and played back by placing the 
+
+Figure 3. TryFilm’s Tree view (top) and Scene Edit view 
+
+(bottom) 
+
+ 
+
+play-head  control  on  the  timeline,  creating  quick  edits. 
+Moving  this  control  or  scrolling  the  timeline  scrubs  the 
+video,  allowing  for  rapid  movement  between  cuts.  In  tree-
+view  (see  figure  3),  these  scenes  can  be  previewed  as 
+complete  edits  and  then  reconfigured  to  check  for  issues 
+between scenes. By drawing a line through the scenes in the 
+desired playback order, ECAs can try out different edits of 
+each scene, and even create their own alternative narratives, 
+reinterpreting the script using available footage.  
+
+As  all  footage  from  the  shoot  is  available  to  view,  the 
+playback of previous days’ clips can help cast who were not 
+present  at  those  shoots  to  place  their  own  performances  in 
+the  context  of  their  character’s  narrative  journey  and 
+understand  the  current  production  schedule.  The  rapid 
+turnaround  of  footage  into  TryFilm  is  intended  to  build 
+ownership over the content, and facilitate discussion around 
+the scenes that are fresh in the ECAs’ mind.  
+
+DEPLOYMENT 
+The deployment of TryFilm took place during a twelve day 
+film shoot planned by Trylife in a busy district of London. 
+The film was shot over five locations ranging from a council-
+run  youth  center  to  private  houses,  a  hospital  and  a  police 
+station.  Trylife  recruited  a  freelance  film  crew  of  twelve 
+members,  all  of  whom  were  recent  film-school  graduates. 
+The crew was joined by fifteen ECAs recruited from the local 
+area  through  workshops  at  youth  organizations  and  acting 
+groups, and through specialist talent recruitment agencies.  
+
+Three  of  the  cast  had  previous  experience  performing  in  a 
+professional  environment,  whilst  for  12  this  was  their  first 
+professional role. In addition, a very experienced actor from 
+the  Trylife  team  was  available  as  a  mentor  throughout  the 
+shoot. During the shoot, two teams of three researchers made 
+observations,  took  notes  and  conducted  multiple  short 
+interviews  with  each  member  of  cast  and  crew.  A  video 
+camera was set up above TryFilm to capture each interaction 
+that took place (see Figure 4). 
+
+It  was  essential  that  the  research  team  exercise  timing  and 
+sensitivity in conducting their research so as not to hinder the 
+production team. Key to this strategy was leveraging the film 
+experience  of  our  researchers  (all  of  whom  had  worked  in 
+
+Figure 4. Still from the camera above TryFilm on location  
+
+ 
+
+ 
+
+1418
+
+SESSION: MULTIMEDIA CREATION AND REMIXING
+
+film previously) in offering their time and skills as additional 
+crew members. To build trust with the crew and secure their 
+role  on  set,  the  research  team  provided  logistical  and 
+production support when required. While one member of the 
+research  team  was  to  provide  support,  observe  and  answer 
+questions about TryFilm, the rest took on formal crew roles, 
+fulfilling the DIT (Digital Image Technician) role, copying 
+and storing the footage for Trylife.  
+
+During the shoot, cast and crew were introduced to TryFilm 
+by the research team and the Executive Producer. Crucially, 
+they were shown its capabilities but not instructed in how it 
+should  be  used  or  by  whom;  rather  we  followed  a  similar 
+strategy as in  the  deployment of StoryCrate [1],  in that  we 
+encouraged all the cast and crew to play and experiment with 
+the  system,  rather  than  presenting  it  as  a  tool  for  one 
+particular group or task.  
+
+We  were  open  and  responsive  to  new  appropriations  of 
+TryFilm  during  the  shoot,  following  up  observations  with 
+targeted  interviews  when  appropriate.  A  responsive  and 
+iterative research strategy was used where questions arising 
+from  the  cast  and  crew’s  activity  could  be  discussed 
+immediately  and  responded  to  quickly  with  follow  up 
+questions. Daily meetings of the research team were held to 
+reflect  on 
+the  days’  activity  and  build  a  coherent 
+understanding  of  their  observations.  Through  this  process, 
+interviews with cast and crew were guided by an increasing 
+understanding  of  context.  Questions  could  also  be  cross-
+referenced between interviewees to build a richer and more 
+detailed picture and importantly, updates could be  made to 
+TryFilm in response to user feedback. 
+
+RESULTS 
+In each location, TryFilm was set up and deployed alongside 
+the  camera  and  lighting  equipment  store  or  ‘green  room’ 
+(waiting  area  for  actors)  –  sites  which  were  a  focus  for 
+activity during the shoot – and was made available during the 
+entire  period  of  the  shoot.  The  multi-modal  design  of  the 
+interface  facilitated  a  simple  learning  process  primarily 
+through  observation  and  repetition  of  peer  viewed  actions, 
+but  specifically  through  the  use  of  iconographic  tangibles,  
+“[…]it’s  so  easy  to  use  because  we  could  just  play  with  it 
+ourselves – just read the little widgets and whatever its says 
+it  does.”.  After  a  few  brief  introductions,  the  researchers 
+were  rarely  asked  for  assistance  in  performing  tasks,  with 
+users preferring to ask a peer and even teaching members of 
+the crew. 
+
+By the end of  production, TryFilm  had been  used by  more 
+than 20 members of the  production team. Not surprisingly, 
+given the amount of time spent waiting on set, the cast used 
+the system far more than the crew. The male and female leads 
+used the system most often (up to three hours per day over a 
+number  of  sessions)  reflecting  the  fact  that  they,  of  all  the 
+cast,  spent  most  time  on  set.  Other  cast  members  used  the 
+system more sporadically, often in groups of 2-4 for up to 1 
+hour at a time.  
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+The crew used the device far less often than the cast, indeed 
+several never experimented with it at all. The lighting team 
+for example checked their setups with the director and used 
+neither TryFilm, nor the camera monitors, taking pride in the 
+fact that they knew what needed to be done from experience. 
+Makeup Artists and the Continuity Assistant, along with the 
+Director and Producer used the device most often (up to 30 
+minutes per day), mainly to check for continuity errors.  
+
+Self-Reflection and Group Discussion 
+From the beginning of the production, the cast used TryFilm 
+chiefly to access and play back footage of their scenes, most 
+commonly to reflect on their own performances, “I’ve been 
+looking  at  mainly  my  body  language  and  my  facial 
+expressions,  just  to  help  me  see  how  I  could  change  them. 
+Looking to see if my performance was natural”. Typically, 
+cast  were  recalling  scenes  from  much  earlier  points  in  the 
+shoot  next  to  ones  shot  that  day  for  comparison.  Actors 
+reflecting on their own practice reduced the pressure for the 
+crew in recalling and making notes on specific points, using 
+TryFilm as a reference for later discussion, “…It really has 
+helped  me  not  to  breathe  down  their  neck  and  separately 
+have a look at what’s happening, then discuss it with them 
+later.”  
+
+One cast member in particular described how the opportunity 
+for analyzing a bad performance outweighed the emotional 
+strain of watching it back, “At least I’ve seen it before, even 
+if I’m meant to look horrible or I do look horrible, let me see 
+it before”. Similarly, the male lead used TryFilm’s ability to 
+view  shots  in  the  order  they  might  be  edited  to  maintain 
+consistency of his character and performance, “… being able 
+to do my scene and come back and watch it, make the cuts 
+myself and improve it. You get more of an idea of what you 
+could do to change it, to make it better…” He added that he 
+could see how performing this task on location could assist 
+his  development  as  an  actor  supplementing  the  minimal 
+feedback  he  received  from  the  director  on  set.  Often  these 
+playback  and  editing  sessions  took  place  in  small  groups, 
+where  actors  would  critique  and  compare  each  other’s 
+performances. In particular, the male and female leads often 
+viewed  multiple  takes  of  their  performances  together  to 
+observe  their  interactions  with  each  other.  The  tangible 
+controls were found to be useful here as the actors could pass 
+controls to each other, enabling rapid turn-taking while both 
+cast members were at the interface. 
+
+ Due  to  changing  weather  TryFilm  was  confined  to  a 
+waterproof blackout tent in some locations. This prevented 
+observation of the content from a distance, but introduced a 
+private viewing area, which was utilized by the cast, many of 
+whom spent hours monitoring, evaluating and reflecting  on 
+their own performances without the pressure of judgment by 
+others. Even the experienced actors took to using TryFilm in 
+this  way,  “I don’t usually like to watch myself back on the 
+camera,  but  when  it’s  like  that,  I  guess  it  can  help  you 
+improve your performance, if you notice something on it as 
+well.”  This  scenario  highlighted  the  unexpected  tension 
+
+ 
+
+1419
+
+between  supporting 
+peripheral awareness of content by the wider team. 
+
+in-depth 
+
+individual  playback  and 
+
+Coaching and Mentoring 
+Alongside  casual  playback  of  footage,  members  of  the 
+Trylife team were actively using TryFilm to engage ECAs in 
+acting coaching sessions. On numerous occasions, a member 
+of  the  team  would  take  specific  ECAs  over  to  TryFilm, 
+navigate to previous footage, and engage the actors in guided 
+reflection, offering feedback on their performance using the 
+large display to present footage back to the actors. Often the 
+result of a session would entail the actor bringing others to 
+TryFilm  and  presenting  what  they  perceived  as  their  best 
+work, building self-confidence and morale amongst the cast.  
+
+The  Executive  Producer  of  Trylife  (who  had  trained  as  a 
+youth worker) saw a clear opportunity for using the tool to 
+engage  members  of  the  cast  and  crew  with  each  other, 
+seeking out individuals and grouping them together around 
+TryFilm where he would perform guided playback, selecting 
+particularly interesting clips, “[…] what I wanted to do was 
+make sure that even right down to the runner would go and 
+have a look and see what we were actually creating because 
+[…]they  can’t  really  see  what  the  finished  product’s  like 
+[…]It’s great so it keeps people motivated.” 
+
+On other occasions, TryFilm was used by crew members to 
+demonstrate  to  the  actors  the  effect  of  certain  performance 
+techniques.  During  a  fight  scene,  the  Stunt  Coordinator 
+struggled  initially  to  convince  the  cast  members  that 
+punching  a  short  distance  to  one  side  of  an  actor’s  head 
+would  create  the  illusion  of  an  impact  on  screen.  Playing 
+back footage from earlier in the day using TryFilm, the cast 
+were able to see the effect of the illusion and take up correct 
+positions without help in subsequent scenes.   
+
+Engagement of Cast and Crew 
+As using TryFilm became everyday practice, the cast became 
+adept  at  navigating  and  manipulating  footage  and  through 
+these  skills  started  ‘playing’  with  the  film,  trying  out 
+different  playback  sequences  outside  the  official  narrative. 
+This playfulness was important in maintaining engagement 
+of  the  cast  with  the  project,  particularly  during  periods  of 
+boredom on set; however, a negative consequence of this was 
+identified by the Director, who expressed concern that within 
+a  production  with  more  experienced  actors, 
+these 
+opportunities would foster second-guessing of the director’s 
+actual decisions and increase dissent amongst the cast. 
+
+Allowing TryFilm to be operated by anyone on location was 
+found  to  give  the  actors  a  greater  stake  in  the  production 
+process. In comparison to the  monitors sometimes  used by 
+directors, which are generally off-limits to the cast, TryFilm 
+offered  a  shared  space  that  the  cast  were  genuinely 
+encouraged to use. As one cast member stated, “S***, that 
+must  be  really  expensive.  Normally  young  people  are  told, 
+’Don’t touch that, don’t touch this, don’t touch that’ but with 
+that it’s like, ‘Yes man, just go on it.’”  
+
+In  particular  the  crew  valued  how  TryFilm  motivated  the 
+
+cast,  “So,  it's  really  nice…if  they  have  a  few  minutes,  and 
+have  a  look  at  what  we're  filming  because  it  helps  them, 
+keeps  them  motivated  because  they  see  that  it  looks  good. 
+Then it gives them a boost, so they can go out and keep doing 
+it.”  
+
+TryFilm became such a part of the actors’ workflow that the 
+crew often looked for missing cast members around it before 
+checking  elsewhere.  Significantly,  the  Director  valued  the 
+centralized  and  public  nature  of  TryFilm  as  a  method  of 
+drawing his team together over the shoot, “But yes, all the 
+young  people  coming  in  and  standing  around  it  and  then 
+being  told  that  they  can  use  it  and  actually  start  messing 
+around with it, was great. It just created this buzz”. 
+
+Situational Awareness 
+TryFilm’s capacity to make footage available to view shortly 
+after shooting played a large role in encouraging the cast to 
+consider the production roles of the wider crew. They were 
+able to see a direct correspondence between actions they saw 
+the crew performing and their effect on the output of the film. 
+This  built  appreciation  of  the  crew’s  skills,  furthered 
+understanding  of  their  roles  and  helped  increase  trust, 
+bridging  the  traditional  social  divide  between  the  cast  and 
+crew.  Actors confirmed that seeing the result of the crew’s 
+input  on  location  led  to  greater  awareness  of  the  craft 
+involved  in  producing  the  film  -  something  which  they 
+thought  might  be  of  use 
+their  own  professional 
+development, “I learned a lot these days, like if I wanted to 
+do a short film. If I wanted to shoot something myself why 
+not, you get the gist of it.” 
+
+in 
+
+The understanding of their place within the team and value 
+of  their  decisions  became  central  to  peripheral  crew 
+members’  interactions  with  TryFilm  after  observing  actors 
+use  it,  “To  see  what  was  actually  going  on  and  how  it  all 
+looked. How it all will come together eventually. Obviously 
+there are all them angles and then how they they're just going 
+to cut and then put it all  - like it just flips between - it was 
+good to see all - how it is done.”  
+
+in  different  scenes  was  valuable 
+
+The  actors  assembled  clips  into  short  edits  to  see  how  the 
+viewer  would  experience  their  performance,  “it’s  so  much 
+more clear, you can really start playing with the editing and 
+dragging it all together”. In particular, the ability to see how 
+scenes and narrative emerged incrementally through actors’ 
+performances 
+for 
+understanding  their  characters’  continuity.  TryFilm  was 
+helpful 
+day-to-day 
+understanding of how the shoot was progressing, including 
+on  days  when  they  were  not  present,  “What  I’m  really 
+enjoying is the stuff that was on the night shoot went, what, 
+the  next  day  or  it  can  be  just  straight  away,  just  plug  in”. 
+Cast  members  commented  on  the  value  of  seeing  their 
+performance in the context of the wider narrative,  “I got to 
+see other scenes that I wasn’t in and it’s just helpful to see 
+the whole world of the story”. 
+
+cast  members’ 
+
+in 
+
+supporting 
+
+Interestingly, even during these sessions, few members of the 
+
+ 
+
+1420
+
+SESSION: MULTIMEDIA CREATION AND REMIXING
+
+cast and no members of the crew chose to use the branching 
+narrative  view  to  watch  the  entire  production  from  start  to 
+finish. Instead, the attention of each member of the team was 
+usually focused on fragments of scenes and their interactions 
+with  each  other.  Rather  than  use  TryFilm  for  logging,  the 
+crew  used  traditional  paper  logs  to  keep  track  of  how  the 
+shoot was progressing. 
+
+for  continuity.  One  of 
+
+Increasing  the  visibility  of  content  on  location  was  an 
+important role of TryFilm, and in particular the large display 
+enabled  cast  and  crew  to  analyze  and  compare  specific 
+footage 
+the  makeup  artists 
+commented,  “it's  good  as  a  makeup  artist  on  their  (the 
+casts’) behalf because if they wanted to pick up anything, like 
+detailing. Especially with us, we use HD makeup, we can see 
+it  clearly  on  the  screen  because  it's  quite  wide.  Yes,  so  we 
+can pick up all the little details”.  
+
+Emergent Behavior and Playful Interaction 
+Unexpectedly, we observed, on multiple occasions, that the 
+novelty  of  the  device,  its  availability  and  the  access  to 
+content encouraged members of the cast to bring their peers 
+from  the  local  community  to  the  shoot,  use  TryFilm  to 
+explain and engage them with the issues, the process of film 
+making  and  show  off  their  role,  “I’ve  brought  my  friends 
+along to come and see it, I’ve tweeted about it and I think it’s 
+really,  really  helpful”.  The  Trylife  team  also  saw  an 
+opportunity to use TryFilm to engage local  residents in the 
+filming process. Local residents were invited to visit the set 
+and  TryFilm  was  used  to  help  quickly  explain  the  project, 
+ensuring the goodwill of the local community. 
+
+The Executive Producer realized the value of incrementally 
+collecting the ‘best clips’ for when he needed to explain the 
+vision  and  progress  of  Trylife  to  VIPs,  stakeholders  or 
+visitors to the set. Initially, he presented individual clips, but 
+once more footage was available, he set to editing his own 
+trailer  using  TryFilm,  effectively  producing  an  on-site 
+marketing tool, which demonstrated the progress of the shoot 
+and the quality of the content. Towards the end of the shoot, 
+this  edit  was  exported  to  a  professional  format  (Final  Cut 
+Pro) and was finished by a professional editor for release on 
+the internet, becoming an official trailer for the production. 
+
+DISCUSSION AND CONCLUSIONS 
+In  designing  TryFilm,  we  took  insights  gained  through 
+working  with  established  broadcast  crews  on  linear  film 
+projects and applied them to a very different situation: early-
+career  film  companies  working  on  low-budget,  interactive 
+media productions. As discussed, TryFilm was designed to 
+support  a  range  of  activities, 
+including  rush-editing, 
+construction of new branching narratives, guided reflection 
+on acting practice.  
+
+In practice we found that cast and crew used the system in a 
+limited number of ways for very different purposes. The vast 
+majority of interactions with the system was by the cast and 
+involved simple browsing, comparing and playback of clips 
+to reflect on performances. Crew members used the system 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+rarely,  mostly  using  it  for  error-checking  and  continuity, 
+again  relying  on  the  device  as  a  high-resolution  playback 
+system.  
+
+The tangible interaction  scheme  was  helpful in  making the 
+system  easy  to  access  and  also  enabled  cast  members  to 
+rapidly  switch  control  of  the  interface  from  one  to  another 
+during  discussions.  However,  far  more  important  to  how 
+often  TryFilm  was  used,  was  the  way  it  functioned  as  a 
+shared  space  for  reflection,  training  and  social  interaction 
+between  cast  and  crew.  TryFilm  did  not  disrupt  or 
+reconfigure  the  crew  hierarchy.  It  did  however  enable  the 
+Director  and  Producer  to  maintain  a  largely  traditional 
+production workflow, while promoting communication and 
+discussion between team members, enabling the cast to feel 
+more  involved  and  the  crew  to  maintain  a  better  shared 
+awareness of how the work was progressing.  
+
+Our analysis suggests that the technology supported ECAs to 
+develop their own practice and to support the functioning of 
+the  production  team  as  a  whole.  The  cast  valued  having  a 
+shared space in which to reflect on their practice, gain peer 
+support  and  learn  more  about  the  practice  of  film  making, 
+with  the  chance  to  apply  these  skills  immediately.  Their 
+interactions  with  TryFilm  had  a  positive  effect  on  the 
+production in general and enabled them to contribute to the 
+work  of  the  production  team  by  assisting  new  actors  and 
+extras joining the production. Crucially, this benefit came at 
+no extra cost to the production team in terms of time, as cast 
+members could learn and experiment during their down time, 
+without needing support from a dedicated crew member.  
+
+We  found  that  many  of  Trylife’s  concerns  were  similar  to 
+their more established counterparts in previous projects. For 
+example,  some  of  the  crew  speculated  that  allowing  the 
+entire  cast  and  crew  access  to  the  project  footage  could 
+impact the hierarchical structure of the shoot. In particular, 
+the Director suggested that giving more experienced actors 
+access to footage during their time on location might cause 
+them to be over-critical of their performances, undermining 
+his authority on set, although no such problems were faced 
+during the deployment.  
+
+Of  particular  interest  was  the  emergent  behavior,  which 
+developed  around  TryFilm.  For  example,  the  production 
+team was able to use the interface to support engagement of 
+both the local community and stakeholders in the production. 
+We  suggest  that  facilitating  open  collaborative  working 
+spaces in the design of interfaces for new media production 
+has the potential not just to support existing workflows but 
+to lend new capabilities to established production teams.  
+
+Despite  the  Production  Team’s  request  for  features  to 
+support  viewing  of  branching  narratives,  this  feature  was 
+rarely  used  and  the  crew  used  paper  documents  to  log  and 
+keep  track  of  footage  despite  TryFilm’s  logging  and 
+annotation  capabilities.  This  demonstrates  how  familiarity 
+and  skill  with  a  simple  device  can  outweigh  the  perceived 
+benefits of a new system. We speculate that this might have 
+
+been  overcome  with  prior  training  of  the  crew-members, 
+however  a  better  solution  may  well  have  been  to  explore 
+ways  of  better  integrating  TryFilm  with  pen  and  paper 
+logging systems, possibly using systems like Anoto.  
+
+As  the  complexity  of  interactive  film  projects  increases, 
+TryFilm demonstrates how multipurpose tools that facilitate 
+instant  playback,  on-site  shot  review  and  contextual 
+awareness of a shoot can support actors’ and crews’ practice 
+and  development.  Our  deployment  suggests  that  simple, 
+inclusive interaction schemes that create shared and flexible 
+social  spaces  can  be  useful 
+in  augmenting  existing 
+production  environments,  extending  the  work  that  can  be 
+done  by  capitalizing  on  long  periods  of  cast  downtime 
+common to most film productions.  
+
+In  particular,  through  working  with,  rather  than  against 
+existing workflows and using systems that encourage greater 
+collaboration  and  discussion  between  team  members,  film 
+companies can work more efficiently, realize more complex 
+projects  and  make  more  of  their  resources,  especially  in 
+terms of their acting talents. 
+
+ACKNOWLEDGEMENTS 
+This  work  was  supported  by  the  RCUK  Digital  Economy 
+Programme  [grant  number  EP/G066019/1  -  SIDE:  Social 
+Inclusion through the Digital Economy] 
+
+REFERENCES 
+1.  Bartindale, T., Sheikh, A., Taylor, N., Wright, P. and 
+
+Olivier, P. 2012. StoryCrate: tabletop storyboarding for 
+live film production. CHI ‘12. ACM Press (2012) 
+
+2.  Boal, A. Games for Actors and Non-Actors: 
+
+Amazon.co.uk: Augusto Boal: Books. 
+http://www.amazon.co.uk/Games-Actors-Non-Actors-
+Augusto-Boal/dp/0415267080. 
+
+3.  Boal, A. Theater of the Oppressed. Pluto Press, 2000. 
+4.  Bordwell, D. Film futures. SubStance, (2002). 
+5.  Buxton, B. Artists and the art of the luthier. SIGGRAPH 
+
+31, 1 (1997), 10–11. 
+
+6.  Fleck, R. and Rogers, Y. Actions Speak Loudly with 
+
+Words: Unpacking Collaboration Around the Table. ITS 
+’09, ACM Press (2009). 
+
+7.  Gutwin, C. and Greenberg, S. Design for individuals, 
+
+design for groups. CSCW ’98, ACM Press (1998), 207–
+216. 
+
+8.  Hornecker, E. and Buur, J. Getting a grip on tangible 
+
+interaction. CHI ’06, ACM Press (2006), 437. 
+
+9.  Hornecker, E. A design theme for tangible interaction: 
+
+embodied facilitation. ECSCW ‘05, (2005), 23–43. 
+
+10. Jenkins, H. Convergence Culture: Where Old and New 
+
+Media Collide. NYU Press, 2006. 
+
+11. Jenkins, H. Confronting the Challenges of Participatory 
+
+Culture: Media Education for the 21st Century. MIT 
+Press, 2009. 
+
+12. Kharrufa, A., Leat, D., and Olivier, P. Digital mysteries: 
+
+designing for learning at the tabletop. ITS’ 10, (2010), 
+197. 
+
+13. Kharrufa, A.S. and Olivier, P. Exploring the 
+
+ 
+
+1421
+
+SESSION: MULTIMEDIA CREATION AND REMIXING
+
+requirements of tabletop interfaces for education. 
+International Journal of Learning Technology 5, 1 
+(2010), 42. 
+
+14. Lave, J. and Wenger, E. Situated learning: Legitimate 
+
+peripheral participation. 1991. 
+
+review of the literature. Journal of Computer Assisted 
+Learning, (2005). 
+
+19. Stanislavsky, K. An Actor’s Handbook: An Alphabetical 
+
+Arrangement of Concise Statements on Aspects of 
+Acting. Taylor & Francis, 2004. 
+
+15. Mezirow, J. Fostering Critical Reflection in Adulthood. 
+
+20. Telo, A.R. Participatory Film Production as Media 
+
+1990. 
+
+16. Nash, K., Hight, C., and Summerhayes, C. New 
+
+Documentary Ecologies. Palgrave Macmillan, 2014. 
+
+17. Scott, S., Grant, K., Carpendale, S., Inkpen, K., and … 
+
+R. Co-located Tabletop Collaboration: Technologies 
+and Directions. Workshop. CSCW ‘02, (2002). 
+18. Smith, H., Higgins, S., Wall, K., and Miller, J. 
+
+Interactive whiteboards: boon or bandwagon? A critical 
+
++ 
+
+Practice. International Journal of Communication 7, 
+2013, 21. 
+http://ijoc.org/index.php/ijoc/article/view/1593. 
+21. Terrenghi, L., Kirk, D., Sellen, A., and Izadi, S. 
+
+Affordances for manipulation of physical versus digital 
+media on interactive surfaces. CHI ’07, ACM Press 
+(2007), 1157.  
+
+ 
+
+1422
+
+

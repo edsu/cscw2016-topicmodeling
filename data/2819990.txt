@@ -1,0 +1,1766 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Increasing Collocated People’s Awareness of the Mobile 
+
+User’s Activities: a Field Trial of Social Displays 
+
+Pradthana 
+
+Aris Malapaschas 
+
+Thomas Olsson 
+
+Kaisa Väänänen 
+
+Jarusriboonchai 
+
+Tampere University of Technology 
+
+Korkeakoulunkatu 1, P.O.Box 553, 33101 Tampere Finland 
+
+{firstname.lastname}@tut.fi 
+
+ABSTRACT 
+Many activities that have traditionally been performed with 
+different  dedicated  physical  artifacts  are  now  done  with 
+personal  mobile  devices.  Consequently,  the  privacy  of 
+mobile  interfaces  has  hampered  social  observability  and 
+chances for serendipitous interactions. For example, reading 
+an  electronic  newspaper  with  a  mobile  device  does  not 
+allow  the  surrounding  people  to  be  similarly  aware  of  the 
+reader’s  activity  as  traditional  newspapers.  Social  displays 
+are  additional  displays  on  mobile  devices  providing  the 
+surrounding  people  with  light-weight  cues  about  the 
+activities  of  the  device  user.  We  implemented  a  prototype 
+that  reveals  the  user’s  current  active  application  and 
+presents  its  name  on  an  e-ink  display  on  the  backside  of  a 
+mobile  device.  We  conducted  a  ten-day  field  trial  with  13 
+participants  using  the  prototype.  The  results  show  that  the 
+prototype  was  able  to  increase  awareness  of  users’  mobile 
+activities  and  occasionally 
+interactions  with 
+others, without significantly violating the sense of privacy. 
+
+triggered 
+
+Author Keywords 
+interaction; 
+Collocated 
+interaction;  face-to-face 
+social display; personal interface; user trial; field study.  
+
+social 
+interaction;  backside  display; 
+
+activity 
+
+awareness; 
+
+ACM Classification Keywords 
+H.5.3.  Information  interfaces  and  presentation  (e.g.,  HCI): 
+Group and Organization Interfaces. 
+
+INTRODUCTION 
+The  designs  of  mobile  devices  have  mainly  focused  on 
+personal  use  and,  consequently,  they  are  also  perceived  as 
+personal  devices  [10].  This  is  evident  from,  for  example, 
+the  small  displays, 
+input,  and  vibration 
+feedback  that  is  intended  as  personal.  In  addition  to  the 
+private  interface,  current  mobile  devices  enable  a  broad 
+range  of  activities  that  were  previously  carried  out  with 
+
+touch-based 
+
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work  for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must  be  honored. 
+Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or  republish,  to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819990  
+
+dedicated physical artifacts. Therefore, many activities that 
+traditionally  allowed  social  elements  have  become  private. 
+For example, reading a newspaper allows others to see what 
+one  is  doing,  even  to  guess  which  section  one  is  reading, 
+and,  especially  in  close  relationships,  to  inquire  about  the 
+content.  Similarly,  browsing  photos  or  watching  videos  on 
+mobile  devices  have  lost  many  of  the  social  elements  that 
+physical photos and televisions used to involve (e.g. a joint 
+focus  and  a  shared  interface).  In  other  words,  the  privacy 
+and  personal  characteristics  of  mobile  device  interfaces 
+have decreased the awareness that surrounding others have 
+of the mobile user’s activity. As a result, it could be argued 
+that  opportunities  for  shared  experiences  and  serendipitous 
+interactions around the activity have diminished.  
+
+Additionally,  while  mobile devices have enabled people to 
+be  increasingly  connected  to  remote  others,  in  many 
+situations, a person engaged with their activities on mobile 
+devices  creates  a  private  “bubble”  or  “cocoon”  [32]  and 
+becomes  absent-minded  in  the  surrounding  ongoing  social 
+situation  [18].  As  Turkle  states,  “when  someone  holds  a 
+phone,  it  can  be  hard  to  know  if  you  have  that  person’s 
+attention.  A  parent,  partner,  or  child  glances  down  and  is 
+lost to another place” [32 p.161]. Especially within families 
+or  groups  of  friends,  this  can  hamper  the  sense  of 
+community and create feelings of social isolation. To study 
+this  phenomenon,  numerous  projects  and  discussions  have 
+recently  emerged 
+the  HCI  and  CSCW  research 
+communities (e.g. [9,12]). Also public initiatives have been 
+formed to solve this social issue, e.g. stop phubbing1.  
+
+in 
+
+Awareness of others has been defined as “understanding of 
+the  activities  of  others,  which  provides  a  context  for  your 
+own  activity”  [7].  Raento  and  Oulasvirta  define  social 
+awareness applications as “the idea of a group sharing real-
+time  context  information  via  a  personal  and  ubiquitous 
+terminal”  [27].  While  the  previous  work  on  awareness 
+systems  has  focused  on  remote  awareness,  our  focus  is  on 
+increasing awareness of the surrounding people. Therefore, 
+in this paper  we  use the term  “activity awareness” to refer 
+to  the  awareness  that  collocated  people  have  of  the 
+activities mobile users are doing with their devices. 
+
+1 http://stopphubbing.com/ 
+
+1691
+
+Social  displays  are  envisioned  as  additional  displays  on 
+mobile devices that provide cues to nearby people about the 
+mobile  device  user’s  activities  in  the  digital  realm  (e.g. 
+mobile  services,  applications,  or  content  being  used). 
+Remote  social  awareness  systems  have  been  found  to 
+enhance  communication  and  collaboration  (e.g.  [34]), 
+encourage  serendipitous  interaction  (e.g.  [3]),  and  increase 
+the  sense  of  community  (e.g.  [4]).  Considering  these,  this 
+study  aims  to  (1)  explore  the  potential  of  social  display  in 
+increasing  activity  awareness  of  others  in  the  physical 
+proximity;  and  (2)  consequences  of  increased  awareness 
+from  the  social  display  to  the  mobile  devices  users  and 
+others in the surroundings.  
+
+This  paper  builds  on  our  earlier  paper  [13]  where  the 
+concept  of  social  displays  was  first  introduced,  and  focus 
+groups were organized to evaluate a few early scenarios and 
+to explore the design space with co-design activities. While 
+that  paper  surfaced  interesting  and  important  user-centered 
+aspects of how the concept could be utilized and what risks 
+it involves, it was based on scenario work and focus groups. 
+To  advance  the  research,  this  paper  presents  a  functional 
+prototype  consisting  of  both  a  software  application  and  a 
+simple  hardware  prototype. The hardware consists of an e-
+ink  display  that  could  be  attached  to  the  user’s  mobile 
+device  with  the  social  display  application  installed.  The 
+application  runs  in  the  background  and  displays  the  icon 
+and  name  of  the  currently  active  application  on  the  device 
+(further details in the Methodology section). This prototype 
+was  used  to  run  a  10-day  trial  study  with  13  participants, 
+qualitatively  investigating  a  broad  variety  of  participants’ 
+viewpoints.  With  this  empirical  “in-the-wild”  trial  study, 
+we  could  gain  more  detailed  understanding  of  the  benefits 
+and  risks  involved  in  social  displays,  as  well  as  their 
+implications to the sense of privacy and social interactions.  
+
+To  summarize,  the  contribution  of  this  paper  is  two-fold. 
+First,  we  present  the  design  and  implementation  of  a 
+prototype for social displays. Second, we report the findings 
+of field trial of using social display in real life situations for 
+10  days.  These  insights  can  be  used  to  design  appropriate 
+applications for social displays as well as other technologies 
+aiming  to  increase  activity  awareness  and  enhance  social 
+interactions between collocated people.  
+
+RELATED WORK  
+In  remote  communication,  technology  provides  additional 
+cues  to  mimic  missing  physical  cues.  For  example, 
+ContactContexts  provides  callers  with  current  status  of  the 
+person  they  wish  to  talk  to  in  order  to  help  them  decide 
+whether  it  is  appropriate  for  them  to  make  a  call  [24].  In 
+close 
+awareness 
+encourages  collective  interactions  and  increases  sense  of 
+community.  The  Break-Time  Barometer,  for  example, 
+provides information about other colleagues in a workplace. 
+[15].  A  stationary  alarm-shaped  device  provides  social 
+activity  information  occurring  at  different  locations.  The 
+aim  was  to  encourage  people  to  convene  together  during 
+
+technology 
+
+proximity, 
+
+increasing 
+
+1692
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+their coffee breaks. Similarly, Walky applies microblogging 
+to  a  mundane  walking  activity,  telling  other  seniors  in  a 
+community when someone is going out for a walk [22]. The 
+information  is  believed  to  encourage  further  interaction 
+between  seniors  within  the  community.  Jabberwocky  is  a 
+mobile  application  that  enhances  a  sense  of  community  by 
+informing  who  in  their  surroundings  have  been  previously 
+encountered 
+[25].  This  awareness 
+information is also a resource for developing further social 
+interaction. StudioBRIDGE provides additional information 
+related  to  other  people,  groups,  locations,  and  events  in  an 
+open working space. It is found to help users to decide the 
+appropriateness  of  initiating  an  online  or  face-to-face 
+interaction with others [35].  
+
+in  public  places 
+
+the  activities 
+
+In  collocated  situations,  people  are  aware  of  others’ 
+physical  presence.  However 
+that  are 
+happening in the digital world (e.g. with a smartphone) can 
+remain  unknown.  This  creates  a  design  space  for  the 
+technology  itself  to  increase  activity  awareness  and  create 
+shared  experiences  in  collocated  situations.  Some  earlier 
+research  has  explored  this  design  space  through  different 
+approaches.  Pac-Man  Must  Die  applies  this  limitation  of 
+awareness  to  enhance  the  collocated  game  experience  by 
+creating  a  shared  display  out  of  multiple  mobile  device 
+displays and making it advantageous if the players perform 
+shoulder  surfing  while  playing  [29].  O-SNAP  supports 
+collocated  collaborative  search  on  mobile  devices  by 
+providing  a  mode  that  contains  search-related  information 
+that users can share and comment across devices during the 
+search [31]. Reetz and Gutwin study the effect of different 
+gestural  interaction  sizes  in  maintaining  awareness  among 
+collocated people in a group. The results show that gesture 
+sizes do not have a significant effect on their visibility and 
+awareness  to  surrounding  others  [28].  However,  the  study 
+was  limited  to  the  observability  and  visibility  of  the 
+gestures and did not address about what the user is working 
+on. 
+
+the 
+
+interaction 
+
+Rendering 
+through  an  attached  pico 
+projector  is  another  approach  for  making  mobile  device 
+interfaces  more  visible  and  sharable  to  collocated  people. 
+Cowan  et  al.  suggested  several  use  cases  in  which 
+projectors attached to mobile devices could support face-to-
+face interaction, including  facilitating  spontaneous  sharing, 
+conversation  triggers  and  playful  interaction,  collaborative 
+coordination,  and  personal  expression  [6].  Tweeting  Halo 
+allows users to express themselves using personal projector 
+to  project  the  user’s  Twitter  message  on  the  ceiling  above 
+his/her head [23]. However, using a projector to extend the 
+display  to  the  environment  has  been  found  challenging  in 
+overcrowded  shared  spaces  with  respect  to  privacy  [6,23]. 
+The  privacy  issue  concerns  both  private  content  being 
+shared  in  public  places  and  forcing  eavesdropping,  that  is, 
+others seeing content by mistake.  
+
+In  addition  to  the  pico  projector,  there  are  other  physical 
+objects  studied  for  the  purpose  of  encouraging  interaction 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+found 
+
+to  help  enhancing 
+
+between people. BubbleBadge is a small public display in a 
+broach-like  frame  providing  dynamic  information  [8]. 
+BubbleBadge 
+face-to-face 
+interaction  in  a  non-intrusive  way  [8].  Urbanhermers  is  a 
+small  display  aim  to  be  used  as  a  dynamic  fashion 
+accessory  providing  its  users  a  channel  to  express  and 
+communicate  something  about  themselves  to  others  within 
+face-to-face  physical  environment  [20].  Mugshot  [14]  is  a 
+coffee  mug  with  a  small  OLED  display  attached  to  it 
+presenting  an  image  with  the  aims  to  encourage  and 
+enhance  social  interaction  during  an  encounter  between 
+strangers  and  acquaintances.  Instead  of  utilizing  another 
+physical  object,  we  are  interesting  in  extending  items  that 
+people  are  already  using  and  carrying  together  with  their 
+mobile devices.  
+
+Backside of mobile devices has been widely explored as an 
+alternative  input  channel  for  touch  screen  gestures  (e.g. 
+[6,21]).  In  this  research,  using  a  social  display  is  an 
+alternative  approach  for  making  interaction  with  mobile 
+devices  noticeable  to  others  in  one’s  surroundings.  The 
+backside  displays  have  been  explored  in  face-to-face 
+interaction  between  customer  and  the  service  provider  in  a 
+service  encounter  with  stationary  technology  [11].  The 
+authors  argue  that  having  a  double  display  at  a  service 
+counter has the potential to enhance trust, effectiveness, and 
+collaboration  in  the  service  encounter.  Similarly,  Colley  et 
+al.  propose  using  two-sided  tablet  computer  to  support 
+doctor–patient  interaction  aiming  to  reduce  barriers  and 
+provide useful information  to the patients  [5]. Kleinman et 
+al.  explore  two-screen  laptop,  Billboard,  [16].  Billboard  is 
+designed  to  be  similar  to  social  networks  (i.e.  users  create 
+own  text  on  the  outer  display,  allowing  digital  likes  and 
+etc.)  and  aims  to  invite  and  support  social  interaction 
+between  surrounding  people.  Zhu  and  Höök,  similar  to 
+Tweeting Halo, share users’ tweets on Twitter to collocated 
+people via the phone case [36]. Yotaphone [37] and Inkcase 
+[38]  are  existing  commercial  products  that  offer  a  second 
+screen  on  the  back  of  mobile  phones  as  a  supplementary 
+information  channel  and  that  have  gained  great  interest 
+from  people,  especially  the  InkCase2.  Although  they  are 
+mainly  marketed  for  personal  use,  we  considered  the 
+backside  display  a  promising  form  factor  for  increasing 
+activity  awareness.  Such  a  display  is  less  intrusive  with 
+respect to privacy than a pico projector, but may still allow 
+for  subtle  presentation  of  one’s  current  activity  with  a 
+mobile device to other people around them.  
+
+In  summary,  this  study  extends  the  research  on  activity 
+awareness with a purpose and approach that have not been 
+well  studied  before.  In  particular,  we  explore  the  potential 
+of  the  novel  concept  of  social  displays  for  increasing 
+activity  awareness  in  collocated  situations,  based  on  the 
+
+                                                           
+2  https://www.kickstarter.com/projects/378232716/inkcase-
+plus-e-ink-screen-for-android-phone/description 
+
+visual cues people can see from the user’s activity with the 
+mobile device. 
+
+METHODOLOGY 
+As mentioned, this research continues our earlier empirical 
+user  research  about  the  concept  of  social  displays  [13]  . 
+Compared to the previously conducted focus groups, with a 
+functional  prototype  for  a  field  trial,  we  believed  to  gain 
+more  profound  and  valid  insights  about  the  perceived 
+benefits,  risks  and  opportunities  the  concept  has.  The  field 
+trial  allowed  us  to  also  look  into  aspects  like  how  people 
+utilize  the  social  display  in  their  everyday  life,  how  it 
+affects the behaviors and interactions between the user and 
+the  surrounding  people.  Furthermore,  we  wanted 
+to 
+understand  if  and  how  the  experience  evolves  over  the 
+period  of  use,  particularly  considering  the  perceived 
+benefits after the novelty factor has worn off.  
+
+ 
+
+Figure 1. Illustration of the prototype. A hinge enables the 
+
+user to hold the phone without covering the display with their 
+
+fingers. 
+
+Design of the Prototype 
+The  prototype  consists  of  a  3.5-inch  display  from  InkCase 
+[38] attached to the backside of an  Android smartphone. It 
+is  a  grayscale,  electrophoretic  ink  (e-ink)  display  to  which 
+images  can  be 
+transmitted  from  a  smartphone  via 
+Bluetooth.  With  our  application,  called  Social  Display 
+application, the display shows the icon and the name of the 
+application that is currently  active on the phone,  making  it 
+possible for people around the user to see which application 
+on the mobile device he is using at the moment (Figure 1). 
+
+The  displays  were  attached  to  the  participants’  phones  in 
+the first meetings in a manner that the display would disturb 
+the use of the mobile as little as possible. There was a hinge 
+between the backside of the  mobile device and the display 
+to keep the user from covering the display with their hands 
+and  to  allow  the  display  to  hang  perpendicularly,  thus 
+maximizing its visibility to other people. In most cases, the 
+display was attached slightly below the camera, as shown in 
+Figure 1, so that it would increase only the thickness of the 
+mobile  device  by  approximately.  5.2  mm.  The  added 
+weight was approximately 50g as the display itself weights 
+only  45g.  We  considered  this  as  a  decent  prototype  that 
+would  not  encumber  the  user  excessively  but  still  produce 
+realistic  user  experiences  in  the  everyday  life.  The  same 
+feature  could  be  implemented  with  off-the-shelf  solutions 
+like the YotaPhone [37]. 
+
+1693
+
+the  smartphone  and  uses 
+
+The Social Display application creates a service running in 
+the  background  of 
+the 
+getRunningTasks  function  of  the  ActivityManager  class  to 
+identify the main running application. Every time the active 
+app changes, the service creates an image file that contains 
+the icon and the name of the app and sends it to the display 
+on  the  backside,  with  a  refresh  rate  of  approximately  2 
+seconds. A pre-defined image is shown  when the user is at 
+the  home  screen  or  when  the  main  display  of  the  phone  is 
+locked. The lock-screen picture can be changed by the user 
+chosen from any image in the phone’s gallery.  
+
+Methods and Procedure 
+To address the research questions about user experience and 
+social  influences  of  the  prototype,  a  field  trial  with  13 
+participants in a qualitative approach was conducted.  
+
+information  about 
+
+the  participants  and 
+
+Study Procedure and Data Gathering 
+For  each  participant,  the  study  consisted  of  10-12  days  of 
+using the prototype, with his or her own smartphone. In the 
+beginning  of  the  study  a  one-to-one  introduction  and 
+interviewing session was held with every participant, during 
+which they  were asked to answer questions related to their 
+general attitudes and behaviors about privacy and their use 
+of mobile phone in everyday life. The aim was to not only 
+gather 
+their 
+expectations,  but  to  stimulate  their  thinking  so  that  they 
+could  comprehend  the  purpose  why  the  prototype  was 
+developed.  After  the  interview,  the  participants  were 
+introduced  to  the  concept  and  the  prototype,  and  the 
+necessary applications and hardware were installed on their 
+phones.  Next, 
+initial 
+questionnaire 
+impressions  and 
+expectations of the prototype, as well as their viewpoints on 
+certain  privacy-related  issues  of  phone  usage.  Some  of  the 
+most  significant  questions  and  the  accumulated  data  of  the 
+initial  questionnaire  are  shown  in  Table  1.  In  all  the 
+questionnaires of the study, a 7-point Likert scale (from  -3 
+to  3)  was  used  to  measure  the  participants’  level  of 
+agreement, -3 corresponding to “completely disagree” and 3 
+to “completely agree”.  
+
+the  participants  answered  an 
+
+regarding 
+
+their 
+
+first 
+
+In  the  evening  of  each  day  during  the  trial  period,  the 
+participants  provided  answers  to  a  short  questionnaire 
+regarding  their  experience  with  the  social  display  during 
+that  day.  With  both  open-ended  questions  and  agreement 
+statements,  they  were  asked  to  describe  their  behavior  and 
+feelings while using their phone, as well as the behavior of 
+people  around  them  in  relation  to  the  use  of  the  social 
+display.  They  were  also  asked  to  report  the  conversations 
+that  occurred  with  others  (if  any)  because  of  the  content 
+shown on the display. 
+
+A  second  interview  meeting  was  arranged  with  every 
+participant  at  the  end  of  the  trial  period.  They  were  asked 
+about  their  experience  and  interactions  during  the  whole 
+study  from  various  viewpoints:  for  example,  the  benefits 
+and drawbacks of the social display to both the user and the 
+surrounding  people,  memorable  positive  and  negative 
+
+1694
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+experiences,  if  and  how  it  had  increased  the  activity 
+awareness  of  people  around  them  and  the  participants 
+themselves,  and  how  the  display  could  be  utilized  in  other 
+ways  or  for  other  purposes.  Again,  the  used  methods 
+included both interviewing and a questionnaire. 
+
+Finally,  we had a short questionnaire and interview  for the 
+people  who the participants often  met during  the trial (e.g. 
+spouses, roommates, friends) to survey their impressions of 
+the  prototype  and  if  they  felt  to  be  more  aware  of  the 
+participants’  activities  with  mobile  devices.  Unfortunately, 
+only 8 people (3 partners of participants, 2 close friends, 1 
+colleague, 1 classmate, and 1 roommate) responded. 
+
+themes 
+
+triangulation, 
+
+a  bottom-up  data-driven 
+
+Data Analysis 
+The  analysis  of  qualitative  data  followed  a  procedure  that 
+reminds  the  affinity  diagramming  process  [2]  but  with 
+digital  tools.  First,  it  was  transcribed  (in  verbatim)  and 
+digitized  into  excel  files.  Then  it  was  collaboratively 
+analyzed  with 
+approach, 
+identifying  a  hierarchy  of 
+the  data  and 
+categorizing  all  the  answers  to  the  themes  and  subthemes. 
+To  utilize  researcher 
+three  researchers 
+analyzed  the  data  independent  of  each  other.  The  gained 
+insights  were 
+form  a  common 
+understanding  of  the  findings  as  well  as  commonly  agreed 
+categories.  For  themes 
+in  several 
+participants’  data,  quantification  was  performed.  As  for 
+numerical  data  from  the  questionnaires,  the  averages  were 
+calculated  and  some  trend  charts  of  how  opinions  change 
+day  after  day  were  drawn.  No  advanced  analysis  of  the 
+statistical  significance  of  any  numerical  results  were 
+calculated due to the limited N – however, that was neither 
+the intention in this qualitatively driven study. 
+
+that  were  present 
+
+then  discussed 
+
+in 
+
+to 
+
+Questions 
+
+Mean 
+
+SD 
+
+Familiar people sometimes ask what I am 
+
+1.31 
+
+0.91 
+
+currently doing with my phone 
+
+I often bring up the content I browse as 
+
+1.69 
+
+0.61 
+
+discussion topics 
+
+My friends/family/colleagues sometimes 
+
+0.92 
+
+1.07 
+
+peek at my phone 
+
+I often peek at the displays of other 
+
+0.15 
+
+1.56 
+
+familiar people 
+
+Table 1. Selected statements from the initial questionnaire. 
+The scale is from -3 (completely disagree) to +3 (completely 
+
+agree). 
+
+Participants and Recruiting 
+The  participants  included  7  males  and  6  females  and 
+represented 7 different nationalities (Finnish being the most 
+common – 6/13), their ages ranging from 21 to 42 years old 
+(average  26)  consisting  of  full  time  university  students 
+(9/13),  part-time  workers  (2/13),  and  full-time  workers 
+(2/13).  The  recruitment  of  the  participants  was  done  on  a 
+voluntary  basis  via  email  lists  and  bulletin  boards  at  the 
+local university. They were offered a gift worth 40EUR as a 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+compensation  for  their  efforts  in  the  trial  study.  The 
+participants were selected based on a screening survey that 
+inquired  how  active  mobile  users  they  are  and  how  much 
+they are engaged in various social activities, thus indicating 
+how  suitable  they  would  be  for  using  technology  for  such 
+social  purposes.  The  minimum  requirements  were  that  the 
+participants are savvy smartphone users and socially active 
+in their everyday lives. The chosen participants of this study 
+in  general  are  familiar  with  sharing  their  mobile  device 
+activities  with  others  to  some  extent  and  also  involve 
+mobile devices in their interactions with others (Table 1). 
+
+viewers  did  not  say  a  word  but  merely  observed.  When 
+concluding their impression of the concept, many described 
+the  content  of  the  display  as  too  inadequate  to  trigger  any 
+significant  interaction.  After  this  overview,  the  following 
+sections provide a more in-depth report of the expectations 
+and experiences of using the social display.   
+
+RESULTS 
+We  start  with  an  analysis  of  the  user  expectations  and 
+experiences  from  the  social  display  prototype,  covering 
+aspects  of  perceived  benefit,  privacy,  and  effects  on 
+behavior. This is  followed by the participants’ impressions 
+of  the  potential  of  the  social  display  for  increasing 
+awareness  and  the  social  consequences  of  using  the 
+prototype  with 
+the 
+participants  and  others  in  the  surroundings.  The  reported 
+results include data  from both the interviews (initial, final) 
+and  the  questionnaires  (initial,  daily,  final)  and  both  from 
+the  answers  of  the  participants  and  of  their  often-met 
+friends or partners, which we refer to as viewers.  
+
+interactions  between 
+
+respect 
+
+to 
+
+Expectations and User Experiences 
+When  the  concept  of  the  social  display  was  introduced  to 
+the participants in the first meeting, they found it interesting 
+and  often  described  it  as  “unusual”  or  “different”.  They 
+expressed  to  be  curious  about  the  effects  the  prototype 
+might create and about what others might comment on their 
+activities  with  mobile  devices:  “It  would  be  interesting  to 
+see  what  kind  of  reactions  I  will  get.  It  sort  of  tells  how 
+people  pay  attention  to  you  while  you  don’t  even  realize” 
+(M, 34). Most participants (11/13) were rather unconcerned 
+with  the  idea  of  having  the  prototype  for  10  days  and 
+presenting  their  phone  activity  to  others  and  did  not  think 
+that  it  would  affect  the  way  they  use  their  mobile  device. 
+Only  two  participants  were  concerned  with  the  fact  that 
+their  activity  will  be  exposed  and  cannot  lie  about  their 
+activity when having the social display, “You cannot really 
+lie with this thing. If someone asks what I am doing and he 
+sees Facebook but I say something else, then…” (F, 24). 
+
+Interestingly, after having used the social display for 10-12 
+days,  the  participants’  opinions  about  the  social  display 
+changed rather much (Figure 2). Participants tended to have 
+more  positive  opinion  regarding  the  privacy  of  social 
+display. Even though their activities with mobile devices in 
+fact  became  less  private,  it  seems  that  the  expectations  of 
+the  privacy  intrusiveness  were  more  negative  than  the 
+actual  experiences.  Considering  the  benefits,  participants 
+appeared  somewhat  disappointed  by  its  impacts  on  social 
+interaction.  They  mostly  experienced  interactions  that  they 
+considered as minor social interactions: others around them, 
+or the viewers, merely asked what they were doing but the 
+interaction hardly developed into a conversation. Often, the 
+
+1695
+
+ 
+
+Figure 2. Averages of the participants’ agreements with UX 
+statement before and after the trial period. n =13; completely 
+
+disagree = -3; completely agree = 3;  
+
+Impacts on Mobile Usage Behavior and Sense of Privacy 
+We  identified  two  main  factors  in  the  social  display  that 
+affected the participants’ behavior while using their mobile 
+devices:  the  looks  of  the  prototype  and  its  content.  The 
+prototype’s  appearance  and  the  way  it  is  attached  were 
+reported  to  draw  attention,  making  the  participants  feel 
+somewhat  embarrassed  during  the  first  days,  especially 
+when  in  unfamiliar  environments  surrounded  by  strangers. 
+However, they reported that this feeling reduced after a few 
+days  and  that,  over  time,  they  started  feeling  more 
+comfortable with having the prototype.  
+
+Interestingly, the social display showing only an icon of the 
+currently  used  application  was  generally  not  considered  to 
+be too privacy intrusive at any phase of the trial. Before the 
+trial there were some who had slightly more concerns than 
+others  regarding  privacy  but  the  prototype  was  acceptable 
+even for them. Compared to what they expected before the 
+trial,  after  the  trial  most  of  the  participants  (10/13) 
+experienced  less  privacy  issues.  As  one  participant  stated, 
+“it’s  not  privacy  intrusive  because  it  doesn’t  show  exactly 
+what I am doing. If it showed for example all the messages I 
+type, then it might be. I would be thinking what I’m writing 
+all  the  time”  –  (M,  22).  Those  participants  whose  privacy 
+concerns increased (3/10) during the trial reported that they 
+had  come  across  situations  that  had  raised  their  awareness 
+of  the  visibility  of  their  activity  on  mobile  devices. 
+Nevertheless, also according to their assessments the sense 
+of  privacy  remained  within  acceptable  limits:  “It  was  just 
+interesting  to  realize  I  couldn't  hold  up  my  phone  on  my 
+hands  on  lectures,  because  that  would  show  the  teacher 
+what I was doing...” – (M, 25).  
+
+2
+
+1.5
+
+1
+
+0.5
+
+0
+
+-0.5
+
+-1
+
+-1.5
+
+(1) Prototype violates privacy
+(2) My mobile device activities are private
+(3) Social display was beneficial for me
+(4) Social diplay was beneficial to others around me
+
+1.38
+
+1.08
+
+0.38
+
+0.46
+
+(1)
+
+-0.38
+
+(2)
+
+-0.15
+
+(3)
+
+(4)
+
+-0.77
+
+-1.31
+
+Before
+
+After
+
+Increased Self-Awareness of One’s Own Mobile Device Use 
+Based  on  the  initial  questionnaire  and  interviews,  all 
+participants thought that excessive use of mobile devices in 
+social  gatherings  is  impolite.  They  admitted  to  often  be 
+guilty  of  doing  the  same  when,  for  example,  hanging  out 
+with  friends,  attending  a  lecture,  or  relaxing  at  home  with 
+other  family  members.  The  final  questionnaire  indicated 
+that the social display in general did not affect participants’ 
+mobile device usage behavior (Figure 3: mobile usage when 
+with  strangers  and  when  with  acquaintances).  Also  in  the 
+interviews,  it  was  often  reported  that  the  participants’ 
+behavior  remained  the  same,  however,  with  a  clarification 
+that  they  were  more  cautious  with  their  activities  in  some 
+situations.  Most  of  the  participants  (8/13)  noticed  to 
+become  more  aware  and  careful  with  their  activities  with 
+mobile devices. Five of them reported that, at times, having 
+the social display suspended the use of the mobile device in 
+social  situations  because  they  felt  that  the  use  was  not 
+appropriate  in  the  situation.  The  situations  in  which  this 
+happened  included  cases  where  they  were  expected  to  pay 
+attention  to  ongoing  activities  in  front  of  someone  (e.g.  in 
+classroom,  in  a  concert).  Using  a  mobile  device  in  such 
+situations is already impolite, and having the social display 
+seemed to add to the feeling of impoliteness.  
+
+ 
+
+Figure 3. Effects of Social Display to device usage behavior 
+
+and others around them 
+
+The  feeling  of  impoliteness  was  observed  to  be  related  to 
+the  application  one  is  using  as  well  as  to  the  situation. 
+Participants reported to have felt less comfortable when the 
+activities  on  mobile  devices  are  not  related  to  the  ongoing 
+activity  in  the  social  setting.  “Once  we  went  to  [a 
+performance]  and  we  were  sitting  quite  close  to  the  stage, 
+at times I checked my phone. [At the spot,] the performers 
+did notice what we were doing and they would think that we 
+were  not  paying  attention  if  they  see  that  we  are  using 
+Facebook,  so  I  was  trying  to  avoid  showing  that.  I  didn’t 
+want to disturb  them” – (M,  34). On the other hand, if the 
+activity  with 
+to  ongoing 
+activities, the social display could, in fact, turn the use of a 
+mobile device more comfortable in the situation: “when you 
+are  in  a  social  environment  where  it’s  impolite  to  use 
+cellphones,  and  you  want  to read  your  e-mails  and  people 
+are  wondering  ‘is  he  really  reading  his  emails  or  is  he 
+
+the  mobile  clearly  related 
+
+1696
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+playing candy crush or something’. In that situation it can 
+be  reaffirming  for  the  person  that  they  can  see  that  he’s 
+actually  using  Gmail.  It  can  give  more  confidence  to  you 
+that  you’re  actually  doing  what  you’re  supposed  to  do”  – 
+(M,  22).  Considering  the  formality  of  the  social  situation, 
+self-awareness  and  being  conscious  of  one’s  own  mobile 
+use  was  only  observed  in  more  formal  social  situations, 
+such as a lecture or a performance. In casual situations (e.g. 
+chatting or hanging out with friends), social display did not 
+influence  the  participants  as  they  reported  using,  e.g., 
+Facebook or WhatsApp normally in those situations.  
+
+The Viewer Matters 
+When not in any specific social situations, the relationships 
+with  the  others  in  the  surroundings  were  reported  to  affect 
+the  participants’  behavior  in  using  their  social  displays. 
+Here, the opinions were split in two main viewpoints. Half 
+of  the  participants  (6/13)  were  rather  cautious  with  their 
+activity  and  applications 
+they  are  using  when  with 
+strangers:  “I  was  hiding  the  display  because  I  don’t  want 
+other  people  to  see  what  I’m  doing.  Other  times,  I  didn’t 
+even  use 
+the  application  I  wanted  because  I  was 
+surrounded  by  strangers  and  I  didn’t  want  them  to  know. 
+The  worst  would  be  dating  applications.  Of  course,  I 
+wouldn’t  mind  to  show  that  to  my  friends.  For  example 
+when  I  was  eating  at  a  restaurant  I  didn’t  like  it  that 
+everybody could peek and say ‘Hey, look at that guy trying 
+to  get  a  date!’”  –  (M,  24).    Additionally,  participants 
+reported to be cautious if the applications they are using are 
+related  to  others,  i.e.  strangers:  “we  were  in  a  party,  and 
+people  came  dressed  up  funny  and  weird,  and  also  some 
+people  were  dancing  weird.  I  want  to  share  this  moment 
+with my friends, taking a picture of a guy … when I take a 
+picture of him I don’t want him to see. I was more cautious 
+there” – (M, 34).  
+
+The  other  half  of  the  participants  (7/13),  interestingly,  did 
+not  notice  any  differences  in  their  behavior  with  mobile 
+devices  while  being  with  friends  versus  with  strangers. 
+They  considered  the  content  of  the  social  display  as  rather 
+generic  and  safe  to  share  with  anyone.  Additionally,  they 
+did  not  consider  the  applications  they  use  to  be  bizarre  or 
+unusual,  and  thought  that  strangers  mostly  only  mind  their 
+own  business  anyway:  “There  wasn’t  a difference  between 
+when  with  friends  or  with  strangers.  It  was  surprising.  I 
+thought  I  would  be  more  careful  among  strangers  but  no. 
+For  example,  Instagram  and  Facebook  are  quite  okay.  I 
+don’t  feel  ashamed  of  using  those  as  long  as  it  doesn’t  go 
+into detail. If I were using some unusual applications, then 
+maybe.” – (F, 25) 
+
+Increasing  Viewers’  Awareness 
+Interactions 
+
+and  Triggering 
+
+Visibility of the Social Display 
+Placing  the  social  display  on  the  backside  of  a  mobile 
+device  can  be  questioned  with  respect  to  its  visibility  to 
+others.  As  we  required  the  participants  to  slightly  change 
+the  way  they  usually  hold  the  device  (as  can  be  seen  in 
+
+7
+
+4
+
+8
+
+5
+
+8
+
+0
+
+2
+
+0
+
+0
+
+0
+
+0
+
+2
+
+1
+
+2
+
+0
+
+Acquaintance asked
+
+about content of social
+
+Mobile device usage
+when with strangers
+
+Mobile device usage
+
+when with acquaintances
+
+display
+
+Much less
+
+Slightly less
+
+No change
+
+Slightly more Much more
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure  1),  some  reported  that  when  in  a  hurry  they 
+sometimes  covered  the  social  display.  Moreover,  this 
+positioning makes the display visible to only those directly 
+opposite  to  the  device  user.  Nevertheless,  the  responses 
+from  the  viewers  indicated  that  all  of  them  noticed  the 
+display  and  its  content  at  least  a  few  times  in  their 
+encounters with the participants. Having said that, the social 
+display  was  appreciated  for  allowing  its  content  to  be 
+visible  in  the  physical  environment  –  allows  quick  glances 
+without  having  to  turn  on  any  applications  to  get  a  cue  of 
+what  the  user  is  doing,  “it  would  be  fine  to  have  just  an 
+application  that  works  with  Bluetooth  and  shows  what 
+nearby  people  are  doing,  but  you’d  have  to  turn  on  the 
+application  every  time  you  want  to  see  what  others  are 
+doing. It’s not like you can just look around” – (discussion 
+between a participant M, 24 and his roommate). Moreover, 
+the viewers reported that they did not feel uncomfortable or 
+impolite looking at the participants’ social display and most 
+of  them  (5/8)  found  themselves  peeking  at  the  display  at 
+least a few times during their encounters. 
+
+the  funny  display,  or  even  asking 
+
+Triggering Interactions with Others in the Surroundings 
+The  participants  reported  having  had  various  social 
+interactions  with  their  friends  and  relatives  as  results  of 
+having the social display. Most of them happened due to the 
+novelty  effect  of  the  form  factor:  just  having  an  additional 
+display  hanging  on  the  mobile  device  triggered  questions 
+from  particularly  familiar  people  and  acquaintances. 
+Examples  include  friendly  teasing  and  joking  around 
+because  of 
+the 
+participants  to  use  the  mobile  device  to  see  it  again  in 
+action: “I have a friend who had a funny reaction by saying 
+‘Now  I  want  to  look  at  what  you  are  doing’”  –  (F,  24). 
+Occasionally,  others  asked  the  participants  about  the 
+content  presented  on  the  social  display,  including  short 
+questions  like  “hey,  what  are  you  doing  on  Facebook”  or 
+“how is your calendar?” Social display was then seen as a 
+resource  for  a  few 
+jokes  and  small  conversations, 
+encouraging  an  open  and  fun  atmosphere  between  family 
+members  or  friends.  Also,  when  the  social  display  hinted 
+about  an  atypical  activity  or  application  people  got  easily 
+interested: “when I was using something else, for example, I 
+was  looking  for  score  results,  one  friend  asked  what  it  is 
+about. I then explained that I was looking at sport results. It 
+resulted  in  us  having  a  sport-related  conversation”  –  (M, 
+22).   
+
+Half  of  the  viewers  (4/8)  agreed  that  social  display 
+increased  awareness  of  what  the  participants  were  doing 
+with  their  mobile  devices.  This  awareness  sometimes 
+increased the curiosity and resulted in a conversation: “I've 
+noticed  she  was  using  different  Russian  apps  which  I  was 
+not  familiar  with  and  I  asked  her  about  it.  Now  I 
+understand  more  of  her  interests  and  what  she  likes”  – 
+(close  friend  of  a  participant).  The  awareness  was  also 
+found  to  help  indicating  interactivity  status  of  the  person: 
+“it helps to see if [the user is] paying attention to me; if [he 
+is] listening at all” – (close friend). This also allows others 
+
+to interrupt and try to draw the  user’s attention back to the 
+ongoing  interaction:  “My  girlfriend  and  I  were  having  a 
+discussion  and  at  the  same  time  someone  messaged  me  on 
+Facebook.  […] She  knew  that  I  was  doing  that  because  of 
+the  [social  display].  She  didn’t  like  it  and  made  a  joke 
+about it” – (M, 34). 
+
+level  as  what  more 
+
+Social Display versus Traditional Artifacts 
+The  prototype  aimed  to  increase  activity  awareness  to  a 
+similar 
+traditional  artifacts  as 
+newspapers, books, or televisions allow. While most of the 
+viewers  (6/8)  expressed  positive  opinions  about  the  social 
+display,  only  4/8  of  them  actually  reported  that  their 
+awareness regarding the participants’ activities with mobile 
+devices increased. This implies that the prototype is lacking 
+some  aspects  that  traditional  artifacts  have.  Participants 
+indicated  that  traditional  artifacts,  e.g.  a  newspaper  or 
+magazine,  provide  much  more  information  about  what  the 
+person  is  doing:  “[Social  display]  gives  clues  about  what 
+you  are  doing;  in  that  sense  it  is  similar  to  [those 
+traditional  artifacts].  But  when  you  are  watching  a  movie, 
+TV or reading a newspaper, [those artifacts] give others a 
+lot more information. For a newspaper, if you don’t see the 
+article, you might still see which section or headlines [one 
+is  reading].  This  brings  an  in-depth  conversation  topic. 
+Social display doesn’t provide to the same extend because it 
+just  shows  [the  name  of  the  application,  for  example] 
+WhatsApp  or  Gmail.  They  might  think  that,  ‘OK,  he  is 
+doing that’, but not anything else” – (M, 22). Moreover, the 
+prototype  has  a  disadvantage  in  terms  of  size  and  the 
+limited  viewing  angle,  making  it  is 
+less  observable 
+compared  to  a  book  or  a  newspaper:  “[social  display] 
+almost  fulfill  its  purpose,  but  when  you  are  reading  a 
+newspaper, almost everybody in the same area can see it” – 
+(M, 24).  
+
+More Detailed Content: More Interesting yet Intrusive 
+The application for social displays showed simply the name 
+and  icon  of  the  application  currently  in  use.  Most  of  the 
+viewers  (6/8)  agreed  that  the  display  should  provide  more 
+information than this to make it more useful for others and 
+increase the likelihood of triggering social interactions. “As 
+you can only see the application that is being used, it's hard 
+to  comment  on  the  things  that  are  really  happening.  You 
+don't  really  know  much  more  than  before,  only  you  get 
+more  curious  of  what  is  happening.”  –  (close  friend).  In 
+addition,  the  participants  reported  similar  comments  from 
+their other friends and relatives: “Feedback that I got from 
+other people by showing only the application I’m using was 
+that it doesn’t give enough information to do anything with 
+that”  –  (M,  27).  They  pointed  out  that  the  activity  on  a 
+mobile  device  could  be  interesting,  but  displaying  the 
+application  a  user  is  using  does  not  usually  tell  enough 
+about – or even have a direct relation to  – what the user is 
+doing.  It  was  agreed  that  for  specific  applications  like 
+games,  the  name  and  the  icon  of  the  application  can  be 
+enough.  For  internet  browsing  and  social  media  the 
+application  name  is  inadequate:  “I  don’t  think  it  gave  out 
+
+1697
+
+enough information. The thing is that I usually check news 
+and other  things  from  Facebook  or  Chrome. It  only  shows 
+the  application,  not  the  news  title.  It  doesn’t  show  the 
+actual stuff that I’m looking at. People are not going to say 
+‘Hey, what’s on Chrome?’ For Facebook yes; maybe once 
+or twice they asked me ‘what’s on Facebook?’” – (M, 25).  
+
+The  viewers  agreed  and  some  of  the  participants  (7/13) 
+explicitly stated that adding  more information  would  make 
+the  content  on  the  social  display  more  interesting,  better 
+increase  activity  awareness,  and  increase  the  possibility  of 
+having  an  interaction  between  users  and  others  around 
+them.  The  detailed  information  was  envisioned  to  be,  for 
+example, news headlines or Twitter activities. 
+
+While  the  participants  envisioned  interesting  uses  and 
+contents  for  the  social  display,  some  speculated  that  it 
+would  also  affect  their  behavior  more  if  it  showed  more 
+than  currently:  “if  it  showed  more,  then  I  would  probably 
+think  about  what  I  am  doing  a  lot  more.  I  wouldn’t  want 
+everyone  to  see  on  which  webpage  I  am.  I  don’t  see  any 
+point  in  that.  I  think  it  is  too  much”  –  (F,  24).  One 
+participant  proposed  an  alternative  design  with  additional 
+information  related  to  the  activity  already  hinted  by  the 
+social display: “If I am using [social media], I could show 
+also  the  activity  that  I  am  doing,  like  if  I’m  posting 
+something,  chatting,  or  looking  at  a  profile.  […]  if  I  am 
+using the email, it could say that I am reading or writing; a 
+bit more information but not too private” – (F, 24). 
+
+Instead  of  sharing  more  details  about 
+the  current 
+application,  allowing  device  users  to  customize  content  on 
+the social display could make the content more interesting. 
+Interestingly,  the  possibility  to  customize  the  content  the 
+display showing when their mobile devices are locked or at 
+the  home  screen  got  little  attention:  only  3/13  actively 
+changed  the  pictures.  Others  seemed  to  associate  the 
+customization  with  changing  the  background  picture  on 
+their devices, which they not either were actively changing. 
+“[Being  able  to  change  the  picture]  is  quite  nice.  It  is  the 
+same as background picture of the phone. In the beginning 
+I changed it a lot, but now it has been the same for maybe a 
+year” – (M, 24). Also, none of the viewers mentioned about 
+the participants’ custom pictures. Instead, some participants 
+(5/13)  envisioned  an  option  of  replacing  the  application 
+icons  with  user-selected  pictures,  writing  own  messages  to 
+the display, expressing one’s  mood through the display, or 
+manually selecting content to be shown. “It could be really 
+good  if  there  were  features  that  allow  writing  something 
+into the display, changing the setting, and also writing own 
+message to others. It makes the display more personal. It’s 
+more  ‘me’”  –  (M,  22).  A  possibility  to  choose  which 
+content to be presented also satisfies participants’ concerns 
+for privacy.  
+
+The Displayed Information is Just “Good to Know” 
+As  mentioned, 
+reported  occasional 
+interactions with others around them as a result of the social 
+display  and  its  potential  in  increasing  activity  awareness. 
+
+the  participants 
+
+1698
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+if  more  detailed  or 
+
+However, most of the time, social display provided merely 
+good-to-know  information,  which  does  not  necessarily 
+intend  to  encourage  interaction  regardless  the  detail  of  the 
+content,  “One  doesn't  need  to  ask  what  does  s/he  doing  in 
+the  phone,  just  look  at  the  screen  and  be  aware”  – 
+(classmate).  Even 
+interesting 
+information was provided, it would not necessarily increase 
+interaction  between  people,  as  one  participant  speculated: 
+“Even  if  you  are  reading  a  newspaper,  nobody  actually 
+comes to you and says something about it. I guess it has the 
+same effect. People might know what you are doing but they 
+don’t  say  you  anything”  –  (M,  34)  Nevertheless,  this 
+awareness  can  stop  others  from  asking  or  interrupting  the 
+user  as  they  already  know  what  he  is  doing:  “I  guess 
+without  the  display,  it  would  be  easier  to  get  interrupted 
+because you don’t know what the other person is doing” – 
+(M,  27).  Although  the  majority  did  not  notice  any 
+difference to  previous times,  a few participants agreed that 
+there  are  slight  changes  in  others’  asking  and  interrupting 
+also  observed  (Figure  3:  acquaintance  asked  about  content 
+of social display).  
+
+Some  of  the  viewers  interpreted  activities  on  the  users’ 
+mobile  devices  as  private  actions  and  was  none  of  their 
+business, thus, they did not pay much attention to the social 
+display in general: “I think what people are doing with their 
+own mobile is covered by privacy. I'm just curious in what 
+they  are  doing  but  I  did  not  pay  much  attention  in  that 
+screen  because  it  is  not  my  business”  –  (roommate). 
+Participants  also  reported  similar  perceptions  with  others 
+during the trial:  “everybody could see what I’m doing with 
+my  phone,  but  nobody  cared”  –  (F,  25).  One  participant 
+commented  that  others  did  not  care  because  there  is  no 
+good reason for them to do so: “People do stuff and others 
+don’t  care.  Why  should  they?”  –  (F,  24).  Another 
+mentioned that regardless of the activity on  mobile device, 
+he will wait until the user finishes using the device: “I don’t 
+care  too  much  about  what  applications  other  people  are 
+using…if  I  want  to  talk  to  somebody  I  will  probably  wait 
+until they’re done using their phones. The fact that they just 
+use their phone is the most important for me” – (M, 24).  
+
+However, the situations vary depending on the situation and 
+relationships  between  the  device  user  and  others  around. 
+For example, as mentioned by two participants, their family 
+members  were  quite  interested  in  the  content  on  the  social 
+display  and  were  asking  about  it  all  the  time:  “My  family, 
+they  were  interested  in  what  I’m  doing  with  my  phone. 
+When  I  was  at  my  parents’  house,  my  mom  was  always 
+asking, ‘what is that app’, ‘what is that for?’” – (F, 21). At 
+the  same  time,  no  serendipitous  interactions  with  strangers 
+were reported by any of the participants. 
+
+DISCUSSION AND FUTURE WORK 
+This  study  explored  the  potential  of  social  display  in 
+increasing  activity  awareness  with  a  trial  study  in  real-life 
+contexts.  The  results  indicate  that  the  display  helped 
+increasing  awareness  of  user’s  activities  on  mobile  device 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+to  others  in  the  surroundings,  up  to  a  certain  extent.  In 
+general,  the  social  display  emphasizes  users’  mobile 
+activities,  making  them  more  observable and  unambiguous 
+to  people  around  them.  This  was  found  to  often  result  in 
+making  the  use  of  the  mobile  device  more  acceptable  in 
+certain  social  situations.  In  some  other  social  situations, 
+however,  also  depending  on  the  applications  used,  it  can 
+make the mobile device usage quite bothersome to both the 
+user and others around them.  
+
+Activity Awareness and Privacy of Social Display 
+Mobile  devices  provide  their  users  with  freedom  of 
+interaction,  communication,  and  activities  anywhere  and 
+anytime regardless of the contexts.  Interestingly, the social 
+display not only increased the awareness of the surrounding 
+others  but  seemed  to  encourage  the  participants  (i.e.  the 
+mobile  device  users  themselves)  to  pay  more  attention  to 
+the  ongoing  social  situation  and  consider  when  the  use  of 
+mobiles is appropriate. The results imply that there are three 
+main factors that affected the participants' decision whether 
+to  use  their  mobile  device  or  not  while  having  the  social 
+display attached: (1) the application they were about to use, 
+(2)  the  ongoing  social  situation,  and  (3)  their  level  of 
+familiarity (relationship) with the viewers. All these factors, 
+along  with  the  personal  privacy  tolerance,  which  varied 
+from one participant to another, also affected the way users 
+believed  to  be  perceived  by  others.  For  example,  some 
+participants  did  not  prefer  the  use  of  dating  applications 
+when  among  strangers  but  considered  it  fine  when  among 
+friends.  As  a  result,  occasionally  hiding  the  display  or 
+avoiding  use  of  mobile  devices  in  some  social  situations 
+was reported.   
+
+The current design of social display is in the borderline if it 
+invades  the  privacy  of  the  mobile  device  users  or  not.  On 
+one  hand,  it  does  not  provide  in-application  privacy 
+configuration  and  sometimes  it  seemed  to  exceed  the 
+desired  level  awareness  be  presented  to  others  around.  On 
+the  other  hand,  when  we  consider  privacy  as  the  right  to 
+select  what  information  is  known  to  what  people  [33], 
+social  display  actually  allows  the  users  to  control  their 
+privacy  relatively  much.  Activity  awareness  applications 
+usually  provide 
+the 
+audience’s  own  devices  (e.g.  [24,35]).  The  information  is 
+constantly  presented  and  viewers  can  access 
+the 
+information  anytime  and  anywhere  with  or  without  the 
+information  owner  knowing.  This  is  not  the  case  with  the 
+social display: the activity information can be seen only by 
+the  people  in  the  physical  proximity  and  when  the  user  is 
+using  the  mobile  device.  This  allows  users  to  evaluate  the 
+ongoing  situation  and  timely  react  to  it  by,  for  example, 
+hiding the social display or putting the device away.  
+
+information  on 
+
+the  awareness 
+
+Social Display Bursting the Mobile Bubble 
+Some  events  of  serendipitous  interactions  as  results  of  the 
+social  display  were  reported.  Additionally,  the  social 
+display  and  its  content  were  perceived  as  sources  of  jokes 
+and  small  conversations,  leading  to  an  open  and  relaxing 
+
+atmosphere  among  friends  and  family  members.  However, 
+generally 
+like 
+engaging people in  social interaction  was  hampered by the 
+lack of detail of the user’s activity on the social display. 
+
+the  potential  for  social  consequences 
+
+this 
+
+thus,  reduce 
+
+regard.  Often 
+
+joint  activity,  and 
+
+Ongoing  social 
+interactions  create  social  norms;  for 
+example, the expectations from others to pay attention to an 
+ongoing 
+the  social 
+appropriateness of using mobile device in the situation. The 
+social  display  seemed  to  make  people  more  self-aware  in 
+this 
+to  politeness  and 
+consideration  of  others,  e.g.  not  disturbing  others  by  using 
+personal  mobile  devices  while  being  involved  in  a  social 
+situation that demands attention. In other words, the reasons 
+behind  hiding  and  suspending  the  use  of  mobile  device 
+were  not  only  about  the  users  not  wanting  others  to  know 
+about  applications  they  are  using  (i.e.  privacy-related 
+reasons), 
+themselves 
+appropriately in the current situation (cf. [27]).   
+
+presenting 
+
+related 
+
+but 
+
+also 
+
+about 
+
+Moreover,  the  aforementioned  factors,  application  and 
+social  situation,  can  also  generate  understanding  and 
+empathy  from  surrounding  others  towards  the  users.  For 
+example,  when  the  use  of  a  mobile  device  is  generally 
+considered improper but necessary due to for example work 
+reasons,  the  social  display  increased  the  acceptability  of 
+mobile  device  use.  Consequently, 
+the  social  display 
+provides activity awareness not only to others around them, 
+but to the users themselves, increasing one’s self-awareness 
+related to the appropriateness of using mobile devices. 
+
+Encouraging  heads-up  interaction  and  bursting  the  mobile 
+bubble  have  recently  been  hot  topics  in  HCI  research. 
+Public  initiatives  have  raised  awareness  of  the  issue  and 
+aimed  at  encouraging  people  putting  away  mobile  devices 
+in  social  situations  (e.g.  projects  Look  Up3  or  stop 
+phubbing).  However, 
+such  general-level  normative 
+regulations  do  not  take  into  consideration  different  uses  of 
+mobile  devices  in  different  social  situations.  Many  of  the 
+other research prototypes are designed for specific contexts 
+and  activities.  For  example,  [30]  focuses  on  game  play 
+between  children  and  [19]  focuses  on  learning.  Some  go 
+further and propose applications that limit the use of mobile 
+devices  with  in-app  social  support  and  competition  [17]. 
+We  argue  that  social  display  is  a  simple  approach  that 
+allows 
+and 
+meaningfully  utilizes  the  concepts  of  peer  pressure  and 
+social  norms  to  burst  the  mobile  bubble.  Moreover,  the 
+display  also  allows  a  device  user  to  appropriately  create  a 
+socially acceptable bubble without too complicated method 
+as in [18]. 
+
+context-based 
+
+flexibility 
+
+social 
+
+and 
+
+Customizing Social Display 
+With social display,  mobile device users  might not be able 
+to  use  their  mobile  devices  normally  and  whenever  they 
+want.  They  have  to  consider  their  privacy  and  self-
+
+                                                           
+3 http://bit.ly/1s2h19J  
+
+1699
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+represented various cultures and probably have encountered 
+many  people  from  various  other  cultures,  the  study  was 
+conducted in the context of Finnish culture, which probably 
+makes  an  overarching  effect.  Anyway,  with  such  a 
+qualitative  study,  the  methods  and  the  participant  number 
+do not allow making conclusions about the effect of culture, 
+so  this  remains  as  an  aspect  to  be  considered  in  future 
+studies.  
+
+Opportunity: Social Display as a Semi-Public Display  
+Mobile devices are considered to be private, especially the 
+main display and the content on the device, even for family 
+and friends  [10]. In our earlier study, as a display attached 
+on  the  backside  of  a  mobile  device,  the  social  display  was 
+questioned considering its visibility and appropriateness for 
+others in the surroundings to look at [13]. The results of this 
+study  indicate  that  the  social  display  is  not  as  private  and 
+personal  as  previously  thought.  Rather,  it  is  a  semi-public 
+display,  especially  when  the  user  is  among  family  and 
+friends.  Similar  findings  are  reported  when  examining  the 
+function of smartwatches as public displays [26].  
+
+The main difference between the current social display and 
+a  typical  public  display  is  that  the  former  has  a  dedicated 
+owner,  i.e.  the  user  of  the  mobile  device.  The  owner  is  in 
+charge  of  whom  the  display  is  visible  to,  and  his/her 
+activities with the mobile devices directly affect the content 
+of  the  display.  As  a  result,  any  interactions  caused  by  the 
+display is controlled by its owner and revolves around him 
+or her. However, the use of the social display is to provide 
+information  to  others  in  the  surroundings,  but  not  to  the 
+device  users  themselves.  It  will  be  interesting  to  further 
+explore  how  others  in  the  surrounding  could  gain  more 
+benefits by being aware of the user’s activity (e.g. utilizing 
+social  display  in  collocated  mobile  collaboration  with 
+multiple mobile devices, similarly as in [19]).   
+
+CONCLUSIONS 
+Mobile  devices  can  serve  for  a  broad  range  of  activities. 
+While  this  has  benefited  people  in  many  ways,  it  comes 
+with  a  social  cost.  Many  activities  that  were  more  easily 
+observed  and  allowed  shared  experiences  have  become 
+private  when  moving  to  mobile  devices.  We  implemented 
+the social display prototype aiming to increase surrounding 
+people’s awareness of user’s activity  with a mobile device. 
+A 10-day field study with the prototype was conducted with 
+13 participants. The results imply that the social display has 
+the potential to increase activity awareness and occasionally 
+encourage  serendipitous interaction between  mobile device 
+users  and  their  collocated  family  members  and  friends. 
+Additionally,  the  social  display  underlines  the  user’s 
+activities  with  their  mobile  devices,  thus  raising  self-
+awareness  regarding  the  appropriateness  of  using  mobile 
+devices in different social contexts. The social display  was 
+found  to  encourage  its  users  to  be  more  careful  with  the 
+usage  of  their  mobile  devices,  and,  before  using  them, 
+consider ongoing activities around them more carefully.  
+
+presentation according to the ongoing situation. As a result, 
+participants,  at  times,  wanted  to  replace  the  activity  cues 
+with  something  else,  allowing  them  to  be  able  to  use  their 
+mobile  devices  normally.  Currently,  the  social  display  is 
+designed  as  a  fully  automatic  display  showing  cues  of  any 
+applications currently active on the mobile device. Instead, 
+social  display  could  provide  less  information  about  the 
+users’  activities  by  replacing  the  visual  cues  of  some 
+applications  –  especially  application  that  users  are  not 
+comfortable  revealing,  such  as  dating  applications  –  with 
+user-created-contents.  This  approach  could  provide  the 
+feeling of control over privacy and self-presentation and at 
+the  same  time  persist  the  characteristic  of  automatic 
+disclosure  of  an  activity  awareness  application.  However, 
+allowing  users  to  customize  the  social  display  behavior 
+could  affect  both  user’s  and  viewer’s  awareness.  Viewers 
+could  be  less  aware  of  the  user’s  actual  current  activity, 
+thus,  user  themselves  could  be  less  worried  about  their 
+mobile device usage in respect to ongoing social situation. 
+
+Methodological Reflection and Limitations 
+is  a  close-proximity  social  awareness 
+Social  display 
+application.  In  most  of 
+the  awareness  applications, 
+reciprocal  behavior  is  expected:  a  user  has  the  role  of  an 
+information  provider  as  well  as  a  viewer  [1].  One  of  the 
+differences  between  social  display  and  other  social 
+awareness applications is that the user has only one role: an 
+information  provider,  and  viewers  are  others  who  the  user 
+encounters  face-to-face.  In  this  regard,  the  results  of  the 
+study could have been more complete if we had had a better 
+access  to  the  viewers  who  our  participants  came  across. 
+However,  due  to  recruitment  challenges,  it  was  not  always 
+possible  to  recruit  participants  together  with  the  viewers 
+(e.g.  those  who  spend  a  lot  of  time  with  the  participants). 
+Furthermore,  due  to  the  length  of  the  trial  period,  constant 
+observation of the participants was not feasible. Our results 
+are  primarily  based  on  participants’  report  of 
+their 
+experiences  and  discussion  with  some  of  the  viewers  they 
+have encountered. The questionnaire sent to the participants 
+on daily basis was helpful in collecting experiences that the 
+participants might have otherwise forgotten to report at the 
+end of the study. It also allowed us to access the results and 
+bring  up  some  clarifying  questions  in  the  final  interview. 
+However,  in  a  future  study  with  a  shorter  trial  period,  we 
+would consider also a direct observation and shadowing as 
+methods for more inclusive qualitative data gathering from 
+different perspectives. 
+
+Finally, we had participants from 7 different nationalities to 
+provide  a  rich  set  of  data  with  as  little  cultural  bias  as 
+possible.  Although 
+the  sense  of  privacy  and  social 
+interactions  are  also  defined  by  the  culture,  we  did  not 
+observe  strong  differences  between  participants’  feedback 
+that  could  be  explained  by  their  cultures.  The  differences 
+were  mostly  based  on  their  personalities,  preferences, 
+background  knowledge  of  technology,  and  social  situation 
+and  their  relationship  with  people  they  interacted  with 
+during  the  trial  period.  Even  though  the  participants 
+
+1700
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ACKNOWLEDGMENTS 
+We thank all the participants of the study for their insightful 
+comments.  A  special  thanks  to  Putt  Sakdhnagool  for 
+helping  with  the  references.  The  research  was  funded  by 
+Academy of Finland (grant 264422). 
+
+REFERENCES 
+1.  Victoria Bellotti and Abigail Sellen. 1993. Design for 
+
+privacy in ubiquitous computing environments. 77–92. 
+Retrieved from 
+http://dl.acm.org/citation.cfm?id=1241934.1241940 
+2.  Hugh Beyer and Karen Holtzblatt. 1998. Contextual 
+
+design: defining customer-centered systems. Retrieved 
+from http://dl.acm.org/citation.cfm?id=286067 
+
+3.  Asaf Burak and Taly Sharon. 2004. Usage patterns of 
+
+FriendZone - Mobile Location-Based Community 
+Services. Proceedings of the 3rd international 
+conference on Mobile and ubiquitous multimedia - 
+MUM ’04, ACM Press, 93–100. 
+http://doi.org/10.1145/1052380.1052394 
+
+4.  Karen Church, Eve Hoggan, and Nuria Oliver. 2010. A 
+
+study of mobile mood awareness and communication 
+through MobiMood. Proceedings of the 6th Nordic 
+Conference on Human-Computer Interaction 
+Extending Boundaries - NordiCHI ’10, ACM Press, 
+128–137. http://doi.org/10.1145/1868914.1868933 
+5.  Ashley Colley, Juho Rantakari, and Jonna Häkkilä. 
+2015. Dual Sided Tablet Supporting Doctor-Patient 
+Interaction. Proceedings of the 18th ACM Conference 
+Companion on Computer Supported Cooperative Work 
+& Social Computing - CSCW’15 Companion, ACM 
+Press, 13–16. http://doi.org/10.1145/2685553.2702672 
+
+6.  Lisa Cowan, William G Griswold, and James D 
+
+Hollan. 2010. Applications of projector phones for 
+social computing.  
+
+7.  Paul Dourish and Victoria Bellotti. 1992. Awareness 
+
+8. 
+
+9. 
+
+and coordination in shared workspaces. Proceedings of 
+the 1992 ACM conference on Computer-supported 
+cooperative work - CSCW ’92, ACM Press, 107–114. 
+http://doi.org/10.1145/143457.143468 
+Jennica Falk and Staffan Björk. 1999. The 
+BubbleBadge: a wearable public display. CHI ’99 
+extended abstracts on Human factors in computing 
+systems - CHI  '99, ACM Press, 318. 
+http://doi.org/10.1145/632716.632909 
+Joel Fischer, Stuart Reeves, Steve Benford, and Chris 
+Greenhalgh. 2013. First International Workshop on 
+Designing Mobile Face-to-Face Group Interactions. 
+European Conference on Computer Supported 
+Cooperative Work (ECSCW ’13). 
+
+10.  Jonna Häkkilä and Craig Chatfield. 2005. “It”s like if 
+
+you opened someone else’s letter': user perceived 
+privacy and social practices with SMS communication. 
+Proceedings of the 7th international conference on 
+Human computer interaction with mobile devices & 
+services - MobileHCI ’05, ACM Press, 219–222. 
+http://doi.org/10.1145/1085777.1085814 
+
+11.  Ohad Inbar and Noam Tractinsky. 2010. Interface-to-
+face - Sharing Information with Customers in Service 
+Encounters. Proceedings of the 28th of the 
+international conference extended abstracts on Human 
+factors in computing systems - CHI EA ’10, ACM 
+Press, 3415–3420. 
+http://doi.org/10.1145/1753846.1753994 
+
+12.  Pradthana Jarusriboonchai, Sus Lundgren, Thomas 
+Olsson, et al. 2014. Personal or social?: Designing 
+Mobile Interactions for Co-located Interaction. 
+Proceedings of the 8th Nordic Conference on Human-
+Computer Interaction Fun, Fast, Foundational - 
+NordiCHI ’14, ACM Press, 829–832. 
+http://doi.org/10.1145/2639189.2654840 
+
+13.  Pradthana Jarusriboonchai, Thomas Olsson, and Kaisa 
+
+Väänänen-Vainio-Mattila. 2015. Social Displays on 
+Mobile Devices: Increasing Collocated People’s 
+Awareness of the User's Activities. Proceedings of the 
+17th International Conference on Human-Computer 
+Interaction with Mobile Devices and Services - 
+MobileHCI ’15, ACM Press, 254–263. 
+http://doi.org/10.1145/2785830.2785863 
+
+14.  Hsin-Liu (Cindy) Kao and Chris Schmandt. 2015. 
+
+MugShots: A Mug Display for Front and Back Stage 
+Social Interaction in the Workplace. Proceedings of the 
+Ninth International Conference on Tangible, 
+Embedded, and Embodied Interaction - TEI ’14, ACM 
+Press, 57–60. http://doi.org/10.1145/2677199.2680557 
+15.  Reuben Kirkham, Thomas Ploetz, Sebastian Mellor, et 
+al. 2013. The Break-Time Barometer – An Exploratory 
+System for Workplace Break-time Social Awareness. 
+Proceedings of the 2013 ACM international joint 
+conference on Pervasive and ubiquitous computing - 
+UbiComp ’13, ACM Press, 73–82. 
+http://doi.org/10.1145/2493432.2493468 
+
+16.  Lisa Kleinman, Tad Hirsch, and Matt Yurdana. 2015. 
+
+Exploring Mobile Devices as Personal Public Displays. 
+Proceedings of the 17th International Conference on 
+Human-Computer Interaction with Mobile Devices and 
+Services - MobileHCI ’15, ACM Press, 233–243. 
+http://doi.org/10.1145/2785830.2785833 
+
+17.  Minsam Ko, Kyong-Mee Chung, Subin Yang, et al. 
+2015. NUGU: A Group-based Intervention App for 
+Improving Self-Regulation of Limiting Smartphone 
+Use. Proceedings of the 18th ACM Conference on 
+Computer Supported Cooperative Work & Social 
+Computing - CSCW ’15, ACM Press, 1235–1245. 
+http://doi.org/10.1145/2675133.2675244 
+
+18.  Minsam Ko, Chayanin Wong, Sunmin Son, et al. 2015. 
+
+Lock n’ LoL: Mitigating Smartphone Disturbance in 
+Co-located Social Interactions. Proceedings of the 33rd 
+Annual ACM Conference Extended Abstracts on 
+Human Factors in Computing Systems - CHI EA ’15, 
+ACM Press, 1561–1566. 
+http://doi.org/10.1145/2702613.2732819 
+
+19.  Stefan Kreitmayer, Yvonne Rogers, Robin Laney, and 
+
+Stephen Peake. 2013. UniPad: orchestrating 
+
+1701
+
+collaborative activities through shared tablets and an 
+integrated wall display. Proceedings of the 2013 ACM 
+international joint conference on Pervasive and 
+ubiquitous computing - UbiComp ’13, ACM Press, 
+801–810. http://doi.org/10.1145/2493432.2493506 
+
+20. Christine M. Liu and Judith S. Donath. 2006.
+
+urbanhermes: Social Signaling with Electronic
+Fashion. Proceedings of the SIGCHI conference on
+Human Factors in computing systems - CHI ’06, ACM
+Press, 885–888.
+http://doi.org/10.1145/1124772.1124902
+
+21. Alexander De Luca, Marian Harbach, Emanuel von
+Zezschwitz, et al. 2014. Now you see me, now you
+don’t. Proceedings of the 32nd annual ACM
+conference on Human factors in computing systems -
+CHI ’14, ACM Press, 2937–2946.
+http://doi.org/10.1145/2556288.2557097
+
+22. Elena Nazzi and Tomas Sokoler. 2011. Walky for
+
+embodied microblogging: sharing mundane activities
+through augmented everyday objects. Proceedings of
+the 13th International Conference on Human
+Computer Interaction with Mobile Devices and
+Services, 563–568.
+http://doi.org/10.1145/2037373.2037461
+
+23. Wai Shan (Florence) Ng and Ehud Sharlin. 2010.
+
+Tweeting Halo: Clothing that Tweets. Adjunct
+proceedings of the 23nd annual ACM symposium on
+User interface software and technology - UIST ’10,
+ACM Press, 447–448.
+http://doi.org/10.1145/1866218.1866264
+
+24. Antti Oulasvirta, Mika Raento, and Sauli Tiitta. 2005.
+ContextContacts: re-designing SmartPhone’s contact
+book to support mobile awareness and collaboration.
+Proceedings of the 7th international conference on
+Human computer interaction with mobile devices &
+services - MobileHCI ’05, ACM Press, 167–174.
+http://doi.org/10.1145/1085777.1085805
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+28. Adrian Reetz and Carl Gutwin. 2014. Making big
+
+gestures: effects of gesture size on observability and
+identification for co-located group awareness.
+Proceedings of the 32nd annual ACM conference on
+Human factors in computing systems - CHI ’14, ACM
+Press, 4087–4096.
+http://doi.org/10.1145/2556288.2557219
+
+29. Johan Sanneblad and Lars Erik Holmquist. 2004. “Why
+
+Is Everyone Inside Me?!” Using Shared Displays in
+Mobile Computer Games. Springer Berlin Heidelberg,
+Berlin, Heidelberg. http://doi.org/10.1007/b99837
+
+30. Iris Soute, Panos Markopoulos, and Remco Magielse.
+
+2009. Head Up Games: combining the best of both
+worlds by merging traditional and digital play.
+Personal and Ubiquitous Computing 14, 5, 435–444.
+http://doi.org/10.1007/s00779-009-0265-0
+
+31. Jaime Teevan, Meredith Morris, and Shiri Azenkot.
+
+2014. Using physical signaling to support collaborative
+mobile search. Proceedings of the companion
+publication of the 17th ACM conference on Computer
+supported cooperative work & social computing -
+CSCW Companion ’14, ACM Press, 245–248.
+http://doi.org/10.1145/2556420.2556493
+
+32. Sherry Turkle. 2011. Alone Together: Why We Expect
+
+More from Technology and Less from Each Other.
+Retrieved from
+http://dl.acm.org/citation.cfm?id=1972496
+
+33. Alan F. Westin. 1970. Privacy and Freedom. Bodley
+
+Head.
+
+34. Jason Wiese, Jacob T. Biehl, Thea Turner, William van
+
+Melle, and Andreas Girgensohn. 2011. Beyond
+“yesterday”s tomorrow’s : Towards the design of
+awareness technologies for the contemporary worker.
+Proceedings of the 13th International Conference on
+Human Computer Interaction with Mobile Devices and
+Services - MobileHCI ’11, ACM Press, 455–464.
+http://doi.org/10.1145/2037373.2037441
+
+25. Eric Paulos and Elizabeth Goodman. 2004. The
+
+35. Susan Yee and Kat S. Park. 2005. StudioBRIDGE:
+
+Familiar Stranger : Anxiety , Comfort , and Play in
+Public Places. 6, 1, 223–230.
+
+26. Jennifer Pearson, Simon Robinson, and Matt Jones.
+
+2015. It’s About Time: Smartwatches as Public
+Displays. Proceedings of the 33rd Annual ACM
+Conference on Human Factors in Computing Systems -
+CHI ’15, ACM Press, 1257–1266.
+http://doi.org/10.1145/2702123.2702247
+
+Using Group, Location, and Event Information to
+Bridge Online and Offline Encounters for Co-Located
+Learning Groups. Proceedings of the SIGCHI
+conference on Human factors in computing systems -
+CHI ’05, ACM Press, 551–560.
+http://doi.org/10.1145/1054972.1055048
+
+36. Bin Zhu. Using Mobile Phone Cover to Extend Twitter
+
+with Gesture-Based Emotional Expressions.
+
+27. Mika Raento and Antti Oulasvirta. 2008. Designing for
+
+37. YotaPhone. Retrieved July 19, 2015 from
+
+privacy and self-presentation in social awareness.
+Personal and Ubiquitous Computing 12, 7, 527–542.
+http://doi.org/10.1007/s00779-008-0200-9
+
+https://yotaphone.com/fi-en/product/yotaphone/
+
+38. InkCase - The Second Screen for Your Phone.
+
+Retrieved July 19, 2015 from
+http://www.inkcase.com/en.php
+
+1702
+
+

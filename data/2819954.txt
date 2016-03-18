@@ -1,0 +1,1376 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+A Day in the Life of Things in the Home 
+
+Andy Crabtree & Peter Tolmie 
+
+School of Computer Science 
+University of Nottingham 
+
+{Firstname.Lastname}@nottingham.ac.uk 
+
+ABSTRACT 
+This  paper  is  about  human  interaction  with  things  in  the 
+home.  It  is  of  potential  relevance  to  developers  of  the 
+Internet of Things (IoT), but it is not a technological paper. 
+Rather,  it  presents  a  preliminary  observational  study  of  a 
+day in a life of things in the home. The study was done out 
+of curiosity - to see, given the emphasis on ‘things’ in the 
+IoT, what mundane interaction with things looks like and is 
+about.  The  results  draw  attention  to  the  sheer  scale  of 
+interaction  with  things,  key  areas  of  domestic  activity  in 
+which  interaction  is  embedded,  and  what  it  is  about 
+domestic  life  that  gives  data  about  interaction  its  sense. 
+Each of these issues raises  possibilities and challenges for 
+IoT development in the home. 
+Author Keywords 
+Ethnography,  domestic  environment,  mundane  interaction 
+with things, Internet of Things. 
+ACM Classification Keywords 
+J.4  Computer  Applications  -  Social  and  Behavioural 
+Sciences: Sociology. 
+INTRODUCTION 
+
+“Until quite recently, the development of smart homes … seemed 
+appealing  and  immanent  …  Be  that  as  it  may,  those  working 
+within the smart home agenda … found themselves oddly side-
+stepped by the world at large. For homes have altered in ways 
+that  have  largely  passed  them  by  …  All  of  us  are  familiar  with 
+these  changes  …  They  are  now  so  ubiquitous  as  to  be 
+commonplace:  wi-fi  networks  are  now  the  norm  ….  We  are  all 
+used to plugging into the internet on our couches, even in bed … 
+the connected home is manifesting this new emphasis” [16]
+
+The  shift  from  the  smart  home  to  the  connected  home  is 
+today  marked  by  renewed  interest  in  the  purposing  of 
+ubiquitous  computing  technologies  under  the  auspices  of 
+the  Internet  of  Things  (IoT).  The  vision  is  less  about 
+wholesale  intelligent  homes  and  more  about  embedding 
+networked  computing  in  mundane  objects  to  deliver  new 
+applications  and  services  to  the  connected  home,  largely 
+through the harvesting of personal data [14]. The ACM and 
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work  for personal 
+or  classroom  use  is  granted  without  fee  provided  that  copies  are  not  made  or 
+distributed for profit or commercial advantage and that copies bear  this  notice  and 
+the  full  citation  on  the  first  page.  Copyrights  for  components  of  this  work 
+owned  by  others  than  the  author(s)  must  be honored.  Abstracting  with  credit 
+to 
+is  permitted.  To  copy  otherwise,  or  republish, 
+redistribute 
+fee. 
+Request 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to ACM.  
+ACM 978-1-4503-3592-8/16/02…$15.00   
+DOI: http://dx.doi.org/10.1145/2818048.2819954 
+
+lists,  requires  prior  specific 
+
+to  post  on  servers  or 
+
+permissions 
+
+from Permissions@acm.org.  
+
+to 
+
+permission 
+
+and/or 
+
+a 
+
+IEEE  archives  make  it  clear  that  a  great  deal  of  technical 
+work  is  being  done  on  IoT  infrastructures  and  application 
+areas,  and  this  is  complemented  by  a  broad  range  of 
+products coming onto the market [e.g., 1]. 
+This  study  complements  but  departs  from  studies  of 
+interaction  with  digital  things  in  the  connected  home,  as 
+exemplified  by  [16],  to  take  a  broad  range  of  non-digital 
+things  into  account  as  well.  It  does  so  because  the  IoT 
+suggests that computing can be embedded in just about any 
+thing,  and  looking  beyond  what  has  currently  been  made 
+digital might therefore be useful. We are not, of course, the 
+first to study interaction with non-digital things in a bid to 
+inform design for the home, though the studies that do exist 
+focus (like their digital counterparts) on specific categories 
+of  thing  (e.g.,  mail  [15],  mementoes  [25],  messiness  [31], 
+etc.).  We  take  a  different  tack  here,  shifting  from  an  in-
+depth  look  at  specific  things  in  the  home  to  a  broader 
+perspective on things from the point of view of a day in the 
+life of mundane interaction with them.  
+This shift does not represent a critique of prior studies. To 
+reiterate:  the  study  reported  here  complements  prior  work, 
+extending ethnomethodological studies of domestic life and 
+the ‘artful’ [33] ways in which the ‘domestic routine’ [6] is 
+assembled as an ‘unremarkable’ [34] feature of the locally 
+accomplished social order. The extension, and contribution 
+to  the  literature,  involves  making  visible  the  methodical 
+assemblage  of  things  as  a  pervasive  feature  of  the 
+accomplishment  of  the  local  order.  This  phenomenon  is 
+pointed to in the studies referenced above in, for example, 
+the management of domestic work [33] or the handling of 
+mail [15], but it is not treated as a topic in its own right and 
+so remains implicit; a matter we return to in conclusion. 
+Our  study  is  exploratory  and  preliminary  in  nature,  a  first 
+pass  through,  opening  up  the  methodical  assemblage  of 
+things  as  a  design  topic  and  matter  for  further  study  and 
+technical investigation. A first pass through reveals distinct 
+categories  of 
+things  and  patterns  of  human-thing 
+interaction,  most  of  which  have  not  yet  been  touched 
+directly  by  digital  technologies,  and  distinct  interactional 
+zones where particular categories of things cluster together. 
+These findings relate to and further elaborate previous work 
+in ubiquitous computing focusing on the ‘stuff’ of the home 
+[26]  and  the  how  it  coalesces  within  ‘ecological  habitats’ 
+and  ‘activity  centres’  [5].  The  real  world,  real  time 
+coherence of these patterns and clusters is provided through 
+the methodical assemblage of things as household members 
+go about the business of locally ordering domestic life. 
+
+1738
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+METHODOLOGY 
+The study we report here involves observations of mundane 
+interaction  in  2  ostensibly  middle  class  homes  in  the  UK, 
+each containing 2 adults and one child. The homes are our 
+own, partly chosen for expediency’s sake but also to make 
+doing  the  fieldwork  tractable:  our  aim  was  to  study 
+interaction  over  a  24-hour  period  throughout  the  home.  A 
+great deal of personal data, and indeed very sensitive data, 
+would  therefore  be  gathered.  Working  on  Sacks’  [29] 
+methodological maxim “tap into whomsoever, wheresoever 
+and  you  find  the  much  the  same  things”  we  figured  we 
+would be able to learn as much from our homes on a first 
+pass through as from someone else’s. 
+It  is  important  to  appreciate  something  of  Sacks’  work  to 
+appreciate  what  we  are  driving  at  here  and  to  avoid  any 
+misunderstanding that we are suggesting that all homes are 
+like  ours.  That  would  be  a  mistake.  Clearly  an 
+impoverished  immigrant  household  or  a  household  in  an 
+entirely different part of the world (e.g., rural India) would 
+look very different to ours in terms of the material resources 
+to hand, daily rhythms and routines, situated practices and 
+reasoning,  etc.  The  equivalence  does  not  lie  in  what  the 
+home  looks  like  however,  but  in  how  the  local  order  is 
+brought about. Sacks’ work is instructive in this respect. 
+Sacks’ studies of conversation in everyday life identified a 
+‘machinery  of  interaction’  [29]  whereby  talk  is  locally 
+ordered.  This  machinery 
+cohort 
+independent’ [28], which is to say it does not matter where 
+the  talk  takes  place  or  who  is  doing  it.  The  machinery  is 
+used by anyone, anywhere, to order talk ‘here and now’ on 
+any  occasion  of  its  occurrence.  Sacks  was  not  wedded  to 
+conversation – it just happened to be the material he had to 
+hand [29] – and so the point of the maxim is that we might 
+examine  the  various  modalities  of  interaction  (verbal, 
+embodied, material, digital, etc.) to find some machinery of 
+interaction whereby order is locally produced.  
+The  equivalence,  then,  is  not  to  be  found  in  the  type  of 
+household as it were, but in the machineries of interaction 
+household  members  employ  to  produce  local  order  in 
+bringing about their everyday lives, wherever it occurs and 
+whatever their lives. Thus, in looking at our homes, we are 
+looking for some machinery of interaction implicated in the 
+production of local order. Just as conversation is infinite in 
+its use, what you see in our homes when looking at a day in 
+the life of things is a machinery at work in producing our 
+local orders of domestic life. Other homes  may well look 
+different, but the same machinery will be at work, i.e., the 
+methodological  assemblage  of  things  as  a  constituent 
+feature of accomplishing the local order.  
+It  is  not  the  application  of  the  machinery  that  interests  us 
+per se then, though the unique order of domestic life in any 
+particular home is of relevance to design as we will touch 
+upon  later.  What  concerns  us  here  is  surfacing  the 
+machinery  of interaction or  ‘uncovering  the animal hiding 
+in  the  foliage’  as  ethnomethodology’s  founder,  Harold 
+
+‘context 
+
+is 
+
+and 
+
+it  [12].  This  aphorism  hints  at 
+
+Garfinkel,  put 
+the 
+commonplaceness  of  machineries  of  interaction,  that  they 
+are seen but unnoticed or taken for granted and so blur into 
+the  background  of  everyday  life.  Our  job  here  us  to  tease 
+the animal out of hiding. 
+To this end we approached data gathering on the basis that 
+any  interaction  with  any  thing  –  whether  it  be  digital  or 
+physical – would be noted. So, for example, we would not 
+just note that we interacted with bread but the whole set of 
+interactions  involved  in  getting  it  out  of  the  bread  bin, 
+putting  it  on  the  chopping  board,  getting  a  knife  from  a 
+drawer, cutting slices, etc.  One of us did the noting with an 
+audio  recorder,  the  other  on  video.  In  either  case,  the  aim 
+was to articulate and document what we were doing, where, 
+and with just what things. While centred on ourselves and 
+what we did, data gathering involved our families because 
+much of what we do at home inevitably involves our family 
+members  (they  even  operated  the  data  recorders  on 
+occasion when our hands were full).  
+We did not gather the data over a 24-hour period. It soon 
+became  apparent  that  articulating  the  things  you  are 
+interacting  with  is  enormously  difficult  to  sustain  for  a 
+prolonged period, so we spread the study across a week in 
+November 2014 breaking it into 3 and 4-hour sections and 
+gathering data on a daily basis. It is worth pointing out the 
+highly  disruptive  and  intrusive  nature  of  this  exercise. 
+Walking  around  the  home  articulating  the  specific  things 
+being  interacted  with  by  yourself  and  others  for  several 
+hours each day soon became deeply irritating for household 
+members, which presents real challenges for similar studies 
+in other people’s homes.   
+More  serious,  however,  is  the  degree  of  intrusiveness 
+involved in doing such a study. We looked at anything that 
+was happening and we mean any thing during the recording 
+periods,  and  we  were  called  to  account  for  doing  so  on 
+occasion even by our own family members. “Do you really 
+need  to  record  this!”  was  uttered  more  than  once  and 
+reasons had to be given for data recording to proceed, e.g., 
+“Please, it’s for science.” Risible as this may be there is a 
+serious point here about the accountability of such intrusive 
+data  gathering  in  the  home,  and  there  may  well  be 
+something  in  that  for  IoT  developers  to  consider  as  they 
+won’t get away with it as easily as we did (extremely good 
+reason will be required for intrusive data harvesting).  
+STUDY FINDINGS 
+After  capturing  the  data  we  created  a  report  organised  in 
+terms of time, location (e.g., bedroom, bathroom, hallway), 
+and  activity  being  done  and  worked  our  way  through  the 
+recordings describing the things interacted with as a feature 
+of doing the activity. We then colour-coded things to reflect 
+different  categories  of  things,  as  this  seemed  a  reasonable 
+way  of  managing  the  enormity  of  things  used  in  our 
+activities. The categories were drawn from common usage 
+in  everyday  life,  particularly  retail  categories  as  these 
+allowed us to put things into recognisable families or sets: 
+
+1739
+
+•  Appliances (APP) 
+•  Clothes and Soft Furnishings (CSF) 
+•  Communications (COM) 
+•  Fast Moving Consumer Goods (FMCG) 
+•  Furniture (FUR) 
+•  Media and Media Equipment (MME) 
+•  Services, Fixtures and Fittings (SFF) 
+•  Toys (TOY) 
+•  Utensils and Other Equipment (UOE) 1 
+
+Having  described  our  interactions  with  things  we  then 
+manually counted a) how many things were interacted with, 
+b)  how  many  interactions  with  those  things  occurred 
+overall,  c)  how  many  specific  things  belonged  to  each 
+category, d) how many interactions occurred with specific 
+things in a category, and e) how many interactions occurred 
+per  category.  We  then  generated  a  series  of  graphs  to 
+represent the results. 
+Before  we  present  the  graphs  it  is  important  to  note  the 
+limitations of this data. It is only partial. We only recorded 
+interactions  with  things  that  we  were  party  to  –  other 
+activities also occurred during the recording periods, but a 
+fieldworker  can’t  be  everywhere  at  once.  Also,  you  get 
+what  you  get  on  the  day,  and  some  routine  interactions 
+(e.g.,  phone  or  video  calls)  didn’t  occur  at  the  time  of 
+recording.  The  counting  of  interactions  is  also  inaccurate. 
+Firstly, for reasons that we have already mentioned – that it 
+is very difficult to actually describe all the things interacted 
+with (try it and see). Secondly, because of the practicalities 
+of counting – do you count turning a tap on or off as 1 or 2 
+interactions  with  a  thing,  for  example,  or  opening  and 
+closing  a  drawer  or  door?  The  upshot  is  that  the  numbers 
+presented below massively underestimate interactions with 
+things over a 24-hour period; perhaps by as much as 50% 
+depending on how they were counted.  
+Now  the  statistically  minded  are  going  to  find  this  deeply 
+unsatisfactory, but it needs to be taken seriously when we 
+say  we  are  not  doing  statistics.  We  are  qualitative 
+researchers  and  would  urge  critics  to  read  [8]  before 
+assessing  what  is  essentially  an  account  of  situated action 
+by  the  methodological  canons  of  quantitative  research.  To 
+do otherwise would be to miss the work that the numbers 
+do  here.  They  do  not  detail  generalities,  but  situational 
+specifics in the 2 homes studied. In doing fieldwork, as [8] 
+                                                             
+1  While  mundanely  recognisable  these  categories  are,  as 
+any such set of devices, open to (endless) revision [27]. We 
+categorised computers as appliances insofar as a computer 
+is  a  device  and  thus  something  that  might  ordinarily  be 
+defined  as  an  appliance,  for  example,  and  email  as 
+communication insofar as this is what email is embedded in 
+and  achieves,  but  other  categories  could  be  developed  for 
+descriptive/analytic purposes. Insofar as there is any value 
+to had from such categories here it lies in what they allow 
+us show of interaction with things in the home. 
+
+1740
+
+SESSION: HOME AND FAMILY
+
+makes clear, generality is not built into sample size but the 
+orderliness  of  situated  action.  The  numbers  are  but  an 
+initial  means  of  opening  up  for  inspection  ‘the  animal 
+hiding in the foliage’ of situated action [12], i.e., the orderly 
+features it is possessed of. While each home is unique the 
+orderliness  of  situated  action  is  not  merely  to  be  found  in 
+the  2  homes  studied,  but  is  a  methodical  feature  of 
+interaction  with  things  in  the  home  more  generally.  This 
+observation  does  not  turn  upon  the  numbers,  the  numbers 
+are just a first step on the way towards seeing that and what 
+it might mean for design. 
+A First Step Towards Uncovering the Animal 
+In  home  A  we  found  that  228  individual  things  were 
+interacted  with  in  a  24-hour  period;  in  home  B  299. 
+However, the overall number of interactions with things in 
+homes A and B were 1991 and 2494 respectively; Figure 1 
+shows how this breaks down per category in home A. We 
+present  the  data  from  home  A  here  in  graph  form,  and 
+compare it with salient aspects of the data gathered in home 
+B as we go along.2  
+
+ 
+
+Fig 1. Overall number of interactions per category. 
+
+Interaction  with  Utensils  and  Other  Equipment  was  top  in 
+both  homes:  26.9%  in  home  A  and  22.2%  in  home  B. 
+Furniture  came  in  2nd  in  both  homes  (17.8%  &  18.7% 
+respectively). FMCG’s were 3rd in home A (17.6%), Media 
+and Media Equipment in home B (12.5%). 4th was Services, 
+Fixtures and Fittings in both homes (13% & 11.7%). 5th was 
+Appliances  in  home  A  (8.3%),  FMCG’s  in  home  B 
+(11.66%).  6th,  clothes  and  soft  furnishings  in  both  homes 
+(7.3%  &  9.9%).  7th,  Media  and  Media  and  Media 
+Equipment  in  home  A  (5.8%),  Appliances  in  home  B 
+(7.3%).  8th  was  Toys  in  home  A  (2.1%),  which  was 
+replaced  by  Living  Things  in  home  B  (3.6%).  9th  was 
+communications in both homes (1.2% & 2.4%). 
+Each  category  of  thing,  composed  of  multiple  things, 
+exhibits  its  own  local  patterns.  165  interactions  with 
+Appliances were recorded in home A (Fig.2), 183 in B. The 
+bulk  of  these  interactions  were  with  computers  (PCs, 
+tablets, phones and peripherals) in both homes and involved 
+                                                             
+2 As we go through the graphs we will elaborate what kinds 
+of  things  were  being  counted  in  each  category.  It  is 
+simply not feasible to list hundreds of items here. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+such things as waking them up and logging in as a preface 
+to other substantive interactions such as playing media. The 
+cooker,  fridge,  and  kettle  were  also  prominent  in  both 
+homes, along with lamps in home A. The oddity in Fig.3 is 
+a drill, use of which was occasioned by the hanging of some 
+pictures on a wall (not an everyday activity). 
+
+ 
+
+Fig 2. Interactions with appliances. 
+
+145  interactions  were  recorded  with  Clothes  and  Soft 
+Furnishings in home A (Fig.3), 246 in home B. Clothes are 
+by far the biggest kind of thing interacted with here, closely 
+followed  by  towels  (predominantly  in  hand-washing  in 
+bathrooms and kitchens). The rug also stands out in home 
+A,  being  a  site  where  a  great  deal  of  children’s  games 
+occur,  and  curtains  in  home  B,  which  are  implicated  in 
+going into and out of the home. 
+
+ 
+
+Fig 3. Interactions with clothes and soft furnishings. 
+
+Communications  (Fig.4)  was  the  least  interacted  with 
+category of thing in our study, with only 23 interactions in 
+home A and 60 in home B. As noted above, phone use and 
+video messaging, both routine occurrences in homes A and 
+B,  were  not  captured  during  the  study  period.  Had  they 
+been, they would not have made a significant difference to 
+this  result;  it  would  still  be  the  least  interacted  with 
+category of thing. Email was by far the biggest category of 
+communication in both homes. Paper mail came in second 
+in  home  A  and  third  in  home  B,  where  it  was  topped  by 
+social  media  (with  0.6%  of  interactions  overall).  Text 
+messages and other online communications (such as meter 
+readings  or  shopping  orders)  made  up  the  remaining 
+interactions. 
+
+ 
+
+Fig 4. Interactions with communications. 
+
+350  interactions  were  recorded  with  FMCGs  in  home  A, 
+291  in  home  B.  These  spanned  an  enormous  range  of 
+things,  which  we  have  parsed  into  sub-categories  for 
+presentation’s sake (Fig.5). The bulk of interactions revolve 
+around foodstuffs in both homes. Interactions with personal 
+grooming,  cleaning  products  and  detergents  were  also 
+pronounced  in  both  homes,  as  was  interaction  with 
+packaging and its recycling. Gas, a service in home A, was 
+also prominent in home B, where it has to be bought in in 
+bottles rather than by mains supply. 
+
+ 
+
+Fig 5. Interactions with fast moving consumer goods. 
+
+Furniture was the second most interacted with category of 
+thing  in  both  homes.  354  interactions  were  recorded  in 
+home  A,  466  in  home  B.  Interaction  largely  revolved 
+around  cupboards,  drawers,  shelves,  work  surfaces,  tables 
+and chairs, and reflects the sites where Utensils and Other 
+Equipment are  stored and used, and FMCGS are prepared 
+and/or consumed (Fig.6). Another anomaly in home B was 
+a  pronounced  degree  of  interaction  with  internal  doors, 
+which are kept closed to keep cats out of rooms.  
+
+Fig 6. Interactions with furniture.  
+
+ 
+
+1741
+
+SESSION: HOME AND FAMILY
+
+revolved  predominantly  around  sinks,  taps  and  toilets  in 
+both  homes  (Fig.8a).  Interaction  with  ‘wired  in’  things 
+(Fig.8b),  particularly  lights,  sockets,  routers/WiFi,  were 
+also predominant in both homes. Interactions with heating 
+thermostats were also pronounced in home A, which were 
+largely to do with over-riding automatic settings, but not in 
+home B. 
+43 interactions with Toys were recorded in home A. Toys 
+was replaced by Living Things in home B (plants and cats) 
+and  91  interactions  were  recorded.  Plastic  toys  and  fluffy 
+animals were the largest category of things interacted with 
+in home A, and real animals (cats) in home B.  
+As  noted  above,  the  biggest  single  category  of  thing 
+interacted  with  in  either  home  was  Utensils  and  Other 
+Equipment: 536 in home A, 553 in home B. Like FMCGs 
+and  Media,  a great  many  things  were  interacted  with  here 
+and they have again been parsed into broader categories for 
+presentation’s  sake  (Fig.9).  Crockery  was  the  largest 
+category  of  thing  interacted  with  in  both  homes,  and  the 
+other  things  implicated  in  preparing  and  eating  food, 
+cleaning  up,  and  disposing  of  waste  were  similarly 
+pronounced in each.  
+
+115  interactions  with  Media  and  Media  Equipment  were 
+recorded in home A (Fig.7), 311 in home B. A broad range 
+of  things  fell  into  this  category,  not  just  music,  text  and 
+film, and again we parse these for presentation’s sake. 
+
+ 
+
+Fig 7. Interactions with media and media equipment. 
+
+Fig.7 suggests that interaction with web browsers, links and 
+sites is predominant, but in reality this largely dissolves into 
+interaction  with  online  media  and  media  players  (largely 
+radio and on demand TV). The dissolution makes it visible 
+that  there  is  still  a  good  deal  of  interaction  with  physical 
+media  in  the  home,  with  approx.  40%  of  interactions 
+revolving around paper-based media in home A, 25% in B. 
+Services,  Fixtures  and  Fittings  includes  ‘built  in’  things, 
+‘plumbed in’ things (Fig.8a) and ‘wired in’ things (Fig.8b). 
+
+Fig 8a. Interactions with ‘plumbed in’ services. 
+
+ 
+
+Fig 9. Interactions with utensils and other equipment. 
+
+Before  we  move  on  to  consider  what  these  numerical 
+patterns  start  to  show  us  of  the  animal  in  the  foliage,  we 
+offer  one  final  graph  that  caught  our  attention.  Fig.10 
+depicts  the  overall  number  of  interactions  by  category  in 
+which computation is embedded.  
+
+ 
+
+ 
+
+Fig 8b. Interactions with ‘wired in’ services. 
+
+260 interactions were recorded with things in this category 
+in  home  A,  292  in  home  B.  Interactions  with  ‘built  in’ 
+things  includes  external  doors  and  windows,  walls,  floors, 
+ceilings  and  stairs.  Interactions  with  ‘plumbed  in’  things 
+
+1742
+
+Fig 10. Computational interactions. 
+
+ 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Only 8.3% of interactions implicate computers in home A. 
+This  figure  rises  to  20.4%  in  home  B.  Despite  the 
+difference,  the  profile  of  computational  interactions  in  the 
+home  is  the  same  in  each  home:  it  only  penetrates  4 
+categories of thing, and it does so in the same ways, with 
+Media and Media Equipment being predominant, followed 
+by  Appliances,  Services  (both  of  which  are  implicated  in 
+the consumption of media) and Communications. It would 
+seem  that  there  is  much  scope  to  extend  the  reach  of 
+computation in the home. 
+MAKING SENSE OF THE NUMBERS 
+Fig.11 shows what the numerical patterns ‘look like’ when 
+transposed  onto  the  physical  space  of  home  A.  The 
+transposition makes it visible that interaction with things is 
+manifest in very particular locations or interactional zones 
+in the home (the same is true for home B). These are similar 
+to  Koile  et  als  [18]  “activity  zones”,  which  “represent 
+location  and  motion  contexts”  and  are  “learned  from 
+statistics  of  human  behavior.”  They  also  resonate  with 
+Crabtree  et  als  [5]  “ecological  habitats”  and  “activity 
+centres” – particular locations within the home where things 
+coalesce  –  but  are  far  more  diverse  in  character,  covering 
+                  
+
+not only media and communications but a whole gamut of 
+things interacted with in the home on a daily basis.  
+Interactional zones are not rooms (e.g., the master bedroom 
+#A  Fig.11,  or  child’s  bedroom #B,  or  spare  bedroom #C, 
+etc.).  They  are  distinct  zones  within  rooms  where 
+interaction  with  things  naturally  occurs  and  where  things 
+cluster  together.  Thus  we  can  see,  for  example,  that  there 
+are  2  distinct  zones  of  interaction  in  the  master  bedroom 
+(zone #A, Fig.11) – the bed, and the drawers. Similarly we 
+can  see  the  particular  categories  of  things  that  cluster 
+together 
+locations:  media,  communications, 
+appliances, services, clothes and soft furnishings, furniture, 
+utensils  and  other  equipment,  FMCGs  and  toys  in  and 
+around  the  bed;  media,  appliances,  services,  clothes  and 
+soft furnishings, furniture, utensils and other equipment in 
+and around the drawers. We can see too the proportion of 
+interactions  with  particular  categories  of  thing  in  these 
+zones: that clothes and soft furnishings are interacted with 
+most in and around the bed, for example, and appliances in 
+and around the drawers, and that interaction with media and 
+media equipment is pronounced in both zones. 
+
+these 
+
+in 
+
+ 
+
+Fig 11. Interactional zones and clusters of things. 
+
+ 
+
+1743
+
+SESSION: HOME AND FAMILY
+
+Our  initial  descriptions,  which  provided  for  the  numerical 
+patterns,  also  allow  us  to  identify  the  particular  things 
+interacted with in these zones. Thus, and for example,  we 
+can see that the clusters of interaction in and around the bed 
+involve  radio  and  online  print  news  (media),  email 
+(communications),  tablets  and  phones  (appliances),  wifi 
+(services), bed linen (clothes and soft furnishings), the bed 
+(furniture), cups and plates (utensils and other equipment), 
+food  and  drink  (FMCGs),  and  toys.  Similarly,  we  can  see 
+that  the  PC  and  clock  (appliances),  film  and  TV  (media), 
+electricity  and  wifi  (services),  clean  clothes  and  dirty 
+clothes 
+the  drawers 
+themselves  (furniture),  and  washing  basket  (utensils  and 
+other equipment) coalesce in and around the drawers. 
+What  we  see  when  we  transpose  the  numbers  onto  the 
+physical  layout  of  the  home  is  distinct  interactional  zones 
+within each room. In the child’s bedroom (#B, Fig.11) we 
+can see that interaction with things clearly clusters around 
+the  bed,  the  bookcase,  the  desk,  and  the  drawers;  in  the 
+spare  bedroom  (#C),  the  desk;  in  the  hallway  (#D),  the 
+cupboards  and  seat;  in  the  bathroom  (#E),  the  bath,  the 
+
+(clothes  and  soft 
+
+furnishings), 
+
+toilet,  the  sink,  the  cupboards;  in  the  porch  (#F),  the 
+mailbox and the door; and in the kitchen (#G), the kitchen 
+cupboards,  shelves  and  work  surfaces,  the  cooker,  sink, 
+fridge,  kitchen  table,  rug,  bookcase,  settees  and  dresser. 
+Furthermore, each of these interactional zones is possessed 
+of  its  own  unique  interactional  characteristics:  it’s  own 
+unique clustering of things.  
+We  would  add  to  this,  that  these  unique  clusters  are 
+spatially and temporally distributed. Fig.11 invites us to see 
+distinct  patterns,  particular  clustering’s  of 
+in 
+particular  zones,  but 
+the  clusters,  are 
+assembled  across  space  and  time  in  interaction.  The 
+clusterings are dynamic. Take, for example, the presence of 
+FMCGs in the master bedroom and it soon becomes clear 
+that they had to get there somehow, from some other zone – 
+the kitchen, where tea and toast is made, which implicates 
+particular clusters of things (furniture, appliances, services, 
+utensils,  etc.)  in  its  achievement.  The  upshot  is  that  the 
+clusters  are  not  independent  but  inherently  connected  in 
+interaction. 
+ 
+
+the  patterns, 
+
+things 
+
+Fig 12. Spatially distributed rhythms and routines.
+
+The Animal in the Foliage 
+The  ‘connected’  character  of  interactional  zones  and 
+clusters orients us to the phenomenon that gives the data its 
+real world, real time sense; that is, it’s sense in interaction. 
+
+All  of  the  data  presented  so  far  gains  its  sense  from  the 
+particular rhythms and routines that constitute everyday life 
+in  the  home,  and  the  mundane  activities  in  and  through 
+which  these  are  brought  about.  This  is  not,  of  course,  the 
+
+ 
+
+1744
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+first  time  that  attention  has  been  drawn  to  the  salience  of 
+domestic  routines  to  design  [e.g.,  5,  6,  34],  but  as  with 
+previous  elaboration  of  ecological  habitats  and  activity 
+centres, the scope extends far beyond domestic routines in 
+which media and communications are embedded. 
+Fig.12  illustrates,  for  example,  the  interactional  zones  and 
+clusters implicated in the domestic routine ‘getting up in the 
+morning’  in  home  A,  which  includes  making  breakfast, 
+getting washed and getting dressed. In doing so it surfaces 
+the spatially distributed nature of this routine and the zones 
+in and across which it takes place. The reader will note the 
+absence of definite proportions in Fig.12, as the aim here is 
+simply  to  render  the  unique  zonal  clusters  of  interactions 
+implicated in the routine.  
+What  can’t  be  seen,  but  can  be  recovered  from  our  initial 
+descriptions  of  human-thing  interaction,  is  what  is  being 
+done  in  and  across  these  zonal  clusters.  Thus,  and  for 
+example, the daily ‘get up’ in home A begins with the radio 
+being played over wifi on an iPad in the master bedroom; 
+visiting the toilet is the next step; then entering the kitchen, 
+turning lights and lamps on, filling the kettle, putting bread 
+in  the  toaster,  tea  in  the  pot,  getting  cups  and  plates  off 
+cupboards  and  shelves,  knives  out  of  drawers,  butter  and 
+jam from the fridge; turning the PC on next to the settee and 
+putting a child’s programme on, serving them breakfast on 
+the settee and taking breakfast for a partner through to the 
+bedroom.  Thus  the  routine  unfolds  in  the  details  of 
+particular  interactions  with  particular  things  in  and  across 
+particular zones in the home until everyone is fed, washed 
+and dressed and ready for the next part of the day to unfold.  
+It is in the details of our mundane interactions with things, 
+done as part and parcel of the routine activities that bring 
+the daily rhythms of the home about, that we rub up against 
+the  animal  hiding  in  the  foliage.  What  the  zonal  clusters 
+reveal  is  that  domestic  rhythms  and  routines  are  brought 
+about  not  just  through  human  interaction,  but  through  the 
+methodical  assemblage  of  things  in  the  course  of  doing 
+interaction.  The  daily  ‘get  up’,  for  example,  starts 
+methodically 
+interactional 
+assemblage  of  things:  bed,  iPad,  seat  on  which  it  sits 
+overnight,  browser,  bookmark, 
+it 
+proceeds through the methodical assemblage of toilet, sink, 
+soap,  towel  and  radiator,  off  which  the  towel  is  hung;  it 
+moves  on  to  the  methodical  assemblage  of  lights,  kettles, 
+cups, plates, cutlery, foodstuffs, works surfaces, etc. 
+It might seem strange to speak of methodical assemblages 
+with respect to work surfaces, bed, toilets, sinks, lights, etc., 
+insofar as the notion of an assemblage hints at the moving 
+around  and  putting  together  of  things.  Clearly  we  don’t 
+move the bed, the toilet, the work surface, etc., around, or at 
+least not routinely, but we do put such things together with 
+other  things  in  interaction.  It  is  worth  noting  as  well  that 
+while  a  great  many  things  are  fixed-in-place  the  fixing  or 
+placement is methodical: you don’t place and fix a toilet in 
+your  kitchen,  for  example,  whereas  you  do  place  and  fix 
+
+live  radio  stream; 
+
+through 
+
+the 
+
+particular 
+
+tables,  sinks,  cupboards,  etc.  Where  things  are  placed  and 
+fixed in the home is, for the most part, no accident. Rather, 
+they are placed methodically with respect to their relevance 
+to interaction. 
+Methodical  assemblages  of  things  are  multi-faceted  then. 
+They consist of methodically placed things and they consist 
+of methodical assemblies of things, and methodical uses of 
+things.  Methodical  assemblies  consist  of  those  things 
+brought to and put together at sites where things fixed-in-
+place  reside.  The  kitchen  is  a  classic  example,  where 
+cutlery, crockery, pots and pans, foodstuffs and utensils are 
+methodically  assembled  on  work  surfaces  in  the  routine 
+making  of  food,  though  there  is  more  to  assemblies  than 
+this. They are also to be found in the places where things 
+live (fridges, drawers, cupboards, shelves, etc.). Methodical 
+assemblies  of  things  run  throughout  the  house  and  can  be 
+found at any site where things are fixed-in-place. 
+Methodical uses of things are also to be found as a feature 
+of  methodical  assemblies.  The 
+iPad  example  above 
+illustrates  this,  and  the  methodical  use  of  things  pervades 
+our  domestic  routines.    We  use  toothbrushes,  toothpaste, 
+soap,  towels,  knifes,  forks,  plates,  cookers,  fridges,  etc., 
+etc., etc., in very particular, methodical ways. We don’t use 
+plates  to  read  on,  for  example,  or  butter  knifes  to  shave 
+with,  or  cookers  to  sit  on  and  eat  our  dinners.  Method 
+pervades  our  use  of  individual  things  and  the  assemblies 
+individual  things  are  part  and  parcel  of.  When  we  look  at 
+the methodical use of things it is also clear that their use is 
+‘account-able’ [11]. Your partner would, for example, call 
+you to account if you were to try shaving with a butter knife 
+or,  more  prosaically,  if  you  were  to  use  her  cup  to  have 
+your  coffee  in  (something  that  would  assuredly  happen  in 
+either home A or home B).  
+The  strong  point  about  the  account-ability  of  things,  as 
+given  in  their  methodical  use  as  features  of  methodical 
+assemblies implicating methodically placed things – that is, 
+as features of methodical assemblages of things in the home 
+that are manifest as zonal clusters – is that they provide for 
+the recognisability of interaction. We can see what is going 
+on, what is being done, what has been done and even what 
+needs  to  be  done,  through  the  methodical  placement, 
+assembly and use of things in the home. You can walk into 
+your home and a host of events past, present and future are 
+available 
+the  methodical 
+assemblages of things that confront you: the children have 
+been  playing  in  the  living  room,  mum  is  about  to  have  a 
+bath, the washing needs folding and putting away, etc. 
+Now 
+that  we  can  ‘read  off’  domestic  events  from 
+methodical  assemblages  of  things,  that  they  are  account-
+able,  is  the  case  for  all  of  us,  but  it  is  the  case  in  a  very 
+unique,  very  local  way.  ‘Your’  home  is  not  the  same  as 
+‘my’ home. While you may do much the same as me – get 
+up,  get  dressed,  make  breakfast,  etc.  –  how  you  do  them, 
+through just what methodical assemblages of things, will be 
+different. Some of the assemblages I might recognise, other 
+
+to  you  at-a-glance 
+
+through 
+
+1745
+
+people  might  do  so  too,  but  others  will  be  opaque.  We 
+might recognise the things involved in the interaction, but 
+not  what  is  being  done,  has  been  done,  needs  to  be  done, 
+etc.  Could  you  tell  from  seeing  a  spoon  in  my  sink  at  a 
+certain time of day that the cat’s had been fed, for example? 
+The  account-ability  of  methodical  assemblages  resides  in 
+and reflects the local order of domestic life: how you and 
+the people you live with (should you do so) organise life at 
+home. That organisation is manifest as and articulates your 
+domestic  rhythms  and  routines,  which  are  recognisably 
+constituted in your methodical interactions with things and 
+the unique methodical assemblages that are produced in and 
+through  those  interactions.  This  means  that  zonal  clusters 
+are  ‘indexical’  to  the  local  order,  that  they  get  their  sense 
+from the local order and that their sense resides in the local 
+order,  all  of  which  raises  some  serious  challenges  for  the 
+Internet of Things. 
+SO WHAT? 
+We might begin to open up the implications of our study by 
+considering  some  of  the  ways  in  which  issues  might  be 
+raised about the approach that has been adopted here and its 
+focus.  In  reviewing  this  paper  it  was  suggested  to  us,  for 
+instance, that the indexicality of zonal clusters to the local 
+order  ignores  how  the  ‘non-local’  is  also  indexed  within 
+them.  Such  an  argument  invites  us  to  see  broader  “world 
+systems” [22] at work within the local production of order – 
+for example, the machineries of capitalist mass production 
+and marketing implicated in local interaction with FMCGs. 
+On  this  view  there  would  be  a  need  to  tease  ‘degrees  of 
+localness’  out  of  our  study  and  the  ways  in  which 
+the ‘local’ and ‘non-local’ might be seen to be related.  
+Dwelling on the implicative relationship of world systems 
+to  local  interaction  with  things  in  the  home  would, 
+however,  gloss  over  the  phenomenon  that  our  study 
+surfaces: the methodical assemblage of things involved in 
+the accomplishment of domestic rhythms and routines. Our 
+attention would thus be  diverted from the observable and 
+reportable  fact  that  people  build  such  assemblages  in 
+interaction, and do so as a matter of course in carrying out 
+the  plethora  of  activities  that  make  up  domestic  life.  The 
+machinery of mass marketing would, then, be put in place 
+of a distinctive machinery of interaction implicated in the 
+ongoing,  day-to-day,  accomplishment  of  the  local  order. 
+This does not rule out further treatment of the phenomenon, 
+social  and  technical,  but  there  is  in  our  view  a  need  to 
+proceed with caution if we are not to lose sight of it.  
+The  ‘invitation’  to  make  the  local  accountable  to  world 
+systems  is  not  all  that  it  appears  on  the  surface  –  i.e.,  a 
+matter  of  teasing  out  how  the  machineries  of  capitalist 
+production  relate  to  the  local  order.  As  anthropologist 
+George  Marcus  (who  has  valorised  the  notion  of  “world 
+systems”) reminds us, efforts to tease out the relationship 
+between situated action to large-scale social structures (e.g., 
+by  tracking  the  “connections  between  sites”  [22])  are 
+
+1746
+
+SESSION: HOME AND FAMILY
+
+life, 
+
+and 
+
+theoretical 
+
+embedded  in  a  particular  social  science  discourse  that  is 
+deeply concerned with the “politics of knowledge” [21].  
+While  Marcus’  work  has  been  imported  wholesale  into 
+design  by  [10]  we  should  not  accept 
+this  way  of 
+understanding  the  social,  which  transforms  fieldwork  and 
+ethnography  more  generally  into  a  reflexive  form  of 
+political  critique,  as  given.  It  is  not.  Indeed,  it  is  bitterly 
+contested  within  the  social  sciences  [e.g.,  20]  and  in 
+systems design [e.g., 7]. The study reported here is rooted 
+in a long tradition of empirical studies in CSCW inspired by 
+ethnomethodology  spanning  workplaces,  homes,  games, 
+etc. Such studies are “incommensurate and asymmetrically 
+alternate” [13] to theoretical treatment of whatever colour, 
+shade or hue.  
+We cannot then make use of theory to add what some might 
+see as ‘breadth and depth’ to our study, other than as a topic 
+of  ethnomethodological  critique  [19].  There  are  limits  to 
+how far this can be taken here so the reader is referred to 
+[4] for further treatment of these issues. Suffice to say that 
+in  place  of 
+insight  we  offer  empirical 
+observations and reflections on what they might mean for 
+design.  The  key  takeaway  we  offer  is  not  that  people 
+ordinarily interact with lots of things in the home and that 
+these cluster together in certain sites, but rather that key to 
+the  ordering  of  domestic 
+routine 
+accomplishment  of  domestic  activities,  is  the  methodical 
+ways in which household members assemble things.  
+This  observation  has  particular  ramifications  for 
+the 
+development  of  the  Internet  of  Things,  which  is  largely 
+marked by the design of individual things to be placed in 
+the  home:  the  Internet-enabled  fridge,  washing  machine, 
+thermostat,  kettle,  etc.  The  development  of  individual 
+things creates a fragmented ecology in which things are not 
+connected together; they are only connected to the Internet. 
+Where assemblages of things are provided for – e.g., If This 
+Then That or Samsung’s ARTIK platform – the provision is 
+largely limited to the placement and connection of various 
+sensors.  These  are  not  designed  to  ‘fit’  into  or  support 
+existing  methodical  assemblages,  but  to  enable  designers 
+and/or end users to create to novel assemblages exploiting 
+new technological possibilities. 
+The  real  world,  real  time  uses  of  things  within  the  local 
+production  of  domestic  life  is,  then,  ignored  by  design. 
+Things  are  not  being  designed  to  fit  into  and  support  the 
+methodical assemblages implicated in the doing of a great 
+many domestic activities. This may not be seen as problem; 
+new  activities  will  emerge  and  it  is  these  that  design  is 
+interested  in.  However,  domestic  life  will  not  simply 
+change,  and  whole  swathes  of  it  be  dispensed  with  by 
+design  because  designers  do  not  build  the  IoT  to  support 
+activities that are key to its ongoing accomplishment. That 
+it doesn’t support a great many domestic activities may, on 
+the other hand, have a considerable impact on the IoT and 
+limit its uptake, just as a failure to design for the orderliness 
+
+the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+furniture.  Designing 
+
+of human activities has had on other technologies in other 
+settings (e.g., [3]).  
+Our  study  raises  the  issue  of  designing  for  domestic 
+activities by designing methodical assemblages of things – 
+multiple things, occupying multiple categories. This means 
+that it is not sufficient to design for FMCGs, for example, 
+but the other things that are methodically implicated in their 
+use need to be taken into account as well, such as utensils 
+and 
+for  methodically  produced 
+assemblages of things is a key design challenge, shifting the 
+focus  from  individual  things,  and  novel  assemblages  of 
+sensors,  to  embedding  computation  in  a  myriad  mundane 
+things situated within the home. In this respect our study 
+opens up the IoT design space. 
+Our study makes it perspicuous that there is a great deal of 
+scope for embedding computation in the home, insofar as it 
+is  absent  from  most  categories  of 
+things  we  have 
+encountered in our study and the things ‘contained’ within 
+them.  Manifold  categories  of  things  are  routinely  woven 
+together  in  practice.  FMCGs  are  used  in  conjunction  with 
+furniture,  utensils,  appliances  and  services,  and  may 
+implicate media (e.g., recipes) and communications as well 
+(who  hasn’t  checked  their  email  or  answered  the  phone 
+while cooking?).  
+The strong point here is that it may be possible to identify 
+common assemblages of things where particular categories 
+of  things  routinely  combine  and  thereby  open  up  fruitful 
+areas for development to give real world, real time purpose 
+to  specific  IoT  applications.  For  example,  that  particular 
+FMCGs  (e.g.,  toothpaste)  are  used  in  combination  with 
+particular Utensils and Other Equipment (a toothbrush) and 
+Furniture  (a  mirror)  in  a  particular  interactional  zone  (the 
+bathroom  sink)  and  that  these  things  could  be  sensed  and 
+Internet-enabled to deliver oral hygiene advice.3 
+A third and final takeaway from our study suggests that the 
+methodical assemblage of things might open up a way for 
+designers to get a handle on an old but salient problem to 
+IoT applications that rely on sensing human activities. The 
+annals  of  ubiquitous  and  pervasive  computing  are  replete 
+
+                                                             
+3 In saying this it might be argued that we have swallowed 
+the IoT agenda wholesale, that we lack critical insight, and 
+would do well to learn when it is appropriate to intervene 
+and  when  not  [2].  We  are  not  blind  to  the  issue.  As 
+ethnomethodologists  have  argued  since  the  inception  of 
+CSCW,  in  undertaking  design  there  is  need  to  determine 
+what  to  automate  and  what  to  leave  to  human  skill  and 
+judgement  [17].  Nevertheless,  the  proposition  here  still 
+holds:  identifying  common  assemblages  of  things  may 
+serve  to  inform  IoT  design,  just  as  ‘patterns’  have  been 
+invoked on previous occasions to support different design 
+initiatives that seek to capitalise on field studies done in the 
+workplace [23]. 
+
+with papers detailing efforts to sense activities in the home, 
+though  there  is,  despite  developments,  a  strong  sense  in 
+which  Tapia  et  als  [32]  comments  on  the  effort  still  ring 
+true: 
+
+“Unlike other machine learning and pattern recognition problems, 
+there  is  no  ‘right’  answer  when  recognising  activities.  The 
+boundaries  when  activities  begin  and  end  are  fuzzy  since  they 
+can  occur  sequentially, 
+in  parallel,  alternating,  and  even 
+overlapping.  Finally,  there  is  significant  variation  in  the  way 
+observers would label the same activities.”  
+
+Our studies suggest that there may be a way to get a hold of 
+this  “fuzzy”  problem:  that  just  as  methodical  assemblages 
+of  things  provide  human  beings  with  the  means  to 
+recognise what has or is being done, and even what needs 
+to be done next, then so they might provide the means for 
+computational machines to recognise it too. 
+In  this  respect  our  study  suggests  that  there  are  several 
+salient  aspects  of  domestic  activity  that  might  be  sensed. 
+Not only the particular things used in interaction, but also 
+the  unique  clusters  of  things  that  emerge  in  the  act  of 
+assembly, the discrete zones in which these clusters occur, 
+and  their  spatial  and  temporal  distribution  might  all  be 
+sensed as well to determine what is being done, and where 
+IoT automation and actuation are concerned, what needs to 
+be done next. 
+This,  however,  is  where  the  uniqueness  of  the  local 
+domestic  order  bites.  As  noted  above,  even  where  what 
+goes on in one home may be much the same as another, just 
+how  it  is  done,  through  just  what  assemblage  of  things, 
+where it has reached and what needs to be done next may 
+not  be  transparent  to  outsiders.  Concomitantly,  the  local 
+order may well be opaque to machines and algorithms. As 
+[36]  demonstrates,  IoT  devices  may  struggle  to  learn  and 
+respond  appropriately  to  the  local  context,  situations  and 
+intent  of  users,  and  this  is  in  the  case  of  a  single  device. 
+Clearly  sensing  human  activity  at  a  local  level  will  be 
+considerably  more  challenging  where  multiple  devices  are 
+involved as projected by the IoT.  
+Sensing domestic activity at a local level, in distinction to 
+trading  in  gross  patterns  across  homes  (as  for  example  in 
+demand-side  energy  management),  raises  real  challenges 
+for machine learning. The methodical assemblage of things, 
+along  with  the  detectable  spatial  and  temporal  ‘states’ 
+implicated  in  their  construction,  may  provide  a  fruitful 
+means  of  addressing  the  problem.  We  do  not  pretend  that 
+this  will  be  easy.  Detecting  that  A,  B,  and  C  things  are 
+being interacted with in zone X, that D, E and F things are 
+being interacted with in zone Y, and that G, H, I, J, K, L 
+and  M  things  are  being  interacted  with  in  zone  Z  doesn’t 
+tell a machine what is being done (e.g., getting up). It only 
+says what has been interacted with where and when.4  
+                                                             
+4  Other  studies  we  have  conducted  focusing  on  the 
+deployment  of  sensors  in  the  home  suggest  that  it  will  be 
+necessary to involve household members in the articulation 
+
+1747
+
+Coupled to this, it is important to note the shift from sensing 
+interactions with things to the machine-based production of 
+and  reasoning  about  personal  data.  The  sense 
+that 
+interaction with things has within the local order is not of 
+the order ‘this was opened, that was picked up, this was put 
+in it’, but of the order that some particular activity is being 
+done  (e.g.,  going  to  the  toilet).  What  is  being  sensed  and 
+reasoned about is, then, the activities implicated in bringing 
+the  everyday  rhythms  and  routines  of  domestic  life  about. 
+These are certainly personal and may, as the example above 
+demonstrates, be very sensitive. How such data is treated is 
+also  an  important  matter  to  consider  within  the  emerging 
+IoT  ecology  and  raises  real  challenges  of  ‘human-data 
+interaction’ [24, 9]. 
+CONCLUSION 
+We  are  not  the  first  to  look  at  things  in  the  home  as  a 
+resource for design. As Rodden and Benford [26] point out 
+domestic  design  has  largely  focused  on  the  “stuff”  of  the 
+home,  i.e.,  “all  the  things  that  twitch  around  daily  to 
+monthly.”  Our  study  of  a  day  in  the  life  of  things  in  the 
+home  complements  and  extends  such  prior  work, 
+particularly  work  done 
+the  ethnomethodological 
+tradition, which has been concerned to explicate and make 
+visible the “unremarkable” character of the domestic order 
+and how it is brought about locally in the accomplishment 
+of the “routine” [34].  
+Our  study  does  this  by  offering  empirical  insights  that 
+extend upon matters such as the notion of clutter [31] and 
+mail handling [15] and other “artful systems” in the home 
+[33].  While 
+the  methodical 
+assemblage of things, the assemblage has not been treated 
+as a topic in its own right. Rather, the emphasis has been on 
+how  people  design,  arrange  and  integrate  informational 
+artefacts: 
+
+these  studies 
+
+in 
+
+implicate 
+
+“  …  the  miscellany  of  to-dos,  bills,  invitations,  appointments, 
+school  correspondence,  schoolwork,  etc.  that  must  be  routinely 
+handled,  arranged  and  dealt  with  in  the  smooth  running  of  a 
+family home.” [33] 
+
+Although  such  studies  share  in  common  with  ours  an 
+interest  in  the  organisation  of  domestic  life,  without 
+criticism they do not address the methodical assemblage of 
+things as a pervasive feature of the situated accomplishment 
+of the routine activities that constitute the local order. That 
+people  build  such  assemblages,  and  do  so  as  a  matter  of 
+course  in  carrying  out  routine  activities,  elaborates  a 
+distinctive machinery of interaction that is implicated in the 
+ongoing,  day-to-day,  accomplishment  of  the  local  order, 
+whether it implicates informational artefacts or not.  
+There  is,  then,  a  great  deal  more  to  the  methodical 
+assemblage  of  things  than  creating  “organising  systems” 
+                                                                                                      
+of  sensed  data  to  make  it  legible  [35].  Articulation  work 
+provides  a  potential  resource  for  the  problem  of  machine 
+learning in this context. 
+
+1748
+
+SESSION: HOME AND FAMILY
+
+[33] of informational artefacts to handle the routine, with 
+the  more  of  the  matter  having  direct  implications  for  the 
+ongoing  development  of  the  Internet  of  Things.  Thus,  in 
+addition to the kinds of design issues that have dropped out 
+of previous studies, our current study offers the following 
+takeaways: 
+
+•  Our study makes it perspicuous that the “glue” [34] of 
+domestic  life  –  the  routine  –  in  all  cases  implicates, 
+relies  on  and  exploits  the  methodical  assemblage  of 
+things. 
+
+•  Things  are  not  purposed  within 
+
+routine 
+individually; this raises the challenge of designing for 
+assemblages  of  things  that  span  multiple  categories, 
+rather than single things or things within a category. 
+
+the 
+
+• 
+
+•  Future possibilities for IoT development in the home 
+might be identified through the empirical elaboration 
+of common methodical assemblages of things. 
+Insofar  as  the  methodical  assemblage  of  things 
+permits  household  members  to  recognise  what  has 
+been  done,  is  being  done  and/or  what  needs  to  be 
+done  next,  such  assemblages  might  be  purposed  to 
+drive the activity sensing and machine learning that is 
+needed to drive IoT automation and actuation. 
+
+to 
+
+There  is,  of  course,  a  great  deal  more  that  could  be  said 
+about our study and how it relates to other design and social 
+science  literatures.  This  is  not  the  place,  however.  The 
+purpose of this paper has been to surface a phenomenon of 
+broad  relevance 
+the  IoT.  A 
+phenomenon  that  is  in  plain  view,  ordinarily  seen  but 
+unnoticed  or  taken  for  granted,  that  is  at  work  in  your 
+home, just as it is in ours, and which is a pervasive feature 
+of the local ordering of domestic life wherever it occurs.  
+As  Sacks  [30]  put  it  with  respect  to  the  machinery  of 
+interaction ordering talk, 
+
+the  development  of 
+
+“  …  the  results  I  offer,  people  can  go  and  see  for  themselves. 
+And they needn’t be afraid to. And they needn’t figure the results 
+are wrong because they can see them.”  
+
+The same applies to the methodical assemblage of things in 
+the home. This is not to say that your home will look my 
+home  or  anyone  else’s  -  just  like  conversation,  the 
+machinery  can  be  used  in  infinite  ways  -  though  it  may 
+transpire  that  commonalities  exist at  least  within  a  culture 
+(we would be surprised if they didn’t). Nonetheless, there is 
+a need for further work. We have, to reiterate, surfaced the 
+phenomenon  here.  The  job  now  is  to  open  it  up  through 
+broader study and technological investigation. 
+ACKNOWLEDGMENTS 
+The research on which this article is based was funded by 
+the EPSRC grant EP/M001636/1. A great many thanks also 
+go 
+families,  without  whose  goodwill  and 
+perseverance this study would not have been possible. We 
+would also like to thank the reviewers of this paper for their 
+constructive feedback. 
+
+to  our 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+REFERENCES 
+1.  4th  Annual 
+
+Internet  of  Things  Awards  2013/14, 
+
+http://postscapes.com/internet-of-things-award/2014/ 
+
+2.  Eric  Baumer  and  Six  Silberman  (2011)  “When  the 
+implication is not to design (technology)”, Proc. of CHI, 
+pp. 2271-2274, Vancouver, ACM. 
+
+3.  Jon  Bowers,  Graham  Button  and  Wes  Sharrock  (1995) 
+“Workflow from within and without”, Proc. of ECSCW 
+pp. 51-66, Stockholm, Kluwer. 
+
+4.  Graham Button, Andy Crabtree, Mark Rouncefield and 
+Peter  Tolmie  (2015)  Deconstructing  Ethnography, 
+Springer. 
+
+5.  Andy  Crabtree,  Tom  Rodden,  Terry  Hemmings  and 
+Steve  Benford  (2003)  “Finding  a  place  for  ubicomp  in 
+the  home”,  Proc.  of  UbiComp,  pp.  208-226,  Seattle, 
+Springer. 
+
+6.  Andy  Crabtree  and  Tom  Rodden  (2004)  “Domestic 
+routines  and  design  for  the  home”,  Journal  of  CSCW, 
+vol. 13 (2), pp. 191-220. 
+
+7.  Andy Crabtree, Tom Rodden, Peter Tolmie and Graham 
+Button (2009) “Ethnography considered harmful”, Proc. 
+of CHI, pp. 879-888, Boston (MA), ACM. 
+
+8.  Andy  Crabtree,  Peter  Tolmie  and  Mark  Rouncefield 
+(2013) “‘How many bloody examples do you want?’ – 
+Fieldwork  and  generalisation,  Proc.  of  ECSCW,  pp.  1-
+20, Paphos, Springer. 
+
+9.  Andy  Crabtree  and  Richard  Mortier  (2015)  “Human 
+data  interaction:  historical  lessons  from  social  studies 
+and CSCW”, Proc. of ECSCW, pp. 1-20, Oslo, Springer. 
+10. Paul  Dourish  and  Genevieve  Bell  (2011)  Divining  a 
+
+Digital Future, MIT Press. 
+
+11. Harold  Garfinkel  (1967)  Studies  in  Ethnomethodology, 
+
+Prentice-Hall. 
+
+12. Harold  Garfinkel,  Michael  Lynch  and  Eric  Livingston 
+(1981)  “The  work  of  a  discovering  science  construed 
+with  materials  from  the  optically  discovered  pulsar”, 
+Philosophy of the Social Sciences, vol. 11, pp. 131-158. 
+13. Harold  Garfinkel  and  Lawrence  Wieder  (1992)  “Two 
+incommensurable, asymmetrically alternate technologies 
+of  social  analysis”,  Text  in  Context:  Contributions  to 
+Ethnomethodology  (eds.  Graham  Watson  and  Robert 
+Seiler), pp.175-206, Sage.  
+
+14. Neil  Gershenfeld,  Raffi  Krikorian  and  Danny  Cohen 
+(2004)  “The  Internet  of  Things”,  Scientific  American, 
+vol. 291 (4), pp. 76-81. 
+
+15. Richard  Harper,  Venetia  Evergeti,  Lynne  Hamill  and 
+Ben  Shatwell  (2003)  “The  social  organisation  of 
+communication in the home of the twenty-first century”, 
+Cognition, Technology and Work, vol. 5 (1), pp. 15-22. 
+
+16. Richard  Harper  (2012)  “From  the  smart  home  to  the 
+connected home”, The Connected Home: The Future of 
+
+Domestic  Life  (ed.  Richard  Harper),  pp.  3-18,  London, 
+Springer. 
+
+17. John  Hughes,  Dave  Randall  and  Dan  Shapiro  (1993) 
+“From  ethnographic  record  to  system  design:  some 
+experiences from the field”, Journal of CSCW, vol. (1), 
+pp. 123-141. 
+
+18. Kimberle  Koile,  Konrad  Tollmar,  David  Demirdjian, 
+Howard  Schrobe  and  Trevor  Darrell  (2003)  “Activity 
+zones for context-aware computing”, Proc. of UbiComp, 
+pp. 90-106, Seattle, Springer. 
+(1999) 
+
+context: 
+ethnomethodology  and  social  theory”,  Human  Studies, 
+vol. 22, pp. 211-233. 
+
+19. Michael  Lynch 
+
+“Silence 
+
+in 
+
+20. Michael  Lynch  (2000)  “Against  reflexivity  as  an 
+academic  virtue  and  source  of  privileged  knowledge”, 
+Theory, Culture & Society, vol. 17 (3), pp. 26-54. 
+
+21. George  Marcus 
+
+(1986) 
+Anthropology as Cultural Critique, Chicago University 
+Press. 
+
+and  Michael  Fischer 
+
+22. George  Marcus  (1995)  “Ethnography  in/of  the  world 
+system:  the  emergence  of  multi-sited  ethnography”, 
+Annual Review of Anthropology, vol. 24, pp. 95-117. 
+
+23. David  Martin,  Tom  Rodden,  Mark  Rouncefield,  Ian 
+Sommerville  and  Stephen  Viller  (2001)  “Finding 
+patterns in the fieldwork”, Proc. of ECSCW, pp. 39-58, 
+Bonn, Kluwer. 
+
+24. Richard  Mortier,  Hamed  Haddadi,  Tristan  Henderson, 
+Derek McAuley and Jon Crowcroft (2014) “Human-data 
+interaction: the human face of the data-driven society”, 
+Social Science Research Network, http://papers.ssrn.com 
+/sol3/papers.cfm?abstract_id=2508051 
+
+25. Daniela  Petrelli,  Steve  Whittaker  and  Jens  Brockmeier 
+(2008) “AutoTopography: what can physical mementoes 
+tell us about digital memories?”, Proc. of CHI, pp. 53-
+62, Florence, ACM. 
+
+26. Tom Rodden and Steve Benford (2003) “The evolution 
+of  buildings  and 
+the  design  of 
+ubiquitous domestic environments”, Proc. of CHI, pp. 9-
+16, Ft. Lauderdale, ACM.  
+
+implications  for 
+
+27. Harvey  Sacks 
+
+(1963)  “Sociological  description”, 
+
+Berkeley Journal of Sociology, vol. 8, pp. 1-16. 
+
+28. Harvey Sacks, Emmanuel Schegloff and Gail Jefferson 
+(1974)  “A  simplest  systematics  for  the  organization  of 
+turn-taking  in  conversation”,  Language,  vol.  50,  pp. 
+696-735. 
+
+29. Harvey  Sacks 
+
+(1984)  “Notes  on  methodology”, 
+Structures  of  Social  Action:  Studies  in  Conversation 
+Analysis (eds. Maxwell, J.M. and Heritage, J.), pp. 21-
+27, CUP.  
+
+30. Harvey  Sacks  (1992)  “On  sampling  and  subjectivity” 
+I,  pp.  483–488, 
+
+Lectures  on  Conversation,  vol. 
+Blackwell.  
+
+1749
+
+31. Laurel  Swan,  Alex  Taylor  and  Richard  Harper  (2008) 
+“Making  place  for  clutter  and  other  ideas  of  home”, 
+ACM ToCHI, vol. 15, Article No. 9. 
+
+32. Emmanuel  Tapia,  Stephen  Intille  and  Kent  Larson 
+(2004)  “Activity  recognition  in  the  home  using  simple 
+and ubiquitous sensors”, Proc. of Pervasive Computing, 
+pp. 158-175, Linz, Springer. 
+
+33. Alex Taylor and Laurel Swan (2005) “Artful systems in 
+
+the home”, Proc. of CHI, pp. 641-650, Portland, ACM. 
+
+34. Peter  Tolmie,  James  Pycock,  Tim  Diggins,  Allan 
+Maclean  and  Alain  Karsenty  (2002)  “Unremarkable 
+
+ 
+
+SESSION: HOME AND FAMILY
+
+computing”,  Proc.  of  CHI,  pp.  399-406,  Minneapolis, 
+ACM. 
+
+35. Peter  Tolmie,  Andy  Crabtree,  Tom  Rodden,  James 
+Colley and Ewa Luger  (2016) “ ‘This has to be the cats’ 
+–  personal  data 
+in  networked  sensing 
+systems”,  Proc.  of  CSCW,  February  27-March  2,  San 
+Francisco, ACM. 
+
+legibility 
+
+36. Yang,  R.  and  Newman,  M.  (2013)  “Learning  from  a 
+learning  thermostat”,  Proc.  of  UbiComp,  pp.  93-102, 
+Zurich, ACM.  
+
+1750
+
+

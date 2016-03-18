@@ -1,0 +1,1841 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(cid:20)(cid:26)(cid:40)(cid:42)(cid:37)(cid:30)(cid:40)(cid:41)(cid:1)(cid:34)(cid:37)(cid:1)(cid:8)(cid:26)(cid:40)(cid:30)(cid:5)(cid:1)(cid:9)(cid:30)(cid:41)(cid:34)(cid:32)(cid:37)(cid:1)(cid:8)(cid:38)(cid:37)(cid:41)(cid:34)(cid:29)(cid:30)(cid:40)(cid:26)(cid:42)(cid:34)(cid:38)(cid:37)(cid:41)(cid:1)(cid:31)(cid:38)(cid:40)(cid:1)(cid:1)
+(cid:8)(cid:26)(cid:40)(cid:30)(cid:32)(cid:34)(cid:44)(cid:30)(cid:40)(cid:41)(cid:1)(cid:26)(cid:37)(cid:29)(cid:1)(cid:20)(cid:26)(cid:42)(cid:34)(cid:30)(cid:37)(cid:42)(cid:41)(cid:1)(cid:9)(cid:43)(cid:40)(cid:34)(cid:37)(cid:32)(cid:1)(cid:26)(cid:1)(cid:13)(cid:38)(cid:41)(cid:39)(cid:34)(cid:42)(cid:26)(cid:35)(cid:1)(cid:22)(cid:42)(cid:26)(cid:47)(cid:1)
+
+Andrew D. Miller2, Sonali R. Mishra1, Logan Kendall2, 
+
+Shefali Haldar2, Ari H. Pollack3,4, Wanda Pratt1 
+
+{millerad, srmishra, kendall5, shaldar, apollack, wpratt}@uw.edu 
+
+1The Information School  
+University of Washington 
+
+Seattle, WA 
+
+Informatics 
+
+Seattle, WA 
+
+2Biomedical and Health 
+
+3Department of Pediatrics 
+
+4Division of Nephrology 
+
+School of Medicine 
+
+Seattle Children’s 
+
+University of Washington 
+
+University of Washington 
+
+Seattle, WA
+
+Hospital 
+
+Seattle, WA 
+
+(cid:6)(cid:7)(cid:22)(cid:23)(cid:21)(cid:6)(cid:8)(cid:23)(cid:1)
+Informal caregivers, such as close friends and family, play 
+an  important  role  in  a  hospital  patient’s  care.  Although 
+CSCW  researchers  have  shown  the  potential  for  social 
+computing technologies to help patients and their caregivers 
+manage  chronic  conditions  and  support  health  behavior 
+change,  few  studies  focus  on  caregivers’  role  during  a 
+multi-day  hospital  stay.  To  explore 
+this  space,  we 
+conducted  an  interview  and  observation  study  of  patients 
+and  caregivers  in  the  inpatient  setting.  In  this  paper,  we 
+describe  how  caregivers  and  patients  coordinate  and 
+collaborate to manage patients’ care and wellbeing during a 
+hospital stay. We define and describe five roles caregivers 
+adopt:  companion,  assistant,  representative,  navigator,  and 
+planner,  and  show  how  patients  and  caregivers  negotiate 
+these  roles  and  responsibilities  throughout  a  hospital  stay. 
+Finally,  we 
+for 
+technology  to  support  patients  and  caregivers  during  a 
+hospital stay. 
+(cid:6)(cid:43)(cid:42)(cid:33)(cid:38)(cid:40)(cid:1)(cid:15)(cid:30)(cid:47)(cid:45)(cid:38)(cid:40)(cid:29)(cid:41)(cid:1)
+CSCW, health informatics, caregiving, caregiver, inpatient, 
+medical informatics. 
+(cid:6)(cid:8)(cid:17)(cid:1)(cid:8)(cid:35)(cid:26)(cid:41)(cid:41)(cid:34)(cid:31)(cid:34)(cid:28)(cid:26)(cid:42)(cid:34)(cid:38)(cid:37)(cid:1)(cid:15)(cid:30)(cid:47)(cid:45)(cid:38)(cid:40)(cid:29)(cid:41)(cid:1)
+J.3 Life and Medical Sciences, Health, Medical Information 
+Systems;  H.5.3  Group  and  organization 
+Interfaces, 
+Computer Supported Cooperative Work  
+(cid:14)(cid:18)(cid:23)(cid:21)(cid:19)(cid:9)(cid:24)(cid:8)(cid:23)(cid:14)(cid:19)(cid:18)(cid:1)
+The  hospital  is  a  dynamic,  complex,  and  often  stressful 
+environment with a diverse array of clinicians coordinating 
+
+identify  key  design  considerations 
+
+(cid:51)(cid:72)(cid:85)(cid:80)(cid:76)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:3)(cid:87)(cid:82)(cid:3)(cid:80)(cid:68)(cid:78)(cid:72)(cid:3)(cid:71)(cid:76)(cid:74)(cid:76)(cid:87)(cid:68)(cid:79)(cid:3)(cid:82)(cid:85)(cid:3)(cid:75)(cid:68)(cid:85)(cid:71)(cid:3)(cid:70)(cid:82)(cid:83)(cid:76)(cid:72)(cid:86)(cid:3)(cid:82)(cid:73)(cid:3)(cid:68)(cid:79)(cid:79)(cid:3)(cid:82)(cid:85)(cid:3)(cid:83)(cid:68)(cid:85)(cid:87)(cid:3)(cid:82)(cid:73)(cid:3)(cid:87)(cid:75)(cid:76)(cid:86)(cid:3)(cid:90)(cid:82)(cid:85)(cid:78)(cid:3)(cid:73)(cid:82)(cid:85)(cid:3)
+(cid:83)(cid:72)(cid:85)(cid:86)(cid:82)(cid:81)(cid:68)(cid:79)(cid:3)(cid:82)(cid:85)(cid:3)(cid:70)(cid:79)(cid:68)(cid:86)(cid:86)(cid:85)(cid:82)(cid:82)(cid:80)(cid:3)(cid:88)(cid:86)(cid:72)(cid:3)(cid:76)(cid:86)(cid:3)(cid:74)(cid:85)(cid:68)(cid:81)(cid:87)(cid:72)(cid:71)(cid:3)(cid:90)(cid:76)(cid:87)(cid:75)(cid:82)(cid:88)(cid:87)(cid:3)(cid:73)(cid:72)(cid:72)(cid:3)(cid:83)(cid:85)(cid:82)(cid:89)(cid:76)(cid:71)(cid:72)(cid:71)(cid:3)(cid:87)(cid:75)(cid:68)(cid:87)(cid:3)(cid:70)(cid:82)(cid:83)(cid:76)(cid:72)(cid:86)(cid:3)(cid:68)(cid:85)(cid:72)(cid:3)
+(cid:81)(cid:82)(cid:87)(cid:3) (cid:80)(cid:68)(cid:71)(cid:72)(cid:3) (cid:82)(cid:85)(cid:3) (cid:71)(cid:76)(cid:86)(cid:87)(cid:85)(cid:76)(cid:69)(cid:88)(cid:87)(cid:72)(cid:71)(cid:3) (cid:73)(cid:82)(cid:85)(cid:3) (cid:83)(cid:85)(cid:82)(cid:73)(cid:76)(cid:87)(cid:3) (cid:82)(cid:85)(cid:3) (cid:70)(cid:82)(cid:80)(cid:80)(cid:72)(cid:85)(cid:70)(cid:76)(cid:68)(cid:79)(cid:3) (cid:68)(cid:71)(cid:89)(cid:68)(cid:81)(cid:87)(cid:68)(cid:74)(cid:72)(cid:3) (cid:68)(cid:81)(cid:71)(cid:3) (cid:87)(cid:75)(cid:68)(cid:87)(cid:3)
+(cid:70)(cid:82)(cid:83)(cid:76)(cid:72)(cid:86)(cid:3)bear this notice and the full citation on the first page. Copyrights 
+for components of this work owned by others than the author(s) must be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+(cid:85)(cid:72)(cid:83)(cid:88)(cid:69)(cid:79)(cid:76)(cid:86)(cid:75)(cid:15)(cid:3) (cid:87)(cid:82)(cid:3) (cid:83)(cid:82)(cid:86)(cid:87)(cid:3) (cid:82)(cid:81)(cid:3) (cid:86)(cid:72)(cid:85)(cid:89)(cid:72)(cid:85)(cid:86)(cid:3) (cid:82)(cid:85)(cid:3) (cid:87)(cid:82)(cid:3) (cid:85)(cid:72)(cid:71)(cid:76)(cid:86)(cid:87)(cid:85)(cid:76)(cid:69)(cid:88)(cid:87)(cid:72)(cid:3) (cid:87)(cid:82)(cid:3) (cid:79)(cid:76)(cid:86)(cid:87)(cid:86)(cid:15)(cid:3) (cid:85)(cid:72)(cid:84)(cid:88)(cid:76)(cid:85)(cid:72)(cid:86)(cid:3) (cid:83)(cid:85)(cid:76)(cid:82)(cid:85)(cid:3)
+(cid:86)(cid:83)(cid:72)(cid:70)(cid:76)(cid:73)(cid:76)(cid:70)(cid:3) (cid:83)(cid:72)(cid:85)(cid:80)(cid:76)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:3) (cid:68)(cid:81)(cid:71)(cid:18)(cid:82)(cid:85)(cid:3) (cid:68)(cid:3)
+(cid:73)(cid:85)(cid:82)(cid:80)(cid:3)
+(cid:51)(cid:72)(cid:85)(cid:80)(cid:76)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:86)(cid:35)(cid:68)(cid:70)(cid:80)(cid:17)(cid:82)(cid:85)(cid:74)(cid:17)
+(cid:38)(cid:54)(cid:38)(cid:58)(cid:3)(cid:10)(cid:20)(cid:25)(cid:15)(cid:3)(cid:41)(cid:72)(cid:69)(cid:85)(cid:88)(cid:68)(cid:85)(cid:92)(cid:3)(cid:21)(cid:26)(cid:16)(cid:48)(cid:68)(cid:85)(cid:70)(cid:75)(cid:3)(cid:19)(cid:21)(cid:15)(cid:3)(cid:21)(cid:19)(cid:20)(cid:25)(cid:15)(cid:3)(cid:54)(cid:68)(cid:81)(cid:3)(cid:41)(cid:85)(cid:68)(cid:81)(cid:70)(cid:76)(cid:86)(cid:70)(cid:82)(cid:15)(cid:3)(cid:38)(cid:36)(cid:15)(cid:3)(cid:56)(cid:54)(cid:36)
+(cid:38)(cid:82)(cid:83)(cid:92)(cid:85)(cid:76)(cid:74)(cid:75)(cid:87)(cid:3)(cid:76)(cid:86)(cid:3)(cid:75)(cid:72)(cid:79)(cid:71)(cid:3)(cid:69)(cid:92)(cid:3)(cid:87)(cid:75)(cid:72)(cid:3)(cid:82)(cid:90)(cid:81)(cid:72)(cid:85)(cid:18)(cid:68)(cid:88)(cid:87)(cid:75)(cid:82)(cid:85)(cid:11)(cid:86)(cid:12)(cid:17)(cid:3)(cid:51)(cid:88)(cid:69)(cid:79)(cid:76)(cid:70)(cid:68)(cid:87)(cid:76)(cid:82)(cid:81)(cid:3)(cid:85)(cid:76)(cid:74)(cid:75)(cid:87)(cid:86)(cid:3)(cid:79)(cid:76)(cid:70)(cid:72)(cid:81)(cid:86)(cid:72)(cid:71)(cid:3)(cid:87)(cid:82)(cid:3)
+(cid:36)(cid:38)(cid:48)(cid:17)
+(cid:36)(cid:38)(cid:48)(cid:3)(cid:28)(cid:26)(cid:27)(cid:16)(cid:20)(cid:16)(cid:23)(cid:24)(cid:19)(cid:22)(cid:16)(cid:22)(cid:24)(cid:28)(cid:21)(cid:16)(cid:27)(cid:18)(cid:20)(cid:25)(cid:18)(cid:19)(cid:21)(cid:17)(cid:17)(cid:17)(cid:7)(cid:20)(cid:24)(cid:17)(cid:19)(cid:19)(cid:3)
+(cid:39)(cid:50)(cid:44)(cid:29)(cid:3)(cid:75)(cid:87)(cid:87)(cid:83)(cid:29)(cid:18)(cid:18)(cid:71)(cid:91)(cid:17)(cid:71)(cid:82)(cid:76)(cid:17)(cid:82)(cid:85)(cid:74)(cid:18)(cid:20)(cid:19)(cid:17)(cid:20)(cid:20)(cid:23)(cid:24)(cid:18)(cid:21)(cid:27)(cid:20)(cid:27)(cid:19)(cid:23)(cid:27)(cid:17)(cid:21)(cid:27)(cid:20)(cid:28)(cid:28)(cid:27)(cid:22)(cid:3)
+
+(cid:73)(cid:72)(cid:72)(cid:17)(cid:3) (cid:53)(cid:72)(cid:84)(cid:88)(cid:72)(cid:86)(cid:87)(cid:3) (cid:83)(cid:72)(cid:85)(cid:80)(cid:76)(cid:86)(cid:86)(cid:76)(cid:82)(cid:81)(cid:86)(cid:3)
+
+756
+
+patient  care.  Patients  admitted  to  a  hospital  often  face 
+cognitive challenges because they are in a critically ill state 
+and under the influence of pain killers or other medication 
+that  can  affect  their  ability  to  process  and  remember 
+information [14]. Within this setting, patients have to adjust 
+to unfamiliar hospital routines and cope with mostly verbal 
+information  transfer  filled  with  complex  terminology  and 
+vernacular. These factors introduce obstacles for patients to 
+obtain and manage accurate information about their care.  
+Close friends and family have the capacity to help mitigate 
+these  challenges  by  promoting  engagement 
+through 
+establishing rapport, exchanging information, and assisting 
+with medical decision-making [38]. Outside of the hospital, 
+researchers have demonstrated that support from these non-
+professional  or  informal  caregivers  improves  patients’ 
+health outcomes and reduces the likelihood of further health 
+complications [9]. The presence of family caregivers during 
+patient-clinician interaction leads to improved medical visit 
+communication  and  increased  provision  of  biomedical 
+information 
+in  being 
+constantly  present  in  a  hospital  introduces  barriers  for 
+caregivers to provide this valuable emotional, practical, and 
+informational support. 
+CSCW  researchers  have  shown  the  potential  for  social 
+computing  technologies  to  help  patients  and  caregivers 
+manage  chronic  conditions  and  support  health  behavior 
+change  [5,15,20].  They  have  also  begun  to  study  how 
+patients and caregivers collaborate and coordinate during a 
+hospital stay and what technology they use to do so [22,29]. 
+The unique challenges and needs within the hospital setting 
+suggest  an  opportunity  to  explore  in  depth  the  ways  in 
+which  informal  caregivers  collaborate  and  support  patient 
+and  clinician  activities,  and  to  identify  strategies  to  create 
+high  quality  patient-family-physician 
+communication 
+processes. 
+In  this  paper,  we  report  findings  from  an  interview  and 
+observation study we conducted with 48 people (28 patients 
+and  20  caregivers)  undergoing  a  multi-day  stay  in  a 
+hospital.  We  identify  what  specific  roles  caregivers  play, 
+
+[38].  However, 
+
+the  difficulty 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+how  these  responsibilities  shift  in  response  to  different 
+contexts,  and  what  caregivers  need  to  support  these  roles. 
+Based  on  our  study  and  analysis,  we  make  the  following 
+contributions: 
+•(cid:1) We  define  and  describe  various  roles  that  informal 
+caregivers  adopt  as  they  help  patients  in  the  inpatient 
+setting. 
+
+characterize 
+
+current 
+
+patient-caregiver 
+
+•(cid:1) We 
+
+communication and coordination practices. 
+
+the 
+
+•(cid:1) We  identify  key  opportunities  and  challenges  for 
+technology to support caregivers and patients during a 
+hospital stay. 
+(cid:21)(cid:10)(cid:16)(cid:6)(cid:23)(cid:10)(cid:9)(cid:1)(cid:25)(cid:19)(cid:21)(cid:15)(cid:1)
+information  and  clinical  coordination 
+Patient-centered 
+practices  are  well  documented  in  the  HCI,  CSCW,  and 
+Biomedical  Informatics  communities.  Researchers  have 
+investigated 
+information  needs  of  patients  and 
+enumerated  design  considerations  for  patient  engagement 
+technologies.  Informal  caregivers  as  stakeholders  have 
+received significant attention from CSCW in the last several 
+years,  although  the  term  ‘caregiver’  has  been  used  in 
+different ways. Additionally this work has primarily studied 
+caregiving  for  chronic  conditions  in  at-home  care  and 
+ambulatory  clinic  settings.  Inpatient  collaboration  and 
+coordination has also been a focus of the medical research 
+and  CSCW  communities,  although  with  an  emphasis  on 
+clinician coordination rather than the patient or caregiver as 
+a coordination stakeholder.  
+(cid:20)(cid:26)(cid:42)(cid:34)(cid:30)(cid:37)(cid:42)(cid:41)(cid:48)(cid:1)(cid:34)(cid:37)(cid:31)(cid:38)(cid:40)(cid:36)(cid:26)(cid:42)(cid:34)(cid:38)(cid:37)(cid:1)(cid:37)(cid:30)(cid:30)(cid:29)(cid:41)(cid:1)(cid:34)(cid:37)(cid:1)(cid:42)(cid:33)(cid:30)(cid:1)(cid:33)(cid:38)(cid:41)(cid:39)(cid:34)(cid:42)(cid:26)(cid:35)(cid:1)
+Over the last several years, researchers have begun to study 
+patients’  information  needs  in  hospital  settings.  These 
+studies  have  varied  from  examinations  of  the  use  of  a 
+variety of technical and non-technical tools for information 
+exchange between patients and their clinical teams [28].  
+On  the  non-technical  side,  whiteboard  and  call  buttons 
+serve  as  the  primary  tools  to  facilitate  patient-clinician 
+communication. When an inpatient room has a whiteboard, 
+patients  are  more  satisfied,  aware  of  their  condition  and 
+knowledgeable about their hospital care. Whiteboards also 
+serve  as  a  helpful  information  resource  to  both  clinicians 
+and  patients  [26,31].  However,  whiteboards  have  limited 
+space  and  require  manual  upkeep  by  clinicians.  This  is 
+problematic  due  to  clinicians’  time  constraints,  and  can 
+potentially result in inaccurate or outdated information [31]. 
+Call buttons provide a means for patients to signal nursing 
+staff  when  the  patients  need  help  or  have  a  question. 
+However,  the  limited  interaction  afforded  by  the  button 
+frustrates patients and constrains communication [28].  
+On  the  technical  side,  Biomedical  Informatics  and  CSCW 
+researchers have also investigated ways to increase patient 
+engagement  and  patient-clinician  communication  during  a 
+hospital stay, with an emphasis on novel form factors such 
+as  large  displays,  tablets,  and  mobile  apps  [22].  For 
+example, Wilcox et al. developed and tested a paper based 
+
+that  guide  patients 
+that 
+
+patient-centric  information  display  prototype,  providing 
+patients  with  updated  information  about  their  care  and 
+treatment  while  in  the  hospital  [37].  Tablet  computer  and 
+mobile phone applications have also provided patients with 
+access  to  personalized  and  updated  medication,  health, 
+safety, and educational information [8,11,33,34]. Also, as a 
+way to improve the hospital discharge process for patients,  
+Bickmore  et  al.  demonstrated  the  use  of  Virtual  Nurse 
+through 
+Agents 
+their  discharge 
+paperwork  and  confirm 
+the  patient  understands 
+important concepts [3].  
+On  the  whole,  patient  engagement  technologies  serve  the 
+information needs of the clinician or the patient, but rarely 
+account  for  patients’  caregivers  as  stakeholders  or  system 
+users.  A  few  researchers  have  looked  at  technologies  for 
+caregivers of young patients in hospital wards, such as the 
+neonatal intensive care unit (NICU), where parents who are 
+physically  separated  from  their  child  require  access  to 
+clinical  information  to  make  decisions  about  care  or 
+treatment [1,24,36]. Except for these specific contexts, little 
+is  known  about  caregivers  as  users  of  patient  engagement 
+technologies  in  the  hospital.  Furthermore,  the  focus  on 
+chronic  and  long-term  care  may  mask  the  challenges  to 
+uptake and usability for short-term one-time hospital stays. 
+(cid:9)(cid:30)(cid:31)(cid:34)(cid:37)(cid:34)(cid:42)(cid:34)(cid:38)(cid:37)(cid:1)(cid:38)(cid:31)(cid:1)(cid:26)(cid:37)(cid:1)(cid:34)(cid:37)(cid:31)(cid:38)(cid:40)(cid:36)(cid:26)(cid:35)(cid:1)(cid:28)(cid:26)(cid:40)(cid:30)(cid:32)(cid:34)(cid:44)(cid:30)(cid:40)(cid:1)(cid:1)
+The HCI health-focused literature is vague on who exactly 
+counts as a caregiver, but related papers often take one of 
+two  approaches:  focusing  on  a  ‘primary’  caregiver 
+responsible for day-to-day care in chronic conditions [5,13] 
+or on a broader network of care [6]. The health promotion 
+literature  often  focuses  on  condition-specific  caregiver 
+definitions,  such  as  family  caregivers  of  cancer  patients, 
+[10] or adult children caring for their elderly parents [7].  
+In  this  paper,  we  seek  to  understand  informal  caregiving 
+practices within the inpatient setting, across conditions and 
+populations.  Thus,  in  our  conversations  with  participants 
+and our resulting analysis, we focus not on caregivers but 
+on    informal  caregiving  during  the  hospital  stay.  For  our 
+purposes,  any  non-professional  person  who  the  patient 
+identified as helping with some aspect of their care counts 
+as  a  caregiver.  Both  patient-participants  and  caregiver-
+participants described spouses, parents, children, and others 
+from  their  broader  social  network  helping  with  various 
+aspects  of  the  patient’s  care.  An  inclusive  definition  of 
+caregiver  has  allowed  us  to  adopt  a  holistic  and  fluid 
+analytical perspective. 
+(cid:23)(cid:33)(cid:30)(cid:1)(cid:40)(cid:38)(cid:35)(cid:30)(cid:1)(cid:38)(cid:31)(cid:1)(cid:28)(cid:26)(cid:40)(cid:30)(cid:32)(cid:34)(cid:44)(cid:30)(cid:40)(cid:41)(cid:1)
+In  recent  years,  CSCW  and  health  informatics  researchers 
+have begun to study the role of technology for caregivers in 
+earnest.  Chen  et  al.  called  for  consideration  of  informal 
+caregivers as key health stakeholders in HCI and the need 
+for designs that treat caregivers as whole persons and help 
+to  address  some  of  the  challenges  and  burdens  that 
+caregivers  experience  in  this  role  of  patient  support  [5]. 
+Within  the  inpatient  context,  Kaziunas  et  al.  studied 
+
+ 
+
+757
+
+the 
+
+include: 
+
+caregiver 
+
+caregivers  of  pediatric  bone  marrow  transplant  patients, 
+placing the caregiver's role in supporting inpatients within 
+the  broader  context  of  a  specific  long-term  condition 
+affecting a specific population [13]. 
+In  2002,  Schultz  et  al.  conducted  a  systematic  review 
+outlining  the  role  of  technology  in  chronic  caregiving, 
+primarily  with  caregivers  of  patients  diagnosed  with 
+dementia.  Examples  of  the  roles  that  technology  plays  in 
+supporting 
+communicating 
+information  efficiently,  providing  a  means  for  social 
+support,  and  acting  as  a  delivery  mechanism  for  the 
+caregiver’s health promotion and health management [25]. 
+Schultz et al. also proposed a series of recommendations for 
+the  use  of  caregiver  technologies,  such  as  addressing 
+training  needs  related  to  the  use  of  these  technologies, 
+recognizing  potential  harms,  and  gaining  a  better 
+understanding  of  how  these  technologies  complement  and 
+apply to existing conceptual frameworks [25]. 
+Others have focused on the patient’s perspective to manage 
+caregiver  networks  for  support.  Skeels  et  al.  conducted 
+participatory  design  exercises  and  developed  a  tool  for 
+cancer patients to help manage and facilitate social support 
+from friends and family members [29]. Liu et al. examined 
+pediatric patients' information sharing practices, seeking to 
+understand how communication technologies allow patients 
+in  the  hospital  to  achieve  a  sense  of  normalcy  [18]. 
+Newman  et  al.  identified  challenges  people  face  with 
+sharing  health 
+their  broader  social 
+networks [21]. 
+Researchers  have  also  investigated  the  role  of  pervasive 
+computing in support of chronic care.  Studies  of  this  type 
+focus on the use of remote sensor and monitoring systems 
+to  track  a  person’s  health  activity  and  report  it  to  a 
+designated family member or caregiver [6,35]. Barish et al. 
+examined  leveraging  mobile  sensors  and  input  from  the 
+caregiver  in  the  context  of  outpatients  with  mental  health 
+disorders [2]. Topo discussed the use of technology among 
+their 
+at-home  patients  diagnosed  with  dementia  and 
+caregivers,  and  acknowledged 
+formal 
+caregivers  as  end  users  of  technology  to  support  their 
+diverse  needs,  in  addition  to  the  ability  for  technology  to 
+improve caregiver wellbeing [32].  
+Technologies to support parents as informal caregivers have 
+also received significant attention in recent years. Suh et al. 
+designed  the  Baby  Steps  system  to  allow  parents  to  track 
+their child’s development progress [30]. Liu et al. studied a 
+Neonatal  Intensive  care  Unit  (NICU),  pinpointing  the 
+communication  challenges  that  exist  between  a  NICU 
+patient’s  caregiver  and  healthcare  provider  once  the  child 
+has  left  the  hospital,  and  introduced  a  mobile  application 
+prototype  allowing  caregivers’  to  choose  information  they 
+wanted to share with others [17]. Moncur et al. presented a 
+solution  to  help  parents  customize  and  communicate 
+information  about  themselves  and  their  child  to  family  or 
+friends [19].  
+
+information  with 
+
+informal  and 
+
+ 
+
+758
+
+SESSION: HEALTHCARE PROVIDERS
+
+institutional  review  board  and 
+
+The  work  presented  in  this  paper  builds  on  and  is 
+complementary to this thread of caregiver support in CSCW 
+and  health  informatics.  In  our  study,  we  look  for  themes 
+across contexts and conditions, in both adult and pediatric 
+populations.  We  consider  the  broad  range  of  caregivers 
+throughout  patients’  network  of  care,  from  those  involved 
+with  the  patient  on  a  daily  basis  to  occasional  caregivers 
+and those providing assistance remotely. 
+(cid:17)(cid:10)(cid:23)(cid:13)(cid:19)(cid:9)(cid:22)(cid:1)
+We conducted 28 interviews and observations of adult and 
+child  patients  and  their  caregivers  across  two  sites  in  the 
+Seattle area: an adult tertiary care hospital (Virginia Mason) 
+and an academic children’s hospital (Seattle Children’s). At 
+each  site,  we  conducted  40-60  minute  semi-structured 
+interviews with patients and their caregivers combined with 
+60-90 minute bedside observation periods with each patient 
+we interviewed. We followed up with 15-30 minute phone 
+interviews  after  patients  were  discharged.  Details  of  our 
+participants and sampling strategy are described below. The 
+authors’ 
+the  hospitals 
+approved this work.  
+(cid:22)(cid:34)(cid:42)(cid:30)(cid:41)(cid:1)
+We conducted our study at one adult and one pediatric care 
+hospital  in  a  large  urban  area  in  the  US,  both  serving 
+patients  from  a  wide  geographic  region.  Both  hospitals 
+serve  as  tertiary  referral  centers  in  their  immediate  areas 
+and  beyond.  Virginia  Mason  (the  adult  hospital)  admits 
+over 16,000 inpatients per year, and Seattle Children’s (the 
+pediatric  hospital)  admits  over  15,000  inpatients  annually. 
+Virginia  Mason’s  inpatient  demographics  mirror  the  local 
+population,  with  two  thirds  of  patients  insured  through 
+private  insurance.  Seattle  Children’s  sees  a  slightly  more 
+ethnically  diverse  patient  population  than  the  surrounding 
+area, and just under half of patients are insured privately.  
+(cid:20)(cid:26)(cid:40)(cid:42)(cid:34)(cid:28)(cid:34)(cid:39)(cid:26)(cid:37)(cid:42)(cid:41)(cid:1)
+Our  site  selection  and  sampling  criteria  allowed  us  to 
+observe interactions with patients of a wide range of ages, 
+with and without caregivers, and ensured maximal diversity 
+of  hospital  care  experiences.  A 
+total  of  48  people 
+participated  in  our  study:  28  patients  and  20  caregivers 
+across 
+focused  on 
+maximizing the diversity of patients. We recruited patients 
+using  a  purposeful  sampling  framework  based  on  age, 
+gender, ethnicity, as well as specific medical attributes such 
+as the primary medical service and disease complexity. We 
+did  not  collect  income  demographic  information  from 
+participants.  Interviews  and  observations  took  place  from 
+February to May 2015. Research coordinators employed by 
+each hospital recruited and consented participants on behalf 
+of the research team. 
+We  interviewed  20  caregivers  who  were  present  in  the 
+hospital  room  when  we  recruited  patients.  Half  of 
+participating  caregivers  were  18-39  and  half  40-59. 
+Caregivers  were  predominantly  female,  especially  in  the 
+pediatric hospital. Of the 20 caregivers who participated in 
+
+two  sites.  Our 
+
+recruitment 
+
+the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+conditions 
+
+ranged  widely, 
+
+ 
+
+759
+
+to  Crohn’s  disease 
+
+our interviews, 16 were parents of pediatric patients and 4 
+were caregivers of adult patients.  
+Patient  participants  had  diverse  medical  conditions  that 
+related to varying levels of complexity and lengths of stay. 
+Patients’  medical 
+from 
+appendicitis  to  congenital  heart  disease  requiring  a  heart 
+to  complications  from 
+transplant 
+diabetes.  Patients  were  equally  divided  between 
+the 
+following  categories:  surgical  vs.  medical,  pediatric  vs. 
+adult  patients,  complex  vs.  non  complex  and  chronic  vs. 
+non-chronic medical conditions. Patients’ ages ranged from 
+7 to 76. In the pediatric hospital, half of the patients were 
+age 7-12 and half were 13-17. In the adult hospital, patients 
+were evenly split between 18-39, 40-59, and 60-76. Half of 
+the patients were male and half were female. Patients were 
+more  ethnically  diverse  than  the  American  population:  18 
+were  White/Caucasian,  6  Black/African-American,  3 
+Hispanic,  2  Asian  and  1  American  Indian/Alaska  Native. 
+Adult  patients  had  a  range  of  education  levels,  with  most 
+having had at least some college education.  
+Out  of  consideration  to  the  strenuous  nature  of  hospital 
+recovery,  we  only  interviewed  caregivers  and  patients 
+whose conditions were stable and who felt strong enough to 
+speak  at  length  about  their  hospital  stay.  As  a  result,  we 
+typically  interviewed  patients  and  their  caregivers  toward 
+the end of their stay. 
+(cid:14)(cid:37)(cid:42)(cid:30)(cid:40)(cid:44)(cid:34)(cid:30)(cid:45)(cid:41)(cid:1)(cid:26)(cid:37)(cid:29)(cid:1)(cid:38)(cid:27)(cid:41)(cid:30)(cid:40)(cid:44)(cid:26)(cid:42)(cid:34)(cid:38)(cid:37)(cid:41)(cid:1)
+In  the  interviews,  we  asked  patients  and  caregivers  about 
+their  current  hospital  stay  and  about  their  experience 
+receiving  and  communicating  their  care  information.  We 
+also  asked  all  participants  (caregivers  and  patients, 
+separately) to read through and respond to a set of probing 
+cards 
+their 
+attitudes toward active engagement in their care as well as 
+management  of  information  during  a  hospital  stay.  We 
+developed  the  cards  based  on  prior  patient/caregiver 
+surveys  and  iteratively  piloted  the  cards  with  physicians, 
+former  patients,  and  caregivers.  The  cards  contained 
+statements such as “It’s important that I keep track of things 
+by writing them down so that I remember them” and “It’s 
+important  that  I  have  a  positive  relationship  with  my 
+doctors  and  nurses.”  For  each  statement,  we  asked 
+participants  to  assess  their  agreement  with  the  statement 
+and reflect on whether it applied to their own situation. We 
+conducted  a  second,  follow-up  phone  interview  after  each 
+patient  participant  was  discharged  from  the  hospital.  With 
+participants’  permission,  we  took  photographs  of  their 
+hospital room and any devices or technology they used to 
+manage information about their care. We audio-recorded all 
+interviews. 
+We also conducted bedside observations with each patient 
+and  their  caregivers,  typically  directly  after  the  interview, 
+although  we  tried  to  observe  a  variety  of  encounters, 
+sometimes  conducting  our  observations  hours  after  the 
+interview  or  the  next  day.  These  observations  generally 
+
+included  structured  statements  about 
+
+that 
+
+lasted  one  hour,  during  which  a  researcher  sat  in  the 
+hospital room and took notes. During the observations, we 
+paid  special  attention  to  discussions  about  the  patient’s 
+care, any communications between patients, caregivers, and 
+providers, and technology use in the hospital room.  
+(cid:6)(cid:37)(cid:26)(cid:35)(cid:47)(cid:41)(cid:34)(cid:41)(cid:1)
+Throughout  the  observations  and  interviews,  our  research 
+team  met  regularly  to  discuss  preliminary  findings  and 
+identify  emergent  themes  in  our  data.  Based  on  these 
+emerging  themes,  we  narrowed  our  analysis  to  focus  on 
+caregiver  coordination  with  patients  and  clinicians.  Four 
+members  of  the  research  team  reviewed  the  observation 
+field  notes,  photographs,  and  interview  recordings  and 
+transcripts  to  identify  information  about  patient-caregiver 
+role definition, social uses of data about the hospital stays, 
+and  communication  between  patients,  caregivers,  and 
+clinicians.  Despite  the  broad  diversity  of  experiences  of 
+participants,  as  we  continued  the  study  strong  themes  of 
+caregiving  roles  and  opportunities  for  design  emerged. 
+During the analysis, our research team iteratively reviewed 
+the thematic schema about patient-caregiver coordination to 
+ensure  comprehensive  representation  of  supporting  and 
+contrasting examples related to these themes.  
+(cid:11)(cid:14)(cid:18)(cid:9)(cid:14)(cid:18)(cid:12)(cid:22)(cid:1)
+Our  study  revealed  a  picture  of  patients’  and  caregivers’ 
+information  practices  and  needs,  respective  roles,  and 
+coordination  during  an  inpatient  hospital  stay.  In  this 
+‘findings’  section,  we  report  findings  emerging  directly 
+from  our  observations  and  interviews.  In  the  ‘design 
+considerations’  section  that  follows,  we  extrapolate  from 
+our 
+for  CSCW 
+technology.  
+We begin this section by describing the experience of being 
+in  a  hospital  room  from  an  information  perspective.  We 
+then  describe  five  roles  caregivers  adopt:  companion, 
+assistant,  representative,  navigator,  and  planner.  We  show 
+how  caregivers  shift  between  these  roles  and  negotiate 
+responsibility  as  the  patient’s  condition  stabilizes.  We 
+examine 
+the  coordination  and  collaboration  practices 
+caregivers  adopt  as  they  solicit  help,  set  up  shifts,  and 
+maintain  duties  outside  the  hospital.  Finally,  we  discuss 
+how  patients  and  caregivers  share  information  about  their 
+care with others.  
+We  refer  to  patient-participants  and  caregiver-participants 
+throughout,  using  the  following  scheme:  a  letter  prefix  to 
+indicate the hospital (A for adult, Y for youth/pediatric), the 
+patient number within that hospital, and then “Caregiver” if 
+the  quote  or  example  is  from  a  caregiver  we  interviewed. 
+Caregivers  that  are  mentioned  but  not  interviewed  are 
+described  using  their  relation  to  the  patient  rather  than  a 
+code number. 
+(cid:8)(cid:38)(cid:38)(cid:40)(cid:29)(cid:34)(cid:37)(cid:26)(cid:42)(cid:34)(cid:38)(cid:37)(cid:1)(cid:45)(cid:34)(cid:42)(cid:33)(cid:34)(cid:37)(cid:1)(cid:42)(cid:33)(cid:30)(cid:1)(cid:33)(cid:38)(cid:41)(cid:39)(cid:34)(cid:42)(cid:26)(cid:35)(cid:1)(cid:40)(cid:38)(cid:38)(cid:36)(cid:1)
+During  their  hospital  stay,  the  patient’s  hospital  room 
+becomes  the  information  hub  for  patients  and  caregivers, 
+
+findings  and  explore  opportunities 
+
+to 
+
+tablets, 
+
+and 
+
+laptops, 
+
+the  hospital  room 
+
+information  flow  beyond 
+
+but 
+is 
+constrained.  Although  participating  patients’  rooms  were 
+filled with computing technology—from in-room computer 
+terminals 
+smartphones—
+communication  about  patients’  health  and  care  was 
+relatively  low-tech.  Clinicians  delivered  information  to 
+patients  and  caregivers  in  person,  talking  them  through 
+updates or changes, and answering questions. Patients and 
+caregivers  also  largely  communicated  with  each  other  in 
+person, over the phone, or via text message, and rarely took 
+their  own  notes.  For  caregivers,  physical  presence  in  the 
+hospital  room  was  often  required  to  receive  detailed 
+information about patients’ care or interact with clinicians. 
+This  requirement  limited  caregivers’  ability  to  coordinate 
+and  communicate,  with  patients,  clinicians,  and  other 
+caregivers alike. 
+(cid:10)(cid:25)(cid:30)(cid:24)(cid:16)(cid:28)(cid:1)
+Clinicians coordinate with each other through daily patient 
+rounds  that  allow  physicians  to  receive  clinical  updates, 
+perform  medical  decision-making,  and  communicate 
+findings and care plan updates with both patients and other 
+clinical staff. In the adult hospital in our study, these rounds 
+usually  consisted  of  one  to  three  clinicians. The  pediatric 
+hospital in our study practiced family-centered rounds [27], 
+during  which  the  patients  and  caregivers  in  the  hospital 
+room  were  invited  to  observe  and  participate.  Pediatric 
+rounding groups were quite large, often including seven or 
+more clinicians. 
+Patients  and  caregivers  highly  valued 
+these  daily 
+conferences  for  their  regularity,  completeness,  and  insight 
+into clinical coordination practices.  
+“What they do here, they have like a team and I notice they 
+communicate  with  each  other,  like  when  they  brief  each 
+other  because  they  do  it  right  in  front  of  me,  and  update. 
+They  communicate  it  to  me  about  who's  doing  what  and 
+what's going on.” –A02 
+Rounds were very information dense, and participants often 
+felt overwhelmed by the jargon and technical terms used by 
+clinicians  both  during  and  after  rounds.  Y04’s  caregiver 
+described her difficulties in communicating with clinicians: 
+“Some of the doctors can use really big words and like the 
+genetic—the  biochemical  genetic  people—they  are  so 
+brilliant they cannot dumb it down for you, and so then you 
+leave and like, what the heck just happened. ... you gotta be 
+able to understand it to know what's going on. … And even 
+when  you  ask  questions...they're  like  so  brilliant,  like  they 
+don't understand your questions and how to answer it in a 
+way  that  you  can  understand  it.  …  The  one  biochemical 
+geneticist  came  to  see  us...he  talked  for  10  minutes  about 
+genetics and tests and everything and, and I was like ok, I 
+didn't understand a word you said and he was like, he was 
+like, 
+explained 
+everything.’” – Y04, Caregiver 
+
+‘What  didn't 
+
+you  understand? 
+
+I 
+
+ 
+
+760
+
+SESSION: HEALTHCARE PROVIDERS
+
+(cid:12)(cid:13)(cid:21)(cid:29)(cid:21)(cid:24)(cid:19)(cid:1)(cid:1)
+Various  clinicians  (such  as  physical  therapists,  surgeons, 
+and  other  specialists)  stopped  in  throughout  the  day  to 
+check  in  or  deliver  updates,  but  most  of  our  patient  and 
+caregiver participants spent their time waiting, sleeping, or 
+passing  the  time  as  patients  healed  or  adjusted  to  new 
+treatments.  Patients  and  visiting  caregivers  watched  TV, 
+played games, or read books.  
+Adjusting  to  the  rhythm  of  the  hospital  took  some  getting 
+used to.  
+“It's a lot of hurry up and wait. You know, when you first 
+come  to  the  hospital  you're  like  ‘I  want  to  know  what's 
+going  on’,  this  that  and  the  other.  And  then  after  a  while 
+you start realizing it’s gonna move at the pace it’s gonna 
+move. You can't rush it.” –Y13, Caregiver 1 
+As  we  saw  time  and  again  in  our  observations,  an  hour 
+could  pass  in  near-silence,  interrupted  by  a  one-to-two 
+minute  clinician  encounter  that  changed  the  plan  for  the 
+day, or even extended the patient’s stay. Some participants 
+felt they had a good sense of the hospital’s routine. Y04’s 
+caregiver commented that in one department in the hospital 
+“[rounding]  was  like  clockwork,  it  was  at  9:50  every 
+morning  they  were  there.”  Y05’s  caregiver  described  not 
+just  rounding  as  predictable,  but  also  clinicians’  followup 
+visits:  
+[The  primary  doctor]’s  always  here  around  8  ...  and  he 
+says  what  they're  gonna  do  for  the  day  ...  And  then  the 
+leading doc comes usually about half hour, 45 minutes after 
+him,  and  she  checks  him  over  and  then  she  reexplains 
+everything  again,  so  we're  all,  everybody  really  knows 
+what's  going  on,  and  then  they  do  their  rounds.  –  Y05, 
+Caregiver 1 
+Other  participants,  however,  found  these  brief  and  vital 
+interactions  with  clinicians  hard  to  predict.  For  example, 
+although  patient  A3  nearly  always  had  a  caregiver  in  the 
+room,  clinical  encounters  sometimes  occurred  before  a 
+caregiver  arrived.  As  A3  told  us,  “When  they  come  early 
+morning,  seven  o'clock,  eight  o'clock,  my  daughter  is  not 
+here.” A3 tried to convince clinicians to come later in the 
+morning, but this was not always possible so her daughter 
+occasionally  missed  hearing  updates  directly 
+from 
+clinicians.  Y06’s  caregiver  described  being  unwilling  to 
+leave the room for fear of missing a clinician encounter: 
+I thought ok I'll take [Y06] for a walk, and then I thought 
+what if someone's looking for her. Like we don't know when 
+people are coming, so. And we just stayed. –Y06, Caregiver 
+In observation, Y07’s caregiver was waiting for a resident 
+to come around for one last meeting before discharge. After 
+she had waiting for some time, she learned that the resident 
+had  come  around  earlier  in  the  morning,  so  she  had  been 
+waiting  for  nothing.  In  a  follow  up  conversation,  Y07’s 
+caregiver  expressed  displeasure  and  mistrust  over  this 
+situation: 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+“Well,  it  was  annoying  that  we  never  saw  the  doctor.  I'm 
+still not totally convinced that the residents were in in the 
+morning. That, that piece was very vague, like someone had 
+checked  on  her…but  no  one  talked  to  me.”    –  Y07, 
+Caregiver 
+(cid:6)(cid:24)(cid:18)(cid:25)(cid:27)(cid:23)(cid:13)(cid:29)(cid:21)(cid:25)(cid:24)(cid:1)(cid:15)(cid:13)(cid:26)(cid:29)(cid:30)(cid:27)(cid:17)(cid:1)
+Information about patients’ care is documented extensively 
+in  electronic  medical  records  throughout  a  hospital  stay. 
+However, no patient or caregiver in our study used a patient 
+portal or personal health record to access information about 
+their care while in the hospital. This is partly due to access: 
+the pediatric hospital did not provide a portal. Yet a portal 
+was  available  and  accessible  to  adult  patients  and  several 
+participants  mentioned  accessing  it  before  their  hospital 
+stay. Instead, patients and caregivers preferred to remember 
+information rather than looking it up or keeping track of it 
+themselves;  only  6  participants  reported  taking  their  own 
+notes.  Participants  trusted  that  clinicians  would  be  able  to 
+provide  the  information  if  it  was  really  necessary.  The 
+following exchange is typical of our interviews: 
+“Interviewer:  Are  you  actually  looking  through  your  own 
+chart, or your history in some way? 
+A6:  No,  just  from  memory.  And  then  talking  with  the 
+doctors, yeah. They have access to the actual files.” 
+Critical  updates,  context,  and  plan  of  care  decisions  were 
+thus  limited  to  those  within  earshot  at  the  time  of  the 
+provider's  visit,  and  largely  unrecorded  by  patients  and 
+caregivers. This created a number of barriers to caregiving 
+and 
+patient/caregiver-clinician 
+communication  that  is  not  easily  accessible  to  the  patient 
+cannot be easily disseminated to other caregivers or used by 
+patients  themselves  for  later  reference.  However,  patients 
+and  caregivers  do  have  ample  time  throughout  the  day 
+between  clinicical  encounters 
+to  review  and  process 
+information. We discuss these opportunities in the ‘design 
+considerations’ section that follows. 
+(cid:8)(cid:26)(cid:40)(cid:30)(cid:32)(cid:34)(cid:44)(cid:34)(cid:37)(cid:32)(cid:1)(cid:40)(cid:38)(cid:35)(cid:30)(cid:41)(cid:1)
+Caregivers  play  many  different  roles  in  patients’  care 
+during a hospital stay. In our study, participants described 
+several  ways  in  which  their  friends  and  family  provided 
+care. In this section, we report the types of caregiving we 
+observed  and  our  participants  described  to  us.  We  found 
+five  key  caregiving  roles  during  a  patient’s  hospital  stay: 
+companion,  assistant,  representative,  navigator,  and 
+planner.  These  roles  are  neither  exhaustive  nor  mutually 
+exclusive:  caregivers  can  and  did  switch  between  these 
+roles across the patient’s hospital stay. However, each role 
+represents  distinct  activities  with 
+their  own  design 
+considerations for CSCW. In this section we describe each 
+role with examples from our interviews and observations.  
+(cid:5)(cid:25)(cid:23)(cid:26)(cid:13)(cid:24)(cid:21)(cid:25)(cid:24)(cid:1)
+Caregivers played an important role as companion, offering 
+fellowship  and  emotional  support  to  patients.  Pediatric 
+participants  were  almost  never  without  their  parent  as  a 
+
+patient 
+
+care, 
+
+as 
+
+restrictions 
+
+companion.  In  the  adult  context,  several  participants,  like 
+A05  and  A14,  had  caregivers  visit  them  and  provide 
+companionship. A12 described an even more social picture: 
+I: So it sounds like you've had a lot of people come by and 
+visit and people hanging out here? 
+P: Yeah my friend spent the night with me last night just to 
+keep  an  eye  on  me  and  my  grandma  and  my  mom  both 
+stayed  with  me  the  first  night….P:  Actually  my  mom  has 
+been chilling with me and my husband was in. – A12 
+As  companions,  caregivers  also  brought  the  comforts  of 
+home into the hospital room. Patients often had a favorite 
+blanket or book, provided by a caregiver. Some caregivers 
+even  brought  home-cooked  meals  when  possible.  Y13’s 
+aunt  arrived  with  a  freshly  made  quiche  during  our 
+interview. Both the patient and her caregivers agreed it was 
+a definite improvement over typical hospital fare.  
+Both patients and caregivers at times expressed frustrations 
+at  externally-imposed 
+to  companionship. 
+Several participants who were in isolation told us they felt 
+pent up inside the confines of their hospital room, and were 
+eager to receive day passes to get outside for a while. Y08’s 
+caregiver, for example, expressed frustration at the fact that 
+her other children could not come to visit (and thus act as 
+companions) because of the risk of contagion from Y08.  
+Although  overall  both  patients  and  caregivers  saw 
+companionship as desirable, it is worth noting the difficulty 
+of  the  enforced  companionship  that  comes  with  being  in 
+isolation.  Many  participants  mentioned  to  us  that  our 
+interview was a relief not only from the waiting inherent in 
+a hospital stay, but from having only each other to talk to. 
+(cid:3)(cid:28)(cid:28)(cid:21)(cid:28)(cid:29)(cid:13)(cid:24)(cid:29)(cid:1)
+Caregivers  at  times  acted  as  assistants  to  patients  in 
+managing  their  care.  In  some  cases,  caregivers  provided 
+instrumental support, helping patients by giving them a ride 
+to  or  from  the  hospital  and  getting  the  doctor  when  the 
+patient was not feeling well. In other cases, caregivers aided 
+patients in managing information about their care. Several 
+of the caregivers among our participants helped patients by 
+acting  as  memory  aids,  taking  notes  and  keeping  track  of 
+appointments  and  other  care 
+information.  Patients 
+recognized the importance of caregivers in filling this role. 
+For example, A13 stated:  
+“It’s important for me to get the help and information and 
+it’s also important for my family because they’re the ones 
+that are going to be helping me out with this day to day.” –
+A13 
+Y06,  who  had  been  newly  diagnosed  with  a  chronic 
+condition, also mentioned her need for help, “especially at 
+the beginning,” although she hoped to be more independent 
+as time went on. One of A13’s caregivers took this role to 
+the  extreme.  Her  spouse  took  classes  and  got  an  EMT 
+certification so that he would know what to do “if things go 
+haywire.” 
+
+ 
+
+761
+
+on 
+
+the 
+
+taking 
+
+responsibility 
+
+(cid:10)(cid:17)(cid:26)(cid:27)(cid:17)(cid:28)(cid:17)(cid:24)(cid:29)(cid:13)(cid:29)(cid:21)(cid:31)(cid:17)(cid:1)
+Caregivers  frequently  assumed  the  role  of  the  patient’s 
+representative, 
+of 
+communicating the patient’s desires and needs to clinicians 
+on  the  patient’s  behalf.  Caregivers  took  on  this  role  when 
+patients were either uncomfortable speaking with clinicians 
+directly,  or  unable  to  communicate  their  needs  on  their 
+own. This situation arose frequently in the pediatric context, 
+where  patients  were  often  more  comfortable  speaking  to 
+their  parents  than  to  the  doctors.  For  example,  Y13 
+confessed that she preferred to go through her parents than 
+to  communicate  directly  with  clinicians;  similarly,  Y8 
+stated, “I don’t talk that much so I tell it to my mom.” Y4’s 
+caregiver described her sense of obligation to speak up on 
+the patient’s behalf regarding decisions about his care: 
+“He  hasn’t  been  able  to  speak  up  a  lot  for  himself,  you 
+know,  'cause  …  he’s  had  a  lot  of  ups  and  downs  and 
+doesn’t understand what’s going on and so being that I am 
+his care provider and everything, yeah…feel like I need to 
+[speak up], sometimes.” –Y04, Caregiver  
+One  caregiver  also  described  taking  on  a  relationship 
+management  role.  She  commented  on  the  importance  of 
+modeling a good relationship with clinicians hopingthat the 
+patient would follow her example:  
+“If I don’t have a positive relationship with them, she won’t 
+have a positive relationship with them, and that makes a big 
+difference  in  how  she  feels  about  everything  moving 
+forward.” – Y6, Caregiver 
+(cid:8)(cid:13)(cid:31)(cid:21)(cid:19)(cid:13)(cid:29)(cid:25)(cid:27)(cid:1)
+Caregivers  also  acted  as  navigators  for  patients,  guiding 
+their decisions and helping them understand their condition. 
+the  ‘representative’  role,  which  was 
+As  opposed 
+to 
+outward-facing, 
+the  ‘navigator’  role  was  more  often 
+expressed  in  caregivers’  interactions  with  patients.  For 
+example,  A3  reported  having  her  family  guide  a  decision 
+about her care, describing a family meeting where the she 
+changed her mind about receiving dialysis based on counsel 
+from her family members. 
+Caregivers  also  often  explained  to  patients  information 
+provided  by  clinicians.  In  both  the  pediatric  and  adult 
+contexts,  patients  reported  relying  on  caregivers 
+to 
+understand information about their care, either because they 
+did  not  understand  what  the  clinician  had  said  or  because 
+the clinician had bypassed them entirely. A3 recounted how 
+her daughter, a medical doctor, helped her understand what 
+her  doctor  was  saying.  In  observation,  Y4’s  caregiver 
+described  to  clinicians  how  she  set  aside  time  with  the 
+patient  to  help  him  understand  and  cope  with  what  was 
+happening  to  him.  Y5  also  relied  on  caregivers  to  get 
+information  when  clinicians  bypassed  him  because  of  his 
+young age:  
+“I’ve  had  pneumonia  once  and  it’s  stressful  for  me  but 
+because  only  my  parents  knew  what  was  going  on  really. 
+
+ 
+
+762
+
+SESSION: HEALTHCARE PROVIDERS
+
+to  be  discharged  from 
+
+Because they didn’t really expect me to want to know, like, 
+everything”. – Y05 
+Caregivers’  role  as  an  interpreter  between  clinicians  and 
+patient occurred frequently in the pediatric setting, possibly 
+because caregivers, who were also the patient’s parents in 
+all the cases we observed, perceived it as a normal part of 
+parenting.  
+In  a  few  cases  from  the  children’s  hospital,  parent 
+caregivers sometimes withheld information from patients in 
+an  effort  to  shield  them  from  anxiety.  Y11,  for  example, 
+had  a  chronic  condition  that  could  adversely  affect  his 
+future life. His caregiver said she purposefully shielded him 
+from  information  about  how  the  disease  could  affect  him 
+down the road on the grounds that she didn’t want him to 
+worry  about  it  until  he  was  old  enough  to  handle  it.  Y5’s 
+caregivers  also  shielded  him  from  certain  information  by 
+choosing to go outside in the hallway for rounds instead of 
+inviting the clinician group into the patient’s room.  
+(cid:9)(cid:22)(cid:13)(cid:24)(cid:24)(cid:17)(cid:27)(cid:1)
+Patients  often  needed  greater  support  from  caregivers  as 
+they  prepared 
+the  hospital. 
+Sometimes  caregivers  were  only  called  upon  for  help 
+getting home, although this was not often a simple task. As 
+A6 put it: 
+I: I noticed when you were talking with the doctor earlier, 
+you  mentioned  it  would  be  helpful  to  get  a  couple  days 
+heads up of when to coordinate your discharge. What’s the 
+primary reason for that? 
+P:  In  case  I’m  not  feeling comfortable  enough,  that  I  can 
+coordinate with my family, because my one daughter works 
+nights  and  goes  to  school  days.  My  other  daughter  works 
+nights but is available during the day because she does her 
+graphic web design during the day. And my boys both work 
+pretty much the same shift I do…so between the boys and 
+their girlfriends and my daughters, we can find a couch for 
+me to lay on… And they got to bring my car back or come 
+get me in my car. Big trouble on Easter if I have to take a 
+taxi. There will be one less deviled egg for you! – A6 
+In  other  cases,  caregivers  needed  to  prepare  to  assume 
+responsibilities  that  had  been  handled  by  clinicians  during 
+the  hospital  stay,  such  as  dispensing  medications  and 
+monitoring  certain  levels.  This  occurred  frequently  in  the 
+pediatric  context.  For  example,  Y14’s  caregiver  asked 
+clinicians to show her how to use a complicated pillbox so 
+that she would be able to use it when they got home. Y04’s 
+caregiver 
+in  administering  Y04’s 
+medications: 
+I wanted to be comfortable doing his meds before we ended 
+up  leaving  the  hospital,  so  I  started  learning  three  weeks 
+ago  and  then  last  night  I  just  started  learning  the  care  of 
+the wound. – Y04, Caregiver 
+Y01’s  caregiver  described  having  to  monitor  and  record 
+certain statistics about the patient:  
+
+requested 
+
+training 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+similar 
+
+And  we  have  it  in  a  place  where...so  we  have  to  take  her 
+blood pressure, we have to check her respirations, and we 
+have  to  listen  to  her  heart,  and  we  have  to  take  her 
+temperature. So that’s all in a bin in our coffee table with 
+this  binder,  so  everything  is  there,  all  together.  –  Y01, 
+Caregiver 
+(cid:22)(cid:33)(cid:26)(cid:40)(cid:34)(cid:37)(cid:32)(cid:1)(cid:40)(cid:30)(cid:41)(cid:39)(cid:38)(cid:37)(cid:41)(cid:34)(cid:27)(cid:34)(cid:35)(cid:34)(cid:42)(cid:34)(cid:30)(cid:41)(cid:3)(cid:1)(cid:41)(cid:33)(cid:34)(cid:31)(cid:42)(cid:34)(cid:37)(cid:32)(cid:1)(cid:40)(cid:38)(cid:35)(cid:30)(cid:41)(cid:1)
+As  caregivers  adopt  different  roles  throughout  a  patient’s 
+hospital  stay,  patients  and  caregivers  also  renegotiate 
+responsibilities  and  boundaries.  Caregivers  take  a  more 
+active  role  at  certain  times  and  a  more  supportive  role  at 
+others. They help to stabilize the patient, but even once the 
+patient  appears  stable,  they  must  be  ready  to  jump  in  and 
+assist  whenever  the  situation  changes,  sometimes  quite 
+abruptly.  
+Even  patients  and  caregivers  with 
+initial 
+arrangements as each other can diverge substantially across 
+the  hospital  stay.  For  example,  A3  and  A6,  both  middle-
+aged women, were brought into the hospital by their adult 
+daughters,  who  took  a  navigator  role  in  encouraging  their 
+mothers’ admission and a planning role in facilitating that 
+admission.  
+“Sunday  night  was  the  worst.  I  could  barely  breathe,  I 
+could barely dial [my daughter’s] number. She lives a block 
+from  me…  I  thought  oh,  my  God,  I'm  going  to die,  then  I 
+just dialed her and then we called 911.” –A3 
+“Sunday morning, my daughter came by, not hearing from 
+me,  wondering  what  the  heck’s  going  on  with  Mom  and 
+took one look at me and took me to…urgent care.” –A6 
+Their stories soon diverged, however. Since admission, A3 
+almost always had a caregiver in a companion role, staying 
+with  her  in  hospital  room  while  she  was  awake.  Her 
+children  organized  regular  shifts.  They  also  continued  to 
+play a navigator role throughout her stay. A3 (who did not 
+finish  high  school  and  for  whom  English  is  a  second 
+language) 
+challenges 
+understanding medical terms and procedures relating to her 
+care, and how her caregivers helped her.  
+“She'll be in the morning and then she have kids, so she'll 
+be here at noon and when she leaves, my younger daughter 
+comes back from work and stays till I want to sleep. I go: I 
+want to sleep now. Now you don't have to worry about big 
+words that people give me.” –A3 
+Initially,  A6  also  relied  heavily  on  her  daughter  as 
+companion and assistant. However, once her condition was 
+stabilized,  her  daughter  returned  to  her  job,  and  the  two 
+kept in touch by phone.  
+I had my daughter with me, and whenever something goes 
+wrong and I need to go to the hospital, I bring my two girls 
+for everything, because of the fact that two minds are better 
+than  one,  especially  if  one  is  sick  and  distressed.  For  the 
+most  part  I  retain  everything  that’s  said  to  me,  but  I  had 
+just come out of a delirium state of fever, so I was pretty out 
+
+candidly 
+
+spoke 
+
+about 
+
+her 
+
+of it there for a little bit. Once they got enough oxygen in 
+my brain, though, I was feeling better. —A6. 
+At the time of our interview, A6 had since been visited by 
+various family members, and even some of her daughter’s 
+friends,  acting  as  intermittent  companion  caregivers  but 
+leaving much of the responsibilities in the patient’s hands.  
+(cid:11)(cid:29)(cid:13)(cid:14)(cid:21)(cid:22)(cid:21)(cid:34)(cid:21)(cid:24)(cid:19)(cid:1)
+Caregivers often took more active roles at the beginning of 
+a patient’s stay until they stabilized. Patients often needed 
+caregivers  as  assistant  and  navigator  to  help  them  keep 
+track  of  details  or  make  decisions  by  themselves  at  the 
+beginning  of  a  stay,  but  once  their  condition  was  more 
+under  control,  some  sought  more 
+independence.  For 
+example,  patient  A13  relied  on  her  caregivers  during  the 
+early part of her stay, but was eager to take more initiative 
+once she started feeling better. 
+“My mom has been chilling with me and my husband was 
+in…He  was  really  helpful…trying  to  keep  things  running 
+correctly as well as he could. Especially when I'm used to 
+being  a  little  bit  more  acute  mentally,  that's  kinda 
+disturbing not being able to function on that level and it's 
+good to have the support that I do, it's a relief. But I don't 
+like to just dump it on them and leave it there either.” –A13 
+At the time of our interview, A13 had once again become 
+the  primary  coordinator  of  information  about  her  care. 
+Although she was grateful for the support of her caregivers, 
+she didn’t want to be a burden, and sought to be an active 
+participant in her own care whenever possible.  
+(cid:4)(cid:17)(cid:21)(cid:24)(cid:19)(cid:1)(cid:27)(cid:17)(cid:13)(cid:16)(cid:33)(cid:1)(cid:29)(cid:25)(cid:1)(cid:28)(cid:29)(cid:17)(cid:26)(cid:1)(cid:21)(cid:24)(cid:1)(cid:1)
+Although  patients  in  our  study  had  generally  stabilized  at 
+the time of our interviews and observations, caregivers still 
+played an important role. Patients’ condition could worsen, 
+or their acuity be reduced, and caregivers we spoke to felt it 
+was part of their job to be ready to step in.  
+Sometimes,  this  reassertion  of  influence  was  dramatic. 
+Patient A3 recounted a previous hospital visit when she was 
+almost discharged far too soon.  
+“The  nurse  came  [and  said]  I  can  leave  now.  Then  I  get 
+down,  I  was  going  to  use  the  bathroom,  and  something 
+happened and I kind of fainted. So then my daughter went 
+and  got  somebody  and  they  check  the  blood  pressure,  the 
+blood pressure was low, and then the staff went again and 
+called the surgeon's nurse.” –A3 
+(cid:14)(cid:37)(cid:42)(cid:30)(cid:40)(cid:4)(cid:28)(cid:26)(cid:40)(cid:30)(cid:32)(cid:34)(cid:44)(cid:30)(cid:40)(cid:1)(cid:28)(cid:38)(cid:38)(cid:40)(cid:29)(cid:34)(cid:37)(cid:26)(cid:42)(cid:34)(cid:38)(cid:37)(cid:1)
+Patients often had a primary caregiver supporting them; in 
+the pediatric context this role was filled by the mother for 
+each  of  our  participants.  However,  this  primary  caregiver 
+often  worked 
+in  conjunction  with  several  secondary 
+caregivers supporting them, both in person and behind the 
+scenes. These caregivers collaborated and coordinated with 
+each other to support patients. Sometimes, as in the case of 
+A3,  caregivers  set  up  shifts  so  someone  would  always  be 
+with  the  patient.  Caregivers  also  balanced  patients’  needs 
+
+ 
+
+763
+
+with  other  responsibilities,  such  as  work  and  parenting 
+other children.  
+(cid:8)(cid:17)(cid:17)(cid:16)(cid:21)(cid:24)(cid:19)(cid:1)(cid:20)(cid:17)(cid:22)(cid:26)(cid:1)
+Although most patients had a primary caregiver, caregivers 
+benefited greatly from the ability to share the informational 
+and emotional load with another person. Y04’s caregiver, a 
+single  parent  who  did  not  have  help,  expressed  her 
+difficulty,  saying,  “When  we  first  got  here…I’m  a  single 
+mom,  so  I’m  all  by  myself,  and  a  total  disaster.”  As  the 
+patient’s  condition  developed,  Y04’s  caregiver  was 
+ultimately  able  to  find  help  at  least  some  of  the  time, 
+mentioning a sitter who looked after the patient while she 
+prepared food for him.  
+Y08’s  caregiver  commented  on  the  emotional  support  she 
+got from her partner:  
+“That's when we start doing the workup for her transplant 
+and I would like for my husband to be here so you know I'll 
+get emotional and he's like the rock.” –Y08, Caregiver 1 
+Y08’s  caregiver  also  described  to  us  how  she  and  her 
+partner  worked  together,  complementing  each  other’s 
+abilities:  her  husband  provided  emotional  support  and 
+understood  the  big  picture,  but  “couldn’t  tell  you  half  the 
+things” because he didn’t remember all the “small details”. 
+By  contrast,  Y08’s  primary  caregiver  “ask[ed]  the  more 
+probing  questions,”  and  communicated  information  to 
+others within the family “step by step and then they kinda 
+calm  down  and  then  they'll  ask  some  questions  and 
+everything  is  fine.”  Ultimately,  they  worked  together  to 
+“[make] decisions as a family.” At home, Y08’s caregiver 
+expected work-sharing to continue.  
+“Hopefully they'll give me some kind of paperwork .. [and 
+I’ll] make sure it's up on the refrigerator ... so we can all 
+have  an  idea  of  what  to  do,  how  often  and  that  kind  of 
+schedule…There is no ‘I’m doing it all.’” –Y08, Caregiver 
+1 
+Within  the  hospital,  caregivers  working  alone  also  faced 
+difficulties in the basic task of getting food. In the pediatric 
+context,  several  participants  complained  that  because  they 
+did  not  want  to  leave  their  young  children  alone  in  their 
+rooms,  they  were  unable  to  get  food  from  the  hospital 
+cafeteria.  
+(cid:11)(cid:17)(cid:29)(cid:29)(cid:21)(cid:24)(cid:19)(cid:1)(cid:30)(cid:26)(cid:1)(cid:11)(cid:20)(cid:21)(cid:18)(cid:29)(cid:28)(cid:1)
+When  multiple  caregivers  were  available,  caregivers 
+sometimes  worked  in  shifts,  to  make  sure  someone  was 
+there with the patient for as much of the time as possible. 
+For  example  A3’s  caregivers  took  regular  shifts  to  try  to 
+have  someone  with  A3  as  much  as  possible  while  still 
+attending  to  their  outside  duties.  In  order  to  make  things 
+easier  for  them,  A3  herself  let  her  caregivers  know  when 
+she was unlikely to need them. 
+Y06’s  caregiver  also  described  working  in  shifts  with  her 
+partner: 
+
+ 
+
+764
+
+SESSION: HEALTHCARE PROVIDERS
+
+And  for  caregiver  too,  because  my  husband  has  a  job,  so 
+when  can  he  be  here,  what  does  he  have  to  schedule 
+around. Try to have someone here all the time so she’s not 
+alone.  Had  one  friend  over,  going  to  have  a  couple  more 
+tonight. –Y06, Caregiver 1 
+In general, caregivers appeared to divide up the shifts based 
+on  their  schedules  rather  than  on  roles.  Y13’s  caregivers 
+similarly divided their time based on outside factors rather 
+than roles, and strove to share information with each other. 
+While  one  caregiver  was  in  the  hospital  for  her  own 
+surgery,  the  other  observed  rounds  and  took  notes  that  he 
+could later share with his partner.  
+Shifts  and  handoff  are  common  practice  for  clinical 
+caregivers  in  the  hospital,  where  patients  are  followed  by 
+clinical care teams that consist of multiple physicians each 
+taking  a  primary  role  in  the  patient’s  care  over  a  specific 
+period  of  time.  Clinicians  hand  off  to  each  other  through 
+formal  processes  [23].  However  these  processes  are  not 
+formalized or accounted for to support informal caregivers 
+during a hospital stay. 
+(cid:7)(cid:13)(cid:21)(cid:24)(cid:29)(cid:13)(cid:21)(cid:24)(cid:21)(cid:24)(cid:19)(cid:1)(cid:25)(cid:29)(cid:20)(cid:17)(cid:27)(cid:1)(cid:16)(cid:30)(cid:29)(cid:21)(cid:17)(cid:28)(cid:1)
+One frequent obstacle mentioned to us by caregivers in this 
+study  was  the  constant  intrusion  of  non-caregiving  tasks. 
+Even when a hospital stay is planned, it does not mean that 
+caregivers’  other  work  goes  away.  In  observation,  Y10’s 
+caregivers joked about how they could never take time off 
+from  work  again  after  spending  so  much  time  in  the 
+hospital.  
+Sometimes  this  other  work  was  in  itself  caregiving  work. 
+During our interview, Y14’s caregiver struggled to put her 
+other  children  to  bed  while  spending  the  evening  in  the 
+hospital with the patient, soothing them over the phone in 
+between  sharing  care  information  with  her  spouse  and 
+keeping the patient company.  
+In  this  way,  personal  communication  technologies  like 
+phones  and  laptops  were  both  a  blessing  and  a  curse. 
+Performing  external  work  from  a  hospital  room  is  now 
+technically  possible,  allowing  caregivers  to  manage  their 
+job of performing tasks in two places at once.  
+(cid:9)(cid:10)(cid:22)(cid:14)(cid:12)(cid:18)(cid:1)(cid:8)(cid:19)(cid:18)(cid:22)(cid:14)(cid:9)(cid:10)(cid:21)(cid:6)(cid:23)(cid:14)(cid:19)(cid:18)(cid:22)(cid:1)
+Our  findings  point  to  many  opportunities  for  CSCW 
+systems.  Looking  at  the  hospital  room  as  an  information 
+hub,  we  see  opportunities  for  information  sharing  and 
+coordination  beyond  in-person  interaction;  in  this  section 
+we suggest considerations for designing across the CSCW 
+matrix.  We  also  examine  design  considerations  for 
+caregivers  in  their  various  roles,  and  tease  out  how  these 
+roles place different demands on collaboration systems for 
+caregivers.  We  discuss  how  to  support  caregivers  beyond 
+the  hospital,  and  the  potential  for  CSCW  technology  to 
+expand  opportunities  for  caregiving.  We  also  discuss 
+designing  for  the  uncertainty  inherent  in  a  hospital  stay. 
+Finally,  we  caution  designers  against  interfering  with  or 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the  potential 
+
+supplanting  existing  in-person  interactions,  encouraging 
+designs that augment and extend current inpatient practices.  
+(cid:9)(cid:30)(cid:41)(cid:34)(cid:32)(cid:37)(cid:34)(cid:37)(cid:32)(cid:1)(cid:26)(cid:28)(cid:40)(cid:38)(cid:41)(cid:41)(cid:1)(cid:42)(cid:33)(cid:30)(cid:1)(cid:8)(cid:22)(cid:8)(cid:25)(cid:1)(cid:36)(cid:26)(cid:42)(cid:40)(cid:34)(cid:46)(cid:1)
+The current patient and caregiver experience of information 
+during a hospital stay is largely devoid of groupware. While 
+patients  are  in  the  hospital,  most  clinical  communication 
+with patients and caregivers is synchronous and collocated; 
+face-to-face conversation dominates. As we observed in this 
+study,  visits  from  individual  clinicians  were  not  strictly 
+scheduled, so caregivers were not always able to be present 
+for these crucial opportunities to exchange information and 
+communicate priorities. Few patients or caregivers reported 
+taking notes during clinician encounters. In many cases, the 
+patient’s hospital room was more than just an information 
+hub; it often became an information bubble, easily popped 
+with its information fleeting.   
+CSCW 
+to  extend 
+technologies  have 
+caregivers’ ability to help patients, both within the hospital 
+room  and  from  afar—both  during  and  between  clinician 
+meetings. To help explicate this potential, in this section we 
+use  Johansen’s  groupware  matrix  (often  referred  to  as  the 
+CSCW  matrix)  [12]  to  explore  opportunities  for  design. 
+Although  several  models  and  frameworks  have  been 
+developed  to  explain  CSCW  systems—for  example,  the 
+recently-described  Model 
+of  Coordinated  Action 
+(MoCA)[16]—we  have  found  the  targeted  framing  of 
+Johansen’s  groupware  matrix  to  be  a  useful  lens  for  the 
+meeting-centric world of inpatient clinician encounters. Of 
+the four quadrants in the matrix—face to face interactions, 
+continuous  tasks,  remote  interactions,  and  communication 
+& coordination—only face to face interactions are currently 
+well supported.   
+(cid:10)(cid:17)(cid:23)(cid:25)(cid:29)(cid:17)(cid:1)(cid:26)(cid:13)(cid:27)(cid:29)(cid:21)(cid:15)(cid:21)(cid:26)(cid:13)(cid:29)(cid:21)(cid:25)(cid:24)(cid:1)
+To communicate with clinicians or observe patient-clinician 
+interaction  directly,  caregivers  in  our  study  had  to  be 
+physically  present  and  time  their  visit  to  overlap  with  a 
+clinician encounter. CSCW technologies to facilitate remote 
+caregiver  participation  in  these  meetings  could  allow 
+caregivers to be informed about the patient’s condition and 
+care,  ask  questions  the  patient  might  have  forgotten,  and 
+reduce  patients’  information  burden.  Promisingly,  the 
+telepresence 
+adoption  of  video-conferencing  or  other 
+technologies  need  not  require  massive 
+infrastructural 
+investment or even the creation of custom technology. Both 
+hospitals in our study had robust wireless Internet access in 
+hospital rooms, and a few patients and caregivers even used 
+commercial  technologies  such  as  Skype  and  FaceTime  to 
+communicate  with  others  during 
+their  hospital  stay. 
+However,  more  study  is  needed  to  facilitate  planning  of 
+these encounters, assure patient and clinician comfort, and 
+minimize disruption to care.  
+(cid:5)(cid:13)(cid:26)(cid:29)(cid:30)(cid:27)(cid:17)(cid:1)(cid:24)(cid:25)(cid:32)(cid:2)(cid:1)(cid:26)(cid:27)(cid:25)(cid:15)(cid:17)(cid:28)(cid:28)(cid:1)(cid:22)(cid:13)(cid:29)(cid:17)(cid:27)(cid:1)
+Patients  and  caregivers  in  our  study  found  clinician 
+conversations extremely valuable, yet fleeting. In both our 
+interviews and our direct observations of these encounters, 
+
+we  have  come  to  understand  the  deep  and  multi-faceted 
+value of clinicians, patients, and caregivers simply talking 
+to  each  other.  And  yet,  these  conversations  represent  a 
+tension: valuable face time and active listening in order to 
+form questions leaves little opportunity for recording notes, 
+remembering specific regimens, or unpacking jargon.  
+CSCW  technology  holds  the  potential  to  resolve  this 
+tension by stretching time, capturing sporadic information-
+dense  meetings,  and  allowing  patients  and  caregivers  to 
+process them later. Patients and caregivers have ample time 
+between  clinician  encounters,  and  technologies  that  can 
+help them step through an interaction and fully understand a 
+change  could  reduce  the  burden  on  memory  and  improve 
+patients’ awareness. Furthermore, once this data is captured 
+and  processed  with  computers,  it  can  be  recalled  later  or 
+even accessed by remote caregivers. 
+(cid:3)(cid:28)(cid:33)(cid:24)(cid:15)(cid:20)(cid:27)(cid:25)(cid:24)(cid:25)(cid:30)(cid:28)(cid:1)(cid:15)(cid:25)(cid:23)(cid:23)(cid:30)(cid:24)(cid:21)(cid:15)(cid:13)(cid:29)(cid:21)(cid:25)(cid:24)(cid:1)
+Technologies  that  support  asynchronous  communication 
+would  benefit  both 
+remote  and  occasionally-present 
+caregivers alike. In our interviews and observations, we saw 
+two  intriguing  examples  of  this  approach  in  action.  Both 
+A13  herself  and  Y13-Caregiver  2  emailed  clinicians 
+directly.  We  even  watched  Y13’s  caregiver  send  and 
+receive  emails  with  a  nurse  practitioner  during  our 
+interview.  However,  these  were  the  exceptions  to  the  rule 
+and  this  sort  of  direct,  unaccounted-for  communication 
+between caregivers and clinicians may not be scalable.  
+On 
+the  whole,  asynchronous  communication  among 
+patients,  caregivers,  and  clinicians  is  supported  poorly  at 
+this  time.  A  technology  such  as  a  ‘virtual  whiteboard’ 
+accessible  to  both  local  and  remote  participants  in  care 
+could  provide  valuable  common  context,  allowing 
+caregivers  to  better  understand  the  patient’s  status  and 
+possible  caregiving  needs.  Doing  so  while  minimizing 
+disruption would also be beneficial.  
+(cid:22)(cid:43)(cid:39)(cid:39)(cid:38)(cid:40)(cid:42)(cid:34)(cid:37)(cid:32)(cid:1)(cid:28)(cid:26)(cid:40)(cid:30)(cid:32)(cid:34)(cid:44)(cid:30)(cid:40)(cid:41)(cid:1)(cid:34)(cid:37)(cid:1)(cid:42)(cid:33)(cid:30)(cid:34)(cid:40)(cid:1)(cid:44)(cid:26)(cid:40)(cid:34)(cid:38)(cid:43)(cid:41)(cid:1)(cid:40)(cid:38)(cid:35)(cid:30)(cid:41)(cid:1)
+Caregiving is not a monolithic activity, and social systems 
+for  caregivers  should  account  for  the  different  roles 
+caregivers  play.  For 
+telepresence,  video 
+conferencing and even chat technologies could allow non-
+local  caregivers  to  act  as  companions.  Caregivers  as 
+assistants will benefit from systems that facilitate, structure 
+or  automate  note-taking.  Systems  that  give  increased 
+agency to caregivers will support their representative role, 
+allowing them to pass on patient concerns in a transparent 
+way. Systems that allow patients, clinicians and caregivers 
+to  coordinate  discharge  will  smooth  recovery  and  support 
+caregivers as planners. 
+Systems for patients and caregivers should also account for 
+multiple simultaneous roles through mutual awareness. As 
+we showed in the findings section, caregivers often perform 
+multiple  roles  and  negotiate  responsibilities  with  patients 
+throughout and beyond a hospital stay. Many of these roles 
+will  benefit  from  systems  that  simply  allow  caregivers, 
+
+example, 
+
+ 
+
+765
+
+to 
+
+take  over 
+
+roles.  Such 
+
+patients, and clinicians to keep track of each others’ status, 
+questions,  and  current 
+flexible  mutual 
+awareness systems would allow caregivers to jump in with 
+communication wherever necessary while still keeping the 
+patient  in  the  loop,  and  support  caregivers  in  their  role  as 
+assistant. They would also allow caregivers to take the lead 
+and set an example for the patient on how to communicate 
+with  clinicians.  Finally,  a  mutual  awareness  and 
+communication tool could also allow caregivers to convey 
+patient  requests  to  clinicians  when  patients  do  not  feel 
+comfortable speaking directly with clinicians. 
+(cid:9)(cid:30)(cid:41)(cid:34)(cid:32)(cid:37)(cid:34)(cid:37)(cid:32)(cid:1)(cid:31)(cid:38)(cid:40)(cid:1)(cid:43)(cid:37)(cid:28)(cid:30)(cid:40)(cid:42)(cid:26)(cid:34)(cid:37)(cid:42)(cid:47)(cid:1)
+A  hospital  stay  is  an  inherently  uncertain  time.  Patients 
+arrive for a myriad of reasons, both planned and unplanned. 
+While  pathways  of  care  exist  for  many  conditions,  with 
+expected acuity levels and lengths of stay, every patient is 
+unique. Patients may feel aware and alert one moment, and 
+need  a  caregiver 
+the  next;  caregivers 
+themselves  may  cycle  through  over  the  course  of  an 
+inpatient stay. A hospital stay tests a patient’s networks of 
+care, and each caregiver or set of caregivers is as unique as 
+the patient.  
+Systems to support patients and caregivers should also scale 
+from  short-term  to  long-term.  Cumbersome  registration 
+processes may be highly unsuitable for short stays, even if 
+those stays extend into longer ones. Designs that allow for 
+nimble setup and can transition to longer-term use will be 
+more likely to be used and useful. Similarly, caregiver roles 
+may  change  quickly,  and  one  caregiver  may  play  many 
+roles; designs to support caregivers will need to account for 
+this fluidity. 
+These  complex  requirements  and  tensions  may  seem 
+daunting,  but  they  also  represent  a  rich  opportunity  for 
+CSCW  research  to  advance  the  state  of  the  art  and 
+contribute to broader impact.  
+(cid:9)(cid:30)(cid:41)(cid:34)(cid:32)(cid:37)(cid:34)(cid:37)(cid:32)(cid:1)(cid:31)(cid:38)(cid:40)(cid:1)(cid:39)(cid:26)(cid:40)(cid:42)(cid:37)(cid:30)(cid:40)(cid:41)(cid:33)(cid:34)(cid:39)(cid:1)(cid:45)(cid:34)(cid:42)(cid:33)(cid:34)(cid:37)(cid:1)(cid:2)(cid:1)(cid:27)(cid:30)(cid:47)(cid:38)(cid:37)(cid:29)(cid:1)(cid:42)(cid:33)(cid:30)(cid:1)(cid:33)(cid:38)(cid:41)(cid:39)(cid:34)(cid:42)(cid:26)(cid:35)(cid:1)
+Caregiving  in  the  inpatient  environment  is  an  inherently 
+multiparty activity, and systems designed to support it must 
+accommodate  caregivers,  clinicians,  and  patients.  Systems 
+to  support  caregivers  should  support  collaboration  among 
+caregivers  and  clinicians,  patients,  and  other  caregivers. 
+Others  have  identified  this  same  finding  for  chronic 
+caregiving in the home. Indeed, although we have focused 
+on the inpatient experience in our study, the lines between 
+chronic and acute care are blurred; those living with chronic 
+or 
+frequent 
+hospitalizations,  and  most  inpatients  will  continue  their 
+recovery and healing at home.  
+Thus, designs for caregiving partnership in the hospital can 
+and should take cues from related work supporting family 
+caregivers in the home environment. For instance, Chen et 
+al.  [3]  suggest  that  systems  to  support  family  caregivers 
+facilitate  task  coordination  between  caregivers,  a  finding 
+echoed  in  the  work  presented  here.  Inpatient-focused 
+
+experience 
+
+long-term 
+
+care 
+
+often 
+
+ 
+
+766
+
+SESSION: HEALTHCARE PROVIDERS
+
+intervention  could  support 
+
+support  coordination  between 
+
+systems  could 
+these 
+caregivers by allowing them to articulate and delegate tasks 
+in a structured way.  
+Chen  et  al.  [3]’s  recommendations  that  systems  support 
+caregivers’ emotional and social welfare can also be applied 
+to  the  inpatient  context.  These  recommendations  could  be 
+deployed to support partnership not just between caregivers, 
+but  also  between  caregivers  and  clinicians.  Caregivers 
+could benefit from a system that helps clinicians gauge their 
+emotional state and ability to handle incoming information. 
+In  our  study,  Y04’s  caregiver  described  how  over  the 
+course of Y04’s stay clinicians developed the ability to tell 
+if the caregiver was feeling overwrought or if was able to 
+handle  new  information;  if  the  former,  they  came  back 
+later, when she was better able to process the information.  
+Brereton  and  Nolan  describe  the  potential  of  the  PREP 
+system [4], an intervention based on a partnership between 
+caregivers  and  clinicians,  to  help  caregivers  of  stroke 
+victims attain the skills and confidence they need to carry 
+on  their  work  at  home.  Systems  supporting  this  type  of 
+partnership-based 
+inpatient 
+caregivers in their role as planner as well as helping them 
+transition to home care. 
+As  these  examples  show,  designs  that  support  informal 
+caregiving during a hospital stay can and should incorporate 
+the  needs  of  long-term  and  at-home  caregiving.  However, 
+there  are  still  unique  elements  of  the  inpatient  experience 
+that  may  require  special  attention.  A  given  hospital  stay 
+may  be  the  patient’s  first  or  indeed  only  major  inpatient 
+experience.  The  blooming,  buzzing  confusion  of  an 
+unexpected and unfamiliar environment, combined with the 
+challenges  of  the  setting  itself  may  lead  to  different 
+constraints from the needs of more expert or long-term care. 
+We hope this work can form the beginning of a discussion 
+of  how  CSCW  systems  can  support  informal  caregiving 
+throughout a patient’s journey, and how groupware systems 
+for caregiving can react to the different needs placed upon 
+them within and beyond the hospital. 
+(cid:9)(cid:30)(cid:41)(cid:34)(cid:32)(cid:37)(cid:34)(cid:37)(cid:32)(cid:1)(cid:42)(cid:38)(cid:1)(cid:26)(cid:43)(cid:32)(cid:36)(cid:30)(cid:37)(cid:42)(cid:3)(cid:1)(cid:37)(cid:38)(cid:42)(cid:1)(cid:34)(cid:37)(cid:42)(cid:30)(cid:40)(cid:31)(cid:30)(cid:40)(cid:30)(cid:1)
+Patients and caregivers in our study highly valued in-person 
+unmediated communication with their clinicians as part of 
+the healing and caregiving process. Conversations, updates, 
+questions and answers all proceeded directly and naturally. 
+Similarly,  patients  and  caregivers  valued  companionship 
+and navigation, both roles ideally suited to being in person 
+and involving complete attention. 
+And  yet  as  a  result  of  this  offline  paradigm,  currently  the 
+information  and  context  exchanged  between  patients, 
+caregivers, and clinicians is static and confined, not updated 
+despite frequent changes, and often never reaching beyond 
+the hospital room door. The benefits of CSCW technologies 
+will be much greater if patient-facing and caregiver-facing 
+information  in  the  inpatient  setting  can  be  digitized  and 
+shared.  
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+However,  in  designing  tools  and  coordination  systems, 
+researchers  and  designers  must  take  great  care  not  to  take 
+away  from  valuable  face-to-face  interaction,  but  instead 
+enhance or complement it. Caregiver-inclusive technologies 
+should also never disrupt or interfere with essential clinical 
+care. Technologies to support patients and caregivers during 
+a  hospital  stay  should  augment  the  valuable  existing 
+communication,  not  interfere  with  it.  Solutions  that  allow 
+patients  and  caregivers  to  record  or  capture  interactions 
+automatically and return to them later to annotate or share 
+may allow for both. 
+(cid:16)(cid:14)(cid:17)(cid:14)(cid:23)(cid:6)(cid:23)(cid:14)(cid:19)(cid:18)(cid:22)(cid:1)(cid:6)(cid:18)(cid:9)(cid:1)(cid:11)(cid:24)(cid:23)(cid:24)(cid:21)(cid:10)(cid:1)(cid:25)(cid:19)(cid:21)(cid:15)(cid:1)
+Medical care is incredibly diverse, and although we tried to 
+ensure a wide spectrum of patients, our findings are based 
+on  interviews  and  observations  at  two  hospitals  in  one 
+urban  area.  These  sites  attract  patients  from  a  wide 
+geographic  area  and  diverse  medical  conditions,  but  they 
+are  not  necessarily  representative  of  all  hospitals  and 
+populations.  In  the  future,  we  would  like  to  verify  and 
+extend these findings in other inpatient facilities and other 
+regions. 
+Our technique of interviewing patients and caregivers in the 
+hospital  room  also  necessarily  limited  our  direct  access  to 
+the full range of hospital experiences. We interviewed and 
+the  patients’ 
+observed  patients  and  caregivers  when 
+condition  had  stabilized,  and  again  once 
+they  were 
+discharged.  This  timing  allowed  us  to  gain  reflections  on 
+the  whole  hospital  stay  experience,  but  our  direct 
+observation  of  admission  and  initial  hospital  experiences 
+was  limited.  Furthermore,  both  patient-participants  and 
+caregiver-participants  spoke  to  us  about  other  caregivers, 
+but we did not have an opportunity to interview these third 
+parties  directly,  nor  did  we  ask  participants 
+to 
+systematically  articulate  their  networks  of  care.  In  future, 
+we  hope 
+through 
+to  complement  our  current  work 
+additional 
+techniques,  such  as  participatory  design, 
+technology  probes,  and  a  broader  survey  of  patients  and 
+caregivers. 
+Our study also raised questions without clear answers. For 
+example,  much  work  remains  to  be  done  in  studying  how 
+caregivers  coordinate  with  each  other  during  a  patient’s 
+hospital stay, and how practices and patterns established in 
+the hospital setting translate to long-term or at-home care. It 
+is  also  unclear  to  what  extent  hospitals  or  healthcare 
+organizations 
+themselves  should  provide  coordination 
+technology,  and  which  solutions  would  work  better  if 
+provided by nonprofits or technology corporations. Finally, 
+great  opportunities  exist  for  caregiver-support  systems  to 
+also  involve  clinicians,  but  more  work  is  needed  to 
+understand  how  patients’  two  teams  of  care—formal  and 
+informal—can  best  coordinate  to  support  patients’  health 
+and wellbeing.  
+(cid:8)(cid:19)(cid:18)(cid:8)(cid:16)(cid:24)(cid:22)(cid:14)(cid:19)(cid:18)(cid:1)
+Informal caregivers are active participants in patients’ care 
+during  a  hospital  stay.  They  play  various  roles,  from 
+
+ 
+
+to  representative 
+
+companion 
+to  navigator.  Caregivers 
+coordinate communication with clinicians, care for patients’ 
+overall  wellbeing,  and  activate  wider  networks  of  care.  In 
+this paper, we have shown how caregivers of both adult and 
+pediatric  patients  support  those  patients  during  a  hospital 
+stay.  We  have  provided  a  set  of  design  considerations  for 
+CSCW  researchers  and  designers  to  support  caregivers  in 
+their  important  role  in  the  hospital.  Support  for  these 
+important  caregivers  should  enhance  hospitalized  patients’ 
+care,  potentially  improving  clinical  outcomes  and  even 
+reducing medical errors.  
+(cid:6)(cid:8)(cid:15)(cid:18)(cid:19)(cid:25)(cid:16)(cid:10)(cid:9)(cid:12)(cid:17)(cid:10)(cid:18)(cid:23)(cid:22)(cid:1)
+We gratefully thank our participants, who graciously gave 
+us  their  time  and  attention  during  their  hospital  stay.  We 
+thank  the  Patients  as  Safeguards  team,  including  Barry 
+Aaronson, Kelsey Aiello, Cory Brown, and Maher Khelifi. 
+We  also  thank  Virginia  Mason  and  Seattle  Children’s 
+hospitals.  This  project  was  primarily  supported  by  grant 
+#1R01HS022894 from the Agency for Healthcare Research 
+and  Quality  (AHRQ),  with  additional  funding  from  the 
+NIH National  Library  of  Medicine  Biomedical  and  Health 
+Informatics Training Grant at the University of Washington 
+grant #T15LM007442. 
+(cid:21)(cid:10)(cid:11)(cid:10)(cid:21)(cid:10)(cid:18)(cid:8)(cid:10)(cid:22)(cid:1)
+1.  Robin Anthony, Marlene Ritter, Ruth Davis, Kim 
+
+Hitchings, Terry A Capuano, and Zubina Mawji. 2005. 
+Lehigh Valley Hospital: engaging patients and 
+families. Joint Commission Journal on Quality and 
+Patient Safety 31, 10: 566–572. 
+
+2.  Greg Barish, Eric Elbogen, Patricia Lester, and 
+
+William R Saltzman. 2014. Beyond sensors. UbiComp 
+2014 Adjunct: 1273–1277. 
+http://doi.org/10.1145/2638728.2638811 
+
+3.  Timothy W Bickmore, Laura M Pfeifer, and Brian W 
+
+Jack. 2009. Taking the Time to Care: Empowering 
+Low Health Literacy Hospital Patients with Virtual 
+Nurse Agents. CHI 09: Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems: 
+1265–1275. http://doi.org/10.1145/1518701.1518891 
+
+4.  Louise Brereton and Mike Nolan. 2000. “You do know 
+
+he‘s had a stroke, don’t you?” Preparation for family 
+care-giving—the neglected dimension. Journal of 
+Clinical Nursing 9, 4: 498–506. 
+
+5.  Yunan Chen, Victor Ngo, and Sun Young Park. 2013. 
+Caring for caregivers: designing for integrality. CSCW 
+'13: Proceedings of the 2013 conference on Computer 
+supported cooperative work: 91–102. 
+http://doi.org/10.1145/2441776.2441789 
+
+6.  Sunny Consolvo, Peter Roessler, Brett E Shelton, 
+
+Anthony LaMarca, Bill Schilit, and Sara Bly. 2004. 
+Technology for Care Networks of Elders. IEEE 
+Pervasive Computing 3, 2. 
+http://doi.org/10.1109/MPRV.2004.1316814 
+
+ 
+
+767
+
+7.  Kelly Cranswick and Donna Dosman. 2008. Eldercare: 
+What we know today. Canadian Social Trends 11: 48–
+56. 
+
+8.  Patricia C Dykes, Diane L Carroll, Ann C Hurley, et al. 
+
+2013. Building and testing a patient-centric electronic 
+bedside communication center. Journal of 
+Gerontological Nursing 39, 1: 15–19. 
+http://doi.org/10.3928/00989134-20121204-03 
+
+9.  Gary Epstein-Lubow, Rosa R Baier, Kristen 
+
+Butterfield, et al. 2014. Caregiver presence and patient 
+completion of a transitional care intervention. The 
+American Journal of Managed Care 20, 10: e349–444. 
+
+10.  Barbara A Given, Charles W Given, and Sharon 
+
+Kozachik. 2001. Family support in advanced cancer. 
+CA: A Cancer Journal for Clinicians 51, 4: 213–231. 
+11.  S Ryan Greysen, Raman R Khanna, Ronald Jacolbia, 
+
+Herman M Lee, and Andrew D Auerbach. 2014. Tablet 
+computers for hospitalized patients: a pilot study to 
+improve inpatient engagement. Journal of Hospital 
+Medicine 9, 6: 396–399. 
+http://doi.org/10.1002/jhm.2169 
+
+12.  Robert Johansen. 1988. GroupWare: Computer 
+
+Support for Business Teams.  The Free Press, New 
+York, NY. 
+
+13.  Elizabeth Kaziunas, Ayse G Buyuktur, Jasmine Jones, 
+
+Sung W Choi, David A Hanauer, and Mark S 
+Ackerman. 2015. Transition and Reflection in the Use 
+of Health Information. CSCW '15: Proceedings of the 
+18th ACM Conference on Computer Supported 
+Cooperative Work & Social Computing: 1763–1774. 
+http://doi.org/10.1145/2675133.2675276 
+
+14.  Roy P C Kessels. 2003. Patients' memory for medical 
+information. Journal of the Royal Society of Medicine 
+96, 5: 219–222. 
+
+15.  Danish U Khan, Katie A Siek, and Swamy 
+
+Ananthanarayan. 2012. Towards designing health 
+monitoring interfaces for low socioeconomic status 
+families. Pervasive Health 2012: The 6th International 
+Conference on Pervasive Computing Technologies for 
+Healthcare. 
+http://doi.org/10.4108/icst.pervasivehealth.2012.24869
+3 
+
+16.  Charlotte P Lee and Drew Paine. 2015. From The 
+
+Matrix to a Model of Coordinated Action (MoCA): A 
+Conceptual Framework of and for CSCW. CSCW '15: 
+Proceedings of the 18th ACM Conference on Computer 
+Supported Cooperative Work & Social Computing: 
+179–194. http://doi.org/10.1145/2675133.2675161 
+17.  Leslie S Liu, Sen H Hirano, Monica Tentori, et al. 
+
+2011. Improving communication and social support for 
+caregivers of high-risk infants through mobile 
+technologies. CSCW '11: Proceedings of the ACM 
+2011 conference on Computer supported cooperative 
+work: 475. http://doi.org/10.1145/1958824.1958897 
+
+ 
+
+SESSION: HEALTHCARE PROVIDERS
+
+18.  Leslie S Liu, Kori M. Inkpen, and Wanda Pratt. 2015. 
+“I'm Not Like My Friends.” CSCW '15: Proceedings of 
+the 18th ACM Conference on Computer Supported 
+Cooperative Work & Social Computing: 1527–1539. 
+http://doi.org/10.1145/2675133.2675201 
+
+19.  Wendy Moncur, Judith Masthoff, Ehud Reiter, Yvonne 
+
+Freer, and Hien Nguyen. 2014. Providing Adaptive 
+Health Updates Across the Personal Social Network. 
+Human-Computer Interaction 29, 3: 256–309. 
+http://doi.org/10.1080/07370024.2013.819218 
+
+20.  Sean A Munson, Debra Lauterbach, Mark W Newman, 
+and Paul Resnick. 2010. Happier together: integrating a 
+wellness application into a social network site. 
+PERSUASIVE'10: Proceedings of the 5th international 
+conference on Persuasive Technology. 
+
+21.  Mark W Newman, Debra Lauterbach, Sean A Munson, 
+
+Paul Resnick, and Margaret E Morris. 2011. “It's not 
+that I don't have problems, I'm just not putting them on 
+Facebook”: Challenges and Opportunities in Using 
+Online Social Networks for Health. CSCW '11: 
+Proceedings of the ACM 2011 conference on Computer 
+supported cooperative work. 
+
+22.  Jennifer E Prey, Janet Woollen, Lauren Wilcox, et al. 
+
+2014. Patient engagement in the inpatient setting: a 
+systematic review. Journal of the American Medical 
+Informatics Association : JAMIA 21, 4: 742–750. 
+http://doi.org/10.1136/amiajnl-2013-002141 
+
+23.  Eleanor R Robertson, Lauren Morgan, Sarah Bird, Ken 
+
+Catchpole, and Peter McCulloch. 2014. Interventions 
+employed to improve intrahospital handover: a 
+systematic review. BMJ quality & safety 23, 7: 600–
+607. http://doi.org/10.1136/bmjqs-2013-002309 
+
+24.  Charles Safran. 2003. The collaborative edge: patient 
+
+empowerment for vulnerable populations. International 
+journal of medical informatics 69, 2-3: 185–190. 
+http://doi.org/10.1145/1621841.1621869 
+
+25.  R Schulz, A Lustig, S Handler, and L M Martire. 2002. 
+
+Technology-based caregiver intervention research: 
+Current status and future directions. Gerontechnology 
+2: 15–47. 
+
+26.  Siddhartha Singh, Kathlyn E Fletcher, G John Pandl, et 
+
+al. 2011. It's the Writing on the Wall: Whiteboards 
+Improve Inpatient Satisfaction With Provider 
+Communication. American Journal of Medical Quality 
+26, 2: 127–131. 
+http://doi.org/10.1177/1062860610376088 
+
+27.  Laura L Sisterhen, Richard T Blaszak, Majka B 
+
+Woods, and Christopher E Smith. 2007. Defining 
+family-centered rounds. Teaching and Learning in 
+Medicine 19, 3: 319–322. 
+http://doi.org/10.1080/10401330701366812 
+
+ 
+ 
+ 
+
+768
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+28.  Meredith Skeels and Desney S Tan. 2010. Identifying 
+opportunities for inpatient-centric technology. IHI '10: 
+Proceedings of the 1st ACM International Health 
+Informatics Symposium: 580. 
+http://doi.org/10.1145/1882992.1883087 
+
+29.  Meredith M Skeels, Kenton T Unruh, Christopher 
+Powell, and Wanda Pratt. 2010. Catalyzing social 
+support for breast cancer patients. CHI '10: 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems: 173–182. 
+http://doi.org/10.1145/1753326.1753353 
+
+30.  Hyewon Suh, John R Porter, Alexis Hiniker, and Julie 
+A Kientz. 2014. @BabySteps: design and evaluation of 
+a system for using twitter for tracking children's 
+developmental milestones. CHI '14: Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems: 2279–2288. 
+http://doi.org/10.1145/2556288.2557386 
+
+31.  Marilyn Tan, Kambria Hooper Evans, Clarence H 
+
+Braddock, and Lisa Shieh. 2013. Patient whiteboards to 
+improve patient-centred care in the hospital. 
+Postgraduate Medical Journal 89, 1056: 604–609. 
+http://doi.org/10.1136/postgradmedj-2012-131296 
+32.  Päivi Topo. 2008. Technology Studies to Meet the 
+
+Needs of People With Dementia and Their Caregivers: 
+A Literature Review. Journal of Applied Gerontology 
+28, 1: 5–37. http://doi.org/10.1177/0733464808324019 
+33.  Laura Pfeifer Vardoulakis, Amy Karlson, Dan Morris, 
+Greg Smith, Justin Gatewood, and Desney Tan. 2012. 
+Using mobile phones to present medical information to 
+hospital patients. CHI '12: Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems: 
+1411–1420. http://doi.org/10.1145/2207676.2208601 
+
+ 
+
+ 
+
+34.  David K Vawdrey, Lauren G Wilcox, Sarah A Collins, 
+et al. 2011. A tablet computer application for patients 
+to participate in their hospital care. AMIA 2012: Annual 
+Symposium of the American Medical Informatics 
+Association 2011: 1428–1435. 
+
+35.  John Vines, Stephen Lindsay, Gary W Pritchard, et al. 
+2013. Making family care work: dependence, privacy 
+and remote home monitoring telecare systems. 
+UbiComp '13: Proceedings of the 2013 ACM 
+international joint conference on Pervasive and 
+ubiquitous computing. 
+http://doi.org/10.1145/2493432.2493469 
+
+36.  Sabine A Weyand, Monique Frize, Erika Bariciak, and 
+Sandra Dunn. 2011. Development and usability testing 
+of a parent decision support tool for the neonatal 
+intensive care unit. 2011 Annual International 
+Conference of the IEEE Engineering in Medicine and 
+Biology Society 2011: 6430–6433. 
+http://doi.org/10.1109/IEMBS.2011.6091587 
+
+37.  Lauren Wilcox, Dan Morris, Desney Tan, and Justin 
+
+Gatewood. 2010. Designing patient-centric information 
+displays for hospitals. CHI '10: Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems: 2123. 
+http://doi.org/10.1145/1753326.1753650 
+
+38.  Jennifer L Wolff and Debra L Roter. 2011. Family 
+presence in routine medical visits: a meta-analytical 
+review. Social Science & Medicine (1982) 72, 6: 823–
+831. http://doi.org/10.1016/j.socscimed.2011.01.015 
+
+ 
+ 
+
+769
+
+

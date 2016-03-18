@@ -1,0 +1,5337 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Virtual Team Networks: How Group Social Capital Affects 
+Team Success in a Massively Multiplayer Online Game 
+Grace A. Benefield 
+
+Cuihua Shen 
+
+Alex Leavitt  
+
+University of California, Davis 
+
+University of California, Davis 
+
+Davis, United States 
+
+grbenefield@ucdavis.edu 
+
+Davis, United States 
+cuishen@ucdavis.edu 
+
+University of Southern California 
+
+Los Angeles, United States 
+
+aleavitt@usc.edu 
+
+teams 
+
+on 
+
+group 
+
+performance 
+
+teams  have  become  a  ubiquitous 
+
+ABSTRACT 
+Virtual 
+form  of 
+organizing,  but  the  impact  of  social  structures  within  and 
+between 
+remains 
+understudied. This paper uses the case study of a massively 
+multiplayer  online  game  and  server  log  data  from  over 
+10,000  players  to  examine  the  connection  between  group 
+social  capital  (operationalized 
+through  guild  network 
+structure measures) and team effectiveness, given a variety 
+of  in-game  social  networks.  Three  different  networks, 
+social,  task,  and  exchange  networks,  are  compared  and 
+contrasted while controlling for group size, group age, and 
+player  experience.  Team  effectiveness  is  maximized  at  a 
+roughly  moderate  level  of  closure  across  the  networks, 
+suggesting  that  this  is  the  optimal  level  of  the  group’s 
+network density. Guilds with high brokerage, meaning they 
+have  diverse  connections  with  other  groups,  were  more 
+effective  in  achievement-oriented  networks.  In  addition, 
+guilds  with central leaders  were more effective  when they 
+teamed up with other guild leaders. 
+Author Keywords 
+Social networks; groups; social capital; teams; leadership; 
+video games; MMOG; guilds 
+ACM Classification Keywords 
+H.5.3  Group 
+Interfaces;  K.4.3 
+Organizational  Impacts;  H.5.1  Multimedia  Information 
+systems;  H.4.m  Information  systems  applications;  J.4 
+Sociology 
+INTRODUCTION 
+information  and  communication 
+The  emergence  of 
+technologies 
+instant  messaging, 
+(ICTs), 
+teleconferencing,  or  e-mail,  has  increased  the  capacity  for 
+people  to  communicate  and  collaborate  over  a  virtual 
+medium.  Using  ICTs,  individuals  can  form  virtual  teams 
+(VTs)  as  a  way  to  connect  organizational  members  and 
+
+and  Organization 
+
+such 
+
+as 
+
+Permission to make digital or hard copies  of all or part  of this work  for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components of this work  owned  by others than  ACM  must be honored. 
+Abstracting with credit is permitted. To copy otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02...$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819935 
+
+679
+
+In  many  of 
+
+complete  projects.  At  Intel,  for  example,  70  percent  of 
+employees worked without meeting face-to-face (61 percent 
+used  internet  conferencing),  and  44  percent  worked  on 
+teams with changing members [8]. One advantage of VTs is 
+that they can coordinate synchronously or asynchronously, 
+as  they  are  not  limited  by  geographic  dependence  [41]. 
+Although they are useful, depending on the purpose, some 
+projects  may  be  more  successful  using  face-to-face  (FTF) 
+teams.  For  example,  traditional  work  groups  can  be  more 
+focused and have stable group members [21]. 
+In  contrast  to  FTF  groups,  many  VTs  are  complex  and 
+multi-purposed.  The  purpose  of  the  team  may  not  be  as 
+focused, with one project overlapping into the next. Often, 
+VT  members  are  not  limited  to  one  work  group,  as 
+individuals  can  easily  move  from  one  team  to  another 
+within  the  organization.  This  fluid  and  boundary-spanning 
+behavior is common in VTs [41], especially as the number 
+of VT members can vary widely.  
+VTs are used in formal organizations, as well as in online 
+communities. 
+these  emerging  virtual 
+organizations, such as open source software (OSS) projects 
+and  massively  multiplayer  online  games  (MMOGs),  VTs 
+are  self-organized  and  it  is  not  uncommon  for  VTs  to 
+operate without an assigned leader. In OSS collaborations, 
+spontaneous  VTs  are  often  formed  by  distant  members  to 
+complete coding projects. Individuals are motivated to join 
+these  VTs  to  increase  their  notoriety,  enjoyment  from 
+contributing, desire for software improvements, and social- 
+and career-related advantages in the software industry [23]. 
+VTs are also common in MMOGs where players can work 
+in VTs to advance their individual progress by completing 
+team  challenges.  To  ensure  team  success,  individuals  are 
+motivated  to  both  coordinate  actions  and  form  social 
+relationships with other players on their VTs [27]. 
+Because  VTs  are  fluid, 
+the 
+configuration of VTs impacts their productivity remains an 
+important  yet  understudied  question.  As  described  above, 
+MMOGs provide mechanisms for teams to form online, and 
+therefore  they  make  a  good  proxy  for  studying  online 
+groups. In this paper, we examine how social structures and 
+“group  social  capital”  impact  teams’  success.  We  look 
+explicitly at both the connection within as well as between 
+teams to see how certain kinds of social networks and their 
+composition lead to increased group effectiveness. 
+
+the  question  of  how 
+
+to 
+
+support 
+
+grouping  mechanisms 
+
+Teams in MMOGs 
+MMOGs frequently provide mechanisms for teams to form 
+online.  Broadly  defined,  MMOGs  are  two  or  three-
+dimensional  persistent  online  worlds  where  participants 
+interact  with  a  mediated  environment  and  other  human 
+players [7,39]. Represented by avatars, players can engage 
+in combat, earn money, make transactions, complete quests, 
+and interact with other players through various groups and 
+communication  channels.  Playing  MMOGs  often  requires 
+dedication.  A  cross-game  survey  showed 
+that  many 
+individuals play an average of 20 hours per week, similar to 
+a second job [47]. Because of the complexity of quests and 
+combat  in  these  worlds,  success  in  MMOGs  typically 
+requires – besides long hours – creative teamwork, similar 
+to success in formal organizations [47]. 
+By  design,  most  MMOGs  encourage  collaborative  play 
+through  1)  an  elaborate  division  of  labor  so  that  players 
+possess  distinct  and  complementary  skill  sets,  and  2) 
+various 
+player 
+collaboration [9]. Two general categories of teams exist in 
+MMOGs. The first type includes short-term, ad hoc teams 
+that come together to complete a task; these teams tend to 
+separate  after  their  success  or  failure,  often  in  a  matter  of 
+hours  [25].  Due  to  the  ephemeral  nature  of  ad  hoc  teams, 
+they are also referred to as “pick up groups” (PUGs). Most 
+MMOGs provide matchmaking functions to connect players 
+that  are  looking  to  join  an  ad  hoc  team  (such  as  those 
+tagged  as  “Looking  For  Group”;  [39]).  Although  some  ad 
+hoc teams are repeatedly organized among the same set of 
+players,  most  are  temporary  and  formed  between  people 
+that do not necessarily share a prior history of interaction. 
+There  are  often  few  barriers  for  entry  and  exit,  as 
+membership  is  fluid  and  the  team  boundaries  are  weakly 
+defined.  
+This study focuses exclusively on a second type of MMOG 
+teams: guilds. Compared to PUGs, guilds possess a  more-
+stable  social  structure  –  comparable 
+to 
+traditional and virtual work groups in formal and informal 
+organizations  –  and 
+semi-permanent 
+organizational structure. Joining a  guild is often  necessary 
+to progress to higher levels and gain access to advantaged 
+resources [13], and studies have shown  that the likelihood 
+of being in a guild increases steadily as players advance in 
+the  game  [39].  Guilds  are  identified  by  a  unique  guild 
+name, and they can have membership sizes ranging from a 
+few  to  hundreds  of  players.  MMOGs  provide  designated 
+meeting places for guilds and specific functions to support 
+within-guild  communication  and  coordination  (such  as  a 
+guild chat channel, guild bank, and guild leadership roster). 
+Guilds  can  be  categorized  depending  on  their  goals  and 
+play styles, including those that promote some combination 
+of  social  interactions,  competition  in  player-versus-player 
+(PvP) battles, team-building to progress through stages, and 
+role-playing to act out their characters [44]. These different 
+purposes create opportunities for guild members to develop 
+
+they  have  a 
+
+in  duration 
+
+680
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+test 
+
+teams  may 
+
+the 
+
+future 
+
+task-oriented 
+
+interdependent 
+
+ties  with  other  guild 
+
+both  social-  and 
+members.  
+As well as being intended for entertainment purposes, many 
+MMOGs  replicate  rules  and  standards  for  organizational 
+success.  Because  of  the  similarities  between  MMOGs  and 
+other organizations, there are many advantages to studying 
+VT  development  and  management,  using  MMOGs  as  a 
+testing bed for team research. One advantage is that some 
+teams,  such  as  guilds,  play  with  each  other  for  longer 
+periods  of  time,  allowing  for  longitudinal  studies  of  real 
+teams and their group dynamics [1]. In addition, studies on 
+MMOGs  may replicate patterns in other synchronous VTs 
+[16].  MMOG  studies  can 
+these  patterns  using 
+traditional  surveys  [16]  or  by  using  behavioral  data  from 
+player  actions  [25].  Various  VT  performance  factors  can 
+also be evaluated through group-level effects on individual 
+player  success  [16]  or  the  group’s  overall  success.  In  this 
+paper,  we  use  one  MMOG  to  test  the  ideal  levels  of 
+different types of social dependence, in both affiliation- and 
+task-oriented  social  networks,  which  maximizes  each 
+team’s overall performance. 
+Virtual Team Effectiveness 
+Team  performance  consists  of  three  factors:  1)  exceeding 
+standards (in quality or quantity) of the productive output, 
+2)  using  social  norms  that  collectively  maximize  group 
+members’ 
+interactions,  and  3) 
+creating a positive learning experience for group members 
+[20].  Empirically,  work  group  effectiveness 
+is  often 
+quantified  by  the  group  supervisor’s  evaluations  [30,  33] 
+sales [30], or customer loyalty [30]. MMOGs measure team 
+performance through a system of point leveling at both the 
+individual and group level. 
+Studies have illustrated various factors that may affect VT 
+performance, yet few have shown how the social structure 
+both  within  and  across 
+influence  VT 
+effectiveness 
+research  on  VT 
+effectiveness only looks at teams as isolated units [12,16], 
+given  a  problem  of  size;  in  this  paper,  we  extend  that 
+foundation  to  ask  how  the  structure  of  teams  impacts 
+success, especially situating teams amongst each other in a 
+larger  network  (because,  again,  teams  are  frequently  not 
+isolated and interact  with other groups). Using  guilds in a 
+large MMOG called Dragon Nest (DN) as a case study, we 
+adapt Oh, Chung, & Labianca’s [33] theoretical framework 
+of  “group  social  capital”  to  test  how  social  capital  within 
+and beyond teams affect their overall effectiveness. 
+Group Social Capital and Virtual Teams 
+Social capital has been a widely used concept in technology 
+research. It broadly refers to an actor’s access to resources 
+based on their social ties and structural position in a social 
+system  [17,18,35].  Like  other  forms  of  capital,  social 
+capital could help individuals and groups achieve economic 
+and social goals. Definitions of social capital recognize its 
+individual and collective dimensions. For example, Burt [5] 
+defines  social  capital  as  “the  advantage  created  by  a 
+
+[3,33].  Most  of 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+isolated  units: 
+
+team 
+
+the 
+
+interconnectedness 
+
+person’s  location  in  a  structure  of  relationships”  (5).  By 
+contrast,  Putnam  [35]  defines  social  capital  as  “social 
+networks and the norms of reciprocity and trustworthiness 
+that  arise  from  them”  (19).  Social  capital  provides  an 
+especially  useful  framework  to  examine  group  processes, 
+whereby individual social relationships  within and beyond 
+group boundaries create a multilayered social structure that 
+contributes to overall group effectiveness.  
+Oh,  Chung,  and  Labianca  [33]  proposed  a  “group  social 
+capital”  framework  and  conducted  an  empirical  test  in 
+traditional organizational work groups. They defined group 
+social capital as “the configuration of a group’s members’ 
+social relationships within the social structure of the group 
+itself,  as  well  as  in  the  broader  social  structure  of  the 
+organization  to  which  the  group  belongs,  through  which 
+necessary  resources  for  the  group  can  be  accessed”  (861). 
+This framework considers both the social structure within a 
+group  and  the  larger  network  of  the  organization  within 
+which the individuals and groups are embedded. Groups are 
+not 
+through 
+members’  cross-group  relationships  contributes  to  the 
+collective  social  resources  of  the  group.  In  other  words, 
+group  social  capital  matters  because  an  optimal  structural 
+configuration  within, as  well  as outside of, the group  may 
+generate benefits greater than the sum of all the individuals’ 
+social  capital.  Given  the  high  degree  of  fluidity  and 
+boundary-spanning activities in VTs, this framework allows 
+us to examine the effectiveness of these teams as they are 
+formed  and  sustained  through  multilayered  interpersonal 
+networks across organizational boundaries.  
+The  original  group  social  capital  framework  used  work 
+groups  from  a  Korean  corporation  to  test  the  network  of 
+informal socializing ties (friendships) on team performance 
+[28].  Using 
+framework  measured 
+intragroup/intergroup  friendships  and  the  network  of  the 
+leaders  on  supervisors’  evaluations  of  group 
+group 
+performance.  They  found  that  a  moderate  density  of 
+friendships within and a high level of  friendships between 
+work groups led to the greatest overall performance. In the 
+study,  the  effects  of  the  leaders’  network  were  not 
+significant.  
+This  paper  extends  Oh  et  al.’s  [33]  study  to  a  MMOG 
+context  and  includes  two  additional  social  networks. 
+Following this framework, we consider two main structural 
+mechanisms that link social capital with VT effectiveness. 
+two  mechanisms  –  closure  and  brokerage  – 
+These 
+acknowledge that team effectiveness can be affected by 1) a 
+team’s  inner  social  structure  (intragroup  network),  and  2) 
+how teams are positioned within the overall social structure 
+of the organization (intergroup network).  
+Intragroup closure 
+Social  capital  research  points  to  two  distinct  types  of 
+structure 
+that  may  generate  advantage:  closure  and 
+brokerage  [5,40].  Closure  refers  to  the  type  of  structure 
+where connected dyads also share many common ties. For 
+
+surveys, 
+
+example, in a small group of three actors A, B, and C, high 
+closure means everyone is connected to everyone else. High 
+closure  can  lead  to  more  moral  behaviors  and  more  trust 
+towards each other, as actors’ behaviors are kept in check 
+by  shared  social  contacts  who  know  each  other  [11].  The 
+redundancy  of  connections  also  ensures 
+information, 
+opinions,  and  norms  are  reinforced  within  the  network, 
+giving rise to stronger ties, reciprocity, and group solidarity 
+[11,35].  
+Research  has  established  the  link  between  closure  and 
+group  productivity.  Information  available  through  strong 
+and  closed  ties  is  often  more  trusted  and  readily  available 
+[28],  reducing  opportunism  and  transaction  costs  for  all 
+members.  Closed  networks  also  provide  socioemotional 
+support,  creating  group  resilience  during  difficult  setbacks 
+[35,42].  Work  groups  with  greater  density  of  informal 
+friendship also tend to have  greater customer loyalty [30], 
+productivity  [37],  and  overall 
+task  performance  [3]. 
+Compared  to  traditional  work  groups,  virtual  teams  in 
+MMOGs  can  be  especially  susceptible  to  opportunistic 
+behaviors  because  of  their  fluid  boundaries.  A  closed 
+intragroup  network  can  create  trust,  refocusing  group 
+resources  from  behavioral  monitoring  to  accomplishing 
+joint  tasks.    In  VTs,  factors  of  trust  during  the  life  of  the 
+team  may  vary.  High  trust  can  be  formed  initially  when 
+group  members  connect  socially,  take  initiative,  and  have 
+enthusiastic interactions. High trust is maintained in a group 
+through regular and task-focused communication, and when 
+leaders  use  positive  communication  [26].  Research  in 
+MMOGs 
+that  communication  between  guild 
+members, such as voice chat, also breeds trust [36]. Dyads 
+that  are  embedded  in  closed  networks  are  more  likely  to 
+trust each other too [40]. Finally, groups with greater levels 
+of trust and communication have greater task performance 
+in both FTF teams [12] and VTs in software development 
+[38].  
+However,  the  performance  advantage  of  closure  is  not 
+infinite.  When  actors  are  too  tightly  connected  within  a 
+group, they become insulated and may have less diverse ties 
+that  connect  them  to  the  information  and  resources 
+available outside of the closed group [17]. Others have also 
+suggested that VT performance in MMOGs may not rely on 
+trust as much as in other VT contexts [16]. Because of these 
+contradictory  mechanisms,  some  have  suggested 
+that 
+closure often follows an inverted-U relationship with group 
+effectiveness,  where  the  maximum  effectiveness  is  at  a 
+moderate level of density [33]. Therefore, we propose that: 
+H1:  Intragroup  closure  will  have  an  inverted  U-shaped 
+relationship with team effectiveness. 
+Intergroup brokerage 
+The  second  type  of  structure  generating  social  capital  is 
+brokerage,  where  a  tie  connects  otherwise  unconnected 
+others  (called  a  structural  hole)  [5].  The  performance 
+advantage  of  brokerage  comes 
+from  contact  with 
+heterogeneous  members  who  provide  access  to  diverse, 
+
+show 
+
+681
+
+than 
+
+redundant, 
+
+to 
+
+spread 
+
+information  and 
+
+rather 
+resources. 
+Heterogeneity within the organization may come from both 
+vertical and horizontal boundaries [34]. Vertical boundaries 
+are  those  between  people  at  different  hierarchical  levels, 
+such as directors, middle managers, and junior employees. 
+Horizontal  boundaries  refer  to  those  between  various 
+functional  units and project groups, such as the  marketing 
+division  and  sales  division.    At  the  group  level,  insulated 
+groups  may  not  have  access  to  informational  clusters  in 
+other social cliques.  Affiliative social relations often cross 
+formal  hierarchical  barriers 
+information 
+throughout a system. These intergroup social relations can 
+often  better  predict  economic  success  compared 
+to 
+workplace relations based on job positions [18]. 
+In virtual worlds, the link between brokerage and individual 
+task performance is well established [6,40]. MMOGs do not 
+typically  have  a  hierarchical  structure  like  traditional 
+organizations,  and  entry  and  exit  costs  associated  with 
+guilds  are  very  low.  As  such,  the  most  salient  boundary-
+spanning  activities  are  connecting  with  people  outside  of 
+the  guild.    These  relationships  with  external  members  cut 
+across  horizontal  boundaries  and  expose  individuals  to 
+heterogeneous ideas and knowledge, as well as instrumental 
+and  social  support,  which  in  turn  benefits  the  group  as  a 
+whole. Therefore, we propose that: 
+H2:  Groups  with  greater  bridging  diversity  with  other 
+groups will be more effective. 
+Vertically, 
+influence  over 
+practices, policies, and their group’s actions. Groups whose 
+leaders  are  well-connected  with  other  leaders  have  higher 
+group  performance  [3].  In  MMOGs,  guild  leaders  often 
+mediate  conflicts,  enforce  guild  rules,  and  act  as  advisors 
+[44].  Group  leaders  with  access  and  contacts  to  other 
+leaders may be able to learn diverse organizing practice and 
+effective  policies.  Further,  players  who  are  leaders  in  an 
+MMOG are also offline leaders in voluntary organizations, 
+suggesting  that  some  leadership  skills  cross  offline-online 
+boundaries [29]. Therefore, we propose that: 
+H3: Groups whose leaders have more ties to other leaders 
+will be more effective. 
+DATA & METHOD 
+Dragon Nest 
+The  data  for  this  study  are  drawn  from  a  large  MMOG, 
+Dragon  Nest  (DN),  a  fantasy  game  developed  by 
+Eyedentity Games. The Chinese version of the game, from 
+which  our  data  is  drawn,  is  operated  by  Shanda  Games 
+Limited.  Currently,  the  free-to-play  game  is  available  for 
+players in Korea, China, North  America, South East  Asia, 
+and Europe. While not identical, both our study and Oh et 
+al.’s [33] study include Asian populations, we use a sample 
+of  Chinese  players  and  Oh  et  al.  [33]  uses  a  sample  of 
+Korean employees. By testing the  same hypotheses drawn 
+from  similar  cultures,  we  expected  similar  results.  The 
+behavioral  dataset  was  made  available  by  the  game 
+
+leaders  often  have  greater 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+include 
+
+ties  between 
+
+company  and  included  server  logs  from  a  three  month 
+period (01/01/2011 to 03/31/2011; [25]).  
+To  traverse  and  interact  with  the  virtual  world,  Lagendia, 
+players  can  create  avatars  from  different  classes,  such  as 
+warrior,  archer,  cleric,  and  sorceress.  The  purpose  of  the 
+game  is  to  awaken  a  poisoned  goddess  by  defeating 
+dungeons  and  dragons  and  discovering  power  stones  [25]. 
+Players can interact with other players through chat, team or 
+guild  collaborations,  trading  currency  or  items,  or  by 
+joining guilds. 
+Sampling 
+A guild in our sample was included in our analysis if it was 
+founded  during  the  collection  period  and  if  the  guild  had 
+more than three characters on the last day of the collection 
+period. There were a total of 804 guilds in the sample. The 
+minimum  number  of  characters  in  a  guild  was  four 
+members, and the  maximum  number of characters  was 97 
+(M = 14.31, SD = 15.42). All members of each guild were 
+included  in  the  analysis,  resulting  in  a  total  of  11,549 
+characters. Players can create multiple characters, so some 
+network  connections  may 
+two 
+characters  from  the  same  player.  Character  levels  ranged 
+from a minimum of 2 to a maximum of 40 (M = 26.9, SD = 
+9.7).  At  the  time  of  collection,  level  40  was  the  highest 
+achievable level. 
+Networks 
+Using the sample of all 11,549 guild members in the sample 
+of  804  guilds,  three  distinct  networks  were  constructed 
+from the behavioral log data. The three networks included 
+social,  task,  and  exchange  networks  (explained  below). 
+When  two  guild  members  in  the  sample  shared  either  a 
+social,  task,  and  exchange  tie,  a  connection  was  drawn 
+between  the  nodes  in  the  graph.  Using  these  ties,  two 
+networks were constructed: an intragroup and an intergroup 
+network.  The  intragroup  network  was  constructed  by 
+analyzing  character  ties  within  each  guild.  To  create  a 
+guild-guild network, individual character actions in each of 
+the  three  networks  were  aggregated.  All  guilds  and  guild 
+members  were  included  in  the  final  network,  including 
+isolates. 
+Social network 
+We constructed an undirected social network by recording 
+if two characters in the sample connected with each other as 
+“friends”  in  the  game  interface.  8,662  of  the  11,549  guild 
+members had 19,361 social ties (average # friends = 6.69). 
+The social network was then aggregated into a social guild-
+guild  network.  In  the  guild-guild  network,  26  of  the  804 
+guilds had no social ties with other guilds. 
+Exchange network 
+We  constructed  an  undirected  exchange  network  by 
+recording  if  two  characters  in  the  sample  made  a  trading 
+transaction  during  the  collection  period.  The  exchange 
+network  was  weighted  by  the  total  number  of  trading 
+transactions  between  the  characters.  8,220  of  the  11,549 
+characters shared 30,457 total trading ties. Once aggregated 
+
+682
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+they  were  analyzed  and 
+
+into  the  guild-guild  network,  27  of  the  804  guilds  had  no 
+intergroup exchange ties. 
+Task network 
+We constructed an undirected task network by recording if 
+two  characters  in  the  sample  played  with  each  other  in  a 
+team  “party”  instance  (i.e.  a  PUG).  The  network  was 
+weighted by the total  number of shared instances between 
+the  guild  member  pairs.  The  network  included  11,549 
+characters with 294,956 party ties. 1,294 characters had no 
+task  ties  with  other  characters  within  the  guild  member 
+sample.  After  aggregating  the  task  network  into  a  guild-
+guild  network,  6  of  the  804  guilds  in  the  sample  were 
+isolates. 
+Network correlations 
+We  compared 
+three  player-player  networks  and 
+the 
+conducted an inter-network correlation using the Quadratic 
+Assignment  (QAP)  correlation  method,  which  statistically 
+tests  the  correlations  between  networks.  The  networks  all 
+had  small  but  significant  correlations.  The  social  and  task 
+networks  had  the  largest  correlation  (r2  =  .25,  p  <  .001), 
+followed by the social and exchange networks (r2 = .13, p < 
+.001), and finally the task and exchange networks (r2 = .05, 
+p  <  .001).  Because  the  three  networks  did  not  have  too 
+much  overlap, 
+interpreted 
+separately.  
+Leadership network 
+Finally,  a  leadership  network  was  constructed  by  taking  a 
+subset  of  guild  leaders  with  network  ties  with  other  guild 
+leaders on the last day of the collection period. In the social 
+network, 349 leaders had a total of 286 friendship ties with 
+other guild leaders, while 455 leaders had no friendship ties 
+to  other  leaders.  In  the  task  network,  434  leaders  have 
+played in a PUG with other leaders while 370 have no inter-
+leader PUG ties. In the exchange network, 437 leaders have 
+traded  with  other  leaders,  and  567  have  no  inter-leader 
+trading ties.  
+MODEL 
+To  test  our  hypotheses,  we  created  and  tested  various 
+hierarchical 
+guild 
+effectiveness.  Correlations  and  descriptive  statistics  for  all 
+of  the  variables  are  reported  in  Table  1.  To  improve  the 
+interpretability  of  coefficients  in  a  polynomial  regression, 
+all  predictors  were  centered  (Table  2),  as  suggested  by 
+Cohen et al. (204) [10]. 
+Independent and Dependent Variables 
+Guild effectiveness 
+The dependent variable, guild effectiveness, is based on the 
+amount of guild points a guild has achieved on the last day 
+of the collection period. Guild points are earned by the team 
+completing quests, such as dungeons and commissions [19]. 
+To advance a guild level in Dragon Nest, a guild must have 
+earned a certain number of guild points, currency, and guild 
+members.  The  effectiveness  measure  is  the  average  of  the 
+total  guild  points  based  on  the  number  of  members  in  a 
+guild on the last day of the collection period. Because the 
+
+regression  models 
+
+to 
+
+predict 
+
+683
+
+distribution  of  guild  effectiveness  was  highly  skewed,  we 
+log-transformed this variable (M = 8.89, SD = 1.07). 
+To  predict  guild  effectiveness,  we  included  independent 
+variables related to guild-level network measures. We also 
+included a number of guild-level and character-level control 
+variables. 
+Intragroup closure (density) 
+Similar to Oh et al. [33] , density and density squared were 
+used as measure to test intragroup closure. In an egocentric 
+approach,  density  was  calculated  using  the  network  ties 
+within each guild. The social network used an unweighted 
+density measure (M = 0.16, SD = 0.21) by dividing the total 
+number of friendship ties within each guild by the potential 
+ties based on the number of characters in the guild:  
+
+(cid:7)(cid:135)(cid:144)(cid:149)(cid:139)(cid:150)(cid:155)(cid:3404)(cid:3) (cid:4)(cid:133)(cid:150)(cid:151)(cid:131)(cid:142)(cid:3)(cid:150)(cid:139)(cid:135)(cid:149)
+(cid:19)(cid:145)(cid:150)(cid:135)(cid:144)(cid:150)(cid:139)(cid:131)(cid:142)(cid:3)(cid:150)(cid:139)(cid:135)(cid:149) 
+(cid:19)(cid:145)(cid:150)(cid:135)(cid:144)(cid:150)(cid:139)(cid:131)(cid:142)(cid:3)(cid:150)(cid:139)(cid:135)(cid:149)(cid:3404)(cid:3)(cid:17)(cid:1499)(cid:4666)(cid:17)(cid:3398)(cid:883)(cid:4667)
+(cid:884)
+
+ 
+
+The potential ties were calculated using: 
+
+where N is the number of characters in the guild. Isolates, 
+those without intragroup ties, were included in the density 
+measure.  111  guilds  had  a  density  of  0,  as  they  had  no 
+intragroup social ties. 
+The  task  and  exchange  networks  used  weighted  density 
+measures. These were weighted to account for the strength 
+of instances shared between actors. For example, two actors 
+who  have  played  on  fifty  PUGs  together  likely  have  a 
+stronger relationship than those who have only played once 
+together. The task network was weighted by the number of 
+shared  task  instances  between  an  actor  and  an  alter.  The 
+exchange  network  was  weighted  by  the  total  number  of 
+exchange  transactions  between  an  actor  and  an  alter.  The 
+number of weighted intragroup ties was summed, squared, 
+and  divided  by  the  potential  ties  to  measure  density.  The 
+weighted density was then normalized on a scale from 0 to 
+1 for both the task network (M = 0.01, SD = 0.04) and the 
+exchange  network  (M  =  0.02,  SD  =  0.05).  In  the  task 
+network,  101  guilds  had  a  density  of  0,  as  they  had  no 
+intragroup  task  ties.  The  exchange  network  had  27  guilds 
+with no intragroup exchange ties. 
+Because we hypothesized an inverted U-shaped relationship 
+between  closure  and  team  effectiveness,  density  squared 
+was  also  included  in  the  models.  The  quadratic  maximum 
+was  calculated  in  each  of  the  three  models  as  a  way  to 
+estimate  the  point  of  density  at  which  performance  is 
+maximized. Using the regression of centered predictors,  
+
+(cid:28)(cid:3404)(cid:5)(cid:2869)(cid:7)(cid:135)(cid:144)(cid:149)(cid:139)(cid:150)(cid:155)(cid:3397)(cid:3)(cid:5)(cid:2870)(cid:7)(cid:135)(cid:144)(cid:149)(cid:139)(cid:150)(cid:155)(cid:2870)(cid:3397)(cid:15)(cid:4666)(cid:27)(cid:2870)(cid:481)(cid:27)(cid:2871)(cid:481)(cid:27)(cid:2872)(cid:481)(cid:27)(cid:2873)(cid:481)(cid:27)(cid:2874)(cid:481)(cid:27)(cid:2875)(cid:4667)(cid:3397)(cid:5)(cid:2868) 
+where (cid:1838) is  a  linear  function  of  the  other  predictors,  the 
+maximum  of  the  quadratic  equation  ((cid:1850)(cid:1839))  was  calculated 
+
+using the derivative of the equation: 
+
+(cid:3)(cid:3)(cid:27)(cid:16)(cid:3404)(cid:3)(cid:3398)(cid:5)(cid:883)(cid:884)(cid:5)(cid:884) 
+
+the density squared predictor was added to (cid:1850)(cid:1839). 
+
+To  rescale  the  centered  quadratic  maximum  to  its  0  to  1 
+scale for comparison across the three networks, the mean of 
+
+Intergroup brokerage (Blau’s Diversity Index) 
+To  test  bridging  capital,  or  intergroup  brokerage,  we 
+included  a  measure  of  inter-guild  heterogeneity  to  show 
+group-level  diversity  in  each  group’s  connections  to  other 
+groups.  Brokerage  was  calculated  using  Blau’s  diversity 
+index of heterogeneity [4], measured using the formula: 
+
+(cid:5)(cid:148)(cid:139)(cid:134)(cid:137)(cid:139)(cid:144)(cid:137)(cid:3)(cid:134)(cid:139)(cid:152)(cid:135)(cid:148)(cid:149)(cid:139)(cid:150)(cid:155)(cid:3404)(cid:883)(cid:3398)(cid:3)(cid:3533)(cid:19)(cid:2919)(cid:2870)(cid:1499)(cid:19)(cid:2919) 
+
+this  measure  using 
+
+ties.  We  calculated 
+
+Pi represents the proportional tie influence of each guild’s 
+shared network ties, based on the total number of external 
+network 
+the 
+interguild network adjacency matrix. Each cell was divided 
+by the guild’s total interguild network ties and then squared. 
+Then,  the  sum  of  each  row  in  the  matrix  was  subtracted 
+from  1  to  develop  a  guild-level  diversity  measure.  The 
+index ranges from 0 (no diversity) to 1.00 (high diversity). 
+The social network used an  unweighted bridging diversity 
+measure (M = 0.89, SD = 0.21) and had 33 isolates with no 
+interguild  social  ties.  The  task  network  was  weighted  by 
+shared  task  instances  (M  =  0.89,  SD  =  0.22)  and  had  38 
+isolates with no interguild task ties. Exchange was weighted 
+by  shared  exchange  instances  (M  =  0.72,  SD  =  0.37)  and 
+had 152 isolate guilds with no intergroup exchange ties. 
+Intergroup leadership (centrality) 
+Finally,  to  measure  the  impact  of  well-connected  group 
+leaders,  we  calculated  leadership  degree  centrality  as  an 
+intergroup 
+leadership  measure.  We  calculated  degree 
+centrality of the leadership network by summing each guild 
+leader’s  total  number  of  ties  with  other  leaders.  This  was 
+performed  using 
+leader-leader  adjacency  matrix, 
+summing each row to develop a guild-level measure for the 
+social network (M = 0.56, SD = 1.67), the task network (M 
+= 7.13, SD = 12.85), and the exchange network (M = 1.19, 
+SD = 3.73). Many of the leaders did not have network ties 
+to other leaders, as there were many isolated guilds in the 
+social  (635  isolates),  task  (370),  and  exchange  (567) 
+networks. 
+Control Variables 
+Group size 
+In organizations, larger groups have greater legitimacy and 
+access  to  diverse  resources  and  individuals,  but  they  may 
+also have less cohesion [32]. In MMOGs, larger guilds are 
+typically  more  concerned  with  progressing  in  the  game, 
+while  smaller  guilds  often  encourage  social  relations  [44]. 
+Larger guilds also tend to be more formally organized [44], 
+which  tends  to  encourage  efficiency  in  organizations. 
+Following  Oh  et  al.,  we  included  group  size  as  a  control 
+variable  [33].  The  number  of  members  in  a  group  was 
+measured using the character count in the guild, calculated 
+by measuring the total number of characters in the guild on 
+the last day of the collection. 
+
+the 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Experience 
+In  formal  organizations,  more  experience  or  tenure  often 
+leads  to  greater  performance  [31].  Similarly,  in  MMOGs, 
+players  interact  with  others  in  teams  at  levels  similar  to 
+themselves,  resulting  in  differences  in  team  performance 
+[14,25]. In DN, the characters’ levels in a guild is related to 
+the  amount  of  guild  points  a  guild  can  earn  [19].  The 
+average experience level of group members was measured 
+using  the  average  guild  member  level  in  DN.  The 
+experience measure took the average of the level each guild 
+member achieved by the last day of collection. This resulted 
+in a guild-level experience measure. 
+Group age 
+Groups collaborating over a long time  will likely be more 
+effective  than  newly  formed  groups.  Therefore,  a  control 
+for the age of the guild in days was calculated.  
+Total number of ties 
+The  total  number  of  informal  ties  was  controlled  by 
+summing the number of ties within and between each guild. 
+Using  the  guild-guild  adjacency  matrix,  a  sum  of  each  of 
+the  rows  was  calculated  to  develop  a  guild-level  control 
+measure of network ties. Total number of ties was included 
+to control for network size, similar to Oh et al. [33]. 
+RESULTS 
+We  ran  four  models  for  each  network  to  predict  team 
+effectiveness.  The  first  model  set  a  baseline  by  including 
+only  control  variables.  The  second  model  included  intra-
+group  closure,  while  the  third  model  added  inter-group 
+brokerage,  and 
+incorporated 
+leadership. All four models are significant (p < .001). The 
+predictors  were  selected  and  hierarchically  ordered  in  the 
+model based on previous literature on group social capital, 
+such  as  [33].  Below,  we  report  the  results  from  the  most 
+comprehensive  model,  Model  4.  In  this  model,  we  also 
+justified  the  inclusion  of  a  quadratic  term  in  each  of  the 
+three  networks  by  testing  the  difference  in  prediction  by 
+adding the quadratic term to a fully linear model (213) [10]. 
+The  χ2  test  between  models  was  significant  for  the  social 
+network (p = .010) and highly significant for both the task 
+and exchange network (p < .001). 
+Controls 
+Overall,  the  results  from  the  controls  suggest  that  guild 
+effectiveness increases for all three networks as the number 
+of guild members, the average experience level, and the age 
+of the guild increases. For the social and task network, an 
+increase in the total number of network ties also predicted 
+guild effectiveness. 
+Intragroup Closure 
+Intragroup  closure  tested  the  effect  of  intragroup  density 
+and  density  squared  on  effectiveness.  The  social  network 
+used original density measures, while the task and exchange 
+networks included weighted density measures. The squared 
+density  was  included  because  of  the  expectation  of  a 
+curvilinear relationship between density and effectiveness. 
+
+fourth  model  also 
+
+the 
+
+684
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+1
+
+ 
+
+1
+
+ 
+
+9
+0
+
+.
+
+0
+-
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+1
+
+ 
+
+1
+
+ 
+
+9
+4
+
+.
+
+0
+
+ 
+
+9
+2
+
+.
+
+0
+
+ 
+
+4
+6
+
+.
+
+0
+
+ 
+
+2
+3
+
+.
+
+0
+
+ 
+
+1
+0
+
+.
+
+0
+-
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+1
+
+ 
+
+1
+2
+
+.
+
+0
+
+ 
+
+5
+4
+
+.
+
+0
+
+ 
+
+6
+2
+
+.
+
+0
+
+ 
+
+2
+4
+
+.
+
+0
+
+ 
+
+8
+6
+
+.
+
+0
+
+ 
+
+2
+1
+
+.
+
+0
+
+ 
+
+8
+2
+
+.
+
+0
+
+ 
+
+4
+0
+
+.
+
+0
+
+ 
+
+8
+4
+
+.
+
+0
+
+ 
+
+1
+2
+
+.
+
+0
+-
+
+ 
+
+8
+1
+
+.
+
+0
+-
+
+ 
+
+3
+5
+
+.
+
+0
+-
+
+ 
+
+8
+6
+
+.
+
+0
+-
+
+ 
+
+3
+1
+
+.
+
+0
+-
+
+ 
+
+0
+5
+
+.
+
+0
+-
+
+ 
+
+2
+5
+
+.
+
+0
+-
+
+ 
+
+1
+5
+
+.
+
+0
+-
+
+ 
+
+2
+2
+
+.
+
+0
+-
+
+ 
+
+2
+5
+
+.
+
+0
+-
+
+ 
+
+2
+6
+
+.
+
+0
+-
+
+ 
+
+7
+6
+
+.
+
+0
+-
+
+ 
+
+4
+2
+
+.
+
+0
+-
+
+ 
+
+9
+1
+
+.
+
+0
+-
+
+ 
+
+2
+4
+
+.
+
+0
+-
+
+ 
+
+4
+4
+
+.
+
+0
+-
+
+ 
+
+7
+1
+
+.
+
+0
+-
+
+ 
+
+4
+1
+
+.
+
+0
+-
+
+ 
+
+6
+2
+
+.
+
+0
+-
+
+ 
+
+9
+3
+
+.
+
+0
+-
+
+ 
+
+1
+
+ 
+
+7
+0
+
+.
+
+0
+-
+
+ 
+
+4
+2
+
+.
+
+0
+-
+
+ 
+
+4
+5
+
+.
+
+0
+-
+
+ 
+
+7
+5
+
+.
+
+0
+-
+
+ 
+
+6
+2
+
+.
+
+0
+
+ 
+
+4
+5
+
+.
+
+0
+
+ 
+
+8
+4
+
+.
+
+0
+
+ 
+
+2
+7
+
+.
+
+0
+
+ 
+
+6
+5
+
+.
+
+0
+
+ 
+
+1
+2
+
+.
+
+0
+
+ 
+
+0
+5
+
+.
+
+0
+
+ 
+
+9
+6
+
+.
+
+0
+
+ 
+
+5
+4
+
+.
+
+0
+
+ 
+
+9
+7
+
+.
+
+0
+
+ 
+
+4
+
+.
+
+0
+
+ 
+
+3
+4
+
+.
+
+0
+
+ 
+
+0
+3
+
+.
+
+0
+
+ 
+
+3
+5
+
+.
+
+0
+
+ 
+
+4
+5
+
+.
+
+0
+
+ 
+
+2
+7
+
+.
+
+0
+
+ 
+
+4
+4
+
+.
+
+0
+
+ 
+
+3
+2
+
+.
+
+0
+
+ 
+
+1
+0
+
+.
+
+0
+
+ 
+
+2
+3
+
+.
+
+0
+-
+
+ 
+
+2
+2
+
+.
+
+0
+-
+
+ 
+
+2
+5
+
+.
+
+0
+-
+
+ 
+
+4
+1
+
+.
+
+0
+-
+
+ 
+
+4
+5
+
+.
+
+0
+-
+
+ 
+
+2
+1
+
+.
+
+0
+-
+
+ 
+
+2
+6
+
+.
+
+0
+-
+
+ 
+
+0
+3
+
+.
+
+0
+-
+
+ 
+
+4
+4
+
+.
+
+0
+-
+
+ 
+
+5
+5
+
+.
+
+0
+
+ 
+
+6
+1
+
+.
+
+0
+-
+
+ 
+
+8
+2
+
+.
+
+0
+
+ 
+
+2
+5
+
+.
+
+0
+
+ 
+
+7
+4
+
+.
+
+0
+
+ 
+
+5
+6
+
+.
+
+0
+
+ 
+
+2
+4
+
+.
+
+0
+
+ 
+
+6
+2
+
+.
+
+0
+
+ 
+
+1
+
+ 
+
+9
+1
+
+.
+
+0
+-
+
+ 
+
+2
+1
+
+.
+
+0
+-
+
+ 
+
+5
+0
+
+.
+
+0
+-
+
+ 
+
+9
+1
+
+.
+
+0
+-
+
+ 
+
+8
+1
+
+.
+
+0
+-
+
+ 
+
+7
+1
+
+.
+
+0
+-
+
+ 
+
+5
+1
+
+.
+
+0
+-
+
+ 
+
+7
+0
+
+.
+
+0
+-
+
+ 
+
+1
+
+.
+
+0
+-
+
+ 
+
+1
+
+ 
+
+5
+6
+
+.
+
+0
+
+ 
+
+9
+6
+
+.
+
+0
+
+ 
+
+7
+6
+
+.
+
+0
+-
+
+ 
+
+1
+6
+
+.
+
+0
+-
+
+ 
+
+3
+7
+
+.
+
+0
+-
+
+ 
+
+7
+3
+
+.
+
+0
+-
+
+ 
+
+1
+8
+
+.
+
+0
+
+ 
+
+8
+7
+
+.
+
+0
+-
+
+ 
+
+1
+
+ 
+
+6
+8
+
+.
+
+0
+
+ 
+
+2
+7
+
+.
+
+0
+-
+
+ 
+
+3
+7
+
+.
+
+0
+-
+
+ 
+
+3
+7
+
+.
+
+0
+-
+
+ 
+
+2
+2
+
+.
+
+0
+-
+
+ 
+
+3
+7
+
+.
+
+0
+
+ 
+
+5
+7
+
+.
+
+0
+-
+
+ 
+
+1
+
+ 
+
+4
+8
+
+.
+
+0
+-
+
+ 
+
+5
+8
+
+.
+
+0
+-
+
+ 
+
+4
+8
+
+.
+
+0
+-
+
+ 
+
+2
+
+.
+
+0
+-
+
+ 
+
+8
+8
+
+.
+
+0
+
+ 
+
+8
+8
+
+.
+
+0
+-
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+1
+
+ 
+
+1
+
+ 
+
+0
+9
+
+.
+
+0
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+
+2
+
+ 
+
+1
+
+ 
+ 
+
+ 
+
+1
+
+ 
+
+8
+0
+
+.
+
+0
+-
+
+ 
+
+1
+9
+
+.
+
+0
+
+ 
+
+8
+9
+
+.
+
+0
+
+ 
+
+1
+1
+
+.
+
+0
+-
+
+ 
+
+7
+7
+
+.
+
+0
+-
+
+ 
+
+7
+1
+
+.
+
+0
+-
+
+ 
+
+8
+8
+
+.
+
+0
+-
+
+ 
+
+1
+
+ 
+
+3
+1
+
+.
+
+0
+-
+
+ 
+
+9
+8
+
+.
+
+0
+-
+
+ 
+
+1
+
+ 
+
+1
+
+ 
+
+4
+9
+
+.
+
+0
+
+ 
+
+3
+0
+
+.
+
+0
+
+ 
+
+6
+9
+
+.
+
+0
+
+ 
+
+4
+8
+
+.
+
+0
+
+ 
+
+5
+9
+
+.
+
+0
+
+ 
+
+*
+D
+S
+
+ 
+
+ 
+
+*
+M
+*
+x
+a
+M
+ 
+*
+n
+M
+
+i
+
+ 
+e
+l
+
+b
+a
+i
+r
+a
+V
+
+ 
+ 
+
+ 
+
+2
+4
+
+.
+
+5
+1
+
+ 
+
+1
+3
+
+.
+
+4
+1
+
+ 
+7
+9
+
+ 
+4
+
+ 
+t
+n
+u
+o
+c
+ 
+r
+e
+t
+c
+a
+r
+a
+h
+C
+
+ 
+
+5
+5
+
+.
+
+2
+
+ 
+
+5
+2
+
+.
+
+3
+
+ 
+
+4
+6
+
+.
+8
+2
+
+ 
+1
+1
+.
+0
+
+ 
+l
+e
+v
+e
+l
+ 
+e
+g
+a
+r
+e
+v
+a
+ 
+r
+e
+b
+m
+e
+m
+d
+l
+i
+u
+G
+
+ 
+
+ 
+
+4
+5
+
+.
+
+8
+1
+
+ 
+
+6
+5
+
+.
+
+4
+3
+
+ 
+
+1
+7
+
+.
+
+4
+8
+
+ 
+
+7
+7
+
+.
+
+5
+5
+
+ 
+
+7
+4
+
+.
+
+5
+3
+1
+
+ 
+
+9
+
+.
+
+1
+5
+1
+
+ 
+
+6
+1
+
+.
+
+5
+0
+1
+
+ 
+
+1
+2
+
+.
+
+0
+
+ 
+
+1
+1
+
+.
+
+0
+
+ 
+
+2
+1
+
+.
+
+0
+
+ 
+
+1
+2
+
+.
+
+0
+
+ 
+
+2
+2
+
+.
+
+0
+
+ 
+
+7
+3
+
+.
+
+0
+
+ 
+
+7
+6
+
+.
+
+1
+
+ 
+
+5
+8
+
+.
+
+2
+1
+
+ 
+
+3
+7
+
+.
+
+3
+
+ 
+
+7
+0
+
+.
+
+1
+
+ 
+
+8
+
+.
+
+1
+6
+
+ 
+
+6
+1
+
+.
+
+0
+
+ 
+
+5
+0
+
+.
+
+0
+
+ 
+
+8
+0
+
+.
+
+0
+
+ 
+
+9
+8
+
+.
+
+0
+
+ 
+
+9
+8
+
+.
+
+0
+
+ 
+
+2
+7
+
+.
+
+0
+
+ 
+
+6
+5
+
+.
+
+0
+
+ 
+
+3
+1
+
+.
+
+7
+
+ 
+
+9
+1
+
+.
+
+1
+
+ 
+
+9
+8
+
+.
+
+8
+
+ 
+5
+6
+
+ 
+
+5
+7
+7
+
+ 
+
+9
+5
+7
+
+ 
+
+2
+6
+9
+
+ 
+7
+6
+.
+0
+
+ 
+1
+
+ 
+1
+
+ 
+1
+
+ 
+1
+
+ 
+9
+9
+.
+0
+
+ 
+7
+1
+
+ 
+
+1
+0
+1
+
+ 
+7
+6
+
+ 
+2
+
+ 
+0
+
+ 
+0
+
+ 
+l
+a
+i
+c
+o
+s
+ 
+:
+s
+e
+i
+t
+ 
+f
+o
+ 
+r
+e
+b
+m
+u
+n
+
+ 
+l
+a
+t
+o
+T
+
+ 
+k
+s
+a
+t
+ 
+:
+s
+e
+i
+t
+ 
+f
+o
+ 
+r
+e
+b
+m
+u
+n
+
+ 
+l
+a
+t
+o
+T
+
+ 
+)
+s
+y
+a
+d
+(
+ 
+e
+g
+a
+ 
+
+d
+l
+i
+u
+G
+
+ 
+0
+ 
+e
+g
+n
+a
+h
+c
+x
+e
+ 
+:
+s
+e
+i
+t
+ 
+f
+o
+ 
+r
+e
+b
+m
+u
+n
+
+ 
+l
+a
+t
+o
+T
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+0
+
+ 
+e
+g
+n
+a
+h
+c
+x
+e
+ 
+:
+y
+t
+i
+s
+r
+e
+v
+i
+d
+g
+n
+i
+g
+d
+i
+r
+
+ 
+
+B
+
+ 
+l
+a
+i
+c
+o
+s
+ 
+:
+y
+t
+i
+s
+r
+e
+v
+i
+d
+g
+n
+i
+g
+d
+i
+r
+
+ 
+
+B
+
+ 
+k
+s
+a
+t
+ 
+:
+y
+t
+i
+s
+r
+e
+v
+i
+d
+g
+n
+i
+g
+d
+i
+r
+
+ 
+
+B
+
+ 
+e
+g
+n
+a
+h
+c
+x
+e
+ 
+:
+y
+t
+i
+s
+n
+e
+D
+
+ 
+l
+a
+i
+c
+o
+s
+ 
+:
+y
+t
+i
+s
+n
+e
+D
+
+ 
+k
+s
+a
+t
+ 
+:
+y
+t
+i
+s
+n
+e
+D
+
+ 
+e
+g
+n
+a
+h
+c
+x
+e
+ 
+:
+r
+e
+d
+a
+e
+L
+
+ 
+l
+a
+i
+c
+o
+s
+ 
+:
+r
+e
+d
+a
+e
+L
+
+ 
+k
+s
+a
+t
+ 
+:
+r
+e
+d
+a
+e
+L
+
+ 
+
+6
+1
+
+.
+3
+1
+
+ 
+7
+7
+.
+4
+
+ 
+)
+g
+o
+l
+(
+ 
+s
+s
+e
+n
+e
+v
+i
+t
+c
+e
+f
+f
+e
+ 
+
+d
+l
+i
+u
+G
+
+ 
+
+1
+
+ 
+
+2
+
+ 
+
+3
+
+ 
+
+4
+
+ 
+
+5
+
+ 
+
+6
+
+ 
+
+7
+
+ 
+
+8
+
+ 
+
+9
+
+ 
+
+0
+1
+
+ 
+
+1
+1
+
+ 
+
+2
+1
+
+ 
+
+3
+1
+
+ 
+
+4
+1
+
+ 
+
+5
+1
+
+ 
+
+6
+1
+
+685
+
+ 
+
+6
+1
+
+ 
+
+5
+1
+
+ 
+
+4
+1
+
+ 
+
+3
+1
+
+ 
+
+2
+1
+
+ 
+
+1
+1
+
+ 
+
+0
+1
+
+ 
+
+9
+
+ 
+
+8
+
+ 
+
+7
+
+ 
+
+6
+
+ 
+
+5
+
+ 
+
+4
+
+ 
+
+3
+
+ 
+
+*
+*
+*
+)
+4
+0
+
+.
+
+0
+(
+ 
+0
+8
+
+.
+
+8
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+1
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+2
+0
+
+.
+
+0
+
+ 
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+5
+2
+
+.
+
+1
+(
+ 
+4
+7
+
+.
+
+4
+
+ 
+
+*
+*
+*
+)
+4
+6
+1
+(
+ 
+
+.
+
+3
+6
+
+.
+
+6
+-
+
+ 
+
+*
+*
+*
+)
+9
+0
+
+.
+
+0
+(
+ 
+4
+7
+
+.
+
+0
+
+ 
+)
+1
+0
+0
+(
+ 
+
+.
+
+1
+0
+
+.
+
+0
+-
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+2
+8
+
+.
+
+8
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+2
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+6
+9
+2
+(
+ 
+5
+8
+
+.
+
+.
+
+7
+1
+
+ 
+
+*
+*
+*
+)
+8
+0
+3
+(
+ 
+
+.
+
+2
+1
+
+.
+
+0
+2
+-
+
+ 
+
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+4
+1
+
+.
+
+0
+(
+ 
+1
+9
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+3
+0
+
+.
+
+0
+(
+ 
+9
+8
+
+.
+
+8
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+2
+0
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+2
+0
+
+.
+
+0
+(
+ 
+6
+1
+
+.
+
+0
+
+ 
+
+*
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+2
+0
+
+.
+
+0
+
+ 
+
+*
+*
+)
+1
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+)
+8
+5
+
+.
+
+0
+(
+ 
+4
+8
+
+.
+
+0
+
+ 
+
+*
+)
+3
+9
+0
+(
+ 
+
+.
+
+9
+3
+
+.
+
+2
+-
+
+ 
+)
+5
+1
+
+.
+
+0
+(
+ 
+3
+2
+
+.
+
+0
+
+ 
+)
+2
+0
+
+.
+
+0
+(
+ 
+1
+0
+
+.
+
+0
+
+ 
+
+k
+r
+o
+w
+t
+e
+N
+ 
+e
+g
+n
+a
+h
+c
+x
+E
+
+ 
+
+k
+r
+o
+w
+t
+e
+N
+k
+s
+a
+T
+
+ 
+
+ 
+
+k
+r
+o
+w
+t
+e
+N
+
+ 
+l
+a
+i
+c
+o
+S
+
+ 
+s
+r
+e
+b
+m
+e
+m
+p
+u
+o
+r
+G
+
+ 
+
+ 
+e
+c
+n
+e
+i
+r
+e
+p
+x
+E
+
+ 
+e
+g
+a
+ 
+d
+l
+i
+u
+G
+
+ 
+s
+e
+i
+t
+ 
+k
+r
+o
+w
+t
+e
+n
+
+ 
+l
+a
+t
+o
+T
+
+ 
+
+y
+t
+i
+s
+n
+e
+D
+
+ 
+
+y
+t
+i
+l
+a
+r
+t
+n
+e
+c
+ 
+
+p
+i
+h
+s
+r
+e
+d
+a
+e
+L
+
+ 
+
+y
+t
+i
+s
+r
+e
+v
+i
+d
+g
+n
+i
+g
+d
+i
+r
+
+ 
+
+B
+
+ 
+
+d
+e
+r
+a
+u
+q
+s
+ 
+y
+t
+i
+s
+n
+e
+D
+
+ 
+t
+p
+e
+c
+r
+e
+t
+n
+I
+
+ 
+ 
+
+ 
+s
+c
+i
+t
+s
+i
+t
+a
+t
+s
+ 
+e
+v
+i
+t
+p
+i
+r
+c
+s
+e
+d
+d
+n
+a
+ 
+s
+n
+o
+i
+t
+a
+l
+e
+r
+r
+o
+C
+
+ 
+
+ 
+.
+
+1
+
+ 
+e
+l
+b
+a
+T
+
+ 
+
+ 
+
+7
+3
+
+.
+
+ 
++
+0
+7
+
+.
+
+*
+*
+*
+2
+0
+
+.
+
+1
+6
+
+ 
+
+1
+0
+0
+
+.
+ 
+
+<
+p
+
+ 
+
+ 
+
+ 
+
+3
+4
+
+.
+
+ 
++
+6
+5
+
+.
+
+*
+*
+*
+3
+2
+
+.
+
+6
+7
+
+ 
+
+ 
+
+0
+3
+
+.
+
+ 
++
+4
+2
+
+.
+
+*
+*
+*
+5
+3
+
+.
+
+4
+4
+
+ 
+
+m
+u
+m
+i
+x
+a
+m
+ 
+c
+i
+t
+a
+r
+d
+a
+u
+Q
+
+ 
+
+d
+e
+r
+a
+u
+q
+s
+-
+R
+
+ 
+.
+j
+d
+A
+
+ 
+)
+5
+9
+7
+ 
+,
+8
+(
+F
+
+e
+g
+n
+a
+h
+c
+x
+e
+ 
+d
+n
+a
+
+ 
+,
+
+k
+s
+a
+t
+ 
+,
+l
+a
+i
+c
+o
+s
+ 
+:
+s
+k
+r
+o
+w
+t
+e
+n
+ 
+e
+e
+r
+h
+t
+ 
+s
+s
+o
+r
+c
+a
+ 
+s
+l
+e
+d
+o
+m
+n
+o
+i
+s
+s
+e
+r
+g
+e
+R
+
+ 
+
+ 
+.
+
+2
+
+ 
+e
+l
+b
+a
+T
+
+ 
+*
+*
+*
+ 
+;
+1
+0
+
+.
+ 
+
+<
+p
+
+ 
+
+ 
+*
+*
+ 
+;
+5
+0
+
+.
+ 
+
+ 
+
+<
+p
+*
+ 
+;
+e
+l
+a
+c
+s
+ 
+
+1
+
+ 
+
+o
+t
+ 
+
+0
+
+ 
+l
+a
+n
+i
+g
+i
+r
+o
+
+ 
+e
+h
+t
+ 
+
+o
+t
+ 
+
+d
+e
+l
+a
+c
+s
+e
+r
++
+ 
+;
+n
+a
+e
+m
+
+ 
+r
+i
+e
+h
+t
+ 
+t
+a
+ 
+
+d
+e
+r
+e
+t
+n
+e
+c
+ 
+e
+r
+a
+ 
+s
+r
+o
+t
+c
+i
+d
+e
+r
+p
+ 
+l
+l
+
+A
+
+ 
+s
+l
+o
+r
+t
+n
+o
+C
+
+ 
+
+ 
+ 
+
+ 
+e
+r
+u
+s
+o
+l
+C
+
+ 
+ 
+
+ 
+ 
+
+ 
+e
+g
+a
+r
+e
+k
+o
+r
+B
+
+ 
+ 
+
+ 
+ 
+
+ 
+:
+e
+t
+o
+N
+
+ 
+
+1
+0
+0
+
+.
+ 
+
+<
+p
+
+ 
+
+ 
+,
+
+ 
+
+y
+e
+r
+g
+k
+r
+a
+D
+
+ 
+;
+1
+0
+
+.
+ 
+
+<
+p
+
+ 
+
+ 
+,
+
+ 
+
+y
+e
+r
+g
+m
+u
+i
+d
+e
+
+M
+
+ 
+;
+5
+0
+.
+ 
+
+<
+ 
+p
+ 
+,
+y
+e
+r
+g
+ 
+t
+h
+g
+i
+L
+
+ 
+;
+s
+r
+o
+t
+c
+i
+d
+e
+r
+p
+
+ 
+
+d
+e
+r
+e
+t
+n
+e
+c
+n
+u
+*
+
+In  the  social  network,  density  is  not  related  to  guild 
+effectiveness  (t  =  1.45;  p  =  .146)  but  the  squared  density 
+measure is significantly and negatively related; t = -2.57, p 
+= .010. In the task network, both the density (t = 6.03; p < 
+.001)  and  density  squared  (t  =  -6.53;  p  <  .001)  predictors 
+were  significant.  In  the  exchange  network,  density  is 
+significantly  related  to  guild  effectiveness  (t  =  3.80;  p  < 
+.001), as well as the squared density predictor (t = -4.05; p 
+< .001).  
+All  three  networks  had  a  somewhat  moderate  quadratic 
+maximum.  The  social  network  had  the  lowest  (.24), 
+followed  by  the  task  network  (.56),  and  the  exchange 
+network  (.70).  These  levels  estimate  the  level  of  closure 
+that  maximizes the greatest amount of  guild effectiveness. 
+Overall,  H1  was  supported  in  all  three  networks,  as  each 
+network had a significant and negative predictor for density 
+squared, suggesting a negative curvilinear pattern. 
+Intergroup Brokerage 
+The effects of intergroup bridging diversity were also tested 
+on  guild  effectiveness.  The  task  and  exchange  networks 
+included  weighted  brokerage  measures.  In  the  social 
+network, intergroup bridging diversity was not significant; t 
+= 1.48, p = .140.This fails to support H2 and suggests that 
+guilds  that  have  greater  brokerage  with  other  guilds  may 
+not be more effective than those with less brokerage in the 
+social network.  
+In the task network, the effect of bridging diversity on guild 
+effectiveness  was  significant;  t  =  6.41,  p  <  .001.  In  the 
+exchange network, bridging diversity was also significant; t 
+=  8.09,  p  <  .001.  They  support  H2  for  the  task  and 
+exchange network, suggesting that guilds whose characters 
+trade with and play on teams with characters from a diverse 
+number of other guilds are more effective.  
+H2 was supported in more achievement-oriented intergroup 
+networks  (task  and  exchange)  but  was  not  supported  in 
+informal networks (social). 
+Leadership Centrality 
+The final predictor examined the effect of centrality within 
+the  guild  leadership  network  by  testing  the  presence  and 
+weight  of  inter-leader  connections.  Leadership  centrality 
+was not significant in the social network (t = 0.33; p = .741) 
+and the exchange network (t = -0.86; p = .388). This failed 
+to support H3, suggesting that guilds whose leaders connect 
+with  other  guild  leaders  socially  or  by  exchanging  items 
+may not be a more effective guild. In the task network, the 
+effect  of  leadership  centrality  weighted  by  the  number  of 
+shared  inter-leader  task  interactions  was  significant;  t  = 
+2.44,  p  =  .015.  This  supported  H3,  indicating  that  guilds 
+with more leader task interactions may have more effective 
+guilds. 
+H3 was supported in the task network, but not in the social 
+and  exchange  networks.  This  suggests  that  when  leaders 
+team up with other leaders, the guild may be more effective 
+as a whole. 
+
+686
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+DISCUSSION 
+Overall,  this  paper  suggests  that  groups  can  be  more 
+effective  when  they  have  moderate  connections  between 
+members across a variety of networks. Across every model 
+for  all  three  networks,  team  members’  attributes  (group 
+size,  group  age,  and  member  experience;  controls)  and 
+intragroup  connections  (density;  H1)  were 
+the  best 
+predictors of team effectiveness. Other network factors (H2 
+&  H3)  were  significant  depending  on  the  particular 
+network.  
+Of  the  team  member  attributes,  the  models  suggested  that 
+large  guilds  with  experienced  members  were  the  most 
+effective. In addition, teams that have been established for 
+longer periods tend to have better performance. Teams were 
+also  more  effective  when  their  members  connected  with 
+each  other  at  a  moderate  level  (H1).  While  all  three 
+networks  have  a  negative  curvilinear  relation,  it  appears 
+that as the socializing aspects of the network decreases, the 
+level  of  closure  at  which  performance  is  maximized 
+increases. 
+relatively  greater  group 
+interdependence  led  to  greater  effectiveness  when  tasks 
+were more achievement-oriented and were less social.  
+At the same time,  when social, task, or exchange  network 
+ties were too sparse or too dense, the level of achievement 
+decreased  for  the  guild  as  a  whole.  Groups  that  had  low 
+closure around their intragroup ties  may  have less trust or 
+commitment  between  members,  and  groups  with  high 
+closure  may  not  be  able  to  draw  from  or  have  access  to 
+enough  diverse  information  to  help  other  teammates  to  be 
+successful [5]. 
+Diverse  intergroup  relations  predicted  success  only  in  the 
+task  and  exchange  networks,  compared  to  the  social 
+network.  These  two  networks  are  achievement-oriented, 
+and  thus  connecting  with  other  characters  across  groups 
+may lead to more success because of the relative experience 
+that 
+in  accomplishing  goals. 
+However,  an  informal  social  network,  like  friendship, 
+across different guilds likely does not help create successful 
+teams  because  merely  knowing  people  from  other  teams 
+does little to provide skills to help your own team. 
+Finally,  leadership  centrality  across  teams  only  predicted 
+guild effectiveness in the task network. This may be due to 
+the  sparse  nature  of  leader-to-leader  connections  in  the 
+social  and  exchange  networks.  Leaders  who  know  other 
+leaders, however, are likely more knowledgeable about the 
+game  and  thus  able  to  lead  their  own  team  to  success, 
+whereas leaders knowing or trading with other people does 
+little for a leadership role on their own team. 
+Social Structure is Important for Group Effectiveness 
+Compared 
+[33]  study  on  Korean 
+organizational  work  groups,  we  find  similar  results  in  a 
+Chinese  MMOG  environment.  In  organizations,  members 
+often have multiplex relations, developing both social- and 
+task-oriented connections with the same set of individuals.  
+
+these  networks  reflect 
+
+In  other  words, 
+
+to  Oh  et  al.’s 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+those 
+
+formed 
+
+While  our  study  confirmed  Oh  et  al.’s  [33]  results  that 
+social  structure  based  on  informal  ties  matter  for  group 
+success,  we  also  extended  their  model  beyond  friendship. 
+Our  study  showed  that  achievement-oriented  relationships 
+also predicted group success in an MMOG environment.  
+Comparing  these  two  results  suggests  that  group  social 
+capital  processes  in  an  MMOG  may  function  in  similar 
+ways to those in other organizational teams. Self-organized 
+VTs,  such  as 
+through  open  source 
+collaboration,  may  also  benefit  from  more  research  on 
+group social capital. For example, the quality of projects in 
+open  source  software  development  could  increase  by 
+further  developing 
+social  and  achievement-oriented 
+connections  to  other  users  within  the  project  or  between 
+other projects. Within MMOGs, guild leaders may want to 
+encourage  multiplex  social  ties  as  a  way  to  increase  trust 
+within  the  group  and  to  increase  the  guild’s  access  to 
+diverse external resources from other guilds.  
+The  purpose  of  many  work  groups  is  to  develop  a  final 
+product of quality that is greater than the sum of individual 
+skills. A strength of this study is using a measure of team-
+level  group  performance,  guild  points,  rather  than  an 
+aggregation of individual success. At the same time, players 
+in MMOGs often do not join guilds as a way to improve the 
+performance  of  the  group.  Instead,  they  join  to  improve 
+their own performance and advancement in the game. This 
+begs  the  question:  do  individuals  benefit  from  an  ideal 
+group social structure? Future research should test whether 
+in  MMOGs  can  be  explained  by  a 
+player  success 
+combination  of 
+the 
+advancement  of  their  teams.  Another  is  the  use  of 
+behavioral  data  to  test  group  relations  and  measure 
+performance.  In  addition,  while  many  other  group  social 
+capital  studies  use  survey  methods  [33,37],  we  use 
+unobtrusive data of guild and character actions. 
+Study Limitations and Future Research 
+There are a few limitations to the research conducted in this 
+paper.  First,  the  method  of  sampling  teams  and  characters 
+might  affect 
+the  results.  Players  can  have  multiple 
+characters  interacting  with  other  guild  members,  so  some 
+network  ties  may  connect  character  to  character,  but  may 
+not  necessarily  connect  player  to  player.  In  addition,  only 
+guilds  that  were  created  within  the  three-month  collection 
+period were included for analysis, and team members might 
+have  interacted  with  other  characters  from  teams  created 
+before this period. The lack of these ties might dampen the 
+effects  of  intergroup  brokerage,  as  guild  members  and 
+leaders could be interacting with already-established guilds, 
+leading to greater effectiveness after interacting with those 
+guilds. Though our sample is quite large, a more-complete 
+network may be necessary to test our hypotheses. 
+Second, the study takes at face value the strength of the ties 
+in each network. Although studies have shown that digital 
+trace  data  often  reflect  actual  ties  with  confidence,  there 
+may  still  be  qualitative  differences  between  the  two  [15]. 
+
+individual  progress  and 
+
+their 
+
+Since  our  sample  of  networks  does  not  include  any  traces 
+related  to  communication  between  each  character  in  each 
+relationship, we assume the same value of each tie between 
+avatars.  
+Third, the study mapped the networks of formally assigned 
+leaders  as  a  predictor  of  team  performance.  In  reality,  the 
+“leader” with the most influence and power in a team may 
+not be the same as the stated leaders. This dynamic occurs 
+similarly in other kinds of  virtual teams and  work groups. 
+One consideration for future research would be to compare 
+and  contrast  the  intragroup  and  intergroup  networks  of 
+formal leaders to the leaders who are structurally the most 
+central within the team. Would the performance of the team 
+be higher if the formal leader or the structurally ideal leader 
+has optimal intergroup connections? 
+Finally, this paper only uses the case study of one MMOG. 
+Most research using game data is limited based on access, 
+but  future  research  should  strive  to  do  cross-game  and 
+cross-platform  comparisons,  especially  across  cultural 
+divides.  For  example,  both  this  study  and  the  Oh  et  al.’s 
+[33]  study  draw  participants  from  East  Asia  (China  and 
+Korea).  It  is  unclear  how  much  the  findings  could  be 
+attributed  to  the  unique  cultural  dimensions  of  the  study 
+population, such as collectivism, long term orientation, and 
+uncertainty  avoidance  [24].  At  the  same  time,  Chinese 
+player  data  provides  much-needed  diversity  to  extant 
+literature  on  virtual 
+is 
+predominantly  based  on  English-speaking  and  America-
+centric  samples.  Longitudinal  data,  instead  of  snapshots, 
+could also tease out subtle effects between team members. 
+Other  future  research  could  adapt  and  examine  the  data 
+from  non-game  virtual  teams,  look  at  other  attributes  of 
+team  members  (for  example,  looking  at  homophily  and 
+diversity  in  interactions  between  gender,  race,  or  age  to 
+determine  if  guilds  with  similar  demographics  are  more 
+effective), and further investigate the leader’s role in team 
+effectiveness.  In  addition,  as  suggested  by  Assmann  et  al. 
+[1], future research should also consider using MMOGs as a 
+conduit to test individual and group-level social processes, 
+such as longitudinal team or leadership studies. 
+Mapping MMOGs 
+Organizational  studies  on  MMOGs,  in  particular,  have  an 
+advantage over agent-based models, in that they  have real 
+people  interacting  with  the  game  and  with  other  players. 
+The  behaviors  are  not  predicted,  but  can  be  instead 
+measured.  This  study  uses  measured  player  behaviors  to 
+“map” the optimal social structure in groups. “Mapping” is 
+the  process  of  extending  “real  life”  social  dynamics  onto 
+virtual worlds.  
+However, because of the differences in virtual worlds, there 
+are  a  few  factors  to  consider  before  mapping  real  world 
+effects  onto  MMOGs.  As  suggested  by  Williams  [43], 
+scholars should consider 1) group size, 2) using traditional 
+controls,  3)  accounting  for  contextual  differences  in  the 
+games,  and  4)  the  interactions  between  online  and  offline 
+
+teams  and  games,  which 
+
+687
+
+altruism 
+
+and 
+
+competence, 
+
+effects.  First,  results  from  varied  group  sizes,  anywhere 
+from  the  study  of  individuals  to  entire  societies,  are  not 
+interchangeable. Therefore, the results from this study, may 
+not generalize to another game with a tendency for smaller 
+or  larger  guilds.  Second,  the  consideration  of  individual 
+differences as controls should be included. We account for 
+group-level  differences  (guild  age  and  size)  and  an 
+aggregate of individual differences (average  member level 
+and total intragroup ties).  
+Third, before mapping, contextual differences in the  game 
+and  in  the  virtual  world  should  be  considered.  Players  in 
+MMOGs  have  some  obvious  differences  from  other  kinds 
+of  organizations,  such  as  motivations  to  participate  or 
+reduced  consequences  for  risky  behavior  [43].  The 
+motivations may translate to some organizational contexts, 
+such  as  open  source  software  development,  where 
+developers  are  motivated  by  intrinsic  factors,  such  as 
+feelings  of 
+community 
+memberships, as well as extrinsic factors, such as possible 
+future  rewards  [22].  At  the  same  time,  MMOGs  may  be 
+able to be used for people to learn how to lead teams, in an 
+environment  where  the  consequences  for  risky  behaviors 
+are reduced [16].  
+This  study’s  results  may  also  not  generalize  to  other 
+organizational teams with different goals, such as routinized 
+teams  or  groups  where  interdependence  is  not  crucial  to 
+team success. The perceived costs and benefits in MMOGs 
+can  also  be  different  from  other  contexts.  When  players’ 
+characters  die,  for  example,  they  may  feel  emotional  or 
+ego-centric pain, but they do not feel physical pain. 
+It  is  also  important  to  note  that  the  demographics  of 
+MMOG  players  may  differ  from  those  of  virtual  teams  in 
+general.  We  do  not  have  demographic  information  of  DN 
+players.  However,  research  of  popular  MMOGs  in  the 
+United States has shown that the mean age of players is in 
+the  30s,  and  there  is  still  a  marked  gender  divide  [45,46]. 
+The extent to which demographic profiles of gamers differ 
+from those of VT participants warrants further research.     
+The  final  consideration  for  mapping  MMOG  results 
+addresses  the  cyclical  interactions  between  online  and 
+offline  behavior.  Other  scholars,  for  example,  have  used 
+MMOGs to model the spread of an infectious disease [2] or 
+VT leadership effects on individual performance [16]. Here, 
+we  extend  the  results  of  a  corporate  work  team  social 
+structure to an online MMOG.  
+Design Implications 
+Guilds remain an important and valuable facet of MMOGs 
+because  the  social  aspect  of  virtual  worlds  keeps  players 
+engaged.  Often,  games  will  include  a  mechanism  for 
+players  to  engage  with  one  another,  and  increasingly, 
+MMOGs  experiment  with  different  formations  for  player 
+interaction. Extending to VTs outside of MMOGs, such as 
+those  in  corporations  or  in  open  source  communities,  an 
+increase  in  the  opportunities  for  VT  members  to  interact 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+to 
+
+impact  certain  aspects  of 
+
+within or outside their team in different  ways  may benefit 
+the overall performance of the team. 
+Because  networks 
+team 
+performance, future VT designers might consider including 
+more flexibility in the kinds of relationships allowed by the 
+virtual  environment,  because  social  and  task-oriented  ties 
+lead  to  differences  in  success.  Experimentation  around 
+ways  to  bring  VT  members  together  in  a  new  variety  of 
+relationships  (for  example,  through  mentoring,  resource 
+sharing, or even direct person-to-person coordination) could 
+introduce stronger ties between users, thus augmenting their 
+team experiences. Making these connections  more explicit 
+to  VT  members  too  will  make  them  more  aware  of  the 
+social impact that teams have on their behavior. Increasing 
+incentives  for  VT  members  to  make  more  ties  will  push 
+them toward more beneficial relationships.  
+Designers  of  virtual  environment  might  also  consider 
+recommendation  systems, 
+inform  users  of  other 
+individuals  they  could  partner  with  to  be  maximally 
+successful. In the case of MMOGs, many games currently 
+expect  players  to  socialize  with  little  technical  aid,  and  if 
+there are any social features, they tend to depend on offline 
+friendships.  By  suggesting  pairs  or  groups  of  players  to 
+each  other,  players  could  more  quickly  learn  to  grasp  the 
+challenges  of  any  particular  game  space.  In  addition, 
+designers could give guild leaders similar features, or extra 
+communication  channels  or  in-game  benefits,  in  order  to 
+share  ideas  about  guild  management  (and  thus  increasing 
+team effectiveness). If players are more aware of the social 
+structure  of  their  teams,  they  can  make  more  informed 
+decisions about which teams to join or how to improve their 
+current  team.  Future  research,  though,  could  examine  the 
+relative  trade-offs  between  team  effectiveness  and  social 
+enjoyment  on  impacting  player’s  engagement  with  and 
+longevity  within 
+the  game  world,  particularly  when 
+interacting with strangers. 
+CONCLUSION 
+This  paper  tested  the  effects  of  social  networks  on  virtual 
+teams’  performance  in  a  massively  multiplayer  online 
+game. Overall, we conclude that successful teams – for any 
+network  –  are  bigger,  more  experienced,  established,  and 
+have  a  somewhat  moderate  level  of  closure.  As  virtual 
+teams  become  more  common  and  organizations  rely  more 
+often on the success of online collaborations, understanding 
+both  the  actions  of  members  and  their  connections/ 
+interactions within or across teams will grow in importance. 
+If  groups  can  optimize  their  levels  of  group  independence 
+and interdependence in both social and collaborative work, 
+they  can  be  more  effective.  At  the  same  time,  when 
+comparing across different types of organizations and group 
+purposes,  such  as  between  MMOGs  and  organizational 
+work groups, the optimal network structure may vary.  
+ACKNOWLEDGMENTS 
+
+688
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+We  thank  Dora  Cai  for  her  tremendous  help  with  data 
+hosting and analysis.  Shanda and SONIC research group at 
+Northwestern  provided  data  access.  This  research  was 
+supported  in  part  by  the  National  Science  Foundation  via 
+the  XSEDE  project’s  Extended  Collaborative  Support 
+Service  under  the  grant  NSF-OCI  1053575  to  the  second 
+author,  and USC  Annenberg  Graduate  Fellowship  to  the 
+third author.   
+REFERENCES 
+1. 
+
+Jakob J. Assmann, Marcus A. Drescher, Julia V. 
+Gallenkamp, Arnold Picot, Isabell M. Welpe, and Rolf 
+T. Wigand. 2010. MMOGs as emerging opportunities 
+for research on virtual organizations and teams. In 
+Americas Conference on Information Systems 
+Proceedings (AMCIS '10), 335, 1-8.  
+http://dx.doi.org/http://aisel.aisnet.org/amcis2010/335. 
+
+2.  Ran D. Balicer. 2007. Modeling infectious diseases 
+
+dissemination through online role-playing games. 
+Epidemiology 18, 2: 260-261. 
+
+3.  Prasad Balkundi and David A. Harrison. 2006. Ties, 
+
+leaders, and time in teams: Strong inference about 
+network structure’s effects on team viability and 
+performance. Academy of Management Journal 49, 1: 
+49-68. 
+
+4.  Peter M. Blau. 1977. Inequality and Heterogeneity: A 
+Primitive Theory of Social Structure. Free Press New 
+York. 
+
+5.  Ronald S. Burt. 2005. Brokerage and closure: An 
+Introduction to Social Capital. Oxford University 
+Press. 
+
+6.  Ronald S. Burt. 2012. Network-related personality and 
+the agency question: Multirole evidence from a virtual 
+world1. American Journal of Sociology 118, 3: 543-
+591. http://dx.doi.org/10.1086/667856. 
+
+7.  Edward Castronova. 2005. Synthetic Worlds: The 
+
+Business and Culture of Online Games. University of 
+Chicago Press. 
+
+Mary B. Watson(cid:486)Manheim. 2005. How virtual are we? 
+
+8.  Katherine M. Chudoba, Eleanor Wynn, Mei Lu, and 
+
+Measuring virtuality and understanding its impact in a 
+global organization. Information Systems Journal 15, 
+4: 279-306.  http://dx.doi.org/10.1111/j.1365-
+2575.2005.00200.x. 
+Jeremy Clark, Alex Leavitt, and Dmitri Williams. 
+2015. Community aspects of online games. The 
+International Encyclopedia of Digital Communication 
+and Society. 
+
+9. 
+
+10.  Jacob Cohen, Patricia Cohen, Stephen G. West, and 
+
+Leona S. Aiken. 2013. Applied Multiple 
+Regression/Correlation Analysis for the Behavioral 
+Sciences. Routledge. 
+
+689
+
+11.  James S. Coleman. 1988. Social capital in the creation 
+of human capital. American Journal of Sociology 94: 
+95-120. 
+
+12.  Ana C. Costa, Robert A. Roe, and Tharsi Taillieu. 
+
+2001. Trust within teams: The relation with 
+performance effectiveness. European Journal of Work 
+and Organizational Psychology 10, 3: 225-244.  
+http://dx.doi.org/10.1080/13594320143000654. 
+
+13.  Nicolas Ducheneaut, Nicholas Yee, Eric Nickell, and 
+
+Robert J. Moore. 2007. The life and death of online 
+gaming communities: A look at guilds in World of 
+Warcraft. In Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems (CHI '07), 839-
+848. http://doi.acm.org/10.1145/1240624.1240750 
+14.  Nicolas Ducheneaut, Nick Yee, Eric Nickell, and 
+
+Robert J. Moore. 2006. Building an MMO with mass 
+appeal a look at gameplay in World of Warcraft. 
+Games and Culture 1, 4: 281-317. 
+
+15.  Nathan Eagle, Alex (Sandy) Pentland, and David 
+Lazer. 2009. Inferring network structure by using 
+mobile phone data. In Proceedings of the National 
+Academy of Sciences (PNAS '09) 106, 36: 15274-
+15278.  http://dx.doi.org/10.1073/pnas.0900282106. 
+16.  Samuel Goh and Molly Wasko. 2012. The effects of 
+leader–member exchange on member performance in 
+virtual world teams. Journal of the Association for 
+Information Systems 13, 10: 861-885. 
+
+17.  Mark Granovetter. 1973. The strength of weak ties. 
+
+American Journal of Sociology 78, 6: 1360-1380. 
+
+18.  Mark Granovetter. 1985. Economic action and social 
+structure: The problem of embeddedness. American 
+Journal of Sociology 91, 3: 481-510. 
+http://dx.doi.org/10.1086/228311 
+
+19.  Guild. 2013.  Curse, Inc. Retrieved March 2, 2015 
+
+from  http://dragonnest.gamepedia.com/Guild 
+
+20.  J. Richard Hackman. 2002. Leading Teams: Setting the 
+Stage for Great Performances. Harvard Business Press. 
+
+21.  J. Richard Hackman and Nancy Katz. 2010. Group 
+behavior and performance. In Handbook of Social 
+Psychology. Susan T. Fiske, Daniel T. Gilbert, Gardner 
+Lindzey (eds.). John Wiley and Sons. 
+
+22.  Alexander Hars and Shaosong Ou. 2001. Working for 
+
+free? Motivations of participating in open source 
+projects. In Proceedings of the 34th Annual Hawaii 
+International Conference (HICSS '01), 1-9. 
+10.1109/HICSS.2001.927045 
+
+23.  Guido Hertel, Sven Niedner, and Stefanie Herrmann. 
+
+2003. Motivation of software developers in open 
+source projects: An internet-based survey of 
+contributors to the Linux kernel. Research Policy 32, 7: 
+1159-1177. 
+
+24.  Geert H. Hofstede. 2001. Culture's Consequences: 
+
+Comparing Values, Behaviors, Institutions and 
+Organizations Across Nations. Sage. 
+
+25.  Yun Huang, Wenyue Ye, Nicholas Bennett, and Noshir 
+
+Contractor. 2013. Functional or social?: Exploring 
+teams in online games. In Proceedings of the 2013 
+Conference on Computer Supported Cooperative Work 
+(CSCW '13), 399-408. 
+
+Journal of Computer(cid:486)Mediated Communication 3, 4.  
+
+Communication and trust in global virtual teams. 
+
+26.  Sirkka L. Jarvenpaa and Dorothy E. Leidner. 1998. 
+
+http://dx.doi.org/10.1111/j.1083-6101.1998.tb00080.x. 
+
+27.  Yubo Kou and Xinning Gui. 2014. Playing with 
+
+strangers: Understanding temporary teams in League of 
+Legends. In Proceedings of the First ACM SIGCHI 
+Annual Symposium on Computer-Human Interaction in 
+Play (CHI PLAY '14), 161-169. 
+http://dx.doi.org/10.1145/2658537.2658538 
+
+28.  David Krackhardt. 1992. The Strength of Strong Ties: 
+The Importance of Philos in Organizations. Harvard 
+Business School Press. 
+
+29.  Li Lu, Cuihua Shen, and Dmitri Williams. 2014. 
+
+Friending your way up the ladder: Connecting massive 
+multiplayer online game behaviors with offline 
+leadership. Computers in Human Behavior 35: 54-60. 
+
+30.  Ajay Mehra, Andrea L. Dixon, Daniel J. Brass, and 
+Bruce Robertson. 2006. The social network ties of 
+group leaders: Implications for group performance and 
+leader reputation. Organization Science 17, 1: 64-79. 
+
+31.  Ajay Mehra, Martin Kilduff, and Daniel J Brass. 2001. 
+
+The social networks of high and low self-monitors: 
+Implications for workplace performance. 
+Administrative Science Quarterly 46, 1: 121-146. 
+
+32.  Richard L. Moreland, John M. Levine, and Melissa L. 
+Wingert. 1996. Creating the ideal group: Composition 
+effects at work. Understanding Group Behavior 1: 11-
+35. 
+
+33.  Hongseok Oh, Myung-Ho Chung, and Giuseppe 
+Labianca. 2004. Group social capital and group 
+effectiveness: The role of informal socializing ties. 
+Academy of Management Journal 47, 6: 860-875.  
+http://dx.doi.org/10.2307/20159627. 
+
+34.  Hongseok Oh, Giuseppe Labianca, and Myung-Ho 
+
+Chung. 2006. A multilevel model of group social 
+capital. Academy of Management Review 31, 3: 569-
+582. 
+
+35.  Robert D. Putnam. 2001. Bowling Alone: The Collapse 
+
+and Revival of American Community. Simon and 
+Schuster. 
+
+36.  Rabindra A. Ratan, Jae E. Chung, Cuihua Shen, Dmitri 
+
+Williams, and Marshall S. Poole. 2010. Schmoozing 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Computer(cid:486)Mediated Communication 16, 1: 93-114. 
+
+and smiting: Trust, social institutions, and 
+communication patterns in an mmog. Journal of 
+
+37.  Ray Reagans and Ezra W. Zuckerman. 2001. 
+
+Networks, diversity, and productivity: The social 
+capital of corporate r&d teams. Organization Science 
+12, 4: 502-517. 
+
+38.  Saonee Sarker, Manju Ahuja, Suprateek Sarker, and 
+Sarah Kirkeby. 2011. The role of communication and 
+trust in global virtual teams: A social network 
+perspective. Journal of Management Information 
+Systems 28, 1: 273-310.  
+http://dx.doi.org/10.2753/MIS0742-1222280109. 
+39.  Cuihua Shen. 2014. Network patterns and social 
+
+architecture in massively multiplayer online games: 
+Mapping the social world of Everquest II. New Media 
+& Society: 672-691.  
+http://dx.doi.org/10.1177/1461444813489507. 
+
+40.  Cuihua Shen, Peter Monge, and Dmitri Williams. 2014. 
+
+Virtual brokerage and closure: Network structure and 
+social capital in a massively multiplayer online game. 
+Communication Research 41, 4: 459-480.  
+http://dx.doi.org/10.1177/0093650212455197  
+
+41.  Anthony  M.  Townsend,  Samuel  M.  Demarie,  and 
+Anthony  R.  Hendrickson.  1998.  Virtual 
+teams: 
+Technology  and  the  workplace  of  the  future.  The 
+Academy of Management Executive 12, 3: 17-29. 
+42.  Barry Wellman and Scot Wortley. 1990. Different 
+
+strokes from different folks: Community ties and social 
+support. American Journal of Sociology 96, 3: 558-
+588. 
+
+43.  Dmitri Williams. 2010. The mapping principle, and a 
+
+research framework for virtual worlds. Communication 
+Theory 20, 4: 451-470. 
+
+44.  Dmitri Williams, Nicolas Ducheneaut, Li Xiong, 
+
+Yuanyuan Zhang, Nick Yee, and Eric Nickell. 2006. 
+From tree house to barracks the social life of guilds in 
+world of warcraft. Games and Culture 1, 4: 338-361.  
+http://dx.doi.org/10.1177/1555412006292616. 
+
+45.  Dmitri Williams, Nick Yee, and Scott E. Caplan. 2008. 
+
+Computer(cid:486)Mediated Communication 13, 4: 993-1018. 
+
+Who plays, how much, and why? Debunking the 
+stereotypical gamer profile. Journal of 
+
+46.  Nick Yee. 2006. The demographics, motivations, and 
+derived experiences of users of massively multi-user 
+online graphical environments. Presence 15, 3: 309-
+329. 
+
+47.  Nick Yee. 2006. The labor of fun how video games 
+
+blur the boundaries of work and play. Games and 
+Culture 1, 1: 68-71. 
+
+690
+
+

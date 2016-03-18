@@ -1,0 +1,1891 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Scaffolding the Scaffolding: Supporting 
+
+Children’s Social-emotional Learning at Home
+
+Petr Slov´ak1, Kael Rowan2, Chris Frauenberger1, Ran Gilad-Bachrach2, Mia Doces 3
+
+Brian Smith 3, Rachel Kamb3, Geraldine Fitzpatrick1
+
+1Human Computer Interaction Group, Vienna University of Technology, Austria
+
+2VIBE, Microsoft Research Redmond, US
+
+3Committee for Children, Seattle, US
+
+ABSTRACT
+The development of strong social and emotional skills is cen-
+tral to personal wellbeing. Increasingly, these skills are be-
+ing taught in schools through well researched curricula. Such
+social-emotional learning (SEL) curricula are most effective
+if reinforced by parents, thus transferring the skills into every-
+day contexts. Traditional SEL programs have however had
+limited success in engaging parents, and we argue that tech-
+nology might be able to help bridge this school-home divide.
+Through interviews with SEL experts we identiﬁed central
+design considerations for technology and SEL content: the
+reliance on experiential learning and the need to scaffold the
+parents in scaffolding the interaction for their children. This
+informed the design of a technology probe comprising a mag-
+net card and online SEL activities, deployed in a school and
+via Mturk. The results provide a nuanced understanding of
+how technology-based interventions could bridge the school-
+home gap in real-world settings and support at-home rein-
+forcement of children’s social-emotional skills.
+
+AUTHOR KEYWORDS
+Social-emotional skills; SEL; Education; Children; Home.
+
+ACM CLASSIFICATION KEYWORDS
+H.5.m. [Information interfaces and presentation]: Miscella-
+neous.
+
+INTRODUCTION
+Social-emotional skills—such as the ability to be aware of
+own emotions, self-regulate or be empathic to others—are es-
+sential to personal wellbeing as well as interpersonal relation-
+ships [26, 47]. These skills are increasingly taught in schools
+across the US and many other countries as part of formal pro-
+grams [19], drawing on experiential learning methods such as
+in-class role-plays or coaching (see [43] for a review). Such
+social-emotional learning (SEL) curricula have been shown
+to produce positive effects on children’s academic and per-
+sonal accomplishments in the classroom (cf. [12,47]) and are
+
+Permission to make digital or hard copies of all or part of this work for personal or 
+classroom use is granted without fee provided that copies are not made or distributed 
+for profit or commercial advantage and that copies bear this notice and the full 
+citation on the first page. Copyrights for components of this work owned by others 
+than the author(s) must be honored. Abstracting with credit is permitted. To copy 
+otherwise, or republish, to post on servers or to redistribute to lists, requires prior 
+specific permission and/or a fee. Request permissions from Permissions@acm.org.
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2820007
+
+already deployed at scale: for example, 44% of US teachers
+have indicated that their school uses a school-wide SEL pro-
+gram in a representative US survey [6].
+Developing social-emotional skills requires a collaboration
+between the school and home as two of the key social contexts
+within which SE skills are developed. However, the SEL pro-
+grams report limited success with engaging parents through
+traditional means such as face-to-face workshops and sending
+documents home. A key challenge is then how to support the
+reinforcement of SEL learning beyond the classroom and in
+the homes of the learners [34]. Recent work has strongly sug-
+gested the potential of digital technology to play a key role in
+addressing this issue [43, 44], but to date there has been very
+little research in CSCW, HCI, and related ﬁelds that explores
+the use of technology to link the school and home to support
+the development or reinforcement of social-emotional skills
+learning.
+To start addressing this gap, the main aim of this work is to
+explore how technology-based interventions could bridge the
+school-home barrier in the context of SEL programs; and,
+once in the home, how technology might support the parents
+in reinforcing the social-emotional learning of their children.
+In what follows, we report on a sequence of three studies.
+The ﬁrst study aimed to better understand the difﬁculties in
+connecting the classroom and the home and the key aspects
+that need to be supported for the SEL reinforcement process
+to take place. We interviewed SEL experts and trainers repre-
+senting nine major SEL curricula in the US, whose programs
+together reach more than 35% of all US schools. We identi-
+ﬁed three key principles that any technology-based interven-
+tion would need to support, from the SEL experts’ perspec-
+tive. These are centred around: (i) the need for experiential
+engagement with SE concepts for parents and children; (ii)
+the need for scaffolding the scaffolding for parents: i.e., that
+children learn through parent-scaffolded activities, but sup-
+port for parents on how such scaffolding can be done should
+be designed into the activity; and (iii) the lack of effective de-
+livery channels that bridge the home-school gap. These prin-
+ciples then guided the design of a technology probe (cf., [22])
+with the aim to further explore and deepen our understanding
+of the design space and promising directions.
+In the second and third study, we deployed the probe in
+two different contexts: an in-the-wild study with 4 class-
+rooms (∼100 families) at a US school; and a more con-
+
+1751
+
+trolled deployment with 25 parent-child pairs,
+recruited
+through MTurk, whose interactions with the probe were
+recorded.
+These varied contexts allowed us to collect
+multi-faceted data, developing an in-depth understanding of
+how technology-based interventions might bridge the school-
+home gap in real-world settings; as well as the detailed con-
+siderations of how to design interactive content that might
+support experiential learning and the scaffolding role of the
+parent.
+This paper makes two important contributions. First, we pro-
+vide insights into the challenges in bridging classroom and
+home in the context of SEL programs (as seen by the SEL
+experts) as well the key learning principles that need to be
+supported for SEL reinforcement to take place in the home.
+Second, we present a case study of the design and deployment
+of a technology probe, instantiating these principles, and thus
+providing empirically grounded design suggestions for tech-
+nologies supporting parent-child interactions that could re-
+inforce social-emotional skills learning at home.
+In doing
+so, this paper contributes to an important but so far under-
+researched area in CSCW and HCI, with the potential for a
+large scale, real-world impact.
+
+BACKGROUND
+Social and emotional learning in education is a mature ﬁeld,
+with 25+ years’ history of peer-reviewed curricula that have
+already been deployed to millions of pupils [12, 19, 35]. SEL
+curricula teach a broad range of skills, commonly grouped
+into a set of 5 core competencies:
+self-awareness, self-
+regulation, social awareness, relationship skills, and respon-
+sible decision making. The core of most curricula is a set
+of structured classroom lessons [23], usually 25-40 minutes
+long and delivered once a week throughout the whole school
+year (and over multiple years).
+
+Experiential learning as core principle for SEL
+Teaching of social-emotional skills is predominantly based on
+active experiential learning [2,13,49], with process similar to
+the Kolb’s [28] experiential learning cycle. This reﬂects the
+understanding that both conscious and non-conscious compo-
+nents are fundamental for any social-emotional behaviour [3].
+There are two underlying psychological mechanisms at play
+(cf., [51]): First is the difference between declarative and pro-
+cedural memory systems [45]. The declarative system stores
+what a person consciously knows, such as the names of cap-
+ital cities, or a memorised sequence of steps to start a com-
+puter game. In contrast, procedural memory stores the be-
+haviours as they become progressively automatised and thus
+not necessarily consciously known; such as ‘knowing’ how
+to ride a bike, or drive a car (cf., Sch¨on [41] for experts’ re-
+liance on procedural knowledge). The second psychological
+mechanism describes the changes within our cognitive pro-
+cesses in ‘hot’ moments, i.e., situations with high emotional
+activation, such as when one is in the middle of a heated ar-
+gument. These cognitive changes reduce the availability of
+declarative knowledge and strengthen the use of procedural
+knowledge. As social-emotional skills are tightly interwoven
+with emotional activation, this mechanism explains why pro-
+cedural knowledge is fundamental in SE skills learning.
+
+1752
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Developing procedural skills requires repeated practice and
+students’ own experiential learning within ‘hot’ situations. It
+is for this reason that all social-emotional learning heavily re-
+lies on a progression of carefully structured social situations:
+starting from ‘cold’ moments, such as introducing a series
+of ‘calming down steps’ that are practised out of context; to
+‘warm’ situations such as role-plays or stories enacted with
+puppets, where the learner is experiencing a low-intensity but
+still emotional situation; and ﬁnally ‘hot’ moments when the
+learner is coached through a real issue they are experiencing
+at that moment. In each of these, it is the scaffolded subjec-
+tive experience with emotional content that makes the social-
+emotional learning effective; in addition to the cognitive un-
+derstanding of ‘what one should do’.
+The main challenge compared to other experiential learning
+situations (e.g., physical skills such as riding a bike) is the
+difﬁculty in creating situations where meaningful practice or
+reinforcement can occur. To do so, one needs to facilitate
+‘appropriately hot’ experiences for learner as well as scaf-
+fold their involvement, as otherwise little is learned. In addi-
+tion, a crucial pragmatic issue is also that many of the such
+‘appropriately hot’ situations require an inherent involvement
+of others: for example, when learning to self-regulate during
+conﬂicts, the learner needs to experience a conﬂict situation;
+and thus would normally require other people to role-play (or
+actually have) a conﬂict with.
+
+Current SEL challenges – areas in need of design
+The requirement of scaffolded experiential learning leads to
+a number of challenges common across all SEL curricula,
+which technology support might be particularly well suited
+to address. However, to date, little or no technology is used
+as part of SEL curricula. See review by Slovak & Fitzpatrick
+[43] for more details.
+The key identiﬁed challenge for SEL is in embedding the
+learning and reinforcement processes into everyday life, com-
+plementing the in-class settings that the SEL curricula are de-
+veloped for [43]. This points to the potential of technology-
+based support to help learners: (i) identify teachable moments
+within everyday interactions; (ii) scaffold reinforcement and
+learning in these situations, for example in similar ways to
+how teachers coach children in class; (iii) ‘stop & learn’ from
+such experiences by promoting reﬂective skills (e.g., mak-
+ing the interpersonal/emotional situations more tangible and
+available for post-hoc reﬂection); and (iv) further support the
+transfer of skills by providing novel spaces for practice that
+offer a combination of eliciting relevant and strong experi-
+ences, but in a safe space where failure is possible and scaf-
+folding is designed into the activity itself.
+These aspects are relevant for all contexts the child is in-
+teracting with: e.g., the school, peer interactions, and the
+home. As will be argued in the next section, embedding the
+learning within the at-home context was the main immedi-
+ate challenge perceived by the SEL experts during the inter-
+views (cf., the next section and [44]); and is also mirrored in
+the SEL literature as one of the crucial issues SEL domains
+faces [13, 23, 34].
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Digitally supported parent-child interaction
+Although an emerging body of work shows how digital tech-
+nologies can scaffold parent-child learning activities (e.g.,
+[29, 30]), these are so far associated with the classical school
+content such as math or literature, and are thus building
+mostly on declarative rather than procedural learning pro-
+cesses. In another related area, a number of projects provide
+basic social skills training for people with autism, mostly as
+part of the therapeutic treatment (see [26,39] for reviews); in-
+cluding work looking at involving the patient’s family in the
+process (e.g., [20]).
+More generally, CSCW and HCI have an extended his-
+tory with supporting parent-child communication, especially
+when the parent and the child are at remote locations. Exist-
+ing work has explored how video systems can support parent-
+child relationships over long distances (e.g., [1, 53]); exam-
+ined the opportunities of video-based technology to support
+remote play between children and parents [21] or peers (e.g.,
+[54]); and provided a technology-based support for scaf-
+folded reading of books over distance (e.g., [15,38]). A num-
+ber of other projects have explored the potential of technology
+in co-located contexts: using tabletops to drive engagement
+and parent-child interaction (see [52] for a review); dialogic
+reading experiences for children and their parents on tablet
+based ebooks [27]; sensor-based cooperative games [40]; and
+enhancing shared play or creative storytelling among chil-
+dren [7].
+However, no work so far has explored if and how digital tech-
+nology can support social-emotional skills reinforcement at
+home for neuro-typical children.
+
+FORMATIVE STUDY: SEL EXPERTS INTERVIEWS
+Building on the theoretical background, we conducted a se-
+ries of interviews with SEL program experts and trainers from
+a wide range of nine established SEL curricula; altogether
+reaching more than 35% US schools. Each of the interviewed
+experts has been instrumental in developing their respective
+curricula and brought many years of experience with real-
+world deployment and evaluation of social-emotional learn-
+ing curricula. Our aim was to build on this knowledge to iden-
+tify the immediate key challenges and opportunities where
+technology could be of use within SEL ﬁeld.
+The issue of supporting parental engagement with SE skills
+learning and reinforcement at home—as a fundamental op-
+portunity for out-of-classroom practice of children—emerged
+as one of the core themes from the preliminary analysis (cf.
+[44]).
+In what follows, we ﬁrst describe the broader study
+design and then focus speciﬁcally on the part of the data cor-
+pus that unpacks the methods SEL curricula currently use to
+engage parents; to facilitate situations in which experiential
+learning can take place; and scaffold the progressive learning
+in increasingly ‘hot’ situations.
+
+Participants and methods
+We recruited 14 SEL experts: 9 curricula developers, and
+5 key trainers, representing nine of the major SEL curricula
+providers to US schools. The experts had a median of 18 and
+
+an average of 20.8 years of SEL experience, and were re-
+imbursed $100 for their time. The semi-structured interviews
+with each expert were conducted in person or over phone (53-
+75 min long). Each interview was audio recorded, annotated
+in the software package InqScribe, partially transcribed, and
+thematically analyzed as per the 6 step process outlined in [5].
+The themes covered in the interview included:
+the partici-
+pants’ understanding of the challenges the learners, parents,
+teachers and curricula developers currently face; what they
+perceive as the key components of their program; what as-
+pects are most difﬁcult to learn or teach; and what are the
+actual methods they use to teach these. The following discus-
+sion focuses on the key challenges identiﬁed around bridging
+from the classroom to the home context and the key aspects
+of the SEL learning process that need to be supported in the
+home setting.
+
+Current approaches and challenges
+All of our participants’ curricula include a family component,
+in the form of in-person workshops or materials sent home,
+which were designed for a wide range of target populations:
+from all neuro-typical children to at-risk families. The key
+challenge, as perceived by the SEL experts, was about ways
+to effectively reach parents and then facilitate the needed ex-
+periential engagement with either one of these two methods.
+For those parents who choose to engage with the training,
+workshops were described as an effective way of helping par-
+ents support the children’s learning, and a substantial major-
+ity of parents were seen as strongly motivated to support their
+child’s social-emotional development. However, the work-
+shop turn-out rates were reported as often very low. While
+these improve if child-care is provided and parents’ travel is
+reimbursed, they are still sub-optimal even under such cir-
+cumstances. The developers were also pessimistic about the
+effects of printed materials sent home without the workshop
+component. Even when the paper homework is actually sent
+home by the teachers, then “these just do not get read (E1)”
+by the parents; and also lose the social and interactive quality
+of the workshops, “becoming more like schoolwork (E11)”.
+The SEL experts acknowledged the complex, multifaceted
+situation around why parents might or might not choose to
+engage with social-emotional skills learning, such as the pos-
+sibly difﬁcult relationship or the lack of trust between the
+school and parents, especially in lower socio-economic areas.
+However, they believed that a key difﬁculty for majority of the
+parents rests in the general ‘busy-ness’ of their lives: the ever-
+present lack of time; too many materials coming from school
+to keep track of; and, for the case of workshops, the pragmatic
+issues around a scheduled ﬁxed time, need to travel, and other
+commitments.
+Overall, the interviews suggested a need for another method
+that would combine the beneﬁts both of the workshops (fa-
+cilitate active, experiential learning) and materials sent home
+(low barriers to involvement).
+
+Supporting experiential learning in workshops
+This section outlines the aspects that the participants see as
+fundamental in making the workshop training effective; and
+
+1753
+
+the lack of which limits the beneﬁts of existing materials sent
+home. These are useful to identify the core aspects that would
+need to be supported by the technology.
+According to the SEL experts, one of the key roles for par-
+ents in supporting their child’s SE development is to either
+facilitate the appropriate experiential learning context for the
+child; or to skillfully take advantage of naturally occurring
+‘teachable moments’, such as the child having to deal with
+the frustration of doing the dishes, not understanding home-
+work, or having to go to bed. Such moments are plentiful
+in everyday settings and can provide the best reinforcement
+for children’s skills. However, the SEL experts were con-
+cerned that many parents might lack the ability to provide the
+needed coaching and scaffolding effectively; and that these
+are also the families that might beneﬁt from SEL most (cf.,
+also [17,25,49,50]). As E6 pointed, “the greatest challenge is
+that adults [often] do not understand social-emotional learn-
+ing; they cannot break it down for their kids”. In particular,
+although the parents “think they are helping the child solve
+the [social-emotional] problem, they are actually giving them
+the answer (E3)”, creating a dependency rather than coach-
+ing the child to develop a new skill. Moreover, many social-
+emotional skills bring up topics that some parents might not
+be used to discussing directly and might not know how to ad-
+dress.
+In response to these concerns, the workshops strive to help
+parents to learn how to scaffold learning for their children.
+Parents are provided with example questions they can ask (as
+part of the paper-homework), practise such situations through
+role-plays, and are encouraged to use on-going reinforce-
+ment techniques such as a stable vocabulary for speciﬁc sit-
+uations (e.g., calming down steps). The resulting scaffolding
+of parent-child interaction is then closely aligned with Emo-
+tion Coaching framework by Gottman and colleagues (e.g.,
+[16, 17, 25]). Important aspects include inquiring about and
+validating emotional experiences of the child, helping him or
+her label what they are feeling, providing empathic support
+when needed (e.g., through the progression of questions), and
+promoting the child’s agency.
+
+DESIGNING TO SUPPORT PARENTAL ENGAGEMENT
+The background literature and the expert interviews provide
+a theoretical basis to design technology in support of parental
+engagement and at-home reinforcement. Social-emotional
+learning fundamentally relies on experiential learning to de-
+velop procedural knowledge. Supporting such learning thus
+must elicit the ‘right’ social-emotional experiences for the
+learner, and offer the required scaffolding to learn from the
+experience. Moreover, the closer such learning is to real-
+world situations, emotions, and experiences (i.e., actual ‘hot’
+moments), the higher the chance that the learning will suc-
+cessfully generalise to everyday settings. For example, learn-
+ing how to help characters in a game to calm down is not go-
+ing to be successful unless the child is additionally supported
+in experiencing or recalling an angry state (e.g., through role-
+play), and then helped in applying the techniques herself
+when she genuinely feels mad.
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+In the case of supporting parental involvement, this theory
+(and the best-practices shared by the SEL experts) translates
+to three key concerns and corresponding research questions
+for technology support in this space:
+
+RQ1 How can technology provide a suitable delivery channel
+to effectively bridge classroom learning and at-home rein-
+forcement by parents?
+
+RQ2 Assuming it reaches the parents, how can technology expe-
+rientially engage parents and children with the SEL con-
+cepts (as the workshops do) rather than just presenting
+them with ‘dead’, non-interactive information (as per the
+paper homeworks)?
+
+RQ3 Finally, how can technology provide the scaffolding for
+the scaffolding role of the parent, who needs to carefully
+balance the nature and ‘hotness’ of the experience for the
+child, while offering direct support only when necessary?
+Moreover, the underlying aim of the SEL technology should
+be similar to that of the workshops: to ‘teach and disappear’.
+That is, technology should help scaffold the learning and re-
+inforcement of skills during a limited period of time, so that
+the newly learned skills will persist also after the technology
+is taken away or just not used anymore (i.e., are not dependent
+on such technology support being continuously present).
+
+TECHNOLOGY PROBE DESIGN
+To start exploring design solutions to the research questions
+outlined above, we developed a ‘technology probe’ (cf., [22]).
+A technology probe is simple technology that is deployed in
+real-world settings with the aim to collect information about
+use and appropriation, and to inspire further design ideas.
+Such a methodology is well-suited to the research questions
+at hand, where the in-situ appropriation of the technology by
+parents, children, and teachers, forms a fundamental part of
+the challenge.
+Our aim was thus to create a probe that could be also de-
+ployed in ecologically valid, real-world settings of a public
+K8 school1, helping us identify promising mechanisms to
+promote parental involvement. We developed the probe in
+close collaboration with the SEL developers and researchers
+at Committee for Children—the developers of Second Step,
+the most widely used SEL curriculum in USA—who pro-
+vided the team with key SEL expertise. This included ac-
+cess to all Second Step curricula materials and weekly design
+meetings.
+The resulting probe comprises a 8.5 x 3.5 inch magnetic sheet
+(see Figure 1), that links the users to a series of online activi-
+ties (more information below), accessed through a web-page
+interface. We chose a simple web-based solution to easily
+cater to all operating systems across desktop, mobile phones
+and tablets. The magnets were designed to be distributed to
+children by their class teachers, together with a simple story
+(‘Harrdy needs your help to ﬁnd the treasure’) to pique the
+children’s interest.
+
+1K8 school is a school that includes Kindergarten and Grades 1 to
+8, i.e., approximately ages 5-13.
+
+1754
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 1. The probe – a magnet serving as a portal to digital content
+
+Instantiating the design considerations
+In what follows, we outline the design rationale in three sec-
+tions: discussing our initial decisions on the scope of the
+probe, methods to support the two core principles for the in-
+tervention’s content (RQ2 + RQ3), and the delivery channel
+considerations (RQ1).
+
+Scoping decisions
+We made several key decisions early on, drawing on the lit-
+erature review, interviews, and the best-practices recommen-
+dations of the on-team SEL experts. First, we chose to focus
+on early elementary school children and their parents—i.e.,
+Kindergarten through to 3rd Grade—as the target group. This
+choice was motivated by research consistently showing that
+SEL interventions are more effective in the early years (e.g.,
+[47–49]). Second, we decided to focus the probe content on
+facilitating use of consistent vocabulary across school and
+home context. Such consistent verbal labelling is a crucial
+aspect of many SEL curricula (cf., [4,43]), and can serve as a
+natural reminder in everyday situations, reinforcing the learn-
+ing (e.g., [24]). However, the SEL literature suggests that
+parents are often unaware about the verbal labelling strate-
+gies that their children are learning at school [34]. Finally,
+we chose self-regulation (calming-down) as the speciﬁc topic
+to focus on. Self-regulation is a crucial-but-challenging issue
+within SEL (cf. [18,44]). Moreover we expected that helping
+young children deal with frustration and anger could tap into
+the existing motivation that many parents might have around
+these issues.
+
+Designing the content
+The SEL theory highlights the need to scaffold ‘appropriately
+hot’ emotional experiences for the learners to provide mate-
+rial for experiential learning. To do so, we drew on the power
+of games and stories to engage young children with emotional
+content [48], and help them to re-live their own feelings from
+similar situations. In our case, we re-cut and re-purposed a
+Creative-Commons video to show a simple story of a grumpy
+Pirate Harrdy searching for his treasure, who has his map
+stolen by a monkey and gets very angry as a result. As many
+children have likely experienced the ‘something was taken
+from me’ scenario many times at home, on the playground,
+or at school, we expected the story could likely resurface suf-
+ﬁciently strong emotions for them to relate to.
+To promote the parental involvement and support, the story
+also created a shared experience and set the scene for a more
+direct parent-child interaction. To scaffold this, we interjected
+
+1755
+
+the story with questions to help the parent facilitate the learn-
+ing for their child. Such a progression of questions was di-
+rectly drawing on the coaching approaches used in SEL (and
+taught to parents in the workshops), in this case helping the
+child remember how they felt in similar situations ﬁrst and
+then take the perspective of the other person. For example,
+when the map is snatched away by the monkey, the video
+is stopped with the question: “Have you ever had anything
+grabbed from you? How did that make you feel? Tell your
+adult!” This is then followed by “How do you think Har-
+rdy feels now?” To further facilitate parental scaffolding, we
+chose to have the questions addressed to the child and to be
+read aloud by the adult. The aim was to create a sense of in-
+terdependency between the child and adult, as many children
+are not likely to read ﬂuently at this age. As such, the written
+text nudges the parent to take the narrator role and to probe
+into the emotional states of the character; he or she is also
+scaffolded in helping their child do so through the carefully
+selected questions.
+Moreover, as the story progresses, the prompts are increas-
+ingly taking the parent-child interaction from the story to real-
+world activities between parent and child: they are asked to
+ﬁrst explain the Calming Steps that the child learned at school
+to Harrdy (and, implicitly, the parent), help Harrdy practice
+one or more calming down strategies (deep breathing, count-
+ing down, and positive self-talk), and eventually to role-play
+the situation themselves (“Harrdy needs to see another ex-
+ample ... how about your adult plays out what happened to
+Harrdy and you help them calm down?”).
+Finally,
+repeated practice—using the associated calming
+down steps vocabulary serving as triggers—is crucial for re-
+inforcement of self-regulation. To explore if and how the
+probe could support such repeated engagement, we designed
+the story as a sequence of related sub-stories, with the initial
+activity ending on a cliff-hanger: the monkey runs away with
+pieces of the map and Harrdy sets out to ﬁnd it. The child
+is then asked to return to the activity the next day to help
+him. Over three follow-up encounters, each practising one of
+the three calming down strategies, the child is helping Harrdy
+ﬁnd the map pieces and, eventually, the treasure.
+
+Designing the delivery channel
+The delivery channel design accounts for the three key stake-
+holders in this context: the teacher (who distributes the ac-
+tivity); the parents; and the children. Appreciating the inter-
+view and literature ﬁndings about both parents’ and teachers’
+busy life schedules, the distribution needs to (i) be simple and
+quick to distribute in class and engage with at home; (ii) stand
+out from the stream of other school-home messages the par-
+ents are already over-burdened by; and (iii) be pragmatically
+easy to build and deploy so that it can serve the data collec-
+tion role on the scale of multiple classrooms (26-28 children
+each).
+The design of the probe drew on a ‘portal’ metaphor:
+the
+probe was designed as a simple physical object—a magnetic
+card—that is sent home with the child together with other
+school-home documents. When engaged with, however, it
+then serves as a virtual portal to the online activities. Mag-
+
+nets were selected as a ‘known’ object tapping into the com-
+mon family practices around putting things on a fridge in the
+US; aiming to hopefully serve as an ongoing reminder and a
+stable link to the dynamically changing activities over time.
+Using a magnetic card, rather than a standard sheet of paper,
+also provided us with the option of sending home something
+possibly of ‘perceived value’ that might not be thrown away
+immediately after ﬁrst use.
+The probe was designed to utilise the child’s motivation to
+play the activity as the key method of also engaging the par-
+ents. To this end, we framed the activity as a ‘treasure hunt’,
+hidden within the card, that they need to discover together
+with their parents. Our design rests on the assumption that
+the combination of the mystique of a magnet ‘hiding a story’
+together with a likeable design would make the child an ac-
+tive participant in persuading the parent to engage with the
+activity; as opposed to a math homework, or the usual paper
+SEL homework exercise.
+Finally, we needed to design for the conﬂicting needs of pri-
+vacy considerations on the one side and the data collection
+functionality of the technology probe on the other. Each card
+has a unique ‘secret code’ that allows us to track interactions
+from each card. The secret codes also came in ‘packs’, one
+per each class, allowing us to track usage on the class level as
+well. However, as the system collected no personal informa-
+tion and the teachers were asked to randomly distribute cards
+to children in class, neither us nor the teacher were able to
+ascertain which secret code belongs to which family.
+
+STUDIES WITH THE PROBE - OVERVIEW
+The probe deployments aimed to answer multiple questions:
+First, test the delivery channel aspect, where the interest is
+in natural uptake of the probe and understanding if and how
+this (and similar) technology can ﬁt into teachers’ and par-
+ents’ existing practices (RQ1). Second, analyse if and how
+the designed content experientially engages parents and chil-
+dren (RQ2), and whether it provides sufﬁcient scaffolding for
+the scaffolding role of the parent (RQ3).
+To explore these issues, we deployed the probe in two dif-
+ferent contexts: First, we recruited four classrooms in a K8
+school in a major US city, in which the magnets were sent
+home with kids in four classrooms. This allowed us to un-
+derstand the in-situ uptake within the everyday settings of
+teachers, parents, and children (RQ1). The ecological va-
+lidity of such in-the-wild deployment came at the expense
+of limited opportunities to observe the parent-child interac-
+tions directly (as that would affect the natural uptake). Sec-
+ond, we thus complemented the ﬁrst study by recruiting 25
+parent-child pairs on MTurk, who have consented to screen-
+recording their interactions with the activity. This provided
+us with detailed information about the parent-child interac-
+tions around the activity that were needed to analyse RQ2
+and RQ3. We report on each of the deployments individually
+and combine what we have learned in the Discussion section.
+
+STUDY 1: IN-THE-WILD DEPLOYMENT
+The aim of the ﬁrst probe deployment was to study the uptake
+within real-world classes and families. We aimed to under-
+
+1756
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+stand if and how similar technology could serve as an engag-
+ing delivery channel, and how to design for a best ﬁt with (or
+positive change of) teachers’ and parents’ existing practices.
+
+Methodology
+Participants
+We recruited a school counsellor and 4 classroom teachers in
+a K8 school who had taught Second Step over multiple years
+already. To explore the effect of age, each of the recruited
+teachers taught at a different grade level: Kindergarten, Grade
+1, Grade 2, and Grade 3. As part of our recruitment, we of-
+fered a $50 reimbursement each for the teachers and the coun-
+sellor to compensate the organisational overhead and the time
+spent with us on a (post-deployment) interview. Every child
+in each of the four classes received their own magnet card to
+take home to their family.
+
+Methods and data collected
+The packets of magnets (one pack per class) were sent to
+the school counsellor, who distributed them to teachers. The
+packets included a simple Parent Letter to be sent home with
+the magnet, and an information sheet for the teachers outlin-
+ing the distribution of cards: they should hand out the cards
+to the class and tell a simple scripted story.
+Importantly,
+the magnet was not framed as homework, but as an optional
+extra-curricular activity.
+Our server logged all interactions with the activity from any
+of the cards individually, using the ‘secret code’ on each card
+as the identifying information. This allowed us to collect de-
+personalised information about the usage, separated into the
+individual classrooms. In addition, we asked teachers and the
+counsellor for a 30 minute interview, several days after the
+cards were sent home (5 interviews, overall 131 minutes of
+recordings); and also had the opportunity to interview some
+of the children (post-deployment) about their experiences, for
+40-45 minutes per class. Depending on the age range, we
+interviewed groups of 3-6 children, with one or two groups
+per class (27 children altogether).
+The nature of the deployment made it impossible to directly
+recruit parents or offer rewards for participation before the de-
+ployment as this would alter the natural uptake. We however
+attempted to elicit feedback from parents in three alternative
+ways: At the end of the activity—i.e., the parents must have
+engaged with it already—the parents were asked to rate the
+activity via two sliders, namely ‘perceived usefulness’ and
+‘child enjoyment’. At this point, we also invited the parents
+to take part in a 10-15 min phone or Skype call, offering a
+$10 Amazon voucher in appreciation of their participation.
+Finally, the teachers invited the parents (through email) to
+participate in a 5 min online survey two to three weeks af-
+ter deployment, connected to a $40 rafﬂe prize.
+
+Deployment results
+Activity logs – at-home engagement
+The lack of delivery channels to effectively engage parents
+with SEL content is one of key issue we identiﬁed in the lit-
+erature and interviews (RQ1). A fundamental question of the
+ﬁrst deployment was whether the activity will reach parents
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Used
+
+Finished
+
+at least once
+16
+14
+15
+12
+
+62% 15
+54%
+11
+58% 13
+46%
+11
+
+first activity
+58%
+42%
+50%
+42%
+
+Returned
+
+at least once
+23%
+23%
+35%
+27%
+
+6
+6
+9
+7
+
+Returned
+
+all three times
+19%
+19%
+15%
+12%
+
+5
+5
+4
+3
+
+Class 1
+Class 2
+Class 3
+Class 4
+
+Table 1. Activity usage across classes
+
+at all; or “just not get read” as seems to the case for paper
+materials. We focus on two key aspects in our analysis.
+First, we explored the activity usage aiming to understand the
+extent of involvement for individual cards. The main indi-
+cators of interest were whether the family logged-on at least
+once, if they ﬁnished the ﬁrst activity, and if they repeatedly
+returned to the card to continue the story. An overview of the
+results is in Table 1. Overall, our data shows that between
+46% to 62% of distributed cards have been used in individ-
+ual classes, and a large percentage of those who started have
+ﬁnished at least the ﬁrst activity (78% to 93%). Putting this
+in context, the teacher’s interviews (cf., next section) suggest
+that reaching initial engagement levels of ∼50% can be con-
+sidered a success. A much smaller proportion of families re-
+turned to the activity for follow-up stories; the teachers’ in-
+terviews indicate that one possible contributing factor is that
+the option to continue the story was not clear to some partici-
+pants. Note that the logged data does not contain information
+about whether the cards were used with a parent, sibling, or
+alone. The interviews with children and the school counsellor
+however suggest that a large proportion of parents did know
+about and engaged with the card (see below).
+Second, we looked at the ratings data submitted by families
+immediately after ﬁnishing the ﬁrst activity. Out of the fam-
+ilies that reached this point, 59.6% submitted a rating. Both
+‘perceived usefulness’ (mean 86.9, SD 18.0) and ‘child en-
+gagement’ (mean 76.4, SD 22.4) were rated relatively high
+on the scale from 0 of 100. Only 4 people indicated a rating
+lower than the neutral point (50/100) on either of the scales.
+Overall, this suggests that, at least those who rated, have both
+enjoyed the activity as well as found it relatively useful.
+
+Fitting into teacher’s practices
+Teachers play an important role in any delivery channel try-
+ing to bridge school and at-home learning. To better under-
+stand how the probe (and similar technologies) could ﬁt into
+the school context, we inquired about the methods the teach-
+ers use to connect and engage with parents at the moment,
+their opinions on the activity as a learning tool, and what they
+would consider as success in terms of parental engagement
+with the probe2.
+All teachers valued thinking about ways of engaging the par-
+ents with SEL (as well as other subjects), especially as a pre-
+ventive measure: “Ideally we would involve parents more.
+It is so far with the parents of kids who have [behavioural]
+
+2At the time of the interview, the teachers have just sent the cards
+home, but did not know if and how many parents might engage with
+the activity.
+
+1757
+
+problems and then we have these conversations [...] but ide-
+ally, you would give these strategies pre-emptively (T2).” In
+particular, involving the parents with at-home learning was
+seen as a general problem: when sending anything home, “we
+get around 50% for anything that requires an adult (T1)”.
+Getting to higher engagement ratios then seemed to require
+substantial ‘bugging work’ on the part of the teachers, such
+as sending the information repeatedly through multiple chan-
+nels (such as emails, newsletter and printouts) or requiring
+the child to collect a signature from the parents. The teachers
+were also particularly pessimistic about the ratio of parents
+who would already know about the Calming Down strate-
+gies (or other SEL content) as “they probably read it in the
+newsletter [a few months back], and forgot about it. (T3)”.
+In terms of engagement rates for the probe activity, all teach-
+ers mentioned that 50% parents engaging with the probe
+would be something they consider a success, especially as
+it is framed as a voluntary activity. The biggest concern for
+most teachers was keeping a level ﬁeld for all the students:
+a common worry was that through the use of technology we
+might be “cutting away a bunch of kids who do not have ac-
+cess to internet (T1)”. However, the teachers were willing
+to work on accessibility issues—for example, by giving such
+students the option to ﬁnish such activities in the library—due
+to their strong motivation to better connect to as many parents
+as possible.
+When asked to tell us how they handed out the cards, it be-
+came apparent that all teachers went beyond the deployment
+instructions. Instead of just reading the scripted story as sug-
+gested, they all used their card to show children a part of
+the activity; aiming to get the children more engaged and ex-
+cited. Three teachers showed at least a ﬁrst few minutes of the
+video; while the kindergarten teacher went through the whole
+ﬁrst activity, utilising it as a teaching resource to reinforce the
+calming down steps. In all classes, the teachers reported that
+children were mostly enthusiastic about the cards and were
+looking forward to taking them home.
+We asked the teachers to go through the ﬁrst activity as part of
+the interview with us, watching their reactions and comments.
+In spite of explicit request for critical comments, the activity
+elicited mostly positive responses, with the critique focussing
+on localised aspects (such as a speciﬁc wording, or a typo in
+the text) and pointing out that the mechanism for the follow-
+up stories has not been clear enough. The interactive nature of
+the parent-child interaction with the story, and the scaffolding
+of the experience for both child and the parent were points
+that teachers repeatedly mentioned as particularly important.
+
+Children’s experiences
+Two of the authors facilitated the child interviews together.
+We structured the child groups around watching the activity
+on a tablet, using it as a reminder to elicit stories about their
+experiences at home. We were particularly interested in who
+they played it with, which parts they liked/disliked, and what
+they would suggest as improvements. We were not permit-
+ted to record the conversations so one of the researchers kept
+notes.
+
+Most of the children, regardless of the age, talked about the
+enjoyment of receiving something physical that was linked to
+a digital game. The need for parental involvement was also
+often seen as positive: for example, one child explained how
+she “[liked the activity] because you get alone time with your
+parents (C8)”. When watching the activity with us, we of-
+ten observed that the children huddled together around the
+tablet, enjoyed the ‘goofy’ animation, and repeated some of
+the characteristic sounds of individual characters (e.g., the Pi-
+rate’s ”Arrrgh”). They particularly enjoyed ‘helping Harrdy’
+by doing the calming strategies (many recalled trying all three
+strategies when doing the activity at home).
+When talking about their at-home experiences, most of the
+children said they did the activity with another person and
+that they enjoyed playing it. Surprisingly, the other person
+was not necessarily a parent: approximately a third of the
+children shared they played the activity with their sibling in-
+stead (either older or younger), often because their parents
+were away or too busy. Some of the older kids even took
+over the ‘parental’ role during such occasions: For example,
+C11 explained how she “ﬁrst played it with her mum [...] but
+then also pretended to be an adult for her younger sister”.
+Others started alone but then included their siblings or par-
+ent when the social interaction was required. In contrast, two
+children from the younger end of the age range told us they
+went through the activity alone. They were often interested
+mainly in the Pirate story and did not partake in any of the off-
+screen activities; leading to disappointment with the game.
+For example, one of the kindergarten children told us that al-
+though his nanny was in the room, he has “played through it
+myself just clicking through all the buttons as I didn’t need to
+read that. A boring game (C2)”. Some of the children also
+mentioned technical issues they experienced that prevented
+them, at least initially, from playing. These were often re-
+solved with the help from their parents or siblings.
+
+Parental qualitative feedback
+While the system indicates that 56 cards were used at least
+once, only very few parents volunteered to take part in the
+interview or submit a survey: Only one mother signed up for
+the phone interview and we received only 13 responses to the
+survey.
+Initially, we assumed that perhaps the reason for such low
+turn-out was that many parents might not know about the
+cards at all. To test this, the school counsellor offered to inter-
+cept parents in-person when they came to pick up their chil-
+dren after school, over a period of 3 days. She was however
+able to give out only 4 cards, with most of the other parents
+saying they have seen the card and often already played it
+with their child; suggesting the probe indeed reached many
+parents. However, these efforts did not lead to any increase in
+interview volunteers or survey responses. This suggests that
+while many parents did engage with the probe itself at home,
+we did not manage to incentivise them to provide additional
+feedback to the research team.
+The one mother who volunteered was very positive about her
+experience of the probe; although this is likely affected by the
+self-selection bias. Her son, who has impulsivity and other
+
+1758
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+behaviour issues, brought the card home and initiated the use.
+She was surprised he was patient with the story, and had liked
+the activity. She herself felt that the activity was a good re-
+minder to her to reinforce the calming down skills; she also
+referred to the pirate story in the following days, saying things
+like “What would the pirate do now to calm down?”. She par-
+ticularly liked having a concrete reference for her young son
+that was tied to a shared story. She did not realise that she
+could return to the activity over the following days.
+The majority of the available survey responses came from
+parents of the kindergarten class (10 out of 13), with the re-
+maining responses being two G1 parents and one G2 parent.
+Eleven of the thirteen parents said they played the activity
+with their child; one did not know about the activity at all;
+and one did not have time. Apart from a single family3, all
+children were perceived by the parents as liking the activity
+and enthusiastic to try it out. Six of the parents told us the
+magnet is still visible in their home, mostly on their fridge;
+others either did not know or had thrown it away already.
+
+STUDY 2: MTURK DEPLOYMENT
+The second probe deployment aimed to address the remain-
+ing two research questions, unpacking if and how the probe
+would facilitate emotional experiences (RQ2) and help par-
+ents scaffold the appropriate experiential learning context for
+the children (RQ3).
+We used MTurk to recruit 25 parent-child pairs who would
+be willing to have their interaction with the activity recorded
+(thus providing the detailed data needed for analysis), and
+also were more likely to report their experiences in a post-hoc
+survey. In doing so, we draw on the growing body of work
+showing the possible insights gained from MTurk collected
+data, both at CSCW [31, 32] as well as in other disciplines
+such as psychology (e.g., [33]). An additional advantage
+of MTurk recruitment was the possibility to also reach low-
+income parents and those living outside of principal cities,
+who are the key at-risk populations for many SEL curricula,
+but are often hard to reach through other methods.
+
+Methods and data collected
+To promote a wide uptake, we offered $5 for the 20 minute
+long Human Intelligence Task (HIT), placing the HIT among
+the higher paid end of MTurk jobs. We thus hoped to attract
+also parents who are not personally interested in the topic of
+calming down/SEL skills or parenting as such. To improve
+chances of high quality results, we required that turkers have
+at least 95% prior approval history, live in the US, and have
+at least 50 prior accepted HITs [36].
+The HIT description asked the participants to ‘play an edu-
+cation activity with your child and tell us what you thought
+about it.’ We made it clear from the start that the study was
+to be completed with their child, aged 5-9. Turkers were also
+informed that they would need to download a third party ap-
+plication (UserZoom) onto their smart-phone to record their
+
+3The parent told us that “although initially very excited to it, my
+child thought it was not very interesting”.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+phone screen, what they say, and the camera image. For tech-
+nical reasons, we required that participants had access to an
+Android phone.
+During the HIT, participants went through the ﬁrst Harrdy ac-
+tivity together with their child (task 1), and then were asked
+to answer questions about their experience such as what they
+liked or disliked; what other SE skills they consider impor-
+tant, and how are they working on these with their child
+(task 2). After we reviewed the HIT, all accepted participants
+were invited to take part in a follow-up survey (8min), re-
+using the open-ended questions sent to in-school parents. The
+survey completion was compensated by a further $2 bonus.
+
+Participants
+The MTurk recruitment resulted in a diverse set of 25 partici-
+pants, living across 14 different US states. They reported rel-
+atively low-income: nearly half (47%) reported yearly house-
+hold income as 30k to 50k; and nearly an additional ﬁfth
+(17%) reported yearly income under 30k. The participants
+lived mostly often in rural areas (42%), or in metropolitan ar-
+eas but outside of principal cities (33%). We saw a quite con-
+sistent split of grades between Kindergarten and Grade 3, and
+a single Grade 4 participant. Approximately 80% of parents
+were mothers. Most of our participants were Caucasian par-
+ents; this strong under-representation of Afro-American and
+Spanish population in the US mirrors results of [33].
+
+Data quality
+Overall, we found the data quality very good, with no ob-
+vious cheating (e.g., only clicking through or faking the in-
+teraction). Due to technical issues with participants’ phones
+or internet connection, only 17 videos of the pirate activity
+have been uploaded to the server. These recordings were 8:01
+minutes long on average (min 5:06, max 9:56 minutes4). For
+additional 3 parent-child pairs, we had at least the uploaded
+video of the task 2; leaving 5 parent-child pairs with no video.
+In these cases, we initially rejected the work, but left the op-
+portunity for the parent to contact us if they thought the re-
+jection ”was in error”. All but one got back in touch and their
+HIT was subsequently accepted. These participants were then
+asked to at least ﬁll out the follow-up survey. From the full
+sample of 25 accepted participants, 19 ﬁlled out the follow-up
+survey.
+
+Data analysis
+Our key focus was on the parent-child interactions elicited
+by the probe. We drew on Gottman et al. [16, 17] Emo-
+tion Coaching framework to theoretically ground the key in-
+dicators of parental scaffolding. These included, for exam-
+ple:
+if and how the parent scaffolds the child to become
+aware and verbalise their emotion during parent-child inter-
+actions around the prompts offered by the activity; whether
+they follow-up on such prompts to validate (and further probe
+into) child’s feelings; and if and how the parent attempted to
+scaffold the learning experience for the child more broadly,
+e.g., subtly helping the child if the child seems lost or helping
+to rekindle interest if the child loses focus.
+4For technical reasons, the UserZoom application stops recording
+after 9:56 min. This happened in 3 parent-child pairs, whose inter-
+actions thus were, in reality, approximately 2-3 minutes longer.
+
+We also looked at indicators of the engagement of the child
+(and parent) with the activity, such as whether they kept focus
+on the screen or reacted to the story in non-verbal ways (e.g.,
+giggling or mimicking sounds or activities on screen). We an-
+notated the collected videos within the UserZoom interface,
+both through marking important moments and sub-clips di-
+rectly within the video. The resulting observation notes were
+then thematically analysed (methodology as per Study 1) to-
+gether with the follow-up survey data.
+
+Results
+Most children and adults seemed focussed and engaged when
+watching the initial video and working with prompts. In par-
+ticular, we saw children sitting still or pointing out things to
+parents such as ‘look, there’s Harrdy!’ or ‘O-oh!’ when the
+monkey snatched the map. We also saw a lot of giggling at
+the animation (mirroring the child interviews in schools), and
+quick glimpses at the parent to see if they were also enjoy-
+ing the story. Children’s and parents’ behaviour towards the
+prompts differed across families, but mostly with respect to
+age. Many of the older children took pride in trying to read
+the text out loud by themselves, with subtle support from the
+parent if they got stuck on a word or read something incor-
+rectly. The younger children were more reliant on the parent
+reading and scaffolding the interaction with prompts.
+We saw clear differences between parents around how they
+scaffolded the engagement with activity for their child
+through their reading style. For example, some parents im-
+mediately started using a ‘story voice’ to narrate the story to
+the child, facilitating the child’s interest and involvement in
+the activity. In contrast, another group of parents started off
+reading the text in a ﬂat way. These parents left pauses for
+children’s responses, but only rarely followed-up with addi-
+tional questions, leading to interactions that appeared much
+less engaged, and more like homework. Pragmatically, the
+reading style also seemed to depend on the adult comfort with
+reading-out-loud – if they struggled with the words them-
+selves, it was harder for them to present the content in an
+engaging way immediately.
+Most of the relevant scaffolding behaviours however ap-
+peared when parents and children shifted the attention from
+the screen to each other, transforming the activity into a joint
+discussion around the prompt. For example, we often saw
+the parents read the prompt out-loud (as if making sense of it
+for themselves), but then immediately turn to the child and re-
+peat the question again in a more direct way. For example, the
+adult (M14) was reading out loud “Did you ever have some-
+thing taken away from you? How did that make you feel?
+Tell your adult. <turning to the child> So tell me, how did
+that make you feel when someone took something from you?”.
+Many parents seemed to do this naturally from the start; oth-
+ers took longer to switch from storytelling mode of reading
+out prompts to directly scaffolding the discussion with their
+child; but a few never made the switch and read throughout
+the activity.
+What seemed to particularly help parents turn from story-
+reading to scaffolding their child’s thinking about emotions
+were the prompts asking for the child’s own experiences
+
+1759
+
+(”how would you feel in this situation?”); especially if these
+were then connected back to the story (”so how do you think
+Harrdy feels now?”). Such questions also seemed to provoke
+the child’s reﬂection and often also the deepest responses
+from children. For example, when a child was asked by his
+mum whether he had anything grabbed from him, he said
+“<calm voice> ”Not really ... but if I did, I would be re-
+ally really mad. <thinking for 3s, then becoming excited>
+Oh yes, Lulu! [...] she took away my bike and it’s mine and I
+really really really want to ride it! [Mum: how did that make
+you feel?] Really really mad! (M9)”.
+Another source of experiential engagement for the children
+was enacting the calming down strategies themselves to help
+Harrdy (or their adult) to calm down. Approximately half of
+the families went through more than one strategy, often all
+three. Part of the enjoyment seemed to arise from the funny
+pirate voice accompanying the strategies, but also from using
+their own body in response to the game. The adult calm-
+ing prompt seemed as an enjoyable experience (when adults
+played along, as the majority of them did); and a number of
+parents skillfully supported their child in going through all
+the activities again: e.g., “”I breathe and breathe, but I’m
+still angry; what else can I do?” (M3)”.
+Some parents also repeatedly took advantage and creatively
+built on the prompts to further strengthen the connections
+between the story and life.
+For example, when M18
+and her daughter ﬁnished the calming down strategy she
+said: “<turning to face her daughter> So when he’s really
+angry—or when you’re really angry—you can breathe, right,
+to calm yourself down. Or you can count from ten...”. Simi-
+larly, one of the questions in task 2 asked parents ‘what other
+skills would they like their child to develop’. Interestingly,
+this question was also appropriated by a number of parents as
+a teaching moment: they often started answering the question
+as if talking to the camera (”I would like my child to become
+better at ...”), but then quickly turned towards their child ad-
+dressed the request directly to him or her (”you see, I’d really
+like you to ...”). It seemed that, again, the indirectness and
+connection to the story seemed to create a context in which
+such requests could be made.
+Finally, we saw in the MTurk videos that it was often the
+parents who were driving the participation of the child; un-
+derstandably so, as the child had not heard about Harrdy
+or the activity before. Sometimes, they had obviously ini-
+tially struggled to get to child to come and watch the activity;
+although, once the video started, children were often capti-
+vated.
+
+Follow-up survey data
+The follow-up survey included open-ended questions around
+the experience with the activity (e.g., ”What particularly
+stood out for you about the activity, if anything?”), as well as
+explicit prompts to identify what they did not like or would
+like to change. There were two problem areas that some par-
+ents pointed to: ﬁrst were technical issues such as the slow
+loading speed of videos or the recording software for parents
+on slow network connections (4 parents); second, some par-
+ents felt disappointed they haven’t seen the full story as the
+
+1760
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+three follow-up stories were not included in the MTurk de-
+ployment (5 parents).
+Overall, the choice of the topic — calming down strategies —
+spoke positively to many parents. Importantly, many parents
+highlighted how the cartoon story kept the child engaged, but
+also how it presented an example situation they could well
+relate to. For example, M5 wrote “What stood out for me was
+the way the activity engaged my child and got her to think
+about why the character was feeling certain emotions, and
+apply that to herself in certain situations.”
+Surprisingly, three parents also mentioned in the time be-
+tween ﬁnishing the activity and answering the survey (∼1 or
+2 days) either they or their child had already used the strate-
+gies in other situations: one parent wrote how she “suggested
+to breathe like the pirate” when her daughter was upset about
+her bedtime, helping her calm down; another remarked how
+her son reminded her to stay calm and breathe when she was
+going through an unsettling experience; and ﬁnally the third
+shared a story of her younger son, B, instructing his brother to
+stay calm (“[...] B walked over there and in a calm, therapist
+like voice said ‘You know E, you can take big deep breaths
+and count to ten and that will help you to not be mad’.” The
+majority of our MTurk child participants did not know the
+strategies in advance; however, two children did, which came
+as a positive surprise for their parents — supporting the as-
+sumptions that many parents are not aware whether and which
+SE strategies their child is learning at school.
+While such positive responses to the survey corroborate the
+observations from the videos, it should be kept in mind that
+both are likely affected by self-selection bias (as parents vol-
+untarily chose to be part of the study); thus providing a rel-
+evant, but likely overly positive sample of how the activity
+would be perceived by broader population.
+
+DISCUSSION
+The results of the probe deployments provide the ﬁrst steps
+towards addressing a key challenge for social-emotional
+learning (SEL) curricula: bridging the gap between class-
+room learning and at-home reinforcement of skills. True to
+the nature of technology probes, this work serves more to
+highlight the potential of technology in a novel design space
+(and avenues for future work) rather than to present a full
+solution. For example, the methodology of current deploy-
+ments focussed on understanding the uptake of the probe and
+how the parent-child experiential interaction processes could
+be scaffolded; rather than evaluation of learning outcomes
+achieved by this speciﬁc prototype per se.
+In what follows, we unpack what we learned about design
+approaches to address the three key constraints: providing
+an effective delivery channel (RQ1), facilitating experiential
+engagement with the activity (RQ2), and scaffolding of the
+parental supporting role (RQ3). We then take a step back and
+reﬂect on limitations of this study in the broader context of
+using technology in support of SEL.
+
+Suitability of delivery channel (RQ1)
+The literature review and expert interviews show that SEL
+curricula lack ways to actively engage parents (and children)
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+with experiential learning at home. The logged data from
+the in-the-wild probe deployment suggests that the probe was
+reasonably successful in getting into the homes; engaging
+46% to 60% of learners. However, the low parent feedback
+rate within this deployment complicates our understanding
+of how exactly the card was used by parents (and the child)
+in the home setting. Still, the interviews with children and
+the school-counsellor would suggest that a large proportion
+of parents have seen and played the magnet (∼ two thirds
+of children from our sample); and that only a few children
+played the activity alone (two children from our sample).
+Moreover, the MTurk data suggests that at least the MTurk
+parents engaged with, and scaffolded the learning for their
+children (see also below) while playing the activity.
+Overall, this would suggest that the two main design concepts
+used by the probe point to promising avenues for future work.
+First, drawing on the ‘portal’ metaphor, i.e., combining a
+physical object that is sent home and linked to digital content,
+seems to ﬁt well existing practices around home-school com-
+munication; is easy to distribute for teachers; and was under-
+standable to teachers, children, and (we assume) also parents.
+At the same time, such portals could plausibly deliver a wide
+range of interactive interventions that build on digital devices
+already available in homes of the families. Second, relying
+on the child’s motivation to try the activity—while requiring
+parental support to do so—seems a plausible method of driv-
+ing initial parental involvement (e.g., that the parents make
+a conscious decision whether to engage or not). In particu-
+lar, giving children a game ‘hidden’ in a physical object that
+they can try only when they are back at home, seems to have
+elicited engagement and motivation across the age ranges we
+looked at (K-G3).
+Interviews with children have shown that approximately a
+third of the learners in the in-the-wild study played the game
+with their sibling (as the parent was either away or busy).
+This points to an alternative option of engaging the learners at
+home: by involving siblings or other family members—rather
+than just the parents—into the activity as active participants.
+One opportunity for future work might be designing activities
+where children work with their (older) sibling to create some-
+thing, e.g., a story, which is then shown and explained to the
+parent (still as part of the activity).
+The probe was also designed to serve as an ambient reminder
+that stays visible in the family environment over time, as a
+magnetic card on the fridge or other places. The SEL theory
+suggests that providing such on-going reminders is crucial for
+reinforcement processes. However, we have only limited data
+on whether this has been successful in this trial. From the 13
+completed survey responses, just under half of the cards were
+still posted on the fridge two to three weeks after the deploy-
+ment. Though these numbers are somewhat promising, it is
+unclear what happened with the magnet in the families who
+did not respond to the survey. An important open question is
+then to understand how one might design for such long-term
+ambient reminders in the context of SEL and families (cf.,
+also [37] or [9, p.287] for examples of related CSCW and
+HCI work in this space).
+
+Experiential learning (RQ2)
+The theory of social-emotional learning is clear that experien-
+tial learning situations are needed for meaningful practice and
+reinforcement to occur. The results of the probe deployments
+suggest the combination of a video and embedded prompts
+can create experiential situations similar to the role plays or
+puppet stories in class, in spite the lack of trained guidance
+normally provided by the teacher. In particular, we used a
+common SEL progression to present a story relevant to the
+reinforced SEL concept (’get angry when something is taken
+away from you’), utilise prompting questions to support the
+child’s recall of a related personal experience (’how would
+you feel’) and help them imagine the character’s feelings, and
+then looping it back into to the story progress with the strate-
+gies taught as part of SEL training. This is a promising ﬁrst
+step which suggests that a wider range of SEL learning ac-
+tivities could be delivered in a similar manner. However, the
+child’s experience has been still limited to the tight coupling
+with the presented story itself, rather than a real-life ‘hot’ sit-
+uation he or she is experiencing; the fundamental goal of SEL
+reinforcement.
+The key next step for future systems is then to ﬁnd way to
+extend the support for the parent and child beyond the video
+activity itself, helping them connect the strategies to their ev-
+eryday ‘hot’ moments. The parent interview and MTurk sur-
+veys showed that four parents have already appropriated the
+existing activity in similar way, using a reference to the story
+to label the on-going situation and remind about available
+strategies. SEL theory suggests such behaviours are likely
+to help the child generalise learned skills into other everyday
+contexts. While this again shows promise in the potential of
+technology-based delivery to promote such on-going engage-
+ment, the open question is how to speciﬁcally facilitate such
+transfer through design. For example, what are the opportuni-
+ties for ‘smart’ objects that could be delivered home together
+with the magnetic card, such as a ‘calming down token’ or an
+‘anti-anger wand’, helping the child connect the learning with
+their everyday interactions? And, what might be the best de-
+velopmentally appropriate metaphors to build on, similar to
+the ‘treasure hunt’ trope used in the current probe?
+
+Scaffolding of parental scaffolding (RQ3)
+The second crucial enabling component within the SE learn-
+ing theory is the skillful scaffolding provided to the child by
+the adult, in this case the parent. The probe deployment sug-
+gests that designing for interdependence between the child
+and the adult as part of the activity seems like a promising
+direction to facilitate a part of such parental scaffolding: sup-
+porting the parent’s active engagement with child’s activity.
+In our case, such interdependence created a shared experi-
+ence for the child and parent that could be then worked with,
+e.g., through the prompts suggested by the activity. While
+the current probe only scratched surface of designing for
+interdependence—through expecting the adult to narrate the
+story—it points to a wide range of opportunities for future
+systems (e.g., using multiple devices to drive a single story).
+The aim of the carefully selected prompts has been to model
+Emotion Coaching-like interaction on part of the parent: ask-
+
+1761
+
+ing for and validating emotional experiences of the child in-
+cluding labelling of emotion, providing support when needed
+(e.g., through the progression of questions), and promoting
+agency and emotional reﬂection on part of the child. The
+analysis of the MTurk videos suggests that this approach
+is promising. We saw that the most engaging and well-
+scaffolded interactions happened when parents and children
+turned away from the screen, building on the shared experi-
+ence provided by the activity to have a dialog with each other.
+In such instances, the parents used the pre-prepared prompts
+as an opportunity to be elaborated on: either by asking the
+child for more detail about their experiences, or by bringing in
+their own agenda (such as strengthening the connections be-
+tween what is learned within the story and real-life use). This
+opens questions around the methods to scaffold the parental
+role in a way that is not too tightly bound to the story/activity
+itself, but rather designed to help the parent to use the story
+and the embedded prompts as examples that can creatively
+appropriated to scaffold interactions ‘outside of the phone’.
+
+Limitations and novel design opportunities
+The series of studies reported here form a ﬁrst important step
+into this design space. We now point to several open ques-
+tions that have not been addressed here and that invite follow-
+up work.
+SEL expert vs. parent perspectives
+The work has been so far focused mainly on understanding
+the SEL expert perspective: starting from identifying chal-
+lenges address-able by technology; to designing a system that
+complements existing curricula and ﬁts with what the SEL
+experts consider to be best-practices in the ﬁeld. This pro-
+vided us with the opportunity to directly work with key ex-
+perts who have many years experience in developing SEL
+curricula used by millions of students and to directly draw
+on the existing SEL literature and theory, which is mostly
+curricula focussed.
+However, such expert-centric approach needs to be comple-
+mented by in-depth participatory research with parents to val-
+idate if and how their perspective matches that of SEL ex-
+perts. In particular, future work should aim to more deeply
+understand the key reasons behind some parents’ existing
+lack of engagement with SEL. The SEL literature—and in-
+terviews with SEL experts and teachers here—would suggest
+that one of the key reasons is the lack of time (and overload
+with school materials). The full issue is however likely to
+be more complex and might depend on cultural background,
+socio-economic status, and multiple other aspects. More thus
+needs to be learned about the existing practices of how fami-
+lies communicate around SEL at home (and with school); the
+underlying parental beliefs and motivation; and the support
+that parents already provide their children around SE skills.
+Drawing on the longitudinal work by Gottman’s et al. [17]
+can be a good starting point to understand what is known
+about parenting in these aspects, but should be complemented
+with established participatory methods within HCI.
+Complex ethical space
+Designing social-emotional learning interventions, whether
+at home or school, form a complex ethical space. By scoping
+
+1762
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+the research as based on SEL experts perspective and curric-
+ula, this paper has side-stepped a number of important ques-
+tions that will need to be critically examined as future work
+in this space emerges. In particular, we should be mindful of
+the possible tensions between expert knowledge and parents’
+approaches to parenting; the distribution of power in the ed-
+ucational space, especially as seen by lower socio-economic
+status families; as well as key discussions about what does
+‘supporting the well-being of children’ mean, for whom, and
+who should make decisions. Existing work in CSCW and
+HCI in similarly complex settings such as healthcare [14] or
+persuasive computing more broadly [46] can serve as starting
+points for examination of these aspects.
+Evaluating learning
+This work has focused on exploring the potential of tech-
+nology to enable important parent-child interactions that are
+needed for social-emotional learning to occur (cf., RQ1-3)
+but are seen as hard to establish at home with existing SEL
+methods. The deployments have, however, not aimed to test
+whether the scaffolded interactions lead to actual learning
+outcomes for the child or the parent.
+Any such evaluation should distinguish between evaluating
+the success of the delivery channel (i.e., has the information
+reached the parents at all and has system scaffolded the rele-
+vant kind of parent-child interactions?); and whether the de-
+livered content was psychologically powerful (i.e., have the
+interactions lead to lasting changes in parents’ or child’s be-
+haviour?). While the former is more easily detectable during
+the deployment (e.g., through the methods used here such as
+logging or recording of interactions), evaluating the psycho-
+logical effects of the interventions require speciﬁc experimen-
+tal methodology that is applicable in-the-wild deployments:
+Quasi-experimental studies or Randomised Controlled Tri-
+als are the most common approaches (cf., [12, 42]). Coyle
+et al. [8] and Slovak and Fitzpatrick [43] recommend a two-
+stage approach to such evaluations, where the initial evalua-
+tion are ran by HCI researchers to establish that the systems
+are likely to lead to positive outcomes, but the needed large
+scale experimental evaluations are progressively led by SEL
+experts.
+Existing SEL literature also provides well-tested indicators
+of SEL interventions outcomes e.g., see [10] or [11, chp.19].
+These include methods such as speciﬁc behavioural tasks,
+questionnaires, real-world indicators such as academic out-
+come or lowered behavioural issues, or established coding
+systems for a detailed analysis of subsequent natural parent-
+child interactions.
+
+CONCLUSIONS
+This paper presents the ﬁrst exploration into the role digital
+technology could play in bridging the home-school barrier in
+the context of SEL curricula. We draw on an interview study
+with SEL experts, representing major SEL curricula providers
+in US, to identify the key challenges in and learning princi-
+ples that need to be supported for SEL reinforcement to take
+place – the reliance on active, experiential learning as well
+as the importance of scaffolding the parents’ scaffolding role.
+Through the design and deployment of a technology probe in
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+two complementing contexts, we gathered a nuanced under-
+standing of how technology-based interventions might reach
+out and engage parents, as well as help them to scaffold learn-
+ing experiences that reinforce their children’s SEL skills at
+home. Overall, our ﬁndings point to the potential of digital
+technology to support parent-child interactions that can rein-
+force social-emotional learning, providing an important ﬁrst
+step for future research in this direction.
+
+ACKNOWLEDGEMENTS
+Blind for review.
+
+REFERENCES
+1. Morgan G Ames, Janet Go, Joseph Joﬁsh Kaye, and
+
+Mirjana Spasojevic. 2010. Making love in the network
+closet: the beneﬁts and work of family videochat. In
+CSCW ’10. ACM Press, 145. DOI:
+http://dx.doi.org/10.1145/1718918.1718946
+
+2. R Bar-On, K Maree, and MJ Elias. 2007. Educating
+
+people to be emotionally intelligent. Greenwood
+Publishing Group.
+
+3. John A. Bargh and S Gardner. 2003. The unconscious
+
+mind. Perspectives on Psychological Science 3, 1
+(2003), 73–79. DOI:
+http://dx.doi.org/10.1038/067150d0
+
+4. Marc A. Brackett, Susan E. Rivers, Maria R. Reyes, and
+Peter Salovey. 2012. Enhancing academic performance
+and social and emotional competence with the RULER
+feeling words curriculum. Learning and Individual
+Differences 22, 2 (April 2012), 218–224. DOI:
+http://dx.doi.org/10.1016/j.lindif.2010.10.002
+
+5. Virginia Braun and Victoria Clarke. 2006. Using
+
+thematic analysis in psychology. Qualitative research in
+psychology 3, 2 (2006), 77—-101.
+http://www.tandfonline.com/doi/abs/10.1191/
+1478088706qp063oa
+
+6. J Bridgeland, M Bruce, and A Hariharan. 2013. The
+
+missing piece: A national teacher survey on how social
+and emotional learning can empower children and
+transform schools. (2013).
+
+7. Xiang Cao, Abigail Sellen, A.J. Bernheim Brush, David
+
+Kirk, Darren Edge, and Xianghua Ding. 2010.
+Understanding family communication across time
+zones. In Proceedings of the 2010 ACM conference on
+Computer supported cooperative work - CSCW ’10.
+ACM Press, New York, New York, USA, 155. DOI:
+http://dx.doi.org/10.1145/1718918.1718947
+
+8. David Coyle, Gavin Doherty, Mark Matthews, and John
+
+Sharry. 2007. Computers in talk-based mental health
+interventions. Interacting with Computers 19, 4 (July
+2007), 545–562. DOI:
+http://dx.doi.org/10.1016/j.intcom.2007.02.001
+
+9. Allison Druin. 2009. Mobile Technology for Children.
+
+Elsevier.
+
+10. Angela L Duckworth and David Scott Yeager. 2015.
+Measurement Matters: Assessing Personal Qualities
+Other Than Cognitive Ability for Educational Purposes.
+Educational Researcher 44, 4 (2015), 237–251. DOI:
+http://dx.doi.org/10.3102/0013189X15584327
+11. Joseph A Durlak, Celene E Domitrovich, Roger P.
+
+Weissberg, and Thomas P Gullota (Eds.). 2015.
+Handbook of Social and Emotional Learning: Research
+and Practice. Guilford Publications.
+
+12. Joseph A Durlak, Roger P Weissberg, Allison B
+
+Dymnicki, Rebecca D Taylor, and Kriston B
+Schellinger. 2011. The impact of enhancing students’
+social and emotional learning: a meta-analysis of
+school-based universal interventions. Child development
+82, 1 (2011), 405–32. DOI:http:
+//dx.doi.org/10.1111/j.1467-8624.2010.01564.x
+13. Maurice J Elias, Joseph E. Zins, Roger P. Weissberg,
+Karin S. Frey, Mark T. Greenberg, Norris M Haynes,
+Rachael Kessler, Mary E. Schwab-Stone, and Timothy P.
+Shriver (Eds.). 1997. Promoting social and emotional
+learning: Guidelines for Educators. ASCD. 164 pages.
+
+14. Geraldine Fitzpatrick and Gunnar Ellingsen. 2012. A
+Review of 25 Years of CSCW Research in Healthcare:
+Contributions, Challenges and Future Agendas.
+Computer Supported Cooperative Work (CSCW) (June
+2012). DOI:
+http://dx.doi.org/10.1007/s10606-012-9168-0
+
+15. S Follmer and Rt Ballagas. 2012. People in books: using
+
+a FlashCam to become part of an interactive book for
+connected reading. Proceedings of the . . . (2012),
+685–694. DOI:
+http://dx.doi.org/10.1145/2145204.2145309
+
+16. John M Gottman, Lynn Fainsilber Katz, and Carole
+
+Hooven. 1996. Parental meta-emotion philosophy and
+the emotional life of families: Theoretical models and
+preliminary data. Journal of Family Psychology 10, 3
+(1996), 243.
+
+17. John Mordechai Gottman, Lynn Fainsilber Katz, and
+Carole Hooven. 1997. Meta-emotion: How families
+communicate emotionally. Psychology Press.
+
+18. Mark T Greenberg. 2006. Promoting resilience in
+
+children and youth: preventive interventions and their
+interface with neuroscience. Annals of the New York
+Academy of Sciences 1094 (Dec. 2006), 139–50. DOI:
+http://dx.doi.org/10.1196/annals.1376.013
+
+19. Mark T. Greenberg. 2010. Schoolbased prevention:
+
+current status and future challenges. Effective Education
+2, 1 (March 2010), 27–52. DOI:
+http://dx.doi.org/10.1080/19415531003616862
+
+20. Hwajung Hong, Jennifer G. Kim, Gregory D. Abowd,
+
+and Rosa I. Arriaga. 2012. Designing a social network to
+support the independence of young adults with autism.
+In CSCW ’12. ACM Press, New York, New York, USA,
+627. http:
+//dl.acm.org/citation.cfm?id=2145204.2145300
+
+1763
+
+21. Seth E. Hunter, Pattie Maes, Anthony Tang, Kori M.
+
+Inkpen, and Susan M. Hessey. 2014. WaaZam!
+Supporting Creative Play at a Distance in Customized
+Video Environments. In Proceedings of the 32nd annual
+ACM conference on Human factors in computing
+systems - CHI ’14. ACM Press, New York, New York,
+USA, 1197–1206. DOI:
+http://dx.doi.org/10.1145/2556288.2557382
+
+22. Hilary Hutchinson, Heiko Hansen, Nicolas Roussel,
+Bj¨orn Eiderb¨ack, Wendy Mackay, Bosse Westerlund,
+Benjamin B Bederson, Allison Druin, Catherine
+Plaisant, Michel Beaudouin-Lafon, St´ephane Conversy,
+and Helen Evans. 2003. Technology probes: inspiring
+design for and with families. In CHI ’03. ACM Press,
+New York, New York, USA, 17—-24. DOI:
+http://dx.doi.org/10.1145/642611.642616
+
+23. Stephanie M Jones and Suzanne M Bouffard. 2012.
+
+Social and Emotional Learning in Schools: From
+Programs to Strategies. Social Policy Report. Volume
+26, Number 4. Society for Research in Child
+Development (2012).
+
+24. C.-M. Kam, M. T. Greenberg, and C. A. Kusche. 2004.
+
+Sustained Effects of the PATHS Curriculum on the
+Social and Psychological Adjustment of Children in
+Special Education. Journal of Emotional and Behavioral
+Disorders 12, 2 (Jan. 2004), 66–78. DOI:
+http://dx.doi.org/10.1177/10634266040120020101
+
+25. Lynn Fainsilber Katz, Ashley C. Maliken, and Nicole M.
+
+Stettler. 2012. Parental Meta-Emotion Philosophy: A
+Review of Research and Theoretical Framework. Child
+Development Perspectives 6, 4 (2012), 417–422. DOI:
+http:
+//dx.doi.org/10.1111/j.1750-8606.2012.00244.x
+
+26. Julie A Kientz, Matthew S Goodwin, Gillian R Hayes,
+and Gregory D Abowd. 2013. Interactive Technologies
+for Autism. Synthesis Lectures on Assistive,
+Rehabilitative, and Health-Preserving Technologies 2, 2
+(2013), 1–177.
+
+27. Hendrik Knoche, Niklas Ammitzbøll Rasmussen,
+
+Kasper Boldreel, Joachim Lykke Østergaard Olesen, and
+Anders Etzerodt Salling Pedersen. 2014. Do interactions
+speak louder than words?: Dialogic Reading of an
+Interactive Tabletbased Ebook with Children between 16
+Months and Three Years of Age. In IDC ’14. 285–288.
+DOI:http://dx.doi.org/10.1145/2593968.2610473
+
+28. David A Kolb. 2014. Experiential learning: Experience
+
+as the source of learning and development. Pearson
+Education.
+
+29. Cathy Lewin and Rosemary Luckin. 2010. Technology
+
+to support parental engagement in elementary education:
+Lessons learned from the UK. Computers & Education
+54, 3 (April 2010), 749–758. DOI:
+http://dx.doi.org/10.1016/j.compedu.2009.08.010
+
+1764
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+30. Rosemary Luckin. 2008. The learner centric ecology of
+resources: A framework for using technology to scaffold
+learning. Computers & Education 50, 2 (Feb. 2008),
+449–462. DOI:
+http://dx.doi.org/10.1016/j.compedu.2007.09.018
+
+31. Kurt Luther, Jari-lee Tolentino, Wei Wu, Amy Pavel,
+Brian P Bailey, Maneesh Agrawala, Bj¨orn Hartmann,
+and Steven P Dow. 2015. Structuring, Aggregating, and
+Evaluating Crowdsourced Design Critique. In CSCW
+’15. 473–485. DOI:
+http://dx.doi.org/10.1145/2675133.2675283
+
+32. Xiaojuan Ma, Li Yu, Jodi L. Forlizzi, and Steven P.
+Dow. 2015. Exiting the Design Studio: Leveraging
+Online Participants for Early-Stage Design Feedback. In
+CSCW ’15. 676–685. DOI:
+http://dx.doi.org/10.1145/2675133.2675174
+
+33. Gabriele Paolacci and Jesse Chandler. 2014. Inside the
+Turk: Understanding Mechanical Turk as a Participant
+Pool. Current Directions in Psychological Science 23, 3
+(2014), 184–188. DOI:
+http://dx.doi.org/10.1177/0963721414531598
+34. Evanthia N Patrikakou, Roger P. Weissberg, Sam
+Redding, and Herbert J. Wahlberg (Eds.). 2005.
+School-family partnerships for children’s success.
+Teachers College Press.
+
+35. J. Payton, R.P. Weissberg, J.A. Durlak, A.B. Dymnicki,
+
+R.D. Taylor, K.B. Schellinger, and M. Pachan. 2008.
+The Positive Impact of Social and Emotional Learning
+for Kindergarten to Eighth-Grade Students – Findings
+from Three Scientiﬁ c Reviews. Technical Report.
+Collaborative for Academic, Social, and Emotional
+Learning, Chicago.
+
+36. Eyal Peer, Joachim Vosgerau, and Alessandro Acquisti.
+
+2013. Reputation as a sufﬁcient condition for data
+quality on Amazon Mechanical Turk. Behavior research
+methods (2013), 1023–1031. DOI:
+http://dx.doi.org/10.3758/s13428-013-0434-y
+37. Laura Pina, Kael Rowan, Asta Roseway, Paul Johns,
+Gillian R Hayes, and Mary Czerwinski. 2014. In Situ
+Cues for ADHD Parenting Strategies Using Mobile
+Technology. In Pervasive Health ’14.
+
+38. Hayes Rafﬂe, Mirjana Spasojevic, Rafael Ballagas,
+
+Glenda Revelle, Hiroshi Horii, Sean Follmer, Janet Go,
+Emily Reardon, Koichi Mori, and Joseph Kaye. 2010.
+Family story play: reading with young children (and
+elmo) over a distance. In CHI ’10. ACM Press, 1583.
+DOI:http://dx.doi.org/10.1145/1753326.1753563
+39. Sathiyaprakash Ramdoss, Wendy Machalicek, Mandy
+
+Rispoli, Austin Mulloy, Russell Lang, and Mark
+O’Reilly. 2012. Computer-based interventions to
+improve social and emotional skills in individuals with
+autism spectrum disorders: {A} systematic review.
+Developmental Neurorehabilitation 15, 2 (2012),
+119–135. DOI:
+http://dx.doi.org/10.3109/17518423.2011.651655
+
+emerging mental health problems: proximal impact on
+school behavior. Journal of abnormal child psychology
+38, 5 (July 2010), 707–20. DOI:
+http://dx.doi.org/10.1007/s10802-010-9398-x
+
+52. Lu Xiao and Jennifer Martin. 2012. Supporting
+
+parent-young child activities with interactive tabletops: a
+conceptual analysis. In CSCW’12 Companion. 301–310.
+DOI:http://dx.doi.org/10.1145/2141512.2141606
+
+53. Svetlana Yarosh, Hilary Davis, Paulina Modlitba,
+
+Mikael Skov, and Frank Vetere. 2009. Mobile
+technologies for parent/child relationships. Elsevier,
+Amsterdam.
+
+54. Svetlana Yarosh, Kori M Inkpen, and A.J. Bernheim
+Brush. 2010. Video playdate: toward free play across
+distance. In CHI ’10. ACM Press, New York, New York,
+USA, 1251–1260. DOI:
+http://dx.doi.org/10.1145/1753326.1753514
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+40. Herman Saksono, Ashwini Ranade, Geeta Kamarthi,
+
+Carmen Castaneda-Sceppa, Jessica A Hoffman, Cathy
+Wirth, and Andrea G Parker. 2015. Spaceship Launch:
+Designing a Collaborative Exergame for Families. In
+CSCW ’15. 1776–1787. DOI:
+http://dx.doi.org/10.1145/2675133.2675159
+
+41. Donald A Sch¨on. 1983. The reﬂective practitioner: How
+
+professionals think in action. Vol. 5126. Basic books.
+
+42. William R Shadish, Thomas D Cook, and
+
+Donald Thomas Campbell. 2002. Experimental and
+quasi-experimental designs for generalized causal
+inference. Houghton Mifﬂin Boston.
+
+43. Petr Slov´ak and Geraldine Fitzpatrick. 2015. Teaching
+
+and developing social and emotional skills with
+technology. ACM Transactions on Computer-Human
+Interaction (TOCHI) 22, 4 (2015), 19.
+
+44. Petr Slov´ak, Ran Gilad-Bachrach, and Geraldine
+
+Fitzpatrick. 2015. Designing Social and Emotional
+Skills Training. In CHI ’15. 2797–2800. DOI:
+http://dx.doi.org/10.1145/2702123.2702385
+
+45. Larry R Squire, Barbara Knowlton, and Gail Musen.
+
+1993. The structure and organization of memory.
+Annual review of psychology 44, 1 (1993), 453–495.
+
+46. Peter-Paul Verbeek. 2006. Persuasive Technology and
+Moral Responsibility Toward an ethical framework for
+persuasive technologies. Persuasive 6 (2006), 1–15.
+
+47. K. Weare and M. Nind. 2011. Mental health promotion
+
+and problem prevention in schools: what does the
+evidence say? Health Promotion International 26, S1
+(Nov. 2011), i29–i69. DOI:
+http://dx.doi.org/10.1093/heapro/dar075
+
+48. Carolyn Webster-Stratton and M Jamila Reid. 2004.
+Strengthening Social and Emotional Competence in
+Young Children-The Foundation for Early School
+Readiness and Success: Incredible Years Classroom
+Social Skills and Problem-Solving Curriculum. Infants
+& Young Children: 17, 2 (2004), 96–113.
+
+49. C Webster-Stratton and T Taylor. 2001. Nipping early
+
+risk factors in the bud: preventing substance abuse,
+delinquency, and violence in adolescence through
+interventions targeted at young children (0-8 years).
+Prevention science : the ofﬁcial journal of the Society
+for Prevention Research 2, 3 (2001), 165–192. DOI:
+http://dx.doi.org/10.1023/A:1011510923900
+
+50. Beverly J. Wilson, Holly Petaja, Jenna Yun, Kathleen
+
+King, Jessica Berg, Lindsey Kremmel, and Diana Cook.
+2010. Parental Emotion Coaching: Associations With
+Self-Regulation in Aggressive/Rejected and Low
+Aggressive/Popular Children. Child & Family Behavior
+Therapy 36, 2 (2010), 81–106. DOI:http://dx.doi.
+org/10.1111/j.1467-985X.2009.00585.x.Analyzing
+51. Peter a Wyman, Wendi Cross, C Hendricks Brown, Qin
+
+Yu, Xin Tu, and Shirley Eberly. 2010. Intervention to
+strengthen emotional self-regulation in children with
+
+1765
+
+

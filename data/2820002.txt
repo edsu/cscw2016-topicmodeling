@@ -1,0 +1,1818 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+The Collaborative work of Hospital Porters: Accountability, 
+
+Visibility and Configurations of Work 
+
+Claus Bossen 
+
+Aarhus University 
+
+8200N Aarhus, Denmark 
+clausbossen@dac.au.dk 
+
+ABSTRACT 
+In this paper, we describe the collaborative work of hospital 
+porters.  The  profession  of  hospital  porters  is  understudied 
+in  sociology  and  in  Computer  Supported  Cooperative 
+Work,  despite  numerous  studies  of  healthcare  IT.  We 
+describe  how  a  new  IT  system  for  hospital  logistics 
+provided porters with more influence on, and responsibility 
+for  their  work;  supported  collaboration  among  porters, 
+clinicians,  and  middle  management;  and  effected  a  new 
+ecology  of  visibility  and  accountability  of  porters’  work. 
+We discuss how the new system simultaneously supported 
+collaboration and generated representations and accounts of 
+porters’ work. We compare the particular work arrangement 
+in this study with other studies of porters’ work, show the 
+widely different configurations of how IT and work can be 
+organized, and argue for the benefit of making comparative 
+studies within CSCW. Finally, we argue for moving beyond 
+dualisms of coordination and accountability for work.   
+Author Keywords 
+Accountability;  cooperative  work;  CSCW;  healthcare  IT; 
+hospital  orderlies;  hospital  porters;  hospital  logistics;  task 
+management; visibility. 
+ACM Classification Keywords 
+H.5.m. 
+Miscellaneous. 
+INTRODUCTION 
+In the last decades, huge investments have been made in the 
+design, development, and introduction of IT for healthcare. 
+Much attention has been given to electronic patient records 
+(EPR)  in  an  effort  to  increase  the  quality  of  care,  support 
+coordination of healthcare services, and cooperation across 
+settings [8, 10]. However, efforts have also been invested in 
+supporting  cooperation  and  awareness  on  wards,  through 
+large,  shared  whiteboards  [5,  55];  supporting  coordination 
+across departments [4, 25]; and in supporting team work in 
+
+presentation: 
+
+Information 
+
+interfaces 
+
+and 
+
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work 
+for  personal  or  classroom  use  is  granted  without  fee  provided  that 
+copies are not made or distributed for profit or commercial advantage and 
+that  copies  bear  this  notice  and  the  full  citation  on  the  first  page. 
+Copyrights  for  components  of  this  work  owned  by  others  than  the 
+author(s)  must  be  honored.  Abstracting  with  credit  is  permitted.  To 
+copy  otherwise,  or  republish,  to  post  on  servers  or  to  redistribute 
+permission  and/or  a  fee.  Request 
+to 
+permissions from Permissions@acm.org.
+CSCW  '16,  February  27-March  02,  2016,  San  Francisco,  CA, 
+USA 
+Copyright  is  held  by the  owner/author(s).  Publication  rights  licensed 
+to  ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2820002 
+
+lists,  requires  prior  specific 
+
+965
+
+Martin Foss 
+Systematic A/S 
+
+8000 Aarhus, Denmark 
+mfo@systematic.com 
+
+emergency departments [9, 32] (for an overview of this in 
+CSCW  see  [21]).  However,  despite  these  diverse  efforts, 
+the primary focus of investments and in research has been 
+on  the  two  largest  and  most  prominent  professions: 
+physicians  and  nurses.  Non-clinicians  in  healthcare  have 
+received little attention, but this will most likely change, as 
+the digitization of healthcare develops in depth and scope. 
+Here, CSCW  may contribute to the adequate development 
+of IT and transformation of non-clinicians’ work.  
+In  this  paper,  we  describe  the  work  of  hospital  porters,  a 
+low-wage  profession  at  the  lowest  end  of  the  hospital 
+hierarchy. Porters have received little attention in academia 
+and  in  strategies  for  IT  in  healthcare.  Based  on  the 
+implementation of an IT system to support hospital logistics 
+by  tracking  artifacts,  equipment,  expensive  medicine, 
+transports, and hospital porters, we describe the changes in 
+the  collaborative  work  of  hospital  porters,  and  the  new 
+possibilities and challenges that arose. The new IT system 
+enabled  better  coordination  of  porters’  work,  provided 
+porters  with  more  influence  on  their  everyday  work,  and 
+made porters, as  well as their tasks, visible and subject to 
+new  forms  of  accountability.  Hence,  the  system  both 
+supported  cooperation  and  functioned  as  an  accountability 
+system.  We  discuss  the  asymmetrical  visibilities  and 
+accountabilities that the new system affected, and point out 
+the possible ways in which porters’ collaborative work may 
+develop,  depending  on  how  IT  has  been  designed, 
+implemented, and appropriated. We argue that IT and work 
+can  be  configured  in  widely  different  ways  by  comparing 
+this case with other studies of porters’ work, and argue for 
+the  benefit  of  comparative  studies.  Finally,  we  argue  for 
+moving  beyond 
+the  dualism  of  coordination  and 
+accountability, since these are interrelated and can generate 
+various outcomes. 
+RELATED WORK: HEALTHCARE IT AND PORTERS 
+The  digitization  of  healthcare  gained  momentum  in  the 
+early 1990s, with investments in the development of EPRs, 
+especially  for  physicians  and  nurses,  the  two  largest  and 
+strongest  professions  within  the  domain.  However,  as  the 
+processes  of  digitization  expand  in  scope  and  depth,  they 
+will most likely involve and affect other professions as well 
+[11, 51]. Hospital work is also dependent on a wide range 
+of  non-clinical  professions  when  providing  care  and 
+treatment 
+laboratory 
+assistants,  registration  assistants,  social  workers,  kitchen 
+staff,  and  porters  [47]. If  not  already  digitized,  their  work 
+
+including  medical 
+
+secretaries, 
+
+importance  of  social  workers,  porters, 
+
+will  most  likely  become  so  within  the  coming  years. 
+Presently, there are only few studies describing the work of 
+non-clinical  groups  in  healthcare,  and  there  is  a  dearth  of 
+studies of hospital porters. 
+Non-clinicians have been investigated in a small number of 
+studies within CSCW or related fields. Tang et al. point out 
+the 
+insurance 
+company  representatives,  and  staff  in  hospital  external 
+facilities, for the efficiency of outpatient flow at a hospital’s 
+emergency  department.  They  describe  the  coordination  of 
+patient  outflow  as  primarily  non-clinical,  invisible,  and 
+unsupported by IT [51]. Abraham and  Reddy describe the 
+role of non-clinical staff, and the coordination of intra- and 
+inter-departmental  patient  transfers  [1,  2].  Further,  Bossen 
+et  al.  describe  medical  secretaries’  work,  and  how  it 
+changed  when  an  EPR  was  implemented  [11].  Finally, 
+Murphy  et  al.  point  out  the  importance  of  social  workers, 
+registration assistants, and care coordinators in coordinating 
+patient  care  processes:  However,  the  these  non-clinicians, 
+could  not  edit  incorrect  information  or  send  messages  in 
+their EPR, which led to inefficient care processes [27]. 
+Hospital porters (or orderlies) have received little academic 
+attention  at  all.  Even  a  broad  search  resulted  in  only  13 
+studies  of  relevance  to  this  paper.  These  may  be  put  into 
+three  groups.  Additionally,  12  studies  were  found  that 
+somehow include porters, bringing the total to 25 papers.  
+A  group  of  three  studies  focuses  on  the  life  and  work  of 
+porters  as  a  subject  in  its  own  right.  Saunders  (1979) 
+contrasts  the  public  image  of  porters  as  merely  unskilled, 
+poorly  paid,  and  work-for-money,  with  the  actuality  that 
+they take pride in their work, and see themselves as nurses’ 
+aides,  boosters  of  patient  morale,  and  are  generally 
+concerned  with  care  [40].  Rapport  (2008,  2009)  provides 
+the most in-depth study of porters across all groups. Based 
+on  ten  months  of  anthropological  fieldwork  at  a  Scottish 
+hospital,  he  describes  porters’  negotiation  of  power, 
+invisibility,  and  identity  [36]  [37]:  “Being  a  porter  meant 
+coming  to  terms  with  being  a  nothing,  at  the  base  of  a 
+hospital  hierarchy  topped  by  doctors”  [37:  p59].  Of  note, 
+Strauss et al. (1985), in their classic study of various kinds 
+hospital  work,  also  include  “transport  people,”  who  move 
+patients, dead bodies, equipment, and samples [47: p54-55]. 
+A second group of six studies focuses on making portering 
+services effective, either in cases of hospital reorganization, 
+or quality improvement projects. Dershin and Shaik (1992) 
+engaged  in  a  quality  improvement  project,  re-organized 
+patient  transport,  and  reduced  patient  waiting  times  by 
+introducing  two-way  radio  communication  between  a 
+central  dispatcher  and  porters,  optimizing  staffing,  and 
+reducing  extra  work  due  to  insufficient  information  about 
+the  transports  [17].  Similarly,  Sullivan  and  Fretzel  (1992) 
+focus  on  porter  services  in  the  process  of  arguing  for  a 
+method  for  executing  quality  improvement  projects  [50]. 
+Bryan  (1998)  describes  efforts  to  improve  porter  services 
+after  the  merger  of  two  hospitals,  through  a  computerized 
+
+966
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+staff 
+
+according 
+
+to  demand. 
+
+dispatch  system  and  scheduling  of  recurrent  porter  tasks 
+[15].  Lin  (1999)  developed  a  computer-based  heuristic 
+algorithm for scheduling the monthly roster of porters at a 
+major  hospital  in  Hong  Kong  [26].  Chow-Chu  and  Goh 
+(2000) argue for the importance of portering services to the 
+overall  performance  of  hospitals,  and  pursued  lower 
+response times – for example, from when a request is made, 
+until the porter arrives at the site – by minimizing waiting 
+times  at  elevators,  training  cleaners  as  additional  porter 
+staff  for  peak  periods,  and  pooling  all  porters,  instead 
+assigning them to specific departments [16]. Odegaard et al. 
+(2007)  provide  a  comprehensive  study  of  porters  second 
+only to Rapport’s. Based on a seven-month, mixed-method 
+study,  they  aimed  to  make  portering  services  and  the 
+hospital’s  overall  performance  more  effective,  and 
+two  major  challenges:  communication,  and 
+identified 
+scheduling 
+Inefficient 
+communication  between  dispatcher,  departments,  and 
+porters meant longer dispatch times and pick-up times, and 
+staff scheduling did not adequately take known peak hours 
+into consideration [29] (also see [28]). 
+A third group of three studies focuses on porters’ work and 
+IT.  Xiao  et  al.  (2010)  analyzed  how  “transport  cards” 
+support  formal  and  informal  coordination  of  inpatient 
+transport [54]. Torkilsheyggi and Hertzum (2014) describe 
+the  usefulness  of  pilot  IT  implementations,  and  how  to 
+achieve user participation, based on a trial test of a system 
+for  coordinating  patient  transport  between  nurses  and 
+porters  [52].  Stisen  et  al.  (2014)  investigated  the  potential 
+of  wearable  devices  for  porters  migrating  to  an  electronic 
+dispatch and positioning system [46].  
+A  final  pool  of  twelve  studies  that  address  porters  covers 
+various  subjects:  five  studies  address  ergonomics  and  the 
+physical  strain  of  porters’  work;  four  papers  address 
+differences  among  healthcare  professions,  such  as  life 
+expectancy  and  smoking  habits;  two  studies  of  porters’ 
+roles  in  during  war  time,  and  in  Papua  New  Guinea 
+hospitals; and a book chapter on low-wage jobs in the UK, 
+including  care  assistants,  cleaners,  and  porters  (interested 
+readers may obtain references from the first author).  
+Finally,  it  should  be  mentioned  that  patient  transport  and 
+flow  have  been 
+through  an  engineering 
+approach, applying queuing models, simulation, and patient 
+flow  project  management  tools.  However,  these  have  a 
+predominantly  operations  management  perspective,  and 
+rarely if ever mention porters or their work (See e.g. [23]). 
+In  summary,  porters  are  at  the  lowest  end  of  the  hospital 
+hierarchy,  and  are  relatively  invisible  there,  and  in  the 
+research. They mainly receive attention in connection with 
+projects  on  quality 
+improvement  or  organizational 
+efficiency,  and  few  studies  display  more  than  a  passing 
+interest in porters’ work per se [29, 37, 40, 52, 54]. Thus, as 
+digitization of healthcare expands in scope and depth, there 
+is a need to study hospital porters from a cooperative work 
+perspective. 
+
+investigated 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+THEORY 
+The  analysis  in  this  paper  is  informed  by  the  strand  of 
+symbolic interactionism focusing on work [45, 48], and its 
+further development within healthcare [47] and CSCW [44, 
+42, 41]. One of the central aims of symbolic interactionism 
+is to make visible the effort that goes into the interactions 
+among  actors,  which  tends  to  be  overlooked  or  rendered 
+insignificant by rationalistic accounts of action [48: chpt 1]. 
+Hence,  rather  than  assuming  that  cooperation  takes  place, 
+the aim is to make visible how cooperation is achieved by 
+actors’  monitoring,  reflection  on,  and  alignment  of  their 
+actions,  depending  on  whether 
+the  accumulation  of 
+interactions  points  to  desired  goals  [ibid].  We  briefly 
+outline some of the central concepts of our analysis. 
+Since cooperation is an achievement, an initial focus is on 
+how  individual  actors’  stances  and  acts  are  aligned  to 
+contribute  to  the  cooperative  goals.  Then,  efforts  at 
+articulation  work  may  be  made  to  coordinate  tasks  and 
+subtasks, which actors to involve and when, equipment, and 
+so on. Alignment and articulation work is often reduced, as 
+routines,  divisions  of  work,  and  standard  operating 
+procedures (SOP) emerge, and will often be minimal – and 
+hence  unnoticed  –  as  long  as  interactions  develop  along 
+recurrent  patterns  and  trajectories.  Articulation  work  may 
+be invested in working out arrangements that agree on who 
+does  what,  when,  by  which  means,  according  to  which 
+standards,  and  so  on.  [48]  [47].  SOPs  and  arrangements 
+may  be  inscribed  as  protocols  for  action  on  different 
+materials,  such  as  paper  or  IT  systems,  or  artifacts,  and 
+hence  as  coordination  mechanisms,  achieve  a  more  stable 
+existence  over  time  and  space  [41:  p165-166].  While 
+coordination mechanisms may be understood more broadly 
+as  any  material  or  immaterial  way  of  coordinating  work 
+(e.g.  [30]),  here  we  employ  it  in  the  above  more  specific 
+sense  as  a  combination  of  a  protocol  and  an  artifact.  An 
+important factor in the ongoing alignment and coordination 
+of work is awareness, with which actors display their own 
+acts and monitor others’ acts, and thus recursively adjust to 
+how work processes unfold [24, 44]. 
+Since  cooperative  work  is  most  often  distributed,  the 
+challenges  of  coordination  and  communication  are  greatly 
+augmented. Aligning and articulating work and arriving at 
+and keeping up arrangements are more cumbersome  when 
+not  done  collocated,  and  the  need  for  communication  and 
+stabilization  of  routines  and  arrangements  is  stronger,  and 
+most  often  solved  through  coordination  mechanism.  This 
+pertains  both  to  being  aware  of  the  status  of  the  overall 
+cooperative arrangement – the group of cooperating actors 
+as constituted by their interdependent activities – as well as 
+the  common  field  of  work  –  the  interconnected  processes, 
+objects, and actors with which the cooperative arrangement 
+interacts [42: p20]. 
+Discovering, describing, analyzing, and making cooperative 
+work  visible  are  central  to  the  design  and  development  of 
+IT  systems,  since  otherwise,  these  are  in  danger  of 
+
+967
+
+is 
+
+hindering,  rather  than  supporting  work,  or  becoming 
+outright obsolete (e.g. [14]). However, making work visible 
+entails  challenges.  What  work  is  visible  (or  not),  and 
+whether  this  is  beneficial  or  detrimental,  depends  on 
+context,  and  is  constantly  negotiated.  Star  and  Strauss 
+propose  four  ways  in  which  work  may  be  invisible:  by 
+creating  non-persons  who  are  not  noticed  (e.g.  domestic 
+work);  dis-embedding  background  work  (e.g.  nurses’  and 
+secretaries’  work,  which 
+taken  for  granted,  and 
+unnoticed);  going  backstage  (e.g.  dish-washing;  janitorial 
+work);  and  abstraction  and  indicator  manipulation  (e.g. 
+visualizing  work  through  graphs  and  tables)  [45].  Being 
+invisible in these ways is usually not an advantage for the 
+actors with respect to status, salary, or rights. On the other 
+hand, keeping work invisible may be a privilege that many 
+managers  and  people  in  high  positions  maintain.  Making 
+work visible may entail having to account for one’s actions 
+according  to  other  peoples’  standards:  hence,  neither  the 
+CEO, nor the janitor may be happy to let the other look at 
+their  work  schedules.  As  Star  and  Strauss  caution: 
+“…forced  representation  of  work  (especially  that  which 
+results  in  computer  support)  may  kill  the  very  processes 
+which  are  the  target  of  support,  by  destroying  naturally 
+occurring information exchange, stories, and networks” [45: 
+p24]. Since CSCW systems are often also “technologies of 
+accountability”  that  represent  and  produce  accounts  of 
+work, while at the same time enabling and supporting that 
+work,  the  negotiation  of  (in)visibility  is  often  a  central 
+concern,  and  usually  within  the  context  of  asymmetric 
+power relations [14, 49]. 
+Generalizations  should  be  made  cautiously,  but  from  the 
+above  section  on  related  work,  it  seems  that  porters  are 
+invisible in several ways. They are not noticed, and become 
+“non-persons”:  Rapport 
+fieldwork 
+experience with “Being a porter meant dealing with being a 
+nothing” [37: p57]. Porters also seem subject to processes 
+of  “dis-embedding  background  work,”  since  they  mainly 
+become visible in cases of “breaching situations,” where the 
+normal  hospital  processes  break  down,  or  are  inefficient: 
+quality improvement projects [16, 17, 50]; hospital mergers 
+[15], restructuring [16]; inefficient use of costly equipment, 
+such as that in operating rooms, and CT and MR scanners 
+[29]; and negative feedback from other departments }[50]. 
+Finally, porters’ work is presented through abstraction and 
+indicators,  since  central  factors  of  these  quality  and 
+efficiency projects are performance measures and statistics 
+through  which  porters’  work 
+is  planned  and  made 
+accountable to managers [15, 17, 26, 29, 50]. However, as 
+we  argue,  much  depends  on  the  actual  ecology  of 
+(in)visibility and its asymmetries, which again depends on 
+the way IT is designed and introduced, and on how work is 
+reorganized.  
+SETTING AND METHODS 
+To become a porter in Denmark, one must pass a six-week 
+course  and  work  in  that  capacity  for  eight  months,  at  the 
+end  of  which  one  must  complete  a  20-day  theory  course. 
+
+summarized  his 
+
+However, the position of “hospital porter” is being revised, 
+since  some  hospitals  merge  it  with  that  of  “cleaning 
+assistant,”  for  a  newer  position  of  “hospital  service 
+assistant,”  which  includes  cleaning,  as  well  as  portering 
+services.  This  has  met  with  some  resistance,  since  most 
+porters are men, some of whom do not want to clean, and 
+most  cleaners  are  women,  some  of  whom  find  some 
+porters’ tasks too physically demanding [20]. 
+The  university  hospital  where  the  current  study  was 
+conducted  has  approximately  6,500  employees,  950  beds, 
+and  treats  more  than  550,000  outpatients  per  year.  It 
+consists  of  five  geographically  distributed  sections,  of 
+which the research site – Section South – is the largest. The 
+logistics  department 
+includes  several  units:  one  for 
+sterilizing equipment, Internal Mail, The Chapel, and Porter 
+Central.  This  last  employs  114  porters,  of  which  4  are 
+women, and a (male) dispatcher who takes care of the daily 
+coordination of tasks, porters, and work schedules. 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+TMS aims to make scheduling, coordination, and execution 
+of tasks visible to both porters and clinicians. Clinicians can 
+request  and  prioritize  porter  tasks,  and  enter  written 
+comments, for instance, “Bring lift.” They can also follow 
+the status of tasks (pending, booked, started) in a web-based 
+desktop  application  available  at  the  wards.  At  their  end, 
+porters can view and assign themselves the incoming tasks 
+via smartphones. They can also keep themselves updated on 
+colleagues’ tasks and locations, in order to coordinate work, 
+since  TMS  tracks  their  positions  in  real-time  via  Wi-FI. 
+Moreover,  a  large,  widescreen  display  in  the  porters’ 
+common room shows an overview of all current tasks and 
+their  statuses,  as  well  as  of  porters’  availability  and 
+locations.  Thus,  an  overview  of  the  total  workload  is 
+provided to porters and the dispatcher. 
+TMS  has  been  running  as  a  pilot  project  at  Section  South 
+since February 2013. During this test phase, the IT vendor 
+developed new features, trying to elicit as much feedback as 
+possible before introducing the system at other hospitals.  
+
+Figure 1. Aerial photo of Section South 
+
+the  central  elevator 
+
+The  Porter  Central  is  located  in  the  heart  of  the  main 
+building  on  the  1st floor, providing  easy  access  to  the 
+basement  corridors  and 
+tower 
+connecting  the  wards  on  10  different  floors.  However, 
+renovations  and  the  addition  of  new  buildings  pose  new 
+challenges  to  the  internal  logistics.  Until  last  year,  porters 
+worked  in  six  teams  allocated  to  specific  departments, 
+which have been pooled, and now cover the whole hospital. 
+The  logistics  department  has  considered,  but  not  yet 
+implemented, the position of “hospital service assistant.” 
+The Task Management System 
+The Task Management System (TMS), newly developed by 
+an  IT  vendor,  is  a  scheduling  system  that  aims  to  address 
+the  challenges  of  coordinating  and  streamlining  porter 
+tasks.  Before  TMS,  clinicians  at  the  hospital  phoned  in 
+tasks to the dispatcher, who then contacted porters by radio 
+or  by  telephone.  A  recurrent  problem  with  information 
+being  passed  on  verbally  was  frequent  misunderstandings 
+between dispatcher, porters, and clinicians. Also, tasks were 
+not  always  given  to  the  closest,  but  to  the  first  available 
+porter.  Combined  with  a  constant,  incoming  stream  of 
+planned  and  ad-hoc 
+inefficient 
+workflow,  long  waiting  times,  and  at  worst,  cancelled 
+treatments and surgeries. 
+
+tasks, 
+
+this  meant  an 
+
+ 
+Figure 2. Task list on porter’s smartphone (left); task-request 
+
+interface for clinical staff (right) (translated into English) 
+
+Data collection and processing 
+Data  for  this  study  was  generated  in  two  phases  by  the 
+second  author.  In  the  first  phase,  the  second  author  took 
+part in the pilot project at Section South for six months as 
+UX  designer  for  the  IT  vendor.  This  involved  visits  to 
+wards,  usability  tests  with  porters  and  clinicians,  and 
+meetings  with  the  dispatcher  and  the  logistics  managers. 
+The  detailed  knowledge  gained  during 
+this  period, 
+regarding  TMS,  the  organization  of  porters’  work,  and 
+South Section, informed the next phase. 
+In  the  second  phase,  the  second  author  was  no  longer 
+affiliated  with  the  IT  vendor,  and  conducted  university-
+based,  three-stage  ethnographic  fieldwork  over  a  three-
+month  period.  First,  23  hours  of  focused  participatory 
+observation with nine different porters was conducted over 
+five different days (varying among day, evening, and night 
+shifts). Comprehensive and detailed field notes were taken 
+during  or 
+shortly  after  each  observation.  During 
+observation, the second author wore a porter’s uniform, had 
+a smartphone running the TMS, and participated in porters’ 
+work.  Second,  five  different  meetings  were  held  with 
+clinicians  and  mid-level-managers,  with  a  common  focus 
+on sharing experience of the  use of TMS to handle porter 
+
+968
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the 
+
+tasks.  The  meetings  were  arranged  by 
+logistics 
+managers,  and  the  participants  were  internal  hospital  staff 
+from various wards using the TMS. The second author was 
+invited to participate because of his knowledge of the UX 
+design of TMS, and as part of his research. Third, 12 open-
+ended  interviews  were  conducted  with  porters,  clinicians, 
+the dispatcher, a union representative, and the managers of 
+the  logistics  department  (shortest  29  min;  longest  53  min; 
+average  36  min).  The 
+interviews  supplemented  and 
+followed up on the findings from the observation and five 
+meetings.  All  meetings  and  interviews  were  recorded  and 
+transcribed verbatim, and total 16 hours. 
+The second author’s dual role – as first a UX designer and 
+then  academic  researcher  –  did  provide  a  strong  basis  for 
+the data collection, but at the same time entailed a certain 
+ambiguity  of  his  roles  at  the  site.  Sometimes,  it  was 
+necessary  to  explicitly  clarify  this  role  and  the  interest  in 
+being  in  the  field  in  order  to  clarify  confusions  or 
+presumptions: 
+Back  in  common  room  two  porters  who  I  previously  followed 
+around the hospital during observations ask me why exactly I’m 
+interested  in  hospital  porters?  They  previously  saw  me  chatting 
+with the Head of Logistics and they might be unclear and a little 
+sceptic  about  my  intentions.  I  pointed  out  that  my  presence  had 
+nothing to do with them being measured or monitored, but strictly 
+had a research purpose. (Field note, November 2014) 
+It is possible that the dual roles led to porters, management 
+or  the  IT  vendor  to  provide  partial  or  biased  information, 
+but  no  such  explicit  situations  were  discovered.  Moving 
+between  different  context,  the  second  author  keen  to  act 
+responsibly  and  not  disclose  information  that  might  be 
+sensitive. Further, in analysing the data effort was made to 
+include  all  perspectives  gathered  and  be  aware  of  the 
+various perspectives that data reflected. 
+
+Figure 3. Porters and dispatcher looking at the large screen 
+
+display in the common room 
+
+ 
+
+The data underwent a preliminary processing and meaning 
+condensation to explore the generated data and its analytical 
+potential.  Subsequently,  the  data  was  analyzed  with  the 
+purpose  of  identifying  common  thematic  characteristics. 
+After  thematizing  the  data,  a  more  categorical  process  of 
+coding  and  quantifying  the  findings  were  conducted,  to 
+narrow down categories, and to help set the scope of further 
+analysis.  This 
+thematic  codes: 
+
+resulted 
+
+in 
+
+seven 
+
+situational 
+
+organizational  change,  task  prioritization,  coordination  of 
+work, 
+environment, 
+surveillance,  and  business  intelligence.  Subsequently,  the 
+analyzed  data  was  worked  into  the  analysis  presented 
+below, sensitized by the theories presented above. 
+
+overview,  working 
+
+ 
+
+ Figure 4. The hospital porters’ common room. The text says 
+
+“Co-responsibility for seamless patient progress” 
+
+THE COLLABORATIVE WORK OF HOSPITAL PORTERS 
+Since  porters’  work  is  inherently  distributed  and  mobile, 
+communicating  and  coordinating  tasks  is  challenging.  At 
+some hospitals, the work arrangement is based on multiple 
+local teams of porters  who communicate face-to-face  with 
+the  clinicians.  At  other  hospitals,  porters’  work  has  been 
+centralized,  with  a  dispatcher  coordinating  tasks  between 
+clinicians  and  porters  via  pagers  or  phones.  In  the  former 
+case,  cooperation  and  awareness  are  facilitated  by  co-
+location,  whereas  in  the  latter,  a  more  elaborate  work 
+arrangement is required. 
+Tasks, rhythms, spaces, and places 
+Hospital  porters  have  a  variety  of  tasks,  some  of  which 
+involve  patient  contact,  such  as  mobilizing  patients  (e.g. 
+moving  a  patient  from  the  bed  to  a  wheelchair),  patient 
+transportation  in  beds  or  wheelchairs,  and  assisting  other 
+staff in cases of cardiac arrest or other kinds of trauma (e.g. 
+patient  falls  to  the  floor).  Other  tasks  include  transport  of 
+debris,  equipment,  and  beds  to  and  from  departments, 
+examination or operating rooms, and the bed-cleaning unit. 
+Porter tasks inevitably involve moving around, whether the 
+tasks involve mobilizing a patient in one place, or moving a 
+patient  or  equipment  from  one  department  to  another. 
+However, some places are more central to the porters than 
+others.  This  includes  the  Porter  Central  and  the  common 
+room; the bed-cleaning unit and depot; the aids and utilities 
+depot,  conveniently  next  to  the  Emergency  Department, 
+since patients here often need a wheelchair or crutches; the 
+reception  desks  at  departments  where  porters  have  to 
+announce their arrival; the elevator; and the goods lifts that 
+are  accessible  only  with  an  identity  card.  The  latter  two 
+often become bottlenecks that cause delays for porters. 
+Although  some  tasks  are  recurrent  and  planned,  many 
+others are ad hoc. An overall daily rhythm is provided by a 
+morning  meeting  at  7am  on  weekdays,  and  the  day, 
+afternoon  and  night  shifts  (7am-4pm;  4pm-midnight; 
+midnight-7am). During the day shift, most porter tasks are 
+
+969
+
+ad hoc, since the demand arises mainly in connection with 
+patient  care,  examinations,  and  treatments,  as  physicians 
+make their ward rounds and nurses provide care. 
+Although physicians and nurses have their own rhythms in 
+the departments [38] [56], porters work across departments 
+usually  likely  have  different  rhythms,  which  means  that 
+new task requests come without any pattern, except a peak 
+around  noon  (see  Table  1).  Most  tasks  are  typically 
+scheduled  during  the  afternoon  and  night  shifts,  for 
+example, mobilizing (e.g. turning) patients at the intensive 
+care  units  every  4  hours,  to  prevent  bedsores,  or  moving 
+cleaned beds to departments from the bed depot or cleaning 
+unit.  At  all  times,  however,  emergencies  such  as  cardiac 
+arrest may interrupt porters’ tasks. 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+between  porters  in  corridors,  chatting,  and  helping  each 
+other out with locating places and equipment, for example. 
+ 
+Porters also have contact with other professions, most often 
+the nurses who book porter tasks, must be notified when the 
+porter  arrives  to  pick  up  or  deliver  equipment  or  patients, 
+and  sometimes  help  porters  with 
+tasks. 
+Although often cordial, this cooperation is at times strained, 
+when equipment is missing, either because the nurse did not 
+enter it when booking, or because the porter did not read the 
+note. Or, when waiting times for porters lengthen, and slow 
+departments’ processes, which stresses nurses. 
+ 
+
+two-persons 
+
+Table 1. Workload during a representative day
+
+On average, 35 porters take care of approximately 700 tasks 
+every day. Staffing and workload are displayed in Table 1, 
+below, based on data from the TMS from a representative 
+day: 75% of all 726 tasks were handled during the day shift, 
+which is also when most porters are present. 
+Overall,  one  might  think  that  task  unpredictability  would 
+stress porters, but instead, they see this as a motivator: 
+It’s  the  variety  that  work  can  offer.  You  never  know  your  work 
+day.  You  think  you  do, but  you don’t.  It is  different  from day  to 
+day, which I highly appreciate. (Male porter, 48 years) 
+Another motivating factor is the contact with patients: 
+You meet a lot of nice people. Of course, also people in crisis, and 
+then it’s great that you can be there for them, when they need it. 
+And patients actually use us a lot, ‘cause when a doctor arrives 
+there’s  only  time  to  talk  disease,  since  the  doctor’s  time  is 
+expensive. No small talk there. So instead, patients off-load a lot 
+on us, which I actually appreciate hugely. (Male porter, 34 years) 
+Both  statements  align  with  Saunders’  finding  that  “The 
+variety of the work and its people-orientation holds … great 
+attraction  for  many  porters”  [40:  p31].  At  the  same  time, 
+among  the  almost  exclusively  male  porters,  the  tone  is 
+straightforward,  comparable  to  that  of  dock  workers,  but 
+usually confined within the Porter Central. 
+In addition to contact with patients, porters also collaborate 
+with  one  another.  Obviously,  this  is  the  case  with  two-
+person assignments, for example, lifting a bedridden patient 
+when  changing  sheets  or  a  mattress,  or  moving  patients 
+from one bed to another. It also includes random meetings 
+
+970
+
+Figure 5. Two porters wheeling a bed into an elevator 
+
+ 
+
+the 
+
+changes 
+
+associated  with 
+
+Porters’ work arrangements before the TMS 
+To  understand 
+the 
+implementation  of  TMS,  an  outline  of  the  cooperative 
+arrangement of porters’ work before that is in place. Since 
+it only serves to set the new work arrangement in context, 
+and is based on retrospective accounts from interviews, the 
+outline will be brief. 
+Previously,  articulation  and  coordination  of  porter  tasks 
+were  handled  during  the  day  shift  by  a  central  dispatcher, 
+who would receive requests for a porter over the telephone, 
+from  the  departments.  Outside  the  day  shift,  calls  were 
+automatically  forwarded  to  a  phone  chain,  locating  a 
+random porter. 
+In  order  to  coordinate  and  delegate  portering  tasks  we  used  to 
+have  a  dispatcher  who  worked  full  time  answering  calls  from 
+clinical  wards  needing  portering  services.  The  phone  would 
+normally  ring  2-3  times  every  5  minutes  and  the  line  was  often 
+very  busy  during  the  day  shift.  Outside  day  shifts  and  weekends 
+the calls were forwarded to the porters via a phone chain (Head of 
+logistics) 
+Receiving  calls,  the  dispatcher  would  request  necessary 
+information  about  the  task,  such  as  place,  time,  type, 
+necessary  equipment  or  means  of  transport,  and  select  a 
+porter to do the task, based on his knowledge of the location 
+and availability of various porters. To keep an overview, he 
+used  various  artifacts:  a  staff  schedule,  a  task  list,  small 
+blocks with porters’ names on them, notes, and a division of 
+his  desktop  into  two  zones:  one  for  available  porters,  the 
+other  for  porters  on  assignment.  After  receiving  calls,  the 
+dispatcher wrote a task on the task list, and on a note that 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+was then attached to an available porter’s block,  which in 
+turn  was  put  in  the  zone  for  “on  assignment.”  Having 
+completed a task, porters would call back to the dispatcher, 
+who would then remove the note, and move the block to the 
+“available”  zone.  However, 
+this  procedure  was  not 
+followed strictly, and the dispatcher relied to a large extent 
+on  memory  and 
+longstanding  knowledge  of  staff, 
+departments, rhythms, and so on. 
+Even  though  I  have  worked  as  a  porter  here  at  the  hospital  for 
+more than 15 years it was necessary to use this very manual and 
+old-fashioned  system  in  order  to  organize  and  keep  overview  of 
+our workload. (Male Dispatcher, 41 years) 
+The  foregoing  way  of  organizing  porters  meant  that 
+prioritizing  and  assigning  tasks  were  at  the  dispatcher’s 
+discretion,  and  hence  the  articulation  and  coordination  of 
+work opaque to the porters, who did not know the overall 
+workload,  or  whether  or  not  they  were  as  busy  as  their 
+colleagues,  except  when  they  met  during  breaks  in  the 
+common room. Their awareness of the overall cooperative 
+arrangement  and  the  status  of  the  common  field  of  work 
+was limited. 
+
+ 
+
+Figure 6. Dispatcher’s desktop: staff schedule, blocks with 
+
+porters’ names, and task list 
+
+Increased visibility and influence of porters 
+With the implementation of TMS, the work arrangement for 
+the porters’ tasks changed. Departments could now request 
+porter  tasks,  just  as  porters  could  accept  requested  tasks, 
+without the dispatcher as an intermediary. Departments had 
+an overview of all the tasks they had requested, ordered by 
+time  of  booking,  though  critical  tasks  were  at  the  top. 
+Porters  had  a  list  of  all  requested  tasks  on  their  smart 
+phones, also with critical tasks at the top, and the dispatcher 
+would have an overview of all tasks, and the location of all 
+porters and their availability on his office at porter central. 
+For  porters,  TMS  literally  meant  increased  visibility, 
+because their smart phones had a frog croak as the ringtone, 
+which stood out from all other sounds at the departments.  
+Clinicians were curious after we got the system and they heard 
+these small croaks from our pockets, when we were in the 
+departments. It makes it quite clear that we are present. They are 
+used to sounds from equipment in the rooms, but this croaking 
+stands out. (Male Porter, 34 years) 
+This increased visibility was confirmed by a radiographer:  
+
+971
+
+tasks  on 
+
+I experience the porters differently now. They have become more 
+visible out here in the departments (Male Radiographer, 46 years) 
+TMS  also  reduced  the  number  of  misunderstandings  or 
+duplicate  work  for  porters,  since  the  departments  could 
+write requirements for equipment or means of transport into 
+the booking request. A medical secretary said: 
+It is great that the porter knows the task in advance and can see 
+the  patient’s  name,  room  number,  where  the  patient  should  go, 
+and if there are any special needs. It makes it easier for me and 
+the porter when they arrive here. (Medical secretary, bed ward) 
+Similar sentiments were expressed by the porters: 
+It  is  cool  that  they  [the  clinicians]  themselves  note  that  I  must 
+bring a lift sling, a wheelchair, or a lift. Before, when they phoned 
+in, they often f****** forgot to tell us these details, which cost us 
+time.  There  are  fewer  misunderstandings  now.  (Male  Porter,  34 
+years) 
+Another change was that, instead of being assigned tasks by 
+the  dispatcher,  porters  accepted 
+their  own 
+initiative,  based  on  priority,  their  location,  and  a  general 
+overview  of  booked  tasks  and  colleagues’  availability  and 
+locations.  They  could  actively  use  their  judgment  and 
+knowledge  of  how  to  best  coordinate  their  tasks,  and 
+contribute  to  the  overall  work  processes.  They  gained 
+influence on, and responsibility for their work. 
+Previously, we would call the dispatcher when we had completed 
+a task, and he sat with all the tasks on a piece of paper and sent us 
+out.  He  assessed  which  task  had  highest  priority,  or  what  was 
+closest.  We  did  not  have  any  influence  on  that.  With  the  new 
+system, I feel it’s less hectic. I know what I am doing now, what 
+the  next  task  will  be,  and  I  can  better  plan  two  to  three  tasks 
+ahead. It has become more independent. (Male Porter, 48 years) 
+Increased awareness 
+TMS also meant changes to the awareness actors had of the 
+cooperative arrangement as well as of the common field of 
+work, since actions of clinicians and porters regarding tasks 
+could  be  displayed  to  and  monitored  by  each  other.  As 
+mentioned,  porters  now  had  an  overview  of  all  tasks  and 
+porters  and  their  statuses,  which  was  a  significant  change 
+from previously, when they only got new information from 
+the dispatcher, or from colleagues in the common room, or 
+from  random  encounters 
+the  corridors.  However, 
+establishing an overview was still somewhat of a challenge, 
+since the smartphone  screens only allowed  for the display 
+of three to four tasks at a time, and scrolling was required to 
+see the remaining 70 or more pending tasks. 
+The increased awareness of tasks and colleagues triggered 
+different reactions. On the appreciative side, a porter said: 
+Previously, I had a bit of this feeling of “am I the only one making 
+an effort?” At that time, the phone called all the time, and when 
+you  had  just  ended  a  call,  the  next  would  come  in.  I  became 
+stressed. And then you start wondering whether the others just sit 
+and drink coffee. But now I can see that they are working as much 
+as I am. And I just take one task at a time, and am aware of what 
+is most pressing. (Male Porter, 34 years) 
+
+in 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+the  dispatcher  has 
+
+workload,  and  although 
+the  best 
+overview  of  tasks,  porter  availability  and  location,  he 
+cannot  see  the  actual  work,  micro-coordination,  and  local 
+contingencies  occurring  in  the  corridors,  and  at  the 
+departments. 
+New challenges: Prioritizing and new tasks 
+Although 
+improving  coordination  and  communication 
+between  porters  and  departments,  TMS  also  entailed  new 
+challenges.  Thus,  porters  reported  that  departments  had 
+begun  to  book  tasks  not  previously  handled  by  porters, 
+because TMS made booking easier. 
+It is a disadvantage of this system that booking is much easier for 
+nurses.  All  sorts  of  silly  tasks  come  up.  Previously,  when  they 
+phoned in, you could talk them out of it or tell that “you just have 
+to walk five meters, and your pillows are right there.” Now we get 
+strange bookings, and we do not understand why they do not just 
+do it themselves. (Male porter, 48 years) 
+Hence,  since  communication  between  departments  and 
+porters  was  now  direct,  without 
+the  dispatcher  as 
+intermediary, the screening of bookings was lost. 
+Without the dispatcher, prioritizing tasks was now done by 
+the  departments  themselves.  Normally,  porters  prioritize 
+tasks  according  to  when  they  were  booked,  though  some 
+patient-related  tasks  have  higher  priority  than  others:  this 
+includes CT scans, transport of heart, chemo, thrombosis or 
+trauma patients, and tasks from the Emergency Department. 
+At  the  same  time,  clinicians  at  the  departments  can  label 
+tasks  as  “critical”  or  “normal.”  Although  porters  take 
+“critical” to mean “life-threatening,” clinicians at times use 
+“critical” in the sense of “urgent” – especially when waiting 
+times are long. An observation note:  
+Looking  at  bookings  with  an  experienced  porter.  A  critical  task 
+pops  up  in  TMS.  It  is  red,  the  sound  is  different,  and  it  is 
+automatically at the top of the list of the porters’ phones. It says 
+“Patient in wheelchair.” This is not a critical task he says, and is 
+a bit annoyed about the difference between porters’ and nurses’ 
+interpretation  of  “critical.”  Some  nurses  order  “critical”  tasks 
+when  waiting  times  are  longer,  he  says.  (Field  note,  October 
+2014) 
+The  problem  is  partly  one  of  perspective.  Although 
+departments  prioritize  depending  on  a  patient’s  state,  and 
+on their own stress and articulation of work, porters have to 
+prioritize  tasks  from  different  departments:  They  consider 
+their  overall  workload,  knowledge  of  local  contingencies, 
+such  as  queues  at  elevators,  in  addition  to  understanding 
+“critical” as “life-threatening,” rather than “urgent for us.” 
+New  routines  also  developed.  Since  Radiology  required 
+many  simple  tasks  demanding  little  time  or  within  a 
+particular  time  frame,  they  agreed  with  porters  to  note 
+“23:59” as the required time. These tasks would then be at 
+the  end  of  the  list  of  bookings,  and  the  porters  dealt  with 
+them whenever appropriate during the day. 
+
+However, another porter felt less relief and more stress: 
+We  still  walk  incredible  distances.  More  than  before,  if  you  ask 
+me.  Previously,  we  could  sit  down  for  five  minutes,  and  have  a 
+break  in  addition  to  the  morning  and  lunch  breaks.  We  can’t, 
+really, any more. Your conscience sees that we are behind. There 
+are always tasks to do. (Male Porter, 42 years) 
+For  the  same  reasons,  the  large  screen  in  porter  central 
+displaying  all  tasks,  was  often  turned  off:  The  porters  did 
+not like the beeping and display to tell them that tasks were 
+waiting when having their breaks.  
+For  the  clinicians,  TMS  provided  a  visible  list  of  all  the 
+booked tasks at the department, and they could keep track 
+of  whether  or  not,  when  and  for  what  time  a  request  had 
+been  made,  and  whether  it  had  been  booked  by  a  porter. 
+However, they could not see the locations of porters, or the 
+overall waiting times or workloads of porters. They gained 
+more awareness of their own bookings, but not of bookings 
+of other departments, or the porters’ workload.  
+Mentally, if we knew that waiting times were long, then ok. Then 
+that is the situation. It would be nice to know. Maybe, it could be 
+communicated? (Female Radiographer, 37 years) 
+For  the  Radiology  Department  in  particular,  the  lack  of 
+mutual  awareness  among  departments  was  a  problem:  In 
+cases of critical incidents, they could not inform the other 
+departments to not send patients: 
+When  we  have  a  long  list  of  patients  coming  in  from  different 
+departments, and a trauma case suddenly arrives, then all plans 
+go  askew  and  we  close  everything.  The  problem  is  that  neither 
+porters nor other departments can see that we have a trauma case, 
+and shouldn’t send over any patients. (Female Radiographer, 37 
+years) 
+TMS  does  not  presently  support  such  communication  on 
+waiting  times  or  trauma  cases  at  Radiology,  for  example, 
+because  it  was  primarily  developed  with  the  porters  in 
+mind. 
+As for the dispatcher, his function was maintained, though 
+his  tasks  have  changed  somewhat.  As  mentioned,  the 
+dispatcher has two screens with overviews of all tasks and 
+the locations of all porters. These large screens provide him 
+with a better overview of all tasks than the porters have on 
+their  smartphones,  and  at  times,  he  intervenes  and  calls 
+porters to assign them tasks, if he thinks they have missed a 
+nearby  or  high  priority  task.  Also,  he  still  receives  phone 
+calls  from  departments,  mainly  concerning  the  length  of 
+waiting  times,  or  technicalities  of  the  TMS.  Hence,  IT 
+support has become part of his job. 
+Overall,  TMS  means  improved,  though  still  asymmetrical 
+and  partial,  awareness  of  the  work  arrangement.  Porters 
+now know the status of tasks and colleagues and can hence 
+align  and  articulate  work  themselves,  though  gaining  a 
+general  overview  of  all  tasks  is  challenging;  departments 
+can  see  their  own  bookings,  but  not  those  of  other 
+departments,  nor  the  locations  of  porters  or  the  overall 
+
+972
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Accountability: The Porter Management Info system 
+Although TMS partially increased awareness and enabled a 
+new  kind  of  cooperation,  it  was  also  a  technology  of 
+accountability. Its database on all tasks included a range of 
+timestamps  for  when 
+tasks  were  booked,  accepted, 
+commenced,  rejected,  and  completed,  and  which  could  be 
+used to visualize and account for porters’ work in different 
+ways. 
+During  the  trial  implementation  the  first  prototype,  which 
+we  call  Porter  Management  Info  (PMI),  the  use  of  the 
+database was developed by the second author. It displayed 
+the  number  of  tasks  completed  per  department,  kinds  of 
+tasks  per  week,  day,  and  hour,  and  average  response  and 
+waiting times. Through meetings between the vendor, head 
+of 
+logistics,  hospital  management,  dispatcher,  and 
+clinicians, three different aims for such a system emerged: 
+a)  to  report  on  Porter  Central’s  performance  to  hospital 
+management,  and  pinpoint 
+inefficient  organization  of 
+hospital  logistics;  b)  to  communicate  with  departments  to 
+explain  interconnections  between  their  and  porters’  work 
+rhythms,  and  explain  how  and  when  increased  waiting 
+times  emerged;  c)  to  gain  insight  into  porters’  work  and 
+optimize it, within Porter Central. 
+For hospital management, portering services are important, 
+since they influence many other processes, and optimization 
+is a priority. For example, PMI was used to pinpoint which 
+departments would be hardest hit by a planned reduction of 
+elevator  capacity  owing 
+thus, 
+management  could  take  preventive  measures.  Also,  the 
+head of the logistics department used PMI to document that 
+Porter  Central  needed  additional  staff,  if  tasks  were  to  be 
+completed  on  time,  and  should  hire  six  new  employees. 
+Local  management  sees  the  potential  of  being  able  to 
+investigate work details. The dispatcher said: 
+S*** always rolls downhill. Every time there is a scolding in this 
+house, it usually comes to us. So I need this to document that there 
+were problems with an elevator, or that a patient was not ready. 
+Maybe  a  nurse  wasn’t  present.  It’s  to  keep  our  slate  clean,  and 
+show what the real cause for delay is (Dispatcher, 41 years) 
+As for communication with other departments, an example 
+is the head of logistics using PMI to show Radiology  that 
+they were the heaviest users of porter services, and that they 
+tended to book tasks less than five minutes before needing 
+them.  Since  it  took  an  average  of  seven  minutes  to  walk 
+from Porter Central to Radiology, the statistics for waiting 
+times  were  significantly  in  the  negative,  and  with  good 
+reason,  since  porters  would  already  be  behind  schedule 
+before commencing these tasks. 
+Finally, the head of logistics and the dispatcher used PMI as 
+a 
+tool  at  Porter  Central,  for  staff  scheduling  and 
+optimization.  For  example,  at  a  morning  meeting,  the 
+dispatcher  would tell the porters that  he could see in PMI 
+that  they  accepted  tasks  from  the  Department  of  Internal 
+Medicine  last,  and  encouraged  them  to  prioritize  these 
+more. However, the head of logistics and the dispatcher did 
+
+to  maintenance,  and 
+
+not present the PMI statistics or diagrams to the porters, so 
+for them it was opaque what management could see in PMI. 
+Also, the dispatcher had a large screen in his office showing 
+PMI data, which was not available on the large screen in the 
+porters’ common room. 
+Porters acknowledged local management’s need for PMI in 
+communication  with  hospital  management  and  other 
+departments, but were also uneasy about being surveyed: 
+…I  think  that  is  what  troubles  most  of  us –  the  feeling  of  being 
+surveyed. Everything has to be registered. How long we are to do 
+tasks, and so on. (Male porter, 48 years) 
+On the other hand, the head of logistics was less worried: 
+I  think  the  porters  know that  we,  as  management,  do not  survey 
+them … But there is more self-regulation now. And that lessens the 
+need for us to run around and keep an eye on them. We don’t need 
+to, and we don’t bother, either (Head of logistics) 
+He  was  more  concerned  about  internal  competition  and 
+bullying among porters, due to the increased transparency. 
+Depending  on 
+the  actual  use  and  organizational 
+implementation, this concern may not be totally unfounded: 
+Dershin  and  Shaik  report  that  “transporter  reports”  on 
+individual porters’ performance acted as an incentive tool, 
+with  management  recognizing  the  best-performing  porter, 
+and increasing competition among porters [17: p118]. More 
+generally, Barker describes how self-managing teams ended 
+up  tightly  monitoring  one  another’s  performances,  and 
+enforcing concertive control [6]. 
+However, TMS and PMI also introduce a potential conflict 
+about how to define tasks. The dispatcher and departments 
+understood  tasks  to  begin  when  a  porter  arrived  at  the 
+department, whereas for a porter, a task may begin when he 
+goes to get a wheelchair needed for the task. Similarly, for a 
+porter, a task may not be “complete” when he arrived with a 
+patient  at  a  department,  but  when  he  had  put  back 
+equipment in place: 
+For me, a task begins when I book it, and it is not over until I have 
+put back the oxygen-pump, lift, and all equipment in their places. 
+So a task may take half an hour, but in management’s terms it has 
+taken 15 minutes. What are we doing in the missing 15 minutes? I 
+think it is wrong to register in that way. I might already commence 
+a task when going to the depot to get a lift. (Porter, 48 years) 
+TMS did not allow porters to be engaged in two tasks at a 
+time, which, however, might easily be the case: on the way 
+to commence, or during one task, a porter might pick up a 
+piece  of  equipment  needed  for  the  next  upcoming  task.  A 
+strict  rule  regarding  how  to  register  had  not  yet  been 
+enforced,  maybe  because  TMS  had  only  recently  been 
+implemented, but if the representations that PMI produces 
+obtain a directing and controlling role, this may change, and 
+a “flip-over effect” may arise [33] [39]: Rather than being a 
+representation  of  work,  PMI  may  become  a  procedure  for 
+that  work.  Then,  who  and  how  “23:59,”  “commenced,” 
+“completed,” and the time between tasks (“idle” or “on the 
+move between tasks”) are interpreted becomes important. 
+
+973
+
+case 
+
+for 
+
+thinking 
+
+about 
+
+(in)visibilities 
+
+All in all, TMS worked as a system for the coordination of 
+portering  services  and  cooperation,  and  gave  porters  more 
+influence  on,  and  responsibility  for  their  work,  increased 
+awareness  of  the  overall  field  of  work  for  porters, 
+departments,  and  local  management,  though  it  was  still 
+partial  and  asymmetrical.  TMS  also  made  it  possible  to 
+account for porters’ work, through statistics, diagrams, and 
+provided  data  on  individual  tasks,  and  thus  may  also  be 
+regarded as a technology of accountability.  
+DISCUSSION 
+The introduction of TMS meant porters had more influence 
+on their work, awareness increased among all collaborators 
+though  this  was  distributed  asymmetrically;  and  that 
+porters’  work  was  made  visible  and  accountable  in  new 
+ways, by new actors, including top management. Next, we 
+discuss  two  aspects  of  this  change:  First,  the  relative 
+openness  or  configurability  of  porters’  work  arrangement, 
+which suggests possible implications  for re-design as  well 
+as  spurs  reflections  on  the  rationales  of  porters’  work 
+arrangements  across  settings.  Second,  the  implications  of 
+this 
+and 
+accountabilities of work within CSCW. 
+Configurations of hospital porters’ work arrangements 
+The present work arrangement was the result of the recent 
+pooling  of  porters  to  cover  the  hospital  as  a  whole,  the 
+introduction of TMS, and the working out of new routines 
+and  the  work  arrangement.  However,  the  resulting  work 
+arrangement is only one of several possible configurations 
+of  how  to  organize  porters’  work,  and  in  the  following 
+paragraphs  we  both  suggest  new  opportunities  for  design 
+and argue that there is a variety of ways to organize porters’ 
+work.  This  is  in  line  with  studies  that  point  to  the 
+configurability  and  flexibility  of  the  relations  between 
+technology  and  organization  of  work  when  designing, 
+implementing and appropriating IT systems [3, 7, 31]. 
+Suggestions 
+several 
+contingencies in the present case. First, the function of the 
+dispatcher  was  maintained,  due  in  part  to  the  need  for 
+someone to have an overview of the 70+ ongoing tasks in 
+TMS  on  a  large  screen,  since  overviews  on  the  small 
+screens  on 
+the  porters’  smartphones  were  difficult. 
+However, this may be addressed by giving porters tablets or 
+phablets  that  have  larger  screens,  and,  therefore,  better 
+support  overview.  Another 
+the 
+dispatcher’s  function  was  management’s  doubts  about  the 
+porters’  ability  to  collectively  coordinate  tasks  on  their 
+own.  However,  this  could  be  addressed  by  developing  a 
+culture of responsibility and accountability. 
+Another 
+asymmetrical 
+the  present 
+(in)visibilities of the work arrangement, which can also be 
+changed. For example, the overview screen for all tasks and 
+porters’ 
+the 
+departments, and thus give departments information on the 
+porters’ overall  workload. Redesigns already suggested by 
+the  departments  include  the  display  of  information  on 
+
+locations  could  be  made  available 
+
+reason 
+
+for  keeping 
+
+contingency 
+
+is 
+
+re-design 
+
+emerge 
+
+for 
+
+from 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+average waiting times, or a chat function, so that porters or 
+the  dispatcher  can  inform  departments  of  challenges  of  a 
+larger  workload,  problems  with  elevators,  or  Radiology 
+being  busy  with  trauma.  As  for  the  porters,  PMI  statistics 
+could be made available on the large screen in the common 
+room, and be discussed at the morning meetings, in order to 
+show  what  information  PMI  has,  make  its  use  by  the 
+dispatcher  and  head  of  logistics  transparent  to  the  porters 
+and involve the porters in optimizing their services. 
+The  configurability  of  work  arrangements  of  porters  work 
+can be further elaborated by considering alternatives based 
+on the studies presented in the section on Related Work. At 
+some hospitals, porter services are decentralized, with tasks 
+being ordered and carried out from  within  wards. In other 
+hospitals, a central dispatcher hands on bookings to teams 
+of four porters, who then coordinate internally on their own. 
+Finally,  some  hospitals  have  pooled  all  porters,  and 
+coordinate  through  a  central  dispatcher.  In  several  cases, 
+pooling  all  porters,  as  in  our  case,  was  pursued  to  ensure 
+greater  flexibility  and  efficiency  [15,  16].  In  another 
+instance,  optimization  required  a  mix  of  local  teams  and 
+pooling, to lessen demand on the overall services, by giving 
+the department that used the  porters most its own team of 
+porters  [29].  Such  configurability  for  technology-work 
+relations  is  not  new  [3]  [31].  However,  as  several  authors 
+have argued, there is a need to develop approaches to how 
+and  why  similar  work  processes  using 
+the  same 
+technologies  differ  [ibid].  Randell  et  al  (2011)  use  multi-
+cited  fieldwork  to  compare  patient  handovers  and  specify 
+the  heterogeneity  of  practices,  actors  and  purposes  [35], 
+while  Schmidt  et  al  (2007)  compare  two  oncology  wards 
+and  argue  for  identifying  ‘deep  commonalities’  across 
+settings, in addition to  making specific design suggestions 
+for specific sites [43]. 
+From the different studies upon porters’ work three specific 
+challenges  –  or  ‘deep  communalities’  -  can  be  identified: 
+communication,  coordination,  and  finding  the  adequate 
+level  of  staffing.  As  for  the  challenge  of  communication 
+several  studies  show  that  insufficient  information  is  a 
+central source of stress, extra work for porters, and delayed 
+completion  of  tasks,  and  that  thus  two-way,  direct  and 
+hence  de-centralised  communication  between  porters  and 
+clinicians seem to be called for. However, coordination of 
+distributed actors seems in these studies to call for a central, 
+coordinative place or function such as a porter central and a 
+dispatcher  as  long  as  porters  do  not  themselves  have 
+overview  of  all  tasks  and  colleagues.  Empirically,  the 
+tendency  for  centralized  coordination  seems  to  outbalance 
+the  need  for  direct  communication:  In  one  setting,  the 
+centralized IT dispatch system could not communicate with 
+porters, who instead had to call the dispatcher for new tasks 
+or  clarifications  [15].  In  another  setting,  porters  received 
+tasks  on  pagers  from  a  central  dispatcher  [16].  In  a  third 
+case, a newly implemented IT system only allowed nurses 
+to  send  booked  tasks  via  text  message  to  porters,  who 
+however, could not respond or call back [52]. Finally, in a 
+
+974
+
+to 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+two-way 
+
+fourth  case, 
+radio  communication  between 
+dispatcher  and  porters  was  supported,  but  not  between 
+porters and clinicians [17]. 
+The  tendency  for  centralization  is  augmented  by  the  third 
+challenge  of  finding  an  adequate  level  of  staffing.  Since 
+porters and tasks are distributed in space, and the number of 
+unscheduled  tasks  is  high,  finding  a  balance  between 
+having  enough  staff  in  peak  periods,  and  not  having  too 
+much idle staff in other periods, requires information on the 
+overall  workload  during 
+the  day  and  week.  Hence 
+management  efforts  in  our  case  and  other  studies  to 
+generate  data  on  the  number  of  tasks,  their  duration, 
+waiting,  dispatch  times,  location  of  porters,  and  so  forth 
+[15-17, 26, 28, 50]. 
+However, the rationales of two-way, direct communication; 
+coordination  of  tasks;  and  finding  an  adequate  level  of 
+staffing must not necessarily lead to more or less centrally 
+controlled  work  arrangements:  As  this  study  of  TMS  and 
+the  above  discussion  of  the  case’s  contingencies  shows, 
+computer  support  can  be  designed  in  ways  that  enables 
+decentralized  decision-making  and 
+lets  porters  have 
+influence on and responsibility  for their  work. Whether or 
+not  one  or  the  other  solution  is  called  for  will  depend  on 
+specific contexts and aims. 
+Comparative  studies  of  work  arrangements  –  in  this  case; 
+porters’ work – may serve to point out the specificities and 
+contingencies  of  single-site  studies,  as  well  as 
+the 
+heterogeneity  of  possible  solutions  and 
+their  overall 
+rationales.  Thus,  we  support  the  call  for  studies  that  go 
+across sites in order to spur to reflections on how IT design, 
+implementation,  and  appropriation  can  be  formed  towards 
+different goals [35, 43]. 
+Accountabilities and visibilities 
+CSCW  systems  often  simultaneously  support  cooperative 
+work and are sources of data for the generation of accounts 
+of that work, which has led to noting the dual functions of 
+such systems [18, 49], and the possible conflicts that  may 
+arise  between  accounts  for  work  from  “within”  and 
+“without”  [14,  39].  However,  although  we  acknowledge 
+potential conflicts, we argue that the changes brought about 
+by IT systems in the ecology of (in)visibilities of work go 
+beyond dualisms. 
+In  sociological  theory  and  political  science,  accountability 
+is  an  old  issue  which  has  received  considerable  new 
+attention  in  the  last  decade,  probably  connected  to  the 
+emerged  of  New  Public  Management’s  combination  of 
+centralized control and de-centralised agency. Basically, in 
+these  studies  accountability  is  about  being  answerable  to 
+others who can legitimately claim to demand an account of 
+one’s actions [13: p6]. The ensuing central question is then 
+"…  who  is  accountable  to  whom,  for  what,  by  which 
+standards, and why?” [ibid: p10]. The diversity of answers 
+to  each  of  these  elements  entails  a  multitude  of  possible 
+kinds  of  accountability.  For  example,  distinctions  can  be 
+
+975
+
+for 
+
+for  ordering  and  accounting 
+
+made  between  political,  legal,  administrative,  professional 
+and social accountability depending on the forum to whom 
+accountability  is  presented;  or  corporate,  collective  or 
+individual  accountability  depending  who  is  asked  to  be 
+accountable [12]. However, at its core accountability arises 
+from an implicit demand in social relations for actors to be 
+able to provide accounts of their actions. 
+This is a central theme within ethnomethodology [22]. Thus 
+Suchman  (1993)  points  to  the  constitutive  way  in  which 
+technologies 
+the 
+movements of lizards and aeroplanes are the same [49], and 
+Bowers  et  al  (1995)  show  how  an  IT  system  designed  to 
+account for and make work visible to an external customer, 
+ordered cooperative work in ways that hindered rather than 
+supported 
+this  work  [14].  Their  distinction  between 
+workflow as accounted for from ‘within’ and ‘without’ has, 
+with  other  studies,  been  influential  in  pointing  out  the 
+potential  conflicts  between  ordering  and  accounting  for 
+CSCW systems. For example, Dourish (2001) discusses the 
+‘dual  use’  of  workflow  technologies  and  distinguishes 
+between  three  critical  aspects:  How  IT  by  the  way  of 
+ordering work disrupts the natural flow of interaction; how 
+the  embedded  categorization  embedded  in  this  ordering 
+makes certain aspects visible and other not, thus reflecting 
+the order of those to whom accounts are told; and lastly, the 
+theoretical  foundations  of  workflow  technologies  [18].  He 
+suggests  solving  the  tension  between  the  dual  uses  by 
+decoupling  the  presentation  of  work  from  its  ordering. 
+Further,  Eriksen  (2002)  investigates  different  meanings  of 
+accountability in CSCW and HCI and points to the central 
+question of accountability of what to whom? [19]  
+In  our  case,  TMS  did  not  at  the  time  of  our  study  have 
+effects  that  hindered  work  even  though  it  served  to  order 
+and  make  visible  that  work,  especially  through  PMI.  This 
+may  be  attributed  to  the  fact  that  TMS,  in  the  sense  of 
+Dourish,  made  work  visible  and  was  decoupled  from  the 
+actual  ordering  of  work  which  was  done  by  porters 
+themselves  (and  the  dispatcher).  At  the  same  time,  this 
+study was conducted in the early stages of implementation, 
+and  if  PMI’s  representations  for  work,  including  the 
+definition  of  when  tasks  begin,  are  coupled  closer  to 
+assessments  and  remuneration  of  that  work,  a  conflict 
+between accounting and ordering may evolve. Then PMI’s 
+account  of  work  from  ‘without’  may,  for  example,  lead 
+management  to  wonder  what  porters  do  in  those  ‘idle’  15 
+minutes in which they go to get, for example, a wheelchair 
+before  arriving  at  the  ward.  The  further  away  from  the 
+porters’ work, the representations of work in TMS and PMI 
+travel  the  higher  the  risks  of  decisions  and  orderings  of 
+work detrimental to situated work practices. 
+At  the  same  time,  our  case  shows  that  accounts  and 
+representations of work may have multiple roles and effects 
+that  go  beyond  a  dualism  of  ordering  and  accountability. 
+Thus, for porters TMS provided more influence over their 
+work  and  assurance  that  colleagues  were  also  making  an 
+
+lessening 
+
+technologies,  even  from 
+
+effort, as well as at the same time causing stress due to the 
+continuous stream of incoming tasks, and unease over being 
+monitored.  For  local  management,  PMI  was  used  to 
+negotiate  for  more  staff 
+the  workload  of 
+individual  porters;  to  plan  around  foreseeable  problems 
+connected with maintenance; to discover porters’ attribution 
+of low priority to tasks from a certain department; to work 
+out  the  staff  roster;  and  to  show  Radiology  that  they 
+requested tasks at the last minute. TMS and PMI might also 
+become  incentive  devices  or  occasions  for  bullying.  TMS 
+and  PMI  had  both  dis-  and  advantageous  effects  for  the 
+work arrangement, and there is not a clear contrast between 
+‘good’ before and ‘bad’ after their implementation. Indeed, 
+even the distinction between organizing work from ‘within’ 
+and from ‘without’ breaks down, since TMS increased the 
+transparency  of  the  cooperative  arrangement  and  the 
+common  field  for  work:  It  was  through  TMS  that  porters 
+were  enabled  to  coordinate  work  themselves.  This  finally 
+raises  the  question  of  whether  it  is  a  given  that  oral 
+narratives  are  better  at  accounting  for  work  than  tables, 
+schedules, and IT. If ways of ordering work are at the same 
+time  ways  of  making  that  work  accountable,  it  cannot  be 
+assumed  that  narratives  are  better  at  doing  this  than  other 
+media  or 
+the  actors’  own 
+perspectives.  
+All  in all,  we argue  for  moving beyond a duality between 
+ordering and accounting for work, and propose instead that 
+research  on  this  issue  should  be  guided  by  a  more  open 
+question:  How  is  work  ordered  and  made  accountable  by 
+which technologies and with which effects? EPRs and other 
+healthcare IT as audit tools are not necessarily detrimental 
+to  the  work  of  doctors  and  nurses  [53],  and  may,  more 
+generally,  be  sources  of  self-reflection  and  decision-
+making,  as  well  as  of  external  transparency  and  the 
+regulation of healthcare [34]. Most likely, this applies more 
+generally for IT systems and work processes. 
+CONCLUSION: 
+ …the  Hospital  planned  to  introduce  a  computer  system  which 
+would locate where the porter was on the site at any time, as well 
+as what job he had been allocated, and how long they had been 
+engaged in it. For the present, however, this “Day of Judgement” 
+was a threat only (Rapport, comment on fieldwork on porters in 
+2000-1 [37: p108]) 
+As  the  process  of  digitization  of  healthcare  expands  in 
+scope and depth, it will affect non-clinical groups, including 
+porters, registration assistants, social workers, and medical 
+secretaries, who have hitherto received little attention. This 
+paper  has  described  the  cooperative  work  of  hospital 
+porters,  and  the  various  effects  that  a  coordination  and 
+accountability system may have on their work. Their work 
+is  understudied,  low-paid,  physically  strenuous,  and  has  a 
+low status. But contrary to expectations, such as Rapport’s, 
+above,  we argue that although IT for hospital porters may 
+indeed  lead  to  managerial,  “cogs-in-a-wheel”  approaches 
+and  surveillance,  IT  can  also  increase  influence  on, 
+responsibility  for,  and  reflection  on  work.  The  outcomes 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+will  depend  on  the  actual  design,  implementation,  and 
+usage.  Porters’  and  other  professions’  work  can  be 
+configured in various ways to the enrichment or detriment 
+of work life and organizations. Detailed studies, as well as 
+comparisons,  can  open  up  the  contingency  of  actual  work 
+arrangements  and  open  up  a  spectrum  of  possible 
+configurations. Finally, we argue to move beyond a dualism 
+between coordination of and accountability for work, since 
+these are interrelated and co-constitutive. 
+ACKNOWLEDGEMENTS 
+Warm thanks to the porters and managers at Section South. 
+REFERENCES 
+1.  Joanna Abraham and Madhu C. Reddy. 2008. Moving 
+patients around: a field study of coordination between 
+clinical and non-clinical staff in hospitals. In 
+Proceedings of the Proceedings of the 2008 ACM 
+conference on Computer Supported Cooperative Work 
+(CSCW´08), 225-228. 
+http://doi.acm.org/10.1145/1460563.1460598 
+
+2.  Joanna Abraham and Madhu C. Reddy. 2013. Re-
+
+coordinating activities: an investigation of articulation 
+work in patient transfers. In Proceedings of the 
+Proceedings of the 2013 conference on Computer 
+supported cooperative work (CSCW´13), 67-78. 
+http://doi.acm.org/10.1145/2441776.2441787 
+
+3.  Ellen Balka and Ina Wagner. 2006. Making things 
+
+work: dimensions of configurability as appropriation 
+work. In Proceedings of the Proceedings of the 2006 
+20th anniversary conference on Computer supported 
+cooperative work (CSCW´06). 
+http://doi.acm.org/10.1145/1180875.1180912 
+
+4.  Jakob Bardram. 2000. Temporal Coordination. On 
+
+Time and Coordination of Collaborative Activities at a 
+Surgical Department. Journal of Computer Supported 
+Cooperative Work 9: 157-187. 
+
+5.  Jakob Bardram, Thomas Riisgaard Hansen and Mads 
+
+Søgard. 2006. AwareMedia – A Shared Interactive 
+Display Supporting Social, Temporal, and Spatial 
+Awareness in Surgery. In Proceedings of the 
+Conference on Computer Supported Cooperative Work 
+(CSCW´06), 109-118. 
+http://doi.acm.org/10.1145/1180875.1180892 
+
+6.  James R. Barker. 1993. Tightening the Iron Cage. 
+
+Concertive Control in Self-Managing Teams. 
+Administrative Science Quarterly 38, 3: 408-437. 
+
+7.  Stephen R. Barley. 1988. Technology as an Occasion 
+
+for Structuring: Evidence from Observations of CT 
+Scanners and the Social Order of Radiology 
+Departments. Administration Science Quarterly 31: 78-
+108. 
+
+8.  Marc Berg. 1996. Practices of Reading and Writing: 
+
+the Constitutive Role of the Patient Record in Medical 
+Work. Sociology of Health & Illness 18, 4: 499-524. 
+
+976
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+9.  Pernille Bjørn and Ellen Balka. 2007. Health Care 
+
+Categories have Politics too: Unpacking the 
+Managerial Agendas of Electronic Triage Systems. In 
+Proceedings of the Proceedings of the Tenth European 
+Conference on Computer Supported Cooperative Work 
+(ECSCW´07), 371-390. 
+
+10.  Claus Bossen. 2006. Representations at Work: A 
+
+National Standard for Electronic Health Records. In 
+Proceedings of the Proceedings of the 2006 
+Conference on Computer Supported Cooperative Work 
+(CSCW´06), 69-78. 
+http://doi.acm.org/10.1145/1180875.1180887 
+
+11.  Claus Bossen, Lotte Groth Jensen and Flemming Witt. 
+
+2012. Medical secretaries' care of records: the 
+cooperative work of a non-clinical group. In 
+Proceedings of the Proceedings of the ACM 2012 
+conference on Computer Supported Cooperative Work 
+(CSCW´12), 921-930. 
+http://doi.acm.org/10.1145/2145204.2145341 
+
+12.  Mark Bovens. 2014. Public Accountability. Oxford 
+
+University Press. 
+
+13.  Mark Bovens, Thomas Schillemans and Robert E. 
+
+Goodin. 2014. Public Accountability. Oxford 
+University Press. 
+
+14.  John Bowers, Graham Button and Wes Sharrock. 1995. 
+
+Workflow from Within and Without: Technology and 
+Cooperative Work on the Print Industry Shopfloor. In 
+Proceedings of the Proceedings of the Fourth 
+European Conference on Computer-Supported 
+Cooperative Work (ECSCW´95), 51-66.  
+
+15.  Wendy Bryan. 1998. Rising to the challenge: portering 
+
+services at the Queen Elizabeth II Health Sciences 
+Centre. Leadership in Health Services 11, 3: 1-5. 
+
+16.  Clare FP Chow-Chua and Mark Goh. 2000. A quality 
+
+roadmap of a restructured hospital. Managerial 
+Auditing Journal 15, 1/2: 29-41. 
+
+17.  Harvey Dershin and Michael S. Schaik. 1992. Quality 
+
+improvement for a hospital patient transportation 
+system. Hospital & health services administration 38, 
+1: 111-119. 
+
+18.  Paul Dourish. 2001. Process Description as 
+
+Organisational Accounting Devices: the Dual use of 
+Workflow Technologies. In Proceedings of the 
+Proceedings of the 2001 International ACM 
+SIGGROUP Conference on Supporting Group Work 
+(GROUP´01), 52-60. 
+
+19.  Sara Eriksen. 2002. Designing for accountability. In 
+Proceedings of the Proceedings of the second Nordic 
+conference on Human-computer interaction, 177-186.  
+
+20.  Jacob K. Eskildsen and Ann-Kristina Løkke Nielsen. 
+
+2008. The Upgradingof the Skillls of Nursing 
+Assistants and Cleaning Staff in the Danish Public-
+Sector Hospitals. In Low-Wage Work in Denmark, 
+
+Niels Westergaard-Nielsen, New York, Sage 
+Foundation, 218-257 
+
+21.  Geraldine Fitzpatrick and Gunnar Ellingsen. 2012. A 
+
+Review of 25 Years of CSCW Research in Healthcare: 
+Contributions, Challenges and Future Agendas. 
+Journal of Computer Supported Cooperative Work 22, 
+4-6: 1-57. 
+
+22.  Harold Garfinkel. 1967. Studies in Ethnomethodology. 
+
+Polity Press. 
+
+23.  Randolph Hall. 2013. Patient flow: reducing delay in 
+
+healthcare delivery. Springer Science+Business Media. 
+
+24.  Christian Heath, Marcus Sanchez Svensson, Jon 
+Hindmarsh, Paul Luff and Dirm vom Lehn. 2002. 
+Configuring Awareness. Journal of Computer 
+Supported Cooperative Work 11, 3-4: 317-347. 
+
+25.  Diana S. Kusunoki and Aleksandra Sarcevic. 2015. 
+
+Designing for Temporal Awareness: The Role of 
+Temporality in Time-Critical Medical Teamwork. In 
+Proceedings of the Proceedings of the 18th ACM 
+Conference on Computer Supported Cooperative Work 
+& Social Computing (CSCW´15), 1465-1476. 
+http://doi.acm.org/10.1145/2675133.2675279 
+
+26.  CKY Lin. 1999. Microcomputer-based workforce 
+
+scheduling for hospital porters. Journal of management 
+in medicine 13, 4-5: 251-262. 
+
+27.  Alison R. Murphy, Madhu C. Reddy and Nathan J. 
+
+McNeese. 2014. Exploring the perceptions and use of 
+electronic medical record systems by non-clinicians. In 
+Proceedings of the Proceedings of the 2014 conference 
+on Designing interactive systems (DIS´14), 429-432. 
+http://doi.acm.org/10.1145/2598510.2600884 
+
+28.  Fredrik Odegaard, Li Chen, Ryan Quee and Martin L. 
+Puterman. 2007. Improving the Efficiency of Hospital 
+Porter Services, Part 2: Schedule Optimization and 
+Simulation Model. Journal for Healthcare Quality 29, 
+1: 12-18. 
+
+29.  Fredrik Odegaard, Li Chen, Ryan Quee and Martin L. 
+Puterman. 2007. Improving the Efficiency of Hospital 
+Porter Services, Part 1: Study Objectives and Results. 
+Journal for Healthcare Quality 29, 1: 4-11. 
+
+30.  Gerardo A. Okhuysen and Beth A. Bechky. 2009. 
+
+Coordination in Organizations: An Integrative 
+Perspective. The Academy of Management Annals 3, 1: 
+463-502. 
+
+31.  Wanda J. Orlikowski. 2000. Using Technology and 
+
+Constituting Structures: A Practice Lens for Studying 
+Technology in Organizations. Organization Science 11, 
+4: 404-428. 
+
+32.  Sun Young Park, Yunan Chen and Scott Rudkin. 2015. 
+Technological and Organizational Adaptation of EMR 
+Implementation in an Emergency Department. Acm 
+Transactions on Computer-Human Interaction 22, 1: 1-
+24. http://doi.acm.org/10.1145/2656213 
+
+977
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Journal of Computer Supported Cooperative Work 11, 
+3: 285-298. 
+
+45.  Susan Leigh Star and Anselm Strauss. 1999. Layers of 
+Silence, Arenas of Voice: the Ecology of Visible and 
+Invisible Work. Journal of Computer Supported 
+Cooperative Work 8: 9-30. 
+
+46.  Allan Stisen, Henrik Blunck, Mikkel Baun Kjærgaard 
+
+and Kaj Grønbæk. 2014. Handheld versus wearable 
+interaction design for professionals: a case study of 
+hospital service work. In Proceedings of the 26th 
+Australian Computer-Human Interaction Conference 
+(OzCHI '14), 260-269. 
+http://doi.acm.org/10.1145/2686612.2686651 
+
+47.  Anselm Strauss, Shizuko Fagerhaugh, Barbara Suczek 
+
+and Carolyn Wiener. 1985. Social Organization of 
+Medical Work. University of Chicago Press. 
+
+48.  Anselm Strauss. 1993. The Continual Permutations of 
+
+Action. Aldine de Gruyter. 
+
+49.  Lucy Suchman. 1993. Technologies of Accountability: 
+Of Lizard and Aeroplanes. In Technology in Working 
+Order, Graham Button (ed). Routledge, 113-126. 
+
+50.  Nancy Sullivan and Karl U Frentzel. 1992. A patient 
+
+transport pilot quality improvement team. QRB. 
+Quality review bulletin 18, 7: 215-221. 
+
+51.  Charlotte Tang, Yunan Chen and Soyoung Lee. 2014. 
+Non-clinical work counts: facilitating patient outflow 
+in an emergency department. Behaviour & Information 
+Technology 34, 6: 585-597. 
+
+52.  Arnvør Torkilsheyggi and Morten Hertzum. 2014. User 
+
+participation in pilot implementation: porters and 
+nurses coordinating patient transports. In Proceedings 
+of the Proceedings of the 26th Australian Computer-
+Human Interaction Conference on Designing Futures: 
+the Future of Design (OzCHI '14), 290-299. 
+http://doi.acm.org/10.1145/2686612.2686654 
+
+53.  Brit Ross Winthereik, Irma van der Ploeg and Marc 
+
+Berg. 2007. The Electronic Patient Record as a 
+Meaningful Audit Tool: Accountability and Autonomy 
+in General Practitioner Work. Sci Technol Hum Val 32, 
+1: 6-25. 
+
+54.  T. Xiao, P. M. Sanderson and M. Lee. 2010. Patient 
+
+transport cards support formal and informal 
+coordination in a hospital department. Proceedings of 
+the Human Factors and Ergonomics Society Annual 
+Meeting 54, 12: 904-908. 
+
+55.  Yan Xiao, Caterina Lasome, Jacqueline Moss, Colin F. 
+Mackenzie  and  Samer  Faraj.  2001.  Cognitive 
+Properties of a Whiteboard: a Case Study in a Trauma 
+Centre.  In  Proceedings  of  the  Seventh  European 
+Conference on Computer-Supported Cooperative Work 
+(ECSCW´01), 259-278. 
+
+33.  Kathleen H. Pine and Melissa Mazmanian. 2014. 
+Institutional logics of the EMR and the problem of 
+'perfect' but inaccurate accounts. In Proceedings of the 
+Proceedings of the 17th ACM conference on Computer 
+supported cooperative work & social computing 
+(CSCW´14), 283-294. 
+http://doi.acm.org/10.1145/2531602.2531652 
+
+34.  Kathleen H. Pine and Max Liboiron. 2015. Emerging 
+
+Insights on Building Infrastructure of Data-Driven 
+Transparency and Accountability of Organizations. In 
+iConference 2015 Proceedings. 
+
+35.  Rebecca Randell, Stephanie Wilson and Peter 
+
+Woodward. 2011. Variations and Commonalities in 
+Processes of Collaboration: The Need for Multi-Site 
+Workplace Studies. Journal of Computer Supported 
+Cooperative Work 20, 1-2: 37-59. 
+
+36.  Nigel Rapport. 2008. The Discipline of Being Hosptial 
+
+Porters: Transcending Hierarchy and Institution. In 
+Exploring Regimes of Discipline: The Dynamics of 
+Restraint, Noel Dyck (ed). Berghahn Books. 
+
+37.  Nigel Rapport. 2009. Of orderlies and men: hospital 
+
+porters achieving wellness at work. Carolina Academic 
+Press. 
+
+38.  Madhu Reddy and Paul Dourish. 2002. A Finger on the 
+
+Pulse: Temporal Rythms and Information Seeking in 
+Medical Work. In Proceedings of the 2002 ACM 
+conference on Computer supported cooperative work 
+(CSCW '02), 344-353. 
+http://doi.acm.org/10.1145/587078.587126. 
+
+39.  Mike Robinson and Liam Bannon. 1991. Questioning 
+
+Representations. In Proceedings of the European 
+Conference on Computer Supported Cooperative Work 
+(ECSCW´91), 219-233. 
+
+40.  Ken Saunders. 1979. The Hospital Porter: A 
+
+Behavioural Profile of on Occupation in the World of 
+the Core of the Sick. Employee Relations 1, 4: 30-32. 
+41.  Kjeld Schmidt and Carla Simone. 1996. Coordination 
+
+Mechanisms: towards a Conceptual Foundation of 
+CSCW Systems Design. Journal of Computer 
+Supported Cooperative Work 5, 2-3: 155-200. 
+
+42.  Kjeld Schmidt. 2002. Remarks on the Complexity of 
+Cooperative Work (2002). In Kjeld Schmidt (2011) 
+Cooperative Work and Coordinative Practices, pp 167-
+199. Springer. 
+
+43.  Kjeld Schmidt, Ida Wagner and Marianne Tolar. 2007. 
+Permutations of Cooperative Work Practices: A study 
+of two oncology clinics. In Proceedings of the 2007 
+international ACM conference on Supporting group 
+work (GROUP '07), 1-10. 
+http://doi.acm.org/10.1145/1316624.1316626. 
+
+44.  Kjeld Schmidt. 2002. The Problem with 'Awareness': 
+
+Introductory Remarks on 'Awareness in CSCW'. 
+
+978
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+56.  Eviatar Zerubavel. 1979. Patterns of Time in Hospital 
+
+Life: a Sociological Perspective. University of Chicago  
+Press. 
+
+ 
+ 
+
+979
+
+

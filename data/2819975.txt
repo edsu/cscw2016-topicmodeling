@@ -1,0 +1,1571 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Taking Notes or Playing Games?  
+
+Understanding Multitasking in Video Communication 
+
+Jennifer Marlow 
+
+FXPAL 
+
+marlow@fxpal.com 
+
+Eveline van Everdingen 
+
+Vrije Universiteit Amsterdam 
+e.a2.van.everdingen@student.vu.nl
+
+Daniel Avrahami 
+
+FXPAL 
+
+ daniel@fxpal.com 
+
+ABSTRACT 
+This  paper  presents  a  detailed  examination  of  factors  that 
+affect  perceptions  of  and  attitudes  towards  multitasking  in 
+video conferencing. We first report findings from interviews 
+with  15  professional  users  of  videoconferencing.  Our 
+interviews revealed the roles and potential link of technology 
+and activity. We then report results from a controlled online 
+experiment with 397 participants based in the United States. 
+Our  results  show  that  the  technology  used  for  multitasking 
+has  a  significant  effect  on  others’  assumptions  of  what 
+secondary  activity  the  multitasker  is  likely  engaged  in,  and 
+that  this  assumed  activity  in  turn  affects  evaluations  of 
+politeness and appropriateness. We also show that different 
+layouts of the video conferencing UI can affect perception of 
+engagement  in  the  meeting  and  in  turn  ratings  of  polite  or 
+impolite  behavior.  We  propose  a  conceptual  model  that 
+captures  our  results  and  use 
+to  discuss 
+implications  for  behavior  and  for  the  design  of  video 
+communication tools.  
+Author Keywords 
+Multitasking; Video mediated communication; Experiment; 
+Video conferencing 
+ACM Classification Keywords  
+H.5.2 [Information Interfaces and Presentation]: User 
+Interfaces - Interaction styles.  
+General Terms  
+Human Factors; Design; Measurement. 
+INTRODUCTION 
+In  a  connected  digital  world, 
+in  which  notifications, 
+communication,  and  immediate  access  to  information  all 
+fight  for  our  attention,  the  temptation  to  multitask  during 
+face-to-face  and  online  meetings  is  great.  Certainly,  the 
+modern workplace is full of distractions that can be difficult 
+to  manage.  Multitasking  often  results  from  external  events 
+
+the  model 
+
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work  for 
+personal  or  classroom  use  is  granted  without  fee  provided  that  copies  are  not 
+made  or  distributed  for  profit  or  commercial  advantage  and  that  copies  bear this 
+notice and the full citation on the first page. Copyrights for components of this  work 
+owned  by  others  than  the  author(s)  must  be  honored.  Abstracting  with  credit  is 
+permitted. To copy otherwise, or republish, to post on servers or to  redistribute  to 
+lists, 
+fee.  Request  permissions 
+from  Permissions@acm.org.
+CSCW 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.  
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819975 
+
+'16,  February  27-March  02,  2016,  San  Francisco,  C A,  USA  
+
+requires  prior  specific  permission  and/or  a 
+
+1726
+
+Figure 1. Multitasking on a mobile device during a video 
+
+conference (a keyframe from the experiment). 
+
+and interruptions, or it can be self-initiated [1, 10, 11, 13]. 
+ The pressure to multitask can be exacerbated by a workplace 
+culture that requires employees to attend to multiple tasks or 
+multiple  projects  at  once  [17].  With  the  proliferation  of 
+personal  smartphones,  tablets  and  other  mobile  devices  in 
+the workplace, opportunities to self-interrupt, be interrupted, 
+or  multitask  have  grown.  Furthermore,  with  such  personal 
+devices, the delineation between personal and work activities 
+in the workplace is blurring. 
+As distributed work teams become more prevalent, more and 
+more meetings are being held over video conferencing. This 
+can involve groups of people communicating via conference 
+rooms  with  a  specialized  video  setup,  but  another  common 
+scenario is one-on-one meetings with participants connecting 
+to a video call from a personal laptop or desktop computer. 
+This means that in some cases people are already using the 
+computing  device 
+they  will  also  be  using  for 
+multitasking. 
+While  the  effects  of  multitasking  in  face-to-face  meetings 
+have been previously studied, the perceptions and effects of 
+multitasking in small, video-mediated work conversations – 
+the focus of this paper – are not well known. Past research 
+has  provided  anecdotal  evidence  that  participants  in  video-
+mediated  meetings  and  conversations  both  engage 
+in 
+multitasking  behaviors  and  suspect  others  are  doing  so  too 
+(e.g.  [6]).  Building  on  these  observations,  the  goal  of  the 
+present work was to answer the following research question:  
+What factors influence perceptions of and attitudes towards 
+multitasking behavior in video conferencing?
+
+that 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the  combination  of 
+
+interviews  and  a 
+
+To  investigate  this  question,  we  first  interviewed  people 
+whose  jobs  involved  remote  collaboration  about  their 
+experiences  with  multitasking  during  video  conferences. 
+These  interviews  uncovered  parameters  that  influence  the 
+obviousness and acceptability of multitasking behavior. We 
+then  conducted  a  controlled  experiment  to  tease  apart  the 
+relative influence of various technical and social factors on 
+perceptions of multitasking behaviors in a video conference-
+based meeting between two people (see Figure 1). 
+large 
+Through 
+controlled  experiment  we  make  the  following  contributions 
+to  the  field  of  CSCW:  1)  An  exploration  of  the  context  of 
+multitasking in videoconferencing, uncovering the roles and 
+potential  link  of  technology  and  activity,  2)  A  controlled 
+investigation  of  the  effect  of  technology-related  factors  on 
+observers’  evaluations  of  multitasking  behavior,  and  their 
+assumptions about what secondary activity is being engaged 
+in, and 3) A demonstration of the role that the design of the 
+videoconferencing  tool  itself  may  have  in  influencing 
+perceptions  and  outcomes.  Our 
+results  have  direct 
+implications  for  the  design  of  videoconferencing  tools  and 
+device  ecosystems  for  reducing  the  negative  impact  of 
+multitasking on communication. 
+RELATED WORK 
+Multitasking in face-to-face meetings 
+Multitasking  activities  during  a  meeting  can  take  many 
+forms: they may be related to something that is going on in 
+the  meeting  (e.g.  verifying  information,  looking  at  the 
+document  being  discussed),  they  may  be  related  to  other 
+work that the participant needs to get done, or they may be 
+personal and unrelated to either the meeting or work. Several 
+lines of work have looked at the role of multitasking during 
+in-person meetings.  
+One  relevant  area  pertains  to  differences  in  the  perceived 
+politeness  and  self-reported  frequency  of  using  technology 
+such  as  laptops  and  mobile  phones  for  work  or  non-work 
+purposes during meetings [5, 25]. Particularly, multitasking 
+may not always be easy to detect. For example, when laptops 
+are  used  during  a  meeting,  speakers  cannot  be  sure  what  a 
+laptop  is  being  used  for  (e.g.  taking  notes  or  browsing  the 
+internet),  which  may  deter  them  from  attributing  disrespect 
+[14].  Additionally,  it  is  not  always  clear  to  an  observer 
+whether a multitasking behavior (for example, replying to a 
+text message during a meeting) is necessary or not [17].  
+Finally,  individual  characteristics  also  influence  the  degree 
+to which multitasking is viewed as acceptable. For example, 
+an  individual’s  own  tendency  to  multitask  [4],  national 
+culture [8], social and organizational norms [23] and gender 
+[25]  can  influence  perceptions  of  the  acceptability  and 
+civility of doing other things during a meeting.  
+Video-mediated multitasking 
+Multitasking  behavior  over  video  conferencing  has  been 
+described 
+and  personal 
+conversations.  For  example,  teenagers  often  divide  their 
+
+in  both  work-related 
+
+[6] 
+
+impact 
+
+attention  between  multiple  activities  (like  browsing  the 
+internet or social networking sites) while on a video call [7]. 
+Several elements may contribute to a desire to multitask in 
+online meetings: First, the communication itself most likely 
+takes  place  on  a  computing  device  (a  computer,  tablet, 
+phone, etc.) where other applications and information await. 
+Next, unlike in face-to-face meetings, in video conferencing, 
+only  a  small  part  of  the  user’s  body  and  surroundings  are 
+typically  visible  to  other  parties  in  the  meeting  allowing  to 
+potentially  hide  their  secondary  activity.  Finally,  it  is  even 
+possible that participants would feel that in online meetings, 
+even if it were known that they are multitasking it could be 
+less obvious to other parties who are not co-located what it is 
+they are doing.  
+One 
+that  multitasking  can  have  on  video 
+communication is that it potentially affects gaze. People are 
+fairly  accurate  at  detecting  when  eye  contact/gaze  is  being 
+directed  at  them,  and  this  feeling  of  direct  eye  contact  can 
+build  trust  [3].  For  this  reason,  much  research  on  building 
+video conferencing systems has focused on finding ways to 
+enhance  the  perception  of  direct  eye  contact  (e.g.  [12]). 
+Multitasking  can  disrupt  the  feeling  of  direct  eye  gaze  by 
+causing  an  individual’s  attentional  focus  to  be  directed 
+elsewhere. For example, when engaging in an unrelated chat 
+or  email  during  a  video  conference,  attention  and  eye  gaze 
+will be shifted away from the webcam or video chat screen.  
+Therefore, the technology used for multitasking may play a 
+big  role  in  influencing  perception.  For  example,  a  user 
+performing  the  secondary  task  on  their  smartphone  will 
+appear  different  from  a  user  performing  the  secondary  task 
+on the same screen where the videoconferencing software is 
+running.  People  participating  in  meetings  with  a  single 
+device have greater obscurity with regards to what they are 
+doing  (they  could  be  doing  different  things  in  different 
+browser tabs, only one of which is visible at any given time.)  
+In addition to where a person is looking, the reason for the 
+multitasking,  or  perhaps  more  importantly,  the  reason 
+assumed  by  the  other  person,  is  likely  to  also  influence 
+perceptions  of  the  appropriateness  of  the  behavior.  The 
+effects of gaze are at least partly determined by a subjective 
+interpretation [9]. Therefore, an observer’s assumption about 
+what  a  person  is  looking  at  could  affect  perceptions  of 
+behavior more than any absolute activity.  
+Consequences of multitasking 
+Multitasking 
+in  a  meeting  can  be  disruptive  and 
+counterproductive to other participants. For example, 51% of 
+respondents to a recent survey about videoconferencing cited 
+people who are multitasking – e.g., tapping on a keyboard – 
+as  a  major  distraction  [21].  When  there  is  a  large  group, 
+there may be some expectation that not all participants need 
+to  be  actively  engaged.  In  one-on-one 
+interdependent 
+conversations,  however,  multitasking  by  one  party  all  but 
+guarantees a disruption in the flow of events [17]. 
+
+1727
+
+also 
+
+regards 
+
+is 
+
+that 
+
+occur 
+to 
+
+their  behavior 
+
+less  obvious  since 
+
+The  concept  of  actor-observer  asymmetry  [19]  states  that 
+people  often  perceive  their  own  behavior  in  a  way  that  is 
+different  than  how  others  perceive  that  behavior.  This  has 
+been observed in the context of multitasking during face-to-
+face  meetings  [5],  where  respondents  thought  others  were 
+much more likely to be playing games, browsing their social 
+network  or  browsing  the  web  during  meetings  than  they 
+reported doing themselves. 
+Although  individuals  may  think  their  own  multitasking 
+behavior  is  either  unobtrusive  or  appropriate,  they  tend  to 
+evaluate  others  who  are  multitasking  more  harshly  and  see 
+that  behavior  as  rude  [16].  Krishnan  et  al.  [17]  found  that 
+when a negotiation partner was receiving and checking text 
+messages during a conversation, they were perceived as less 
+professional and less trustworthy. It is possible that a similar 
+in 
+phenomenon  will 
+video-mediated 
+communication  with 
+the  perception  of 
+multitasking. A multitasker in a videoconference might also 
+feel 
+their 
+conversation partner does not have access to  the full  set of 
+cues about what they are doing.  
+Ultimately,  multitasking  in  a  video  conversation  involves  a 
+series  of  tensions  between  a  person’s  need  or  desire  to 
+perform  multiple  tasks,  and  a  need  to  focus  (and  appear 
+focused)  on  the  video  communication.  The  ambiguity  of 
+behavior that comes with multitasking in video conferencing 
+could  be  beneficial  or  harmful  to  different  parties  in  the 
+conversation.  
+In  this  paper  we  examine  the  following  general  questions: 
+in  video 
+How 
+conferencing?  What 
+towards 
+multitasking in video conferencing? 
+To  answer  these  questions,  we  first  conducted  a  series  of 
+interviews with remote workers about their experiences with 
+multitasking  in  video  communication.  We  then  used  the 
+insights  gained  through  these  interviews  to  design  and 
+conduct a controlled experiment that explores these factors in 
+detail. In the remainder of this paper, we report the findings 
+from the interview and experiment, then discuss implications 
+for behavior and technology design.  
+VIDEOCONFERENCING IN PROFESSIONAL USE 
+To  begin  understanding  the  different  instances  in  which 
+multitasking  might  occur  during  video  meetings,  we 
+conducted semi-structured interviews with professional users 
+of  videoconferencing  technologies.  These  interviews  were 
+conducted  as  part  of  a  larger  study  on  videoconferencing 
+practices. We interviewed 15 knowledge workers (11 male, 4 
+female) from a variety of industries and companies. In these 
+interviews,  participants  discussed 
+their  use  of  video 
+for  both  one-on-one  and  group  video 
+conferencing 
+conferencing  meetings.  Across 
+the  cases,  multitasking 
+naturally emerged as a major theme when experiences with 
+videoconferencing were discussed.  
+
+for  multitasking 
+factors  affect  attitudes 
+
+technology  used 
+
+is 
+
+1728
+
+SESSION: RICH TELEPRESENCE
+
+these 
+
+to  multitasking  with 
+
+Participants mentioned engaging in multitasking themselves 
+and  suspecting  that  their  meeting  partners  were  doing  the 
+same. However, all multitasking was not the same, nor was 
+the way in which it was performed. From the many examples 
+given  by  the  interviewees,  the  nature  of  the  multitasking 
+activity  and  the  device  on  which  the  secondary  activity 
+occurred  emerged  as  two  key  dimensions.  We  analyzed  all 
+examples  pertaining 
+two 
+dimensions in mind. 
+The nature of the multitasking activity 
+Comments  about  the  multitasking  activities  fell  into  three 
+main  categories:  First,  the  multitasking  could  be  meeting 
+related  where  a  participant  may  wish  to  look  at  related 
+documents, check facts, or engage in “sidebar conversations” 
+related to the topic being discussed in the meeting. This type 
+of  behavior  is  related  to  the  topic  being  discussed  in  the 
+meeting, but may mean shifting one’s attention to a different 
+part  of  the  screen,  a  different  area  of  the  screen  than  the 
+video  window,  or  to  a  different  screen  altogether.  The 
+second  category  of  activities  was  other  work-related 
+multitasking  in  which  a  participant  may  be  distracted  by 
+another important or urgent work-related inquiry, such as an 
+IM message from another colleague or client. Finally, a third 
+category  was  personal  activities  such  as  checking  personal 
+email, browsing Facebook, or playing with physical toys.  
+Meeting-related multitasking 
+Interviewees provided examples of cases where they (or their 
+teammates)  would  multitask  during  meetings,  but 
+the 
+multitasking  behavior  was  relevant  to  the  content  being 
+discussed.  Typically 
+large  group 
+conferences;  this  type  of  “sidebar”  behavior  has  been 
+frequently observed in other contexts as well (c.f., [20]). As 
+one interviewee said: 
+
+took  place 
+
+this 
+
+in 
+
+One thing that happens sometimes is we have IM chats, 
+like  side  conversations  going  on  during  the  meeting. 
+Usually, I can’t do that, because I am the chair, so I am 
+usually sharing, so I can’t. (P9) 
+
+In  cases  where  screen  sharing  of  common  referents  like 
+documents, photos, etc. was a main focus of activity, it was 
+possible that a meeting participant would pull up the referent 
+in a new browser tab or window and focus their attention on 
+the artifact. This, however, was challenging because it meant 
+that they were unable to focus on the video window showing 
+the  “talking  head”  of  their  conversation  partner,  but  they 
+were  nevertheless  engaged  in  the  topic  of  the  conversation 
+even if their gaze was not directed at the other person.  
+
+I  find  it  hard  to  engage  [over  videoconferencing]  with 
+people. I find I am not actually looking at them most of 
+the  time  when  I  am  video  conferencing.  It  is  the  same 
+way  with  the  lesson.  I  am  looking  at  the  photo  that  he 
+sent me, I am not looking at him. (P7) 
+We weren't screen sharing or anything. I guess we just 
+tabbed away from the video screen and then had the doc 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+up. When we were referencing it, we could go through it 
+together. (P1) 
+
+Other work-related multitasking 
+Another category of multitasking behavior was dealing with 
+disruptions related to other work not relevant to the meeting. 
+For example, responding to another colleague’s messages or 
+interruptions  during  a  meeting  (for  example,  if  a  question 
+needed to be addressed). This meant that the focus would not 
+completely be on the conversation. 
+
+Sometimes I have other interaction going on with other 
+team  members  and  side  comments.  I  have  another  IM 
+going on. (P2) 
+
+type  of  behavior  would  sometimes  occur 
+
+This 
+in 
+videoconferencing meetings that involve multiple people at a 
+single location: 
+
+There's  two  people  remotely,  three  people  in  the  room, 
+and somebody asks a question and the people remotely 
+are  talking,  and  then  somebody  in  the  room  thinks  it's 
+okay  to  ask  me  a  question  about  something  slightly 
+different while they're talking. (P4) 
+Personal and unrelated multitasking 
+Finally,  a  third  category  of  multitasking  behavior  that  was 
+mentioned  was  doing  personal  or  unrelated  multitasking 
+during  a  meeting,  often  not  paying  attention 
+the 
+conversation.  
+
+to 
+
+If  you’re  not  in  on  the  conversation,  if  it’s  something 
+completely unrelated to you, you might be playing with 
+Buckyballs or reading your email instead or something 
+like that. (P11) 
+
+In fact, being able to multitask without being seen was cited 
+as a reason for preferring to meet over the phone instead of 
+via a video call: 
+
+Usually,  I  don’t  like  doing  video  because  if  you’re 
+working on something else, it would be rude to not look 
+at the camera all the time, so personally I prefer voice 
+calls... (P6) 
+
+The same interviewee noted that when she was working on 
+something else off-screen, audio cues could still give away 
+the fact that she was otherwise engaged:  
+
+If I’m typing something, you can hear it in the chat, and I 
+feel really bad because it’s obvious sometimes. (P6) 
+
+technical  configurations  for 
+
+Technology used for multitasking 
+Another  theme  that  emerged  was  that  participants  had 
+different 
+their  work.  The 
+comments 
+certain 
+configurations  were  more  likely  to  be  used  for  some 
+purposes than for others. For example, laptops could be used 
+for meeting-related multitasking: 
+
+they  made 
+
+suggested 
+
+that 
+
+that 
+
+If  something’s  mentioned  mid-conversation,  I  might 
+actually look into it while other people are talking about 
+it on my laptop but yeah, it’s not consistent amongst all 
+
+1729
+
+the  employees  whether  we  do  or  not...  [Name],  for 
+instance,  almost  always  brings  her  laptop  to  the  table 
+and  is  usually  multitasking  in  the  middle  of  the 
+conversation. (P11) 
+
+Having  multiple  monitors  also  enabled  one  participant  to 
+refer to relevant meeting-related material in the course of a 
+conversation: 
+
+I  actually  have  four  monitors  on  my  system,  and  most 
+people have two. You can be sharing a couple of screens 
+and looking at a third screen to look up stuff. (P9) 
+
+Other activities were not tied to an exclusive configuration. 
+For example, taking notes or accessing email could occur on 
+either a laptop or a mobile device: 
+
+Yes, usually take notes on my iPhone or on Note. (P7) 
+I’d say 25% of the time I am doing emails on my laptop 
+and I’d say 70% of the time or 65% of the time I’m doing 
+it on my phone. Then 5 to 10% of the time I’m doing it 
+on my iPad. (P5) 
+
+tool 
+
+itself 
+
+influence 
+
+perceptions 
+
+finally,  does 
+
+These initial findings give valuable insight into self-reported 
+multitasking  behaviors  and  the  range  of  activities  engaged 
+in,  and  devices  or  technologies  used.  These  insights  also 
+expose three important questions: How does the technology 
+used  for  multitasking  affect  observers’  assumptions  about 
+the  secondary  activity?  How  does 
+technology  affect 
+evaluations  of  the  appropriateness  and  politeness  of  the 
+the  video 
+multitasking  behavior?  And 
+conferencing 
+of 
+multitasking? 
+EXPERIMENT 
+To  further  understand  how  the  factors  elicited  in  our 
+interviews  influence  perceptions  of,  and  attitudes  towards 
+multitasking behavior in video conferencing, we designed a 
+controlled  experiment.  In 
+the  experiment,  participants 
+viewed one of a set of short video clips depicting a part of a 
+videoconferencing  meeting  between  two  coworkers.  In  the 
+clip  (except  for  a  control  condition),  one  of  the  coworkers 
+engaged in multitasking (see Figure 1).  
+Participants then rated the behavior of the people in the clip 
+along  several  dimensions  of  interest,  including  politeness, 
+engagement,  and  the  likely  secondary  activity  of  the 
+multitasker.  We  focused  on  one-on-one  interactions  as  a 
+good  starting  point  because  this  is  a  setting  in  which 
+perceived  attention  should  be  most  important  (there  is  no 
+plausible deniability or doubt about participation). We were 
+interested in what influenced the perception of what activity 
+a person was likely to be doing, how engaged did they seem, 
+and how appropriate or polite their behavior was. The two 
+key  elements  manipulated  in  the  experiment  were  thus  the 
+technology used for the secondary task, and the layout of the 
+videoconferencing tool. 
+
+Hypotheses 
+In our interviews, laptops, second monitors, and smartphones 
+were  all  mentioned  as  technologies  used  for  multitasking 
+during  videoconferencing.  Given  that  these  devices  are 
+commonly  associated  with  different  primary  uses,  we 
+hypothesize  that  seeing  a  person  multitask  on  different 
+devices  will  influence  what  observers  assume  the  person  is 
+doing:  
+H1.  The  technology  used  for  multitasking  will  have  a 
+significant effect on the assumed secondary activity. 
+The assumed activity should, in turn, affect how polite and 
+acceptable multitasking behavior is judged: 
+H2.  The  assumed  secondary  activity  will  have  a  significant 
+effect on ratings of politeness and acceptability. 
+Furthermore,  the  technology  used  may  make  multitasking 
+easier to spot and may have a direct or indirect effect on how 
+polite or acceptable the multitasking behavior is judged: 
+H3.  The  technology  used  for  multitasking  will  have  a 
+significant effect on ratings of politeness and acceptability. 
+Still,  if  H3  is  supported,  would  more  overt  multitasking  be 
+considered  more  or 
+less  acceptable?  On  one  hand, 
+multitasking on a different screen or device may be seen as 
+more forthcoming and less deceiving, and thus more polite. 
+On the other hand, multitasking on the same screen may be 
+seen  as  less  egregious  and  more  ambiguous.  We  thus  pose 
+two, contradicting, sub-hypotheses for H3, expecting at least 
+one to be rejected. 
+H3a: Multitasking on one screen will be rated as more polite 
+and acceptable than on a second-screen or mobile device. 
+and 
+H3b: Multitasking on a second-screen or mobile device will 
+be rated as more polite and acceptable than on one screen. 
+Finally, we were interested in whether the presentation of the 
+parties  in  the  videoconference  influences  attitudes  towards 
+multitasking.  While  in  some  videoconferencing  tools  the 
+local  and  remote  participants  are  both  shown  at  the  same 
+size, in others, the video of the remote participant occupies 
+the  majority  of  the  screen  and  the  local  participant  is  only 
+shown a small video of herself. We hypothesize that a larger 
+view  of  multitasking  by  a  remote  participant  would  reduce 
+ratings  of 
+the 
+their  engagement 
+acceptability of their behavior: 
+H4:  Seeing  multitasking  in  a  visually  larger  format  will 
+reduce  ratings  of  the  multitasker’s  engagement  in  the 
+meeting and how polite and acceptable their behavior is.  
+Method 
+For  the  experiment,  which  employed  a  between-subjects 
+design,  we  created  a  set  of  short  1-minute  video  clips 
+depicting  a  part  of  a  meeting  between  two  coworkers.  In 
+these  clips,  one  coworker  (“Person  A”)  describes  three 
+different  locations  in  which  an  advertising  campaign  could 
+
+the  meeting  and 
+
+in 
+
+1730
+
+SESSION: RICH TELEPRESENCE
+
+be conducted. The second coworker (“Person B”) passively 
+responds to Person A’s remarks with short comments such as 
+“yeah”  and  “uh-huh”.  While  the  clips  varied  along  several 
+dimensions  (detailed  below),  all  clips  without  exception 
+followed the script shown in Figure 2.  
+The  video  clips  were  created  as  follows:  First,  in  order  to 
+control  for  differences  that  might  stem  from  the  gender  of 
+the  coworkers  depicted  in  the  videos,  we  created  two 
+versions  of  each  clip:  one  in  which  Person  A  and  B  were 
+both  male,  and  one  in  which  Person  A  and  B  were  both 
+female.  The  script,  timing,  and  behaviors  were  identical 
+across the two versions. For simplicity, in the remainder of 
+this  section,  whenever  a  clip  is  described,  it  should  be 
+assumed that two identical clips were created for both actor 
+genders. 
+In  order  to  maintain  experimental  control,  we  recorded  the 
+video  of  Person  A  once,  and  used  this  video  in  all  the 
+conditions.  This  novel  approach  prevents  any  difference  in 
+the  behavior  of  Person  A  from  influencing  participants’ 
+judgment of the behavior of Person B. 
+To test the effect of the technology used for multitasking, we 
+created 
+the  video  with  Person  B 
+multitasking  (see  Figure  3)  and  a  fourth  version  with  no 
+multitasking. In all conditions, Person B begins by directing 
+
+three  versions  of 
+
+...Which is why we need it by next Thursday. 
+I see… Should I talk to Don about it? 
+
+A: 
+B: 
+A:  Yeah. That’s a good idea. 
+A:  So...the main thing I have for today is that I wanted to 
+get your opinion on three potential locations where we 
+[notification sound plays] could show the ads as part of 
+the marketing campaign 
+
+B:  Uh-huh  
+ 
+A:  So, looking at the pictures I took today, the first location 
+
+B begins multitasking 
+
+is a bus stop downtown near the courthouse. The 
+Northbound and eastbound buses all stop here so there 
+should be lots of potential traffic. 
+
+B:  Mmmhmm…. 
+A:  The second location is a billboard that is next to the 
+
+highway 
+
+B:  Yeah 
+A:  The third location is near the baseball stadium 
+B:  Sure 
+A:  Now, if you look at the email I sent, you can see the 
+
+relative costs and potential views for each of the 
+locations.  
+B looks back at A 
+
+ 
+A:  The bus stop is going to be the least expensive, the 
+
+billboard is the most expensive, and the baseball stadium 
+is somewhere in between. 
+
+Figure 2. Video script: An exchange between two coworkers 
+
+(Person A and Person B). 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+a) Multitasking on the same screen 
+
+ 
+
+b) Multitasking on a dual monitor 
+
+  
+
+c) Multitasking on a mobile device 
+
+  
+
+Figure 3. Sample key-frames showing B’s gaze when multitasking in three experimental conditions. 
+
+a) Side-by-Side UI layout 
+
+ 
+
+ 
+
+b) Big-and-Small UI layout 
+
+ 
+
+Figure 4. Two UI layouts used in the study based on common layouts in video conferencing applications. 
+
+the  same  screen  on  which 
+
+their  gaze  towards  the  webcam  (straight  ahead).  However, 
+after  a  short  notification  sound  is  heard,  Person  B  starts 
+engaging  in  multitasking.  In  the  first  version,  the  Same 
+Screen condition (Figure 3a), Person B directs their gaze to a 
+different  window  on 
+the 
+videoconference  is  taking  place.  In  the  Dual  Monitor 
+condition  (Figure  3b),  Person  B  directs  their  gaze  to  a 
+secondary  monitor  set  up  next  to  the  main  screen.  In  the 
+Mobile  device  condition  (Figure  3c),  Person  B  directs  their 
+gaze  downwards  to  a  mobile  phone  they  were  holding  and 
+interacting with in their lap.  
+In  order  to  test  hypothesis  H4,  we  created  two  versions  of 
+each  video  that  varied  in  the  presentation  layout  of  the 
+videoconferencing  (see  Figure  4).  We  chose  two  common 
+layouts of videoconferencing applications. In the first layout, 
+which we refer to as “Big-and-Small”, Person B is shown in 
+a  large  window  occupying  the  majority  of  the  video  and 
+Person  A  appears  in  a  small  thumbnail  (Figure  4a).  This 
+layout  is  similar  to  popular  videoconferencing  applications 
+such as Skype and Google Hangouts. In the second, “Side-
+by-Side” layout, Person A and Person B are shown side by 
+side with equal size video feeds (Figure 4b). This common 
+videoconferencing layout is used most often in multi-person 
+video meetings.  
+To summarize, the full experimental design was as follows: 
+× 4  Multitasking Technology  
+
+(Same Screen, Dual Monitor, Mobile Device, None) 
+
+ 
+
+× 2  Layout (Side-by-Side vs. Big-and-Small) 
+× 2  Actor gender (Female-Female vs. Male-Male) 
+= 16 conditions in total 
+
+1731
+
+Measures 
+After  watching  the  video,  participants  were  asked  to  give 
+open-ended  responses  describing  separately  what  they  saw 
+each  person  in  the  meeting  do.  We  used  these  open-ended 
+responses both to confirm that participants had paid attention 
+to  the  video  clip  and  also  to  get  an  initial  sense  of  their 
+impressions  of  and  reactions  to  Person  A  and  Person  B’s 
+behaviors.  
+To test hypotheses H2 and H3, we asked participants to rate 
+the  behavior  of  Person  B  (the  multitasker).  Since  the 
+participants  in  our  experiment  only  observed  the  meeting 
+rather than participated in it (not an uncommon situation in 
+multi-person  meetings),  we  asked 
+the 
+obviousness of the multitasking from their perspective, and 
+the perspective of Person A. The following were rated on a 
+5-point Likert-scale ranging from “Completely Disagree” to 
+“Completely Agree” 
+1.  Person B’s behavior was polite during the conversation 
+2.  Person B’s behavior was acceptable during the 
+
+them 
+
+to 
+
+rate 
+
+3. 
+4. 
+
+conversation 
+It was obvious to me that Person B was multitasking 
+It was obvious to Person A that Person B was 
+multitasking 
+
+5.  Person A was engaged with the meeting  
+6.  Person B was engaged with the meeting  
+Next, in order to test H1 and H2, participants were asked to 
+rate the likelihood that Person B was engaged in each of a set 
+of  8  secondary  activities  on  a  5-point  Likert-scale,  from 
+“Very  Unlikely”  to  “Very  Likely”.  Two  of  the  8  activities 
+were meeting related (“Focusing on the document person A 
+
+age, 
+
+gender, 
+
+experience  with 
+
+is talking about”, and “Searching for other locations for the 
+advertising  campaign”),  three  were  related  to  other  work 
+activities  (“Looking  at  a  document  for  another  project”, 
+“Reading  a  work-related  email  from  another  co-worker”, 
+and  “Chatting  with  another  co-worker”),  and  three  were 
+personal  activities  (“Browsing  Facebook”,  “Reading  a 
+personal email”, and “Chatting with a friend”). The order of 
+the list of activities was randomized for each participant. 
+Finally,  we  collected  demographic  information,  including 
+participants’ 
+video 
+conferencing  (Skype,  Google  Hangouts,  etc.)  and  comfort 
+with  multitasking  (using  the  PAI  scale  of  polychronic-
+monochronic tendency [15]). 
+Procedure 
+The  experiment  was  set  up  as  an  online  experiment  using 
+Amazon  Mechanical  Turk.  Participation  in  the  task  was 
+limited  to  individuals  in  the  United  States.  Upon  accepting 
+the task, participants were randomly assigned to one of the 
+sixteen conditions described above. Participants were shown 
+a  1-minute  video  clip  of  the  videoconferencing  meeting 
+based  on  their  assigned  condition.  We  used  a  timer  on  the 
+page  to  prevent  participants  from  advancing  past  the  video 
+before the video was finished. Participants then answered the 
+open-ended  questions,  rated  the  behavior  they  saw  in  the 
+video,  and 
+finally  provided  biographical  data  and 
+information about their multitasking preferences.  
+We recorded the time participants took to interact with each 
+page of questions in order to filter participants who quickly 
+answered all the questions or neglected the task for very long 
+durations.  We  also  included  a  “check  question”  about  the 
+locations  discussed  in  the  meeting  (see  Figure  2)  to  ensure 
+that  participants  had  paid  attention  to  the  content  of  the 
+video. The full task took 3 minutes to complete. Participants 
+were paid 30 cents for their time. 
+Participants 
+436  participants  completed  the  task1.  We  excluded  18 
+participants  who  failed  to  answer  the  check  question 
+correctly or gave the same rating value to all questions. We 
+also excluded 10 participants whose completion time was too 
+short/long  based  on  a  Mahalanobis  Outlier  analysis.  Thus, 
+our  full  dataset  for  analysis  included  408  participants,  with 
+an  average  of  25  participants  per  condition  (Min=17, 
+Max=36, SD=5.36). 48% of participants were women. Age 
+was reported in bands with 50% between the ages of 25-34. 
+RESULTS 
+Overall, participants appropriately rated Person A as highly 
+engaged  in  the  meeting  (M=4.4)  and  Person  B  as  less 
+
+                                                             
+1 Nearly half (47%) of participants attempted to complete the 
+task  a  second  and  third  time;  however,  to  keep  the 
+experiment  as  a  between-subject  design,  only  their  first 
+attempt was kept. 
+
+1732
+
+SESSION: RICH TELEPRESENCE
+
+ratings 
+
+(whether 
+
+and  Acceptability 
+
+engaged (M=2.6). A Wilcoxon Signed Rank test shows this 
+difference is significant (p<.001).  
+Politeness 
+ratings  were 
+significantly  highly  correlated  (r=.82;  p<.001).  Ratings  of 
+Person B’s engagement in the meeting were correlated with 
+the  behavior  seen  as  polite  (r=.71;  p<.001)  and  acceptable 
+(r=.67; p<.001). On the other hand, the more obvious it was 
+that  multitasking  was  taking  place,  the  less  polite  (r=-.49; 
+p<.001)  and  less  acceptable  (r=-.42;  p<.001)  the  behavior 
+seemed.  A  comparison  showed  that  participants  thought  it 
+was more obvious to them that multitasking was taking place 
+than to Person A (M=3.5 vs. M=3.0; t(396)=9.4; p<.001). In 
+the  remaining  analyses,  we  look  only  at  how  obvious 
+multitasking was to the participant. 
+Open-ended responses 
+Checking participants’ open-ended responses to confirm our 
+manipulations,  it  was  apparent  that  overall,  they  perceived 
+what  was  happening  in  the  videos  as  intended.  Many 
+expressed an opinion that Person A was “actively involved in 
+the  conversation  and  was  leading  it.”  For  the  multitasking 
+conditions,  many  responses  referred  to  Person  B  doing 
+something  else 
+it  was  explicitly  noted  or 
+‘presumed’ behavior). Participants also referred to noticing a 
+change  in  Person  B’s  gaze,  body  language,  and  behavior 
+(e.g.  “Person  B  started  off  engaged  and  then  kind  of  got 
+distracted or drifted off”).  
+In  the  process  of  examining  the  open-ended  responses,  we 
+also discovered that while participants in the Mobile Device 
+condition easily identified that multitasking was taking place 
+(and  gave  a  high  rating  for  multitasking  being  obvious, 
+M=3.88),  more  than  half  of  them  thought  that  Person  B’s 
+secondary  activity  was  taking  notes  rather  than  interacting 
+with their phone (as opposed to the Dual Monitor condition 
+where  multitasking  was  both  rated  as  obvious  (M=4.1)  and 
+correctly  perceived  as  happening  on  a  second  screen).  The 
+fact that a downward gaze was as easily interpreted as being 
+fully engaged in the meeting as it was as being completely 
+disengaged  is  interesting.  However,  in  order  to  understand 
+attitudes  towards  multitasking  in  the  context  of  technology 
+use, we wanted to focus on exploring participants’ reactions 
+when they realized that Person B’s activity was taking place 
+on a phone, not on paper.  
+To  address  this,  we  recruited  49  new  participants  for  the 
+Mobile Device condition, this time clarifying that Person B’s 
+downwards gaze was directed at a phone. Specifically, prior 
+to watching the video, instructions now stated that “During 
+the  meeting,  one  person 
+their  phone.” 
+Examining  the  responses  of  these  new  participants  showed 
+that  while  multitasking  was  rated  just  as  obvious  as  before 
+(M=3.87),  ambiguity  was  reduced,  with  comments  often 
+referencing  the  use  of  a  phone  (e.g.,  “Person  B  was 
+distracted  and  checking  his  phone  messaging.  He  wasn't 
+offering  any  feedback  to  Person  A  except  for  a  minimal 
+'mmhuh'  etc.  He  was  being  rude,  disrespectful  and 
+inattentive  to  Person  A”,  and  “She  basically  listened  to 
+
+looking  at 
+
+is 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Figure 5. Effect of technology on assumed activity. 
+
+Figure 6. Effect of technology on politeness of multitasking. 
+
+ 
+
+ 
+
+Person A and then she started looking at her phone and not 
+really  listening.  She  was  kind  of  rude.”).  In  subsequent 
+analyses, for the Mobile Device condition, we used the data 
+from  these  new  participants.  The  full  data  analyzed  thus 
+includes a total of 397 participants.  
+Multitasking vs. No Multitasking 
+To  test  the  underlying  assumption  that  multitasking  is 
+perceived  more  negatively  than  no  multitasking,  we  align-
+ranked  participants’  ratings  [26]  and  performed  analyses  of 
+variance 
+(ANOVA)  of  Multitasking  Technology  on 
+Politeness,  Engagement  (of  B),  and  Obviousness  of  the 
+multitasking.  We  then  compared  ratings  from  the  Control 
+condition and each other condition. 
+As expected, participants in the Control condition rated the 
+Obviousness  of  multitasking  very  low,  significantly  lower 
+than  any  of  the  multitasking  conditions  (M=2.3  vs.  M=3.9; 
+F[3,393]=50.7; p<.001). Behavior in the Control group was 
+also  rated  as  more  polite  (M=3.8)  than  in  any  of  the  other 
+conditions  (F[3,393]=53.5;  p<.001)  and  more  acceptable 
+(M=3.7) 
+the  Dual  Monitor  and  Mobile  Device 
+conditions  (F[3,393]=36.4,  p<.001).  However,  engagement 
+in 
+the  Control  condition  was  rated 
+significantly  higher  than  the  Dual  Monitor  and  Mobile 
+Device  conditions,  but  not  different  from  the  Same  Screen 
+condition (F[3,393]=18.7; p<.001).  
+We were now ready to test our hypotheses. In the analyses 
+described  below,  we  describe  results  from 
+the  285 
+participants in the multitasking conditions. 
+The effect of technology on assumed secondary activity 
+To  test  H1,  which  stated  that  the  technology  used  for 
+multitasking will affect the assumed secondary activity, we 
+first combined the list of eight secondary activities into three 
+Activity categories: Meeting-related activities, Other-Work-
+related  activities,  and  Personal  activities.  We  used  the 
+average  likelihood  rating  provided  by  each  participant  for 
+each  category.  We  then  conducted  a  repeated  measures 
+mixed-model  ANOVA  on  the  align-ranked  ratings,  with 
+Activity Likelihood as the dependent measure. We included 
+Activity  Category,  Multitasking  Technology,  and 
+the 
+interaction  between  them  as  independent  measures.  The 
+
+the  meeting 
+
+than 
+
+in 
+
+1733
+
+than  personal  activities 
+
+and  Activity  Category  was 
+
+gender of people in the video (“Video-Gender”), UI Layout, 
+and  the  Participant  Gender  were  included  as  control. 
+ParticipantID was modeled as a random effect. 
+As shown in Figure 5, the interaction between Multitasking 
+Technology 
+significant 
+(F[4,573]=20.6; p<.001). When a mobile device was used for 
+multitasking, participant assumed that the secondary activity 
+was significantly more likely to be personal (M=3.54) than 
+related  to  the  meeting  (M=2.23;  t(573)=7.4;  p<.001)  or  to 
+other  work  (M=2.74;  t(570)=2.4;  p<.05).  This  result  is 
+important  given  that,  according  to  the  findings  of  our 
+interviews, phones are often used for meeting related tasks. 
+In  the  Same  Screen  condition,  on  the  other  hand,  meeting-
+related activities were assumed to be most likely (M=3.03), 
+significantly  more 
+(M=2.89; 
+t(574)=4.3; p<.001). Specifically, it suggests that people will 
+assume  that  someone  multitasking  on  their  phone  is  doing 
+something  personal  and  unrelated  to  the  meeting,  while 
+someone  multitasking  on  the  same  screen  is  likely  doing 
+something related to the meeting. This confirms H1.  
+Looking at all eight activities for more detail, we again find a 
+significant interaction between the technology used and how 
+likely  a  secondary  activity  was  rated  (F[14,2017]=16.9; 
+p<.001).  The  activity  assumed  most  likely  for  the  Mobile 
+Device condition was “Chatting with a friend” (M=3.8). For 
+the Dual Monitor condition it was “Reading a work-related 
+email from another co-worker”. “Focusing on the document 
+person  A  is  talking  about”  was  the  most  likely  assumed 
+activity  in  the  Same  Screen  condition,  significantly  higher 
+than in either the Dual Monitor or Mobile Device conditions. 
+Effects on attitudes towards multitasking 
+To  test  our  hypotheses  on  factors  influencing  attitudes 
+towards  behavior,  we  performed  analyses  of  variance 
+(ANOVA) with Politeness, Obviousness, and Engagement as 
+dependent  measures  and  Multitasking  Technology,  UI 
+Layout,  Video-Gender, 
+as 
+independent measures. To test the effect of assumed activity, 
+we also included participants’ likelihood ratings of activities 
+(Meeting-related, Other-work-related, and Personal). Having 
+found  no 
+experience  with 
+
+and  Participant  Gender 
+
+effects  of  Age-range, 
+
+videoconferencing, or Polychronicity tendencies, those were 
+not included in the models reported here. 
+Effects on Politeness and Acceptability 
+Testing  our  second  hypothesis,  our  analysis  found  a 
+significant  effect  of  the  assumed  secondary  activity  on 
+Politeness.  The  more  participants  assumed  the  secondary 
+activity was Meeting-related, the more polite they rated the 
+behavior  (F[1,276]=40.9;  p<.001)  and  the  more  acceptable 
+(F[1,276]=57.6,  p<.001).  The  more  they  assumed  the 
+activity  was  Personal  or  related  to  Other  Work,  the  less 
+polite they viewed the multitasking (F[1,276]=30.0;  p<.001 
+and  F[1,276]=7.8;  p<.01).  The  more  the  secondary  activity 
+was assumed to be Personal, the less acceptable it was rated 
+(F[1,276]=40.72, p<.001). 
+As shown in Figure 6, the technology used for multitasking 
+also  had  a 
+significant  main  effect  on  Politeness 
+(F[2,276]=18.5;  p<.001).  Technology  used  also  had  a  main 
+effect on Acceptability (F[2,276]=14.7, p<.001). A post-hoc 
+comparison  showed 
+that  Same  Screen  was  rated  as 
+significantly  more  polite  (M=3.4)  than  both  the  Mobile 
+Device  (M=2.1;  t(276)=5.8,  p<.001)  and  Dual  Monitor 
+(M=2.8;  t(276)=3.97,  p<.001).  We  found  no  additional 
+effects  on  Politeness.  Similarly,  the  Same  Screen  was  also 
+rated  as  more  acceptable  (M=3.5)  than  both  the  Mobile 
+Device  (M=2.19;  t(276)=24.04,  p<.001)  and  the  Dual 
+Monitor (M=2.88, t(276)=17.67, p<.001). 
+These results confirm both H2 and H3 and suggest that the 
+technology a person uses for multitasking, and what people 
+assume  they  are  doing  with  that  technology,  significantly 
+affect how polite and acceptable that behavior is judged.  
+Effects on Obviousness of multitasking 
+Looking at the effect of the technology used for multitasking 
+on how Obvious the multitasking was, we find a significant 
+effect  (F[2,276]=3.7;  p<.05),  with  multitasking  rated  as 
+significantly more obvious on the Dual Monitor than on the 
+Same  Screen  (4.1  vs.  3.6;  t(276)=2.64,  p<.001).  Since  less 
+obvious  multitasking  (Same  Screen)  was  also  associated 
+with  higher  politeness  ratings,  we  may  accept  H3a  and 
+reject H3b. 
+Effects on Perceived Engagement 
+Hypothesis H4 predicted that seeing Person B multitasking in 
+a visually larger format will make them appear less engaged 
+in the meeting and, in turn, less polite. Our analysis found a 
+main  effect  of  UI  Layout  on  ratings  of  Engagement. 
+However, the effect was the opposite of what we expected; 
+Person  B  was  rated  as  significantly  less  engaged  when 
+viewed in the Side-by-Side layout (M=2.3) than in the Big-
+and-Small layout (M=2.8; F[1,276]=15.8; p<.001). Thus, we 
+must  reject  H4.  We  return  to  this  surprising  result  in  the 
+Discussion section. 
+Perceived  engagement  was  also  affected  by  the  technology 
+used  for  multitasking  (F[2,276]=4.3;  p<.05).  Engagement 
+was rated significantly lower when multitasking on a Mobile 
+
+1734
+
+SESSION: RICH TELEPRESENCE
+
+ 
+Figure 7. A proposed model of factors influencing perception 
+of, and attitudes towards multitasking in video conferencing. 
+
+Device  compared  to  on  the  Same  Screen  (2.0  vs.  2.9; 
+t(276)=2.9; p<.01). 
+Effects of personal characteristics 
+As  mentioned  earlier,  we  found  no  effects  of  Age-range, 
+experience  with  videoconferencing,  or  Polychronicity 
+tendencies. We also analyzed the effects of Video-Gender as 
+well as the participant’s gender on attitudes and perceptions.  
+We  found  no  significant  differences  between  participants 
+that  watched  a  meeting  between  the  two  women  and  a 
+meeting  between  the  two  men.  We  did  find  a  small 
+significant  effect  of  the  participant’s  gender  on  ratings  of 
+obviousness,  with  women  perceiving  multitasking  as  more 
+obvious than men (4.0 vs. 3.7; F[1,276]=4.5; p<.05).  
+DISCUSSION 
+Our interviews and experiment give insight into multitasking 
+during  videoconferencing  from  the  perspective  of  both  the 
+multitasker and the observer of multitasking. Our study also 
+provides a first examination into how the unique affordances 
+of  video  conferencing  (such  as  UI  layouts  which  show 
+participants in different sizes, or a field of view that restricts 
+what is seen) influence how such behavior is seen. In Figure 
+7, we propose a model summarizing the role of technology 
+and UI layout on our outcome measures.  
+The results reveal that observers of video-mediated meetings 
+use  cues  such  as  the  technology  used  for  multitasking  to 
+form assumptions about the secondary activity that is taking 
+place.  This  relates  to  findings  from  studies  of  the  use  of 
+laptops  in  face-to-face  meetings  where  multitasking  was 
+ambiguously 
+as 
+demonstrated  by  our  work,  ambiguity  in  the  case  of 
+videoconferencing  can  be  significantly  greater.  As  Table  1 
+illustrates, first, in video communication, the device used for 
+multitasking may be outside the camera’s field of view, as in 
+the  case  of  a  mobile  device.  Next,  when  activities  all  take 
+place on a single screen, there will often be ambiguity about 
+whether  multitasking  is  at  all  taking  place.  Finally,  even  if 
+the location of multitasking is apparent, as in the case of a 
+dual monitor, the secondary activity is still unknown (similar 
+to the face-to-face case in [14,17]).  
+ 
+
+[14]).  However, 
+
+interpreted 
+
+(e.g. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Secondary 
+activity on: 
+Single screen  
+Dual Monitor  
+Mobile device  
+
+Is multitasking 
+
+obvious? 
+
+Is the technology 
+used obvious? 
+
+No 
+Yes 
+Yes 
+
+Yes 
+Yes 
+No 
+
+Table 1.  Variations in ambiguity of behavior and technology 
+
+used for multitasking. 
+
+that 
+
+them 
+
+to  hide 
+
+this  ambiguity  allows 
+
+As  discussed  in  [6],  participants  in  videoconferencing  may 
+hope 
+their 
+multitasking, while at the same time believe they are able to 
+detect multitasking in others. Indeed, our study participants 
+believed it was easier for them to spot multitasking than for 
+the person in the video.   
+Our  findings  also  highlight  how  observers’  assumptions 
+about the secondary activity will affect their reactions to that 
+behavior.  For  example,  when  multitasking  took  place  on  a 
+phone,  activities  were  assumed  to  be  of  a  personal  nature. 
+This  finding  is  important  since  the  secondary  activity  is 
+rarely entirely known to the videoconferencing partner, and 
+an  incorrect  interpretation  will  lead  to  incorrect  evaluation. 
+Consider,  for  example,  our 
+interview  findings  where 
+individuals reported using mobile devices also for meeting-
+related  activities;  in  those  cases,  an  entirely  appropriate 
+behavior may be judged negatively.  
+Additionally, the  technology used influences how apparent, 
+or  obvious,  the  multitasking  behavior  is.  Engagement  was 
+positively  correlated  with  politeness/acceptability,  while 
+obviousness  had  the  reverse  effect.  As  we  show,  these 
+assumptions and interpretations of the secondary activity can 
+negatively  affect  how  behavior  is  viewed  as  more  or  less 
+polite, engaged, and acceptable. This has implications for the 
+behavior  of  people  who  participate  in  video  meetings,  as 
+well as the design of future video conferencing technologies. 
+Our  experiment  also  revealed  a  surprising  effect  of  the 
+videoconferencing  tool  itself  on  how  engaged  meeting 
+participants  appear.  Our  comparison  of 
+two  popular 
+videoconferencing  UI  layouts  showed  that,  contrary  to  our 
+expectations,  the  multitasker  appeared  more  engaged  when 
+shown in a large window, and less engaged when appearing 
+in  a  smaller  side-by-side  view  at  equal  size  as  the  other 
+meeting participant. There are at least two explanations for 
+this effect: One explanation for this finding is that being able 
+to see a participant in a larger window gives extra emphasis 
+when their gaze is directed towards the camera. An alternate 
+explanation  is  that  when  presented  side-by-side,  direct 
+comparison  between  meeting  participants  can  be  easily 
+made, with a multitasker appearing much less engaged than 
+their counterpart. This result may have direct implication for 
+the design of videoconferencing applications. 
+Implications for behavior 
+Our  findings  hint  at  how  behavioral  cues  may  highlight  or 
+mask multitasking behavior and perceptions thereof. Clearly, 
+
+1735
+
+the  best  course  of  action  is  not  to  engage  in  activities 
+unrelated to the meeting at all. However, if multitasking is 
+unavoidable,  our  findings  suggest  that  multitasking  on  the 
+same device appears less inappropriate than interactions on a 
+second screen or device. Multitasking on a dual monitor was 
+easy to spot and rated negatively (although at least secondary 
+activities  were  assumed  to  be  work-related  rather  than 
+personal).  
+The  case  of  interacting  with  a  mobile  device  during  a 
+videoconference is interesting because the device itself is not 
+seen  in  the  video  in  most  camera  configurations.  Thus,  the 
+multitasker  may  benefit  from  their  behavior  misinterpreted 
+as paying attention (e.g., taking notes). However, if activity 
+is  correctly  interpreted  as  interaction  on  a  phone,  their 
+interlocutors are likely to assume that they are engaged in an 
+unrelated personal activity, such as playing a game, texting, 
+chatting, etc. Two potential recommendations emerge: First, 
+hoping  to  rely  on  the  phone  being  off  camera  to  hide 
+multitasking may prove risky. Second, users may wish to tell 
+their  meeting  partners  when  they  are  using  their  phone  for 
+meeting-related  activities,  to  prevent  those  from incorrectly 
+assuming the activities are personal.  
+Implications for design 
+Our  findings  offer  several  implications  for  the  design  of 
+video  conferencing  systems.  Eye  gaze  and  body  language 
+being  directed  elsewhere  besides  (relatively)  straight  ahead 
+at the camera, are easy to detect and negatively perceived by 
+meeting  viewers.  Therefore,  design  decisions  may  vary 
+depending  on  whether  they  are  geared  towards  helping  a 
+multitasker be perceived less negatively, or helping another 
+participant  have  a  better  idea  of  what  their  conversation 
+partner is doing.  
+In the first case, systems should be designed such that users 
+can  direct  all  incoming  alerts  and  notifications  from  their 
+smartphone  and  secondary  monitors  to  a  primary  screen  of 
+their  choice  while  they  are  in  “in  a  meeting”  status.  This 
+way, disruptive gaze re-direction can be minimized.  
+Second,  in  the  case  of  multiple  monitors  and  multiple 
+cameras, a system could be designed to use face-detection to 
+dynamically  determine  which  screen  or  camera  a  person  is 
+facing  and  automatically  switch  to  that  camera.  This  may 
+allow users to maintain a consistent impression of direct eye 
+gaze,  translating  the  apparent  benefit  of  the  single-screen 
+condition to the case of multiple monitors.  
+Finally,  video  conferencing  systems  could  allow  for  the 
+layout  and  information  about  participants’  behavior  to  be 
+displayed 
+individual 
+tendencies/characteristics.  The  video  window  could  also  be 
+supplemented  with  additional  cues  about 
+the  other’s 
+behavior,  but  such  an  option  should  be  treated  with  care. 
+Visualizations  of  others’  behavior  or  psychological  states 
+over  video  conferencing  have  been  explored  in  other 
+contexts such as visualizing browser activity [18], stress or 
+mood  levels  [22,  24].  While  these  can  be  useful,  there  are 
+
+differently 
+
+based 
+
+on 
+
+SESSION: RICH TELEPRESENCE
+
+towards 
+
+attitudes 
+
+on a mobile device. In particular when videoconferencing on 
+a phone or a tablet, the ability and method for multitasking is 
+different: applications typically occupy the entire screen, and 
+since the device is completely mobile the camera also moves 
+around,  potentially  breaking  any  illusion  of  eye  contact.  In 
+future work we plan to explore the effect of multitasking in 
+additional videoconferencing setups, and build and evaluate 
+the effectiveness of tools that dynamically transition between 
+cameras to follow the multitasker’s gaze. 
+CONCLUSION 
+This paper addresses the tension between the growing use of 
+video  conferencing  and  meeting  participants’  desire  for 
+multitasking.  Through  a  combination  of  interviews  and 
+controlled experimentation, we provide a detailed account of 
+technological  and  video  conferencing  UI-based  factors 
+influencing 
+in 
+videoconference  meetings.  Given  the  nature  of  the  modern 
+workplace and the increasing proliferation of mobile devices, 
+it is unlikely that workers’ tendency for multitasking will go 
+away  soon.  Our  results  indicate  that  all  multitasking 
+behavior  is  not  perceived  equally;  the  association  of 
+technology  and  common  activities  along  with  how  the 
+activity  is  presented  through  the  video  conferencing  tool 
+layout  influences  observers’  assumptions  and  attitudes. 
+While  we  do  not  pass  judgment  on  whether  or  not 
+multitasking  should  occur,  our  study  provides  insights  into 
+how the negative interpersonal perceptions that come along 
+with it when it does happen can be accentuated or reduced 
+using technology and social cues. 
+ACKNOWLEDGMENTS 
+Removed for blind review. 
+REFERENCES 
+1.  Rachel F. Adler and Raquel Benbunan-Fich. 2013. Self-
+interruptions in discretionary multitasking. Computers 
+in Human Behavior 29, 4, 1441–1449. 
+
+multitasking 
+
+2.  Robert Bajko. 2011. Mobile Telephone Usage and 
+
+Perception During Group Meetings. Proc. CONISAR, 1–
+10.  
+
+3.  Ernst Bekkering and J.P. Shim. 2006. Trust in 
+
+Videoconferencing. Commun. ACM 49, 7, 103–107.  
+4.  Caroline S. Bell, Deborah R. Compeau, and Fernando 
+Olivera. 2005. Understanding the social implications of 
+technological multitasking: A conceptual model. Proc. 
+SIGHCI 2005, 2. 
+
+5.  Matthias Böhmer, T. Scott Saponas, and Jaime Teevan. 
+2013. Smartphone use does not have to be rude: making 
+phones a collaborative presence in meetings. Proc. 
+MobileHCI, ACM, 342–351.  
+Jed R. Brubaker, Gina Venolia, and John C. Tang. 2012. 
+Focusing on shared experiences: moving beyond the 
+camera in video communication. Proc. DIS, ACM, 96–
+105.  
+
+6. 
+
+social 
+
+is  possible 
+
+tradeoffs  between 
+
+two  strangers  converse.  It 
+
+well-documented 
+increasing 
+awareness  of  another  person’s  activity  and  preserving 
+privacy.  Thus,  more  work  is  needed  to  know  how  cues 
+related  to  meeting  relevant  and  irrelevant  behavior  are 
+perceived  by  both  sides  in  a  multitasking  context  where 
+participants  may  have  different  motives  and  privacy 
+concerns. 
+Limitations and future work 
+One  limitation  of  our  experiment  is  that  participants  were 
+placed  in  the  role  of  non-participating  meeting  observer 
+watching 
+that 
+participants’  reactions  or  perceptions  would  be  different  if 
+they  were  actively  participating  in  a  video  meeting  with 
+people they knew well. It is important to note, however, that 
+being  a  passive  observer  in  a  meeting  is  not  uncommon, 
+particularly in multi-person videoconferencing meetings. As 
+noted  by  our  interviewees,  in  multi-person  video  meetings, 
+meeting participants will try to manage how their activities 
+appear  to  others,  and  judge  other  participants’  multitasking 
+behavior.  Furthermore,  our  results  strongly  suggest  that 
+participants  understood  the  situation  well;  their  open-ended 
+responses  often  contained  affective  attributions  stemming 
+from the multitasking behavior.  
+Next, while our experiment focused on a handful of factors 
+that emerged from our interviews (e.g., the technology used 
+and  the  secondary  activity),  as  we  learned  from  our 
+interviews,  video  meetings  can  take  a  variety  of  forms  and 
+be  held  between  many  different  types  of  people.  As  such, 
+other dimensions of multitasking in video meetings still need 
+to be explored in future work.  
+One such dimension involves the nature of the meeting and 
+the  participants.  As  the  number  of  meeting  participants 
+grows  or  the  length  of  the  meeting  increases,  attitudes 
+towards one or several people’s multitasking behavior could 
+change.  Social  dynamics  may  also  play  a  role:  In  our 
+experiment,  conversation  dynamics  suggested 
+that  one 
+person  was  in  charge  and  leading  the  meeting.  Exploring 
+additional  status  relationships  could  be  important  since  this 
+relationship may influence attitudes towards the multitasker 
+(e.g. [25]).  
+Another interesting dimension to investigate is whether if a 
+person  verbally  elevates  their  multitasking  behavior  to  the 
+foreground (e.g., by stating “Hold on, I need to reply to this 
+message.”), their behavior could appear more appropriate or 
+polite. Similarly, new technologies such as smartwatches and 
+head-mounted  displays  are  becoming  available  and  present 
+interesting new context for multitasking. Exploring the role 
+of these and other variables in future work will give greater 
+insight into additional factors (both social and technical) that 
+influence the dynamics of multitasking in meetings held over 
+video conferencing. 
+Finally, the videoconferencing itself, not only the secondary 
+activity,  can  take  place  on  a  range  of  devices  and  setups, 
+ranging from dedicated videoconferencing rooms to running 
+
+1736
+
+18.  Danielle Lottridge, Eli Marschner, Ellen Wang, Maria 
+Romanovsky, and Clifford Nass. 2012. Browser Design 
+Impacts Multitasking. Proc. of the Human Factors and 
+Ergonomics Society Annual Meeting, SAGE 
+Publications, 1957–1961.  
+
+19.  Bertram F. Malle. 2006. The actor-observer asymmetry 
+
+in attribution: a (surprising) meta-analysis. 
+Psychological Bulletin 132, 6, 895-919. 
+
+20.  Bonnie A. Nardi, Steve Whittaker, and Erin Bradner. 
+2000. Interaction and outeraction: instant messaging in 
+action. Proc. CSCW, ACM, 79–88.  
+
+21.  Polycom report. Video Conferencing Expected to be 
+
+Preferred Business Communications Tool in 2016 
+According to New Survey on Global Video 
+Conferencing Trends and Etiquette 
+(2013).http://www.polycom.com/company/news/press-
+releases/2013/20131015.html [Accessed May 2015]. 
+22.  Andreas Sonderegger, Denis Lalanne, Luisa Bergholz, 
+Fabien Ringeval, and Juergen Sauer. 2013. Computer-
+supported work in partially distributed and co-located 
+teams: the influence of mood feedback. In Proc. 
+INTERACT. Springer, 445–460.  
+
+23.  Keri K. Stephens and Jennifer Davis. 2009. The social 
+influences on electronic multitasking in organizational 
+meetings. Management Communication Quarterly.  
+
+24.  Chiew Seng Sean Tan, Kris Luyten, Jan Van Den 
+
+Bergh, Johannes Schöning, and Karin Coninx. 2014. 
+The role of physiological cues during remote 
+collaboration. Presence: Teleoperators and Virtual 
+Environments 23, 1, 90–107. 
+
+25.  Melvin C. Washington, Ephraim A. Okoro, and Peter 
+W. Cardon. 2013. Perceptions of civility for mobile 
+phone use in formal and informal meetings. Business 
+Communication Quarterly, 52-64. 
+
+26.  Jacob O. Wobbrock, Leah Findlater, Darren Gergle, and 
+James J. Higgins. 2011. The aligned rank transform for 
+nonparametric factorial analyses using only ANOVA 
+procedures. Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems, ACM, 143–146. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+7.  Tatiana Buhler, Carman Neustaedter, and Serena 
+
+Hillman. 2013. How and why teenagers use video chat. 
+Proc. CSCW, ACM, 759–768.  
+
+8.  Peter W. Cardon and Ying Dai. 2014. Mobile Phone 
+Use in Meetings among Chinese Professionals: 
+Perspectives on Multicommunication and Civility. 
+Global Advances in Business Communication 3, 1, 2. 
+9.  Elena Francesca Corriero, Stephanie Tom Tong, and 
+Pradeep Sopory. 2015. Behaviors, Perceptions, 
+Responsiveness, and Presence: The Dyadic Model of 
+Mediated Communication. HICCS, 462-471. 
+
+10.  Mary Czerwinski, Eric Horvitz, and Susan Wilhite. 
+
+2004. A diary study of task switching and interruptions. 
+Proc. CHI, ACM, 175–182.  
+
+11.  Laura Dabbish, Gloria Mark, and Víctor M. González. 
+2011. Why do I keep interrupting myself?: environment, 
+habit and self-interruption. Proc. CHI, ACM, 3127–
+3130. 
+
+12.  Jim Gemmell, Kentaro Toyama, C. Lawrence Zitnick, 
+Thomas Kang, and Steven Seitz. 2000. Gaze awareness 
+for video-conferencing: A software approach. IEEE 
+Multimedia 7, 4, 26–35. 
+
+13.  Victor M. González and Gloria Mark. 2004. Constant, 
+constant, multi-tasking craziness: managing multiple 
+working spheres. Proc. CHI, ACM, 113–120.  
+
+14.  Shamsi T. Iqbal, Jonathan Grudin, and Eric Horvitz. 
+
+2011. Peripheral computing during presentations: 
+perspectives on costs and preferences. Proc. CHI, ACM, 
+891–894.  
+
+15.  Carol Felker Kaufman, Paul M. Lane, and Jay D. 
+Lindquist. 1991. Exploring more than 24 hours a day: A 
+preliminary investigation of polychronic time use. 
+Journal of Consumer Research, 392–401. 
+
+16.  Lisa Kleinman. 2010. Physically present, mentally 
+absent? Technology multitasking in organizational 
+meetings. PhD dissertation, University of Texas. 
+
+17.  Aparna Krishnan, Terri R. Kurtzberg, and Charles E. 
+
+Naquin. 2014. The Curse of the Smartphone: Electronic 
+Multitasking in Negotiations. Negotiation Journal 30, 2, 
+191–208. 
+
+ 
+
+1737
+
+

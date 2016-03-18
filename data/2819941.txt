@@ -1,0 +1,1940 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Examining American and Chinese Internet Users’
+
+Contextual Privacy Preferences of Behavioral Advertising
+
+SALT (Social Computing Systems) Lab, School of Information Studies, Syracuse University
+
+Yang Wang, Huichuan Xia, Yun Huang
+
+{ywang, hxia, yhuang}@syr.edu
+
+ABSTRACT
+Online Behavioral Advertising (OBA), which involves track-
+ing people’s online behaviors, raises serious privacy con-
+cerns. We present results from a scenario-based online sur-
+vey study on American and Chinese Internet users’ privacy
+preferences of OBA. Since privacy is context-dependent, we
+investigated the effects of country (US vs. China), activ-
+ity (e.g., online shopping vs. online banking), and platform
+(desktop/laptop vs. mobile app) on people’s willingness to
+share their information for OBA. We found that American re-
+spondents were signiﬁcantly less willing to share their data
+and had more speciﬁc concerns than their Chinese counter-
+parts. We situate these differences in the broader historical,
+legal, and social scenes of these countries. We also found that
+respondents’ OBA preferences varied signiﬁcantly across dif-
+ferent online activities, suggesting the potential of context-
+aware privacy tools for OBA. However, we did not ﬁnd a
+signiﬁcant effect of platform on people’s OBA preferences.
+Lastly, we discuss design implications for privacy tools.
+
+Author Keywords
+Online Behavioral Advertising; OBA; Privacy; Context;
+China; USA; Cross-Country Study.
+
+ACM Classiﬁcation Keywords
+H.5.m. Information Interfaces and Presentation (e.g. HCI):
+Miscellaneous
+
+INTRODUCTION
+Advertising networks are increasingly using Online Behav-
+ioral Advertising (OBA) to provide ads tailored to individual
+Internet users. The US Federal Trade Commission (FTC) de-
+ﬁnes OBA as “the practice of tracking an individual’s online
+activities in order to deliver advertising tailored to the indi-
+vidual’s interests.” [12] By proﬁling an individual’s online ac-
+tivities and characteristics, OBA could build models to infer
+users’ preferences and display tailored ads accordingly [18].
+As indicated by prior research [5], OBA could beneﬁt adver-
+tising companies greatly by increasing the click-through rates
+and prices of the ads [5]. OBA could also beneﬁt Internet
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full cita-
+tion on the ﬁrst page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or re-
+publish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819941
+
+539
+
+users by tailoring ads to their potential interests, and to a cer-
+tain degree, by supporting websites to provide free services
+(e.g., free web content or email) to these users [34, 54].
+However, OBA has also raised privacy concerns due to its
+pervasive tracking. Turow et al.’s 2009 survey of 1,000 Inter-
+net users in United States found that 68% of them “deﬁnitely
+would not” and 19% “probably would not” allow advertisers
+to track them online, even anonymously [53]. Similarly, the
+2011 TRUSTe and Harris Interactive online survey found that
+up to 85% of the respondents had a negative attitude towards
+online tracking and OBA [52]. While most users do not like
+being tracked by advertising companies, users’ attitudes to-
+wards OBA vary [54]. For instance, one study indicates that
+even though many users consider OBA to be creepy and dis-
+like being tracked online, some of them still ﬁnd targeted ads
+relevant and favorable [34]. Depsite people’s concerns, on-
+line tracking and OBA are clearly happening [1, 18, 33].
+There is a growing stream of empirical research on people’s
+attitudes towards OBA, and most of them focused on the US
+(e.g., [28, 34, 41, 53, 54]). Little is known about how people
+in other countries feel about OBA, such as in China. Com-
+pared to the US which ranks the second in the number of In-
+ternet users and has about 10% of the world’s Internet popula-
+tion, China has the world’s largest Internet population, more
+than 20% of the world’s total. According to a 2014 report
+published by the China Internet Network Information Cen-
+ter (CNNIC), online advertising in China has become more
+prevalent and targeted [10]. In addition, 70% of Chinese mo-
+bile phone users would prefer to view ads on mobile apps in
+order to use the apps for free, and 32.4% are tolerant of mo-
+bile advertising so long as it does not inﬂuence their normal
+user experience [10]. These results motivate us to systemat-
+ically examine and compare American and Chinese Internet
+users’ perceptions of OBA.
+In addition, privacy is a highly context-dependent concept
+[4, 36]. This is particularly important in the domain of OBA,
+as some Internet users prefer to receive relevant ads despite
+their privacy concerns [34, 54]. Thus, if users only have pri-
+vacy concerns for OBA in certain contexts, then privacy tools
+may be built to selectively block OBA based on contexts.
+This has the potential to allow both the industry and Internet
+users to reap the beneﬁts of OBA, while respecting people’s
+privacy. Despite the importance of context, few studies have
+systematically examined the impact of context on people’s
+perceptions of OBA.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+To examine how context may affect user preferences of OBA,
+we conducted a scenario-based survey study. Besides coun-
+try, we examined activity and platform. For activity, we cre-
+ated ﬁve types of online activities including online shopping,
+online banking, online health information seeking, online dat-
+ing, and online social networking. For platform, we included
+two platforms - desktop/laptops, and mobile apps - on which
+online activities and OBA can occur. We investigated survey
+respondents’ willingness to share their information for OBA
+when they are conducting these ﬁve types of online activities
+on one of the two platforms.
+There are two main reasons why we chose to focus on these
+three variables in our study: country (US/CN), activity (ﬁve
+different online activities), and platform (mobile/desktop).
+First, they are all important aspects of the context in which
+people experience OBA. While they have been suggested
+in the literature as playing important roles in people’s pri-
+vacy/security decision-making (e.g. [6, 7, 15]), to the best of
+our knowledge, they have not been systematically investi-
+gated in the context of OBA.
+Second, similar to prior privacy studies on OBA (e.g., [28]),
+our primary goal is to assess the relative effect of each vari-
+able after controlling for other variables. The interactions be-
+tween these three variables are also of interest. For instance,
+the interaction between country and platform is interesting
+because China’s mobile service providers (e.g., China Uni-
+Com) have publicly announced tracking the web browsing
+history of their mobile phone users1. However, we did not
+ﬁnd any public information about whether Chinese service
+providers track their users’ browsing behavior on the desk-
+top/laptop. Therefore, Chinese users might have different ex-
+pectations about being tracked by the service providers be-
+tween their desktop/laptop computers and mobile devices.
+We found that American respondents were signiﬁcantly less
+willing to share their information for OBA and had more spe-
+ciﬁc concerns than their Chinese counterparts. We also found
+respondents’ preferences of OBA varied signiﬁcantly across
+different online activities. However, we did not ﬁnd a signif-
+icant effect of platform on respondents’ preferences of OBA.
+These results can inform the design of privacy tools for OBA.
+In summary, this paper makes three main contributions. First,
+we found that the type of online activity has a signiﬁcant im-
+pact on users’ willingness to share personal information for
+OBA purposes, contributing to the empirical evidence of the
+contextual nature of privacy preferences and suggesting the
+potential of context-aware privacy tools for OBA. Second, we
+identiﬁed Chinese Internet users’ perceptions of OBA, which,
+to our knowledge, is non-existent in the literature. Third,
+we systematically compared American and Chinese Internet
+users’ perceptions of OBA, highlighting the nuanced differ-
+ences against the broader historical, legal and social backdrop
+in these two countries.
+
+1https://www.techinasia.com/china-unicom-tracking-mobile-
+browsing-history-check-database/
+
+540
+
+RELATED WORK
+
+Conceptualization of Privacy
+In this paper we focus on information privacy [46]. One def-
+inition that ﬁts with the OBA context is “the claim of an in-
+dividual to determine what information about himself or her-
+self should be known to others” [53]. Smith et al. develop
+a validated scale for measuring main dimensions of users’
+general privacy concerns about organizational practices: (1)
+collection, or the concern about the extensive collection of
+personal identiﬁable information; (2) unauthorized secondary
+use, which refers to information being collected for one pur-
+pose but used for a different purpose; (3) improper access, or
+the concern of personal information being available for unau-
+thorized view or use; and (4) errors, or the concern for delib-
+erate or accidental errors in personal information [47].
+A growing body of literature advocates the study of privacy
+in speciﬁc context. Helen Nissenbaum’s theory of contextual
+integrity eloquently points out that human behaviors, e.g., an
+event or transaction that occurs, are situated in some context:
+geographical space and certain constituted norms in a polit-
+ical, or cultural environment [36].
+In this paper, we study
+privacy in the context of OBA.
+
+Privacy in OBA
+OBA is usually employed by proﬁling users based on track-
+ing their online activities, such as the websites they visit over
+time [34]. Because of the pervasive and invasive online track-
+ing [1], OBA has raised privacy concerns [2, 34, 53, 54]. For
+instance, users generally understand the need of web ads for
+receiving free online services, however, users do not think
+tracking them is part of the deal [34].
+Various factors could inﬂuence users’ privacy preferences to-
+ward OBA. For instance, one study found that data retention
+(i.e., the length of time that this data is retained) and scope
+of use (i.e., how such data would be used) have substantial
+inﬂuence on users’ willingness to share their information for
+OBA [28]. Users also have varying preferences for sharing
+different types of personal information. For instance, prior
+research ﬁnds that users are relatively more willing to share
+information about their computers than their personally iden-
+tiﬁable information with OBA [34].
+Government agencies, Internet standard groups, and browser
+vendors are also paying close attention to OBA and its re-
+lated privacy issues. In 2012, the U.S. Federal Trade Com-
+mission and the White House released several reports to dis-
+cuss privacy issues and possible consequences of OBA [13].
+W3C, the group that establishes Internet standards, started a
+working group on tracking protection in 2011. The working
+group has also been working on the speciﬁcations of a “Do
+Not Track” (DNT) mechanism that allows people to signal
+their intent of opting out of online tracking in web browsers
+that websites and ad networks can choose to honor. Browsers
+such as Microsoft Internet Explorer have implemented mech-
+anisms to support DNT. However, how much the industry is
+honoring the DNT signals is unclear. The State of Califor-
+nia requires online service providers to disclose whether and
+how they respond to DNT signals in their privacy policies [8].
+
+SESSION: INTERNATONAL INSIGHTS
+
+However, not all websites include such information in their
+privacy policies.
+In terms of regulation, the US currently does not have legis-
+lation that regulates OBA. Industry’s self-regulation was also
+found to be insufﬁcient. For instance, researchers found var-
+ious usability issues in tools designed for enabling Internet
+users to opt out of online tracking [27]. Various privacy-
+enhancing OBA schemes have been proposed (e.g., [3, 51]),
+but none have been adopted in real-world practice. In other
+words, OBA could still put Internet users’ privacy at risk.
+
+Cross-Country Study of Privacy and Advertising
+Prior literature shows that people in different countries can
+have very different privacy perceptions of the same thing
+[23, 55]. For example, one study found that American stu-
+dents demand more privacy protection in their places of resi-
+dence than their Turkish counterparts [23]. Another study on
+the use of social networking sites (SNS) found that Ameri-
+can users are more concerned about online privacy in general
+than their Chinese and Indian counterparts, but Chinese users
+are more concerned about their online identities [55]. Some
+scholars argue that differences in countries associated with
+privacy perceptions are rooted in history and conventions. For
+example, Smit et al. suggest that Europeans tend to consider
+their privacy to be a fundamental human right, whereas peo-
+ple in the US regard privacy more as an individual matter and
+a sort of contractual negotiation with some organization [45].
+In terms of user perceptions of advertising, prior studies have
+also suggested differences in countries. For instance, one
+study found that Japanese users are more irritated by mobile
+advertising (via SMS) than their Austrian counterparts [31].
+However, both groups consider entertainment and credibility
+as key factors in assessing the value of ads [31]. Another
+study found that Chinese users’ attitudes towards mobile ads
+(via SMS) are more affected by the attitudes of other Chinese
+users than intrinsic features of the ads themselves [19]. In
+particular, younger Chinese women are more easily affected
+by their peers because of their pursuit of fashion [19].
+While OBA is encountered by Internet users around the
+world, most of the empirical research of OBA focuses on
+users in the US (e.g., [34, 53, 54]). One exception is a study
+of Internet users from Romania and US, which found Roma-
+nian users have more positive attitudes toward targeted ad-
+vertising and they are more prone to click the ads than Amer-
+ican users [56]. In our study, we systematically examine and
+compare American and Chinese Internet users’ perceptions
+of OBA. This comparison is valuable because they are the
+two biggest Internet-using countries. Since prior research has
+found that Americans and Chinese have different privacy dif-
+ferences in domains such as online commerce [58], SNS [55],
+and location sharing apps [29], we suspect that there will be
+differences for OBA too. Therefore, our ﬁrst research ques-
+tion is:
+RQ1 (Country): Do American and Chinese Internet users
+have different privacy preferences of OBA?
+
+Contextual Privacy Preferences
+There is a strong theoretical rationale and empirical evidence
+that context affects people’s privacy decision-making. Nis-
+senbaum’s theory of contextual integrity [36] is particularly
+relevant. She proposes context-based rules and expectations
+for protecting users’ privacy against what speciﬁc informa-
+tion may be collected, with whom the websites may share,
+and under what conditions such information sharing may oc-
+cur [37]. Prior studies have found that users’ privacy pref-
+erences vary across different contexts such as location shar-
+ing [4, 24], mobile apps [30], and ubiquitous computing sys-
+tems [42].
+In the domain of OBA, few studies have systematically ex-
+amined the impact of contexts on users’ privacy preferences
+of OBA. While there has been research on factors that could
+affect Internet users’ attitudes towards OBA [28], these stud-
+ies focus on different “features” of a website (e.g., length of
+data retention) rather than different usage “contexts” in which
+OBA could occur (e.g., online shopping). In our study, we
+examine users’ willingness to share their information with
+OBA in speciﬁc online activities (e.g., ﬁnding medical infor-
+mation for a health issue online). This matters because if peo-
+ple’s preferences vary across different online activities, then
+privacy-sensitive mechanisms can be built to collect certain
+user data in certain circumstances for OBA.
+RQ2 (Activity): Do Internet users’ privacy preferences of
+OBA vary across different online activities?
+Another aspect of context is the platform on which OBA oc-
+curs. Prior research has found that people can be more risk-
+seeking on their mobile devices than on desktop computers
+(e.g., searching more sensitive topics on mobile devices) [39].
+We are curious whether the platform in which OBA occurs
+would affect people’s preferences of OBA. We are particu-
+larly interested in OBA in mobile apps because researchers
+have identiﬁed privacy and security risks of ads appearing
+within the apps [17]. Furthermore, people may already have
+some privacy preferences (e.g., the exact resources or data on
+the device that the app can access) during the installation of
+mobile apps, but these preferences do not specify nor regulate
+whether these resources or data can be used for OBA.
+RQ3 (Platform): Do Internet users’ privacy preferences of
+OBA differ between the two platforms: desktop/laptop and
+mobile apps?
+
+METHODOLOGY
+We conducted an online survey study hosted by Qualtrics
+in the summer of 2014. This study was designed using
+a mixed-model approach where country (China or the US)
+and platform (desktop/laptop or mobile) are between-subjects
+variables, while activity (e.g., online shopping) is a within-
+subjects variable. Each respondent viewed ﬁve hypotheti-
+cal web usage activities, which are described in detail below.
+This study was approved by our Institutional Review Board.
+Our study design adopted many aspects of a previous OBA
+study by Leon et al. [28], including the explanation of OBA,
+the role-playing aspect of the study, and some speciﬁc ques-
+tions (e.g., what personal information people are willing to
+
+541
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+share for OBA). While Leon et al. studied the impact of dif-
+ferent data collection practices (e.g., data retention policies)
+on users’ attitudes towards OBA [28], we instead use a sim-
+ilar methodology to explore the impacts of country, online
+activity, and platform on people’s OBA privacy preferences.
+
+Survey Content
+We designed the survey in English, which was then trans-
+lated into another version in Simpliﬁed Chinese (CN) by two
+native Chinese speakers. The survey has two branches cor-
+responding to the two platforms: desktop/laptop and mobile
+apps. We randomly assigned each respondent to one of the
+two branches. Each branch has a total of 24 questions.
+Our respondents started the survey with a few questions about
+general web advertising. For instance, the ﬁrst question,
+which was open-ended, asked, “In a sentence or two, please
+tell us what you think about website advertising.” The sur-
+vey then introduced respondents to the concept of OBA with
+a typical example: “Imagine that you are looking to buy a car
+and decide to visit the cars.com website. Cars.com has con-
+tracted with XYZ Advertising Company which collects infor-
+mation about your interactions with the cars.com website in
+order predict your preferences and to show you ads that are
+most likely to be of interest to you. These ads are known as
+targeted ads, or online behavioral advertising (OBA). For ex-
+ample, if you search for ‘Audi A8’ or read an article about
+Audi cars on the cars.com website, XYZ Advertising Com-
+pany could show you ads for BMW cars and other luxury
+cars.” This introduction of OBA was also adopted from the
+study by Leon et al. [28].
+Respondents were then introduced to the two platforms: “Tar-
+geted ads can appear on websites or on mobile apps. For the
+following questions, we ask you to focus on using [your desk-
+top or laptop PC / apps on your smart phone]” (for the desktop
+branch and the mobile branch, respectively). We did this be-
+cause we want to ensure that our respondents can clearly dis-
+tinguish the two platforms and then focus on the platform that
+they were assigned to. Respondents were then asked about
+their generic preferences about OBA. For instance, one ques-
+tion was “Would you be willing to allow OBA to use and
+store the information about your:” with answers representing
+various personal information such as age, gender, and infor-
+mation about their online interactions (e.g., searched items).
+Next, respondents were presented with the ﬁve types of online
+activities: online shopping, online health information seek-
+ing, online dating, online banking, and online social network-
+ing. These activities represented a wide range of typical on-
+line activities and we portrayed each of them taking place on
+a representative website or its mobile app in China and the
+US, respectively. The ﬁve concrete activities provided in the
+study were: (1) buying books for oneself from a website or
+an app (Amazon.com in the US, JD.com in CN); (2) ﬁnding
+medication for a health condition (ﬂaky scalp) on a website
+or an app (CVS.com in the US, HaoDF.com in CN); (3) dat-
+ing someone online on a website or an app (Match.com in
+the US, JiaYuan.com in CN); (4) transferring money online
+on a banking website or on its app (Chase.com in the US,
+cmbChina.com in CN); and (5) joining an interest group on a
+
+SNS website or an app (Facebook.com in the US, Renren.com
+in CN). In order for us to make reasonable comparisons, the
+websites/apps for China and the US are similar in terms of
+their functions and popularity.
+These descriptions of online activities differed by activity and
+platform, but other factors were kept constant (e.g., data re-
+tention time). As an example, we show the description of the
+shopping activity on the Amazon mobile app below:
+Imagine that you want to buy some books on Amazon for
+yourself. Amazon has contracted with an advertising com-
+pany, which collects information about your interactions with
+Amazon in order to predict your preferences and show you
+ads that most likely to be of interest to you. For example, if
+you search “camera” or read a custom review about a cam-
+era lens, the advertising company could show you ads for
+Canon, or another camera brand.
+Now in particular, imagine that you decide to buy the books
+via the Amazon app on your smart phone.
+1. The advertising company, which has contracted with Ama-
+zon would collect your browsing data within the app.
+2. The advertising company would retain and use collected
+information about you for one month.
+3. Amazon can share your information with its afﬁliated part-
+ners (which are other companies which have business part-
+nership with the website).
+Would you be willing to allow the advertising company to
+collect and share your browsing data as follows within the
+Amazon app?
+Similar to the study by Leon et al. [28], the respondents were
+asked to answer a series of questions on a ﬁve-point Likert-
+scale about their willingness to share ten types of personal in-
+formation for each online activity. These ten types of personal
+information were name, age, gender, income bracket, mari-
+tal status, home address, email, search items entered, infor-
+mation inferred from web browsing (e.g., “genres of books I
+like”) and information on web pages, as well as the time spent
+on them. The possible responses ranged from “I would not
+be willing at all” to “I would be completely willing.” These
+types of personal information were also adopted from [28].
+Prior studies have also shown that some of this information
+(e.g., gender, age) can be inferred from users’ browsing data
+if not collected directly from them [21]. The sequence of on-
+line activities were randomized. For each online activity, the
+ten types of personal information were also randomized.
+After these activity-based questions, the survey asked respon-
+dents additional questions about their opinions of the ﬁve
+websites/apps, for instance, a ﬁve-point Likert-scale question
+on how much they trust the corresponding service provider.
+We asked these questions because they could play a role in
+users’ willingness to share information with these services.
+Before ending the survey with a set of demographic ques-
+tions, we asked a second open-ended question: “Do you have
+any further comments on OBA, which might appear on [web-
+sites / mobile apps on your smart phone]?”
+
+542
+
+SESSION: INTERNATONAL INSIGHTS
+
+We originally designed the survey to ask each participant
+about ten situations (ﬁve online activities x two platforms).
+We conducted a pilot test of the initial survey design and re-
+ceived the feedback that the survey had too many questions
+and many seemed redundant. Thus, we decided to have re-
+spondents focus on a platform to reduce the number of survey
+questions and the need to switch between too many situations.
+
+Participants
+For the US version of the survey, we recruited respondents
+from Amazon Mechanical Turk (MTurk) who were from the
+US and had a 95% or higher approval rating and reported to
+be 18 or older. We also implemented a mechanism on MTurk
+to ensure that respondents who have taken one branch of our
+survey were excluded from taking the same one again or the
+other branch [38]. For the Chinese version of the survey, we
+recruited respondents from ZhuBaJie.com (ZBJ), the main
+crowdsourcing site (equivalent of MTurk) in China. How-
+ever, ZBJ does not have the API support for us to implement
+the automatic mechanism that prevents respondents from an-
+swering the survey repeatedly. For this purpose, we manually
+examined the responses on Qualtrics to ﬁlter out repeated re-
+sponses by using the ZBJ user IDs. The American and Chi-
+nese respondents took a comparable amount of time to ﬁnish
+the survey (US: median 11 minutes; CN: median 14 minutes).
+MTurk and ZBJ respondents who completed the survey were
+compensated $2 and 15 RMB (about $2), respectively.
+To help determine whether our respondents took the survey
+seriously, we used a combination of measures such as un-
+usually short completion time and nonsense responses to the
+open-ended questions. After the ﬁltering, we had a total of
+379 valid responses: 190 from the US and 189 from China.
+For each country, responses were roughly evenly split be-
+tween the mobile app and desktop branches (US-desktop: 95,
+US-mobile: 95; CN-desktop: 97, CN-mobile: 92).
+In terms of demographics, there were similarities and dif-
+ferences between the US and Chinese samples. First, the
+US sample had more male respondents (54%) than female
+respondents (46%) while the Chinese sample had an equal
+split in gender (male 50%, female 50%). Second, the US
+sample was signiﬁcantly older than the Chinese sample (US:
+M=35, SD=11.2; CN: M=27, SD=5.7; Mann-Whitney U
+Test, p<0.001).
+In terms of education level and IT back-
+ground, the US and Chinese samples were comparable. For
+both countries, about 93% of respondents had at least some
+college education. The percentages of American and Chinese
+samples with IT background were 38.9% and 36.5%, respec-
+tively. For each country, the participant demographics were
+similar in the two platform branches.
+
+Method of Analysis
+Factor Analysis
+The respondents were asked about their willingness to share
+ten types of personal information in the ﬁve speciﬁc online
+activities. To represent the ten types of personal information
+with a smaller set of latent factors, we conducted a paral-
+lel analysis (PA), followed by an exploratory factor analysis
+(EFA) with promax rotation. PA is a Monte Carlo simulation
+
+543
+
+method to determine the number of latent factors [26]. EFA
+is useful in exploring the underlying latent factor structure by
+combining highly correlated variables into latent factors.
+The PA analysis suggested three latent factors for both the US
+and Chinese samples across different online activities. The
+three latent factors correspond to browsing information (e.g.,
+searched items), demographic information (e.g., age), and
+contact information (e.g., email), respectively. The EFA sug-
+gested the underlying structure of the three factors as shown
+in Table 1. To assess the convergent validity of the latent fac-
+tors (i.e., whether each item in a factor is measuring the same
+underlying concept), we calculated Cronbach’s α value for
+each factor. The results indicated that the Cronbach’s α val-
+ues of the three factors are all above .85. Alpha values of 0.7
+or higher are considered acceptable [50].
+
+Repeated Measures ANCOVA
+We performed a series of repeated measures ANCOVA (anal-
+ysis of covariance), each for a particular latent factor (brows-
+ing, demographic, or contact information) to assess the ef-
+fects of country (US vs. China), online activities (e.g., online
+shopping vs. online dating), and platform (mobile vs. desk-
+top) on respondents’ willingness to share that type of infor-
+mation for OBA purposes. The independent variable is a fac-
+tor score, which is the average of the constituent items of that
+factor. The country and platform are between-subject inde-
+pendent variables, while the online activity is a within-subject
+independent variable (i.e., repeated measures). Respondents’
+age, gender, IT background as well as their levels of trust with
+the website or app in a particular online activity were treated
+as between-subject covariates. We also included interaction
+terms of the three independent variables (country, platform,
+and activity) in the ANCOVA analysis.
+
+α
+0.92
+
+0.90
+
+Browsing Information
+Info inferred from my browsing
+Info on pages I visited
+Search items I entered
+
+Demographic Information
+Age
+Gender
+Income bracket
+Marital status
+
+Factor loading
+
+0.87
+0.81
+0.91
+
+0.96
+0.85
+0.59
+0.86
+
+0.87
+
+Contact Information
+Name
+Email
+Home address
+Table 1. Exploratory factor analysis (EFA) of respondents’ willingness
+to share ten personal information items for OBA. Factor structure and
+loadings of the ten information items for American respondents in the
+scenario of online shopping (Amazon) on the desktop/laptop are pre-
+sented. The factor structure is consistent across American and Chinese
+samples across different online activities and platforms. Cronbach’s α
+value is calculated for each factor.
+
+0.80
+0.87
+0.85
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Content Analysis
+We analyzed answers to the two open-ended questions on
+website advertising and OBA. Our coding scheme drew from
+the prior literature on OBA (i.e., directed content analysis)
+and was also partly created from additional themes, emerged
+from the data (i.e., conventional content analysis) [20].
+In
+particular, prior studies have identiﬁed different perceptions
+of OBA such as useful, creepy, annoying and intrusive [2,54].
+Prior literature has also identiﬁed speciﬁc concerns about
+OBA such as privacy violation, unauthorized data collec-
+tion, and information being used by unauthorized third par-
+ties [54]. We included these in our initial coding book.
+After analyzing the responses, we identiﬁed new themes not
+covered by the code book. Examples of these new codes in-
+clude “overwhelming” and “slowing down the system.” We
+added these new codes into the code book, which has a ﬁ-
+nal count of 13 codes. Two researchers coded the data in-
+dependently using the same coding scheme. The Cohen’s κ
+value [11] for our inter-coder reliability is .72, exceeding the
+acceptable threshold of .7 [25].
+
+RESULTS
+Overall, we found that country and online activity have sig-
+niﬁcant effects on people’s preferences of OBA, but we did
+not ﬁnd a signiﬁcant effect of platform.
+
+Country: US vs. China
+We start by comparing the perceptions of web ads and OBA
+of the American and Chinese respondents. We include En-
+glish translation of the Chinese answers in this paper.
+
+Attitudes Towards Web Advertising
+The American and Chinese samples had several differences in
+their answers to the ﬁrst open-ended question about website
+advertising (i.e., before the introduction of OBA). First, the
+Chinese sample was signiﬁcantly more accepting of web ad-
+vertising than their American counterparts, as shown in Fig-
+ure 1. We categorized the overall sentiment of each response
+to website advertising as positive, neutral, or negative.
+The positive reactions include feeling web advertising as ac-
+ceptable, useful or necessary while the negative reactions in-
+clude being seen as annoying, intrusive, distracting, over-
+whelming, slowing down the website, untrustworthy or even
+unsafe. For instance, one Chinese respondent said, “There are
+a lot of web ads. The good and bad are jumbled together. The
+authenticity is low.” Some American respondents were not
+only aware of the risks but also crafted their own strategies to
+test out the ads. For example, one US respondent explained,
+“I think it is unsafe, and it can be amusing or informative.
+
+If I see attractive advertising on the peripheral, I may check
+Google the name in the ad, perhaps even google the word
+‘scam’ after it, and see what I see. If I think it is safe, I will
+go to their website with care, always on the ready to close the
+window if I sense danger. So if I do check out the ad, it will
+NOT be by clicking on the ad but rather by investigation and
+then maybe going to the site directly not via their ad.”
+Second, 53% of American respondents mentioned targeted
+ads without prompting whereas only one Chinese respondent
+did so. For instance, one US respondent commented, “I like
+to opt out of targeted ads, but it’s a hassle and the ones done
+by cookies come back when I clear my cookies. I don’t mind
+ads in general because I know it keeps the websites free,
+but targeted ads are annoying because it’s things I already
+bought, decided not to buy, or was a gift.” The one Chinese
+respondent touched on targeted ads: “After searching things
+in Baidu, no matter what websites I open, the same products
+I searched before would jump out.” This difference between
+the American and Chinese samples suggests that the Ameri-
+can respondents were more aware of OBA than the Chinese
+respondents. We will situate these differences in the broader
+contexts of these two countries (e.g., legislation, industry self-
+regulations, and media portrayals of OBA) in the discussion
+section.
+
+Generic OBA Privacy Preferences
+After the introduction of OBA and the two platforms, our re-
+spondents were then asked about their willingness to allow
+OBA to store and use various types of their personal informa-
+tion. We call these generic OBA privacy preferences because
+no speciﬁc scenario was given in the question. Figure 2 shows
+that the American respondents were less willing to share each
+type of information than their Chinese counterparts. How-
+ever, the largest percentage of American and Chinese respon-
+dents were willing to share information about their hobbies
+and gender while the smallest for their home address.
+More speciﬁcally, there were two notable differences. First,
+for credit score/report, only 5% of the American respondents
+were willing to share compared with 34% of the Chinese re-
+spondents. Since there is no established credit score system in
+China, we actually translated it as credit report, which exists
+
+Figure 1. American and Chinese respondents’ sentiments of web ads.
+
+Figure 2. The percentages of Chinese (CN, left) and American (US,
+right) respondents who would be “willing” or “completely willing” to
+share each type of information for generic OBA purposes.
+
+544
+
+Nega%ve Neutral+
+
+Posi%ve
+
+32.0%
+48.4%
+
+23.1%
+17.7%
+
+44.9%
+33.9%
+
+Positive 
+
+Neutral  
+
+Negative 
+
+33.9% 
+
+44.9% 
+US 
+CN 
+
+17.7% 
+
+23.1% 
+
+48.4% 
+
+32.0% 
+
+Hobbies 
+Search items  
+Gender 
+Education 
+Info on page visited 
+Info inferred 
+Age 
+Credit score  
+Sexual orientation 
+Email 
+Marital status 
+Political preferences 
+Income  
+Home address 
+
+57% 
+51% 
+51% 
+49% 
+
+42% 
+42% 
+37% 
+34% 
+30% 
+30% 
+29% 
+27% 
+26% 
+
+10% 
+
+41% 
+
+29% 
+
+44% 
+
+26% 
+
+18% 
+
+24% 
+
+35% 
+
+11% 
+
+4% 
+
+5% 
+
+6% 
+
+20% 
+
+22% 
+22% 
+
+SESSION: INTERNATONAL INSIGHTS
+
+Figure 3. Respondents’ average willingness to share the three types of information with OBA in the ﬁve speciﬁc online activities under four conditions
+(CN/US x Desktop/Mobile). The means were calculated based on respondents’ answers to ﬁve-point Likert questions where 1, 3 and 5 represents “not
+willing at all,” “neutral,” and “completely willing,” respectively. American respondents were signiﬁcantly more concerned about sharing information
+with OBA than Chinese respondents (the two lines for CN are always higher than the two lines for US). Different online activities also varied signiﬁcantly
+in terms of respondents’ willingness to share information with OBA (the lines are zig-zagged across different activities, with the browsing info being the
+most notable case). Platforms (desktop vs. mobile) did not have much difference (the two lines for each country do not have much space).
+
+Dep. Vars
+Contact Info
+Name
+Email
+Address
+
+Demo. info
+Age
+Gender
+Income
+Marital status
+
+Browsing info
+Search items
+Info inferred
+Page visited
+
+Indep. Vars Mean sq
+
+F value
+
+Pr(> F)
+
+Country (Cty)
+Platform (Pla)
+Activity (Act)
+Age
+Gender
+IT background
+Trust level
+
+Country
+Platform
+Activity
+Cty x Act
+Age
+Gender
+IT background
+Trust level
+
+Country
+Platform
+Activity
+Cty x Act
+Age
+Gender
+IT background
+Trust level
+
+427.6
+5.3
+0.8018
+140.6
+20.2
+103.5
+179.5
+
+107.3
+3.62
+3.194
+0.584
+122.67
+29.67
+10
+242.26
+
+232
+1
+15.982
+3.618
+143.5
+13.7
+64.2
+404.7
+
+136.5
+1.698
+6.063
+44.89
+6.437
+33.04
+57.31
+
+27.61
+0.931
+16.46
+3.011
+31.56
+7.63
+2.573
+62.33
+
+75.7
+0.322
+45.32
+10.26
+46.84
+4.46
+20.95
+132.1
+
+2.00E-16
+0.193
+7.71E-05
+7.70E-11
+0.0116
+1.88E-08
+2.95E-13
+
+2.51E-07
+0.335
+3.33E-13
+0.0173
+3.79E-08
+0.006
+0.1096
+3.28E-14
+
+2.00E-16
+0.571
+2.00E-16
+3.39E-08
+3.17E-11
+0.0354
+6.44E-06
+2.00E-16
+
+***
+
+***
+***
+*
+***
+***
+
+***
+
+***
+*
+***
+**
+
+***
+
+***
+
+***
+***
+**
+*
+***
+***
+
+*** p<0.001, ** p<0.01, * p<0.05
+
+Table 2. The repeated measures ANCOVA results of the three types of
+personal information: contact, demographic, and browsing information.
+The interaction terms (Cty x Act, Cty x Pla, Act x Pla, Cty x Act x Pla)
+were included in the analysis but only shown here when they are sig-
+iniﬁcant. The adjusted R2 for the ANCOVA models of (contact, demo-
+graphic, and browsing information) are 0.36, 0.19, and 0.31, respectively.
+
+in China but is not as common as credit score in the US. In
+addition, while 30% of the Chinese sample would be willing
+to share email, only 6% of the US sample would. The 2014
+CNNIC report of Internet Development in China shows that
+
+42.5% of Chinese Internet population uses email compared
+to 89.3% uses instant messaging [9]. This result may suggest
+that Chinese Internet users do not use email that much and
+therefore they disregard email address as critical or sensitive.
+
+Scenario-Based OBA Privacy Preferences
+Having examined our respondents’ generic privacy prefer-
+ences for OBA, we now focus on their contextual preferences
+under various speciﬁc settings. To assess the effects of coun-
+try (US vs. China), online activities (e.g., online shopping vs.
+online dating), and platform (mobile vs. desktop) on respon-
+dents’ willingness to share different types of information for
+OBA purposes, we conducted a series of repeated measures
+ANCOVA. As shown in Table 2, after controlling for the co-
+variates (age, gender, IT background, and trust level with the
+site), country and online activity had signiﬁcant effects on re-
+spondents’ willingness to share information for OBA. How-
+ever, we did not ﬁnd a signiﬁcant effect of platform. We also
+ran the analysis without the interaction terms and analyzed
+the American and Chinese samples separately. The results of
+the main effects were consistent with that in Table 2.
+Similar to the ﬁndings of the ﬁrst open-ended question on
+web advertising and the generic OBA privacy preferences,
+Chinese respondents were signiﬁcantly more willing to share
+all three types of information (browsing, contact and demo-
+graphic information) for OBA than their American counter-
+parts (p<0.001) when controlling for online activity and plat-
+form as well as the covariates as shown in Table 2. Figure 3
+plots American and Chinese respondents’ average willing-
+ness of sharing the three types of information for OBA in each
+of the ﬁve online activities and on each of the two platforms.
+Figure 3 also clearly shows that the lines of the Chinese sam-
+ple are always much higher than that of the American sam-
+ple. In particular, Chinese respondents were generally will-
+ing to share browsing information while American respon-
+
+545
+
+CN.Desktop
+
+CN.Mobile
+
+US.Desktop
+
+US.Mobile
+
+Demographic Info
+
+Contact Info
+
+Browsing Info
+
+3.5
+
+3.0
+
+2.5
+
+e
+r
+a
+h
+s
+o
+t
+ 
+
+ 
+
+s
+s
+e
+n
+g
+n
+
+i
+l
+l
+i
+
+2.0
+
+W
+
+1.5
+
+banking dating health shopping sns
+
+banking dating health shopping sns
+
+banking dating health shopping sns
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+dents were not. This may be because our Chinese respon-
+dents did not know much about the implications of sharing
+the browsing information (e.g., companies could infer their
+demographics, create proﬁles for them and generate targeted
+ads [21]).
+Attitudes Towards OBA
+Right before the last part of the survey on demographics, we
+asked our respondents whether they have any further com-
+ments about OBA in an open-ended question. A large num-
+ber of respondents did not provide any substantial answers.
+They provided simple answers such as “No more,” “N/A,” or
+“Thank you.” To capture each respondent’s free response of
+OBA, we combined each respondent’s answers to both open-
+ended questions (on web ads and OBA) and coded the an-
+swers using our code book.
+Overall, our coding results show that 25.1% of Chinese re-
+spondents felt OBA is helpful, compared with only 10% of
+American respondents holding that view. 14.8% of Chinese
+respondents and 12.5% of American respondents felt neutral
+about OBA. However, for negative perceptions, the most fre-
+quently reported perception for Chinese respondents (27.2%)
+was “privacy violation” in a general sense without specifying
+how their privacy might be intruded by OBA. For example,
+one Chinese respondent said, “I suspect this will violate per-
+sonal privacy.” In comparison, the American respondents had
+more speciﬁc concerns such as being tracked, which was the
+most common negative perception of the US sample (10%).
+For instance, one American respondent explained, “I feel that
+this is a serious invasion of privacy. While I understand the
+need for advertising on free websites, I don’t like being cyber-
+stalked in this manner.” This difference between American
+and Chinese respondents also implies that the American re-
+spondents may be more aware of OBA and its speciﬁc privacy
+implications than the Chinese respondents.
+
+Online Activity
+Next, we examine the effect of online activities on respon-
+dents’ preferences towards OBA. As shown in Table 2, our
+repeated measures ANCOVA shows a statistically signiﬁcant
+impact of online activity on respondents’ willingness to share
+each of the three types of information (browsing, contact and
+demographic information) for OBA (p<0.001) when control-
+ling for country, platform, and the covariates. Figure 3 also
+shows the zig-zagged lines of both US and Chinese samples,
+suggesting the differences among these online activities.
+We then perform post-hoc pairwise comparisons between dif-
+ferent online activities using the Tukey’s HSD (honest sig-
+niﬁcant difference) test with Bonferroni correction. For de-
+mographic information, respondents were signiﬁcantly more
+willing to share with the dating site than the banking and
+health sites (p<0.001). Similarly, for contact information,
+respondents were signiﬁcantly more willing to share with
+the dating site than the banking and health sites (p<0.05).
+These differences are intuitive because online dating sites
+usually ask for demographic and contact information to cat-
+egorize and match users. For browsing information (e.g.,
+search items), respondents were signiﬁcantly more willing to
+share with the shopping site than the banking and dating sites
+
+(p<0.001). This may be because people have experienced and
+thus understand that shopping sites usually log user behavior
+data (e.g. products users have purchased or viewed before) to
+make personalized product recommendations.
+We also found a signiﬁcant interaction effect between country
+and online activity for browsing and demographic informa-
+tion. As shown in Figure 3, the American respondents were
+more willing to share their demographic information with the
+shopping site than the social networking site whereas the Chi-
+nese respondents were somewhat the opposite. Demographic
+information would seem more reasonable to provide to so-
+cial networking sites (e.g., in the user proﬁle) than online
+shopping sites. However, perhaps the American respondents
+felt less willing to share information with the SNS site (Face-
+book) because of the privacy-related discussion about Face-
+book in the popular media (e.g., [43]).
+In the open-ended question on OBA, our respondents touched
+on general perceptions towards OBA in different online ac-
+tivities. Respondents were generally aware of and accepted
+OBA in the online shopping context. One American respon-
+dent described, “I have noticed an inﬂux in ads that tailor
+to my shopping behaviors over the last year. For example I
+was recently in the market for a backpack and now I FRE-
+QUENTLY get ads on various websites offering me deals on
+backpacks.” One Chinese respondent explained, “OBA could
+facilitate my online shopping, but I am also concerned about
+my privacy being violated.”
+Respondents were generally against OBA in the online bank-
+ing context. One American respondent commented, “I would
+not want to give my information to a second party when vis-
+iting a website. ESPECIALLY something like banking. If that
+second party’s security was compromised, my banking infor-
+mation could be at risk.” Similarly, a Chinese respondent
+answered, “I could accept OBA, but it must tell me what kind
+of risks I may take, particularly regarding online banking.”
+
+Platform: Desktop/Laptop vs. Mobile Apps
+Lastly, we examine the effect of platform on people’s percep-
+tions of OBA. As shown in Table 2, we did not ﬁnd a sta-
+tistically signiﬁcant effect of platform on respondents’ will-
+ingness to share various types of information with OBA in
+speciﬁc online activities. Visually, Figure 3 shows that the
+two lines of each country (i.e., one for desktop/laptop, and
+the other for mobile app) are relatively close, suggesting lack
+of signiﬁcant differences.
+In the open-ended question about OBA, respondents in the
+mobile branch of the survey brought up many points related
+to mobile apps. For instance, one American respondent was
+concerned about one such app being able to monitor what the
+user does in other apps: “My biggest concern is how much
+data they’re collecting about what I do outside of the partic-
+ular app in question. Amazon knowing what I do in the Ama-
+zon app is less concerning to me than Amazon knowing all the
+browsing and app habits on my phone in general.” One Chi-
+nese respondent was also picky about where OBA ads should
+appear in a mobile app: “it’s acceptable if it appears when the
+mobile app was ﬁrst opened. It’d be very annoying if it ap-
+
+546
+
+SESSION: INTERNATONAL INSIGHTS
+
+pears in other places [of the app].” These speciﬁc requests
+should be considered for OBA in mobile apps.
+
+DISCUSSION
+In summary, we found country and online activity having sig-
+niﬁcant effects on our respondents’ willingness to share infor-
+mation for OBA. We did not ﬁnd signiﬁcant impact of plat-
+form.
+
+Contextual Privacy Preferences of OBA
+Country: US vs. China. Prior research suggests that Ameri-
+cans are more concerned about online privacy than Chinese in
+a number of domains (e.g., online commerce [58], SNS [55],
+and location sharing apps [29]). Our study extends this lit-
+erature by examining OBA - an important yet under-studied
+domain - and uncovers signiﬁcant yet nuanced differences be-
+tween Internet users from these two countries.
+In particular, we found that American respondents were sig-
+niﬁcantly less willing to share their information for OBA pur-
+poses than their Chinese counterparts. A large percentage
+of the US sample voluntarily expressed their opinions about
+OBA in response to the ﬁrst open ended question about web-
+site advertising in the survey before any introduction of OBA,
+while only one Chinese respondent did so. In addition, when
+expressing their opinions about OBA, most Chinese respon-
+dents discussed privacy concerns in a general sense whereas
+the American respondents expressed more speciﬁc misgiv-
+ings, such as being tracked. These results suggest that the
+American respondents were more aware of OBA and its spe-
+ciﬁc privacy implications than their Chinese counterparts.
+In the US, privacy has been long been recognized as an es-
+sential human right. Warren and Brandeis’ seminal article
+“The right to privacy” in 1890 has arguably ushered in an
+era of public recognition of and discussion about privacy and
+subsequent legislation in the US [57]. The American govern-
+ment created the Fair Information Practice Principles (FIPPs)
+in the 1970’s, which underly many privacy laws worldwide.
+While the US does not have an omnibus or cross-domain pri-
+vacy law, there are many domain-speciﬁc privacy laws such
+as RFPA (The Right to Financial Privacy Act) and HIPPA
+(Health Insurance Portability and Accountability Act).
+Online privacy has become one of the priorities for the
+US government. For instance, in Dec. 2010, the Federal
+Trade Commission (FTC) released a report entitled “Protect-
+ing Consumer Privacy in an Era of Rapid Change: A Pro-
+posed Framework for Businesses and Policymakers,” which
+describes a new regulatory framework including the “Do Not
+Track” mechanism allowing people to opt out of OBA. In
+Feb. 2015, the Obama administration released a draft of the
+Consumer Privacy Bill of Rights Act which allows individual
+consumers to sue service providers for privacy violations.
+The mass media frequently covers online privacy topics in-
+cluding those regarding OBA2. There are also many US-
+2Examples: http://www.nytimes.com/2009/03/16/technology/
+internet/16privacy.html;
+http://www.wsj.com/public/page/what-
+they-know-digital-privacy.html; http://www.cbsnews.com/videos/60-
+minutes-probes-data-brokers-and-online-tracking/
+
+547
+
+based civil liberty organizations such as American Civil Lib-
+erties Union (ACLU) and Electronic Privacy Information
+Center (EPIC) that regularly blow the whistle on industry and
+government practices that may infringe people’s privacy. The
+2013 Snowden revelation of government surveillance has had
+much coverage in the media. However, a recent study sug-
+gests that it has limited and short-lived effects on the Ameri-
+can public’s interests in privacy [40]. In addition, Ad indus-
+try organizations such as Digital Advertising Alliance (DAA)
+have launched public campaigns about OBA and their self-
+regulations (e.g., the OBA icon and the opt-out option).
+In sum, the topic of online privacy seems to be highly visi-
+ble in contemporary American society, which provides many
+opportunities for ordinary citizens to gain knowledge about
+OBA, along with its privacy implications as well as how to
+deal with OBA (e.g., opt out of OBA).
+In contrast, privacy is a relatively recent concept in China.
+Historian Peter Zarrow wrote “[In the late Qing dynasty (c.
+1890-1912)] No single word existed that was equivalent to
+the English ‘privacy’ in the sense of personal, closed off from
+the public, inner life, family life, private (individual) rights
+and related concepts.” [35] He also noted that the discussion
+on privacy mostly revolved around a “realm of si [personal,
+self, selﬁsh, private] in terms of its relationship to the realm
+of gong [public, public space, open, communal].” [35] Under
+the traditional Chinese culture of collectivism, the concept
+of si even has negative connotations of suspicious and self-
+ish. Hu noted that the Chinese word yin si for “privacy” did
+not appear in the two most popular and authoritative Chinese
+dictionaries in 1993 [22]. This is more than a century after
+Warren and Brandeis’ classic article on privacy.
+In terms of regulation, the ﬁrst national standard on per-
+sonal information protection entitled “Information Security
+Technology Guidelines for Personal Information Protection
+Within Public and Commercial Services Information Sys-
+tems” in China was drafted in 2008 and then issued in 2013
+by the Ministry of Industry and Information Technology. This
+standard provides guidelines regarding collection, use, and
+sharing of personal information in public and commercial
+systems, but it does not have any legal force.
+In March 2014, the Chinese Advertising Association Inter-
+active Network Branch issued the ﬁrst set of Chinese indus-
+try self-regulatory OBA guidelines entitled “Chinese Inter-
+net OBA User Information Protection Framework Standard.”3
+Many Chinese Internet juggernauts such as Baidu are part of
+this self-regulatory group. They adopted an OBA icon (the
+letter i inside of a circle) very similar to the DAA’s OBA
+icon (the letter i inside of a triangle, ofﬁcially called “Ad-
+Choices”4). However, we are not aware of any public cam-
+paign about this Chinese OBA icon nor any opt-out options
+provided by this Chinese industry self-regulatory group. We
+are also not aware of any civil liberty organization in China
+that ﬁghts for ordinary citizen’s privacy, let alone privacy in
+OBA.
+
+3http://www.iac-i.org/privacy/index.html
+4http://www.youradchoices.com/
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+The topic of online privacy occasionally appears in the Chi-
+nese news media, including some articles on OBA. However,
+these articles often are about privacy studies or opinions from
+the western countries5. This may explain our Chinese respon-
+dents’ scant knowledge of OBA and its privacy implications
+because user education is almost absent. This lack of knowl-
+edge could also play a role in Chinese respondents’ more will-
+ingness to share information with OBA as well as lack of spe-
+ciﬁc privacy concerns when some of them were indeed con-
+cerned about OBA. One interesting question is that if China
+had a Snowden-like incident, would it drastically make Chi-
+nese people more privacy concerned? It is already widely
+known that the Chinese government is actively monitoring
+Internet usage and ﬁltering information that is deemed inap-
+propriate [49]. While this is purely speculative, we suspect
+that Snowden-like incidents are unlikely to happen in China
+or have similar impact as that in the US.
+We recognize that these two countries have huge populations,
+and that the concepts and practices of privacy may not be uni-
+form within and unique to these countries. Nevertheless, con-
+sidering the historical, legal, and cultural factors, while spec-
+ulative, may help us situate these differences in the broader
+social contexts of these two countries.
+One factor that may play a role is the “power distance” that
+people accept in these two countries. According to Geert Hof-
+stede’s cultural dimensions theory, the power distance dimen-
+sion measures “the extent to which the less powerful members
+of institutions and organisations within a country expect and
+accept that power is distributed unequally.” [16] China has a
+high rating of 80 for “power distance,” while the US has a low
+rating of 40 [16]. These scores suggest that Chinese society
+is much more accepting of power inequalities than American
+society. In the context of OBA, the ad industry has the upper
+hand over Internet users. China’s high score of power dis-
+tance may suggest that Internet users tend to accept that the
+ad industry has more power in controlling OBA than them-
+selves, and thus they are less concerned about OBA because
+they accept that they do not have much say or control in OBA.
+The differences in these historical, legal, and social contexts
+may have inﬂuenced the divergent opinions of our Chinese
+and American respondents on OBA. Our study not only sheds
+lights into Chinese Internet users’ perceptions of OBA, but
+also highlights the nuanced differences between the Ameri-
+can and Chinese Internet users.
+However, it is important to note that since our study did not
+investigate these cultural or social factors, we cannot make
+any conclusive claims about the impact of these factors on
+people’s privacy attitudes towards OBA. Nonetheless, this is
+a promising area for future research.
+Online activity. Several empirical studies have found that the
+majority of American people do not like OBA [34, 53]. They
+felt OBA is sometimes smart and useful in providing the ads
+that interest them; at the same time scary and creepy because
+of the amount of information tracked and collected in order to
+
+5Examples, http://www.kexuehome.com/articles/201504211120.html;
+http://3g.forbeschina.com/review/201407/0034073.shtml
+
+create the targeted ads [54]. While privacy is a very situation-
+dependent concept [48], few prior studies have explicitly con-
+sidered speciﬁc online activities when soliciting people’s per-
+ceptions and preferences about OBA. One notable exception
+is the study by Leon et al. [28], which inspired many aspects
+of our own study. Using a concrete online activity for seeking
+health-related advice, they investigated different factors (e.g.,
+time of data retention) that may impact people’s willingness
+to share information for OBA [28]. Our study makes a unique
+contribution by exploring beyond a single online activity, as
+we created and tested a set of common yet different online
+activities.
+We found that the type of online activity indeed has a sig-
+niﬁcant effect on our respondents’ willingness to share their
+information for OBA. For instance, for demographic infor-
+mation, respondents were signiﬁcantly more willing to share
+with the dating site than with the banking and health sites.
+This result is intuitive as online dating sites usually ask de-
+mographic information to match users, so people are likely
+to understand and accept these practices. These results also
+align well with the concept of contextual integrity [36, 37]
+because these data collection/usage practices are reasonably
+understood and expected under the particular context.
+Platform. Prior research has found that people behave differ-
+ently on their mobile devices versus desktop (e.g., searching
+more sensitive topics on mobile devices [39]). In addition,
+people tend to have different security experiences and consid-
+erations between the desktop and the mobile environment [7].
+These results suggest that platform may play a role in people’s
+privacy-related decision making. However, according to our
+ANCOVA results, we did not ﬁnd a signiﬁcant effect of plat-
+form (desktop/laptop vs. mobile apps) on respondents’ will-
+ingness to share information for OBA. Statistically speaking,
+this means that our exploration of this factor is inconclusive.
+We introduced the two platforms to our respondents. How-
+ever, based on the pilot testing of the original survey, we
+decided to ask each participant to think about OBA only on
+one platform. Therefore, they were not given an opportunity
+to explicitly compare these two platforms. This might con-
+tribute to the non-signiﬁcant result on platform. Future stud-
+ies could consider asking participants to explicitly compare
+their preferences of OBA on different platforms.
+
+Design Implications
+What do these results mean for designing privacy-enhancing
+mechanisms, particularly those related to OBA? First, our re-
+sults show that contextual factors such as country and the
+type of online activity matter. Understanding the contex-
+tual nature of privacy preferences can inform tools that se-
+lectively block online tracking or collection of certain data
+based on the context. Intelligent privacy tools that recognize
+and consider these contextual factors as well as learn and ap-
+ply people’s context-dependent preferences are more likely
+to be effective in mitigating peoples concerns about OBA.
+For instance, when users are browsing products on a rep-
+utable e-commerce site, the protection mechanism could by
+default allow the sharing of browsing information (e.g., items
+
+548
+
+SESSION: INTERNATONAL INSIGHTS
+
+searched) but prohibit the collection and inference of users’
+contact information.
+Second, we value the perspective that Paul Dourish advocates
+- context is not a static representation that can be separated
+from the activity at hand but rather is actively produced and
+enacted in the course of the activity [14]. Taking this per-
+spective, we advocate that privacy tools should show the rel-
+evant entities and resources that are involved in OBA to help
+people produce and make sense of the context around their
+online activities (e.g., buy a birthday gift online). Tools such
+as Lightbeam6 embody some of this perspective by provid-
+ing dynamic visualizations of third party trackers as people
+browse a website, but they do not really show what kind of
+information is being collected. It would be promising to com-
+bine this sort of dynamic visualization with powerful web
+measurement tools such as OpenWPM7 that may detect the
+kind of information being collected.
+Third, our respondents, particularly the Chinese respondents,
+have little or insufﬁcient knowledge about OBA and its spe-
+ciﬁc privacy implications. This is worrisome. User edu-
+cation is critical. Government agencies, ad industry self-
+regulatory groups, privacy tool developers, website designers,
+and browser developers all play a role in educating Internet
+users about OBA. Educational tools could be designed to im-
+prove people’s awareness of OBA. Similar to how games are
+designed to teach people about security [44] or a company’s
+privacy practices8, games could be designed to teach people
+about OBA, its privacy implications, and available user con-
+trols. For instance, one could envision a game like Monopoly
+where users selectively share (or “invest”) their personal in-
+formation for OBA to maximize their beneﬁts (e.g., coupons,
+free access to premium content) while safe-guarding their pri-
+vacy (e.g., against third-parties).
+Lastly, many currently popular privacy tools such as Ad-
+blockPlus, Ghostery, and Privacy Badger primarily work on
+desktop/laptop at the moment. Extending these tools to work
+on mobile devices and in mobile apps would be useful. In
+addition, translating and customizing these tools for non-
+English speaking (e.g., Chinese) users would have a much
+broader impact.
+
+Study Limitations
+Our study has a number of limitations. First, while we re-
+cruited our American and Chinese respondents from the main
+crowdsourcing site in each country, this methodology is sub-
+ject to any bias that may reside in these crowdsourcing sites.
+Therefore, we cannot make claims about whether our two
+samples are representative samples of the Internet users in
+these two countries and consequently, whether our two sam-
+ples are completely comparable. While the Chinese sample
+is signiﬁcantly younger than the US sample (which we have
+controlled for in our ANCOVA analyses), the two samples are
+comparable in terms of education level and IT background.
+
+6https://www.mozilla.org/en-US/lightbeam/
+7https://github.com/citp/OpenWPM/
+8Zynga’s PrivacyVille: https://zynga.com/privacy/privacyville
+
+549
+
+We also note that recruiting perfectly comparable and repre-
+sentative samples across different countries will be extremely
+challenging, if not impossible.
+Second, we only included one popular website or app for
+each type of online activity in China and the US, respectively.
+While we did control for respondents’ perceived trust with
+each website as a co-variate in the analysis, our results might
+still not be generalizable for these types of online activities.
+Future studies could test multiple websites for each type of
+online activity. In addition, we only explored ﬁve types of
+online activities. While our pilot testing of the survey did not
+receive any complaint about having unrealistic online activ-
+ities, future work can look into methods such as experience
+sampling and diary studies that could better capture people’s
+perceptions of OBA in a wide range of their own online ac-
+tivities. However, recruiting a large of number of participants
+for such studies could be a challenge.
+Third, only after conducting the study, we realized that the
+descriptions of the ﬁve online activities have one minor differ-
+ence - the ﬁrst sentence of the health scenario speciﬁed a con-
+crete topic (i.e., “ﬂaky scalp”), while the other four scenarios
+did not. For instance, the shopping scenario said “Imagine
+that you want to buy some books on Amazon for yourself,”
+but it did not specify a concrete topic of the book. While this
+is a difference of speciﬁcity in the ﬁrst sentence, we believe
+that this difference has little impact if any on our results. The
+willingness to share information for the health scenario is al-
+most always in the middle among the ﬁve scenarios. Besides,
+the four other scenarios did not differ in the level of speci-
+ﬁcity. Even if we exclude the health scenario and just com-
+pare the other four scenarios, the results of online activity still
+hold. There are signiﬁcant differences in willingness to share
+among the four scenarios where shopping is the highest while
+banking is the lowest.
+Fourth, our respondents’ privacy preferences were self-
+reported and may divert from their actual behavior in the real
+world. However, this type of self-reported data could still
+provide valuable insights into people’s perceptions of OBA.
+Many empirical studies of privacy have used this kind of self-
+reported, scenario-based method (e.g., [28, 32]).
+Lastly, the mobile branch/version of our survey was not con-
+ducted on mobile phones which may affect some respon-
+dents’ imagination of OBA on smart phones. While there are
+ways to recruit respondents and have them answer the survey
+on their phones, we were concerned that the small screen and
+keyboard of a mobile phone would make the survey more dif-
+ﬁcult to answer and thus respondents may pay less attention.
+
+CONCLUSION
+Online behavioral advertising (OBA) is prevalent on the In-
+ternet. While it could provide ads that people ﬁnd interest-
+ing and useful, its underlying tracking and proﬁling of users
+is unsettling. Prior research has studied Internet users’ per-
+ceptions of OBA, most of these studies focused on American
+users and did not study contextual factors (e.g., online activity
+and platform) systematically. In this study, we surveyed both
+American and Chinese Internet users about their perceptions
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+of OBA as well as their willingness to share personal informa-
+tion for OBA in different speciﬁc situations (e.g., searching
+for information about medication for a health issue in a health
+mobile app). We found that Chinese respondents were much
+more willing to share their data for OBA than their Ameri-
+can counterparts. Given OBA is a global phenomenon, fur-
+ther research is warranted to examine how people in different
+countries perceive OBA and make decisions. We also found
+that respondents’ willingness to share information for OBA
+varied signiﬁcantly amongst different online activities. We
+advocate designing context-aware privacy tools for OBA that
+can support people to seamlessly make sense of the prevail-
+ing context and make privacy decisions congruent with the
+prevailing context.
+
+ACKNOWLEDGEMENT
+We thank our respondents for sharing their insights. We are
+also grateful to Pedro Leon, Blase Ur, Jeffrey Stanton, Ja-
+son Dedrick and anonymous reviewers for their thoughtful
+comments on earlier versions of this paper. This work was
+supported in part by NSF Grant CNS-1464347.
+
+REFERENCES
+1. Gunes Acar, Christian Eubank, Steven Englehardt, Marc
+Juarez, Arvind Narayanan, and Claudia Diaz. 2014. The
+Web Never Forgets: Persistent Tracking Mechanisms in
+the Wild. In Proceedings of the 2014 ACM SIGSAC
+Conference on Computer and Communications Security
+(CCS ’14). ACM, New York, NY, USA, 674–689.
+
+2. Lalit Agarwal, Nisheeth Shrivastava, Sharad Jaiswal,
+
+and Saurabh Panjwani. 2013. Do not embarrass:
+re-examining user concerns for online tracking and
+advertising. In Proceedings of the Ninth Symposium on
+Usable Privacy and Security. ACM, 8–24.
+
+3. Michael Backes, Aniket Kate, Matteo Maffei, and Kim
+Pecina. 2012. Obliviad: Provably secure and practical
+online behavioral advertising. In 2012 IEEE Symposium
+on Security and Privacy (SP). IEEE, 257–271.
+
+4. Louise Barkhuus. 2012. The mismeasurement of
+
+privacy: using contextual integrity to reconsider privacy
+in HCI. In Proceedings of the SIGCHI Conference on
+Human Factors in Computing Systems. ACM, 367–376.
+5. Howard Beales. 2010. The value of behavioral targeting.
+
+Network Advertising Initiative (2010).
+
+6. Steven Bellman, Eric J Johnson, Stephen J Kobrin, and
+
+Gerald L Lohse. 2004. International differences in
+information privacy concerns: A global survey of
+consumers. The Information Society 20, 5 (2004),
+313–324.
+
+7. Reinhardt A Botha, Steven M Furnell, and Nathan L
+
+Clarke. 2009. From desktop to mobile: Examining the
+security experience. Computers & Security 28, 3 (2009),
+130–137.
+
+8. California Legislature. 2013. AB-370 Consumers:
+
+internet privacy. (2013).
+
+550
+
+https://leginfo.legislature.ca.gov/faces/
+billNavClient.xhtml?bill_id=201320140AB370
+
+9. China Internet Network Information Center (CNNIC).
+
+2014a. China Internet Development Report. (2014).
+http://www.cnnic.cn/hlwfzyj/hlwxzbg/hlwtjbg/
+201407/P020140721507223212132.pdf
+
+10. China Internet Network Information Center (CNNIC).
+2014b. China Mobile Internet Survey Research Report.
+(2014). http://www.cnnic.cn/hlwfzyj/hlwxzbg/
+ydhlwbg/201408/P020140826360212699278.pdf
+
+11. Jacob Cohen. 1960. A Coefﬁcient of Agreement for
+
+Nominal Scales. Educational and Psychological
+Measurement 20, 1 (April 1960), 37–46.
+
+12. Federal Trade Commission and others. 2009. FTC staff
+report: Self-regulatory principles for online behavioral
+advertising, 2009. Federal Trade Commission,
+Washington, DC (2009).
+
+13. Federal Trade Commission and others. 2012. Protecting
+
+Consumer Privacy in an Era of Rapid Change:
+Recommendations for Businesses and Policymakers.
+(2012). https://www.ftc.gov/sites/default/files/
+documents/reports/
+
+14. Paul Dourish. 2004. What We Talk About when We Talk
+About Context. Personal Ubiquitous Comput. 8, 1 (Feb.
+2004), 19–30.
+
+15. Xianyi Gao, Yulong Yang, Huiqing Fu, Janne Lindqvist,
+and Yang Wang. 2014. Private Browsing: An Inquiry on
+Usability and Privacy Protection. In Proceedings of the
+13th Workshop on Privacy in the Electronic Society
+(WPES ’14). ACM, New York, NY, USA, 97–106.
+DOI:http://dx.doi.org/10.1145/2665943.2665953
+
+16. Geert H. Hofstede. 1984. Culture’s consequences:
+
+international differences in work-related values. Sage
+Publications.
+
+17. Michael C. Grace, Wu Zhou, Xuxian Jiang, and
+
+Ahmad-Reza Sadeghi. 2012. Unsafe Exposure Analysis
+of Mobile In-app Advertisements. In Proceedings of the
+Fifth ACM Conference on Security and Privacy in
+Wireless and Mobile Networks (WISEC ’12). ACM, New
+York, NY, USA, 101–112.
+
+18. Saikat Guha, Bin Cheng, and Paul Francis. 2010.
+
+Challenges in measuring online advertising systems. In
+Proceedings of the 10th ACM SIGCOMM conference on
+Internet measurement. ACM, 81–87.
+
+19. Dehua He and Yaobin Lu. 2007. Consumers perceptions
+
+and acceptances towards mobile advertising: An
+empirical study in China. In International Conference
+on Wireless Communications, Networking and Mobile
+Computing. IEEE, 3775–3778.
+
+20. Hsiu-Fang Hsieh and Sarah E. Shannon. 2005. Three
+
+Approaches to Qualitative Content Analysis. Qualitative
+Health Research 15, 9 (Nov. 2005), 1277–1288.
+
+SESSION: INTERNATONAL INSIGHTS
+
+21. Jian Hu, Hua-Jun Zeng, Hua Li, Cheng Niu, and Zheng
+
+Chen. 2007. Demographic prediction based on user’s
+browsing behavior. In Proceedings of the 16th
+international conference on World Wide Web. ACM,
+151–160.
+
+22. S. Hu. 2000. Individual Privacy in Modernizing China.
+
+Ph.D. Dissertation. University of Colorado, Boulder.
+
+23. Naz Kaya and Margaret J Weber. 2003. Cross-cultural
+differences in the perception of crowding and privacy
+regulation: American and Turkish students. Journal of
+environmental psychology 23, 3 (2003), 301–309.
+
+24. Patrick Gage Kelley, Michael Benisch, Lorrie Faith
+Cranor, and Norman Sadeh. 2011. When are users
+comfortable sharing locations with advertisers?. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems. ACM, 2449–2452.
+
+25. Klaus Krippendorff. 2004. Reliability in Content
+
+Analysis: Some Common Misconceptions and
+Recommendations. Human Communication Research
+(July 2004), 411–433.
+
+26. Rub´en Daniel Ledesma and Pedro Valero-Mora. 2007.
+Determining the number of factors to retain in EFA: an
+easy to use computer program for carrying out parallel
+analysis. Practical Assessment, Research & Evaluation
+12, 2 (2007), 1–11.
+
+27. Pedro Leon, Blase Ur, Richard Shay, Yang Wang,
+Rebecca Balebako, and Lorrie Cranor. 2012. Why
+Johnny can’t opt out: a usability evaluation of tools to
+limit online behavioral advertising. In Proceedings of
+the SIGCHI Conference on Human Factors in
+Computing Systems. ACM, 589–598.
+
+28. Pedro Giovanni Leon, Blase Ur, Yang Wang, Manya
+
+Sleeper, Rebecca Balebako, Richard Shay, Lujo Bauer,
+Mihai Christodorescu, and Lorrie Faith Cranor. 2013.
+What matters to users?: factors that affect users’
+willingness to share information with online advertisers.
+In Proceedings of the Symposium on Usable Privacy
+and Security. ACM, 7–26.
+
+29. Jialiu Lin, Michael Benisch, Norman Sadeh, Jianwei
+
+Niu, Jason Hong, Banghui Lu, and Shaohui Guo. 2013.
+A Comparative Study of Location-sharing Privacy
+Preferences in the United States and China. Personal
+Ubiquitous Comput. 17, 4 (April 2013), 697–711.
+
+30. Jialiu Lin, Bin Liu, Norman Sadeh, and Jason I. Hong.
+
+2014. Modeling Users Mobile App Privacy Preferences:
+Restoring Usability in a Sea of Permission Settings. In
+Proceedings of Symposium On Usable Privacy and
+Security (SOUPS’14). 199–212.
+https://www.usenix.org/conference/soups2014/
+proceedings/presentation/lin
+
+31. Chia-Ling Eunice Liu, Rudolf R Sinkovics, Noemi
+
+Pezderka, and Parissa Haghirian. 2012. Determinants of
+consumer perceptions toward mobile advertising-a
+comparison between Japan and Austria. Journal of
+Interactive Marketing 26, 1 (2012), 21–32.
+
+32. Kirsten E. Martin. 2012. Diminished or Just Different?
+
+A Factorial Vignette Study of Privacy as a Social
+Contract. Journal of Business Ethics 111, 4 (March
+2012), 519–539.
+
+33. J.R. Mayer and J.C. Mitchell. 2012. Third-Party Web
+
+Tracking: Policy and Technology. In 2012 IEEE
+Symposium on Security and Privacy (SP). 413–427.
+DOI:http://dx.doi.org/10.1109/SP.2012.47
+34. Aleecia McDonald and Lorrie Faith Cranor. 2010.
+
+Beliefs and behaviors: Internet users’ understanding of
+behavioral advertising. Telecommunications Policy
+Research Conference (TPRC).
+
+35. Bonnie S. McDougall and Anders Hansson (Eds.). 2002.
+
+Chinese Concepts of Privacy. Vol. 55. Brill Academic
+Pub, Leiden Netherlands ; Boston.
+
+36. Helen Nissenbaum. 2004. Privacy as contextual
+
+integrity. Washington law review 79, 1 (2004), 119–158.
+
+37. Helen Nissenbaum. 2011. A contextual approach to
+
+privacy online. Daedalus 140, 4 (2011), 32–48.
+
+38. Eyal Peer, Gabriele Paolacci, Jesse Chandler, and Pam
+
+Mueller. 2012. Screening participants from previous
+studies on Amazon Mechanical Turk and Qualtrics.
+(2012).
+experimentalturk.files.wordpress.com/2012/02/
+screening-amt-workers-on-qualtrics-5-2.pdf
+39. Dan Pelleg, Denis Savenkov, and Eugene Agichtein.
+2013. Touch Screens for Touchy Issues: Analysis of
+Accessing Sensitive Information from Mobile Devices.
+In Proceedings of the Seventh International AAAI
+Conference on Weblogs and Social Media (ICWSM).
+496–505.
+
+40. Sren Preibusch. 2015. Privacy behaviors after Snowden.
+
+Commun. ACM 58, 5 (April 2015), 48–55. DOI:
+http://dx.doi.org/10.1145/2663341
+
+41. Emilee Rader. 2014. Awareness of Behavioral Tracking
+
+and Information Privacy Concern in Facebook and
+Google. In Symposium on Usable Privacy and Security
+(SOUPS). 51–67.
+
+42. Florian Schaub, Bastian Konings, and Michael Weber.
+2015. Context-Adaptive Privacy: Leveraging Context
+Awareness to Support Privacy Decision Making.
+Pervasive Computing, IEEE 14, 1 (2015), 34–43.
+
+43. Somini Sengupta. 2013. Protecting Your Privacy on the
+
+New Facebook. The New York Times (Feb. 2013).
+http://www.nytimes.com/2013/02/07/technology/
+personaltech/
+protecting-your-privacy-on-the-new-facebook.
+html
+
+44. Steve Sheng, Bryant Magnien, Ponnurangam
+
+Kumaraguru, Alessandro Acquisti, Lorrie Faith Cranor,
+Jason Hong, and Elizabeth Nunge. 2007. Anti-Phishing
+Phil: The Design and Evaluation of a Game That
+Teaches People Not to Fall for Phish. In Proceedings of
+the Symposium on Usable Privacy and Security (SOUPS
+’07). ACM, 88–99.
+
+551
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+53. Joseph Turow, Jennifer King, Chris Jay Hoofnagle, Amy
+
+Bleakley, and Michael Hennessy. 2009. Americans
+reject tailored advertising and three activities that enable
+it. Technical report, Annenberg School for
+Communications, University of Pennsylvania (2009).
+http://repository.upenn.edu/asc_papers/137/
+54. Blase Ur, Pedro Giovanni Leon, Lorrie Faith Cranor,
+Richard Shay, and Yang Wang. 2012. Smart, useful,
+scary, creepy: perceptions of online behavioral
+advertising. In Proceedings of the Eighth Symposium on
+Usable Privacy and Security (SOUPS’12). ACM, 4–19.
+55. Yang Wang, Gregory Norcie, and Lorrie Faith Cranor.
+
+2011. Who is concerned about what? A study of
+American, Chinese and Indian users’ privacy concerns
+on social network sites. In Trust and trustworthy
+computing. Springer, 146–153.
+
+56. Ying Wang and Shaojing Sun. 2010. Examining the role
+
+of beliefs and attitudes in online advertising: A
+comparison between the USA and Romania.
+International Marketing Review 27, 1 (2010), 87–107.
+57. Samuel D. Warren and Louis D. Brandeis. 1890. The
+
+Right to Privacy. Harvard Law Review 4, 5 (1890),
+193–220.
+
+58. Yue Jeff Zhang, Jim Q. Chen, and Kuang-Wei Wen.
+
+2002. Characteristics of Internet Users and Their Privacy
+Concerns. Journal of Internet Commerce 1, 2 (March
+2002), 1–16.
+
+45. Edith G Smit, Guda Van Noort, and Hilde AM Voorveld.
+
+2014. Understanding online behavioural advertising:
+User knowledge, privacy concerns and online coping
+behaviour in europe. Computers in Human Behavior 32
+(2014), 15–22.
+
+46. H Jeff Smith, Tamara Dinev, and Heng Xu. 2011.
+Information privacy research: an interdisciplinary
+review. MIS quarterly 35, 4 (2011), 989–1016.
+
+47. H Jeff Smith, Sandra J Milberg, and Sandra J Burke.
+
+1996. Information privacy: measuring individuals’
+concerns about organizational practices. MIS quarterly
+(1996), 167–196.
+
+48. Daniel J Solove. 2006. A taxonomy of privacy.
+
+University of Pennsylvania law review (2006), 477–564.
+
+49. Zixue Tai. 2010. Casting the Ubiquitous Net of
+
+Information Control: Internet Surveillance in China
+from Golden Shield to Green Dam. International
+Journal of Advanced Pervasive and Ubiquitous
+Computing 2, 1 (2010), 53–70.
+
+50. Mohsen Tavakol and Reg Dennick. 2011. Making sense
+of Cronbach’s alpha. International Journal of Medical
+Education 2 (June 2011), 53–55. DOI:
+http://dx.doi.org/10.5116/ijme.4dfb.8dfd
+
+51. Vincent Toubiana, Arvind Narayanan, Dan Boneh,
+
+Helen Nissenbaum, and Solon Barocas. 2010. Adnostic:
+Privacy Preserving Targeted Advertising. In Network
+and Distributed System Security Symposium (NDSS’10).
+
+52. TRUSTe. 2011. Privay and online behavioral
+
+advertising. (2011).
+http://www.truste.com/adprivacy/
+
+552
+
+

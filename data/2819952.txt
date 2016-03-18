@@ -1,0 +1,1758 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Complex Decision-Making in Clinical Practice  
+
+Line Silsand 
+
+Gunnar Ellingsen   
+
+University hospital of Northern 
+
+The Arctic 
+
+Norway 
+
+Tromsoe, Norway  
+
+University of Norway 
+
+ Tromsoe, Norway 
+
+line.silsand@telemed.no 
+
+gunnar.ellingsen@uit.no 
+
+ 
+
+ 
+
+ 
+
+ABSTRACT 
+Clinical  Decision  Support  (CDS)  Systems  are  considered 
+crucial  for  diagnosis,  treatment  and  care  of  patients. 
+However,  practical  benefits  of  such  systems  have  been  far 
+below  expectations.  This  paper  explores  how  the  evolving 
+interdependencies  in  organizational,  clinical,  political,  and 
+behavioral terms influence the design and implementation of 
+CDS.  The  paper  discusses  how  these  interdependencies 
+complicate  clinical  use  of  CDS  where  cross-departmental 
+patient  pathways  increasingly  dominate  approaches  to 
+dealing with patients with complex conditions.  
+
+Empirically,  we  report  from  an  acute  geriatric  patient 
+pathway  project.  The  aim  was  to  design  and  implement  a 
+decision-support  form  for  triage  of  elderly  patients  in  the 
+emergency  unit.  The  study  emphasizes  the  intertwined 
+collaborative  nature  of  healthcare  work,  and  the  resulting 
+need  to  consider  the  whole  context  when  designing  and 
+implementing  CDS tools. The contribution is to emphasize 
+the “extended design” perspective to capture how workplace 
+technologies  and  practices  are  shaped  across  multiple 
+contexts and prolonged periods.   
+
+Author Keywords 
+Decision  support;  healthcare  work;  patient  pathways; 
+ethnography; information infrastructure.  
+
+ACM Classification Keywords 
+H.5.3 [Information Interfaces and Presentation]: Group and 
+Organization  Interfaces  –  Computer-supported  cooperative 
+work. 
+
+INTRODUCTION 
+While decision support systems in health care are considered 
+crucial for diagnosis, treatment, and care of patients [26], the 
+practical  benefits  of  such  systems  have  proven  to  be  far 
+below  expectations  [6,8,11,26].  Clinical  Decision  Support 
+(CDS)  systems  are  used  to  integrate  clinical  and  patient 
+
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work  for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must  be  honored. 
+Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or  republish,  to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819952 
+ 
+
+information  to  provide  support  for  decision-making  in 
+patient  care  as  well  as  to  generate  case-specific  advice 
+[8,12,21].  
+
+In 2007, Aarts, Ash, and Berg [2] reported that less than 10% 
+of  US  hospitals  had  implemented  the  decision  support 
+system  “computerized  physician  order  entry”  (CPOE), 
+which allows a physician to enter medical orders and monitor 
+their  results.  This  tendency  seems  to  be  representative  of 
+western  healthcare organizations in general and Norway in 
+particular, as several studies and reports indicate low uptake 
+of electronic decision support systems in hospitals in recent 
+years [6,12,17,33,37,40]. Moreover, the lack of diffusion of 
+CDS  systems  is  associated  with  the  complexity  that  arises 
+from the nature of decision making, the intellectual challenge 
+of  creating  knowledge,  technical  dimensions  of  delivering 
+CDS,  and  social  aspects  of  incorporating  changes  into 
+clinical care [8,11,17,34,37]. 
+
+These discouraging results indicate that we need a different 
+approach  to  managing  the  challenges  of  decision  support 
+systems.  As  a  response,  we  suggest  that  a  socio-technical 
+approach  is  needed  for  shedding  light  on  the  dynamics 
+between decision support systems and the specific nature of 
+the work these systems are intended to support. In particular, 
+we  want  to  explore  how  the  evolving  interdependencies  in 
+organizational,  clinical,  political,  and  behavioral  terms 
+influence  the  design  and  implementation  of  CDS  systems. 
+Further,  the  paper  discusses  how  these  aspects  complicate 
+the  adoption  of  CDS  systems  where  cross-departmental 
+patient  pathways  increasingly  dominate  approaches  to  care 
+of  patients  with  complex  conditions  [17,34].  In  this  paper, 
+we  conceptualize  patient  pathways  as  planned  and  pre-
+booked  steps  combining  both  administrative  and  clinical 
+prescriptions, as distinct from typical medical guidelines, in 
+order to manage patient trajectories [28].  
+
+From  this  perspective,  we  ask  the  following  research 
+question:  What  are  the  key  challenges  of  designing  and 
+implementing decision support systems in clinical practice?  
+
+With  this,  we  challenge  the  way  many  decision-support 
+systems  have  traditionally  been  designed,  namely  for  one 
+particular  profession  (i.e.  physicians)  in  one  particular 
+setting.  Accordingly,  the  contribution  of  this  paper  is  to 
+emphasize  an  “extended  design  and 
+implementation” 
+perspective  of  decision-support  systems,  to  capture  how 
+
+993
+
+workplace  technologies  and  practices  are  shaped  across 
+multiple contexts and over extended periods.  
+
+To  conceptualize  the  dynamics  of  how  various  healthcare 
+professionals,  activities  and  decision-support  tools  are 
+interwoven in the support of the patient’s trajectory through 
+the  healthcare  system,  we  draw  on  a  work  practice 
+perspective from the CSCW field [4,10,13,22]. However, we 
+supplement this perspective with the concept of information 
+infrastructure,  which  has  been  used  to  study  the  design, 
+implementation, and use of large-scale information systems 
+[15,19,38].  
+
+Empirically our study is based on the “acute geriatric patient 
+pathway  project”  established  in  September  2011  by  a 
+university  hospital  in  Norway.  In  the  initial  phase  of  the 
+project, a decision-support form was introduced for triage of 
+patients in the emergency unit. The first version was a paper 
+form, which was replaced later in the process by an electronic 
+form in the Electronic Patient Record (EPR). This allowed 
+detailed  insight  into  how  a  clinical  decision  support  tool 
+gradually evolved in practice. 
+
+The  rest  of  the  paper  is  organized  as  follows:  The  next 
+section  describes  the  theoretical  framework  for  this  paper. 
+The  method  section  briefly  introduces  the  setting  and  the 
+paper’s  methodological  foundations,  followed  by  an 
+explanation of the  methods  for the empirical research. The 
+section  named  “CASE”  contains  the  empirical  findings 
+presented as the history of the design and implementation of 
+the decision-support system. These sections are followed by 
+discussion of the findings in relation of the chosen theoretical 
+framework, and followed by the conclusion.   
+
+CONCEPTUALIZING DECISION SUPPORT 
+Like other complex organizations, the healthcare sector has 
+an  increasing  need  to  implement  ICT  systems  that  can 
+support  clinical  and  organizational  decision-making 
+activities.  Health  ICT  systems  are  expected  to  serve 
+organizational  goals    to  fit  into  work  processes,  and  to  be 
+usable  and  safe.  Generally,  the  move  toward  Electronic 
+Patient Record (EPR) systems has led to the development of 
+guidelines,  care  paths,  and  decision-support  devices 
+providing reminders and recommendations within the EPRs. 
+In particular, well-designed CDS systems have the potential 
+to improve healthcare quality and patients’ outcomes, as well 
+as  to  increase  efficiency  and  reduce  healthcare  costs  [2,5] 
+[12,20,26,29]. Along with the growth of standardized patient 
+pathways,  a  key  issue  concerns  the  decision  to  initiate  a 
+pathway  combining  both  administrative  and  clinical 
+prescriptions for a particular patient. Accordingly, the use of 
+patient  pathways  addresses  a  need  to  identify  the  patients 
+who  will  benefit  from  a  particular  pathway,  due  to  limited 
+resources  within  the  healthcare  service  in  general  [17,28]. 
+Hence, sorting patients becomes important before initiating 
+a  pathway  and  often  starts  as  triage  of  patients  at  the 
+emergency  unit.  Triage  is  the  process  of  sorting  patients 
+based  on  their  need  for  immediate  medical  treatment  in 
+relation to their chance of benefiting from such care, and may 
+
+994
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+seem to be a straightforward activity for healthcare personnel 
+based  on  standardized  classification  schemes.  However, 
+previous studies [7,28] emphasized the collaborative process 
+of sorting patients, and investigated how different formal and 
+informal  sorting  mechanisms  are  in  play.  While  we 
+appreciate  the  thorough  investigations  by  Møller  &  Bjørn 
+[28]  and  Bjørn  &  Rødje  [7],  our  study  differs  because  we 
+explore the design and implementation of a decision support 
+tool. 
+
+and  patient-related 
+
+Today, there is an array of different clinical decision support 
+(CDS) systems in healthcare practice. CDS systems  can be 
+defined  as  providing  clinicians  with  computer-generated 
+clinical  knowledge 
+information, 
+intelligently  filtered  or  presented  at  appropriate  times,  to 
+enhance  patient  care.  Clinical  knowledge  can  be 
+incorporated  in  CDS  systems  based  on,  for  instance, 
+available  best  evidence,  which  is  represented  in  guideline 
+recommendations. Many different types of clinical tasks can 
+be  supported by  CDS  systems,  for  example  use  of  patient-
+monitoring  devices  such  as  Electrocardiogram  or  pulse 
+oximeters that warn of changes in a patient’s condition [21]. 
+However, the scope of this paper is limited to the design and 
+implementation  of  a  CDS  form  to  be  integrated  in  an 
+Electronic Patient Record (EPR). )  
+
+One  example  of  CDS  integrated  in  EPRs  is  the  system  for 
+computerized  physician  order  entry  (CPOE),  designed  for 
+use by physicians, which can send reminders or warnings for 
+deviating  laboratory  test  results  and  can  check  for  drug 
+interactions,  dosage 
+and  other  prescribing 
+contraindications such as a patient’s allergies [3,21].  
+
+errors, 
+
+Another  example  of  CDS  is  electronic  systems  or  forms, 
+integrated  in  EPRs,  used  to  provide  support  for  decision-
+making  in  patient  care  as  well  as  to  generate  case-specific 
+advice at various stages in the clinical process. For complex 
+cognitive tasks, for example diagnostic decision-making, the 
+aim of the CDS can be to assist, rather than to replace, the 
+clinician. When a patient's case is complex, or the healthcare 
+practitioner  making  the  diagnosis  is  inexperienced,  a  CDS 
+system  can  help  in  formulating  diagnoses  and  can  give 
+treatment and care suggestions based on patient data and the 
+system's knowledge base [6,8,12,21,26]. Accordingly, in this 
+paper  the  decision-support  form  can  be  compared  to  the 
+latter  example  of  use,  as  the  form  was  intended  to  provide 
+support to junior physicians assessing elderly patients in the 
+emergency unit.  
+
+Despite widespread agreement on the importance of systems 
+supporting  clinical  treatment  and  care  processes,  the 
+development  and  implementation  of  these  systems  have 
+failed to achieve their potential when the systems were put 
+into  practical  use.  It  is  not  easy  to  suggest  a  cause-effect 
+explanation of the low uptake of electronic decision support 
+systems in hospitals. Several studies point to the complexity 
+that  arises  from 
+the 
+intellectual  challenge  of  creating  knowledge,  technical 
+dimensions  of  delivering  CDS,  and  social  aspects  of 
+
+the  nature  of  decision-making, 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+incorporating  changes  into  clinical  care    [6,8,11,17,34,37].  
+Moreover, CDS systems are still not widely accepted within 
+clinical  practice,  especially  if  use  of  CDS  exacerbates  the 
+increasingly time-pressured patient care process, which may 
+occur  [3,6,8,11,37].  However,  relatively 
+little  sound 
+scientific evidence is available to explain why systems fail. 
+Hence,  there  is  a  need  for  realistic  complex  studies  that 
+examine  the  user-CDS  interaction  and  its  impact  on  the 
+clinician, the  workflow, and  other organizational processes 
+and outcomes [6,17].  
+
+This  suggests  we  need  a  better  understanding  of  the 
+sociotechnical  challenges  of  designing  and  implementing 
+decision  support  systems  where  we  manage  to  grasp  the 
+dynamics  between  the  systems  and  the  specific  nature  of 
+work to be supported. Health care work is far from clear-cut, 
+and far from the glossy pictures where individual physicians 
+assess  diagnosis  and  prescribe  treatments  of  patients  [26]. 
+We need a broader approach where we take into account the 
+patient’s  trajectory  through  the  healthcare  system,  the 
+various  professionals  involved  along  the  way  and  the 
+particular activities necessary to assist the patient along the 
+journey. Accordingly, the CSCW field is especially relevant 
+to explore and understand decision support in clinical use.  
+
+The  CSCW  field  has  contributed  extensively  in  providing 
+how information systems or artefacts can support distributed 
+collaborative work among groups of users, and in mapping 
+the  complexities  of  coordinating  daily  activities  and 
+documentation practices among healthcare staff [4,10,13]. In 
+short, findings from CSCW research suggest that designing, 
+implementing  and  using  technology  or  artefacts  involves 
+complex,  diverse  and 
+locally  situated  socio-technical 
+challenges  and  intended  and  unintended  organizational 
+consequences [16].  
+
+The  CSCW  field  has  proved  to  be  a  strong  framework  for 
+conducting and analyzing workplace studies and single site 
+design  and  implementation.  However,  while  providing  the 
+tools for focusing on the micro-mechanisms of collaboration 
+in  a  specific  context,  the  “here  and  now”,  it  has  somehow 
+lacked the broader picture of understanding the collaboration 
+of  many  and  various  professionals,  material,  and  systems 
+across 
+development, 
+implementation, and adoption [22,29]. The “here and now” 
+or  “local  sensibility”,  understood  as  smaller  scale 
+interactions  for  design  restricted  to  particular  settings  and 
+timeframes,  has  been  important  to  the  historical  research 
+agenda  of  CSCW,  for  good  reasons  [29].  However,  “local 
+sensibility”  contrasts  with  today’s  need  for  understanding 
+cross-organizational workflows over time and space. 
+
+contexts, 
+
+different 
+
+during 
+
+Monteiro et al. [29] note that several researchers point to how 
+important  influences  from  other  levels  and  moments  of 
+technological  design  and  implementation  may  be  ignored 
+when  one  focuses on one  specific local or time period.  An 
+important ambition of CSCW is geared towards improving 
+the design of computer-based systems by acquiring a deeper 
+understanding of the collective and collaborative character 
+
+995
+
+of work processes and how they may be better supported by 
+more  appropriately  designed  systems.  To  capture  the 
+intertwined  and  complex  work  processes,  often  stretched 
+across space and time, in the design and implementation of 
+technology,  it  is  necessary  to  supplement  the  “local 
+sensibility” with an “extended design” perspective [29].  
+
+systems 
+
+[19,29,30,38]. 
+
+Therefore,  we  enhance  the  CSCW  perspective  with  the 
+notion of information infrastructure, which has been used to 
+study  design,  implementation,  and  use  of  large-scale 
+information 
+Information 
+infrastructures are never seen as standalone entities, but are 
+integrated  with 
+and 
+communication 
+technologies,  and  with  non-technical 
+elements across many local settings. Therefore, analyses of 
+information infrastructures need to consider a broad range of 
+socio-technical 
+and 
+implementation process [15].  
+
+information 
+
+systems 
+
+design 
+
+other 
+
+issues 
+
+shaping 
+
+the 
+
+A  basic  principle  is  that  an  information  infrastructure  is 
+never built from scratch; rather, it evolves from the installed 
+base  of  existing  systems  and  practices  in  a  specific 
+contextual  setting.  As  a  part  of 
+information 
+infrastructures  are  characterized  by  openness  to  a  number 
+and types of users and interconnected contexts.  Accordingly, 
+the infrastructure shapes and is shaped by the work practice 
+in  an  on-going  co-construction  process  between  technical 
+and social elements stretched across space and time [29,38].  
+
+this, 
+
+In  this  regard,  many  studies  do  not  refer  to  infrastructural 
+design  as  construction,  but  rather  conceptualize  it  as  an 
+“evolving  socio-technical  system”  [19]  or  infrastructuring 
+[25,30]  that  needs  to  be  carefully  cultivated  [1].  Hence, 
+information  infrastructures  cut  across  many  local  settings 
+and  in  this  sense  represent  a  broad  definition  of  a  patient 
+pathway.  
+
+METHOD 
+
+The research site 
+The paper reports from a patient pathway project, named “the 
+acute  geriatric  patient  pathway”,  at  a  university  hospital  in 
+Norway. The project was “owned” by the Internal Medicine 
+Clinic,  which  includes  the  Specialist  Acute  Geriatric  Unit 
+(SAGU).  The  Internal  Medicine  Clinic’s  director  was  the 
+top-level leader of the project. However, a project manager 
+who worked as a clinical adviser led the daily organization 
+of  the  project.  The  project  manager  had  extensive  clinical 
+competences  as  an  expert  nurse,  as  well  as  formal  project 
+manager competences.  The project steering group consisted 
+of clinicians  from different professions  such as  physicians, 
+nurses,  and  secretaries  from  the  Internal  Medicine  Clinic, 
+mainly  SAGU,  and  from  the  Emergency  Unit.  Project 
+meetings  were  held  regularly,  but  there  were  also  ad  hoc 
+meetings when necessary. In addition, there were meetings 
+with  the  project  steering  group  and  clinicians  who  were 
+introduces to the CDS form in their clinical practice.  
+
+The  university  hospital  is  a  specialist  hospital  providing 
+advanced  medical  treatment  and  care,  and  currently  has 
+
+around 6000 employees. The university hospital consists of 
+10 different clinics for patient treatment and care, each with  
+their  own  administrative  and  clinical  management.  The 
+Emergency  Unit,  which  is  part  of  the  Emergency  Medical 
+Service Clinic, is the gateway to the hospital. Accordingly, 
+patients with all kinds of illnesses requiring acute medical or 
+surgical  care  are  admitted  and  assessed  at  the  Emergency 
+Unit, and then discharged or transferred to a specialist ward 
+for  treatment  and  care.  When  patients  arrive  at  the 
+emergency  unit,  traditionally  a  nurse  makes  the  initial 
+assessment  (triage  to  sort  the  patients  according  to  their 
+immediate  need  for  treatment)  and  consults  a  physician 
+based  on  the  patient’s  condition  and  its  severity.  Mainly, 
+junior  physicians  conduct  further  examinations,  with  back-
+up  from  more  experienced  physicians.  If  the  patient  is 
+hospitalized, the (junior) physician decides which specialist 
+ward  is  appropriate  according  to  the  patient’s  medical 
+condition.  
+
+The  Emergency  Unit  receives  approximately  1000  patients 
+per month, and strives to keep the  waiting time as short as 
+possible to ensure the patients subsequent treatment and care 
+from the correct specialist ward. Accordingly, the clinicians 
+work under high pressure to assess a large number of patients 
+in  a  minimum  of  time.  Moreover,  a  quarter  of  the  1000 
+patients  assessed  per  month  are  aged  over  75.  A  large 
+proportion of the elderly patients  have a  medical condition 
+that requires surgical treatment, or specific organ symptoms 
+that enable a streamlined process of admission to the correct 
+specialist  ward.  However,  a  significant  proportion  of  the 
+elderly patients have to be admitted to a specialist ward with 
+a  tentative  diagnosis  because  their  medical  condition  is 
+difficult  to  determine.  Because  of  their  age,  most  of  these 
+patients are admitted to SAGU. SAGU is an eight-bed ward 
+for elderly patients with acute confusion or acute functional 
+deterioration.  The  ward  is  a  defined  medical  unit  with  an 
+interdisciplinary  team  approach  (e.g.  specialist  nurses, 
+geriatrists, speech therapists, physiotherapists, occupational 
+therapists).  A  major  part  of  the  healthcare  practitioners 
+working  in  the  ward  are  specialized  in  geriatric  care  to 
+provide increased attention to patients’ level of functioning 
+and specific treatment of diagnoses common in older people.  
+
+Research approach 
+The  study  adheres  to  an  interpretive  research  approach 
+[27,39]  where  the  epistemological  belief  emphasizes  the 
+understanding of social processes by getting involved inside 
+the world of those generating them and viewing an empirical 
+phenomenon  from  different  perspectives.  This  implies  that 
+different sources of field data are all taken into account in the 
+interpretation  process.  The  method  includes  a  relatively 
+detailed case story, which allows the readers to gain insight 
+in the field data, followed by an examination of the data for 
+potential  analytical  themes  presented  as  headlines  in  the 
+discussion.  The  analysis  was  based  on  a  hermeneutic 
+approach.  To  improve  the  understanding  of  the  empirical 
+data, the data  was continuously presented and discussed in 
+informal meetings with the project manager, physicians, and 
+
+996
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+nurses  involved  with  the  project,  the  second  author  and 
+members of the research group. This was an iterative process 
+between  issues  to  be  interpreted,  the  context,  the  authors’ 
+preconceptions,  and  the  theoretical  perspectives  chosen  for 
+this study. Our understanding at one stage  thus became the 
+preconception for understanding the next stage in data [27]. 
+It should be noted that the first author had previously worked 
+as  a  nurse  at  the  hospital’s  internal  medicine  clinic,  and 
+accordingly had significant insight into visible and invisible 
+norms and guidelines of clinical practice within the clinic.   
+
+Methodologically,  we  find the concept of biography  useful 
+for  framing  our  research  [31,32].  The  biography  approach 
+focuses  upon  socio-technical  processes  in  innovation,  and 
+studies the accumulated history of artefacts  in its historical 
+context and across its life cycle. The life cycle of the product 
+involves many stages from “birth” through implementation, 
+in  which  the biography  focuses on the  transformations and 
+translations that a product goes through during its life cycle 
+[31].  The  BoA  underscores  the  importance  of  moving 
+beyond episodic studies of settings of technology design or 
+organizational implementation to the evolution of workplace 
+technologies  over  multiple  cycles  of  design  and 
+implementation. The biographic perspective offers a way to 
+clarify the interdependencies between the individual and the 
+socio-historical,  and  reflects  the  necessity  to  engage  more 
+coherently with the ways in which the broader context shapes 
+innovation  processes  and  outcomes.  This  derives  from  a 
+concern to reassemble the macro and micro levels of analysis 
+[23].  
+
+Data collection 
+The  empirical  data  were  collected  from  February  2012  to 
+April  2015.  The  first  author  conducted  the  data  gathering 
+process primarily through participant observation in project 
+meetings, workshops with physicians, at the emergency unit, 
+and participating in informal meetings with project members, 
+in total 75 hours of fieldwork. Moreover, the first author has 
+conducted  10  in  situ  interviews  with  project  members  and 
+clinicians involved and has collected project documents from 
+the  initial  phase  of  the  project  and  throughout  the  research 
+period.  
+
+The emergency unit was central during clinical observation 
+(one week of day shifts), in which the first author observed 
+the clinical work in general – for instance how the clinicians 
+cooperated  with  each  other  and  with  clinicians  from  other 
+hospital units. The observation also included bedside use of 
+the  form  when  junior  physicians  assessed  acute  geriatric 
+patients.  
+
+The permission for the first author to be an observer created 
+opportunities  to  follow  the  project  manager’s  way  of 
+working  in  the  clinical  field  e.g.  motivating,  aligning,  and 
+engaging clinicians to participate in the project. The project 
+manager was obliging, allowing the first author to share her 
+office one day a week. Working in physical proximity to the 
+project manager gave the first author an opportunity for rich 
+discussions  about  the  evolving  project  and  its  obstacles, 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+participating in ad hoc meetings, formal as well as informal 
+discussions  with  other  project  members  and  clinicians. 
+Furthermore, being an observer of the evolving project led to 
+acquaintance  with  the  particular  medical  practice  and  its 
+organizational challenges.  
+
+CASE  
+
+The need for decision support  
+Four underlying factors supported the acute geriatric patient 
+pathway project.  
+
+First,  the  population  aged  74  and  above  in  the  hospital’s 
+catchment area is expected to increase by 20% over the next 
+10 years, which will likely represent a significant demand for 
+acute geriatric medical admissions in years to come.  
+
+Second, the clinical problems and needs of older patients are 
+often substantially different from those of younger patients. 
+Older  people’s  needs  are  more  complex  with  potentially 
+coexistent  medical,  functional,  psychological,  and  social 
+care needs. The clinical picture for older patients with acute 
+or  sub-acute  medical  illness,  often  presented  in  a  non-
+specific manner, may emerge as functional deterioration or 
+acute confusion within hours or days. This makes diagnosis, 
+treatment and monitoring of older patients more complex and 
+difficult than for younger patients [36]. 
+
+Third,  it  is  extremely  important  to  act  early  and  provide 
+appropriate  treatment  for  elderly  patients,  because  they 
+generally  have  a  lower  functional  reserve  than  younger 
+adults  do.  Accordingly,  frail  elderly  patients  admitted  to 
+hospital as an emergency should have access to a specialist 
+geriatric medical unit [36].  
+
+Fourth, there was also a concern related to the utilization of 
+the multi-disciplinary approach, because age was often used 
+as  the  main  criterion  for  admission  of  elderly  internal-
+medicine  patients  to  SAGU.  Consequently,  the  eight  beds 
+were  often  occupied,  but  not  always  by  acute  geriatric 
+patients.  The  overbooking  reinforced  a  negative  cycle 
+because patients in need of the multidisciplinary team were 
+admitted to other inpatient units. Therefore, the management 
+of the internal medicine clinic emphasized that age could not, 
+and should not,  be the only admission criterion for SAGU. 
+Moreover,  the  internal  medicine  clinic’s  management  and 
+the SAGU’s specialist geriatric physicians asked for criteria 
+to help the junior physicians in the emergency unit to identify 
+the  elderly  patients  who  would  benefit  most  from  the 
+geriatric  multidisciplinary  approach.  Overall,  there  was  no 
+doubt among the healthcare practitioners, in both SAGU and 
+the  emergency  unit,  about  the  importance  of  selecting  the 
+correct elderly patients for admission to SAGU.  
+
+Designing the decision-support form (November 2011 – 
+April 2012)  
+Designing the decision-support form was considered the first 
+step in generating an acute geriatric patient pathway. The aim 
+of the  form was to support the physicians  with no geriatric 
+specialization,  working  in  the  emergency  unit,  when 
+assessing  elderly  patients  with  unclear  symptoms.  The 
+
+discussions  among  the  clinicians  during  project  meetings 
+underscored the importance of making the form easy to use 
+in terms of distinct criteria for triage of the elderly patients, 
+and easy to fill in because of the hectic working conditions 
+in the emergency unit. The initial challenge in designing the 
+form  was  the  absence  of  existing  criteria  or  guidelines  to 
+distinguish  geriatric  patients  with  acute  confusion  or  acute 
+functional  deterioration  from  elderly  patients  with  acute 
+organ-specific  illness,  e.g.  low-hemoglobin,  urinary  tract 
+infection or cardiac insufficiency, but presented with unclear 
+symptoms.  Of  course,  there  are  geriatric  approaches  to 
+examining  geriatric  patients  for  various  conditions,  but  the 
+clinicians  considered  these  assessment  tools  to  be  too 
+comprehensive  and  time-consuming  to  use  as  a  first-
+guidance tool in demanding circumstances.  
+
+However,  the  process  of  defining  and  agreeing  upon  the 
+correct  criteria  was  performed  by  specialist  geriatric 
+healthcare  personnel,  evidence-based  literature,  interviews 
+with  specialist  geriatric  healthcare  personnel  in  other 
+hospitals, and feedback from the physicians in the intended 
+user  group.  Still,  it  was  a  cumbersome  process  lasting 
+approximately  5  months.  During  this  period,  several 
+meetings were conducted with the project steering group and 
+clinicians  to  discuss  which  criteria  should  be  used,  how  to 
+interpret different concepts within the form, and how to make 
+the form intuitive to use. The project steering group made the 
+final decision about the form’s layout. 
+
+Putting  the  decision  support  into  action  (April  2012  – 
+June 2012)  
+Even  though  the  hospital  had  used  an  Electronic  Patient 
+Record system (EPR) for nearly 15 years, the first version of 
+the  form  was  paper-based  (Figure1).  Based  on 
+the 
+cumbersome process of agreeing upon the form’s layout, the 
+project steering group anticipated several changes that would 
+be easier to manage “on paper” than changing a form in the 
+electronic  patient  record  system.  On  the  other  hand,  to 
+validate the form’s functionality, the project steering group 
+depended on physicians actually using the form. 
+
+ 
+
+Figure 1. Segment of the paper form 
+
+ 
+
+997
+
+Moreover,  the  project  steering  group  thought  it  was 
+important to support the use of the form by other healthcare 
+professions  working  in  the  emergency  unit,  as  well. 
+Consequently,  the  project  steering  group  had  to  map  the 
+general  workflow 
+the 
+emergency unit, to tailor the form into existing routines.  
+
+in  receiving  acute  patients  in 
+
+The pilot study lasted for two months from the end of April 
+2012 to the end of June. The introduction of the paper-based 
+form in practice took place as follows: Despite the presence 
+of  a  hospital-wide  EPR,  the  emergency  unit  used  an 
+interdisciplinary paper-based pre-record during the patient’s 
+stay in the emergency unit.  
+
+information  about 
+
+The  purpose  of  the  pre-record  was  to  gather  necessary 
+bedside 
+the  patient’s  observations, 
+examinations, medication, and recommended follow-ups in 
+a single document, making it easy to access for all involved 
+healthcare practitioners in the emergency unit. Moreover, a 
+copy  of  the  pre-record  was  sent  with  each  patient  to  the 
+relevant inpatient ward in order to inform the next healthcare 
+practitioners  in  line  about  the  patient’s  condition.  The  pre-
+record bridged the time span from the patient’s arrival at the 
+hospital  to  when  healthcare  practitioners,  physicians,  and 
+secretaries  had  completed  the  electronic  documentation. 
+However, the first step of preparing for a patient’s arrival in 
+the  emergency  unit  was  to  tag  the  pre-record  with  the 
+patient’s  barcode  of  personal  information,  and  put  the  pre-
+record in a front cover. A nurse or a secretary performed this 
+task. When the patient left the emergency unit – discharged 
+or  admitted  to  an  inpatient  clinic  –  the  secretaries  scanned 
+the pre-record into the EPR. If the patient was hospitalized, 
+the  nurses  ensured  that  a  copy  of  the  pre-record  and  other 
+papers  belonging  to  the  patient  were  gathered  in  the  front 
+cover and accompanied the patient.   
+
+When  the  new  acute  geriatric  decision-support  form  was 
+introduced into the described workflow, the secretaries were 
+assigned  the  responsibility  for  putting  the  form  into  the 
+patient’s folder before (s) he arrived at the emergency unit. 
+Secretaries were on duty from 07:30 to 22:00 from Monday 
+to Friday. Therefore, nurses had to be involved in putting the 
+paper  in  the  folder  at  night  (from  22:00-07:30)  and  at 
+weekends. Hence, when a physician assessed the patient, the 
+decision-support form would be on top in the familiar folder, 
+and it was easy for the physician to remember to use it. After 
+filling in the form, the physician put it, along with the pre-
+record, into the front cover. The physician or a nurse handed 
+the  patient’s  front  cover  (with  the  form  inside)  to  the 
+secretaries’ office, where all the papers were scanned into the 
+EPR. Because the aim of the pilot study was to test whether 
+the  chosen  criteria  supported  the  physicians  in  sorting  the 
+elderly  patients  correctly,  the  forms  had  to  be  put  on  a 
+marked  shelf  at  the  secretaries’  office.  This  allowed  the 
+group  manager  to  collect  the  completed  forms  and,  in 
+cooperation with the physicians who had used the forms, the 
+project steering group could analyze how the form had been 
+completed.  In  addition,  the  project  steering  group  could 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+compare to what extent forms were filled in, in relation to the 
+number  of  patients  aged  over  75  who  arrived  at  the 
+emergency unit during the pilot study.  
+
+The result from the pilot study indicated that the  form  was 
+appropriate  as  a  decision-support  tool.  The  physicians 
+reported to the project steering group that they were satisfied 
+with the form’s functionality – and even asked for the form 
+in cases in which the form had been left out of the patient’s 
+folder  by  mistake.  In  project  meetings,  the  physicians  said 
+that  they  used  the  form  at  the  patient’s  bedside  when 
+assessing patients, but they also reported filling in the form 
+after the examination of the patients was done – especially in 
+cases  where  it  was  obvious  that  the  patient  did  not  need 
+specialist  geriatric  treatment.    During  the  pilot  study,  160 
+forms  were  handed  in  and  327  patients  aged  over  75  were 
+assessed  in  the  emergency  unit.  Accordingly,  the  project 
+steering group received enough completed forms to evaluate 
+the tools usability.  
+
+Still,  analysis  of  the  used  forms  demonstrated  some 
+weaknesses that needed to be addressed. A minor revision of 
+the  form’s  layout  was  conducted  before  the  form  was 
+transformed into an electronic version. 
+
+Transforming the paper-based form into the EPR system 
+(August 2012 – November 2012) 
+By November 2012, the electronic form (Figure 2) was ready 
+to be implemented in the EPR system. Converting the paper-
+based form into an electronic version made the layout more 
+user-friendly, according to feedback given by the physicians 
+who had used the form in clinical situations. In the electronic 
+form,  the  instructions  on  how  to  use  the  criteria  were 
+minimized as a response to comments such as “too much to 
+read – it won’t be used…” In addition, a new option, “Do not 
+know”,  was  included  for  each  sub-criterion  for  use  when 
+specific patient information was difficult to obtain. Although 
+the  layout  was  improved,  taking  the  electronic  form  into 
+ordinary  use  revealed  different  kinds  of  contextual 
+challenges. 
+
+The electronic version of the decision-support form was very 
+much  like  a  plain  document  archived  in  the  EPR.  The 
+physicians had to upload the form through an array of steps 
+in  the  EPR  before  getting  access  to  the  form:  First,  by 
+logging into the EPR system; second, accessing the patient’s 
+record by searching for the particular patient’s name or date 
+of birth; and third, opening the document folder and choosing 
+the  correct  form  for  acute  geriatric  decision  support.  The 
+software  did  not  support  triggers  such  as  “pop-up  alarms” 
+when patients aged over 75 were registered at the hospital. 
+
+Figure 2. Segment of the electronic form 
+
+ 
+
+998
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+In  practice,  the  electronic  form  made  it  difficult  for  the 
+secretaries  and  nurses 
+to  provide  a  direct  reminder 
+corresponding  to  the  one  they  had  generated  when  they 
+placed  the  paper-based  form  into  the  front  cover  of  the 
+patient’s folder. The secretaries and nurses could no longer 
+directly remind the physicians about using the electronic   
+
+stopped  visiting  the  emergency  unit  to  collect  completed 
+forms  on  a  regular  basis.  The  visits  might  indirectly  have 
+reminded the clinicians to use the form. When the form had 
+been  introduced  into  ordinary  use,  the  clinicians  in  the 
+emergency  unit  had  to  be  prompted  to  use  the  form  by 
+mechanisms other than the activities of the pilot study.  
+
+form  because  the  physicians  had  to  log  into  the  computer 
+with their own password to their own user account to find the 
+electronic  form.  Accordingly,  the  physicians  were  more  or 
+less  left  on  their  own  in  remembering  to  use  the  form  and 
+when to use it, in contrast to the network supporting the paper 
+form. Moreover, the forms were meant to facilitate the next 
+step in the acute geriatric patient pathway, and to serve as a 
+“ticket” to SAGU. However, the form was put into clinical 
+use before the overall pathway was established. 
+
+Accordingly, the physicians in the emergency unit spent time 
+filling out the form, even though the form did not ensure the 
+acute geriatric patients the necessary  “ticket” because  beds 
+were not always available in SAGU. As a result, the use of 
+the form did not play a major role for the physicians in the 
+emergency  unit  in  terms  of  ensuring  the  acute  geriatric 
+patients the optimal treatment and care.  
+
+Another  situation  that  occurred  related  to  the  discrepancy 
+between demand and supply of acute geriatric beds was that 
+patients  were  “tagged”  as  acute  geriatric  patients  and  then 
+enrolled  in  random  inpatient  clinics  –  the  one  with  an 
+available bed. This led to a significant increase in “satellite” 
+acute geriatric patients all over the hospital’s wards. This, in 
+turn,  led  to  growing  dissatisfaction  among  the  specialist 
+geriatric  physicians  because  they  became  responsible  for 
+several  more  patients  all  around  the  hospital,  a  significant 
+increase  in  the  number  of  patients  compared  to  their 
+resources. Moreover, they had to perform doctor’s rounds in 
+unknown  wards,  cooperating  with  unknown  healthcare 
+personnel, who were not trained to take care of acute geriatric 
+patients.  
+
+“A great number of acute geriatric patients became visible 
+through  use  of  the  form,  but  the  hospital  did  not  have  the 
+capacity nor the organizational structure to take care of the 
+patients  moving  to  the  next  step  of  the  pathway”  (Quote, 
+Doctor).   
+
+to  an  electronic  version, 
+
+Despite  further  improvement  when  the  paper  form  was 
+converted 
+the  physicians 
+complained that the electronic form was difficult to use “at 
+hand”,  mainly  because  it  was  time  consuming  to  access 
+through  the  EPR  system.  The  project  steering  group  was 
+confronted with this statement and made an effort to analyze 
+the  problems  involved  in  using  the  form.  Even  if  the  form 
+could  be  uploaded  and  retrieved  from  the  EPR  system  in 
+different  situations,  the  system  did  not  support  multi-
+disciplinary use. It did not allow the secretaries to upload the 
+form and attach it to the patient’s EPR as they had done with 
+the  paper  form.  In  a  way,  the  electronic  form  disappeared 
+into the EPR. Moreover, after the pilot, the project manager 
+
+Moreover,  by  the  time  the  electronic  form  had  been  taken 
+into  ordinary  use  there  had  also  been  a  change  of  junior 
+physicians in the emergency unit. The clinical education of 
+junior  physicians 
+involves  a  rotation  schedule,  and 
+accordingly  the  new  doctors’  “clinical  backpack”  did  not 
+contain  the  history  of  the  form,  or  the  pilot  study,  which 
+included  training  in  using  the  form.  Because  the  form  was 
+“hidden” in the EPR system, use of the form depended very 
+much  on  instructions  to  every  new  physician  at  the 
+emergency  unit  about  when  and  how  to  use  it.    It  is  also 
+important to  mention that  by  this  time, it  was not a  formal 
+task for the project steering group or the project manager to 
+inform new physicians and train them to use the form, as well 
+as informing other clinicians involved with geriatric patients. 
+At  this  stage,  this  important  task  had  more  or  less  been 
+handed over to the management at the clinical units involved.    
+
+Back to basics (November 2012 to March 2015) 
+During  the  first  year  of  using  the  electronic  form,  the 
+anticipated  number  of  used  forms  decreased  dramatically. 
+The acute geriatric form, despite the requirement for filling 
+in the form as a “ticket” to SAGU, had been used for only 
+40% of all patients admitted to SAGU. In meetings between 
+the  project  steering  group  and  clinicians  from  the  clinical 
+units  involved,  several  complicating  issues  were  reported.  
+An explanation for the radical decline was the challenges of 
+implementing  the  acute  geriatric  form  into  the  physicians’ 
+workflow  at  the  emergency  unit.  There  were  also  reported 
+organizational  challenges;  e.g.,  elderly  patients  with 
+complex  health-related  problems  and  symptoms  from 
+multiple  organs  had 
+to  be  moved  between  several 
+organizationally  separated  wards  because  there  was  no 
+coordinated  patient  pathway  underpinning  the  care  and 
+treatment of this particular patient group. This required extra 
+coordination  from  other  healthcare  professionals  because 
+first, they had to find a bed for the patient in an appropriate 
+ward, and second, the healthcare personnel had to coordinate 
+the patient’s transfer between wards, like a piece in a board 
+game,  waiting  for  an  available  bed  in  SAGU.  Negotiation 
+about how to distribute responsibility for patients when the 
+appropriate ward was full was unfortunately the situation for 
+many patients. However, given the complex and often vague 
+presentation of frail elderly patients’ medical condition, this 
+was  not  acceptable  for  the  patient  group.  As  previously 
+described,  if  the  patient  was  “tagged”  acute  geriatric  and 
+SAGU  did  not  have  an  available  bed  for  this  patient,  the 
+situation involved a significant workload for the physicians 
+who  had  to  do  their  doctor’s  round  in  several  other 
+departments.  Because  of  all  the  unintended  consequences, 
+the  project  steering  group  and  the  superior  leader  of  the 
+project  made  an  overall  evaluation  and  withdrew  the 
+
+999
+
+electronic  acute  geriatric  form  from  the  EPR.  From 
+November 2013, the form reverted from an electronic form 
+in  the  EPR  to  a  paper-in-pocket  format  that  served  as 
+“guiding  prioritization  criteria.  It  is  fair  to  say  that  the 
+hospital  was  “back  to  basics”  in  relation  to  the  daily 
+challenges  of  receiving  a  large  group  of  internal  medicine 
+patients  with  unclear  symptoms  or  a  non-organ-specific 
+clinical picture.  
+
+However,  managers  and  healthcare  professionals  at  the 
+internal medicine clinic were still motivated to improve the 
+healthcare services for internal medicine patients who did not 
+fit  into  the  existing  structure  of  strictly  organ-specific 
+departments. Looking at the stranded implementation of the 
+acute  geriatric  form  in  a  broader  perspective,  the  hospital 
+initiated two new projects in 2013/2014.  The first project’s 
+mandate,  released  in  late  2013,  was  directed  towards  an 
+organizationally aligned clarification of the responsibility for 
+internal  medicine  patients  with  an  unclear  condition  or  a 
+clinical  presentation  in  a  non-specific  manner,  mainly 
+encompassing patients over 80 years old. The first project’s 
+management  recommended  an  organizational  restructuring 
+to  make  sure  that  the  particular  patient  group  was  given 
+appropriate  treatment  and  care  despite  the  current  organ-
+specific  organizing  of  services. 
+the 
+prioritization  criteria  for  geriatric  patients  with  acute 
+conditions were again sought to support physicians who had 
+no  geriatric  medical  specialization  when  assessing  elderly 
+patients.  
+
+this  effort, 
+
+In 
+
+the 
+
+crossed 
+
+The  second  project,  called  “patient-centered  healthcare 
+services”, started in early 2014. The aim was to assess and 
+support patients with complex and/or chronic illnesses in an 
+early stage of a  medical disorder to prevent hospitalization 
+or  to  support  their  discharge  from  the  hospital  to  prevent 
+readmission.  This  project 
+traditional 
+organizational  boundaries  to  ensure  continuity  of  care. 
+Nursing coordinators manage the patient-centered healthcare 
+services, and tailor an individual pathway for each patient. In 
+hospital,  all  departments  are  very  specialized,  and  these 
+patients often have multiple conditions – so they often need 
+assessment  from  several  medical  specialties.  Currently, 
+electronic  tools  do  not  support  the  coordination  of  patient-
+centered healthcare services. “In the beginning there is more 
+than  enough  work  to  establish  appropriate  links  for 
+collaboration across organizational boundaries. We are so 
+accustomed  to  work  within  our  own  borders,  so  it  can  be 
+difficult  and  associated  with  uncertainty  when  you  start 
+working  over  borders.  So,  in  the  beginning  we  must  work 
+slowly and gently – it requires a change of attitude – more 
+than tools” (quote, nurse coordinator).  
+
+DISCUSSION 
+Using  an  information  infrastructure  perspective,  we  will 
+discuss  the  design  and  implementation  process  of  a  small 
+local  CDS  tool,  and  how  the  process  was  influenced  by 
+evolving 
+in  organizational,  clinical, 
+political,  and  behavioral  terms.  The  evolving  process 
+
+interdependencies 
+
+1000
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+revealed several interdependencies related to the use of the 
+decision-support form, all of which were deeply rooted in the 
+existing  clinical  practices,  systems  and  the  hospital’s 
+management policy. 
+
+The  paradox  of  designing  and  implementing  decision-
+support systems 
+A compelling question is where and how to start the design 
+of decision-support tool envisioned to support the patient’s 
+trajectory through complex health practices and which users 
+to  include.  In  our  case,  it  seemed  right  to  start  with 
+identifying  the  patients  needing  specialized  treatment  and 
+care as well as the role of the physicians [7,28]. The reason 
+is that clinical decision-support tools are often more easy to 
+“sell in” to the clinicians because the aim of the tool was to 
+support their clinical work. In this case, the clinicians even 
+had  the  opportunity  to  develop  the  form  and  influence  its 
+design themselves. Because the first version of the form was 
+a  paper  sheet,  making  changes  in  the  form’s  content  and 
+layout  was  an  agile  process.  A  side  effect  of  putting  the 
+clinicians in the “driving seat” of designing was the way that 
+the discussions aligned the clinicians’ understanding of how 
+to  use  the  form  and  the  necessity  of  the  patient  pathway. 
+Moreover, the discussions contributed to improving clinical 
+knowledge,  especially  that  of  the  junior  physicians,  in 
+assessing  elderly  patients.  Making  the  physicians  “chief 
+designers”  of  the  form  was  useful  in  order  to  mobilize  a 
+powerful profession [3,10,13,18].  
+
+However,  the  strategy  of  including  the  physicians  as 
+designers  also  limited  the  focus  to  tasks  that  only  the 
+physicians do. Accordingly, the project “fell into the trap”, 
+in terms of designing a tool tailored for a specific group (i.e. 
+the physicians) with less focus on including other healthcare 
+professions.    In  the  initial  phase  of  the  project,  the 
+insufficient  attention  to  other  healthcare  professions  was 
+“concealed”  because  the  paper  form  was  visible  in  the 
+collaborative  workflow,  and  the  secretaries  and  nurses 
+compensated for the design defects by performing invisible 
+work.  They  made  an  effort  to  ensure  the  form’s  clinical 
+destiny, even if they did not play a particular role in the actual 
+use  of  it.  This  echoes  much  of  the  CSCW  literature  that 
+emphasizes the collaborative nature of ICT  [14,35] as well 
+as  a  lot  of  hidden  work  and  workarounds  implicated  in  it 
+[4,10,13,16].  
+
+Surprisingly,  the  simplified  layout  of  the  electronic  form, 
+revised and adjusted in order to be more intuitive in use, was 
+not perceived as convenient to use by the physicians. While 
+the  form  was clinically relevant, conforming to its purpose 
+and  designed  in  collaboration  with  the  intended  users,  it 
+became invisible in the coordination process (workflow) in 
+the  emergency  unit  compared  to  the  paper-  version  –  it 
+“disappeared” into the EPR. The physicians did not receive 
+the  invisible  support  provided  by  nurses  and  secretaries  as 
+they did when using the paper form [5]. 
+
+This underpins the importance of a CSCW approach in the 
+design of artefacts to support patient pathways. CSCW plays 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+an important role toward the design of artefacts by producing 
+rich pictures of the collective and collaborative character of 
+work  practices  in  particular  settings.  However,  our  data 
+suggest  mapping  of  the  “local”  context  several  times,  an 
+“extended design” perspective, according to the adjustment 
+of  the  artefact  in  design,  which  has  to  include  every 
+profession and practice involved with the patient’s trajectory 
+[29].  The  single-user  artefact  has  to  be  placed  in  a 
+heterogeneous, 
+is  not 
+necessarily visible in the initial design phase. It is important 
+that  every  project  becomes  aware  of  the  ever-changing 
+interdependencies  along  with  design,  implementation,  and 
+adoption.  Focusing  exclusively  on  the  initial  design  phase 
+may relegate important actors and factors in the shaping of a 
+technology to the background. Accordingly, the responsible 
+organization  for  each  innovation  project  has  to  make  sure 
+that the project management get enough time and resources 
+to 
+ever-changing 
+interdependencies [22,29].  
+
+interdependent  context,  which 
+
+challenges 
+
+handle 
+
+the 
+
+of 
+
+the 
+
+tools  shape  organizational 
+
+How  decision-support 
+politics 
+The electronic form played a role distributed over time and 
+space. In the local setting, the emergency unit, the form was 
+convenient to use “bedside”, but did not ensure the “tagged” 
+patient a bed in the acute geriatric specialist  ward. This, in 
+turn, led to negotiations about which ward should receive the 
+“tagged”  patient  when  all  beds  in  SAGU  were  occupied. 
+Unfortunately,  negotiations  dealing  with  where  to  admit 
+patients  because  all  beds  in  the  appropriate  ward  are 
+occupied  are  a  well-known  situation  for  healthcare 
+coordinators.  Moreover,  as  a  backdrop  for  the  particular 
+discussions,  older  patients  with  complex  conditions  very 
+often  have  longer  stays  in  hospital  and  often  need  a 
+multidisciplinary  treatment  approach,  which  organ-specific 
+wards  cannot  necessarily  offer.  Accordingly,  healthcare 
+personnel  not  trained  in  geriatric  medicine  often  find  such 
+patients  challenging  to  manage.  So,  as  long  as  the  form 
+“tagged”  the  patient,  the  collective  responsibility  for 
+ensuring best treatment and care based on available resources 
+in  a  way  dissolved  into  negotiation  about  where  to  put  the 
+patient “on hold” until a bed at SAGU became available.  
+
+Even more, in the EPR system “tagging” of patients as “acute 
+geriatric”  evolved  into  an  organizational  question  because 
+“acute geriatric” meant that these patients belonged to SAGU 
+– regardless of where the patient was admitted. Generally, if 
+the  specialist  ward  was  occupied,  the  patient  would  be 
+admitted to a collaborative ward, and, more important, this 
+ward  was  assigned  the  responsibility  for  the  patient  until 
+transferal or admission. Consequently, the “organizational” 
+tagging  of  acute  geriatric  patients  became  a  clinical 
+“bottleneck” for SAGU’s physicians because it triggered an 
+additional workload. The geriatric physicians were assigned 
+medical  responsibility  for  patients  dispersed  over  several 
+different wards.  
+
+1001
+
+small 
+
+In short, the form was still convenient to use at hand, but in 
+a wider perspective, the decision-support form could not be 
+seen  as  an  enabler  for  gaining  efficiencies  and  quality  of 
+treatment  and  care  for  geriatric  patients  with  acute 
+conditions.  The 
+local  artifact  had  broader 
+organizational  consequences  not  possible  to  predict  in  the 
+initial  design  phase  [15,29,30].  An  essential  point  is  that 
+electronic  tools  shape  and  are  shaped  by  several  contexts 
+simultaneously,  and  therefore  interact  with  healthcare 
+practitioners  and  influence  healthcare  practices  in  more 
+intertwined and invisible ways than a visible paper artefact 
+[4,5,19,28,29]. 
+
+local  decision-support  systems  scale 
+
+How 
+infrastructural dimensions 
+As a huge number of information infrastructure studies has 
+demonstrated, it is difficult to point at a single specific cause 
+explaining  why  promoted  designed  artifacts  do  not 
+necessarily  materialize  with  the  envisioned  effect  on 
+healthcare collaboration, treatment and care [25,29,30,38].  
+
+to 
+
+and 
+
+have 
+
+observed 
+
+identified 
+
+We 
+fragmented 
+interdependencies of organizational relations as reasons for 
+a  result  far  below  the  project’s  expectations.  Nevertheless, 
+we  need  to  move  a  step  further,  and  provide  input  to 
+prospective  patient  pathway  development  processes, 
+particularly addressed to the health care service itself.  
+
+Putting  the  case  in  a  wider  perspective  of  improving 
+healthcare through standardized patient pathways, we argue 
+that  scaling  complexity  may  appear  despite  apparently 
+thorough  planning,  competent  project  leaders,  committed 
+management  and  involved  users.  To  some  degree,  this 
+complexity  may  be 
+the  design  and 
+implementation  of  the  decision-  support  tool  itself.  Along 
+these  lines,  as  pointed  out  in  the  last  part  of  the  case,  the 
+implementation  of  a  small-scale  artifact  in  local  practice 
+turns  into  –  or  implicates  –  a  large-scale  reorganization 
+process [19,22,23,25,29].  
+
+inherent 
+
+in 
+
+In short, the form was useful at the bedside, but the use of the 
+electronic  form  depended  entirely  on  the  memory  of  every 
+single physician, in contrast to the collective support of using 
+the paper form. Moreover, the electronic form influenced the 
+organizational responsibility for the acute geriatric patients, 
+which led to an increased workload for the specialist geriatric 
+physicians.   
+
+system 
+
+created 
+
+interconnections 
+
+The  case  demonstrates  how  the  implementation  of  a  local, 
+situated 
+and 
+interdependencies with other contexts (“tagging” the patient) 
+and how a change in one system evolved in terms of creating 
+bridges  between  clinical  practices  and  local  systems  in 
+different departments. These issues are difficult to anticipate 
+or plan for, but analyzing and discussing the empirical data 
+in  an  information  infrastructure  perspective  identify  and 
+illustrate  some  implications  for  design  and  implementation 
+of electronic systems for clinical decision support [15,29].  
+
+Yet  another  interesting  issue,  barely  described  in  the  last 
+phase of the case,  was the  willingness to change  workflow 
+and  work  practice:  “[…]...we  are  so  accustomed  to  work 
+within our own borders, so it can be difficult and associated 
+with uncertainty when you start working over borders. So, at 
+the  start  we  must  work  slowly  and  gently  –  it  requires  a 
+change  of  attitude”.  As  we  have  already  argued,  evolving 
+complexities  are  inherent  in  designing  devices  to  support 
+patient  trajectories  and  call  for  reorganization  processes. 
+According  to  the  case,  reorganization  processes  challenge 
+well-established  working  routines  and  address  attention  to 
+issues recapitulated as habits, power and politics – which are 
+more difficult to map, but must be given particular attention.   
+
+From  an  information  infrastructure  perspective,  designing 
+and  implementing  decision-support  tools  is  an  activity 
+distributed  in  both  time  and  space.  Further,  infrastructures 
+are  not  designed  from  scratch,  but  in  this  case,  it  was 
+necessary  to  zoom  into  the  locally  situated  practice  at  the 
+emergency unit as a point of  departure. However, bringing 
+one specific period into focus may relegate important actors 
+and factors in shaping of work practices to the background. 
+Because, information infrastructures evolve, they shape and 
+have  to  be  shaped  by  existing  practices  and  systems 
+[23,25,29].  Therefore,  studying  and  evaluating  evolving 
+infrastructures  in  “short-term  temporal  aspects”  will  not 
+capture the essential interconnections and interdependencies 
+that occur over time [15,25,29]. 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Unfortunately,  in  this  case,  the  decision-support  form 
+became  an  obstacle  in  the  installed  base.  No  overall 
+agreement  was  established  for  the  CDS  tool’s  wider 
+contextual  use  and  how 
+influence  cross-
+organizational  practices  and  clinical  work.  In  turn,  what 
+characterizes  the  design  and  implementation  of  decision 
+support  systems  in  clinical  practice  is  the  need  to  zoom  in 
+and out, in contrast to the tendency to focus on “short-term 
+temporal aspects” in local contexts [23,29,31].  
+
+it  could 
+
+Our  paper  identifies,  illustrates  and  discusses  important 
+interdependencies  in  clinical  practice,  which  all  have 
+significant  influence  on  the  design  and  implementation 
+process.  Moreover,  the  paper  has  a  longitudinal  narrative 
+embedded  in  real-world  clinical  practice,  which  highlights 
+the  difficulties  of  making  changes  in  pressured  and 
+constrained clinical settings.  Accordingly, the contribution 
+of  this  paper  is  to  emphasize  the  “extended  design” 
+perspective,  when  designing  and  implementing  decision-
+support systems, to capture how workplace technologies and 
+practices  are  shaped  across  multiple  contexts  and  over 
+extended  periods.  Empirically, 
+that  wide 
+contextual implications are not implications to be solved by 
+the defined project management  mandate  only, but have to 
+be addressed by the hospital management as well. 
+
+this  means 
+
+ 
+
+ 
+
+CONCLUSION 
+We have demonstrated how the design and implementation 
+of a small locally situated CDS tool scales to infrastructural 
+dimensions related to the existing clinical practices, systems 
+and the hospital’s management policy. Moreover, the design 
+and  implementation’s  interdependencies  need  to  be  solved 
+by  large-scale  re-organizational  processes.  The  CSCW 
+framework  supports  the  empirical  strategy  of  the  acute 
+geriatric patient pathway project  by starting the design in a 
+local setting. It was considered useful to trace out the local 
+interdependencies as a point of departure. To promote initial 
+use, it is important to design a first version of the new artifact 
+so it can deliver necessary value to the users, and motivate 
+adoption.  However,  as  the  decision-support  form  was 
+transformed,  the  “electronic  outfit”  did  not  create  the 
+anticipated value for the users, nor for the local physicians in 
+the emergency unit or the distributed users in a wider context. 
+Moreover,  we 
+from 
+information  infrastructure  theory  useful  to  dismantle  the 
+evolving  complexities:  organizational,  clinical  as  well  as 
+human/politics/behavior  interdependencies,  which  are  the 
+key  challenges  for  design  and  implementation  in  clinical 
+practice.  Generally,  as  we  have  argued,  designing  and 
+implementing decision-support tools are inherently complex 
+processes and they shape and have to be shaped by existing 
+practices  and 
+infrastructures 
+[9,16,24,29]. Hence, supported by the theoretical framework, 
+the  preferred  way  of  making  infrastructures  “grow”  is  by 
+using 
+[14,15,19,29,38]. 
+
+the  chosen  perspectives 
+
+like  evolving 
+
+infrastructures 
+
+existing 
+
+found 
+
+systems 
+
+the 
+
+2. 
+
+REFERENCES  
+1.  Margunn  Aanestad  and  Tina  Blegind  Jensen.  2011. 
+Building  nation-wide  information  infrastructures  in 
+healthcare through  modular implementation strategies. 
+The  Journal  of  Strategic  Information  Systems  20,  2: 
+161–176. http://doi.org/10.1016/j.jsis.2011.03.006 
+Jos Aarts. 2012. Towards safe electronic health records: 
+A socio-technical perspective and the need for incident 
+reporting.  Health  Policy  and  Technology  1,  1:  8–15. 
+http://doi.org/10.1016/j.hlpt.2012.01.008 
+Jos Aarts, Joan  Ash, and Marc Berg. 2007. Extending 
+the  understanding  of  computerized  physician  order 
+entry:  Implications  for  professional  collaboration, 
+workflow and quality of care. International Journal of 
+Medical  Informatics  76,  Supplement  1:  S4–S13. 
+http://doi.org/10.1016/j.ijmedinf.2006.05.009 
+
+3. 
+
+4.  Marc  Berg.  1999.  Accumulating  and  Coordinating: 
+Occasions  for  Information  Technologies  in  Medical 
+Work. Computer Supported Cooperative Work (CSCW) 
+8, 
+373–401. 
+http://doi.org/10.1023/A:1008757115404 
+
+4: 
+
+5.  Marc  Berg  and  Pieter  Toussaint.  2003.  The  mantra  of 
+modeling  and  the  forgotten  powers  of  paper:  a 
+sociotechnical  view  on  the  development  of  process-
+oriented  ICT  in  health  care.  International  Journal  of 
+Medical 
+223–234. 
+http://doi.org/10.1016/S1386-5056(02)00178-8 
+
+Informatics 
+
+2–3: 
+
+69, 
+
+ 
+
+1002
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+6.  Eta S. Berner. 2009. Clinical decision support systems: 
+State  of  the  Art.  AHRQ  Publication  No.  09-0069-EF. 
+Rockville, Maryland: Agency for Healthcare Research 
+and  Quality.  Retrieved 
+from 
+https://healthit.ahrq.gov/sites/default/files/docs/page/0
+9-0069-EF_1.pdf 
+
+July  19,  2015 
+
+7.  Pernille Bjørn and Kjetil Rødje.  2008. Triage Drift:  A 
+Workplace Study in a Pediatric Emergency Department. 
+Computer Supported Cooperative Work (CSCW) 17, 4: 
+395–419. http://doi.org/10.1007/s10606-008-9079-2 
+
+8.  Wilfred Bonney. 2011. Impacts and Risks of Adopting 
+Clinical  Decision  Support  Systems.  In  Efficient 
+Decision Support Systems - Practice and Challenges in 
+Biomedical  Related  Domain.  InTeh,  328.  Retrieved 
+August 
+from 
+http://cdn.intechweb.org/pdfs/18694.pdf 
+
+2015 
+
+28, 
+
+9.  Claus Bossen. 2011. Accounting and Co-Constructing: 
+The  Development  of  a  Standard  for  Electronic  Health 
+Records.  Computer  Supported  Cooperative  Work 
+(CSCW) 20, 6: 473–495. http://doi.org/10.1007/s10606-
+011-9141-3 
+
+10.  Peter H. Carstensen and Carsten Sørensen. 1996. From 
+the  social  to  the  systematic.  Computer  Supported 
+Cooperative  Work 
+387–413. 
+http://doi.org/10.1007/BF00136712 
+
+(CSCW) 
+
+4: 
+
+5, 
+
+11.  Michael D. Chase. 2011. A look at the future of clinical 
+data  systems  and  clinical  decision  support. 
+In 
+Engineering a Learning Healthcare System: A Look at 
+the  Future:  Workshop  Summary.  National  Academies 
+Press, Washington, DC. 
+
+12.  Maya  Das  and  June  Eichner.  2010.  Challenges  and 
+Barriers  to  Clinical  Decision  Support  (CDS)  Design 
+and  Implementation  Experienced  in  the  Agency  for 
+Healthcare Research and Quality CDS Demonstrations. 
+Agency 
+for  Healthcare  Research  and  Quality, 
+Rockville,  MD.  Retrieved  September  2,  2015  from 
+https://healthit.ahrq.gov/sites/default/files/docs/page/C
+DS_challenges_and_barriers.pdf 
+
+13.  Edeltraud  Egger  and  Ina  Wagner.  1993.  Negotiating 
+temporal  orders.  Computer  Supported  Cooperative 
+Work 
+255–275. 
+http://doi.org/10.1007/BF00754330 
+
+(CSCW) 
+
+4: 
+
+1, 
+
+14.  Gunnar  Ellingsen 
+
+and  Eric  Monteiro.  2003. 
+Mechanisms  for  producing  a  working  knowledge: 
+Enacting,  orchestrating  and  organizing.  Information 
+and 
+203–229. 
+http://doi.org/10.1016/S1471-7727(03)00011-3 
+
+Organization 
+
+13, 
+
+3: 
+
+15.  Gunnar Ellingsen, Eric Monteiro, and Kristoffer Røed. 
+2013.  Integration  as 
+interdependent  workaround. 
+International  Journal  of  Medical  Informatics  82,  5: 
+e161–e169. 
+http://doi.org/10.1016/j.ijmedinf.2012.09.004 
+
+16.  Geraldine  Fitzpatrick  and  Gunnar  Ellingsen.  2012.  A 
+Review of 25 Years of CSCW Research in Healthcare: 
+Contributions,  Challenges  and  Future  Agendas. 
+Computer Supported Cooperative Work (CSCW) 22, 4-
+6: 609–665. http://doi.org/10.1007/s10606-012-9168-0 
+
+1003
+
+17.  Paolo  Fraccaro,  Mercedes  Arguello  Casteleiro,  John 
+Ainsworth, and Iain Buchan. 2015. Adoption of Clinical 
+Decision  Support  in  Multimorbidity:  A  Systematic 
+Review. 
+1. 
+http://doi.org/10.2196/medinform.3503 
+
+JMIR  Medical 
+
+Informatics 
+
+3, 
+
+18.  Paolo  Fraccaro,  Dympna  O׳Sullivan,  Panagiotis 
+Plastiras,  et  al.  2015.  Behind  the  screens:  Clinical 
+decision  support  methodologies  –  A  review.  Health 
+Policy 
+29–38. 
+http://doi.org/10.1016/j.hlpt.2014.10.001 
+
+Technology 
+
+and 
+
+1: 
+
+4, 
+
+19.  Ole Hanseth and Kalle  Lyytinen. 2010. Design  theory 
+for dynamic complexity in information infrastructures: 
+the  case  of  building  internet.  Journal  of  Information 
+Technology 
+1–19. 
+http://doi.org/10.1057/jit.2009.19 
+
+25, 
+
+1: 
+
+20.  Hunt  DL,  Haynes  R,  Hanna  SE,  and  Smith  K.  1998. 
+Effects  of  computer-based  clinical  decision  support 
+systems  on  physician  performance  and  patient 
+outcomes: A systematic review. JAMA 280, 15: 1339–
+1346. http://doi.org/10.1001/jama.280.15.1339 
+
+21.  Monique  W.  M.  Jaspers,  Marian  Smeulers,  Hester 
+Vermeulen,  and  Linda  W.  Peute.  2011.  Effects  of 
+clinical  decision-support  systems  on  practitioner 
+performance and patient outcomes: a synthesis of high-
+quality  systematic  review  findings.  Journal  of  the 
+American Medical Informatics Association 18, 3: 327–
+334. http://doi.org/10.1136/amiajnl-2011-000094 
+
+22.  Liv  Karen  Johannessen  and  Gunnar  Ellingsen.  2009. 
+Integration 
+and  Generification—Agile  Software 
+Development  in  the  Healthcare  Market.  Computer 
+Supported  Cooperative  Work  (CSCW)  18,  5-6:  607–
+634. http://doi.org/10.1007/s10606-009-9097-8 
+
+23.  Mikael  Johnson,  Hajar  Mozaffar,  Gian  Marco 
+Campagnolo, Sampsa Hyysalo, Neil Pollock, and Robin 
+Williams.  2014.  The  managed  prosumer:  evolving 
+knowledge  strategies  in  the  design  of  information 
+infrastructures. Information, Communication & Society 
+17, 
+795–813. 
+http://doi.org/10.1080/1369118X.2013.830635 
+Luz. 
+
+2006. 
+Multidisciplinary Medical Team Meetings: An Analysis 
+of  Collaborative  Working  with  Special  Attention  to 
+Timing  and  Teleconferencing.  Computer  Supported 
+Cooperative  Work 
+(CSCW)  15,  5-6:  501–535. 
+http://doi.org/10.1007/s10606-006-9035-y 
+
+24.  Bridget  Kane 
+
+Saturnino 
+
+and 
+
+7: 
+
+25.  Helena  Karasti,  Karen  S.  Baker,  and  Florence 
+Millerand.  2010.  Infrastructure  Time:  Long-term 
+in  Collaborative  Development.  Computer 
+Matters 
+Supported  Cooperative  Work  (CSCW)  19,  3-4:  377–
+415. http://doi.org/10.1007/s10606-010-9113-z 
+
+26.  Kensaku  Kawamoto,  Caitlin  A.  Houlihan,  E.  Andrew 
+Balas, and David F.  Lobach.  2005. Improving clinical 
+practice  using  clinical  decision  support  systems:  a 
+systematic review of trials to identify features critical to 
+success.  BMJ  (Clinical  research  ed.)  330,  7494:  765. 
+http://doi.org/10.1136/bmj.38398.500764.8F 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+34.  Pavel S. Roshanov, Shikha Misra, Hertzel C. Gerstein, 
+et  al.  2011.  Computerized  clinical  decision  support 
+systems  for  chronic  disease  management:  A  decision-
+review. 
+maker-researcher  partnership 
+Implementation 
+6, 
+92. 
+http://doi.org/10.1186/1748-5908-6-92 
+
+systematic 
+1: 
+
+Science 
+
+35.  Kjeld  Schmidt  and  Carla  Simone.  1996.  Coordination 
+mechanisms:  Towards  a  conceptual  foundation  of 
+Supported 
+CSCW 
+Cooperative  Work 
+(CSCW)  5,  2-3:  155–200. 
+http://doi.org/10.1007/BF00133655 
+
+design.  Computer 
+
+systems 
+
+36.  Simon Conroy and Nicola Cooper. Acute Medical Care 
+of  Elderly  People.  Retrieved  August  28,  2015  from 
+http://www.bgs.org.uk/index.php/topresources/publicat
+ionfind/goodpractice/44-gpgacutecare%20 
+
+37.  Dean F. Sittig, Adam Wright, Jerome A. Osheroff, et al. 
+2008.  Grand  challenges  in  clinical  decision  support. 
+Journal  of  Biomedical  Informatics  41,  2:  387–392. 
+http://doi.org/10.1016/j.jbi.2007.09.003 
+
+38.  Susan  Leigh  Star  and  Karen  Ruhleder.  1996.  Steps 
+Toward  an  Ecology  of  Infrastructure:  Design  and 
+Access  for  Large  Information  Spaces.  Information 
+Systems 
+111–134. 
+http://doi.org/10.1287/isre.7.1.111 
+
+Research 
+
+1: 
+
+7, 
+
+39.  G.  Walsham.  1995.  Interpretive  case  studies  in  IS 
+research:  nature  and  method.  European  Journal  of 
+Information 
+4, 
+74–81. 
+http://doi.org/10.1057/ejis.1995.9 
+
+Systems 
+
+2: 
+
+40.  Utredning av “en innbygger - en journal”. Komparativ 
+analyse av de regionale helseforetak på IKT-området (A 
+comparative analysis of the Norwegian regional health 
+authorities  ICT  divisions).  2014.  Helsedirektoratet. 
+Retrieved 
+from 
+https://www.regjeringen.no/contentassets/355890dd28
+72413b838066702dcdad88/komparativ_analyse_rhf_ik
+t.pdf 
+
+September 
+
+2015 
+
+2, 
+
+ 
+ 
+
+ 
+
+ 
+
+27.  Heinz K. Klein and Michael D. Myers. 1999. A Set of 
+Principles  for  Conducting  and  Evaluating  Interpretive 
+Field Studies in Information Systems. MIS Q. 23, 1: 67–
+93. http://doi.org/10.2307/249410 
+
+28.  Naja Holten Møller and Pernille Bjørn. 2011. Layers in 
+Sorting  Practices:  Sorting  out  Patients  with  Potential 
+Cancer.  Computer  Supported  Cooperative  Work 
+(CSCW) 20, 3: 123–153. http://doi.org/10.1007/s10606-
+011-9133-3 
+
+29.  Eric  Monteiro,  Neil  Pollock,  Ole  Hanseth,  and  Robin 
+Williams.  2012.  From  Artefacts  to  Infrastructures. 
+Computer Supported Cooperative Work (CSCW) 22, 4-
+6: 575–607. http://doi.org/10.1007/s10606-012-9167-1 
+2009. 
+Infrastructuring:  Toward  an  Integrated  Perspective  on 
+the Design and Use of Information Technology. Journal 
+of the Association for Information Systems 10, 5: 1. 
+
+and  Volker  Wulf. 
+
+30.  Volkmar 
+
+Pipek 
+
+31.  Neil Pollock and Robin Williams. 2008.  Software and 
+Organisations:  The  Biography  of  the  Enterprise-Wide 
+System  Or  how  SAP  conquered  the  world.  Routledge. 
+Retrieved 
+from 
+https://books.google.no/books?hl=no&lr=&id=yLp8A
+gAAQBAJ&oi=fnd&pg=PP1&dq=Pollock,+N.+and+
+Williams,+R.+2008.+Software+and+organizations.+&
+ots=3Wukh6RuyM&sig=Pw0CmL0cJVCh6KqG_gxY
+Mehrw9s&redir_esc=y#v=onepage&q&f=false 
+
+August 
+
+2015 
+
+28, 
+
+32.  Neil Pollock, Robin Williams, and Rob Procter. 2003. 
+Fitting  Standard  Software  Packages  to  Non-standard 
+Organizations: The “Biography” of an Enterprise-wide 
+System. Technology Analysis & Strategic Management 
+15, 
+317–332. 
+http://doi.org/10.1080/09537320310001601504 
+
+3: 
+
+33.  Pavel  S.  Roshanov,  Natasha  Fernandes,  Jeff  M. 
+Wilczynski,  et  al.  2013.  Features  of  effective 
+computerised  clinical  decision  support  systems:  meta-
+regression of 162 randomised trials. The BMJ 346: f657. 
+http://doi.org/10.1136/bmj.f657 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+1004
+
+

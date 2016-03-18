@@ -1,0 +1,1620 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Supporting Group Coherence in a Museum Visit 
+
+Lesley Fosh, Steve Benford, Boriana Koleva 
+
+University of Nottingham 
+
+Nottingham, UK 
+
+[firstname.lastname]@nottingham.ac.uk  
+
+ 
+
+ABSTRACT 
+Visiting museums as part of a group poses the challenge of 
+managing engagement with exhibits while preserving group 
+cohesion.  We  respond  to  this  by  reconfiguring  the  social 
+dynamic  of  visiting  with  an  experience  designed 
+specifically  for  groups,  that  invites  the  group  members 
+themselves  to  design  and  „gift‟  interpretations  to  one 
+another. We present a trial of this experience with groups of 
+family  and  friends  at  a  museum.  We  show  how  groups 
+managed  and  configured  themselves  during  the  visit, 
+revealing  the  strategies  involved  in  maintaining  different 
+group 
+design 
+accommodated  different  visiting  styles  by  making  objects 
+social  and  scaffolding  rather  than  directing  the  group 
+experience.  We  interpret  our  findings  to  frame  group 
+coherence  as  a  flexible  and  configurable  phenomenon 
+within CSCW. 
+
+behaviors.  We 
+
+discuss 
+
+how 
+
+our 
+
+Author Keywords 
+Museums;  collaboration;  visiting;  mobile  guides;  gifting; 
+groups; coherence.  
+
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous.  
+
+INTRODUCTION 
+It  is  well  documented  that  when  most  people  visit 
+museums, they do so as part of a group of friends, family or 
+loved  ones,  and  the  social  experience  can  be  a  key 
+motivation  for  visiting  in  the  first  place  [8].  In  response, 
+there  has  been  a  shift  from  technology  for  personal  use, 
+such  as  traditional  audio  guides,  to  those  that  support 
+collaborative  interaction  between  visitors,  enhancing  the 
+visit  by  supporting  the  collaborative  making  of  meaning 
+[12],  connecting  visitors  with  each  other  over  content  [5], 
+or promoting collaboration with tabletop exhibits [11].  
+
+ 
+
+Permission  to  make  digital  or  hard  copies  of  all  or  part  of  this  work  for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission 
+from 
+Permissions@acm.org. 
+CSCW  '16,  February  27-March  02,  2016,  San  Francisco,  CA,  USA 
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to 
+ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819970 
+
+fee.  Request  permissions 
+
+and/or 
+
+a 
+
+ 
+ 
+
+1
+
+Other  research  has  considered  how  groups  of  visitors 
+behave. Studies have uncovered the many different types of 
+groups that visit museums [16] and the types of interactions 
+that  occur,  for  example  the  roles  parents  take  on  when 
+visiting with their children [15, 19], and how goals such as 
+learning and coordination of the visit might be supported by 
+collaborative systems. 
+
+In  spite  of  this  growing  body  of  work,  there  is  recent 
+evidence that supporting group visiting remains challenging 
+for CSCW.  Tolmie et al.‟s ethnographic  study of two very 
+different  museums uncovered a  phenomenon that appeared 
+to  span  across  many  types  of  small  groups  [28].  Tolmie 
+repeatedly observed visitors‟ engagement with exhibits and 
+information  being  prematurely  interrupted  because  of  a 
+need  to  maintain  a  physical  coherence  within  the  group. 
+Tolmie  et  al.‟s  work  suggests  that  groups  of  visitors 
+struggle  to  simultaneously  manage  engaging  with  museum 
+content on the one hand, while „sticking with‟ or otherwise 
+tending to the needs of fellow group members on the other, 
+often  being  „dragged  away‟  from  exhibits  and  information 
+because  of  a  desire  to  catch  up  with  group  members  who 
+are moving on at a faster pace.  
+
+A proposed solution was to reconfigure the social dynamic 
+of  visiting,  perhaps  by  designing  for  more  collaborative 
+experiences  or  increasing  visitors‟  awareness  of  each 
+others‟  activities.  Tolmie  suggests  that  one  way  of  making 
+visiting  more  collaborative  might  be  through  „gifting‟ 
+experiences of objects, such as by sharing recommendations 
+or interpretations. This approach was explored in a study by 
+Fosh  et  al.  of  pairs  of  adults  visiting  a  contemporary  arts 
+museum,  where  one  member  of  each  pair  was  invited  to 
+design  a  personal  tour  for  their  partner  [10].  Fosh  et  al. 
+found  the  approach  to  be  promising  in  giving  visitors 
+intensely personal yet shared experiences around objects. It 
+was  reported,  however,  that  visitors  often  felt  a  degree  of 
+social  discomfort,  perhaps  due  in  part  to  the  unmet 
+„obligation  to  reciprocate‟  inherent  to  gift  giving  rituals, 
+since the approach offered no opportunity for gift recipients 
+to  reciprocate  with  a  gift  of  their  own,  hence  the  gifting 
+relationship  between  giver  and  recipient  was  imbalanced. 
+They  also  reported  on  the  intensity  of  the  one-to-one 
+pairwise  interaction  between  participants  and  the  visible 
+presence of the designer, who was often anxious about how 
+their design would be received.  
+
+In  this  paper,  we  extend  Fosh  et  al.‟s  approach  to 
+accommodate more diverse and mainstream visiting groups, 
+i.e.  moving  from  pairs  to  small  groups,  and  to  directly 
+
+address  the  challenges  of  group  visiting  identified  by 
+Tolmie et al. in the design of a group visit. Our aim was to 
+enable  small  groups,  typical  of  those  that  visit  many 
+museums,  to  be  able  to  share  an  experience  in  which  they 
+can  enjoy 
+focused  engagement  with  artifacts  and 
+interpretation while also paying attention to and meeting the 
+needs of different group members.  
+
+We  firstly  describe  how  we  extended  the  approach  and 
+worked  with  groups  of  visitors  to  realize  it  in  a  formative 
+user  study.  Our  study  explores  how  visitors  flexibly 
+coordinate  their  visit  amongst  themselves  to  accommodate 
+different  individual  and  group  visiting  styles.  We  then 
+discuss  the  design  features  that  support  these  different 
+styles and what it means for group coherence. 
+
+APPROACH 
+We  now  describe  the  design  of  our  group  visiting 
+experience  and  its  deployment  in  a  formative  study. 
+Following  an  „in  the  wild‟  strategy  [6],  we  worked  with  a 
+particular museum exhibition to design an extended visiting 
+experience  and  then  deploy  it  with  groups  of  visitors.  We 
+conducted  a  naturalistic  study  through  observations  and 
+interviews to build up a rich case study. 
+
+Setting 
+The  setting  for  the  experience  was  [anonymized],  a 
+traditional  art  and  local  history  museum  set  on  the  site  of 
+[anonymized]‟s  Medieval  castle.  Among 
+the  various 
+exhibitions in the  museum  – fine and decorative arts, local 
+history,  archaeology  and 
+temporary  contemporary  art 
+exhibitions  –  we  chose  to  focus  on  the  exhibition  named 
+„Every  Object  Tells  a  Story‟,  a  collection  of  decorative, 
+historical  and 
+through  our 
+conversations  with the museum‟s curators, we learnt  was a 
+collection  that  groups  of  visitors  often  struggled  to  engage 
+deeply  with,  perhaps  due  to  the  large  number  of  exhibits 
+presented in glass cabinets and the largely functional nature 
+of  the  objects.  We  felt  this  provided  a  challenging  setting 
+for  testing  the  approach.  The  exhibition  covers  two  mid-
+sized rooms adjacent to each other. 
+
+functional  objects 
+
+that, 
+
+Content and experience design 
+The experience spanned two distinct stages of participation. 
+First,  visitors  attended  a  design  workshop  where  they  put 
+together the content for their group‟s experience. Next, they 
+were invited back to the museum on a separate occasion to 
+use the experience on a group visit. Our overall experience 
+was  based  on  Fosh  et  al.‟s  gifting  approach  that  saw  one 
+member  of  each  pair  of  participants  design  a  personalized 
+experience for the other. Our first challenge was to scale the 
+approach  up  to  cater  to  groups  larger  than  two.  This 
+involved  working  out  who  would  design  and  gift  content, 
+who would receive content and how it would be presented: 
+
+Gifting configuration. Fosh et al. found that designing and 
+gifting  an  experience  was  often  more  beneficial  than 
+receiving  one,  giving  the  designer  the  chance  to  develop 
+and  revisit  an  interpretation  through  experiencing  it  with 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+their  partner.  We  therefore  felt  that  each  group  member 
+should  get  a  chance  to  design  interpretations  as  well  as 
+experience  them.  Gifting  is  highly  ritualized  and  the 
+literature  tells  us  that  when  multiple  people  are  involved, 
+gift-givers are concerned about mutuality and equipollence, 
+the absence of which can cause anxiety [31]. Our extended 
+gifting  model  thus  allowed  each  member  of  the  group  to 
+design an interpretation for each other member, as shown in 
+Fig. 1. For example, in a group of four friends, each person 
+would  pick  out  three  objects  –  one  for  each  of  the  other 
+member of the group. The tour would then consist of twelve 
+objects. 
+
+ 
+
+Figure 1: Model of gifting in a group of four. Red arrows 
+denote an interpretation is designed and gifted from one 
+
+person to another. Right side of figure represents one 
+
+interpretation.  
+
+Content.  The  participants  were  able 
+the 
+interpretation resources that would be delivered through the 
+mobile  guide  to  accompany  the  objects  in  the  tour.  They 
+were  able  to  choose  three  pieces  of  content  to  fit  our 
+experience template [9]: 
+
+to  design 
+
+  a piece of music (to suggest a theme, mood or tone); 
+  a  vocally  recorded  instruction  for  how  to  interact  with 
+the object (performing a physical action or looking in a 
+particular way); and  
+
+  a  portion  of  text  to  be  presented  as  they  walked  away 
+
+(information or a personal message).  
+
+resources 
+
+In  replication  of  Fosh  et  al.‟s  study  of  this  approach 
+between pairs, we encouraged participants to use the choice 
+of  object  and 
+to  design  a  personalized 
+interpretation  for  one  another,  perhaps  communicating  a 
+particular message or viewpoint alongside or in place of the 
+more  traditional  museum  interpretation.  We  placed  no 
+restrictions  on  the  objects  they  could  choose,  nor  the 
+content  they  chose  to  accompany  them.  There  were  no 
+constraints  on  overlap  of  choices  or  otherwise.  The 
+instructions were recorded by a voiceover artist and played 
+alongside  the  audio  track  while  the  text  was  presented  on 
+the screen once the audio had finished. 
+
+Presentation.  The  gifting  literature  tells  us  that  gifts  are 
+experienced  as  a  social  occasion,  and  are  often  exchanged 
+in  the  presence  of  others.  Onlookers  –  those  present  who 
+
+2
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+aren‟t  giving  or  receiving  –  play  a  key  role  in  gifting 
+occasions. When gifts are received, they are often presented 
+to  onlookers  for  assessment,  and  onlookers  respond  with 
+positive  evaluations  of  the  gift  and  sometimes  questions 
+[21].  It  was  therefore  decided  that  each  member  would  be 
+able  to  engage  with  the  entire  set  of  content,  not  just  the 
+parts that had been designed for them, to allow participants 
+to take on the role of onlookers, as they would in traditional 
+gifting  occasions.  This  also  ensured  there  would  be  more 
+content  for  everyone  to  try  and  potentially  less  confusion 
+around who is doing what. The objects were presented in a 
+list  based  on  where  they  would  be  found  in  the  museum 
+space, suggesting an order in which to visit the objects but 
+not  enforcing  it;  it  was  possible  to  deviate  by  selecting 
+objects out of order. 
+
+A  further  design  feature  intended  to  support  group  visiting 
+was to conceal the identity of those who an experience was 
+designed  by  and  for  until  after  the  content  had  been 
+delivered.  We  anticipated  that  by  only  revealing  the 
+identities  of  the  designer  and  recipient  towards  the  end  of 
+the  experience,  an  element  of  fun  and  expectation  was 
+introduced  as  participants  undergo  a  process  of  „working 
+out‟  who the object  was for and from,  while keeping them 
+engaged to find out whether or not it was designed for them 
+–  providing  an  incentive  to  see  the  experience  through  to 
+the  end.  Our  rationale  was  also  that  instead  of  each  group 
+member  seeking  out  their  own  content,  they  could  all 
+engage with the same full set of content. 
+
+Participants 
+We  recruited  a  total  of  41  participants  through  our 
+University‟s  network  and  the  museum‟s  mailing  lists.  We 
+recruited a total of twelve self-organized groups: six groups 
+of  adult  friends  and  six  families  consisting  of  one  or  two 
+parents  and  one  or  two  children.  Each  group  had  three  or 
+four  members  who  had  formed  a  group  prior  to  attending 
+the  study.  Our  decision  to  work  with  these  small  groups 
+was  based  on  the  types  of  group  that  commonly  visit 
+museums [8, 19], and to ensure the design and visit process 
+was manageable. All participants were interested in visiting 
+museums  either  as  a  leisure  activity,  out  of  academic 
+interest, or both. 
+
+Workshops 
+Each group was invited to the museum to attend a two-hour 
+long  workshop  where  they  were  able  to  self-design  a 
+custom  mobile  tour  of  the  museum‟s  objects.  The  group 
+members  were  given  a  set  of  worksheets  that  guided  them 
+through the process of choosing objects, music, instructions 
+and text. They were given access to the Internet to look up 
+information and listen to music options. 
+
+Visits 
+The  participants  were  invited  back  to  the  museum  in  their 
+groups to use their tours, which had been implemented onto 
+Android  smartphones  using  the  AppFurnace  tool  [2].  The 
+
+interface  presented  them  with  a  complete  list  of  all  the 
+objects chosen by the group in the design session (Fig. 2a). 
+Once  selected,  the  participant  is  instructed  to  locate  the 
+object  and  prepare  to  start  the  experience  (Fig.  2b).  The 
+music and vocally recorded instruction are played through a 
+set  of  headphones,  before  the  music  fades  out  after  1-2 
+minutes.  The  portion  of  information  is  then  presented  as 
+text  on  the  screen  along  with  a  „label‟  showing  who  the 
+object was chosen for and who it was designed by (Fig. 2c).  
+
+ 
+
+ 
+
+ 
+
+Figure 2: Screen shots – a) list of objects, b) set up and c) text. 
+
+Data collection and analysis 
+We  initially  captured  participant‟s  written  designs  and 
+justifications  from 
+the  worksheets  as  well  as  audio 
+recordings  of  the  workshops  in  order  to  understand  how 
+they  went  about  the  design  task.  We  video  recorded  the 
+groups  of  participants  using  the  experience  in  the  museum 
+to  capture  an  overview  of  their  interactions,  and  used 
+wireless  microphones  to  capture  their  conversations.  Once 
+they had finished using the experience, we conducted semi-
+structured interviews with the groups, asking them to reflect 
+on each of the designs and the experience as a whole.  
+
+Our  approach  to  analyzing  the  video  data  was  to  adopt  an 
+ethnographic  style  across  a  number  of  data  sessions, 
+reviewing  each  group‟s  interaction  with  the  museum 
+content,  the  mobile  technology,  and  each  other.  We 
+summarized  an  overview  of  what  happened  in  each 
+interactional 
+sequence,  based  on  our  analysis  of 
+participants‟ gaze, gestures, utterances and interactions with 
+relation  to  the  designed  content.  While  no  two  sequences 
+were  the  same  due  to  the  different  objects  visited  and  the 
+bespoke  content  delivered,  we  were  able  to  draw  out 
+behaviors  that  were  broadly  characteristic  of  how  different 
+groups  approached  their  visits.  These  sequences  were 
+further  analyzed  and  transcribed  in  detail  to  draw  out  how 
+the  sequential  order  of  their  activities  related  to  the  gifted 
+content they were engaging with, including how the gifting 
+relationship for each portion  of the experience affected the 
+participants‟  behavior.  Our  interview  data  was  used  in 
+conjunction  to  explain  what  we  saw,  with  participants 
+elaborating  on  what  they  thought  and  did  at  each  stage  of 
+the  visit.  In  taking  this  approach,  we  were  able  to  build  a 
+rich  case  study  of  each  groups‟  engagement  with  our 
+experience from start to finish. 
+
+ 
+
+3
+
+FINDINGS 
+We  present  our  findings  with  a  primary  focus  on  how  the 
+visitors  organized  their  group  experiences  of  using  the 
+mobile guide. We firstly provide a general overview of the 
+groups‟  makeups  and  how  they  approached  the  design  of 
+their experiences. We then present a representation of how 
+the group visits were organized, before looking in detail at a 
+set of examples where the key themes that typify the social 
+organization of the visit are made manifest. 
+
+Group 
+
+Adults 
+
+Children  Relationship 
+
+1 
+
+2 
+
+3 
+
+4 
+
+5 
+
+6 
+
+7 
+
+8 
+
+9 
+
+10 
+
+11 
+
+12 
+
+1M, 2F (24-28) 
+
+3M (27-28) 
+
+1M, 3F (65-70) 
+
+3F (20-24) 
+
+3F (25) 
+
+1M, 3F (28-29) 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+- 
+
+1M, 1F (35, 37) 
+
+2M (7, 10) 
+
+1M, 1F (36, 37) 
+
+2M (3, 6) 
+
+1M, 1F (35, 36) 
+
+2M (7, 8) 
+
+1F (34) 
+
+2F (4, 6) 
+
+1M, 1F (37, 38) 
+
+1M (6) 
+
+1M, 1F (39, 40) 
+
+2M (7, 8) 
+
+Friends 
+
+Friends 
+
+Friends 
+
+Friends 
+
+Friends 
+
+Friends 
+
+Family 
+
+Family 
+
+Family 
+
+Family 
+
+Family 
+
+Family 
+
+Table 1: Groups and their members (M = male; F = female). 
+
+What they designed  
+The  design  process  first  involved  browsing  the  exhibition, 
+looking  at  objects  to  draw  inspiration,  until  the  participant 
+found  a  suitable  match  between  their  knowledge  of  the 
+person  they  were  choosing  for,  their  own  ideas  for  a 
+particular theme, the properties of the object itself and how 
+they interpreted the object. Music was often used to reflect 
+themes brought up by the object or to set a particular mood 
+or  emotional  tone.  The  music  choice  tended  to  be  a  piece 
+that  was  known  and  liked  by  both  the  designer  and 
+recipient,  and  matched  the  interpretation  the  designer 
+wanted  to  get  across.  Some  participants  drew  inspiration 
+directly  from 
+the  object,  choosing,  for  example,  a 
+traditional piece of music from the era or culture the object 
+belonged  to,  which  was  the  case  for  a  visitor  in  Group  1 
+who  chose  to  set  a  Japanese  arrow  quiver  to  a  piece  of 
+traditional Japanese music. 
+
+the 
+
+intended 
+
+The choice of instruction was also used to set an emotional 
+tone  for  how  the  object  would  be  experienced.  Again,  the 
+inspiration  for  the  specific  instruction  came  from  the 
+object‟s  properties, 
+type  of 
+experience and the participant‟s interpretation of the object. 
+Instructions included to “Strike a pose, like one of the chess 
+pieces” (for a chess set chosen by the mother in Group 9 for 
+her son), and to  “Pretend  you are at a  grand tea party, and 
+think about all the rich and pretentious people you‟d  meet” 
+(for a tea caddy chosen by a member of Group 4). 
+
+theme  or 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Finally,  the  text,  to  be  displayed  after  the  music  and 
+instruction,  was  used  by  participants  to  wrap  up  the 
+experience,  delivering  factual  information  they  had  found 
+about the object or explaining their interpretation or reason 
+for  choosing  it.  It  tended  to  follow  on  from  the  other 
+resource  choices  –  for  example,  a  child  in  Group  7,  after 
+instructing his father to think about what an object was used 
+for,  chose  to  explain  “This  curved  spike  was  twisted  into 
+the  elephant‟s  hide  to  make  it  behave  in  a  certain  way.  I 
+thought that  you  would put a piece of  fruit on the  spike to 
+tempt  the  elephant  to  go  in  different  directions,  as  the 
+elephant  would  respect  you  more.”  Text  was  also  used  to 
+deliver personal messages, for example, “I feel this sums up 
+a  part  of  your  character  and  is  a  nice  object  to  link  our 
+friendship.” 
+
+Adapting the gifting model for families 
+Three  of  our  six  family  groups  (7,  8  and  12)  chose  to 
+reconfigure  themselves  into  subgroups  to  complete  the 
+design  task,  for  example  splitting  into  two  parent-child 
+teams.  The  members  of  the  subgroups  were  then  able  to 
+help  each  other  with  their  designs,  with  the  parents 
+generally  overseeing  the  process  and  the  children  given 
+control  over  the  specific  content.  This  approach  proved 
+successful  in  keeping  the  children  on  task  and  generating 
+ideas,  although  it  should  be  noted  that  the  groups  who  did 
+not team up were also successful in completing the design. 
+One  observation  we  did  have  was  that,  at  times,  one 
+partner‟s  ideas  would  dominate  the  design  –  e.g.  in  Group 
+8, the mother and son working on a design for the other son 
+chose  a  Gujarati  child‟s  jacket  and  instructed  to  „Imagine 
+wearing  something  that  makes  you  feel  warm,  loved  and 
+comforted‟,  which  the  mother  reported  reflected  her 
+memories of looking after her son when he wore very small 
+clothes.  In  this  instance,  the  design  was  framed  as  being 
+from  the  mother  and  son,  i.e.  they  produced  one  design 
+between  them  for  the  recipient.  In  other  cases  of  two 
+participants  teaming  up,  they  produced  a  design  each  but 
+helped with each other‟s designs. 
+
+The  child  in  Group  7,  who  worked  on  his  own,  used  the 
+design  to  relate  a  decorative  knife  blade  to  his  father‟s 
+background  in  the  military,  something  that  the  father  was 
+surprised  by  and  described  as  “really  touching”  once  he 
+came to try out the experience. Of course, the ages of some 
+of  our  younger  participants  put  a  limit  on  how  much  they 
+could design independently.  
+
+Returning to use the experience 
+Our  approach  required  groups  to  return  to  the  museum 
+when  their  designs  had  been  implemented  (by  us)  into  a 
+mobile  guide.  Groups  took  between  two  days  and  two 
+weeks  to  return  for  their  second  visit.  One  of  our  family 
+groups, Group 12, was unable to return within the timescale 
+of our study so did not get  to try out their experience. One 
+member  of  Group  5  was  also  unable  to  return  to  use  her 
+experience,  but  the  remaining  two  friends  completed  the 
+full experience nonetheless. 
+
+4
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Organizing the group visit 
+All  group  members  received  the  same  set  of  objects 
+regardless of who designed for whom – they were then free 
+to  choose  whether  to  experience  them  all  together  or  not. 
+The interface to the guide suggested an order by presenting 
+the  set  of  objects  in  a  list  based  on  where  they  would 
+encounter  them  in  the  museum.  However,  this  order  was 
+not  enforced,  so  groups  could  choose  to  visit  objects  in  a 
+different  order,  and  decide  whether  to  follow  the  order 
+together or choose a separate order individually. 
+
+From  analyzing  our  video  recordings  we  were  able  to 
+determine  which  objects  group  members  visited  across  the 
+duration  of  their  visit.  Figure  3  provides  a  summary 
+timeline  documenting  the  time  visitors  spent  visiting  the 
+objects  in  their  experiences  and  the  extent  to  which  it  was 
+coordinated among members. We were able to judge when 
+participants  were  visiting  an  object  from  our  video 
+recordings,  specifically  participants‟  orientation,  gaze, 
+wearing of headphones and interaction with the device. 
+
+For  each  group‟s  timeline,  a  single  row  represents  an 
+individual  group  member,  while  the  time  in  minutes  (from 
+the  beginning  of  our  video  recordings)  is  noted  along  the 
+horizontal  axis.  The 
+is 
+
+time  spent  visiting  objects 
+
+represented  by  the  horizontal  lines  and  numbers;  the 
+numbers  denote  the  object‟s  suggested  order  in  the 
+experience. The dashed horizontal lines show times when it 
+was not possible to capture the visitor‟s exact movements – 
+often due to the limitations of using only one video recorder 
+to record multiple participants.  
+
+Our  timelines  show  an  overview  of  how  the  different 
+groups organized their visits – which visitors were grouped 
+together  at  different  points  of  the  visits.  One  approach,  as 
+displayed  by  groups  1,  5,  7,  9,  10  and  11  was  to  stay 
+together  for  the  entire  visit,  visiting  the  same  object  at  the 
+same time, and following the order suggested by the guide. 
+At  the  other  extreme,  members  of  groups  2,  4,  6  and  8 
+visited  objects  separately  or  in  subgroups,  deviating  from 
+the suggested order and only crossing paths coincidentally. 
+Group  3  showed  a  range  of  behaviors,  often  staying 
+together but sometimes separating before coming together. 
+
+The timelines also show that it wasn‟t always the case that 
+experiences  were  encountered  with  both  the  designer  and 
+recipient present at the same time. While those  who stayed 
+together  were  able  to  discuss,  comment  on  and  assess  the 
+objects as experienced, those who visited objects separately 
+were not able to exchange such immediate feedback.  
+
+Figure 3: Timelines showing group members' engagement with objects over time. 
+
+5
+
+Our  video  observations  and  subsequent  interviews  tell  us 
+that  all  but  two  visitors  fully  completed  the  experience  – 
+visiting all of the objects including those they had designed, 
+those  designed  for  them  and  those  designed  by  others  for 
+others. One visitor chose not to visit the objects that she had 
+chosen,  stating  afterwards  that  she  was  “embarrassed”  that 
+her  text  explanations  were  more  detailed  than  others‟, 
+reflecting the large amount of thought that she put into her 
+designs and her anxiety at how they would be received. Our 
+youngest  participant,  aged  three,  did  not  engage  with  the 
+experience himself but was shown parts of it by his  father. 
+All  visitors  who  did  engage  with  the  experience  listened 
+through  to  the  end  of  the  audio  (music  and  instruction) 
+before  disengaging,  and  most  visitors  appeared  to  follow 
+the  instructions  that  had  been  designed.  There  was  often 
+evidence  of  visitors  working  out  who  the  object  had  been 
+chosen  for  part  way  through  the  experience  –  one 
+commented  sarcastically,  “Oh  I  wonder  who  this  is  for”  – 
+and  sharing  reactions  to  finding  out  the  relationship  at  the 
+end – for example, “That  was for me”, offering thanks and 
+praising the designs.  
+
+to  visit  objects 
+
+individually.  Sometimes 
+
+Unsurprisingly,  the  highest  levels  of  social  contact  were 
+between those visitors who stayed together during the visit. 
+These visitors engaged with each other to navigate between 
+objects, coordinate starting each experience, share reactions 
+and  reflect  on  the  interpretation.  However,  we  were  also 
+able  to  observe  social  contact  between  those  visitors  who 
+chose 
+this 
+happened  in  the  form  of  chance  encounters,  such  as  when 
+two  or  more  visitors  find  themselves  at  the  same  object 
+without  having  consciously  coordinated  it,  but  there  were 
+also  occasions  where  visitors  deliberately  initiated  contact 
+by greeting one another, asking questions, sharing reactions 
+and asking questions. Some of the groups that split up spent 
+significant portions of their visits in different rooms of the 
+exhibition  and  out  of  line  of  sight,  but  they  would  often 
+come back into each others‟ visual fields at some point, and 
+often coordinated coming together at the end of the visit. 
+
+Our  overall  impression  from  the  video  observations  is  that 
+visitors  were  able  to  organize  a  structure  for  their  group 
+visit,  and  were  generally  able  to  maintain  a  level  of 
+sociality  in  any  case.  Nearly  all  participants  did  all  of  the 
+content, and when they did, they listened through to the end 
+of the audio and followed instructions. We observed  much 
+acknowledgement,  appreciation  and  comment,  sometimes 
+at exhibits and sometimes on encounters between. 
+
+A CLOSER LOOK 
+We  now  consider  more  closely  the  work  involved  in 
+organizing  a  group  visit  with  our  experience.  For  those 
+groups  that  stayed  together,  how  did  they  manage  their 
+continued  shared  engagement?  For  groups  that  separated, 
+how  did  they  manage  disengaging  and  coming  back 
+together? We focus on a series of vignettes to illustrate how 
+these  various  issues  played  out  during  the  visit.  Three  key 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+group  behaviors  are  identified:  sticking  together,  splitting 
+up and drifting apart. 
+
+Sticking together 
+We  now  look  at  what  was  involved  for  those  groups  that 
+chose to stay together for the visit.  
+
+Example  1:  Group  5.  This  group  of  three  female  friends 
+designed  a  tour  of  six  objects  of  historical  and  cultural 
+interest. Their approach to organizing their visit was to visit 
+each  object  together  in  the  order  suggested  by  the  guide. 
+They begin the experience by entering the gallery at a slow 
+pace,  looking  around  as  they  prepare  to  engage  with  the 
+experience.  
+
+A:  Er,  which  one  do  you,  er?  ((Holds  device  in 
+front of her, Fig. 4a)) 
+(3.0) 
+B:  We  could  do  it  in  the  ((gestures  to  device, 
+Fig. 4b)) 
+C: ((looks at A and B, nodding)) 
+(...) 
+A: In the order  
+B: Yeah 
+A:  Oh.  Natural  Selection  ((looks  towards  the 
+display case „Natural Selection‟)) 
+A: ((stands to left of object)) 
+B: ((stands to right of A)) 
+C: ((stands to right of B)) 
+((A,  B  and  C  listen  to  the  audio  and  look  at  the 
+object, Fig. 4c)) 
+(2.07)  
+B: ((looks at A, Fig. 4d)) It‟s Egyptian? 
+
+This  fragment  sees  A  and  B  jointly  deciding  to  visit  the 
+objects  in  the  order  suggested  by  the  guide.  They  choose 
+and  arrive  at  the  first  object  of  their  experience,  a  set  of 
+earthenware  tiles  chosen  by  A  for  C.  They  arrange 
+themselves  in  a  semi-circle  around  the  object  where  they 
+stay  while  they  listen  to  the  audio  designed  by  A.  B,  the 
+intended  recipient  of  this  design,  then  queries  A  on  the 
+interpretation  she  designed  for  B.  The  fragment  continues 
+with B asking, “can we play it again?” and going on to 
+redo  this  experience,  while  A  and  C  wait  for  her  to  finish 
+before moving on. 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Figure 4: Group 5 a) and b) (top) navigating towards the first 
+
+object; c) and d) (bottom) at the object. 
+
+Example  2:  Group  7.  While  it  was  most  common  for 
+families  to  stay  together  during  the  visit,  there  was 
+significant  work  involved  in  managing  the  children‟s  visit. 
+It was common for one of the parents to take a commanding 
+
+6
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+role to ensure all members of the family stayed together and 
+did not move on prematurely.  
+
+Group 7 is a family of four with a mother, D, father, E, and 
+two sons (F, aged ten and G, aged seven). In this example, 
+they  are  visiting  their  second  object,  a  Japanese  sword 
+displayed in a glass cabinet.  
+
+D:  ((Reading  from  device))  Which  was  polished  to 
+look very impressive.  
+D:  So  all  that  [G],  see  all  the  bobbly  bits 
+((pointing  to  the  object,  Fig.  5a))  (...)  that‟s 
+actually fish skin, ray- ray skin, that‟s amazing 
+isn‟t  it?  (...)  So  it‟s  actually  fish  skin  in 
+there that‟s covering the sword hilt. Can you see? 
+F: Who did the Chinese roof tile? (...) And where 
+is it? 
+E: Don‟t know. 
+D: It‟s got to be here again, hasn‟t it? 
+G: Oh (.) I I I know, I know where that is ((looks 
+towards the next object))  
+F:  ((Walks  towards  the  object  and  points  at  it, 
+Fig. 5b)) 
+G: It‟s there ((points to the object, Fig. 5c)) 
+E: Object Stories ten, oh yeah (...) Oh right. 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Figure 5: Group 7 (a) D pointing out fish skin; (b) F finding 
+
+the next object; (c) G pointing out the object 
+
+The  above  fragment  shows  the  mother‟s  efforts  to  ensure 
+both  children  engage  with  the  experience:  reading  the  text 
+for  them,  checking  they  have  read  and  understood  the 
+content, and even rephrasing the information. Meanwhile, F 
+He  waits  until  his  mother  reaches  the  end  before  signaling 
+he  is  ready  to  move  on:  “Who  did  the  Chinese  roof 
+tile?  (...)  And  where  is  it?”  He  begins  looking  and 
+finds it on his own, but G, who chose the object, also moves 
+to point it out, and they all move on to look at the tile. 
+
+Splitting up 
+Other groups were less concerned with staying together for 
+the  visit,  with  some  group  members  actively  seeking  out 
+their own paths through the museum, as shown in our next 
+examples. 
+
+Example 3: Group 6. In this example we see four friends, 
+who have all known each other for around eight years. They 
+chose  a  range  of  objects  and  their  designs  were  often 
+playful,  fun  and  with  personal  meaning.  In  this  fragment, 
+each  of  the  four  visitors  is  at  a  different  stage  of  the  visit, 
+having  chosen  to  visit  objects  separately  and  in  different 
+orders. J and K arrive separately at the same object, a set of 
+duck-shaped weights chosen for J by H. The instruction for 
+this object is to follow a stranger around the gallery. As we 
+join  them,  J  and  K  are  both  coming  to  the  end  of  the 
+experience, having listened to most of the audio. 
+
+7
+
+J: ((Looks around at K, Fig. 6a)) Ha ha ha. (...) 
+I didn‟t do it, did you do it? 
+K:  No  I  couldn‟t  find  anyone  to  chase  but  it  did 
+make me laugh. 
+J: Yeah. 
+K:  It  would‟ve  been  perfect  „cause  like,  I‟m 
+finding  that  (...)  it‟s  better  to  have  something 
+to do while the music‟s playing. 
+J: Yeah it would be good I think if you could read 
+as the music‟s playing. 
+K: Yeah. 
+J: I know what you mean, yeah. 
+K: ((reads device, Fig. 6b)) (h)That‟s s(h)o good. 
+Th(h)at‟s really good though, I love it. The whole 
+thing‟s  great.  Yours  are  really  good,  mine,  I 
+don‟t  think  mine  are  like  (...)  um  (.)  I  can‟t 
+think  of  the  word  for  it,  I‟ll  have  to  think  of 
+the word for it. 
+H: ((Approaches J and K from behind, Fig. 6c)) 
+K: Mine aren‟t um= 
+H:  [Did you like it? 
+K: =[Connecting  
+J: It was great, yeah, it was so good. 
+K: It was really good.  
+H: Ha ha ha ha ha ha ha. 
+K: Love it ((turns to face H, Fig. 6d)) 
+J: Heh heh heh. That‟s amazing. 
+H: Did you follow someone around? 
+J: No. 
+H: WHAT?  
+J:  I  looked  around  but  then  I  was  really 
+embarrassed. 
+H: I did it. 
+K: No one was walking though I just walked instead 
+by myself. 
+H: I walked (h)behind (h)a str(h)anger. Ha ha ha. 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Figure 6: a) K and J (l-r); b) K and J (l-r); c) H, K and J (l-r); 
+
+d) H, K and J (l-r). 
+
+Despite visiting separately, the visitors in this example were 
+able  to  share  experiences  of  objects,  either  when  finding 
+themselves  at  the  same  object  without  having  expressly 
+coordinated  it  (J  and  K)  or by  noticing  when  someone  has 
+visited  a  particular  object  and  approaching  them  for 
+feedback, as H did here with the object she designed for J. 
+K, neither the gifter or recipient of this experience, joins in 
+with assessing the experience while distinguishing between 
+others‟ gifts and her own: “yours are really good”. 
+
+Example  4:  Group  8.  The  one  family  group  that  did  split 
+for  the  experience  was  Group  8.  They  start  the  experience 
+with the father of the family, M, carrying the three year old, 
+O, to the first object on the list. The mother, L, leads the six 
+year old, N, separately to visit another object.  
+
+L and N are at object three, where L is reading out the text 
+content  to  the  son.  M,  carrying  O,  approaches  the  cabinet 
+where object two is located (Fig. 7a).  
+
+L: Oh look, it says for [N], from [O] (.) Shall we 
+press the next one? 
+M: ((Puts O down, Fig. 7b)) 
+L:  Great.  So  we  did  that  one  (...)  ((Turns  to  M, 
+Fig. 7c)) I liked the music. 
+N: Where‟s the chess set? 
+L: Well, oh that‟s there so shall we go and do the 
+other one and come back and do this one? Let‟s go 
+and do the child‟s jacket. ((Guides N away to the 
+adjacent room, Fig. 7d)) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Figure 7: Two subgroups visiting different objects. 
+
+In  this  example,  we  again  see  interaction  between  those 
+who  are  visiting  objects  in  different  orders  (L  saying  “I 
+liked  the  music”  to  M).  We  then  see  L  deciding  to 
+deviate  from  the  order  N  is  expecting  (“Where‟s  the 
+chess set?”), explaining that they will come back to visit 
+that object. In our interview with this family it emerged that 
+the  two  parents  chose  to  separate  into  subgroups  so  they 
+could take responsibility for a child each. 
+
+Drifting apart 
+There  were  some  groups  that  didn‟t  seem  to  explicitly 
+decide whether to stay together or split up, but that  moved 
+between states of being in and out of sync.  
+
+Example  5:  Group  3.  Our  final  example  looks  at  a  group 
+of  four  friends  from  an  art  appreciation  group.  They  start 
+the  experience  together  and  visit  the  first  object,  a  wax 
+sealing fob. They arrange themselves in two pairs (see Fig. 
+8a) and, after listening to the audio, one pair confers while 
+the  other  pair  moves  on  to  the  next  object  in  the  display 
+case behind. By the time the second pair reaches the second 
+object, a decorative drinking glass, the first pair has started 
+the experience. The first pair separate to make room for the 
+second  pair  to  access  the  object  (Fig.  8b),  reforming  the 
+group  of  four.  Another  conversation  breaks  out  between  a 
+new pairing, and the other two move on to the third object, 
+in  the  same  cabinet.  After  visiting  the  third  object,  one  of 
+the women scrolls through the list of objects on her device 
+and  chooses  a  later  one,  then  walks  towards  the  cabinet  in 
+which  it  is  found.  As  the  group  is  still  within  close 
+proximity to each other (within line of sight) they continue 
+to converse despite not visiting the same objects.   
+
+8
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+  
+
+ 
+
+Figure 8: a) Group arranged in two pairs, and b) reuniting. 
+
+DISCUSSION 
+Our findings paint a picture of a shared visiting experience 
+in  which  small  groups  of  family  and  friends,  including 
+those  with  young  children,  systematically  engaged  with 
+museum  content.  By  and  large,  our  groups  invested 
+significant  effort  in  designing  experiences  for  one  another 
+and  „saw  these  through‟  on  returning  to  the  museum, 
+attempting and completing the vast  majority of the content 
+they  had created. They created  personalized interpretations 
+which were frequently discussed and commented on during 
+their visits. Moreover, the almost palpable sense of tension 
+and  embarrassment  reported  in  Fosh‟s  study  of 
+the 
+asymmetric  gifting  of  experiences  among  adults  was 
+notable  by  its  absence  here,  with  fewer  intensely  personal 
+or  provocative  interpretations  gifted  between  the  friends 
+and  family  who  took  part  in  our  study,  which  seemed 
+appropriate  for  an  experience  that  is  shared  between  small 
+groups  rather  than  couples.  Visitors  reported  enjoying  the 
+experience  and  playfully  engaging  with  and  appreciating 
+others‟ designs. Our findings also reveal an experience that 
+accommodated  diverse  group  behaviours  from  sticking 
+together  throughout  to  splitting  up  and  rejoining  and  from 
+pre-formulated  strategies  to  ad-hoc  coordination.  These 
+observations stand in marked contrast to  Tolmie‟s study of 
+group museum visiting that highlighted the ongoing tension 
+of balancing engagement with content with paying attention 
+to  fellow  group  members.  We  now  relate  our  observations 
+to  three  broader  themes  in  an  attempt  to  both  explain  and 
+generalize them.  
+
+From museum artifacts to social objects 
+In  discussing  participatory  museum  visiting,  Nina  Simon 
+defines  social  objects  as  those  that  are  “transactional, 
+facilitating  exchanges  among  those  who  encounter  them” 
+[25].  Such  exchanges  include  discussions  of  an  event  or 
+story  the  object  brought  to  mind  or  cooperation  around  an 
+object  that  invites  play  or  touch.  Our  approach  directly 
+embeds  social  transactions  into  the  mobile  technology  by 
+having  visitors  design  structured  experiences  around 
+individual 
+and 
+information.  This  enables  visitors  to  directly  embed  such 
+transactions  into  the  visit  through  the  content  they  design 
+for others – using music that represents a theme or memory, 
+drawing  attention  to  particular  aspects  of  an  artifact  or 
+taking it as inspiration for telling a story. At the very least, 
+it allows visitors to draw their group members‟ attention to 
+an object. We saw how visitors drew on their knowledge of 
+each  other  and  their  inter-personal  relationships  to  create 
+social objects. When visitors experienced artifacts together, 
+
+instructions,  music 
+
+artifacts 
+
+from 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+they  often  built  upon  the  experience  by  responding  or 
+exchanging  remarks,  as  in  examples  1  and  2.  Even  those 
+visitors  who  split  up  to  visit  individually  were  able  to 
+discuss  the  experiences  when  they  crossed  paths  or  sought 
+each other out (Example 3).  
+
+Moreover,  our  approach  draws  on  an  especially  powerful 
+form  of  social  transaction  –  the  gift.  As  Fosh  et  al.  have 
+previously  argued,  framing  the  design  of  experiences  as 
+gift-giving  creates  a  strong  social  obligation  for  the 
+recipient of the gift to complete the experience [18] and to 
+respond  appropriately  [24].  In  our  study,  we  saw  the 
+hallmarks of gift-giving play out amongst the visitors,  who 
+recognized  and  appreciated  when  a  gift  had  been  tailored 
+towards  them,  and  who  often  commented  on  who  the  gift 
+had been intended for, offering thanks and assessments.  
+
+Fosh  et  al.  also  noted  potential  anxiety  and  even 
+embarrassment  that  arose  when  such  gifts  were  given 
+asymmetrically  between  pairs  of  visitors.  This  led  us  to 
+extend the approach in three ways, each of which appear to 
+have  alleviated  such  tensions.  The  first  has  been  to  make 
+them reciprocal. The approach reported here involves each 
+member of a group designing for each other member. Each 
+gives and receives, sharing the inherent risk of giving while 
+also  providing  all  concerned  with  opportunities  for 
+acknowledging  and  appreciating.  The  second  has  been  to 
+scale  up  beyond  pairs.  Mauss  describes  how  gift-giving  is 
+socially  occasioned  and  how  gifts  are  „opened‟  and 
+appreciated  in  front  of  others  who  in  turn  play  a  role  in 
+appreciating  them,  an  idea  that  is  directly  reflected  in  our 
+approach.  The 
+them  mutually 
+pseudonymous, 
+is  not  directly  associated  with 
+identified gift givers or giftees. By only revealing who each 
+interpretation  had  been  designed  for  and  by  at  the  end  of 
+each  experience  at  an  artifact,  visitors  may  have  been 
+committed to see through the experience to find out if it had 
+been intended for them. We also saw participants trying all 
+the  designs,  rather  than  just  those  made  for  themselves  or 
+by  specific  people,  perhaps  motivated  to  find  out  if  it  had 
+been intended for them. This meant all visitors in the group 
+engaged  with  the  same  content.  In  addition,  visitors  who 
+weren‟t  sticking  together  were  therefore  aware  of  what 
+everyone  else  was  experiencing,  allowing  for  discussion 
+when they did come into contact. 
+
+to  make 
+
+third 
+
+that 
+
+is 
+
+In  light  of  this  discussion,  we  recommend  the  general 
+approach  of  „socializing‟  museum  artifacts  by  getting 
+visitors to craft and gift interpretations for one another. Our 
+experience  here  suggests 
+that  such  gifts  should  be 
+reciprocal,  exchanged  incognito  and  exchanged  among 
+small  groups.  We  also  note  that  this  approach  is  directly 
+and  easily  implementable  in  software,  with  the  gift-giving 
+transactions being realized in simple templates. 
+
+From directed to scaffolded experiences 
+Previous  studies  of  museum  visitors  have  uncovered  a 
+range  of  different  visiting  styles  and  have  attempted  to 
+categorize  visitors  into  different  types  that  may  change 
+
+9
+
+throughout the visit [26, 29]. Early categorizations focused 
+on  individual  visitors,  but  the  idea  of  classification  has 
+since  been  extended  to  pairs  of  visitors  based  on  their 
+engagement and orientation towards each other and exhibits 
+[16]. The dynamics of visiting as a family group have also 
+been  well  documented,  with  studies  revealing  the  extreme 
+prevalence  of  playful  behavior  with  interactives  and  long 
+conversations  among  the  group  [19],  and  the  impact  of 
+parents‟  shaping  and  supporting  of  children‟s  interactions 
+on  learning  [7].  Previous  responses  to  such  observations 
+have  aimed  to  augment  social  interaction  in  museum 
+visiting  by  promoting  connection  with  others  [5]  and 
+engaging  group  members  in  a  coordinated  narrative  to 
+induce  group  conversation  [4],  the  latter  being  unusual  in 
+narrative-driven  directed  experiences  in  that  it  required 
+collaboration for the story to unfold. 
+
+Our  study  suggests  that  an  open  and  flexible  structure  can 
+accommodate  a  range  of  different  visiting  styles.  While 
+each  bite-sized  experience  of  an  individual  artifact  was 
+highly directed through instructions, music and information, 
+there  was  no  overarching  narrative  that  needed  to  be 
+followed  to  connect  them  altogether.  While  visitors  chose 
+experiences from an ordered list, the order was not enforced 
+or strongly narrativised. Nor were there any requirements to 
+collaborate in order to progress. Visitors were therefore free 
+to manage the overall global trajectory of their visit as they 
+saw  fit,  splitting  and  joining  according  to  local  needs  and 
+circumstances.  Thus,  around  half  of  the  groups  (1,  5,  7,  9, 
+10  and  11)  stuck  together  during  their  visits,  while  the 
+others  split  up  to  some  degree.  We  found  that  sticking 
+together  generally  involved  joint  decision  making,  waiting 
+for  one  another,  and  discussing  interpretations  in  the 
+moment:  what  might  be  thought  of  as  an  ideal  social  visit. 
+However,  we  were  also  able  to  observe  behaviors  in  those 
+who  split  up  that  suggested  a  level  of  social  engagement 
+despite  group  members  not  visiting  objects  synchronously. 
+This took the form of visitors finding themselves coinciding 
+at  the  same  object  and  sharing  a  more  spontaneous 
+engagement,  seeking  one  another  out  to  give  feedback  or 
+seek assessment, or monitoring one another from afar.  
+
+Another  notable  feature  of  our  approach  is  its  technical 
+simplicity. There are no location-based technologies at play 
+here, no recommender systems or triggering of content and 
+no  attempt  to  technically  synchronize  content  between 
+people.  Rather,  visitors  must  author  and  then  select 
+experiences for themselves, find the artifacts involved using 
+conventional means and then manually trigger the „content‟ 
+(manually  synchronized  if  they  so  wish).  The  approach 
+balances orchestration of the experience with visitors‟ own 
+agency; by  scaffolding rather than directing,  we encourage 
+visitors 
+the 
+experience,  rather  than  designing  for  a  canonical  way  of 
+visiting  [3].  This  is  a  common  approach  in  visiting 
+experiences  with  mediascapes  [14]  and  participatory 
+performance  [27].  This  manual  approach  to  scaffolding 
+rather than directing experiences even extends to the use of 
+
+trajectories 
+
+their  own 
+
+to  carve 
+
+through 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+headphones  (traditionally  a  thorny  issue  in  mobile  CSCW 
+systems [1, 17]) with visitors manually putting them on and 
+taking them off as required. While clearly demanding more 
+work  of  visitors,  this  largely  manual  approach  does  not 
+appear  to  have  caused  difficulties  or  frustration  and  does 
+appear  to  have  afforded  great  flexibility  for  adapting  to 
+different visiting styles.  
+
+coherence.  It  seems,  then,  that  these  visitors  were  unfazed 
+by  the  potential  incoherence  of  their  group  visit  in  a  way 
+that  the  groups  in  Tolmie  et  al.‟s  study  went  to  some 
+lengths  to  avoid.  When  they  did  engage  with  one  another, 
+sporadically,  inadvertently  or  intentionally,  they  were  able 
+to  discuss  the  experience  and  engage  with  each  other, 
+before possibly splitting up again.  
+
+This  scaffolding  approach  was  perhaps  most  evident  in 
+enabling  adults  to  support  children  when  managing  the 
+family  experience.  Children  were  able  to  engage  in  the 
+making  and  doing  of  experiences  with  support  from  their 
+parents,  listening  to  the  music,  dancing  around  and 
+repeating  experiences  they  had  enjoyed.  They  sometimes 
+surprised  parents  with  thoughtful  designs  and  questions. 
+And  yet,  it  was  also  possible  to  mix  in  moments  of 
+experience for adults in the party too. 
+
+In  light  of  these  observations,  we  recommend  experience 
+designers  to  recognize  that  sometimes  „less  is  more‟  and 
+that  approaches  that  scaffold  interactions  without  heavily 
+directing them (e.g., through strong narratives, collaborative 
+mechanics,  location-based  wayfinding  and  triggers  and  so 
+forth) have a valuable role to play in visiting experiences.  
+
+From cohesive groups to coherent experiences 
+Considering  the  nature  of  groups  is  both  fundamental  and 
+challenging  for  CSCW.  One  common  approach  is  to 
+consider  physical  collocation,  drawing  on  notions  of 
+proxemics from anthropology [13] and employing location-
+based  technologies  to  detect  collocated  formations  [23], 
+sometimes  in  combination  with  the  strength  of  social-
+network  connections  [20].  Another  key  idea  is  that  of  the 
+cohesiveness  of  groups  working  together  on  tasks,  that  is, 
+on  the  strength  of  social  relationships  between  those 
+working  together  and  the  effects  of  this  on  the  quality  of 
+their work [22].  
+
+Groups  in  leisure  activities,  such  as  museum  visiting,  are 
+likely  to  already  enjoy  strong  social  relationships  and 
+therefore  to  exhibit  tight  cohesiveness  as  a  group.  Indeed, 
+this  very  cohesiveness  may  be  a  major  challenge  for 
+museum  experience  designers  as  they  seek  to  engage 
+tightly-knit  groups  with their  content rather than  with each 
+other.  This  tension  between  group  cohesion  and  external 
+content  lies  at  the  heart  of  Tolmie‟s  previous  observations 
+of  museum  studies,  leading  him  to  discuss  the  notion  of 
+group  coherence  that  involves  maintaining  a  level  of 
+togetherness through staying within line of sight [28]. This, 
+and other forms of awareness of group members‟ activities, 
+has been shown to be important in collocated collaboration 
+[32]. 
+
+Our study revealed how some visitors intentionally avoided 
+being  in  physical  proximity  to  each  other,  using  their 
+awareness  of  others‟  location  to  avoid  going  in  the  same 
+direction.  Others  appear  to  drift  in  and  out  of  awareness 
+without 
+premature 
+disengagement with exhibits in order to maintain an overall 
+
+noticeable 
+
+any 
+
+detriment 
+
+or 
+
+Our  findings  suggest  that  perhaps  group  cohesion  and 
+coherence in museum visiting are not as straightforward as 
+previously  thought.  Groups  were  able  to  engage  fully  with 
+our  experience  despite  not  always  being  physically 
+proximate  or  within  line  of  sight.  Having  a  shared  set  of 
+content,  that  was  generated  through  reflecting  on  the 
+group‟s  social  relationships,  and  knowing  the  experience 
+was limited to the list of objects they all shared, appeared to 
+break down the need to be constantly aware of each other‟s 
+whereabouts. Coherence might then be better thought of as 
+a  more  esoteric  property  that  comes  about  as  a  result  of 
+tight  social  cohesiveness  (the  groups  were  existing  friends 
+or  family),  being  focused  on  the  same  task  (all  group 
+members  were  engaging  with,  and  invested  in,  the  visiting 
+experience),  and  some  kind  of  spoken  or  unspoken 
+agreement  about  how  closely  they  would  stay  together 
+during the visit (some visitors announced their plans to visit 
+separately while others did not). Furthermore, the notion of 
+coherence  might  be  extended  to  encompass  the  entire 
+experience  rather  than  the  state  of  the  participants  at  any 
+one  moment. It  may  not  matter if  visitors temporarily  split 
+up  if  the  wider  nature  of  their  experience  is  sufficiently 
+coherent  that  they  are  comfortable  that  they  will  soon  be 
+able to rejoin. 
+
+CONCLUSIONS, LIMITATIONS AND FUTURE WORK 
+Tolmie‟s  previous  ethnographic  study  of 
+two  major 
+museums  revealed  the  significant  problems  facing  both 
+visitors  and  curators  as  groups  of  visitors  struggled  to 
+balance  their  engagement  with  exhibits  with  the  need  to 
+attend to one another – often to the detriment of the former. 
+In  response,  we  have  demonstrated  how  the  previously 
+proposed approach of gifting experiences can be extended – 
+through  reciprocity  and  concealed  identity  –  to  potentially 
+mitigate  these  problems  and  deliver  a  group  visiting 
+experience 
+that  engages  groups  with  content  while 
+remaining flexible to how they organize themselves locally. 
+However,  it  is  important  to  note  several  limitations  of  our 
+study  that  need  to  be  considered  and  addressed  in  future 
+work before we can fully understand whether this approach 
+can be successful and also how it might best be applied. 
+
+to  success  compared 
+
+First, we have not undertaken a controlled study to compare 
+our approach with others and so need to be careful with any 
+claims 
+the  current  visiting 
+experience  or  other  approaches.  Having  said  this,  the 
+curators  we  engaged  with  at  our  museum  setting  reported 
+that  the  rooms  in  which  we  worked  were  notable  as  being 
+their  most  problematic  in  terms  of  engagement  with 
+exhibits  for  groups.  Tolmie‟s  study  revealed  the  common 
+
+to 
+
+10
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+challenges  of  group  visiting  over  many  groups  in  two 
+different museums, albeit ones that were larger in scale and 
+complexity  and  also  more  crowded.  Moreover,  our 
+participants were clearly taking part in a research study and 
+so may well have behaved more coherently as a result. It is 
+important to deploy our approach naturally „in the wild‟ in 
+future  work,  and  to  allow  for  different  types  of  group 
+beyond  families  and  close  friends,  who  may  well  behave 
+differently.  
+
+Our  approach  requires  participants  to  engage  significant 
+effort  at  the  design  stage,  raising  questions  as  to  whether 
+they  will be  willing to do this and also how  would it scale 
+to  large  numbers  of  exhibits  and/or  visitors.  Future  work 
+needs  to  explore  how  visitors  can  be  supported  in  readily 
+creating  experiences  from  templates,  for  example  through 
+an  online  service.  How  can  the  design  stage  as  well  as  the 
+visit stage be scaffolded? Will it be acceptable or useful to 
+share designs more publicly as inspiration to others?  
+
+Given  these  caveats,  we  do  not  claim  our  approach  as  a 
+panacea  for  designing  group  visits  to  museums.  Indeed, 
+although we positioned it as something of an alternative to 
+more  directed  approaches  earlier  on,  we  foresee  that  it 
+might  ultimately  be  combined  with  these  as  part  of  the 
+curator‟s  armory  of  techniques  and  technologies.  Perhaps 
+gifted experiences will form only a part of an  overall visit, 
+applying to a few selected artifacts, or perhaps they will be 
+for special  visitors or occasions (a birthday treat?). Gifting 
+may  fit  repeat  visits,  with  those  who  have  experienced  the 
+museum  being  able  to  design  experiences  for  family  or 
+friends? And perhaps gifting templates need to be combined 
+with  other  technologies  such  as  recommender  systems  to 
+help  people  design  their  gifts?  To  conclude,  then,  we 
+suggest  that  our  study  confirms  the  initial  promise  of  the 
+gifting approach, at least to support small-group  visits, but 
+that many questions remain open for further exploration. 
+
+ACKNOWLEDGMENTS 
+Lesley  Fosh  is  supported  by  the  Horizon  Centre  for 
+Doctoral Training at the University of Nottingham (RCUK 
+Grant  No.  EP/G037574/1).  This  work  was  also  supported 
+by the Platform Grant award EP/FO3038X/1. 
+
+REFERENCES 
+1.  Paul M. Aoki, Rebecca E. Grinter, Amy Hurst, Margaret 
+H.  Szymanski,  James  D.  Thornton,  Allison  Woodruff. 
+2002.  Sotto  voce:  exploring 
+interplay  of 
+conversation  and  mobile  audio  spaces.  In  Proceedings 
+of  the  SIGCHI  Conference  on  Human  Factors  in 
+Computing Systems (CHI ‟02), 431-438.  
+http://doi.acm.org/10.1145/503376.503454 
+
+the 
+
+2.  Appfurnace Website. 2015. http://appfurnace.com. 
+3.  Steve Benford, Gabriella Giannachi, Boriana Koleva, 
+Tom Rodden . 2009. From Interaction to Trajectories: 
+designing coherent journeys through user experiences. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI ‟09),  709-718.  
+
+http://doi.acm.org/10.1145/1518701.1518812 
+
+4.  Charles  Callaway,  Oliviero  Stock,  Elyon  Dekoven, 
+Kinneret  Noy,  Yael  Citron,  Yael  Dobrin.  2011.  Mobile 
+Drama  in  an  Instrumented  Museum:  Inducing  Group 
+Conversation 
+In 
+Proceedings  of  the  16th  International  Conference  on 
+Intelligent User Interfaces (IUI ‟11), 73-82. 
+http://doi.acm.org/10.1145/1943403.1943416 
+
+via  Coordinated  Narratives. 
+
+5.  Dan  Cosley,  Joel  Lewenstein,  Andrew  Herman,  Jenna 
+Holloway,  Jonathan  Baxter,  Saeko  Nomura,  Kirsten 
+Boehner,  Geri  Gay.  2008.  ArtLinks:  fostering  social 
+awareness and reflection in museums. In Proceedings of 
+the  SIGCHI  Conference  on  Human  Factors 
+in 
+Computing Systems (CHI ‟08), 403-412. 
+http://doi.acm.org/10.1145/1357054.1357121 
+
+6.  Andy Crabtree,  Alan  Chamberlain,  Rebecca E. Grinter, 
+Matt  Jones,  Tom  Rodden,  Yvonne  Rogers.  2013. 
+Introduction  to  the  Special  Issue  of  “The  Turn  to  The 
+Wild”.  Transactions  on  Computer-Human  Interaction. 
+20, 3, 4 pages. 
+http://doi.acm.org/ 10.1145/2491500.2491501 
+
+7.  Kevin  Crowley,  Maureen  A.  Callanan,  Jennifer  L. 
+Jipson,  Jodi  Galco,  Karen  Topping  and  Jeff  Shrager. 
+2001.  Shared 
+everyday 
+parent‐child  activity. Science  Education.   85,  6,  712-
+732. http://dx.doi.org/10.1002/sce.1035 
+
+scientific 
+
+thinking 
+
+in 
+
+8.  John  H  Falk  and  Lynn  D  Dierking.  1992.  The  Museum 
+
+Experience, Whalesback Books, Washington. 
+
+9.  Lesley  Fosh,  Steve  Benford,  Stuart  Reeves,  Boriana 
+Koleva,  and  Patrick  Brundell.  2013.  See  Me,  Feel  Me, 
+Touch Me, Hear Me: Trajectories And Interpretation In 
+A  Sculpture  Garden.  In  Proceedings  of  the  SIGCHI 
+Conference  on  Human  Factors  in  Computing  Systems 
+(CHI ‟13), 149-158. 
+http://doi.acm.org/10.1145/2470654.2470675 
+
+10. Lesley Fosh, Steve Benford, Stuart Reeves, and Boriana 
+
+Koleva. 2014. Gifting Personal Interpretations in 
+Galleries. In Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems (CHI ‟14), 625-
+634. http://doi.acm.org/10.1145/2556288.2557259 
+
+11. Geller, T. (2006). Interactive tabletop exhibits in 
+museums and galleries. Computer Graphics and 
+Applications. 26, 5, 6–11. 
+http://dx.doi.org/10.1109/MCG.2006.111 
+
+12. Rebecca  E.  Grinter,  Paul  M.  Aoki,  Margaret  H. 
+Szymanski, James D. Thornton, Allison Woodruff, Amy 
+Hurst.  2002.  Revisiting  the  visit:  understanding  how 
+technology can shape the museum visit. In Proceedings 
+of 
+the  ACM  conference  on  Computer  Supported 
+Cooperative Work (CSCW ‟02), 146-155. 
+http://doi.acm.org/10.1145/587078.587100 
+
+13. Edward  T.  Hall.  1966.  The  Hidden  Dimension.  Anchor 
+
+Books. 
+
+14. Adrian  Hazzard,  Steve  Benford,  Gary  Burnett.  2015. 
+Sculpting a Mobile Musical Soundtrack. In Proceedings 
+of  the  SIGCHI  Conference  on  Human  Factors  in 
+Computing Systems (CHI ‟15), 387-396. 
+
+11
+
+http://doi.acm.org/10.1145/2702123.2702236 
+
+15. Tom  Hope,  Yoshiyuki  Nakamura,  Toru  Takahashi, 
+Atsushi  Nobayashi,  Shota  Fukuoka,  Masahiro 
+Hamasaki,  Takuichi  Nishimura.  2009.  Familial 
+collaborations  in  a  museum.  In  Proceedings  of  the 
+SIGCHI  Conference  on  Human  Factors  in  Computing 
+Systems (CHI ‟09),  1963-1972. 
+ http://doi.acm.org/10.1145/1518701.1519000 
+
+16. Tsvi  Kuflik  and  Eyal  Dim.  2013.  Early  Detection  of 
+Pairs  of  Visitors  by  Using  a  Museum  Triage. 
+In Museums and the Web 2013, N. Proctor & R. Cherry 
+(eds). Silver Spring, MD.  
+
+17. David  Martin.  2002.  Audio  Guides.  Museum  Practice. 
+
+5, 1, 71-81. 
+
+18. Marcel  Mauss. 1990. The gift: the form and reason for 
+
+exchange in archaic societies. London: Routledge 
+Classics.  
+
+19. Paulette  M.  McManus.  1987.  It's  the  company  you 
+keep…:  The  social  determination  of  learning‐related 
+behaviour  in  a  science  museum. Museum  Management 
+and Curatorship. 6, 3, 263-270. 
+20. Sanjay  Purushotham,  C.-C. 
+
+Junaith 
+Shahabdeen,  Lama  Nachman.  2014.  Collaborative 
+Group-Activity  Recommendation  in  Location-Based 
+Social  Networks.  In  Proceedings  of  the  SIGSPATIAL 
+and 
+International  Workshop  on  Crowdsourced 
+Volunteered 
+Information, 
+8-15. 
+http://doi.acm.org/10.1145/2676440.2676442 
+
+Geographic 
+
+Jay  Kuo, 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Conference  on  Embedded  Network  Sensor  Systems 
+(SenSys ‟14), 46-60. 
+http://doi.acm.org/10.1145/2668332.2668340 
+
+24. John F. Sherry Jr. 1983. Gift giving in anthropological 
+perspective. Journal of Consumer Research 10(2). 157-
+168.  
+
+25. Nina  Simon.  2010.  The  Participatory  Museum. 
+
+Museums 2.0. 
+
+26. Flavia Sparacino. 2002. The Museum Wearable: Real-
+
+Time Sensor-Driven Understanding of Visitors Interests 
+for Personalized Visually-Augmented Museum 
+Experiences. In Museums and the Web 2002, N. Proctor 
+& R. Cherry (eds). Silver Spring, MD.  
+
+27. Robyn  Taylor,  Guy  Schofield,  John  Shearer,  Peter 
+Wright,  Pierre  Boulanger,  and  Patrick  Olivier.   2014. 
+Nightingallery: Theatrical Framing and Orchestration in 
+Performance.  Personal  Ubiquitous 
+Participatory 
+Computing. 18, 7, 1583–1600.  
+
+28.  Peter  Tolmie,  Steve  Benford,  Chris  Greenhalgh,  Tom 
+Rodden,  Stuart  Reeves.  2014.  Supporting  Group 
+Interactions  in  Museum  Visiting,  In  Proceedings  of  the 
+ACM  Conference  on  Computer  Supported  Cooperative 
+Work (CSCW ‟14), 1049-1059.  
+http://doi.acm.org/10.1145/2531602.2531619 
+
+29. Eliseo  Véron 
+
+and  Martine  Levasseur. 
+
+1989. 
+Ethnographie  de  l’exposition:  l'espace,  le  corps  et  le 
+sens, Centre Georges Pompidou, Bibliothèque publique 
+d'information. 
+
+21. Jessica S. Robles. 2012. Troubles with assessments in 
+gifting occasions, Discourse Studies. 14, 6, 753-777.  
+
+22. Victoria  L.  Schwanda,  Kyle  Barron,  Jennifer  Lien, 
+Gretchen  Schroeder,  Ashley  Vernon,  Jeffrey  T. 
+Hancock.  2011.  Temporal  Patterns  of  Cohesiveness  in 
+Virtual Groups. In Proceedings of the ACM Conference 
+on  Computer  Supported  Cooperative  Work  (CSCW 
+‟11),709-712. 
+http://doi.acm.org/10.1145/1958824.1958951 
+
+23. Rijurekha  Sen,  Youngki  Lee,  Kasthuri  Jayarajah, 
+Archan  Misra,  Rajesh  Krishna  Balan  2014.  GruMon: 
+Fast and Accurate Group Monitoring for Heterogeneous 
+Urban  Spaces.  In  Proceedings  of  the  12th  ACM 
+
+30. Dirk  vom  Lehn,  Christian  Heath  and  Jon  Hindmarsh. 
+2001. Exhibiting interaction: Conduct and collaboration 
+in  museums  and  galleries. Symbolic  Interaction.  24,  2, 
+189-216. 
+
+31. David  B.  Wooten.  2000.  Qualitative  Steps  toward  an 
+Expanded  Model  of  Anxiety  in  Gift‐Giving. Journal  of 
+Consumer Research. 27, 1, 84-95. 
+
+32. Nicola Yuill and Yvonne Rogers. 2012. Mechanisms for 
+Collaboration: A Design and Evaluation Framework for 
+Multi-User  Interfaces.  Transactions  on  Computer-
+Human Interaction. 19, 1, 25 pages.  
+http://doi.acm.org/10.1145/2147783.2147784
+
+ 
+
+12
+
+

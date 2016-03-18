@@ -1,0 +1,1805 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+One and Done: Factors affecting one-time contributors to
+
+ad-hoc online communities
+
+Brian J. McInnis1, Elizabeth L. Murnane1, Dmitry Epstein2, Dan Cosley1, Gilly Leshed1
+
+1Information Science, Cornell University, 2University of Illinois at Chicago
+
+1{bjm277, elm236, drc44, gl87}@cornell.edu, 2dmitry@uic.edu
+
+ABSTRACT
+Often, attention to “community” focuses on motivating core
+members or helping newcomers become regulars. However,
+much of the trafﬁc to online communities comes from peo-
+ple who visit only brieﬂy. We hypothesize that their personal
+characteristics, design elements of the site, and others’ activ-
+ity all affect the contributions these “one-timers” make. We
+present the results from an experiment asking Amazon Me-
+chanical Turk (“AMT”) workers to comment on the AMT par-
+ticipation agreement in a discussion forum. One-timers with
+stronger ties to other Turkers or feelings of trust for Amazon
+are more likely to leave more — but shorter and less rele-
+vant — comments, while those with higher self-efﬁcacy leave
+longer and more relevant comments. The phrasing of prompts
+also matters; a general appeal for personally-reﬂective contri-
+butions leads to comments that are less relevant to community
+discussion topics. Finally, activity matters too; synchronous
+activity begets responses, while pre-existing content tends to
+suppress them. These ﬁndings suggest design moves that can
+help communities harness this “long tail” of contribution.
+
+Author Keywords
+Online community; One-time participation; Amazon
+Mechanical Turk
+
+ACM Classiﬁcation Keywords
+H.5.m. Information Interfaces and Presentation (e.g. HCI):
+Miscellaneous
+
+INTRODUCTION
+The “long tail” of participation is a well-established observa-
+tion in the study of content-oriented online communities [43].
+For example, most registered Wikipedia users make only one
+or a few edits during their ﬁrst 24 hours of membership and
+then never return [37]. Q&A forums and discussion boards
+have similar dynamics, with many members posting exactly
+one question [20] or comment [53].
+These “one-time”, low-volume contributors matter. In Reg-
+ulationRoom, an online platform designed to help citizens
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full cita-
+tion on the ﬁrst page. Copyrights for components of this work owned by others than
+ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or re-
+publish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA
+Copyright © 2016 ACM ISBN 978-1-4503-3592-8/16/02 $15.00.
+DOI: http://dx.doi.org/10.1145/2818048.2820075
+
+609
+
+discuss proposed federal regulations [12], over two thirds of
+contributors to a recent policy discussion were one-timers,
+contributing over one third of the comments.
+In the Stack
+Overﬂow family of sites, although frequent users provide
+many answers, a large fraction of questions come from one-
+timers [32]. Even in communities with large, active cores,
+one-timers matter. An informal study by Aaron Swartz sug-
+gests that in Wikipedia, substantive contributions to articles
+often come from infrequent contributors and are then inte-
+grated into Wikipedia by core members [50].
+One-timers may play an especially important role when the
+online community is more temporary or ad-hoc. Protest
+movements, disaster relief efforts, and civic participation fo-
+rums often arise around a cause and exist for a short time [14,
+48], which makes it difﬁcult both to accumulate a core set
+of members and to develop, teach, and enforce norms. Since
+time is of the essence to such ad-hoc communities, it is espe-
+cially important that one-timers get their contribution right.
+Generally, these one-time contributors do not spend time
+lurking on the website and learning the ropes [38], nor do they
+learn from feedback about their contributions [27] or move
+from the periphery of the community toward the core [4]. In-
+stead, they make their contribution and move along. Thus,
+mechanisms such as badges, reputation systems, feedback,
+and moderation that are commonly used to socialize newcom-
+ers, encourage their contributions, and regulate their behav-
+iors [24] are unlikely to help these transient but potentially
+valuable one-timers. Different strategies are therefore needed
+to maximize the value that both one-timers and the commu-
+nity might gain from their brief visit to an online space.
+To learn more about factors that affect one-timers’ contribu-
+tions, we conducted an experiment in which Amazon Me-
+chanical Turk workers (“Turkers”) were asked to spend ten
+minutes testing the interface of a RegulationRoom-like site
+that presented the Amazon Mechanical Turk (“AMT”) Par-
+ticipation Agreement as the policy under discussion (see Fig-
+ure 1). We looked at how many comments and words com-
+menters posted, as well as a hand-coded measure of comment
+responsiveness that reﬂects how closely each comment re-
+sponds to the norms of a community discussion topic.
+Participants’ behavior offers insights about how personal
+characteristics, design elements, and social activity affect
+what a person contributes. At the level of personal character-
+istics, we found that participants with stronger connections
+to other Turkers and higher trust in AMT made more, but
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Second, the site design presents the subtopics as expandable
+folder webpages, supporting attention to speciﬁc aspects of
+interest while providing context. Subtopic pages have two
+columns, one with the sub-topic text, the other with a com-
+ment thread devoted to that subtopic. The purpose of this two-
+column design is to orient people toward making comments
+relevant to speciﬁc subtopics. Figure 1 shows a screenshot of
+the RegulationRoom-inspired interface used in the study.
+Third, RegulationRoom relies on a team of graduate (mostly
+law) students trained in facilitation, conﬂict resolution, and
+the substance of the ongoing consultation. Their goals are to
+elicit effective feedback and engage commenters. Moderators
+monitor the discussion, welcome newcomers, and respond to
+comments with guidance about effective participation. This
+guidance is needed because comments in RegulationRoom
+are often missing needed information; opinions are often un-
+supported by facts or personal experiences, or comments do
+not address the speciﬁc issues being presented.
+However, for one-timers, who do not return after comment-
+ing, this guidance is not helpful because it will never be seen
+— and most RegulationRoom visitors are one-timers. Ap-
+proximately two-thirds of visitors are one-timers, and they
+contribute just over one-third of the total comments; roughly
+40% of participants post just one comment. Only one-third
+of commenters who receive moderator feedback came back
+to post again. Even in the most popular consultation to date,
+contributors’ median visit duration was one day, and over
+one-third of all comments were made by one-timers.
+
+RELATED WORK
+The overarching question of our work is: What factors con-
+tribute to valuable one-time participation? By valuable we
+mean both more contributions and contributions that are re-
+sponsive to the norms of the community and the goals of
+the discussion. Previous literature has identiﬁed a number
+of factors that might affect one-timers’ contributions, which
+we group into three broad categories: personal characteris-
+tics, design elements, and others’ activity.
+
+Personal Characteristics
+Several aspects of a person’s characteristics and background
+have been shown to affect how people contribute to commu-
+nities. Key among these is personal interest in the topic of the
+community, which provides intrinsic motivation to participate
+[33]. Thus, many communities recruit members with a topi-
+cal interest in the group [10, 36]. We designed this into our
+experiment, asking Turkers to comment on a policy of direct
+interest to them: the AMT Participation Agreement. Turkers
+were also compensated, providing extrinsic motivation. Since
+the design encouraged participants to have strong motivation
+and since the value of intrinsic motivation is well-established,
+we do not focus on motivation in this study.
+
+less responsive, comments. By contrast, participants who
+reported higher self-efﬁcacy made longer and more respon-
+sive comments. At the design level, we varied the default
+“placeholder” text inside the comment box with the goal of
+guiding one-timer contributions in several ways. However,
+varying this text did not affect commenting quantity; further,
+prompts that called for participants to reﬂect on their experi-
+ence as Turkers were associated with lower levels of respon-
+siveness. Finally, we measured the effects of social activity
+by examining comments other Turkers added before and dur-
+ing a participant’s interaction with the site. The presence of
+more pre-existing comments (added before the Turker entered
+the site) reduced commenting, while comments that appeared
+during a Turker’s visit increased it. Further, pre-existing com-
+ments with low responsiveness to the policy predicted higher
+responsiveness, and vice versa.
+Below, we ﬁrst introduce RegulationRoom, the example that
+motivated our questions and experiment, then discuss the re-
+lated work on personal, design, and activity factors that in-
+ﬂuence one-timers’ contributions. We then present our study,
+its ﬁndings, and their design implications around addressing
+those factors. We conclude with limitations of our study and
+future research toward understanding and supporting the long
+tail of one-timers in online communities.
+
+REGULATIONROOM: A MOTIVATING EXAMPLE
+RegulationRoom1 is the online policy deliberation platform
+[12] that inspired us both to consider one-timers and to de-
+sign our experiment. Working with federal agencies such
+as the Department of Transportation, RegulationRoom hosts
+consultations on federal policy proposals, each lasting a few
+months. Visitors can comment on proposed regulations, shar-
+ing both experiences and knowledge that policymakers can
+use in the regulation-making process. The project seeks to
+engage individuals directly affected by the proposed poli-
+cies, especially those unlikely to participate in existing public
+consultation processes. For example, in a 2010 consultation
+around Electronic On-Board Recorders in trucks, the project
+sought input from individual truck drivers who are tradition-
+ally less likely to participate than industry lobbyists.
+This goal of including novice participants comes with chal-
+lenges, including helping people realize they should con-
+tribute and translating the “legalese” of federal policies into
+material that is accessible to a layperson [12]. The design
+of RegulationRoom addresses these challenges through care-
+ful presentation of information, tight ties between agency-
+provided information and comments, and human facilitation.
+First, the information presented is crafted to be accessible to
+the public and to focus on speciﬁc issues. To do this, the Reg-
+ulationRoom team “translates” proposed regulations to plain
+English, segments them into topics and subtopics, and con-
+nects them to the original policy documents. With agency in-
+put, the team also poses speciﬁc questions that appear at the
+bottom of each subtopic to guide contributors as they com-
+ment on the proposed policy.
+
+1http://www.regulationroom.org
+
+610
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+Figure 1. User interface screenshot, showing the policy (left) and commenting interface (right) for the ﬁrst subtopic under the Payment for Work topic.
+Users can freely move between topics and subtopics using the controls at the top and bottom of the interface. The default text “Make a Comment” is
+visible in the comment-entry box.
+
+611
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Instead, we look at factors associated with people’s evalua-
+tions of the community. In particular, people who feel a sense
+of connection to other community members or to the group as
+a whole may be more motivated to contribute. In civic partic-
+ipation contexts, for instance, people who have existing rela-
+tionships with groups related to a policy area contribute more
+in discussions [23]. In the context of a discussion by Turkers
+around the AMT Participation Agreement, this would refer
+to participants’ connections with other Turkers. Also, people
+are more likely to be active participants when they perceive
+the decision-making institution as trustworthy, fair, and legit-
+imate — i.e. have greater institutional trust [51, 18]. In our
+context, this refers to participants’ trust in AMT to treat them
+fairly.
+Finally, a person’s belief in their ability to make useful con-
+tributions matters. Although people may know information
+or have opinions and experiences related to a policy area,
+they may feel unable to express these feelings in a policy dis-
+cussion. This belief in one’s own capability to complete a
+task or perform successfully is referred to as self-efﬁcacy [1],
+and perceptions of self-efﬁcacy have been shown to enhance
+engagement in online political contexts [19]. We therefore
+hypothesize that one-timers’ personal characteristics around
+connection to the community of Turkers, trust in AMT, and
+self-efﬁcacy will inﬂuence the number, length, and respon-
+siveness of their contributions.
+H1a: Participants who are more strongly connected to other
+Turkers will be ”better contributors” (i.e., make more, longer,
+and more responsive contributions).
+H1b: Participants who have higher trust in AMT will be bet-
+ter contributors.
+H1c: Participants with a higher sense of self-efﬁcacy will be
+better contributors.
+
+Design Elements
+A number of studies have shown that site design features can
+inﬂuence newcomers’ initial contributions. For example, re-
+moving barriers to participation such as the need to create
+an account can scaffold initial contributions [4]. The over-
+all feel of the site can also signal norms of contribution. For
+instance, a friendly atmosphere can encourage newcomers to
+ask questions [34], while a professional design can lead to
+posting more thoughtful comments versus an unprofession-
+ally designed site [49]. Even design decisions that seem sub-
+tle can affect contribution behavior; making the “edit” tab
+visible at the top of a wiki page signals that contributions
+are possible [4], a bigger comment box leads to longer, more
+thoughtful comments [49], and though pop-up windows can
+be annoying, they are effective short-term mechanisms to in-
+crease commenting [53].
+In this study, we focus on the effect of explicit guidance, pre-
+sented via the placeholder text inside the comment box. Such
+text is often used as a subtle prompt to instruct users about
+what kind of information is required (e.g., date, email ad-
+dress, numeric formats). Although the placeholder text may
+be barely noticed and disappears as soon as a user begins typ-
+
+ing, psychology research suggests that it may prime people’s
+behavior [2]. In particular, the default text can signal behav-
+ioral norms and guide individuals toward desired behaviors
+[8]. This design element may thus be especially important
+for one-timers, whose limited experience means they must
+rely on design cues to understand contribution norms.
+the current default text is a generic
+In RegulationRoom,
+“Make a comment”. This is a clear call to action, but it does
+not say how to take effective action. We hypothesize that de-
+fault text that explains the overall goal of a comment (for ex-
+ample, asking the commenter to read the policy and connect
+it to their personal experiences) will reduce ambiguity around
+expectations and increase the amount of contributions. Fur-
+ther, we hypothesize that default text that calls for addressing
+the speciﬁc issues being discussed (for example, by asking a
+speciﬁc question related to the policy section being viewed)
+will elicit comments that are more responsive to these issues.
+H2a. Participants who see a default text prompt that de-
+scribes the overall goals of a comment will make more and
+longer contributions than those who see a generic prompt.
+H2b. Participants who see a default text prompt with a spe-
+ciﬁc request will make comments that are more responsive to
+the request than those who see a generic prompt.
+
+Social Activity
+Online communities have a long tradition in applying prin-
+ciples from social psychology research on social inﬂuence
+(e.g., compliance with social norms [9]) to shape participants’
+contribution behaviors. Responses to one’s contributions, for
+example, may affect the quantity and quality of future con-
+tributions [7, 27]. Such feedback may increase (or reduce)
+one-time contributors’ willingness to return—but it has little
+impact on the quality of those initial contributions, which are
+often the only contributions one-timers provide.
+Still, people might be inﬂuenced when they see others’ con-
+tributions before or during their visit, and these contributions
+are generally made visible by default (though, perhaps ﬁltered
+by posting time or distributed moderation via others’ votes
+[28]). Even if one-timers do not lurk prior to commenting,
+the comments that are visible do provide some insight into
+the community’s norms, which people often want to comply
+with [9]. Thus, we see others’ activity as likely to affect both
+the quantity and responsiveness of one-timers’ contributions.
+On the quantity side, there is tension between too little and
+too much content in an online forum. On one hand, more
+messages, higher member turnover, and varying levels of
+member contributions have been shown to predict longer on-
+line group lifespans [40]. This suggests that lively groups
+with higher contribution levels may be especially welcoming
+to one-timers and signal an expectation of more contributions.
+On the other hand, too much pre-existing content might deter
+one-timers from contributing if they feel that they have noth-
+ing to add, a common reason people lurk in discussion fora
+[15, 38]. In synchronous settings, seeing posts appear might
+encourage responses, but rapid post volumes might make the
+conversation too hard to follow [46].
+
+612
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+In many civic participation communities, the problem is more
+likely to be not enough content rather than too much. Thus,
+we expect that seeing others’ activity has more beneﬁts than
+risks and that on balance, both pre-existing and synchronous
+activity will positively affect how much people contribute.
+On the responsiveness side, previous studies have shown that
+participants post comments similar to what they see on the
+site — e.g., thoughtful [49], factual [47], or personal [31].
+Thus, we predict that participants will mimic the responsive-
+ness of the comments they see posted by others.
+H3a: Participants who enter a site with more pre-existing
+content will contribute more and longer comments.
+H3b: Participants who see more synchronously added con-
+tent will contribute more and longer comments.
+H3c: Participants’ comments will tend to be more or less re-
+sponsive when they see more or less responsive comments.
+
+STUDY DESIGN: TURKERS ON AMT POLICY
+Our original goal was to study the commenting behavior
+of one-timers in RegulationRoom itself. However, its visi-
+tors are reluctant to spend time answering surveys, plus we
+did not want to adversely affect an actual policy discussion
+through design manipulations. Thus, to test these hypothe-
+ses we developed a study in which Turkers participated in an
+online commenting task based on the RegulationRoom de-
+sign and focused on the AMT Participation Agreement2. We
+chose this population and topic because it created a context
+where participants would have interest in, experience with,
+and opinions about the subject matter [25]. Unlike existing
+HCI/CSCW research that has explicitly asked for a Turker
+perspective about crowdsourcing to propose seller tools [45]
+or to discuss crowdwork ethics [44], we designed our study so
+that Turkers would not be more motivated to accept our ”hu-
+man intelligence task” (HIT) on AMT over another because
+of the topic.
+
+Materials
+The discussion interface, shown in Figure 1, is a near-clone
+of RegulationRoom. We kept the site organization and design
+but removed external links and links to other policy discus-
+sions. The same team that prepares policy documents for de-
+liberation in RegulationRoom processed the AMT Participa-
+tion Agreement for the experiment. They ﬁrst chose the parts
+of the Participation Agreement that were relevant to Turkers,
+removing pieces aimed at task requesters. They then sum-
+marized parts into plain English and divided them into three
+topics, each of which had two to three subtopics. For each
+subtopic they created a set of 2–3 questions that ask for the
+Turkers’ input about that subtopic. In total there were eight
+subtopics: Turker employment status, ownership of work, re-
+jected HITs, paying for HITs, delayed payments, complying
+with tax laws, AMT’s hands-off approach, and revealing per-
+sonal information to requesters. An example of a topic, a
+subtopic, and the questions appear in Figure 1.
+
+2http://www.mturk.com/mturk/conditionsofuse
+
+613
+
+Procedure
+We posted the task on Mechanical Turk as a “UI experience”
+study, framing it that way to avoid priming participants to
+think explicitly about their commenting behavior. We limited
+participation to US-based Turkers and used AMT workerIDs
+to reduce the chance that people would participate multiple
+times. Participants ﬁrst completed a consent form and then
+a pre-experience survey with questions about personal char-
+acteristics driven by our hypotheses, including involvement
+with other Turkers, institutional trust in AMT, and percep-
+tions of self-efﬁcacy. After completing the survey, partici-
+pants were directed to the currently running instance of the
+interface — a “room”. When the current room reached 10
+participants, it was closed and a new room spawned. Par-
+ticipants could only view the comments made by others in
+their room; having a number of such independent rooms, with
+Turkers entering earlier and later in the lifespan of the room,
+allowed us to see how people behaved when seeing a variety
+of levels of social activity.
+Once directed to the room, participants were asked to inter-
+act with the interface for 10 minutes. Participants could go
+to pages corresponding to the policy topics, open subtopics
+and read them, read comments written by other Turkers in the
+room, and write comments. We did not explicitly ask par-
+ticipants to leave comments (or, indeed, to do any particular
+activity) in order to minimize inﬂuence on their commenting
+behavior. After 10 minutes, participants were advanced to a
+post-experience survey with questions about their interaction
+with the site, manipulation check questions for the default
+text, and attention check questions.
+We estimated the task would take 20–25 minutes to complete
+and offered up to $3 for participation, corresponding to an
+hourly wage of $7.20–$9.00. $1 was paid immediately after
+completing the task, and the other $2 for passing attention
+checks in the surveys and having reasonable latency for both
+the discussion and the surveys.
+
+Metrics
+Response Variables
+We operationalized quantity using both the number and the
+length of comments. Both the number of comments and log
+total words are measures at the participant level. Addition-
+ally, we use a hand-coded measure of each comment’s re-
+sponsiveness to characterize the relevance of the contribution
+to the sub-topics.
+• Comments (#): Total number of comments a participant
+
+posted.
+
+• Log (Words #): Because the distribution of total words was
+not normal, we used the log of the total number of words.
+• Responsiveness: Responsiveness was hand-coded on a six-
+point hierarchical scale to identify how focused a contribu-
+tion was in response to a speciﬁc subtopic and its discus-
+sion questions. Details of the coding scheme and its levels
+are available in the appendix. To simplify modeling and
+interpretation — and to align with the need of agency part-
+ners in a real RegulationRoom context for contributions to
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+speciﬁcally address questions in the subtopic — we consid-
+ered comments that explicitly address the questions (level
+5) and add new insight (level 6) as “high” responsiveness.
+Comments that were less related to the discussion ques-
+tions (levels 1–4) were coded as “low” responsiveness.
+
+Personal Characteristics
+The pre-experience survey asked participants questions about
+their connections with other Turkers (H1a), institutional trust
+in AMT (H1b), and their self-efﬁcacy (H1c) using ﬁve-point-
+scale items where 1 was low and 5 was high.
+• Turker relationships: Two items about connecting with
+other Turkers in real life and connecting with other Turkers
+through online social networks were averaged to a single
+measure (Cronbach’s α = 0.86).
+
+• Trust and fairness: Fifteen items about trusting Amazon
+Mechanical Turk, perceiving it as treating Turkers fairly,
+and political efﬁcacy with respect to Amazon Mechanical
+Turk were averaged to a single measure (α = 0.94)3.
+
+• Self-efﬁcacy: Eight scale items of generalized self-efﬁcacy
+and conﬁdence in one’s own abilities and skills [6] were
+averaged into a single measure (α = 0.92)4.
+
+Design Elements
+Each room was randomly assigned to one of three condi-
+tions, which differed only in the call-to-action message that
+appeared as the default text inside an empty comment box.
+All participants in the same room saw the same call-to-action
+message.
+• Control prompt: “Make a comment”. This is the generic
+default text that currently appears in the RegulationRoom
+site (and many others), serving as a control condition.
+
+• Overall prompt: “Read this section and tell us how it re-
+lates to you”. This prompt is designed to inform partici-
+pants of the overall goal of civic participation in policy de-
+liberation in RegulationRoom [12]: to make comments that
+are informed by the portion of the policy under discussion
+(“Read this section”) and that relate to the commenter’s
+personal experiences (“tell us how it relates to you”). Our
+intent was that this would increase commenting by making
+it easier to understand the expectations of behavior (H2a).
+• Speciﬁc prompt: For each subtopic, a 5–6 word version of
+one of the questions created for that subtopic (e.g., “What
+should be Turkers’ employment status?”). The design goal
+was to direct attention toward a speciﬁc question in order
+to increase the responsiveness of comments (H2b).
+
+3Adapted from other institutional trust studies [3, 5, 18, 21, 42, 51].
+4We chose to use generalized self-efﬁcacy as opposed to a context-
+speciﬁc self-efﬁcacy measure because research shows feelings of
+ability can translate across contexts [1]. Further, our task required
+abilities to which various speciﬁc efﬁcacy constructs are relevant
+(e.g., reading efﬁcacy, writing efﬁcacy, political efﬁcacy); if we were
+to choose one, it is unclear which would be the most appropriate to
+measure, and measuring several would introduce extra burden on
+participants.
+
+Social Activity
+When a participant started the UI experience, they could see
+comments posted by other participants assigned to the same
+room. We counted how many comments were posted by oth-
+ers in the room before (pre-existing, H3a) and during (syn-
+chronous, H3b) a participant’s time in the room; these were
+analyzed at the participant level. At the comment level, we
+measured the responsiveness of comments that were present
+in the room at the time each comment was created (H3c).
+• Pre-existing comments total: The number of comments
+
+posted by others before a participant entered the room.
+
+• Synchronous comments total: The number of comments
+
+added by others while the participant was in the room.
+
+• Pre-comment low: The number of low-responsiveness
+
+comments present in the room before a given comment.
+
+• Pre-comment high: The number of high-responsiveness
+
+comments present in the room before a given comment.
+
+Mixed-effects Nesting Factors
+Finally, we treat room as a nesting variable for all analyses,
+and we treat participant and subtopic as nesting variables for
+analyses of comment responsiveness5.
+• Room: We used room as the primary control variable in the
+analyses, to account for the effect of being in a group with
+a set of other participants and seeing their comments.
+
+• Participant: For analyses at the comment level (e.g., for re-
+sponsiveness), we used participant ID as an additional con-
+trol variable to account for the non-independence of com-
+ments by the same participant.
+
+• Subtopic: Likewise, the speciﬁc subtopic may affect con-
+tributions because certain subtopics might be more or less
+controversial or interesting. Thus, we also treated subtopic
+as a control variable for analyses at the comment level.
+
+RESULTS
+Descriptive Statistics
+Table 1 presents a high level descriptive overview of the study
+and factors. About half of the participants who started the
+task completed it. Those who completed were on average 36
+years of age, and about half identiﬁed as female. Although
+most participants chose to comment (an average of 3.4 times
+during the session), 66 people who completed the task did
+not comment. Further, through hand-coding the comments
+we identiﬁed 13 (1.1%) that reﬂected “test” type comments
+typical of UI design testing (e.g., Lorem Ipsum); however the
+vast majority were about the AMT participation agreement,
+though varied in their responsiveness.
+A total of 60 rooms were created: 19 for the control, 20 for the
+overall, and 21 for the context-speciﬁc condition. Due to task
+abandonment during the pre-survey, an average of about 7.5
+of the 10 participants assigned to a room actually completed
+5Comments and words were aggregated across all subtopics for each
+participant and analyzed at the participant level, so participant ID
+and subtopic are not used in the per-participant models of quantity.
+
+614
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+Participation
+
+Accepted HITs
+Completed HITs
+Commenters (Completed)
+Completed HIT (Did not comment)
+Commenters (Did not complete)
+Total Comments
+Total “Test” Comments
+Total Completer Comments
+Rooms Created
+
+Commenters Who Completed
+Comments per Completer
+Total Words per Completer
+Mean Responsiveness
+
+Personal Background
+
+Turker Relationships
+Trust and Fairness
+Self-Efﬁcacy
+Social Activity
+
+Room Membership
+Synchronous Members
+Pre-existing Comments
+Synchronous Comments
+Pre-comment Low
+Pre-comment High
+
+Count
+549
+329
+263
+66
+62
+1092
+13
+897
+60
+
+M (SD)
+
+3.40 (2.16)
+
+108.61 (78.12)
+
+3.36 (1.15)
+
+M (SD)
+
+1.40 (0.48)
+2.38 (0.51)
+2.29 (0.31)
+
+M (SD)
+
+7.45 (2.08)
+3.33 (2.20)
+8.74 (7.71)
+1.61 (2.62)
+3.46 (4.06)
+5.19 (4.79)
+
+Table 1. Descriptive statistics capturing user interactions through the
+experiment interface, participants’ personal characteristics based on the
+pre-survey responses, and details about social activity in the room. Num-
+bers of participants are counts; other statistics present the mean (M) and
+standard deviation (SD).
+
+Control
+M(SD)
+3.1 (1.9)
+
+Overall
+M(SD)
+3.4 (2.2)
+
+Speciﬁc
+M(SD)
+3.7 (2.3)
+
+112.6 (80.6)
+
+Comments (#)
+Words (#)
+3.1 (0.8)
+Log (Words #)
+3.3 (1.1)
+Responsiveness
+Table 2. The mean (M) and standard deviation (SD) for each response
+variable (i.e., total comments, log of total words, and responsiveness) in
+each prompt condition (control, overall, and speciﬁc).
+
+3.3 (0.7)
+3.5 (1.1)
+
+3.1 (0.9)
+3.2 (1.2)
+
+104.3 (84.4)
+
+108.7 (68.8)
+
+the UI experience, with an average of 3 people present in the
+room at any given time.
+A total of 263 participants (93 control, 83 overall, 94 context-
+speciﬁc) completed the HIT and provided at least one com-
+ment. Some 62 participants (22 control, 26 overall, 14
+context-speciﬁc) abandoned the task during the 10 minute
+period; these participants made 195 comments. We do not
+include these participants or their comments in our analy-
+sis, except in computing social activity measures (since their
+comments were visible to other commenters). Note that these
+abandoners were not statistically different in their personal
+characteristics from participants who completed the task.
+Table 2 shows the statistics for each response variable for the
+control, overall, and context-speciﬁc design conditions. Dif-
+ferences between design conditions were minimal; however,
+there were differences in both quantity and responsiveness by
+subtopic, as shown in Table 3 and Figure 2. More comments
+
+615
+
+Figure 2. Breakdown of responsiveness by subtopic. Subtopic ID num-
+bers correspond to the ID numbers referenced in Table 3. Levels 1–4
+do not directly address subtopic questions and are considered low in re-
+sponsiveness, while levels 5–6 do address and add insight to the questions
+and are considered high in responsiveness.
+
+Turker employment status
+Ownership of work
+
+ID Subtopic
+1
+2
+3 When HITs are rejected
+4
+5
+6
+7
+8
+
+How Turkers are paid
+Power to delay payment
+Complying with tax laws
+AMT’s hands-off approach
+Personal information
+
+Comments (#)
+
+228
+150
+208
+145
+106
+97
+80
+78
+
+α
+0.85
+0.823
+0.722
+0.82
+0.779
+0.736
+0.774
+0.813
+
+Table 3. The number of comments and intercoder reliability for respon-
+siveness (as measured by Krippendorf’s alpha) in each of the subtopics.
+
+were posted to earlier than later subtopics, likely due to order
+effects. Most comments were rated as high responsiveness,
+though a larger proportion of comments in subtopics 1 and 8
+were rated as low. This may be because Turkers whose pri-
+mary goal was testing or completing the task would be more
+likely to do this at the beginning and the end of the task.
+
+Model Interpretation
+As the results are discussed in terms of our hypotheses rather
+than per-model, we ﬁrst present the models and their interpre-
+tation, then present the results (see Table 4).
+To predict total comments, log total words, and responsive-
+ness, we built mixed-effects regression models using the
+personal characteristics, design elements, and social activity
+variables described above as predictors. For each model, we
+started with a “beyond optimal” model, incorporating all of
+the explanatory variables (i.e., personal background, call-to-
+action message, social activity) as well as interaction terms
+between them. We then used standard model evaluation cri-
+teria including the log-likelihood ratio test, the Akaike Infor-
+mation Criteria (AIC), and the Bayesian Information Criteria
+(BIC) to reduce the beyond optimal model. All of the inter-
+action terms dropped out of the models because they reduced
+model performance relative to the model evaluation criteria.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+A Poisson mixed-effects regression model was used to predict
+total comments, as Poisson distributions are appropriate for
+count variables that have zero probability for negative num-
+bers. As the Poisson is part of the exponential distribution
+family, the estimate reported for each parameter is its max-
+imum log-likelihood. The Incidence Rate Ratio (IRR) asso-
+ciated with each independent variable can be interpreted as
+the change in the number of comments when an independent
+variable increases by one unit and all other independent vari-
+ables are held constant at their mean value. Thus, an IRR of 1
+would indicate that an independent variable had no effect, 0.8
+would indicate that there are 0.8 times as many comments for
+every one unit increase in the speciﬁed independent variable,
+and 1.5 would indicate a 1.5 times increase in comments for
+each one unit increase in the variable.
+A standard linear mixed-effects regression model was used
+to predict the log of total words, using a normal distribution
+that ﬁt the log-transformed word counts. We then took the
+exponent for each of the coefﬁcients to interpret the expected
+values from the model in terms of word counts as the num-
+ber of expected additional or fewer words for each one unit
+increase in the explanatory variable.
+Finally, a mixed-effects logistic regression was used to pre-
+dict high and low responsiveness at the comment level, using
+a binomial distribution appropriate for binary variables. Its
+coefﬁcients are interpreted as the expected change that each
+independent variable contributes to the log-odds (or logits) of
+a comment being highly responsive. Here we have exponen-
+tiated the log-odds to present the odds-ratios. Odds ratios can
+be interpreted as the change in the response variable expected
+from a one unit increase to a speciﬁc independent variable,
+holding all others constant.
+
+Personal Characteristics
+Our ﬁrst question was about the relationship between per-
+sonal characteristics and commenting behavior. Our hypothe-
+ses were that stronger prior relationships (H1a), more trust in
+AMT (H1b), and higher self-efﬁcacy (H1c) would all be as-
+sociated with producing more comments, longer comments,
+and more responsive comments.
+Our analyses found that prior Turker relationships (H1a) and
+trust in AMT (H1b) showed a similar pattern. Both were as-
+sociated with more comments (1.16 and 1.14 times more, re-
+spectively), as expected. However, participants with higher
+trust in AMT contributed fewer words (0.79 times) — op-
+posite what we expected. The relationship to responsive-
+ness was also the reverse of what we had hypothesized for
+both trust in AMT and Turker relationships (0.68 times for
+trust and 0.73 times for Turker relationships).
+It might be
+that people who trust the system are willing to participate
+more (hence, more comments) but have less substance to add
+(hence, shorter and less responsive comments).
+Our ﬁndings show some support for H1c; self-efﬁcacy was
+associated with both longer comments (1.59 times) and
+higher responsiveness (2.37 times) but not with number of
+comments.
+
+Design Elements
+Our second question addressed how manipulation of the de-
+fault text in the comment box would affect contributions. We
+hypothesized that the overall-goals prompt would increase the
+quantity and length of comments (H2a) by giving guidance
+toward what is expected from comments overall, while spe-
+ciﬁc prompts that ask particular policy questions would in-
+crease the responsiveness of comments (H2b).
+We were wrong. H2a was unsupported; the overall prompt
+did not have a signiﬁcant effect on total comments or on
+log total words. H2b was also unsupported, with no signiﬁ-
+cant effect of the speciﬁc prompt on comment responsiveness.
+However, an interesting unpredicted effect emerged: the over-
+all prompt elicited lower focused responsiveness (0.36 times).
+To better understand this unexpected effect, we examined the
+responses from the overall prompt condition. We saw com-
+ments that provided personal stories about involvement with
+AMT but that lacked focus on the speciﬁc subtopic within the
+AMT Participation Agreement. The following is an example
+of such a comment about Turkers’ employment status:
+“I like the ability to do this as ‘extra income’ not just as a job.
+I’m not looking to be hired at pennies on the dollar, I’m just
+looking to make an extra dollar here and there. I like the time
+I can work whenever I want too and not at dedicated times.
+I feel most requesters are fair and treat me with dignity and
+respect when I have had issues in the past.”
+
+Social Activity
+Our third question was about the effects of others’ activity on
+the quantity and responsiveness of contributions.
+For quantity, we hypothesized that seeing more pre-existing
+(H3a) and synchronous (H3b) comments would lead to in-
+creases in activity. For synchronous comments this was true:
+each additional comment others posted during a participant’s
+session was associated with a 1.05 times increase in total
+comments by that participant, as well as a small but signif-
+icant increase in log total words. For pre-existing comments,
+however, the opposite was true: for each such comment, par-
+ticipants made 0.98 times as many comments and had a small
+but signiﬁcant decrease in log total words.
+For responsiveness, we expected that when comments with
+more or less responsiveness were present, new comments
+would tend to be more or less responsive accordingly (H3c).
+Our results suggest the opposite: a one unit increase in pre-
+existing low-responsiveness comments increased the proba-
+bility of a high-responsiveness comment by a factor of 1.17,
+while the presence of pre-existing high-responsiveness com-
+ments decreased the odds of a new high-responsiveness com-
+ment by a factor of 0.89.
+
+DISCUSSION AND DESIGN IMPLICATIONS
+We now discuss how these results might inform the manage-
+ment and design of communities that want to get the most
+out of their one-time contributors, followed by a discussion
+of the limitations of the study and questions for future work.
+
+616
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+Design
+
+(Intercept)
+Overall Prompt
+Speciﬁc Prompt
+
+Personal Background
+
+Turker Relationships
+Trust and Fairness
+Self-Efﬁcacy
+Social Activity
+
+Pre-existing Comments
+Synchronous Comments
+Pre-existing Low
+Pre-existing High
+
+Total Comments1
+
+Std. Error
+
+IRR
+
+Log of Total Words2
+
+Std. Error Expected Words
+
+Responsiveness3
+
+Std. Error Odds Ratio
+
+0.26
+0.09
+0.09
+
+0.07
+0.07
+0.10
+
+0.00
+0.01
+
+–
+–
+
+2.5676 ***
+1.0124
+1.1269
+
+1.1640 *
+1.1413 *
+0.9137
+
+0.9765 ***
+1.0535 ***
+–
+–
+
+0.39
+0.15
+0.14
+
+0.11
+0.09
+0.16
+
+0.00
+0.00
+
+–
+–
+
+62.9665 ***
+0.8265
+0.9095
+
+1.0241
+0.7918 *
+1.5882 **
+
+0.9994 **
+1.0013 *
+–
+–
+
+0.74
+0.35
+0.33
+
+0.18
+0.17
+0.27
+
+–
+–
+
+0.05
+0.04
+
+1.8959
+0.3553 **
+0.5929
+
+0.7308 .
+0.6827 *
+2.3762 **
+
+–
+–
+1.1765 **
+0.8893 **
+
+Table 4. Mixed effects models predicting total comments, log total words, and responsiveness. 1) Total Comments per participant is
+estimated with a Poisson mixed-effects model. 2) Log of Total Words per participant is estimated with a mixed-effects linear model. 3)
+Responsiveness per comment is estimated with a mixed-effects logistic regression.
+p-value signiﬁcance codes: ‘***’ 0.001; ‘**’ 0.01; ‘*’ 0.05; ‘.’ 0.1;
+
+Recruit Effectively with Self-Efﬁcacy
+Generalized self-efﬁcacy had a strong, positive association
+with both the length and responsiveness of comments, as pre-
+dicted by H1c. The ﬁrst step in using this ﬁnding would be
+to extend the work on predicting big ﬁve personality from
+social trace data (e.g., [22, 39]) to self-efﬁcacy, trust, and
+other context-speciﬁc characteristics. There is related work
+that uses self-efﬁcacy to predict social media use (e.g., [26]);
+that, plus our results that show an association between self-
+efﬁcacy and commenting behavior, suggest that predicting
+self-efﬁcacy from online behavior is both plausible and de-
+sirable.
+Although ﬁrst-timers will not have generated activity data in-
+side the community that might be used as a basis for pre-
+dictions, outside activity might be available. For relatively
+context-independent traits such as personality or generalized
+self-efﬁcacy, the communities might not even need to be re-
+lated; personality, for instance, can be modeled with some
+accuracy based on Facebook ”Likes” [22]. Such information
+might be available to communities that use login credentials
+from other social media sites such as Facebook, or by link-
+ing identities across communities when newcomers choose
+screen names they also use in other systems [35].
+Communities might then choose to recruit only high-efﬁcacy
+participants to increase the bang for their recruiting buck.
+This does run the risk of exclusion, though, in a kind of rich-
+get-richer scenario where only the most comfortable and con-
+ﬁdent participants contribute. Thus, when recruiting broadly
+is important (as in many civic participation contexts), these
+models could be used to identify people who disagree [30] or
+who have relevant topical interests but low self-efﬁcacy. De-
+veloping strategies for recruiting these less likely participants
+— and helping them develop self-efﬁcacy around contribut-
+ing — is an open research challenge.
+Other personal traits might be important as well. In this study,
+we saw that social connections to the community (H1a) and
+trust in the organization (H1b), were associated with more
+
+comments (supporting our hypotheses) but shorter and less
+responsive contribution (against our hypotheses). One thing
+we did not ﬁnd in this study was an effect of big ﬁve person-
+ality factors. Since some studies show that these affect vol-
+unteer contributions (e.g., [16, 17]), we had collected person-
+ality information as well. However, in models that included
+self-efﬁcacy, trust, and community connections, none of the
+personality factors were signiﬁcant. This might be because
+evidence of the effect of personality factors is mixed in prior
+studies and we got “unlucky”, or it might be that factors like
+incentives or intrinsic interest reduce the effect of personality
+variables. Our preferred interpretation though, based on the
+theoretical connections between the characteristics we cap-
+tured and contribution, is that these are more relevant than
+the big ﬁve for predicting one-timers’ contributions.
+
+Sweat the Small Design Details
+Our design of the default prompts did affect people’s
+behavior—just not in the ways we intended. Contra H2a,
+the overall prompt did not increase the number or length of
+comments (and neither did the speciﬁc prompt). Contra H2b,
+the speciﬁc prompt did not increase responsiveness, while the
+overall prompt actually led to lower responsiveness.
+Our post-hoc diagnosis is that the prompt designs were aimed
+at barriers that had been found in other civic participation
+contexts — but not directly at the criteria underlying the re-
+sponsiveness metric. For instance, recall that our “Overall
+Prompt” was intended to both call attention to a particular
+subtopic in the policy (“Read this section”) and solicit per-
+sonal experiences with it (“tell us how it relates to you”).
+The personal experiences portion was driven by observations
+in prior work on RegulationRoom that personal testimony is
+useful to policymakers and that it might be easier for people
+to contribute than information or arguments [12]. Likewise,
+our “Speciﬁc Prompt” condition consisted of short forms of
+the questions posed at the end of subtopics to help partici-
+pants address issues of direct interest to discussion owners.
+
+617
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+The responsiveness coding scheme developed as we tried to
+pin down the notion of what it meant to be a better contributor
+through looking at the actual responses we received. Related
+to the “issue-related thoughts” metric from Sukumaran et al.
+[49], the agency partners in RegulationRoom want comments
+that directly relate to the policy and help answer speciﬁc, use-
+ful questions. The responsiveness metric that evolved has
+both of those steps; level 4 refers to the subtopic text, while
+level 5 answers one of the speciﬁc questions posed. Framed
+in terms of the metric, the overall prompt supports reference
+to the text — but not to the questions, while a speciﬁc prompt
+supports reference to the question — but makes it possible to
+answer it without referring to the text. Oops.
+Designing with the responsiveness coding scheme in mind
+might have led to other prompts (e.g., “Read the text and tell
+us what you think about one of the questions it poses”) that
+might have provided more guidance, more direct connection
+to the text, and clearer links to outcome metrics. More gen-
+erally, these mismatches between design goals and metrics
+(or between theories of behavior and design implementations
+[29]) can be pernicious. Other outcome goals would demand
+their own metrics, and prompts; for instance, in a commu-
+nity that valued engaging with other commenters, the prompt
+(and other interface elements) would want to emphasize ex-
+plicit references to another person’s comment.
+Further, small details (such as the default text in the comment
+box) can have strong, unexpected impacts on behavior—a
+ﬁnding that both designers and researchers should be on their
+toes for. For instance, going back to the example engagement-
+with-others goal, one might imagine that “explicitly refer to
+another comment” versus “explicitly refer to another com-
+menter” might lead to quite different effects on the tone of
+the discussion.
+
+Create (the Right) Amount of Liveliness
+Our ﬁndings around the effect of others’ activity suggest
+that liveliness is an important characteristic that affects one-
+timers’ contributions. This effect is not as strong as that of
+personal characteristics, but it is there; aligned with H3b,
+synchronous comments increased both the number and length
+of comments6, while contra H3a the presence of pre-existing
+content reduced both.
+Designers have leeway in how to present and organize others’
+activity. Lucky communities that get “too big” could consider
+running parallel smaller communities, as in this study. This
+is infeasible if there are strong task-related (synthesis might
+require seeing all contributions) or ethical (all voices should
+be heard by all members, as might apply in a civic partic-
+ipation context) reasons to ensure that all content is visible
+to all members. However, many tasks such as brainstorm-
+ing and commenting might beneﬁt from parallel discussions
+where social inﬂuence and production blocking are reduced.
+Imagine a system that uses voting to represent community in-
+terest or approval; Sagalnik et al. [41] and Lampe et al. [28]
+6With the caveat that our discussions were fairly low-volume. Based
+on the tensions described earlier, in active systems we would hypoth-
+esize a quadratic term for liveliness: not too little, not too much, but
+“just right”.
+
+have shown that initial reactions to items can have long-term
+impacts on the attention they receive in the system. Using
+multiple parallel groups might be one way to blunt the im-
+pact of these initial conditions.
+For the too-small case, one option is to delay the presen-
+tation of pre-existing comments, making them appear syn-
+chronously. This was used in the ESPGame to support solo
+play [52]; our results suggest it should increase both the
+amount and length of commenting. A related idea would be to
+automatically post canned questions, not in the problem text
+or in the comment box, but in the form of synchronous posts
+that appear only to newcomers. These prompting questions,
+once answered, could be merged with the one-timer’s answer
+and appear as a single post by that person.
+These strategies would probably be ineffective to apply di-
+rectly to long-term contributors; the effects of strong, explicit
+calls to action quickly fade [53]. But they did increase com-
+menting in the short term, which is perfect for the use case of
+one-timers—whose comments might in turn start discussions
+among more long-term members and beneﬁt the community
+as a whole.
+
+LIMITATIONS AND FUTURE WORK
+We close with a discussion of technical considerations for
+other people doing related studies, then call out related, in-
+teresting questions that our design could not answer but that
+are fruitful sources of future work.
+
+Technical Issues
+We start with smaller choices that might have affected our re-
+sults. We think the results are robust against these, but we re-
+port them for both honesty and potential usefulness for other
+researchers.
+Our choice to assign people to rooms at the point of task ac-
+ceptance rather than at pre-survey completion meant that in
+practice our rooms were smaller than our intended sample
+size of 10, reducing the range of social activity data available
+to us. Although on average participants experienced the 10
+minute discussion environment with 3–4 other people, per-
+haps the effect of social activity would be stronger with 10
+people actively engaged within a room, or perhaps additional
+people would lead to a feeling of being “crowded” or over-
+whelmed by activity.
+We may have also blunted our ability to see large differences
+through our choice of a 10 minute window for using the site,
+right-censoring the ability of more active Turkers to engage
+with other participants and the material beyond the 10 min-
+utes. We chose 10 minutes to keep the task from being overly
+burdensome for participants, but it would be useful to validate
+these results in longer experiments (or more natural contexts).
+Browser-related errors are also common in large scale and
+interactive online experiments. Around four percent of par-
+ticipants were affected by a JavaScript bug that allowed them
+to comment for more than 10 minutes. Rather than exclude
+these participants entirely, we chose to only analyze their
+comments made within the ﬁrst 10 minutes. Additionally, the
+average usability rating of the website was only about 2.4 on
+
+618
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+a 5-point scale. Ease of use can affect how willing people are
+to interact with technologies, and this too might have affected
+our results (including the relatively low completion rate).
+
+Future Work
+We now turn to the questions that we could not answer with
+this design.
+
+How does intrinsic interest affect commenting behavior?
+A criticism of using AMT to recruit participants for lab-based
+social research is that the participants are paid to perform a
+task. We argued, and believe, that compensating Turkers to
+consider the Turk policy was an effective way to recruit an in-
+formed audience that had both extrinsic and intrinsic motiva-
+tion to participate [25]. In other words, we tried to minimize
+the effect of motivation to focus on the constructs described
+earlier. We felt comfortable about this since the importance
+of self-interest is a robust ﬁnding in the literature, but com-
+paring its effect to other factors would be useful follow-up
+work.
+
+How could an online community adapt to commenting needs?
+Sites can also “ask” the community directly for speciﬁc con-
+tent. For instance, recommending tasks that both match a
+contributor’s interests and community needs (“intelligent task
+routing”) can increase people’s contributions in Wikipedia
+[11]. Task routing itself is less appropriate for one-timers
+because they may have no interest proﬁle, but related de-
+sign strategies could help maximize their chance of making
+a useful contribution. For instance, interfaces could highlight
+discussion topics that are less well-covered by others [54]
+or present existing comments that are related to the one be-
+ing currently written; both strategies could help people avoid
+excessive duplication, as is often found in Amazon reviews
+[13]. Another way to help newcomers is to provide explicit
+guidance about how to make useful comments, for instance
+through structured templates for contribution [47].
+
+Which one-time visitors are likely to comment?
+We also chose to focus only on the behavior of people who ac-
+tually made at least one comment. There is a different—and
+useful—question that could be asked around predicting which
+one-time visitors are likely to comment as part of their visit.
+Our experimental choices of population, topic, and framing
+mean that we cannot answer that question; that is left for other
+researchers. We still see value in understanding the effects of
+these factors on the people who do comment.
+
+Ecological validity and other communities
+Finally, our decisions around Turkers, time limits, and the use
+of AMT all made sense for our interest in one-time visitors to
+an ad-hoc community and allowed us to collect survey and
+observational data that would be difﬁcult in a real community
+situation. However, with experimental control comes experi-
+mental costs. The fact that we explicitly recruited participants
+(whereas in many communities, people ﬁnd the community
+in the course of pursuing their own goals around information
+seeking) and limited participation to 10 minutes (most com-
+munities would in fact like one-timers to become repeat of-
+fenders) mean that our conditions of initial participation were
+somewhat different than they would be in most communities.
+
+619
+
+It is true that the context will affect how people contribute,
+and follow-up studies in existing communities and natural
+settings will be useful in reﬁning our understanding of that.
+Further, as raised above, questions about who decides to com-
+ment and who decides to stick around are important ones
+that we cannot answer with this study. Still, we expect our
+results to be useful both in understanding what does affect
+the behavior of one-time contributors who do decide to con-
+tribute and in providing tools for designers interested in one-
+time contributions. The elements that prior work drove us to
+study—engagement with and trust in the community, belief
+in one’s own capabilities, design elements that provide clues
+about norms, and the presence of social activity—are largely
+independent of the way people come to ﬁnd the community.
+
+CONCLUSION
+Although online communities are often supported by a strong
+core of active members, many communities — notably ad-
+hoc ones — rely on a steady stream of one-time contributors.
+Much existing research about contributions to online commu-
+nities has focused on the active core, or moving people into
+it. Here we report on an experiment to elicit more and better
+contributions from the “long tail” of one-timers.
+Our results provide several actionable factors designers might
+use to affect one-timers’ behavior: conveying an appropriate
+degree of liveliness, carefully considering outcome metrics
+in the details of feature design, and (potentially) recruiting
+members based on important personal characteristics, notably
+self-efﬁcacy. More broadly, our work calls attention to this
+long tail and the unsolved mystery of how to design for this
+large, but transient, population in online communities.
+
+ACKNOWLEDGEMENT
+the Turker participants, whose thoughtful
+We thank all
+comments inspired additional research.
+Thanks also to
+Marie Kurahashi-Sofue, Josselyn Tsai, Cynthia Farina, Mary
+Newhart, and the Cornell eRulemaking Initiative (CeRI) team
+for all their help in the project. This work is supported by NSF
+IIS 0910664, IIS 1422484, IIS 1405634, and HCC 1314778.
+
+REFERENCES
+1. Albert Bandura. 1997. Self-efﬁcacy: The exercise of
+
+control. Macmillan.
+
+2. John A Bargh, Mark Chen, and Lara Burrows.
+
+Automaticity of social behavior: Direct effects of trait
+construct and stereotype activation on action. Journal of
+personality and social psychology 71, 2 (1996), 230.
+
+3. Steven L Blader and Tom R Tyler. Testing and extending
+
+the group engagement model: linkages between social
+identity, procedural justice, economic outcomes, and
+extrarole behavior. Journal of Applied Psychology 94, 2
+(2009), 445–464.
+
+4. Susan L Bryant, Andrea Forte, and Amy Bruckman.
+
+2005. Becoming Wikipedian: transformation of
+participation in a collaborative online encyclopedia. In
+Proceedings of the 2005 international ACM SIGGROUP
+conference on Supporting group work. ACM, 1–10.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+5. Gian Vittorio Caprara, Michele Vecchione, Cristina
+
+Capanna, and Minou Mebane. Perceived political
+self-efﬁcacy: Theory, assessment, and applications.
+European Journal of Social Psychology 39, 6 (2009),
+1002–1020.
+
+6. Gilad Chen, Stanley M Gully, and Dov Eden. Validation
+
+of a new general self-efﬁcacy scale. Organizational
+research methods 4, 1 (2001), 62–83.
+
+7. Justin Cheng, Christian Danescu-Niculescu-Mizil, and
+
+Jure Leskovec. 2014. How Community Feedback
+Shapes User Behavior. In Proc. ICWSM. AAAI.
+
+8. Robert B Cialdini. Crafting normative messages to
+
+protect the environment. Current directions in
+psychological science 12, 4 (2003), 105–109.
+
+9. Robert B Cialdini, Raymond R Reno, and Carl A
+
+Kallgren. A focus theory of normative conduct:
+recycling the concept of norms to reduce littering in
+public places. Journal of personality and social
+psychology 58, 6 (1990), 1015.
+
+10. E Gil Clary, Mark Snyder, Robert D Ridge, John
+
+Copeland, Arthur A Stukas, Julie Haugen, and Peter
+Miene. Understanding and assessing the motivations of
+volunteers: a functional approach. Journal of personality
+and social psychology 74, 6 (1998), 1516.
+
+11. Dan Cosley, Dan Frankowski, Loren Terveen, and John
+Riedl. 2007. SuggestBot: using intelligent task routing
+to help people ﬁnd work in wikipedia. In Proceedings of
+the 12th international conference on Intelligent user
+interfaces. ACM, 32–41.
+
+12. Cynthia R Farina, Dmitry Epstein, Josiah Heidt, and
+
+Mary J Newhart. Designing an online civic engagement
+platform: Balancing more vs.better participation in
+complex public policymaking. International Journal of
+E-Politics (IJEP) 5, 1 (2014), 16–40.
+
+13. Eric Gilbert and Karrie Karahalios. 2010. Understanding
+
+Deja Reviewers. In Proc. of the ACM 2010 conference
+on Computer Supported Cooperative Work. ACM.
+
+14. Libby Hemphill and Andrew Roback. 2014. Tweet Acts:
+
+How Constituents Lobby Congress by Twitter. In
+Proceedings of the 17th ACM conference on Computer
+supported cooperative work & social computing. ACM.
+15. Khe Foon Hew and Noriko Hara. Knowledge sharing in
+online environments: A qualitative case study. Journal
+of the American Society for Information Science and
+Technology 58, 14 (2007), 2310–2324.
+
+16. Gary Hsieh, Youyang Hou, Ian Chen, and Khai N
+Truong. 2013. Welcome!: social and psychological
+predictors of volunteer socializers in online
+communities. In Proceedings of the 2013 conference on
+Computer supported cooperative work. ACM, 827–838.
+
+17. Tanja Jadin, Timo Gnambs, and Bernad Batinic.
+
+Personality traits and knowledge sharing in online
+
+communities. Computers in Human Behavior 29, 1
+(2013), 210–216.
+
+18. M Kent Jennings and Vicki Zeitner. Internet use and
+
+civic engagement: A longitudinal analysis. Public
+Opinion Quarterly 67, 3 (2003), 311–334.
+
+19. Gerald Jordan, Megan Pope, Patrick Wallis, and
+
+Srividya Iyer. The Relationship Between Openness to
+Experience and Willingness to Engage in Online
+Political Participation Is Inﬂuenced by News
+Consumption. Social Science Computer Review (2014),
+0894439314534590.
+
+20. Elisabeth Joyce and Robert E Kraut. Predicting
+
+continued participation in newsgroups. Journal of
+Computer-Mediated Communication 11, 3 (2006),
+723–747.
+
+21. Dan M Kahan, Paul Slovic, Donald Braman, John
+Gastil, and Geoffrey L Cohen. Affect, values, and
+nanotechnology risk perceptions: an experimental
+investigation. GWU Legal Studies Research Paper 261
+(2007).
+
+22. Michal Kosinski, David Stillwell, and Thore Graepel.
+Private traits and attributes are predictable from digital
+records of human behavior. Proceedings of the National
+Academy of Sciences 110, 15 (2013), 5802–5805.
+
+23. Robert E Kraut and Paul Resnick. Encouraging
+
+contribution to online communities. Building successful
+online communities: Evidence-based social design
+(2011), 21–76.
+
+24. Robert E Kraut, Paul Resnick, Sara Kiesler, Moira
+
+Burke, Yan Chen, Niki Kittur, Joseph Konstan, Yuqing
+Ren, and John Riedl. 2012. Building successful online
+communities: Evidence-based social design. Mit Press.
+
+25. Travis Kriplean, Michael Toomin, Jonathan Morgan,
+
+Alan Borning, and Andrew Ko. 2012. Is This What You
+Meant? Promoting Listening on the Web with Reﬂect.
+In Proceedings of the SIGCHI conference on Human
+factors in computing systems. ACM, Austin, TX.
+26. Nicole C Krmer and Stephan Winter. Impression
+management 2.0: The relationship of self-esteem,
+extraversion, self-efﬁcacy, and self-presentation within
+social networking sites. Journal of Media Psychology:
+Theories, Methods, and Applications 20, 3 (2008), 106.
+27. Cliff Lampe and Erik Johnston. 2005. Follow the (slash)
+
+dot: effects of feedback on new members in an online
+community. In Proceedings of the 2005 international
+ACM SIGGROUP conference on Supporting group
+work. ACM, Sanibel Island, FL, 11–20.
+
+28. Cliff Lampe and Paul Resnick. 2004. Slash (dot) and
+
+burn: distributed moderation in a large online
+conversation space. In Proceedings of the SIGCHI
+conference on Human factors in computing systems.
+ACM, 543–550.
+
+620
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+29. Kimberly Ling, Gerard Beenen, Pamela Ludford,
+
+Xiaoqing Wang, Klarissa Chang, Xin Li, Dan Cosley,
+Dan Frankowski, Loren Terveen, Al Mamunur Rashid,
+and others. Using social psychology to motivate
+contributions to online communities. Journal of
+Computer-Mediated Communication 10, 4 (2005).
+
+30. Pamela J Ludford, Dan Cosley, Dan Frankowski, and
+
+Loren Terveen. 2004. Think different: increasing online
+community participation using uniqueness and group
+dissimilarity. In Proc. of the SIGCHI conference on
+Human factors in computing systems. ACM, 631–638.
+
+31. Meethu Malu, Nikunj Jethi, and Dan Cosley. 2012.
+
+Encouraging personal storytelling by example. In
+Proceedings of the 2012 iConference. ACM, 611–612.
+32. Lena Mamykina, Bella Manoim, Manas Mittal, George
+
+Hripcsak, and Bj¨orn Hartmann. 2011. Design lessons
+from the fastest Q&A site in the west. In Proceedings of
+the SIGCHI conference on Human factors in computing
+systems. ACM, 2857–2866.
+
+33. Abraham Harold Maslow, Robert Frager, James
+
+Fadiman, Cynthia McReynolds, and Ruth Cox. 1970.
+Motivation and personality. Vol. 2. Harper & Row New
+York.
+
+34. Jonathan T Morgan, Siko Bouterse, Heather Walls, and
+
+Sarah Stierch. 2013. Tea and sympathy: crafting positive
+new user experiences on wikipedia. In Proceedings of
+the 2013 conference on Computer supported
+cooperative work. ACM, 839–848.
+
+35. Elizabeth L Murnane, Bernhard Haslhofer, and Carl
+Lagoze. 2013. RESLVE: leveraging user interest to
+improve entity disambiguation on short text. In
+Proceedings of the 22nd international conference on
+World Wide Web companion. International World Wide
+Web Conferences Steering Committee, 1275–1284.
+36. Oded Nov. What motivates wikipedians? Commun.
+
+ACM 50, 11 (2007), 60–64.
+
+37. Katherine Panciera, Aaron Halfaker, and Loren Terveen.
+2009. Wikipedians are born, not made: a study of power
+editors on Wikipedia. In Proceedings of the ACM 2009
+international conference on Supporting group work.
+ACM, Sanibel Island, FL, 51–60.
+
+38. Jenny Preece, Blair Nonnecke, and Dorine Andrews.
+
+The top ﬁve reasons for lurking: improving community
+experiences for everyone. Computers in human behavior
+20, 2 (2004), 201–223.
+
+39. Daniele Quercia, Michal Kosinski, David Stillwell, and
+
+Jon Crowcroft. 2011. Our Twitter proﬁles, our selves:
+Predicting personality with Twitter. In Privacy, Security,
+Risk and Trust (PASSAT) and 2011 IEEE Third
+International Conference on Social Computing
+(SocialCom). 180–185.
+
+40. Daphne R Raban, Mihai Moldovan, and Quentin Jones.
+
+2010. An empirical study of critical mass and online
+community survival. In Proceedings of the 2010 ACM
+conference on Computer supported cooperative work.
+ACM, 71–80.
+
+621
+
+41. Matthew J Salganik, Peter Sheridan Dodds, and
+
+Duncan J Watts. Experimental study of inequality and
+unpredictability in an artiﬁcial cultural market. Science
+311, 5762 (2006), 854–856.
+
+42. Wolfram Schulz. Political Efﬁcacy and Expected
+
+Political Participation among Lower and Upper
+Secondary Students. A Comparative Analysis with Data
+from the IEA Civic Education Study. Online Submission
+(2005).
+
+43. Clay Shirky. 2008. Here comes everybody: The power of
+
+organizing without organizations. Penguin.
+
+44. M. Six Silberman, Lilly Irani, and Joel Ross. Ethics and
+Tactics of Professional Crowdwork. XRDS: Crossroads,
+The ACM Magazine for Students 17, 2 (2010), 39–43.
+
+45. M. Six Silberman, Joel Ross, Lilly Irani, and Bill
+
+Tomlinson. 2010b. Sellers’ Problems in Human
+Computation Markets. In Proceedings of the
+SIGKDD-Human Computation (HCOMP). ACM.
+46. Diane Slaouti and Gary Motteram. Reconstructing
+
+practice: Language teacher education and ICT. Teacher
+education in CALL (2006), 81–97.
+
+47. Jacob Solomon and Rick Wash. 2012. Bootstrapping
+
+wikis: developing critical mass in a ﬂedgling
+community by seeding content. In Proceedings of the
+ACM 2012 conference on Computer Supported
+Cooperative Work. ACM, 261–264.
+
+48. Kate Starbird and Leysia Palen. 2011. Voluntweeters”:
+
+Self-organizing by Digital Volunteers in Times of Crisis.
+In Proceedings of the SIGCHI conference on Human
+factors in computing systems. Vancouver, BC, Canada.
+
+49. Abhay Sukumaran, Stephanie Vezich, Melanie McHugh,
+
+and Clifford Nass. 2011. Normative inﬂuences on
+thoughtful online participation. In Proceedings of the
+SIGCHI Conference on Human Factors in Computing
+Systems. ACM, 3401–3410.
+
+50. Aaron Swartz. 2006. Who Writes Wikipedia? (2006).
+
+www.aaronsw.com/weblog/whowriteswikipedia
+
+51. Tom R Tyler. 1990. Why people obey the law:
+
+Procedural justice, legitimacy, and compliance. New
+Haven, CT: Yale University Press.
+
+52. Luis Von Ahn and Laura Dabbish. 2004. Labeling
+
+images with a computer game. In Proceedings of the
+SIGCHI conference on Human factors in computing
+systems. ACM, 319–326.
+
+53. Rick Wash and Cliff Lampe. 2012. The power of the ask
+in social media. In Proc. of the ACM 2012 conference on
+Computer Supported Cooperative Work. ACM,
+1187–1190.
+
+54. Anbang Xu and Brian Bailey. 2012. What do you think?
+A case study of beneﬁt, expectation, and interaction in a
+large online critique community. In Proceedings of the
+ACM 2012 conference on Computer Supported
+Cooperative Work. ACM, Seattle, Washington.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+APPENDIX: RESPONSIVENESS CODING SCHEME
+The responsiveness measure began as a six-point hierarchi-
+cal scale that captures the degree to which a comment re-
+sponds to the speciﬁc sub-topic of the policy it is posted
+to. At the lowest level were incomprehensible comments,
+then comprehensible comments that did not clearly address
+the AMT policy, comments that referred to the AMT partic-
+ipation agreement in general terms, comments that clearly
+addressed a particular subtopic, comments that clearly ad-
+dressed one of the questions presented at the end of each sub-
+topic, and ﬁnally comments that in their answers contained
+new sub-topic-relevant information. Comments were coded
+in ascending order, meaning that a comment that clearly an-
+swered one of the questions presented at the end of the sub-
+topic was required to have met all of the preceding conditions,
+i.e. being coherent, addressing the AMT policy, and address-
+
+ing a particular sub-topic. Table 5 gives more details about
+the scheme, as well as examples.
+Two coders, one graduate and one undergraduate, were
+trained in the coding scheme until they reached acceptable
+levels of reliability. The entire corpus was then coded by the
+undergraduate coder, with 13–33 percent of the comments in
+each sub-topic also coded by the graduate coder in order to
+monitor reliability. Monitoring reliability by sub-topic was
+important because of the content-dependent nature of the cod-
+ing. The intercoder reliability as measured by Krippendorff’s
+alpha for each sub-topic ranged from 0.72 to 0.85, which is
+a good level of reliability. All disagreements were resolved
+through consensus and included in the ﬁnal analysis. Train-
+ing data was recoded by the undergraduate coder at the end
+of the process and included in the ﬁnal analysis.
+
+622
+
+SESSION: NEWCOMERS IN PEER PRODUCTION
+
+Level
+(1) Incomprehensible comment: Com-
+ments that are single words or where it is
+impossible to infer what the commenter
+refers. Comments that are a pure copy-
+paste from the policy text.
+(2) The comment is comprehensive, but
+not clearly about MTK policy: The com-
+ment should stand on its own. The com-
+ment should be a complete sentence.
+
+(3) The comment refers to MTK pol-
+icy: The comment has to contain at least
+some of the terminology speciﬁc to the
+MTK policy. The use of words such as
+‘Turker’, ‘requester’, or ‘HIT’ are good
+signals for inclusion.
+
+(4) The comment relates to a particular
+sub-topic: The comment has to contain
+at least some of the exclusive terminol-
+ogy of the sub-topic.
+
+(5) The comment answers a question
+posed at the end of the sub-topic: The
+comment has to contain elements of the
+question. Also, if a question is about
+opinion, the answer should contain an
+opinion; if it is about facts, the answer
+should contain facts.
+
+(6) The comment contains new sub-topic
+policy relevant information: The com-
+ment has to add new information, not
+present in the sub-topic. It should intro-
+duce a concept not discussed in the pol-
+icy and provide some background to the
+answer.
+
+Examples
+
+• Independent contractor
+• By not giving out the SSN of workers!
+• Yes
+
+• I think if you are selecting to do this job it is for the freedom of the restraints
+that most 9 to 5 jobs don’t offer. We knew what we were accepting when we
+got into it.
+
+not a full time job.
+
+• I think Turkers should have to complete the tasks in order to get paid. This is
+• It would be nice to see a more standard amount of time for payments to be
+processed. 30 days for a dollar is a long time to wait. I understand they need
+to make sure the data is good, but they should do it in a reasonable amount
+of time.
+
+• I think that the jobs that we do as Turkers dont really constitute employee
+status. Not to say it’s not important or work, but I feel that Amazon has no
+priority over what we do [sub-topic 1]
+• i think the matter has pretty well been gone over - unless you’re doing a lot
+of work for a single requester, you don’t have to ﬁle; but, if there’s going to
+be a change in this, AMT will be required to do the 1099s anyway so that’s
+not really an issue ... [sub-topic 6]
+
+• I think the joint bank account should be allowed in some circumstances, such
+as shared spouse accounts. However, I am not sure how they would handle
+this in a way to keep it from being abused. Other than that, I am completely
+satisﬁed with how I get paid. [sub-topic 4]
+• Most of the payments are getting fast for turkers, but in some cases it is late
+because the requesters need to get all the responses. AMT can be justiﬁed in
+holding payment because it has the right to do so when a turker do anything
+against their policies. [sub-topic 5]
+
+• If a Requester is not going to pay for a hit, then the data submitted should not
+be used. Just like Requester can auto approve payments, workers, should be
+able auto approve use of their work when payment is made. If no payment is
+made, the work content is NOT approved for use. [sub-topic 2]
+• I think there should be some type of appeal button that makes the requester
+know of this. If they see a large number then they may realize an error has
+been made and that would cut down on the time from answering 500 mes-
+sages. [sub-topic 3]
+
+Table 5. A description of the responsiveness coding scheme.
+
+623
+
+

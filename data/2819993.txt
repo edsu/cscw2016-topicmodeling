@@ -1,0 +1,1598 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Understanding Energy Consumption at Work:
+
+Learning from Arrow Hill
+
+Ben Bedwell*
+*Horizon Digital Economy Research
+
+The University of Nottingham
+
+Nottingham, UK
+
+benjamin.bedwell@nottingham.ac.uk
+
+Enrico Costanza†
+
+Michael O. Jewell†
+
+†Electronics and Computer Science
+
+The University of Southampton
+
+Southampton, UK
+
+{E.Costanza, M.O.Jewell}@soton.ac.uk
+
+ABSTRACT
+Most work around technological interventions for energy
+conservation to date has focussed on changing individual be-
+haviour. Hence, there is limited understanding of communal
+settings, such as ofﬁce environments, as sites for interven-
+tion. Even when energy consumption in the workplace has
+been considered, the emphasis has typically been on the indi-
+vidual. To address this gap, we conducted a study of energy
+consumption and management in one workplace, based on a
+combination of workshops with a broad range of stakehold-
+ers, and quantitative data inspections. We report and discuss
+ﬁndings from this study, in light of prior literature, and we
+present a set of implications for design and further research.
+In particular, three themes, and associated intervention oppor-
+tunities, emerged from our data: (1) energy wastage related to
+“errors”; (2) the role of company policies and the negotiation
+that surrounds their implementation; and (3) the bigger en-
+ergy picture of procurement, construction and travel.
+
+Author Keywords
+Sustainability; Public Displays; Buildings; Energy;
+Workplace; Error
+
+ACM Classiﬁcation Keywords
+H.5.m. Information Interfaces and Presentation (e.g. HCI):
+Miscellaneous
+
+INTRODUCTION
+Climate change is a global threat: reducing the energy con-
+sumed by living and working in buildings is one signiﬁcant
+opportunity to reduce the greenhouse gas emissions that fuel
+this threat. The CSCW, HCI and Ubicomp communities have
+been addressing this challenge in terms of reducing energy
+demand, mostly focussing on understanding and changing in-
+dividual behaviour, yet there is a gap in the understanding of
+communal settings, such as an ofﬁce environment, as sites for
+intervention. A signiﬁcant portion of the population spends
+most of their time in ofﬁces, hence that is where a large share
+
+Permission to make digital or hard copies of all or part of this work for personal or
+classroom use is granted without fee provided that copies are not made or distributed
+for proﬁt or commercial advantage and that copies bear this notice and the full citation
+on the ﬁrst page. Copyrights for components of this work owned by others than the
+author(s) must be honored. Abstracting with credit is permitted. To copy otherwise, or
+republish, to post on servers or to redistribute to lists, requires prior speciﬁc permission
+and/or a fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819993
+
+of our energy consumption takes place. In shifting our fo-
+cus, we believe that it is necessary to reassess our understand-
+ing of energy consumption, which has been informed mostly
+through studies of the home [8, 12, 43].
+Even the smaller set of prior work addressing energy con-
+sumption in the workplace still focuses mostly on the indi-
+vidual: it concentrates on the electrical appliances over which
+single employees, or very small groups, have control. Exam-
+ples include personal computers, task lights, and telephones
+(e.g., [30, 44, 47]); individually controlled machines in in-
+dustrial workshops (e.g., [41]); or individual apportionment
+of shared resources, such as how many pages each employee
+prints [35].
+In contrast, we draw attention to consumption
+that is intrinsically difﬁcult, or impossible to apportion pre-
+cisely, such as that related to building and domestic water
+heating, network servers, and appliances used for services
+beneﬁcial to everyone in the building, such as cleaning and
+maintenance. Closely related to heating is the notion of com-
+fort, which is well understood to be a driver of consumption
+[9, 40]. What opportunities and barriers to energy savings ex-
+ist around these issues? How are responsibility and decision-
+making around energy shared? Such analysis is relatively ab-
+sent from the literature, but we argue it is critical to support
+the design of novel, appropriate technologies to reduce en-
+ergy consumption.
+To explore this gap in understanding, and look for concrete
+opportunities for intervention, we conducted a study of en-
+ergy consumption and management in one particular building
+– Arrow Hill1 – used by a UK district council (a regional gov-
+ernment body). We conducted two workshops with a broad
+range of stakeholders from the council, from energy and fa-
+cilities managers to employees working in the building; one
+workshop was structured to an extent around visualisations of
+quantitative data from the building monitoring systems, while
+one focused on unpacking workplace comfort. We comple-
+mented the workshops by subsequently collecting evidence
+of reductions in consumption through follow-up data inspec-
+tions. In this paper we present the data we collected, its dis-
+cussion, and a set of implications for design and further re-
+search that we derived. In particular, three themes, and asso-
+ciated intervention opportunities, emerged from our data: (1)
+energy wastage related to “errors”; (2) the role of company
+policies and the negotiation that surrounds their implementa-
+tion; and (3) the bigger energy picture of procurement, con-
+struction and travel. These themes go beyond what prior lit-
+
+1an invented name to protect the privacy of our participants
+
+1337
+
+erature addressed, hence their deﬁnition and the implications
+they lead to constitute the contribution of this paper.
+
+RELATED WORK
+There is now a signiﬁcant body of work that describes studies
+of energy consumption in the home (e.g. [8]) and interven-
+tions that seek to reduce domestic energy consumption (see
+[16]). Reviews of such work for national policy makers have
+asserted potential for reductions in electricity consumption
+ranging up to 15% as a result of feeding back house-level
+energy proﬁles to domestic occupants [11]. In comparison to
+domestic research, there have been fewer studies that focus
+on energy use in the workplace, as noted by recent reviews
+(e.g. [34]), despite it being known that organisations are typi-
+cally poor at identifying and addressing energy inefﬁciencies
+[45].
+Designing appropriate interventions for other environments
+requires an understanding of their characteristics. Some work
+has recently been carried out to this end by other researchers.
+Jain et al. provide an insight into the attitudes and concerns
+of ofﬁce staff, revealing barriers that prevent efforts to con-
+serve [22], while Schwartz et al. highlighted the controver-
+sial nature of revealing energy data out of context of situated
+practices (e.g. to a distant manager) [37]. Foster et al. con-
+ducted workshops with a range of staff to explore perceptions
+of energy use in the workplace, also emphasising the need
+for workplace interventions to be particularly sensitive to spe-
+ciﬁc organisational cultures [17]. Through a set of interviews
+Castelli et al. note that there are differences between indus-
+trial and ofﬁce-based work settings [7], and propose that en-
+terprise information systems should present energy consump-
+tion information according to different users’ roles. This re-
+lated work calls for further studies that reveal unique char-
+acteristics of workplaces – our paper extends such work by
+contributing empirical evidence and identifying speciﬁc is-
+sues that confound attempts to save energy in workplaces, in-
+cluding the scattered knowledge of context of consumption;
+the ever-evolving nature of workplace architecture, layouts,
+occupancy and infrastructure; political tensions around hier-
+archy and organisational change; and the difﬁculty of com-
+munication across organisations.
+Examples of existing interventions into workplaces provide
+useful insights into what may or may not create energy sav-
+ings. Building certiﬁcation schemes such as LEED2 address
+energy consumption in the workplace. While mostly focus-
+ing on guiding sustainable building management, the LEED
+system also recommends a digital display (the LEED Dy-
+namic Plaque3) providing summative measures of the build-
+ing’s performance to staff. However, research has shown that
+these schemes tend to deliver negligible impact [28, 39].
+Existing research interventions in the workplace adopt a vari-
+ety of approaches. An early study by Siero et al. [41] found
+that comparative feedback given to staff in an industrial set-
+ting results in energy efﬁciency gains. Katzeff et al. report
+ﬁeld studies of two design probes to investigate employees’
+
+2http://www.usgbc.org/leed
+3https://www.leedon.io/faq.html
+
+1338
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+interpretation of eco-feedback, highlighting the challenges of
+deﬁning best practice around effective workplace interven-
+tions [25]. Pousman et al.
+[35] proposed Imprint, a sys-
+tem that tracks the documents people print in the work en-
+vironment, and provides a visualisation of the resources con-
+sumed in this way on a semi-public display. Jentsch et al.
+[23] presented an energy-saving support system for work en-
+vironments that leverages a variety of sensors (temperature,
+electricity, light, contact) to provide workers with suggestions
+about how to act in an environmentally friendly way, however
+no real-world evaluation is reported. A number of other inter-
+ventions in ofﬁce environments take the form of games. Cli-
+mate Race [42] used sensors to track players’ energy-related
+behaviour (e.g., switching off lights when not in) awarding
+positive or negative points as appropriate.
+In the Energy
+Chickens game [30], virtual pets represent the energy con-
+sumed by individual devices; their visual aspect is designed
+to encourage staff towards lower consumption. The IdleWars
+game [44] targets a speciﬁc wasteful individual behaviour:
+leaving personal computers on when not in use. The game
+design aims at curtailing such phenomenon, but evaluation
+revealed mixed results. Beyond games, Yun et al. present a
+study of an “intelligent dashboard” which allows ofﬁce work-
+ers to monitor, remotely control and schedule the power-off
+times of a number of personal devices [47]. Their evaluation
+results indicate that remote control and automatic scheduling
+are effective in delivering energy savings.
+These interventions suggest that it is possible to make an im-
+pact, but they also highlight research gaps. For example, a
+common focus of these interventions is that they target en-
+ergy consumption related to individual employees. Recent
+critiques and meta-reviews of sustainable HCI have suggested
+that a tight focus on individual behaviour is limiting the HCI
+community’s impact on global environmental issues [31, 26].
+The community has been encouraged to shift away from con-
+sidering sustainability purely as a resource management is-
+sue [43], to question whether new technology can be the an-
+swer to sustainability issues [2], and to think more holisti-
+cally about where consumption happens and why [31, 26].
+As detailed in our discussion section, our ﬁndings strongly
+resonate with some of the arguments put forward in these cri-
+tiques. However, our work is original in that it grounds the
+discussion in empirical data, opening up discussion around
+underexplored aspects of sustainability. Our research speciﬁ-
+cally addresses consumption that goes beyond the individual,
+such as space heating, and issues relating to consumption that
+are shared, such as thermal comfort.
+Thermal comfort has an important link to energy consump-
+tion: Shove describes the convergence of factors that has
+led to the goal of maintaining “room temperature” [40].
+Milenkovic et al. have demonstrated that, as a result, staff
+typically feel low levels of control over their personal com-
+fort [27]. Smart heating systems have been explored in recent
+ubicomp research. For example, PreHeat leverages presence
+sensors and machine learning to optimize heating energy efﬁ-
+ciency [21]. Clear et al. suggest that ubicomp can contribute
+towards allowing building occupants to pursue personal com-
+fort goals and use less energy collectively as a result [9]. In-
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+deed, Feldmeier and Paradiso presented a control system to
+allow individual occupants to customize their ofﬁce climate
+[15]. While such technology could have considerable impli-
+cations on workplace sustainability, the system has reportedly
+been tested only in one speciﬁc building (where the system
+was developed), and over one speciﬁc season (cooling). So
+it is unclear how well its beneﬁts may generalize, leaving the
+problem of negotiating communal thermal comfort open.
+Our research method – data exploration workshops, bringing
+together multiple stakeholders – was deliberately chosen to
+tackle these shared issues.
+In addition, it also focuses our
+attention on what value existing data generated by the work-
+place has in engaging staff, rather than relying on the deploy-
+ment of costly new sensing and control technology.
+
+DATA GATHERING
+Our research took place in Arrow Hill (AH), a ﬂagship build-
+ing of the Southshire4 Council. Here we gathered build-
+ing monitoring data, then directly engaged staff through two
+workshops. We maintained a relationship with the Council to
+allow for follow-up activities to explore issues raised as a re-
+sult of the workshops; our aim was to learn not just from the
+workshop proceedings, but also from subsequent reactions to
+them.
+
+Arrow Hill
+AH combines a restored Grade II* listed house from the 18th
+century with a new section completed in 2010. The new
+section contains 2600m2 of open plan ofﬁces; the original
+building retains a largely traditional ofﬁce layout of many
+rooms housing small groups of staff, as well as several larger
+public function rooms. The new construction was originally
+commissioned in 2002 by a different local authority, merged
+in 2009 into the current Southshire council, as a result of a
+nation-wide administrative reorganization.
+Approximately 500 staff are based at AH, performing a va-
+riety of roles from on-site marriage registration to highly
+sensitive social services. While the building has been de-
+signed with the ambition to achieve high energy efﬁciency
+(the BREEAM’s5 ‘excellent’ rating), it has performed below
+expectations, and the council has been keen to explore means
+of realising the efﬁciency potential of the building in real-
+world conditions.
+
+Building Data Monitoring
+The operation of AH is recorded via an energy monitoring
+system (which collects consumption data from the building’s
+gas and electricity supplies) and a building management sys-
+tem (BMS, which monitors internal and external conditions,
+such as temperature). Gas and electricity consumption is
+monitored separately in the original and new parts of the
+building, and electricity consumption is also monitored per
+ﬂoor.
+It is worth noting that, while the systems are capa-
+ble of collecting half-hourly data and storing it indeﬁnitely,
+the provided UI has very limited visualization capabilities.
+4also an invented name
+5BREEAM is an internationally recognised benchmarking method
+for building sustainability; see http://www.breeam.org/
+
+In line with observations of other workplaces by researchers,
+e.g. [24], monitoring was deployed in AH without a proactive
+strategy for making use of the data.
+Six months’ worth of half-hourly data from the AH monitor-
+ing systems was retrieved as background information. This
+data provided the researchers with a history of the workplace
+from which to create visualisations as prompts for workshops.
+
+Workshops
+Two workshops were run in AH, targeting strategic “energy
+decision-makers” within the organisation and ofﬁce staff. We
+engaged these two communities separately to minimise the
+chances of hierarchy affecting the accounts given by partic-
+ipants. We also intended to engage the communities differ-
+ently, based on our hypothesis of their concerns, i.e. of energy
+decision-makers around cost and efﬁciency, and ofﬁce staff
+with a comfortable and supportive working environment. In
+both cases, the workshops were introduced as a collaboration
+between the Council and a University, to understand how en-
+ergy can be saved in workplaces; beyond providing lunch, no
+explicit incentives were provided for attendance. Although
+the content of the workshops differed, both were structured
+around activities designed to elicit accounts of energy (and
+related resource) management. Both workshops were facili-
+tated by four researchers, three of whom were subsequently
+involved in analysis. Conversations during the workshops
+were audio-recorded and later transcribed for analysis. Par-
+ticipants were also asked to provide their job title.
+Energy decision-makers
+The ﬁrst workshop (W1), lasting approximately a full work-
+ing day, was attended by 14 managers (12 male, 2 female)
+with varying stakes in the operation of AH. Participants were
+selected and invited directly by the leader of the council en-
+ergy team, involving a wide range of stakeholders. Their re-
+sponsibilities included savings and efﬁciency within the or-
+ganisation; development and implementation of sustainability
+strategy; facilities management and support; facilities main-
+tenance; and IT management, as well as the surveyor of the
+“new” build. A number of these attendees are not physically
+based at AH on a daily basis, even though the building falls
+under their direct responsibility.
+W1 was structured around instances of the data collected
+from the building. We analysed the six month long dataset
+to generate a series of visualizations, with the aim to provide
+a wide range of options that would encourage participants to
+explore the data without overwhelming them. The choice of
+initial visualizations was informed by our own exploration of
+the data in advance of the workshop and included: a compar-
+ison of the electricity consumption per square metre of ﬂoor
+space in various parts of the building; the changes in con-
+sumption across the seasons; and the variation between work
+and non-work days in the week. All visualizations were de-
+signed to be appropriate to the technical background of par-
+ticipants, rather than being novel in visualisation terms. Fur-
+ther analyses highlighted characteristic features of the typi-
+cal daily consumption proﬁle, and pinpointed the days of the
+year with highest and lowest energy consumption. To prompt
+critique and support discussion, large paper print-outs of the
+
+1339
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Figure 1. Three examples of the plots used in the ﬁrst workshops. Each was shown to participants as A3 colour print-out. Top: two weeks of gas
+consumption data, internal and external temperature. Bottom: electricity consumption over time, plotted for an example weekday when the overall
+electricity consumption was exceptionally low (left) and exceptionally high (right).
+
+visualisations were given to the participants to mark-up, and
+the potential insights spotted by the researchers were brieﬂy
+presented. The participants were then also allowed to directly
+explore the data behind the visualisations in more detail, as-
+sisted by the research team during the workshop (who had the
+data and query tools on a laptop).
+
+Ofﬁce staff
+The second workshop (W2) took place several months after
+W1 and was shorter in duration – lasting approximately two
+hours over lunch provided as compensation by the researchers
+– to ﬁt around staff working schedules, and was attended by
+11 staff (6 male, 5 female) with varying ofﬁce roles within
+AH, including business development, ﬁnance, and market-
+ing. The participants were split randomly into two groups and
+given a series of discussion tasks. The tasks were designed
+to encourage participants to explore the notion of comfort
+by ranking factors that contribute to a comfortable and pro-
+ductive environment, the degree and mechanisms by which
+they could control those factors, and how they could measure
+them. We note that participants for W2 volunteered their time
+in response to an advert posted by AH managers on internal
+email lists and so may exhibit certain self-selection biases;
+where appropriate, we reﬂect on this in our ﬁndings. Given
+
+the focus on perceived comfort (rather than directly on en-
+ergy savings) and the limited time availability of participants
+in W2, no data visualisations were presented.
+
+FINDINGS
+Using transcriptions of the workshop discussions, we carried
+out a thematic analysis [4]. This analysis started by categoris-
+ing the material at the sentence level through open codes. Ini-
+tially 126 open codes were used, later iteratively grouped into
+4 broad categories, described in the following subsections.
+Quotes are labelled with the pseudonym of the speaker, their
+job family, and the workshop that they attended.
+
+The Difﬁculty of Understanding the Building Operation
+Where energy goes
+During W1, participants attempted to make sense of the elec-
+tricity and gas consumption in the building using the data vi-
+sualizations and ﬁgures we showed them. Speciﬁc pieces of
+equipment were pointed at as causes of energy consumption:
+from printers and monitors to vacuum cleaners, to mobile air
+conditioning units, to servers. The group tried to infer in-
+formation from the technical speciﬁcations of appliances to
+explain the consumption on speciﬁc electrical circuits.
+
+1340
+
+External Air Temperature
+
+Internal Temperature (RBS_01_WE)
+
+Total Gas Consumption
+
+300
+
+250
+
+200
+
+150
+
+100
+
+50
+
+0
+
+G
+a
+s
+ 
+c
+o
+n
+s
+u
+m
+p
+
+t
+i
+
+o
+n
+
+ 
+(
+
+K
+W
+h
+)
+
+)
+
+C
+ 
+s
+e
+e
+r
+g
+e
+d
+(
+ 
+
+e
+r
+u
+
+t
+
+a
+r
+e
+p
+m
+e
+T
+
+30
+
+25
+
+20
+
+15
+
+10
+
+5
+
+0
+
+-5
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Contextualising consumption
+Participants in both workshops tried to explain consumption
+using their various understandings of their workplace context.
+Consumption was related to causes such as health concerns,
+for example: “[heating the water is] a way of managing le-
+gionella [...] heat it above 60 degrees and that’ll kill every-
+thing off.” [Scott (Engineering), W1] Health also came up in
+W2, as a justiﬁcation for an employee using a fan “the policy
+is you wouldn’t have a fan without a medical reason” [Dennis
+(Ofﬁce staff), W2] Speciﬁc patterns of building occupancy –
+relating to the activities in AH as well as seasonal conditions
+– were linked to consumption, e.g. “more people get married
+in the lighter months of the year. So you can have up to three,
+four, ﬁve weddings a day, whereas in the winter months they
+might not have any at all.” [Paul (Facilities management),
+W1]
+
+Interrogation and explanation
+The data visualisations prompted some participants to raise
+questions about the heating settings in AH, such as the fact
+that it is turned on from the early hours of the day: “..we think
+because staff start at seven, that the boilers have to come on
+at six, so at seven this building has reached 19 degrees, but is
+that a presumption or do we know we have to have those boil-
+ers on that long before a member of staff arrives?” [Jimmy
+(Energy management), W1]. In some cases, the group agreed
+that further investigation was necessary around speciﬁc issues
+(“Jimmy (Energy management): There’s something about the
+gas, but in terms of the proﬁle it looks right ... Scott (En-
+gineering): The dodgy base load I think needs investigation
+...” [W1]) Some of this analysis, especially when comparing
+day and night consumption, was focussed on understanding
+“always-on” consumption6: where it comes from, and its size
+in comparison to the daytime consumption.
+
+An ever-evolving system
+Energy consumption was also related to the complex process
+of commissioning, designing and constructing the building.
+Participants highlighted that the building project was orig-
+inally commissioned by one organization, which was later
+merged into the current council, and this transition affected
+the ﬁnal design of the building. Even the position of furni-
+ture in the open space ofﬁces was suggested to inﬂuence the
+air ﬂow and hence the building thermal performance: “if you
+look at some of the very early drawings, the layout of furni-
+ture and storage cabinets, it’s no resemblance to what we’ve
+got in the building today, which is obviously affecting the nat-
+ural ventilation, so I think what seems quite minor detail [...]
+it’s what seems an innocent change is having long term ef-
+fects” [Walter (Property operations), W1]. The building is
+perceived by our participants as a system in evolution, then,
+with thermal performance that has changed over time.
+Brought together, these elements point towards a complex
+system of appliances, routines, architectural and infrastruc-
+tural features, people and physics. In particular, it was clear
+that no single participant had a clear understanding of all
+these factors, or of how they interact. Bringing the groups to-
+gether allowed them to pool their individual understandings,
+6energy consumed by devices that are never turned off
+
+and also led to the identiﬁcation of issues that needed further
+investigation (leading to follow-up events described later in
+this paper).
+
+Heating Perception and Adjustments for Comfort
+From W1 we learned that heating was considered a major
+cause of consumption and that the council has a temperature
+policy that limits temperatures to 19-21◦C (66-70◦F). How-
+ever, such policy is not always strictly enforced, partially as
+a result of staff complaints. Indeed the management group
+seems to be quite aware of staff complaints about the build-
+ing comfort and temperature.
+
+The subjective nature of thermal comfort
+In W2, participants ranked temperature as a key factor in de-
+termining their productivity and comfort. However, part of
+the discussion in both workshops focussed on the subjective
+perception of temperature and its conﬂict with the tempera-
+ture policy. Participants mentioned a variety of factors that
+inﬂuence thermal comfort, ranging from age, to doing phys-
+ical activity, to the appearance of outdoors elements. In both
+workshops various anecdotes were reported to demonstrate
+how subjective the matter is, for example: “You can’t satisfy
+everybody, [...] I’ve been to sites where people have said,
+let’s get the heating down to 18, it’s far too hot here. [...] So
+if you shifted the heat to 22, you’d have more people com-
+plaining about it being hot” [David (Energy management),
+W1] While, one of the building occupants said: “One of our
+colleagues [...] likes to have fresh air and so she opens the
+door, the whole rest of the ofﬁce is like... sitting in scarves.”
+[Nicholas (Ofﬁce staff), W2]
+
+Sanctioned adjustments for comfort
+This previous quote points also at the use of clothing to ad-
+just the individual thermal comfort, and to conserve energy.
+Indeed, we learned that the council implements an explicit
+policy around this matter: it distributes branded ﬂeece jackets
+to employees as a measure against cold. Participants directly
+related a change in dressing style to energy conservation: “if
+we tell the reception staff to put on thicker socks and trousers,
+then we can turn those heaters off under their desk as well”
+[Scott (Engineering), W1], but also that dressing style may be
+an obstacle: “I hear so many people going oh, I’m freezing.
+They know they’re going to work on the reception on a Sat-
+urday, [...] I’ll look at them and say how many layers have
+you got on? They’re in a T shirt and a frilly cardigan” [Judith
+(Ofﬁce staff), W2].
+
+Personal adjustments for comfort
+Besides clothing, we also heard about a number of other ad-
+hoc, individual interventions and remedies that the occupants
+of AH adopt to improve their own comfort at the ofﬁce. Many
+of the efforts seem to be related to thermal comfort, whether
+trying to cope with cold: “..everyone is bringing in hot wa-
+ter bottles” [Paul (Facilities management), W2], “So that be-
+comes really a part of your working day, making a nice warm
+cuppa, which of course is going to help with the temperature”
+[Lori (Ofﬁce staff), W2], or with heat: “some people brought
+their own fans in, didn’t they?” [Walter (Property operations),
+W1].
+
+1341
+
+Thermal comfort was a common topic in both workshops, and
+the question of how to use AH’s heating systems to provide a
+comfortable temperature for all remained unresolved. Some
+participants raised a lack of control (echoed elsewhere [22]),
+but we noted many adjustments to circumvent systems and
+policy to regain control over participants’ personal environ-
+ments (also noted by others [9]). Notably, the discussions
+painted a picture of an uncertain political stance on whether
+these individual adjustments for comfort are tolerated.
+
+Cost and Organisation Changes
+Issues of cost in relation to energy consumption came up in
+the workshop with energy decision-makers, as they are di-
+rectly responsible for the bills. However, ofﬁce staff also con-
+sidered the issue, but from different perspectives.
+
+Energy as an indirect ﬁnancial concern
+Ofﬁce staff drew attention to their concerns as taxpayers as
+well as employees: “we work for a local authority but we
+also, you know, we’re ratepayers. I don’t want to be wasting.
+Once again my council tax hasn’t gone up this year: how
+lucky are we for that to have happened?” [Lori (Ofﬁce staff),
+W2]. Moreover, the ﬁnancial issue was sometimes framed
+into a wider picture of ﬁnancial cuts to the public sector in
+the UK, and job security: “..that is a reasonable tempera-
+ture, that’s how much it’s costing, one more degree will cost
+that, that would cost x amount of jobs” [Adam (Ofﬁce staff),
+W2] Indeed we learned that the employees of this council
+had recently gone through a stressful voluntary redundancy
+(VR) process: “..they’re all upset about stuff, not to mention
+VR, not to mention pressure, loss of staff, everything is being
+squeezed, so the management layer in the middle is getting it
+from all sides.” [Walter (Property operations), W1]
+
+Reorganising buildings and human resources
+VR is just one measure adopted by the Council as an or-
+ganization to adapt to recent changes. Small ofﬁces have
+been closed down, with employees relocated: “a lot of peo-
+ple [who] moved into this building have come from [ofﬁces]
+around the city. They’ve come from small ofﬁces” [Jason (Sur-
+veyor), W1]. Such a change appears to be part of a council
+strategy of closing down buildings that are not energy efﬁ-
+cient and moving to newly built ones rather than renovating:
+“you could go bankrupt trying to make that site energy efﬁ-
+cient” [Jimmy (Energy management), W1].
+This drive to reduce reliance on older buildings has reduced
+workspace, leading to a complementary “work from home”
+policy: at the time of our workshops the AH building hosted
+1.3 employees per desk, with a plan to reach “a two for one
+desk policy” within the following 8 months. To make this
+possible, a clear-desk policy and a hot-desk policy were also
+being increasingly implemented: staff should be prepared to
+work from any desk in the ofﬁce. Adherence to the hot-desk
+policy, though, was reported to be low: individuals tend to
+stick to the same desk. The energy decision-makers perceived
+this behaviour to negatively affect the thermal comfort in the
+building: “We’ve got people upstairs with coats on, because
+that’s their desk; 50 desks will be empty, but they won’t move,
+because that’s their desk” [Jason (Surveyor), W1].
+
+1342
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+In summary, awareness of policy and policy changes in both
+workshops seemed relatively high, although we note that the
+ofﬁce staff who volunteered to take part in our workshop
+may be particularly engaged with their organisation’s policy
+and activities. The range of organisational changes occurring
+within the council was notable, giving an impression of an
+organisation (like the building itself) in ﬂux. Of particular
+signiﬁcance was the continued focus by both sets of staff on
+heating as both a major ﬁnancial and political concern, re-
+vealing ways that the impact of energy consumption can be
+made personal for decision-makers and ofﬁce staff.
+
+Behaviour Change: Education and Communication
+Across both workshops participants referred to behaviour
+change, often in terms of education. Changes in behaviour
+were explicitly related to changes in comfort, and energy sav-
+ings, often in relation to clothing style (as described in the
+previous subsection).
+
+Skepticism of behaviour change
+Some participants in W1, however, questioned the relevance
+of behaviour change to their situation. In some cases, it was
+pointed out that the level of automation in the building does
+not leave much control to occupants: “in this building, there
+isn’t a thermostat on the wall [that] I can go and whack up
+and inﬂuence” [Walter (Property operations), W1]. In other
+cases, the relative impact was questioned: “What’s the point?
+What’s the point of even wasting somebody’s time to draft
+some energy thing that says, switch your monitor off, we’re
+trying to save energy. It’s negligible.” [Walter (Property op-
+erations), W1].
+
+(Lack of) communication
+Communication was also suggested to be a possible strat-
+egy to increase conservation and reduce complaints: display
+how much the council spends or saves in energy (and what
+that would correspond to e.g. in jobs saved, see above), and
+remind everyone of the current temperature policy. At the
+same time, we heard skepticism about an existing interven-
+tion to address communication around comfort in the build-
+ing: “building user group” meetings take place periodically,
+but participants in both workshops appeared doubtful about
+their effectiveness. Participants referred not only to internal
+communication, but also to the public image of the council
+around the issue of energy waste, and the impact it has on
+taxpayers (see also the previous subsection).
+Behaviour change is a commonly discussed option in HCI
+and broader sustainability communities.
+In the workshops
+we found interest in behaviour change and education of col-
+leagues, yet also skepticism about how to effectively integrate
+these into strategy.
+
+FOLLOW-UP DATA INSPECTIONS
+Subsequent to W1, we received communication that the par-
+ticipants had gone on to investigate anomalies in the data
+visualizations they had discussed during the workshop, and
+identiﬁed energy savings. They realized that the heating of
+domestic water to prevent legionella (which was brieﬂy dis-
+cussed at W1, see “Contextualising consumption” above) was
+being carried out in an overzealous fashion. Reverting to a
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+more energy-conservative setting allowed the saving of ap-
+proximately 20% of their total gas usage, while remaining
+within safe guidelines.
+Another opportunity to clearly identify energy wastage came
+upon inspection of data from another council building: Dor-
+ton House (DH). DH is managed by some of the attendees of
+W1 and is an ofﬁce building considerably smaller than AH,
+located approximately 30mi north of it. DH houses about
+80 employees across two ﬂoors, both arranged into an open
+space. The smaller size means that DH does not have a dedi-
+cated facilities manager, but it is remotely managed by a per-
+son responsible for several small buildings.
+Visually comparing the electricity and gas consumption logs,
+we noticed an inconsistency. As illustrated in Figure 2, the
+electricity consumption pattern indicates that the building is
+in use Monday to Friday, in accordance with the reports of
+the occupants. However, gas, which is used mostly for heat-
+ing, also appears to be consumed on Saturdays, for no appar-
+ent reason. A few weeks after we reported this issue to the
+appropriate energy decision-makers we noticed that the gas
+consumption logs changed to the expected Monday to Friday
+pattern, suggesting that the heating settings were amended
+and there was truly no reason for the heating to be active on
+Saturdays. The difference corresponds to 1/6th of the total
+consumed gas, i.e. around 16.7%.
+
+DISCUSSION
+Reﬂecting on our ﬁndings, we see demonstrations of the en-
+ergy consumption issues that make the ofﬁce workplace dis-
+tinct from other contexts, such as the home or industrial set-
+ting. For example, as in the home, staff do link changes in
+energy consumption to their ﬁnancial situation, but we see
+that this link is indirect via concerns over job security. On the
+other hand unlike the home, we have seen that workplace en-
+ergy decision-makers may not inhabit the building they man-
+age, and that there are unique legal and ethical responsibilities
+for consumption during remote working. Becoming familiar
+with these nuances is important when considering designing
+interventions for the workplace, and so we unpack them in
+more detail here.
+
+Figure 2. The change in gas usage patterns before (top) and after (bot-
+tom) reporting that the building was being heated for an extra day, com-
+pared to corresponding electricity usage.
+
+1343
+
+Supporting Understanding: Preventing and Fixing Errors
+In W1 we found that visualising monitoring data enabled “in-
+terrogation and explanation” of energy consumption. This led
+to further follow-up investigation, after which we observed
+concrete energy savings coming from two issues rectiﬁed by
+the Council. We consider these two issues “errors”, in the
+sense that they did not inﬂuence anyone’s comfort or con-
+venience either before or after they were rectiﬁed, and did
+not require substantial effort to correct. We have found that
+such operational errors are apparently related to our theme
+of the “difﬁculty in understanding the building operation”,
+as highlighted by the efforts (or degree of assumption) en-
+ergy decision-makers made in explaining the complexity and
+opacity around “where energy goes”. It seems that such com-
+plexity prevents facilities managers from having a concrete
+expectation for what a “normal” energy bill should be, sim-
+ilar reports from previous research on the domestic context
+[38, 43].
+Foundational work about errors was carried out by Don Nor-
+man and James Reason in terms of cognitive psychology and
+HCI [36, 29]. In particular Norman relates errors to his the-
+ory of action – an error is a mismatch between intention or
+goal and the result of action taken – and to an incorrect sys-
+tem mental model. In our case the incorrect mental model
+could perhaps be described for building occupants as: “the
+heating is off when I am not in the building.” Arguably, this
+is exacerbated by both the staff’s awareness of the many auto-
+mated features of the building, and the absence of complaints
+(during out-of-hours) that seem to drive in part the decision-
+making of the management. According to Norman’s theory,
+one way to try to avoid errors is to reduce the gulf of evalu-
+ation by making the system status as clearly visible as possi-
+ble. From a design perspective, then, what we need to make
+the status of the building easily visible, not only in terms of
+present status (since this would simply conﬁrm the occupants’
+mental model of heating), but also historical. We shall return
+to this point in our implications section.
+The occurrence of errors related to energy waste can be no-
+ticed in selected prior work, even though not always explic-
+itly highlighted as such. For example, studies of domestic
+heating have shown that misconceptions of heat and heating
+systems can lead to constantly and inefﬁciently heating the
+home, rather than heating on demand [33]. Moreover, a recent
+study of a smart thermostat [46] found that participants had
+air conditioning on when they are away from home, and that
+this was noticed and recognized as a mistake only when they
+reviewed the smart thermostat logs with researchers. Yun et
+al. reported a study and intervention around the usage of in-
+dividually controlled electrical appliances in the workplace
+[47]. They observed waste related to appliances like phones
+and task lights being left on out of ofﬁce hours, and that sav-
+ings could be achieved by programmatically turning them off
+on a schedule. Notably, behaviour change is an option that is
+commonly discussed in HCI and broader sustainability com-
+munities but difﬁcult to implement, yet our ﬁndings empiri-
+cally demonstrate that signiﬁcant energy savings can also be
+made by ﬁxing errors – an opportunity given less attention.
+
+24
+
+18
+
+12
+
+6
+
+0
+
+24
+
+18
+
+12
+
+6
+
+0
+
+Before
+
+Gas
+
+Electricity
+
+Mon
+
+Tue 
+
+Wed
+
+Thu 
+
+Fri 
+
+Sat 
+
+Sun
+
+kW
+
+After
+
+Mon
+
+Tue 
+
+Wed
+
+Thu 
+
+Fri 
+
+Sat 
+
+Sun
+
+Policy and Communication
+Through the workshops we have learned about a number of
+policies adopted by the council with implications on energy
+consumption, namely the work from home and related hot-
+desk policies, as well as the temperature policy and the ﬂeece
+jackets distribution. As suggested through our “Heating Per-
+ception and Adjustments for Comfort” theme, a strict tem-
+perature policy and an array of “sanctioned adjustments for
+comfort” limit the amount of control that individual employ-
+ees can exert. At the same time, it is worth highlighting how
+our data also indicates that policy implementation is not (or
+not always) literal or straight-forward, and reveals the spec-
+trum of strategies and negotiations that exist around it. At one
+end of such a spectrum employees take advantage of sanc-
+tioned strategies to improve their wellbeing, such as bringing
+in extra clothing and drinking hot beverages – the policy is
+adhered to. In other cases, employees’ complaints lead en-
+ergy managers to relax the temperature policy. In other cases
+still, employees contravene policy to make “personal adjust-
+ments for comfort” or simply ignore the hot-desk policy, re-
+turning always to the same location in the ofﬁce. All these ex-
+amples indicate the potential for interventions that encourage
+employees to understand and buy-in to policies; a potential,
+we argue, that could be realized by interactive technology,
+and that we return to later in the paper.
+Our ﬁndings on the theme of “Cost and Organisation
+Changes” suggest also that ofﬁce staff may ﬁnd it interest-
+ing and motivating to see the relation of energy policies to
+issues such as job loss (prevention) or tax. These issues link
+the council’s cost of energy to their personal ﬁnancial sta-
+tus, resonating to an extent with the domestic setting. Such
+link is most likely rather speciﬁc to public sector organisa-
+tions like Southshire Council (especially in a time of severe
+job cuts), but it is interesting nonetheless. It contrasts with
+previous research that suggests that employees (of a proﬁt-
+making company) do not believe that they may gain personal
+ﬁnancial beneﬁts from reduced workplace energy costs [22,
+17].
+
+The Bigger (Energy) Picture
+In relation to sustainability, the CSCW – and related – re-
+search communities have focussed mostly on electricity, fuel,
+and water consumption [18]. Our participants made a num-
+ber of comments that demonstrate that energy implications go
+beyond the energy consumed by the AH appliances, lighting
+and heating. Our theme of “Cost and Organisation Changes”
+reveals the extent to which the Council’s resources are being
+reorganised: the migration of staff from small ofﬁces to one
+large building, the ﬂexible working policy that means staff
+work remotely, the alternative strategies employees adopt to
+keep themselves warm, to name but a few, all play a role. As
+such, our data suggests that – especially in the context of the
+workplace – it is necessary to look at a bigger energy picture.
+Through the 2-to-1 desk policy, the council is encouraging
+people to work from home 50% of the time and thus outsourc-
+ing energy consumption. However, research has shown that
+teleworkers actually tend to travel greater total distances than
+conventional workers, and can consume signiﬁcant “home of-
+
+1344
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+ﬁce” resources [19]. Heating one home for each employee is
+also arguably less efﬁcient than heating one larger purpose-
+built building. What is the overall balance? It may be impos-
+sible to accurately calculate this for AH, but it is also overly
+simplistic to simply assume that teleworking is environmen-
+tally beneﬁcial.
+Carbon embodied in buildings is also an issue that emerges
+from our data: our participants reported that the council has
+a strategy of closing buildings perceived as being energy in-
+efﬁcient, and moving staff into new buildings. However, as
+the experience of AH has shown, it is often the case that new
+builds do not perform as expected (see “an ever-evolving sys-
+tem”).
+In addition, signiﬁcant amounts of energy are con-
+sumed in replacing buildings (producing building materials,
+transporting them to a site, actual construction, demolishing,
+disposing, recycling) [3]. When the lifecycle of the build-
+ing is considered rather than purely its operation, is the re-
+placement of buildings (rather than refurbishment) energy ef-
+ﬁcient?
+
+IMPLICATIONS
+Our ﬁndings and discussion paint a picture of buildings as
+complicated energy-consuming systems of people, activities,
+infrastructure and architecture. At a general level the main
+implication of our work is that we need to go “beyond in-
+dividual persuasion”. While such an argument had been put
+forward before by others in the research community, based
+mostly on reﬂection and meta-reviews [5, 21, 26, 31], we
+corroborate such argument through data from our workshops
+and observations. Moreover, and perhaps more importantly,
+leveraging our ﬁndings from the ﬁeld, we propose three spe-
+ciﬁc directions for the research community where we see op-
+portunities for interactive interventions that complement and
+go beyond existing interventions.
+The ﬁrst two implications are largely around interactive,
+ambient visualizations aimed chieﬂy at building occupants
+(rather than energy and facility managers). Even though am-
+bient displays have often been proposed in the context of sus-
+tainable interactive technology, both in terms of research pro-
+totypes (see e.g., [18, 13, 35]) and actual products (e.g., the
+LEED Dynamic Plaque), the emphasis is generally on sum-
+mative (usually aggregate) indicators, meant to capture the
+energy performance of the buildings or its users, sometimes
+in terms of monetary cost, sometimes in terms of comparison
+with other buildings. However, as discussed in the previous
+section, our data indicates that deﬁning metrics that can un-
+ambiguously summarize the performance of a building, tak-
+ing into account the complex context of usage may at times be
+a difﬁcult, if not intractable problem. Therefore we propose
+alternative applications of such technology.
+
+Making Building Operation Visible
+We see an opportunity in helping building inhabitants (e.g.
+ofﬁce staff) better understand its operation, to promote the
+development of a more accurate mental model, so that they
+could more easily recognize the kind of errors discussed
+above, and report them to the energy decision-makers. As
+revealed by our data, decision-makers are often physically
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+distant from the buildings they are responsible for, and hence
+they may lack detailed information about the building’s us-
+age that is instead easily available to inhabitants. A concrete
+example would be a display of the building internal temper-
+ature traces over the past seven days, alongside information
+about human activity in the building. The visual compari-
+son of these two streams of information may reveal instances
+where the empty building is heated (see e.g. Figure 2). Abun-
+dant data about the building are often already available from
+existing BMS installations; for example environmental infor-
+mation such as internal and external temperature, humidity
+and CO2. Activity data could be abstracted from presence
+sensors, often already installed in buildings for security pur-
+poses, or from electricity consumption logs. Such displays
+will need to be made engaging, to attract attention, and easy
+to understand for users who may not have technical training
+– design challenges that our community is well positioned to
+address [18, 13]. The participants in our W2 showed interest
+and commitment to energy saving, suggesting that a well de-
+signed intervention may have potential to attract the attention
+of at least some employees, such as ‘energy champions’ [20].
+While we argue that the topic of interactive systems that
+illustrate the buildings operation to end-users is under-
+investigated, it is worth highlighting that a limited number
+of examples have already been published – these can pro-
+vide inspiration for further development7. DoppelLab – a
+platform to create representations of general sensor network
+data – has been used to visualise and interrogate temperature
+data in workplaces [14]. An initial deployment of the sys-
+tem revealed malfunctions in the HVAC system, which had
+previously gone unnoticed. Similarly, FigureEnergy is an in-
+teractive system to annotate consumption logs, aimed at help-
+ing users make sense of the information [10]. A deployment
+of FigureEnergy with 12 households revealed that the sys-
+tem can enable users to shed new light and make discoveries
+around their own energy consumption. Finally, Yun et al. [47]
+reported an intervention in the workplace where historical en-
+ergy consumption is displayed, even though their emphasis is
+on the automatic scheduling and the remote control of such
+appliances (raising questions about the energy efﬁciency and
+sustainability of such approach compared to a manual one).
+
+Communicating and Contextualizing Policy
+Having discussed the important role policy plays in relation
+to energy consumption in the workplace, and how this aspect
+is under-investigated, another important implication is to take
+policy explicitly into account in the design of energy-saving
+interventions. In particular, we see opportunities around re-
+inforcing or enhancing policy communication, placing it in
+relation to the current building operation. Local, situated dis-
+plays may be a useful means of framing local working condi-
+tions in terms of company policy. A speciﬁc example would
+be to show building occupiers that the current temperature is
+(or is not) within the policy range. Such display may reassure
+them that if they felt cold or hot it would be due to subjective
+perception. The display may also highlight the implications
+7We exclude from this list papers that report the presentation of logs
+to study participants only as a probe, rather than as a ﬁnal design,
+such as [37, 46]
+
+of adherence or deviation from policy, for example in terms of
+monetary cost and equivalent job cuts. Even though our data
+revealed that employees seemed generally aware of policy,
+and skepticism has been expressed towards displays of the
+current temperature, we believe that showing the two pieces
+of information together has potential to generate reﬂection
+and discussion about the policy, as well as to the more general
+strategies embraced by the company. Indeed, local displays
+(perhaps interactive) may be, more in general, a useful means
+of engaging building occupants in two-way dialogue around
+policy and organisational change.
+
+Accounting for Energy Beyond the Building
+Our research has emphasised the need to step back and con-
+sider the “bigger energy picture” of the workplace. To make
+it possible to design systems that reveal this picture, it is nec-
+essary to look beyond the walls of the workplace. To eval-
+uate embodied and outsourced energy related to workplace
+activities, we must extend the reach of existing monitoring
+systems to track data on consumption that is both physically
+remote and temporally remote. For example, taking into ac-
+count the energy consumed by staff working from home, but
+also energy consumed in constructing and demolishing the
+workplace, including the embedded energy costs of different
+construction materials [1, 3]. To this end, it is good to see
+that some certiﬁcation programmes, such as LEED, already
+consider inhabitants transportation surveys to inﬂuence the
+performance score of a building, yet our data suggests oppor-
+tunities to extend the scope of analysis even further.
+Information systems could be developed to integrate ele-
+ments of life-cycle analysis into the organisation’s strategic
+decision-making, not just in building certiﬁcation. However,
+given the range of actors and length of time involved in a
+building’s life, maintaining provenance of the data may be
+difﬁcult, and developing effective UIs to query such data is
+an open challenge [6]. Similarly, most life-cycle analysis is
+based on approximations and projections, so additional chal-
+lenges involve the truthful representation of such sources of
+uncertainty, while still making the displayed information ac-
+tionable.
+It is important to question not just the extent to
+which such systems might provide useful insights (how much
+detail is it useful for energy decision-makers to know?), but
+also the extent to which it is legal or ethical for an organisa-
+tion to track an employee working from home. Researchers
+have shown how it is possible to infer television-watching and
+eating habits – among other personal insights – from domes-
+tic energy data [32]. We question whether staff would ac-
+cept such monitoring, and suggest that designers of systems
+that harvest data from outside the workplace must consider
+whether and how to do so while being privacy-preserving.
+
+CONCLUSION
+This paper has presented a study of energy consumption and
+management in one particular building – Arrow Hill – used
+by a UK district council. Our approach involved collabora-
+tion with a broad range of stakeholders over two workshops,
+maintaining a long-term relationship with the organisation,
+as well as using real data from building systems as a prompt
+for critical interrogation. Such a combination of techniques
+
+1345
+
+allowed us to extract a number of novel ﬁndings, validating
+our approach. The usage of real building data led us to a dis-
+cussion of how errors in building operation happen – such
+as those observed during our study of Arrow Hill – and how
+they might be detected. The involvement of different stake-
+holders revealed inconsistencies in the way they understand
+the building as a complex system, as well as the relationships
+across policy, energy and comfort. Drawing upon these ﬁnd-
+ings, our contribution is in highlighting the complexity that
+surrounds energy consumption in the workplace, and putting
+forward speciﬁc opportunities to design interventions, while
+also emphasising the need for further research in this area.
+At a more general level, our ﬁndings and subsequent themes
+empirically corroborate the suggestions made by previous lit-
+erature, but also extend this previous research. While prior
+work reported interventions to address the (limited) control
+available to individuals within an ofﬁce environment [30,
+47], our engagement of both decision-makers and ofﬁce staff
+demonstrated that both sets of stakeholders have distinct roles
+to play in collaboratively managing the building, bringing to-
+gether knowledge of context, how the building functions and
+the ability to exert control. Little can be found in the literature
+to date about the role that interactive technology may take
+around policy to support sustainability. Even though others
+have convincingly questioned or criticised the emphasis on
+individual consumers found behind most sustainable HCI in-
+terventions [5, 21, 26, 31, 43], it is rare to ﬁnd explicit and
+direct references to policies, whether at a company or public
+level. We consider this to be an important gap in the litera-
+ture, given the central role that policy plays in the daily life
+of the workplace as well as, more generally, in society.
+Finally, we note that our implications touch a range of re-
+search communities: designing sensing systems that capture
+the bigger energy picture of transient workforces and full
+building life-cycles draws on the expertise of the ubicomp
+community, while such systems raise ethical implications that
+will require the engagement of privacy researchers. We call
+on the CSCW and HCI communities to design interventions
+that encourage staff and decision-makers to collaborate on the
+task of error-ﬁxing, and to consider how to incorporate repre-
+sentations of policy directly into such interventions.
+
+ACKNOWLEDGMENTS
+We thank Southshire Council and the workshop participants
+for their contributions. This work was supported by the EP-
+SRC CTech project (EP/K002589/1), and approved by The
+University of Nottingham Computer Science Ethics Com-
+mittee. The data referred to in this paper can be found at
+http://dx.doi.org/10.5258/SOTON/382356.
+
+REFERENCES
+1. Michael F. Ashby. 2013. Materials and the Environment
+
+(second ed.). Butterworth-Heinemann, Boston. DOI:
+http://dx.doi.org/10.1016/B978-0-12-385971-6.
+00025-7
+
+2. Eric P.S. Baumer and M. Six Silberman. 2011. When the
+
+Implication is Not to Design (Technology). In
+Proceedings of the SIGCHI Conference on Human
+
+1346
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Factors in Computing Systems (CHI ’11). ACM, New
+York, NY, USA, 2271–2274. DOI:
+http://dx.doi.org/10.1145/1978942.1979275
+
+3. Mike Berners-Lee. 2010. How bad are bananas?: the
+carbon footprint of everything. Proﬁle Books, London,
+UK.
+
+4. Virginia Braun and Victoria Clarke. 2006. Using
+
+thematic analysis in psychology. Qualitative research in
+psychology 3, 2 (2006), 77–101.
+
+5. Hronn Brynjarsdottir, Maria Hkansson, James Pierce,
+
+Eric Baumer, Carl DiSalvo, and Phoebe Sengers. 2012.
+Sustainably Unpersuaded: How Persuasion Narrows Our
+Vision of Sustainability. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’12). ACM, New York, NY, USA, 947–956. DOI:
+http://dx.doi.org/10.1145/2207676.2208539
+
+6. Lucian Carata, Sherif Akoush, Nikilesh Balakrishnan,
+Thomas Bytheway, Ripduman Sohan, Margo Seltzer,
+and Andy Hopper. 2014. A Primer on Provenance.
+Queue 12, 3, Article 10 (March 2014), 14 pages. DOI:
+http://dx.doi.org/10.1145/2602649.2602651
+
+7. Nico Castelli, Niko Sch¨onau, Gunnar Stevens, Tobias
+
+Schwartz, and Timo Jakobi. 2015. Role-based Eco-info
+Systems: An Organizational Theoretical View of
+Sustainable HCI at Work. In ECIS 2015 Completed
+Research Papers. AISeL, M¨unster, Germany, 1–8. DOI:
+http://dx.doi.org/10.18151/7217284
+
+8. Marshini Chetty, David Tran, and Rebecca E. Grinter.
+
+2008. Getting to Green: Understanding Resource
+Consumption in the Home. In Proceedings of the 10th
+International Conference on Ubiquitous Computing
+(UbiComp ’08). ACM, New York, NY, USA, 242–251.
+DOI:http://dx.doi.org/10.1145/1409635.1409668
+
+9. Adrian K. Clear, Janine Morley, Mike Hazas, Adrian
+
+Friday, and Oliver Bates. 2013. Understanding Adaptive
+Thermal Comfort: New Directions for UbiComp. In
+Proceedings of the 2013 ACM International Joint
+Conference on Pervasive and Ubiquitous Computing
+(UbiComp ’13). ACM, New York, NY, USA, 113–122.
+DOI:http://dx.doi.org/10.1145/2493432.2493451
+
+10. Enrico Costanza, Sarvapali D. Ramchurn, and
+
+Nicholas R. Jennings. 2012. Understanding Domestic
+Energy Consumption Through Interactive Visualisation:
+A Field Study. In Proceedings of the 2012 ACM
+Conference on Ubiquitous Computing (UbiComp ’12).
+ACM, New York, NY, USA, 216–225. DOI:
+http://dx.doi.org/10.1145/2370216.2370251
+
+11. Sarah Darby. 2006. The Effectiveness of Feedback on
+
+Energy Consumption. Technical Report. Environmental
+Change Institute.
+
+12. Tawanna R. Dillahunt and Jennifer Mankoff. 2014.
+Understanding Factors of Successful Engagement
+Around Energy Consumption Between and Among
+Households. In Proceedings of the 17th ACM
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Conference on Computer Supported Cooperative Work
+& Social Computing (CSCW ’14). ACM, New York, NY,
+USA, 1246–1257. DOI:
+http://dx.doi.org/10.1145/2531602.2531626
+
+13. Carl DiSalvo, Phoebe Sengers, and Hr¨onn
+
+Brynjarsd´ottir. 2010. Mapping the Landscape of
+Sustainable HCI. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems
+(CHI ’10). ACM, New York, NY, USA, 1975–1984.
+DOI:http://dx.doi.org/10.1145/1753326.1753625
+
+14. G. Dublon, L.S. Pardue, B. Mayton, N. Swartz, N.
+
+Joliat, P. Hurst, and J.A. Paradiso. 2011. DoppelLab:
+Tools for exploring and harnessing multimodal sensor
+network data. In Sensors. IEEE, New York, US,
+1612–1615. DOI:
+http://dx.doi.org/10.1109/ICSENS.2011.6126903
+
+15. M. Feldmeier and J.A. Paradiso. 2010. Personalized
+
+HVAC control system. In Internet of Things (IOT), 2010.
+IoT Conference, Tokyo, JP, 1–8. DOI:
+http://dx.doi.org/10.1109/IOT.2010.5678444
+
+16. Corinna Fischer. 2008. Feedback on household
+
+electricity consumption: a tool for saving energy?
+Energy efﬁciency 1, 1 (2008), 79–104.
+http://dx.doi.org/10.1007/s12053-008-9009-7
+17. Derek Foster, Shaun Lawson, Jamie Wardman, Mark
+
+Blythe, and Conor Linehan. 2012. ”Watts in It for Me?”:
+Design Implications for Implementing Effective Energy
+Interventions in Organisations. In Proceedings of the
+SIGCHI Conference on Human Factors in Computing
+Systems (CHI ’12). ACM, New York, NY, USA,
+2357–2366. DOI:
+http://dx.doi.org/10.1145/2207676.2208396
+
+18. Jon Froehlich, Leah Findlater, and James Landay. 2010.
+
+The Design of Eco-feedback Technology. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’10). ACM, New
+York, NY, USA, 1999–2008. DOI:
+http://dx.doi.org/10.1145/1753326.1753629
+
+19. Christian Fuchs. 2008. The implications of new
+information and communication technologies for
+sustainability. Environment, Development and
+Sustainability 10, 3 (2008), 291–309. DOI:
+http://dx.doi.org/10.1007/s10668-006-9065-0
+
+20. Tom Hargreaves. 2011. Practice-ing behaviour change:
+
+Applying social practice theory to pro-environmental
+behaviour change. Journal of Consumer Culture 11, 1,
+Article 1 (2011), 21 pages. DOI:
+http://dx.doi.org/10.1177/1469540510390500
+
+21. Mike Hazas, A. J. Bernheim Brush, and James Scott.
+
+2012. Sustainability Does Not Begin with the Individual.
+interactions 19, 5 (Sept. 2012), 14–17. DOI:
+http://dx.doi.org/10.1145/2334184.2334189
+
+22. Mohit Jain, Ankit Agrawal, Sunil K. Ghai, Khai N.
+
+Truong, and Deva P. Seetharam. 2013. ”We Are Not in
+the Loop”: Resource Wastage and Conservation Attitude
+
+1347
+
+of Employees in Indian Workplace. In Proceedings of
+the 2013 ACM International Joint Conference on
+Pervasive and Ubiquitous Computing (UbiComp ’13).
+ACM, New York, NY, USA, 687–696. DOI:
+http://dx.doi.org/10.1145/2493432.2493444
+
+23. Marc Jentsch, Marco Jahn, Ferry Pramudianto, Jonathan
+
+Simon, and Amro Al-Akkad. 2011. An Energy-Saving
+Support System for Ofﬁce Environments. In Human
+Behavior Understanding, AlbertAli Salah and Bruno
+Lepri (Eds.). Lecture Notes in Computer Science, Vol.
+7065. Springer, Berlin Heidelberg, 83–92. DOI:
+http://dx.doi.org/10.1007/978-3-642-25446-8_10
+
+24. Phil Jones. 2012. Problems with sub-metering energy
+
+consumption in UK non domestic buildings. In ASHRAE
+Technical Symposium. CIBSE, London, UK, 11.
+25. Cecilia Katzeff, Loove Broms, Li J¨onsson, Ulrika
+Westholm, and Minna R¨as¨anen. 2013. Exploring
+Sustainable Practices in Workplace Settings Through
+Visualizing Electricity Consumption. ACM Trans.
+Comput.-Hum. Interact. 20, 5, Article 31 (Nov. 2013),
+22 pages. DOI:http://dx.doi.org/10.1145/2501526
+
+26. Bran Knowles, Lynne Blair, Paul Coulton, and Mark
+
+Lochrie. 2014. Rethinking Plan A for Sustainable HCI.
+In Proceedings of the 32Nd Annual ACM Conference on
+Human Factors in Computing Systems (CHI ’14). ACM,
+New York, NY, USA, 3593–3596. DOI:
+http://dx.doi.org/10.1145/2556288.2557311
+
+27. Milan Milenkovic, Ulf Hanebutte, Yonghong Huang,
+David Prendergast, and Han Pham. 2013. Improving
+User Comfort and Ofﬁce Energy Efﬁciency with POEM
+(Personal Ofﬁce Energy Monitor). In CHI ’13 Extended
+Abstracts on Human Factors in Computing Systems
+(CHI EA ’13). ACM, New York, NY, USA, 1455–1460.
+DOI:http://dx.doi.org/10.1145/2468356.2468616
+
+28. Guy R. Newsham, Sandra Mancini, and Benjamin J.
+Birt. 2009. Do LEED-certiﬁed buildings save energy?
+Yes, but. Energy and Buildings 41, 8 (2009), 897 – 905.
+DOI:
+http://dx.doi.org/10.1016/j.enbuild.2009.03.014
+
+29. Donald A Norman. 2013. The design of everyday things.
+
+Basic books, New York, USA.
+
+30. Brian Orland, Nilam Ram, Dean Lang, Kevin Houser,
+
+Nate Kling, and Michael Coccia. 2014. Saving energy in
+an ofﬁce environment: A serious game intervention.
+Energy and Buildings 74 (2014), 43 – 52. DOI:
+http://dx.doi.org/10.1016/j.enbuild.2014.01.036
+
+31. Daniel Pargman and Barath Raghavan. 2014. Rethinking
+
+Sustainability in Computing: From Buzzword to
+Non-negotiable Limits. In Proceedings of the 8th Nordic
+Conference on Human-Computer Interaction: Fun, Fast,
+Foundational (NordiCHI ’14). ACM, New York, NY,
+USA, 638–647. DOI:
+http://dx.doi.org/10.1145/2639189.2639228
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+40. Elizabeth Shove, Gordon Walker, and Sam Brown.
+
+2014. Material culture, room temperature and the social
+organisation of thermal energy. Journal of Material
+Culture 19, 2 (2014), 113–124. DOI:
+http://dx.doi.org/10.1177/1359183514525084
+
+41. Frans W Siero, Arnold B Bakker, Gerda B Dekker, and
+
+Marcel TC Van Den Burg. 1996. Changing
+organizational energy consumption behaviour through
+comparative feedback. Journal of environmental
+psychology 16, 3 (1996), 235–246.
+
+42. Jonathan Simon, Marco Jahn, and Amro Al-Akkad.
+
+2012. Saving Energy at Work: The Design of a
+Pervasive Game for Ofﬁce Spaces. In Proceedings of the
+11th International Conference on Mobile and
+Ubiquitous Multimedia (MUM ’12). ACM, New York,
+NY, USA, Article 9, 4 pages. DOI:
+http://dx.doi.org/10.1145/2406367.2406379
+
+43. Yolande A.A. Strengers. 2011. Designing Eco-feedback
+
+Systems for Everyday Life. In Proceedings of the
+SIGCHI Conference on Human Factors in Computing
+Systems (CHI ’11). ACM, New York, NY, USA,
+2135–2144. DOI:
+http://dx.doi.org/10.1145/1978942.1979252
+44. Evangelos Tolias, Enrico Costanza, Alex Rogers,
+
+Benjamin Bedwell, and Nick Banks. 2015. IdleWars: an
+Evaluation of a Pervasive Game to Promote Sustainable
+Behaviour in the Workplace. In International
+Conference on Entertainment Computing (ICEC).
+Springer, Berlin Heidelberg, 14.
+http://eprints.soton.ac.uk/378861/
+
+45. Carbon Trust. 2007. Advanced metering for SMEs:
+Carbon and cost savings. Technical Report. Carbon
+Trust.
+
+46. Rayoung Yang, Mark W. Newman, and Jodi Forlizzi.
+
+2014. Making Sustainability Sustainable: Challenges in
+the Design of Eco-interaction Technologies. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems (CHI ’14). ACM, New
+York, NY, USA, 823–832. DOI:
+http://dx.doi.org/10.1145/2556288.2557380
+
+47. Ray Yun, Azizan Aziz, Peter Scupelli, Bertrand
+
+Lasternas, Chenlu Zhang, and Vivian Loftness. 2015.
+Beyond Eco-Feedback: Adding Online Manual and
+Automated Controls to Promote Workplace
+Sustainability. In Proceedings of the 33rd Annual ACM
+Conference on Human Factors in Computing Systems
+(CHI ’15). ACM, New York, NY, USA, 1989–1992.
+DOI:http://dx.doi.org/10.1145/2702123.2702268
+
+32. Shwetak N. Patel, Thomas Robertson, Julie A. Kientz,
+
+Matthew S. Reynolds, and Gregory D. Abowd. 2007. At
+the Flick of a Switch: Detecting and Classifying Unique
+Electrical Events on the Residential Power Line. In
+Proceedings of the 9th International Conference on
+Ubiquitous Computing (UbiComp ’07). Springer-Verlag,
+Berlin, Heidelberg, 271–288. http:
+//dl.acm.org/citation.cfm?id=1771592.1771608
+
+33. Therese Peffer, Marco Pritoni, Alan Meier, Cecilia
+
+Aragon, and Daniel Perry. 2011. How people use
+thermostats in homes: A review. Building and
+Environment 46, 12 (2011), 2529 – 2541. DOI:http:
+//dx.doi.org/10.1016/j.buildenv.2011.06.002
+34. James Pierce and Eric Paulos. 2012. Beyond Energy
+Monitors: Interaction, Energy, and Emerging Energy
+Systems. In Proceedings of the SIGCHI Conference on
+Human Factors in Computing Systems (CHI ’12). ACM,
+New York, NY, USA, 665–674. DOI:
+http://dx.doi.org/10.1145/2207676.2207771
+
+35. Zachary Pousman, Hafez Rouzati, and John Stasko.
+2008. Imprint, a Community Visualization of Printer
+Data: Designing for Open-ended Engagement on
+Sustainability. In Proceedings of the 2008 ACM
+Conference on Computer Supported Cooperative Work
+(CSCW ’08). ACM, New York, NY, USA, 13–16. DOI:
+http://dx.doi.org/10.1145/1460563.1460568
+
+36. James Reason. 1990. Human error. Cambridge
+
+university press, Cambridge, UK.
+
+37. Tobias Schwartz, Matthias Betz, Leonardo Ramirez, and
+
+Gunnar Stevens. 2010. Sustainable Energy Practices at
+Work: Understanding the Role of Workers in Energy
+Conservation. In Proceedings of the 6th Nordic
+Conference on Human-Computer Interaction: Extending
+Boundaries (NordiCHI ’10). ACM, New York, NY,
+USA, 452–462. DOI:
+http://dx.doi.org/10.1145/1868914.1868966
+
+38. Tobias Schwartz, Gunnar Stevens, Leonardo Ramirez,
+
+and Volker Wulf. 2013. Uncovering Practices of Making
+Energy Consumption Accountable: A
+Phenomenological Inquiry. ACM Trans. Comput.-Hum.
+Interact. 20, 2, Article 12 (May 2013), 30 pages. DOI:
+http://dx.doi.org/10.1145/2463579.2463583
+
+39. John H. Scoﬁeld. 2009. Do LEED-certiﬁed buildings
+
+save energy? Not really... Energy and Buildings 41, 12
+(2009), 1386 – 1390. DOI:
+http://dx.doi.org/10.1016/j.enbuild.2009.08.006
+
+1348
+
+

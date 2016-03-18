@@ -1,0 +1,1925 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Accounting for the Invisible Work of Hospital Orderlies: 
+
+Designing for Local and Global Coordination  
+
+Allan Stisen, Nervo Verdezoto, Henrik Blunck, Mikkel Baun Kjærgaard, and Kaj Grønbæk 
+
+Department of Computer Science, Aarhus University 
+
+Aarhus, Denmark 
+
+{allans, nervo, blunck, mikkelbk, kgronbak}@cs.au.dk 
+
+ABSTRACT 
+The  cooperative,  invisible  non-clinical  work  of  hospital 
+orderlies  is  often  overlooked.  It  consists  foremost  of 
+transferring  patients  between  hospital  departments.  As  the 
+overall efficiency of the hospital is highly dependent on the 
+coordination of the work of orderlies, this study investigates 
+the  coordination  changes  in  orderlies’  work  practices  in 
+connection to the implementation of a workflow application 
+at  the  hospital.  By  applying  a  mixed  methods  approach 
+(both  qualitative  and  quantitative  studies),  this  paper  calls 
+for  attention  to  the  changes  in  orderlies’  coordination 
+activities while moving from a manual and centralized form 
+to  a  semi-automatic and decentralized  approach after  the 
+introduction of the workflow application. We highlight a set 
+of cross-boundary (spatial and organizational) information-
+sharing  breakdowns  and  the  challenges  of  orderlies  in 
+maintaining local and global coordination. We also present 
+design  recommendations  for  future  design  of  coordination 
+tools to support orderlies’ work practices. 
+Author Keywords 
+Orderlies; coordination; invisible work; non-clinical work.  
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous.  
+INTRODUCTION 
+The understanding and representation of work practices as a 
+resource  to  inform  system  design  is  an  important  concern 
+among  the  HCI  and  CSCW  communities.  Although  these 
+communities have primarily focused on studying the formal 
+work  practices  of
+specialized  workplace 
+environments (e.g., [6, 8, 46]), there is a growing concern 
+and  interest  (e.g.,  [1,  12])  to  study  the  work  of  the  “less 
+skilled or less powerful” [28] individuals, often relegated as 
+invisible—yet  essential—work  [41]  to  “those  who  benefit 
+
+the  more
+
+Permission to  make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission 
+from 
+Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to 
+ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2820006 
+
+fee.  Request  permissions 
+
+and/or 
+
+a 
+
+(e.g., 
+
+from  it”  [45,  p.  58].  Invisible  work  includes  situations 
+where the result of the work is visible but the person doing 
+the work is somehow invisible as in the case of design work 
+[28],  domestic  work  (e.g.,  cleaning)  and  other  kinds  of 
+service  work  [41].  There  are  also  situations  in  which  the 
+person performing the work is quite visible but some of the
+work  is  “functionally  invisible”  [41,  p.  20]  or  taken  for 
+granted.  The  work 
+registering  appointments, 
+monitoring  patients,  taking  medication)  performed  by 
+secretaries, nurses, patients, families, and “on-call” service 
+workers,  are  examples  of  work  that  often  remains  in  the 
+background  [28,  41,  48].  Making  this  work  more  visible
+[45], through technology [37, 42], can support the practices 
+of invisible workers and enforce its contribution.  
+The hospital is a good example of a complex environment 
+where  visible  and  invisible  work  practices  take  place  to 
+sustain  a  transparent  hospital  workflow  and  the  continuity 
+of  patient  care  [51].  At  the  hospital,  care  activities  are 
+spatially  [6]  and  temporally  [35]  arranged,  performed, 
+coordinated  and  negotiated  between  highly  heterogeneous 
+elements and individuals including patients, clinicians, non-
+clinical  personnel  and  their  resources  [2,  12,  21,  44].
+Instead  of  focusing  on  the  more  stationary  work  of 
+secretaries and registration assistants, which is often limited 
+to specific hospital department work arrangements [12, 29], 
+we  seek  to  understand  the  invisible  work  performed  by  a 
+particular  group  of  non-clinical  personnel  such  as  the 
+orderlies,  which  is  a  critical  component  of  hospital  work 
+practices.  We  examine  the  dynamics  of  the  cooperative 
+work practices of orderlies from a large university hospital, 
+over a period of 18 months of study—before and after the 
+introduction of a CSCW workflow application that require
+intra-  and  inter-departmental  coordination  [2].  In  the 
+following, we present the related work and our user studies. 
+We then report on findings that extends earlier work [2, 42]
+by highlighting a set of dynamic changes, workarounds and 
+cross-boundary 
+information  sharing  breakdowns  and 
+contingencies  in  orderlies’  work  practices.  Based  on  our 
+findings, we provide a set of recommendations to account 
+for  the  orderlies’  work  practices  in  the  design  of  CSCW 
+systems  to  enhance  their  coordination  and  the  overall 
+organizational workflow. 
+
+980
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+RELATED WORK 
+In this section we describe the different forms of visible and 
+invisible  work  that  take  place  at  the  hospital,  the  existing 
+strategies  to  support  their  coordination  as  well  as  a  brief 
+overview of technology that supports these work practices. 
+On the Visibility and Invisibility of Hospital Work 
+The  main  focus  of  clinical  work  relates  to  ensuring  the 
+continuity of patient care [51] while managing the patient’s 
+care  trajectories  [43]  often  aiming  for  a  more  stable  or 
+improved  health  status.  At  the  hospital,  patients  receive 
+medical  treatment  from  diverse  and  specialized  clinical 
+personnel  (e.g.,  gynecologist,  cardiologists)  who  are 
+organized  and  distributed  in  several  departments  often 
+following  a  basic  division  of  labor  according  to  specific 
+skill  sets,  professions,  resources  and  treatment  goals  [11]. 
+While the work of the doctors is highly visible, as they are 
+in  charge  of  performing  diagnosis  and  prescribing 
+treatments  [5,  7,  11],  the  nurses’  work  is  often  taken  for 
+granted [41] even though they are quite visible performing 
+care-related activities (e.g., connecting monitoring devices, 
+comforting or looking after patients) [11, 44, 49]. Similarly, 
+patients themselves also play an important role in the care 
+trajectory  while  receiving  and  following  treatments  [44], 
+but their care activities are often relegated as invisible [48]. 
+Patients perform self-care activities not only across multiple 
+hospital departments [34, 44] but also beyond the hospital, 
+moving into their everyday settings and routines [16].  
+Besides  the  clinicians  and  the  patient,  hospital  work 
+practices  also  include  all  the  operational  and  maintenance 
+work  performed  by  non-clinical  personnel  such  as 
+secretaries,  service  workers  (orderlies)  and  social  workers 
+[2, 12, 29]. For instance, secretaries not only perform basic 
+tasks  such  as  transcribing  the  doctor’s  progress  notes,  or 
+communicating with patients [12, 49], but they also engage 
+in more complex tasks that require more specialized skills 
+and  knowledge 
+from  coding  and  booking 
+treatments  [12]  to  more  clinical-related  work  such  as 
+examining the patient’s condition, and interpreting clinical 
+information  [24].  In  addition,  Abraham  and  Reddy  [1,  2] 
+describe the important role of orderlies in the coordination 
+of  patient  transfers  between  different  clinical  departments. 
+Orderlies  perform  diverse  service 
+transporting 
+patients,  delivering  goods)  and  emergency  (e.g.,  perform 
+cardiopulmonary resuscitation) tasks that often require high 
+mobility (on foot or vehicles) and ad-hoc coordination [42].  
+Strategies to Support Hospital Cooperative Work 
+The  cooperative  work  at  the  hospital  requires  a  proper 
+configuration of  highly heterogeneous actors (e.g., clinical 
+and  non-clinical  personnel,  patients),  resources  (e.g., 
+supplies, medication, equipment), diverse knowledge, times 
+and  places  to  perform  work  practices  within  and  across 
+clinical  departments  [18].  To  accomplish  such  work 
+requires  an  ongoing  alignment  of  actions  among  all  the 
+different  elements  and  entities  that  are  necessary  to 
+cooperate,  which  is  what  Strauss  [43]  has  described  as 
+articulation  work  that  relates  to  all  the  planning  and 
+
+ranging 
+
+(e.g., 
+
+981
+
+information 
+
+the  hospital 
+
+coordination  of  who,  what,  when,  where,  and  how  to 
+perform  care  practices.  One  particular  strategy  relies  on 
+standards  and 
+existing  hospital  plans,  procedures, 
+classification  schemes  [6,  22,  47] 
+that  are  used  as 
+coordination  mechanisms  or  infrastructural  arrangements, 
+necessary  to  support  the  negotiation  of  heterogeneous 
+networks  [47].  Furthermore,  the  complex  interrelation  of 
+heterogeneous  actors  and  networks  [7,  18]  constitute 
+different hospital information infrastructures [17]. 
+Because  work  needs  to  be  prioritized,  scheduled  and 
+negotiated according to the spatial [6] and temporal [5, 35] 
+dimensions  of 
+infrastructure, 
+another strategy relies on the use of cognitive artifacts (e.g., 
+doctor’s  progress  notes  [3],  whiteboards  [50],  handover 
+sheets  [40])  to  support  clinical  [36]  and  non-clinical  [12, 
+24,  49]  work  practices.  Certain  cognitive  artifacts  such  as 
+work  and  booking  schedules  or  whiteboards  act  as 
+coordination  mechanisms  [39]  and  boundary  objects  [26], 
+supporting  the  prioritization  of  tasks  while  also  providing 
+an  overview  of  the  situation  at  hand.  For  instance, 
+whiteboards  support  the  communication  and  coordination 
+of  inter-  and  intra  clinical  personnel  by  providing  a  local 
+overview  and  awareness  of  activities  (e.g.,  patient’s 
+location,  procedures).  While  providing  an  overview  can 
+promote a fair distribution of tasks and the anticipation of 
+resource availability (e.g., personnel, time) [5, 31] and pre-
+handling work [5],  these strategies might not be sufficient 
+to  support  the  coordination  of  distributed  work  practices 
+and  different  kind  of  additional  informal  and  more  formal 
+agreements and activities (e.g., calling, booking)  take place 
+across  departments 
+to  accomplish 
+inter-
+departmental negotiations [5, 31, 44].  
+Technology to Support Hospital Work 
+Hospitals  have  shifted  away  from  paper-based  cognitive 
+artifacts,  e.g.,  patient  records,  to  electronic  versions  to 
+increase  and  support  the  coordination  of  the  clinical  work 
+practices [32, 49] as well as the non-clinical work practices 
+performed  by  secretaries  or  registration  assistants  [12,  24, 
+29]. This shift has increased the visibility of work practices 
+making  them  more  “inspectable  and  manageable”  [7,  p. 
+90].  Besides  electronic  patient  records,  mobile  technology 
+has  also  been  introduced  to  improve  both  the  information 
+delivery  and  the  efficiency  of  healthcare  professionals’ 
+work  practices  [38,  40].  Mobile  technology  has  also  been 
+used  to  support  the  articulation  work  of  secretaries  and 
+nurses  regarding,  e.g.,  booking 
+tasks  [5]  or  patient 
+responsibility  handover  [25].  Recently,  technology  for 
+supporting  work  practices  of  orderlies  have  been 
+investigated through a bed-board tracking system [2], and a 
+mobile phone based task booking system [42].  
+Although  recent  efforts  have  investigated  the  use  of 
+technology  by  non-clinicians,  most  healthcare  IT  systems 
+[19] have not accounted and overlooked the important role 
+of orderlies as part of the whole information infrastructure. 
+Any delays, errors or breakdowns of routines in orderlies’ 
+
+intra-  and 
+
+work  practices  not  only  affect 
+the  overall  hospital 
+organization  efficiency  (allocation  of  time  and  resources), 
+but  can  also  result  in  detrimental  health  situations  for  the 
+patient  and  cause  stress  and  frustration  among  the  clinical 
+and non-clinical personnel [1, 2]. As such, there is a need to 
+understand orderlies’ cooperative work practices with other 
+members  of  the  information  infrastructure.  Based  on  an 
+initial characterization of orderlies’ work [2, 42], we further 
+describe the local (within) and global (across departments) 
+work practices, beyond patient-transfers [4], and changes in 
+orderlies workflow after the introduction of technology. 
+USER STUDIES 
+Our work integrates qualitative and quantitative studies as 
+well  as  an  investigation  of  the  technological challenges in 
+connection with a pilot implementation and deployment of 
+a  mobile  workflow  application,  PLogistics  (PLog),  which 
+supports orderlies’ work and the logistical hospital work.  
+Research Setting: Major Regional University Hospital 
+Our studies took place in a major university with ca. 3000 
+employees  that  are  distributed  on  18  clinical  departments 
+(e.g., X-ray, Emergency, Cardiology). The hospital receives 
+roughly 300,000 outpatient visits yearly and has a capacity 
+of 450 hospitalized patients. The hospital also has a service 
+department with a total of 60 employees, of which 24 to 28 
+of these are orderlies working during regular hours and 13 
+to  4  working  during  the  evening  and  the  night  shifts, 
+respectively.  The  clinical  departments  are  spatially 
+distributed in many interconnected buildings with different 
+layouts for surgical wards and laboratories, including three 
+tall buildings with seven or more floors.  
+Context: Implementation of a Workflow Application 
+The two main functionalities of PLog are the provision of: 
+an  overview  of  all  currently  unassigned  tasks  from  the 
+different  hospital  departments,  and  an  overview  of  all 
+orderlies’  current  location  together  with  the  specific  tasks 
+they  have  been  assigned  to  or  currently  performing.  An 
+additional  interface  was  implemented  to  complement  the 
+departments’ EMR system to facilitate the task registration 
+process  for  healthcare  professionals  across  the  different 
+departments. Currently, PLog is developed and maintained 
+by an external software consultancy company.  
+
+in 
+
+the  hospital.  For 
+
+Study Design and Data Collection 
+To get an in-depth understanding of the research setting, we 
+adopted  a  mixed-methods  case  study  approach  [33].  We 
+selected  the  case  of  examining  the  work  practice  of 
+orderlies  due  to  the  availability  of  resources  and  facilities 
+[33] 
+individual 
+organizational  setting  of  this  hospital  enables  us  to  get  an 
+in-depth understanding of the local (intra-departmental) and 
+global (inter-departmental) organization practices and of the 
+changes  in  the  coordination  of  hospital  service  tasks.  In 
+particular, the availability of PLog (as part of the ongoing 
+evaluation  process)  enabled  us  to  better  understand  the 
+influence of technology in practice and how it affected the 
+
+instance, 
+
+the 
+
+SESSION: HOSPITAL WORK
+
+ 
+ 
+
+Qualitative data  Quantitative data  
+
+Interviews  Observation  Questionnaires 
+
+Pre-intervention  23 orderlies 
+
+20 hours 
+
+Same 23 orderlies 
+
+Pilot-study 
+
+ 
+
+18 hours 
+
+23 orderlies 
+3 clinicians 
+2 managers 
+Interview  Observation 
+
+Post-intervention  6 orderlies 
+
+22 hours 
+
+Same 23 orderlies 
+
+36 clinicians 
+
+ 
+
+System log 
+146,664 tasks 
+
+Table 1: An overview of the methods applied in this paper 
+
+hospital’s  cooperative  work  arrangements.  Overall,  our 
+study consisted of an initial exploratory phase followed by 
+three  intervention-related  phases  combining  observations, 
+semi-structured interviews and questionnaires (see Table 1). 
+All  questionnaires  consisted  of  open  questions  and 
+statements on a 5-point Likert-type. 
+Initial Exploratory phase 
+In  this  phase,  a  workshop  was  conducted  with  two 
+designers,  three  software  developers,  five  orderlies,  two 
+nurse  assistants,  one  orderly  manager  and  one  researcher. 
+During  the  workshop,  the  software  company  in  charge  of 
+implementing the application shared insights as part of their 
+own empirical studies of hospital work practices1 (including 
+orderlies’ practices). These insights concerned for example 
+the  registration  process  for  two-man  tasks  and  how  to 
+inform orderlies about their colleagues’ locations and tasks.  
+Pre-Intervention: Existing Work Practices  
+After  the  exploratory  phase,  a  total  of  20  hours  of 
+observations  were  conducted  to  understand  the  orderlies’ 
+work practices (prior the introduction of PLog) during the 
+day-shift  period  (7  AM  to  4  PM).  The  focus  was  on 
+tracking orderlies’ tasks (e.g., scheduling and assignation of 
+tasks to orderlies by the coordinator), incidents within and 
+across departments, the resources they used as well as the 
+actors involved. We also gave questionnaires to 23 orderlies 
+that touched upon aspects regarding the overview of tasks 
+(e.g., “I have a good overview of the daily tasks”), and the 
+coordination  of  tasks  (e.g.,  ”It  is  easy  to  handover  and 
+redistribute  tasks”).  We  also  conducted  semi-structured 
+interviews with the same participants to further investigate: 
+a)  the  orderlies’  handover  tasks,  b)  the  overview  of  tasks, 
+co-worker status, and how orderlies utilize such overviews, 
+and c) the orderlies’ prioritization mechanisms. 
+Pilot Study Phase 
+The  pilot  study  focused  on:  a)  how  technology  supports 
+existing  practices  and  orderlies’  task  coordination;  b)  the 
+emergent  changes  of  these  practices,  and  c)  the  new 
+practices and workarounds due to the introduction of PLog. 
+                                                             
+1 We were granted access to the software company’s internal notes 
+on hospital work practices.  
+
+982
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+A  month  after  deployment,  we  undertook  observations, 
+applied questionnaires and semi-structured interviews to get 
+insights  into  work  practices  changes.  Questions  touched 
+upon  the same aspects  as  in  the previous phase, including 
+the  challenges  of  using  PLog  and  how  it  supported  and 
+affected  the  orderlies’  task  coordination.  Clinicians  that 
+order  tasks  were  also  included  through  questionnaires  and 
+semi-structured  interviews  to  explore  the  benefits  and 
+issues  of  using  PLog,  answering  questions  regarding  the 
+work practices such as  “It is easy to order an orderly?” or 
+“It is easier than before to give correct information?” We 
+also conducted semi-structured interviews with two orderly 
+managers to discuss the prioritization of tasks. 
+Post-Intervention: Work Practices After Deployment 
+Last,  we  conducted  semi-structured 
+interviews  and 
+observations  of  orderlies’  work  during  a  post-intervention 
+phase  (see  Table  1).  Observations  and  interviews  focused 
+on the changes in work practices and both the new practices 
+and issues that emerged after the introduction of PLog. We 
+also conducted a workshop to get feedback from prototypes 
+that  address  some  of  the  issues  that  emerged  after 
+deployment.  We  also  collected  quantitative  data  from  the 
+PLog application of all tasks registered over a time period 
+of  248  days  including  relevant  task  information  (e.g., 
+departments involved, task type, time). All task information 
+was anonymized before the data was available for analysis.  
+Most  interviews  from  all  phases  were  recorded  and  later 
+transcribed  for  analysis.  We  were  requested  not  to  record 
+interviews  with  orderlies  that  took  place  near  departments 
+where patient sensitive information could be recorded. We 
+collected extensive notes from these latter interviews. 
+Data Analysis 
+An  inductive  content  analysis  [14]  was  performed  to 
+identify the most relevant themes from our diverse studies. 
+We  performed  two  rounds  of  analysis  moving  back  and 
+forth through our two different datasets: the empirical data 
+collected  before  and  after  the  introduction  of  technology. 
+These rounds were conducted by the first two authors with 
+computer  science  and  Participatory  Design  backgrounds 
+and 
+[14]. 
+Particularly  during  the  second  round  of  analysis,  we 
+combined the qualitative data with quantitative data coming 
+from  questionnaires  and  from  the  PLog  application  to 
+triangulate  and  support  the  emerging  themes.  Themes 
+emerged related to either a particular challenge or aspect of 
+orderlies’  work  practices  coming  from  the  observations 
+and/or  as  the  most  frequently  discussed  and  emphasized 
+topics by the participants. In the next sections, we present 
+the  emerging  themes  regarding  existing  work  practices  of 
+orderlies before and after the introduction of the PLog. 
+ORDERLIES’ WORK PRACTICES BEFORE PLOGISTICS 
+The work of orderlies has often been taken for granted by 
+healthcare  professionals  as  a  large  part  of  this  work  is 
+invisible  and  thus  relegated  to  the  “background”  [41].  In 
+
+thematic  analysis  guidelines 
+
+follow 
+
+the 
+
+983
+
+type  of  care 
+
+tasks,  such  as 
+
+require  additional 
+
+this  section,  we  present  our  first  round  of  analysis  and 
+describe the work of orderlies before introducing PLog.  
+Action and Interactional Processes 
+The  work  of  orderlies,  as  part  of  the  hospital  information 
+infrastructure, can be characterized by a collection of action 
+and  interactional  processes  (see  Figure  1)  among  several 
+heterogeneous  actors  (clinical  personnel,  task  requester, 
+task coordinator), and resources to get their work done. In 
+the following, we describe the diverse elements and entities 
+involved in orderlies’ work practices. 
+Articulating Tasks – Clinicians 
+As  part  of  the  patient  examination  process,  clinical 
+personnel  might 
+information  and 
+elements  to  perform  their  work  such  as  obtaining  x-rays, 
+blood  samples  or  any  additional  test.  For  such  work, 
+clinicians require the assistance of orderlies (e.g., see (1) in 
+Figure 1a), to continue with the care process. When needed, 
+clinicians articulate and delegate these specific tasks to the 
+orderlies. Examples of these service tasks from our studies 
+are  delivering  food,  preparing  beds,  throwing  away  trash 
+and  any  patient-related 
+rounds  of 
+mobilization of patients to prevent bedsores. After a task is 
+articulated,  the  task  management  flow  starts  locating 
+relevant resources and an available orderly to perform it.  
+Booking Tasks – The Requester 
+We have observed that the nurse assistants and nurses are 
+usually the ones responsible for requesting specific tasks or 
+booking  tasks  to  obtain  the  necessary  resources  to  enable 
+the  continuity  of  work.  Occasionally  the  physicians  also 
+book  tasks  depending  on  the  specific  department  and  the 
+context  of  the  requested  task.  We  use  the  term  task 
+requester  to  refer  to  the  clinical  personnel  that  request  or 
+book  a  task  based  on  the  information  registered  when  the 
+clinician  articulates  a  task.  In  particular,  our  studies  show 
+two different ways in which a task is requested. In Figure 
+1a, a more explicit way is shown in which the task requester 
+calls  the  orderlies’  coordinator  to  request  a  specific  task 
+with  the  following  information:  type  of  task  (e.g.,  patient 
+transport, mobilization, collect blood tests), the name of the 
+departments involved (e.g., Oncology, Cardiology), as well 
+as  the  patient’s  name,  if  necessary.  In  this  particular 
+moment,  a 
+is  often 
+overlooked, takes place between the clinical personnel and 
+the  orderlies  (including  the  coordinator)  that  we  have 
+termed clinicians-orderlies handoffs.  Our studies highlight 
+the  reiterated  clinicians-orderlies  handoffs  as  illustrated  in 
+Figure  1a,  characterized  by  information  moving  back  and 
+forth  between  clinical  personnel  and  orderlies  when  new 
+tasks  are  booked  that  go  beyond  transporting  patients. 
+Furthermore, we have also observed situations in which the 
+coordinator  is  not  contacted  by  the  task  requester,  and 
+instead  the  requester  directly  approaches  a  particular 
+orderly to request a specific task, e.g., when an orderly just 
+walks  by  the  clinical  department.  This  case  shows  an 
+example  of  a  verbal  clinicians-orderlies  handoff  where  a 
+face-to-face request takes place between the task requester 
+
+transition,  which 
+
+and an orderly. All the needed information is verbally given 
+to the orderly to perform the requested task. After the task 
+is done, the orderly informs the coordinator about the task.  
+In addition, we also observed that certain clinical personnel 
+use  cognitive  artifacts  (e.g.,  department’s  schedules)  as 
+coordination  mechanisms  to  support  resourcing  activities 
+(e.g., booking task) and get a sense of local task awareness. 
+For  instance,  the  task  requesters  associated  to  the  medical 
+laboratories  and  Operation  Department  book  the  task 
+mainly considering their own schedules. Although most of 
+the  tasks  are  requested  when  needed  and  according  to  the 
+situation  at  hand  (e.g.,  right  before  a  surgery)  due  to  the 
+department’s  dynamic  schedules,  we  have  also  observed 
+few  departments  anticipating  tasks  with  a  fixed  schedule, 
+e.g.,  when  performing  surgery,  and  also  some  tasks  that 
+could  be  pre-booked  following  the  department’s  plan  and 
+pre-established  procedures.  In  this  case,  the  requester 
+notifies the coordinator every time there is a change in the 
+schedule regarding the pre-booked tasks. 
+Coordinating Tasks – The Orderlies Coordinator
+The  orderlies’  coordinator  plays  an  important  role  in  the 
+coordination of work practices as he or she is the one who 
+decides  and  prioritizes  what,  when,  and  where  the  tasks, 
+received  from  all  the  department’s  requesters,  should  be 
+performed. Our studies show how the coordinator centrally 
+manages 
+tasks,  with  consciously 
+planning and prioritizing tasks, before assigning them to the 
+orderlies.  While  assigning  the  priority  of  tasks  is  an 
+important  aspect  of  the  coordinators’  work  to  ensure  the 
+patient flow throughout the different hospital departments, 
+we  have  observed 
+the  decision-making  process 
+regarding this prioritization is challenging, as not all tasks 
+are  equally  critical.  The  orderlies’  coordinator  prioritizes 
+tasks  according 
+the 
+departments  involved;  the  type  of  task;  and  the  different 
+levels of interdependencies (e.g., information, role, artifacts 
+[2]). For instance, patient transports to an operation receive 
+high  priority  because  of  the  number  of  allocated  staff 
+needed  for  the  surgery,  and  the  status  of  the  involved 
+patient.  Furthermore,  we  observed  that  prioritizing  tasks 
+exhibits  a  dual  nature  of  articulation  work  when  the 
+coordinator  needs  to  perform  local  work  arrangements 
+
+the  coordination  of 
+
+including: 
+
+factors, 
+
+several 
+
+that 
+
+to 
+
+Clinical department
+Clinical
+personnel
+
+Requires 
+assistance
+Start patient 
+
+1
+
+care
+
+Task requester
+
+Schedule
+
+1
+
+Book task
+
+2
+
+8
+
+9
+Patient
+Delivered
+
+Orderly
+
+7
+
+Get patient at 
+department
+
+Coordinator
+Prioritize task
+
+3
+
+Assign task 
+
+4
+
+Receive task
+
+5
+
+6
+
+Initiate task
+
+SESSION: HOSPITAL WORK
+
+a 
+
+tasks, 
+
+influences 
+
+layout  of 
+
+the  hospital  also 
+
+specific  department) 
+
+(within 
+and  global  work 
+arrangements  (across  different  departments).  For  instance, 
+the coordinator reported the need to be locally and globally 
+aware of the different internal needs and requests from and 
+across departments while assigning regular tasks (around 30 
+during  weekdays  and  45  on  weekends)  to  the  orderlies 
+before  they  show  up  in  the  morning.  Furthermore,  the 
+physical 
+the 
+coordinator’s work as the coordinator is physically located
+in the orderlies’ station next to the orderlies’ coffee room, 
+to  be  aware  of  the  available  orderlies  in  case  a  task  is 
+available and that no orderly is calling and asking for tasks. 
+When  assigning 
+the  coordinator  hands  over 
+information verbally either face-to face in the coffee room 
+or over a DECT phone (as part of the hospital information 
+infrastructure)  if  the  coordinator  receives  a  call,  or  waits
+until locating the next available orderly. 
+To  get  a  sense  of  local  and  global  awareness  of  the 
+orderlies’ location and the task status, the coordinator might 
+call  each  orderly  to  check  on  the  progress  and  possibly
+assign  a  new  task  if  there  is  a  new  high  priority  task  that 
+needs  to  be  executed  right  away.  In  contrast  to  the 
+centralized  coordination  during 
+the  day  shift,  our 
+participants reported that the coordination during the night 
+shift is managed directly by the orderlies by calling a phone 
+chain,  which  redirects  the  call  to  a  particular  orderly’s 
+phone 
+in  a  round-robin  scheduling.  This  assignment
+requires an explicit communication with the orderlies, who 
+might not always be able to answer the phone. 
+Performing The Requested Tasks - Orderlies 
+After  receiving 
+the  necessary 
+task  request  with 
+information  (e.g.,  departments,  task  description,  patient’s 
+name)  via  their  DECT  phone,  the  orderlies  are  the  ones 
+performing  the  actual  tasks  moving  back  and  forth  within 
+and across different departments. At the beginning of every 
+task, the orderly might write down on paper the tasks and 
+the related information such as the patient’s name and the 
+department(s)  involved  to  keep  track  of  the  tasks  and 
+support back tracking. When the task involves patients, the 
+orderly double checks if the received information from the 
+coordinator is correct upon arrival, and often asks for more 
+information  if  necessary.  Then,  the  orderly  notifies  the 
+Clinical department
+Clinical
+personnel
+
+Task requester
+
+the 
+
+Sorted 
+list of 
+tasks
+
+Requires 
+assistance
+Start patient 
+
+care 
+
+11
+
+8
+
+9
+Patient
+Delivered
+
+Schedule
+
+11
+
+Book task
+
+2
+
+Orderly
+
+7
+
+Get patient at 
+department
+
+4
+
+Prioritize 
+tasks
+
+Select task
+
+3
+5
+
+6
+
+Initiate task
+
+Figure 1: The ordering task flow for non-emergency tasks during the daily shift (7am to 4pm): (a) before PLog;                               
+
+(b) after the intervention. Red boxes highlight the changed practices. 
+
+984
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+clinical  personnel  of  any  changes,  e.g.,  he  or  she  will 
+verbally notify the staff every time he or she either leaves 
+or  arrives  with  the  patient  for  a  patient  transport.  This 
+notification is done to ensure that the clinical personnel is 
+aware  of  the  current  status  and  location  of  the  patient.  At 
+the  end  of  every  task,  the  orderly  calls  and  notifies  the 
+coordinator, and probably acquires a new task. If there are 
+no  available  tasks,  the  orderly  would  return  to  the  coffee 
+room  and  wait  for  the  next  task.  This  is  an  example  of  a 
+void  task  as  no  task  is  performed  during  this  period.  A 
+second type of void task occurs when orderlies move from 
+department A to B without any assigned tasks.  
+Emergency tasks 
+In the case of emergency tasks, we observed that about four 
+orderlies are designated for these tasks as they also carry an 
+additional  DECT-phone,  which  the  clinicians  can  contact 
+directly. When receiving an emergency task, the designated 
+orderlies would rush to the department if they are available 
+or  they  hand  over  either  their  current  tasks  or  the  new 
+emergency  task  to  an  available  orderly,  e.g.,  by  calling  to 
+the coffee room or the coordinator.  
+Cross-Boundary Information Sharing Breakdowns 
+that 
+We  observed  several  process 
+interdependencies 
+challenge the orderlies’ task workflow and thus the whole 
+efficiency  of  the  patient-care  process.  For  instance,  we 
+noticed  that  information  interdependencies  also  take  place 
+during the clinicians-orderlies’ handoffs when, for example, 
+the  clinical  personnel  forgets  to  specify  relevant  details 
+while articulating the tasks. We found that orderlies’ tasks 
+often  require  certain  equipment  such  as  a  lift  for  moving 
+patients. However, it often happens that orderlies discover 
+that  they  need  certain  equipment  when  arriving  at  the 
+department,  which  was  not  specified  beforehand.  Another 
+example  from  our  observations  is  related  to  the  specific 
+characteristics of the patient’s conditions: when a patient is 
+isolated  or  has  hip-related  issues,  the  task  might  require 
+certain  protective  linen  or  more  than  one  orderly  to 
+mobilize a patient. In addition, our studies show situations 
+in  which  a  patient  has  been  discharged,  the  operation  has 
+been  rescheduled,  or  the  clinical  personnel  already  have 
+performed  the  task,  before  the  orderly  arrives  at  the 
+department  without  informing  the  coordinator  or  the 
+orderly. Although clinicians could call the coordinator and 
+ask for the progress (e.g., the waiting time2) or for the name 
+of the assigned orderly in order to contact him, there is no 
+other mechanism for them to become aware of the progress. 
+Furthermore, our studies show a task interdependency that 
+takes  place  during  the  transfer  of  patients  across  different 
+departments as illustrated by the following observation: 
+
+When the orderly arrived at the X-ray department and started 
+placing the patient into a position for the scan, the doctor from 
+
+                                                             
+2 Waiting time is the difference between the actual finish time of 
+the task, and the requested time to finish. 
+
+the  X-ray  Department  checked  the  EMR  system  to  get 
+information  about  the  kind  of  scan  that  the  patient  required. 
+After  retrieving  the  information  about  the  type  of  scan,  the 
+doctor became aware of the fact that the requested scan was a 
+CAT scan and required a contrast agent to be consumed two 
+hours  prior  to  the  scan.  So  the  doctor  called  the  dispatching 
+department  to  confirm  whether  the  patient  has  ingested  the 
+agent,  which  was  not  the  case.  After  discussing  with  the 
+dispatching  department  whether  another  scan  could  be  used, 
+the  final  answer  was  no,  and  the  orderly  needed  to  transport 
+the patient back to the dispatching department and two hours 
+later to transport the patient back to the X-ray department. 
+
+The orderly assigned to this patient transfer waited for the 
+clinicians  to  discuss  and  solve  this  issue  caused  by  a  task 
+that was not completed before the clinician-orderly handoff 
+started. In the end, the scan was postponed and scheduled 
+two  hours  after  the  patient  consumed  the  agent.  A  similar 
+issue  often  takes  place  when  the  clinicians  have  not 
+prepared the patient, e.g., where they will only initiate the 
+preparation when the orderly arrives for a patient transport. 
+In this case, the orderly needs to find a nurse first and then 
+wait 
+the  patient  preparation  and  patient-related 
+instructions as shown by the following observation: 
+
+for 
+
+Early  in  the  morning  one  of  the  orderly’s  first  tasks  was  to 
+transport a patient to the X-ray Department. When the orderly 
+arrived at the specified room there was no nurse present. The 
+orderly searched in the proximity of the room for a nurse, but 
+was  unsuccessful  and  had  to  wait  for  the  nurse  to  show  up. 
+Approximately eight minutes later, the nurse showed up, and it 
+turned out that she had been at a morning meeting. 
+
+that 
+
+In  general,  we  observed 
+the  clinician-orderly 
+coordination  is  often  a  one-way  coordination,  i.e.,  the 
+clinician  requests  a  task  for  the  orderly  to  perform. 
+However,  we  also  observed  situations  in  which  the 
+orderlies’ information has influenced the clinicians’ work: 
+
+As an orderly just finished a task, a nurse passed by and asked: 
+“Can you transport the patient in the next room to get an X-ray 
+scan?” Another orderly overhears the handover and said: “I’ve 
+just transported him out of the hospital—he wanted to smoke”. 
+After this conversation, the nurse rescheduled her plan and 
+requested for another patient transport to an x-ray scan. 
+Resourcing Challenges 
+Since  the  orderly  team  is  a  shared  resource  across  all 
+departments,  they  are  constantly  prioritizing  which  task 
+should be finished first by each orderly. An example of this 
+issue  of  competing  resources  takes  place  when  the  nurses 
+anticipate, that there is a long waiting time for the orderlies 
+based on earlier tasks, and purposefully adjust the task time 
+to an earlier time to ensure that there is less waiting time. 
+Clinicians  usually  block  out  some  extra  time  in  case  of 
+unexpected  situations  and  we  refer  to  this  time  as  buffer 
+task time. The following excerpt shows an example of this: 
+Orderly: So sometimes, when we are super busy and it feels 
+like we are getting nowhere with our work, it happens that we 
+arrive  at  a  department,  but  the  patient  is  not  ready  for  the 
+transport  because  the  surgery  is  way  later,  but  the  nurse 
+
+985
+
+booked the task ahead because she was afraid of waiting for us 
+for too long and that the operation could have been delayed. 
+
+to  an  orderly  earlier 
+
+The  buffer  task  time  given  by  the  clinicians  subsequently 
+affects  the  orderlies’  task  coordination  by  giving  a  higher 
+priority to such tasks than to others that have a correct but 
+later time. The buffer task time will overrule other tasks and 
+be  assigned 
+than  expected. 
+Furthermore,  the  clinicians  also  bypassed  the  coordinator 
+and  the  associated  waiting  time,  when  they  verbally 
+contacted  the  orderlies  passing  by  and  directly  requested 
+them  to  perform  another  task  without  informing  the 
+coordinator.  An  example  of  these  situations  is  when  the 
+clinicians  are  busy  and  need  a  patient  to  get  transported 
+right  away.  Waiting  time  also  occurs  when  the  orderly 
+shows  up  before  the  actual  time  and  has  to  wait  for  the 
+clinical staff to appear or return to the task later. We refer to 
+this waiting time as inter-task time. 
+WORK PRACTICES AFTER INTRODUCING PLOGISTICS 
+In this section, we summarize our initial assessment of the 
+impact  caused  by  PLog  on  the  coordination  of  orderlies’ 
+work  practices  as  it  moved  from  a  centralized  (see  Figure 
+1a)  to  a  more  decentralized  coordination  (Figure  1b).  In 
+particular, our studies help us to get an understanding of the 
+spatial  and  temporal  dimensions  as  well  as  the  emergent 
+changes in the hospital information infrastructure. 
+Insights into the Spatial and Temporal Dimensions 
+Our  quantitative  data  collected  by  the  PLog  made  it 
+possible to estimate the number of tasks that orderlies have 
+performed  every  day.  At  the  hospital,  an  average  of  590 
+tasks  per  day  took  place  across  all  departments  including 
+transportation  (64%),  bed  delivery  (10.23%)  and  pickup 
+(unclean)  beds  (9.25%),  mobilization  (9.56%)  and  other 
+(7.96%) tasks.  Furthermore, the data from PLog shows that 
+the  X-ray  Department  was  the  most  frequent  location  of 
+tasks (µ=151.2 tasks), followed by the Emergency (µ=70.2 
+tasks), Oncology  (µ=28.7 tasks), Recovery (µ=25.4 tasks), 
+Service  (µ=32.3  task)  and  Cardiology  (µ=25.1  tasks) 
+departments.  Apart  from  getting  insights  into  the  spatial 
+nature  of  work,  PLog  also  enables  the  exploration  of  the 
+temporality  of  orderlies’  work.  Figure  2  shows 
+the 
+distribution of tasks based on the data collected from PLog. 
+In particular, it shows the tasks of six deparments with the 
+highest workload and the time they are requested for. First, 
+we see that the major load of tasks for the orderlies occurs 
+from 10 a.m. to 11 a.m., and again from 1 p.m. to 2 p.m. 
+We see that some of the departments, for instance the X-ray 
+Department  (light  turquoise  color)  has  a  high  variance  of 
+task  frequency,  i.e.  spikes  that  indicate  a  sudden  load  of 
+requests.  Whereas  other  departments,  for  instance  the 
+Oncology 
+(light  blue) 
+departments  show  more  stabile  rhythms,  i.e.  less  spikes. 
+This  shows  the  highly  diverse  nature  of  the  departments’ 
+rhythms, which directly impacts the orderlies’ work.  
+
+red)  and  Cardiology 
+
+(light 
+
+SESSION: HOSPITAL WORK
+
+the 
+
+to  understand  how 
+
+tasks  performed  by 
+
+the  clinical  personnel 
+
+infrastructure  arrangement  handle 
+
+The Dynamic Changes in the Information Infrastructure 
+Our  qualitative  studies  during 
+the  pilot  and  post-
+intervention  phases  help  us 
+the 
+introduction of the technology involved a complex change 
+of  existing  work  practices  (described  in  the  previous 
+section)  by  changing  or  creating  new  practices.  Figure  1b 
+shows how the diverse elements and entities that constitute 
+the  new 
+task 
+coordination  across  several  workgroups  through  different 
+action and interactional processes. Because the articulation 
+of 
+is 
+comparatively  unchanged  (see  Figure  1),  we  will  instead 
+start by describing the additional processes. 
+Consulting Task Status – Clinicians 
+After  the  introduction  of  PLog,  it  is  now  possible  for  the 
+clinical personnel to follow the progress of their articulated 
+tasks  by  consulting  a  desktop  application  placed  in  each 
+department. Through this application, the clinical personnel 
+can  get  status  information  about  all  booked  tasks  for  the 
+specific  department. This  information  includes  whether  an 
+orderly has been assigned to the tasks, as well as status of 
+the  task,  e.g.,  started  or  finished.  According  to  the 
+questionnaires, the ability to track the progress of a task is 
+appreciated  (µ=3.6)  by  the  clinicians.  Furthermore,  PLog 
+creates a new work practice for clinicians that turned out to 
+be beneficial as stated by a nurse: 
+
+I use the overview of the orderlies a lot in my work. Before, 
+we were used to often walking around and wondering: Is the 
+orderly  on  his  way?  Have  they  [the  orderlies]  forgotten  my 
+task? It [PLog’s task overview] is very useful because we can 
+plan our work and don’t have to think about the tasks.  
+
+Changes In Booking Tasks – The Requester 
+In contrast to the previous action of calling to book a task, 
+an immediate effect is that the task requester (nurse, nurse 
+assistant  and  sometimes  a  doctor)  has  to  move  and  locate 
+the  desktop  computer  in  each  department’s  administration 
+room to book the task using PLog. In principle, our studies 
+show that the task requester is now enabled to book tasks 
+ahead  of  time  based  on  each  department’s  schedule.  In 
+addition, we have observed how PLog assists in minimizing 
+issues caused by incomplete information. For instance, the 
+task  requester  has  to  explicitly  enter  the  information 
+regarding the specific room where the patient is, as well as 
+(e.g.,  any 
+any  other 
+equipment 
+the 
+task). 
+According  to  the  responses  of  questionnaires,  the  task 
+requesters agreed that the process of ordering a task is easy 
+(µ=4.3),  and  that  it  is  easier  to  hand  over  correct 
+information  than  before  (µ=3.4),  and  that  there  are  fewer 
+misunderstandings  (µ=3.6).  Although  PLog  facilitates  the 
+booking  task,  we  have  also  noticed  situations  in  which  a 
+task  requester  would  contact  an  orderly  passing  by  the 
+department  to  request  a  task,  rather  than  booking  through 
+the system as shown by the following observation: 
+
+required 
+to  complete 
+
+relevant 
+that 
+
+is  necessary 
+
+information 
+
+As an orderly is on his way with a patient, he walks by a nurse 
+who  asks  him  whether  he  could,  on  the  way  back,  transport 
+
+986
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+another  patient.  The  orderly  says:  “Sure,  what’s  the  task 
+about?”  and  the  nurse  hands  over  the  information.  However, 
+the  orderly  cannot  find  the  task  in  the  task  overview  and 
+realizes that the nurse has yet not created the task. The orderly 
+then  goes  back  and  asks  the  nurse  to  create  the  task  but  the 
+nurse  responds:  “Is  that  really  necessary?”  Then  the  orderly 
+explains  that  the  tasks  need  to  be  documented  so  in  case  he 
+gets delayed and another co-worker can take over. 
+
+Changes in Coordination: The Application Task List 
+One immediate effect of the introduction of PLog was the 
+movement  from  a  centralized  (see  Figure  1a)  to  a  more 
+decentralized  (see  Figure  1b)  coordination  process.  While 
+the coordinator played a key role in deciding who handles
+which  task,  where  and  when,  the  role  of  the  coordinator 
+almost  faded  away  after  the  introduction  of  PLog.  During 
+the  pilot  study,  an  optional  coordinator  was  in  charge  of 
+monitoring  the  task  flow  and  manually  overrode  tasks  in 
+case of inefficient schedules. As PLog was deployed at one 
+department at the time, the departments that were not part 
+of the study were still calling the previous coordinator who 
+would manually enter the task into the system.  
+Instead of a coordinator explicitly handling the coordination 
+of  tasks,  the  coordination  has  been  redistributed  between 
+the application and the orderlies. Rather than receiving the 
+task  from the coordinator  as illustrated  by Figure  1a, now
+the orderlies are the ones that need to explicitly prioritize, 
+decide and select a task available through the  PLog’s task 
+overview, and then book it when they start to walk to the 
+specific department (see Figure 1b). Furthermore, the sorted 
+task list of PLog includes an implicit prioritization of tasks 
+according  to  the  requesting  time.  The  task  appears  as 
+booked until the orderly arrives at the specific department, 
+patient or equipment related to the booked task. To start the 
+task 
+the  orderly  presses  ‘start’,  and  presses  ‘finish’ 
+whenever they finish the task. If the task overview does not 
+show any available tasks, the orderlies go back to the coffee 
+room and wait before checking again for a task. In addition, 
+a  large  display  has  been  placed  in  the  coffee  room  to 
+provide  an  overview  of  all  the  tasks  that  are  not  finished 
+and make the orderlies aware of the progress. However, the 
+overview  provided  by  the  display  is  restricted  to  the  last 
+hour and the next two hours ahead, in an attempt to focus 
+on the current and relevant tasks. 
+Although our studies show that the role of the coordinator 
+became  more  optional,  and 
+is  no  designated 
+
+there 
+
+coordinator  at  the  hospital  at  this  moment,  one  of  the 
+orderlies’ managers during the interview described how he
+may  step  in  and  starts  manually  coordinating  the  tasks  in 
+case of a sudden surge in tasks. Furthermore, the orderlies 
+report that they now have a good overview of which tasks 
+are  important  (µ=4.4)  compared  to  before  PLog  (µ=3.7),
+and they have a better overview of which task to start next
+(µ=4.0), in contrast to before PLog (µ=2.7). 
+Prioritizing Tasks 
+Ensuring  a  more  efficient  prioritization  and  scheduling 
+process requires an awareness of the overall flow and task 
+distribution  to  assess  the  busiest  areas  at  the  hospital,  and 
+enabling  an  ad-hoc  task  planning.  For  example,  orderlies’ 
+planning  focuses  on  minimizing  the  distance  walked 
+between tasks, referred to as inter-task time, as these empty 
+tours also imply wasting time that could have been used on 
+other  tasks.  We  observed  how  orderlies  consult  both  the 
+task  overview  and  the  colleague  overview  from  PLog, 
+almost in parallel when performing a task. This enables the 
+orderlies to assess which parts of the hospital are the most 
+active and best covered by the orderlies. By looking at the 
+co-workers’ task progress, i.e., checking the route between 
+the  involved  departments  and  the  current  position,  an 
+orderly can infer the other orderlies’ task progress. The task 
+progress  can  be  used  to  estimate  whether  a  colleague  will
+be finished with a task soon, thus providing a better match 
+for a task. The orderlies also reported in the questionnaires 
+that  having  a  good  overview  of  their  colleagues  is  more 
+important now (µ=3.7) than before introducing PLog (µ=3), 
+while  they  also  agree  that  their  overview  of  their  nearest 
+colleague is better now (µ=3.3) than before PLog (µ=1.6).  
+In  addition 
+the  PLog  application  running  on  a
+smartphone,  the  orderlies  still  carry  up  to  two  DECT 
+phones,  one  for  regular  communication  and  another  for 
+emergency 
+the 
+the  current  DECT 
+smartphone  does  not 
+infrastructure.  Some  of 
+(e.g. 
+emergency transports) are handled and prioritized by PLog
+by displaying the tasks in the top and highlighting them in 
+the task overview. PLog also notifies the orderly of a new 
+emergency task through a different sound from other tasks. 
+Orderlies’ Workarounds After Introducing PLogistics
+After the introduction of PLog into the hospital information 
+infrastructure, our studies also identified a number of local 
+
+support 
+the  emergency 
+
+tasks 
+
+to 
+
+situations 
+
+(e.g.,  cardiac  arrest)  as 
+
+Figure 2: Visualization of the temporality of all orderlies’ task flow for the six most work-loaded departments 
+
+987
+
+(cid:1)
+(cid:2)
+(cid:8)
+(cid:3)
+(cid:5)
+(cid:7)
+(cid:6)
+(cid:7)
+(cid:4)
+(cid:9)
+than 
+
+less  efficient 
+
+flow  became 
+
+to  compensate  any 
+
+adjustments,  and  workarounds 
+misalignments in orderlies’ work practices.  
+New Explicit Communication  
+When the explicit coordination previously performed by the 
+coordinator was delegated to PLog and the orderlies, a few 
+issues emerged during the pilot study as the scheduling task 
+and 
+the  previous 
+coordination process. To overcome these issues, PLog was 
+modified to enable orderlies to book more than one task at a 
+time  in  order  to  increase  the  task  flow  and  decrease  the 
+number of void tasks. However, it was challenging for the 
+orderlies to schedule ahead due to the dynamic nature of the 
+task (e.g., ad-hoc changes may imply that the orderly might 
+be  delayed  in  the  next  task).  As  this  information  is  not 
+visible,  any  pre-booked  task  might  also  hinder  any  co-
+worker from taking over the task if necessary. At the end, it 
+was  beneficial  to  enable  orderlies  to  book  only  one  task, 
+and to enable them to book the next one once they are close 
+to  finishing  the  former,  so  orderlies  can  be  aware  of  the 
+assigned tasks and the available tasks. 
+We  observed  another  issue  when  the  same  task  required 
+more than one orderly at approximately the same time. The 
+coordinator previously handled this by calling the orderlies 
+until  identifying  two  available  orderlies.  Requiring  two 
+orderlies is challenging, as one orderly often has to wait for 
+a second one to book the task and show up, before starting 
+the task. To overcome this issue, we have observed how an 
+orderly who has been waiting would often start calling his 
+or her co-workers starting with the available or soon to be 
+available  ones.  In  some  cases,  two  orderlies  would  agree 
+while being at the coffee room or an orderly would stop by 
+the coffee room to look for an available orderly to verbally 
+agree  to  do  the  task  together.  If  a  co-worker  has  already 
+booked that task but has not yet shown up, the other orderly 
+will try to infer the arrival time by looking at the position 
+displayed  in  PLog  or  explicitly  calling  the  co-worker  and 
+ask for his or her estimated arrival time. 
+Workarounds Preventing Non-Efficient Schedules 
+Inferring co-worker’s task progress could be helpful when 
+booking the next tasks. However, an orderly’s inference can 
+be  wrong,  which  means  that  orderlies  are  less  efficient  in 
+scheduling tasks, e.g., an orderly can book a task just before 
+a co-worker who is closer to the department, as illustrated 
+by the following: 
+
+At the Emergency Department one of the nurses walks by and 
+asks Orderly A whether he has time to do a task just created 
+by  her.  As  Orderly  A  is  just  finishing  up  he  marks  his  task 
+finished  in  PLog  and  scrolls  through  the  list  of  tasks  in  the 
+PLog’s  task  overview.  When  Orderly  A  is  about  to  book  it, 
+Orderly  B  books  the  task,  which  prevents  Orderly  A  from 
+booking it also. Then Orderly A scrolls through the colleague 
+overview, finds Orderly B who had booked the task before A, 
+and  could  see  that  B  is  farther  away  from  the  task  than  A 
+(since  he  is  already  at  the  Emergency  Department).  Then  A 
+calls  B  and  asks  him  to  cancel  the  booking.  This  allows 
+
+988
+
+SESSION: HOSPITAL WORK
+
+Orderly A to find the task in the overview again, and book it, 
+this time without interference from colleagues. 
+
+the 
+
+the 
+
+into 
+
+existing  hospital 
+
+By calling Orderly B and asking him to hand over the task, 
+Orderly  A  prevents  Orderly  B  from  having  a  void  task 
+(empty  tour),  and  Orderly  B  can  then  choose  a  more 
+efficient task. In other cases, when an orderly has finished a 
+task he or she might stay around the same department for a 
+short time and wait for the creation of a new task (inter-task 
+time).  Our  studies  highlight  that  this  often  happens  if  the 
+orderly  anticipates  a  new  task,  e.g.,  when  transporting  a 
+patient to an examination, as the patient or another one will 
+often  need  a  transport  back  to  the  ward.  In  this  case  the 
+orderly will check the task overview and as soon as possible 
+book a task in order to prevent co-workers from booking it. 
+DISCUSSION 
+introduction  of  a  new 
+The  findings  show  how 
+technology 
+information 
+infrastructure  affected  different  elements,  entities  and 
+practices  of  the  hospital.  Here,  we  discuss  three  tensions 
+resulting  from  the  complex  workflow  and  dynamics  of 
+orderlies’  work  practices: 
+local  vs.  global  overview, 
+centralized  vs.  decentralized  coordination,  and  local  vs. 
+global  coordination.  We  also  discuss  the  implications  of 
+how  supporting  local  and  global  coordination  of  work 
+practices  of  orderlies  could  provide  opportunities  for  the 
+development of future CSCW systems beyond the hospital. 
+Maintaining Local and Global Overview 
+The orderlies perform tasks across more than 30 operation 
+centers (departments) [21], accessing and keeping track of a 
+vast array of information to coordinate and complete their 
+work,  and  avoid  cross-boundary  breakdowns.  Although 
+PLog facilitated the coordination and registration of tasks, it 
+added new work for the orderlies. To prioritize and select a 
+task by themselves, orderlies not only need to be aware of 
+each  department’s  rhythms  and  schedules  but  also  locally 
+keep  an  eye  on  their  colleagues  and  the  progress  of  the 
+assigned  tasks,  which  was  previously  handled  by  one 
+person.  However,  the  task  schedules  and  the  spatial  and 
+work arrangements of each department make it difficult for 
+the orderlies to get a sense of the whole situation. Although 
+some of the task information is available and visible in the 
+task booking display, our studies show that the number of 
+tasks can be quite high during the day shift and thus getting 
+an overview gets complex. Orderlies should become aware 
+that, e.g., most tasks need to be finished between 10 and 11 
+am, and less tasks are performed from 11 a.m. to 1 p.m. and 
+increase again from 1 to 2 p.m. In Figure 2, one can see that 
+the  Cardiology  Department  has  more  tasks  from  8-9  a.m., 
+and  later  has  a  stabile  flow  of  around  1  task  every  10 
+minutes  until  2.30  p.m.    as  it  closes  around  3  p.m.  In 
+addition 
+the 
+anticipation  of  new  tasks  by  each  department  has  to  be 
+considered when orderlies are close by. 
+Our  findings  suggest  that  CSCW  systems  that  support 
+orderlies’  work  practices  should  be  designed  to  not  only 
+
+local  and  global  arrangements, 
+
+to 
+
+the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+improve 
+
+document  and  support  the  booking  of  a  specific  task,  but 
+also  provide  and  visualize  a  local  and  global  overview  of 
+the  distribution  and  status  of  tasks  to  sustain  the  task 
+informational  order  across  departmental  boundaries.  The 
+informational order [43, 44] refers to all the aspects of the 
+task information flow across departments (e.g., who is the 
+sender  and  the  receiver,  type  of  information  interchanged, 
+such  as  instructions,  patient’s  name,  additional  equipment 
+and  resources).  Sustaining  the  task  informational  order 
+implies  an  automated  update  of  the  recently  articulated 
+tasks,  the  assignation  of  tasks,  the  status  information  of 
+every task across different departments and if possible the 
+assigned  buffer  time.  Supporting  informational  order  is 
+something often outspoken as a concern in the related work 
+of this paper for the case of work practices of orderlies. For 
+instance,  prior  work  has 
+investigated  how  context-
+awareness systems can be used as a priority mechanism to 
+support  awareness 
+in  hospital  contexts,  focusing  on 
+clinicians  [4].  Similarly,  orderlies  need  to  be  socially, 
+spatially and temporally aware [4] of previous, current and 
+future  tasks  which  imposes  challenges  in  regards  to 
+visualizing contextual clues for the orderlies. In particular, 
+enabling the orderlies to become aware of the better places 
+to  perform  a  task  according  to  the  collected  contextual 
+information,  might 
+the  dynamic  and  spatial 
+distribution of tasks.  However, there should be a trade-off 
+between providing both a local and global overview, as it is 
+necessary to balance the amount of information displayed to 
+avoid 
+information  overload  and  sustain  a  seamless 
+workflow  performance.  When  a  touch-based  interaction  is 
+not possible due to the probability of causing interruptions 
+to the practice at hand or the limited screen-size of a mobile 
+phone, hands or eye free interaction could provide different 
+channels to provide additional information to the orderlies. 
+From Centralized to a more Decentralized Coordination 
+Our  study  shows  how  certain  existing  work  practices 
+changed and other emerged after the introduction of PLog 
+removing  the  role  of  the  coordinator  by  delegating  the 
+coordination  to  PLog  and  the  orderlies.  As  such  the 
+coordination  of  orderlies’  work  practices  moved  from  a 
+manual  and  centralized  process  to  a  semi-automatic  and 
+more  decentralized  process  in  which  orderlies  act  as  a 
+mobile  human  agent  [21].  In  the  more  decentralized 
+coordination, the prioritization is shared implicitly by PLog 
+through  the  sorted  list  task  interface  and  explicitly  by  the 
+orderlies  while  proactively  selecting  a  specific  task  using 
+the  different  overviews.  This  implies  that  orderlies  do  not 
+only interact with PLog but also become a proactive actor 
+in  the  information  infrastructure.  Here,  PLog  provides  a 
+sorted  task  list  to  help  the  orderlies  to  get  sense  of  the 
+articulated  tasks,  however,  the  list  is  only  sorted  by  due 
+time  and  fails 
+to  consider  other  spatial  and  social 
+dimensions.  Here,  a  context-aware  prioritization  of  tasks 
+could be advantageous to reduce the number of void tasks 
+as well as to facilitate the orderlies’ anticipation of task and 
+scheduling  work 
+the  delegation  of 
+
+[5].  Although 
+
+coordination takes advantage of the proactivity of orderlies 
+and, in principle, helps them with planning and scheduling, 
+it  also  has  some  side  effects  as  the  orderlies  performed 
+workarounds  [15]  and  bypassed  PLog  to  compensate 
+situated  misalignments  (e.g.,  inefficient  booking)  in  the 
+information  infrastructure  [23].  For  instance,  the  data 
+collected  by  PLog  can  now  facilitate  the  identification  of 
+opportunistic behavior when orderlies decide not to sign up 
+for unpopular tasks, which in turn can provoke a delay on 
+performing  those  tasks  and  thus  decrease  the  overall 
+efficiency  of  the  hospital  work.  Indeed,  more  visibility  of 
+the orderlies’ work might also increase the opportunities for 
+surveillance [41]. At the organizational level, this might be 
+beneficial as PLog makes the orderlies’ work more visible, 
+manageable and ready for inspection similar to making the 
+work of healthcare professional visible [7, p. 90].  This in 
+turn might increase the identification of possible void tasks 
+(e.g.,  empty  tours)  that  can  put  at  risk  the  efficiency  of 
+orderlies.  However,  at  the  personnel  level,  this  might  be 
+detrimental  for  the  wellbeing  of  the  orderlies  and  their 
+personal  preferences  that  now  became  more  explicit  and 
+visible as they are the ones who decide which task to book 
+and perform, in contrast to the centralized coordination. 
+Our  findings  suggest  that  CSCW  systems  that  support 
+orderlies’  work  practices  should  be  designed  to  make 
+orderlies  play  an  active  role  in  the  task  management 
+routines by balancing the visibility of their work practices 
+as well as providing them with local and global awareness 
+thereby taking advantage of the local and global overviews. 
+This  calls  attention  to  an  important  aspect  of  CSCW 
+systems, the negotiation of visibility [41] which takes into 
+account  the  orderlies’  work  practices  and  their  personal 
+preferences.  As  suggested  by  Star  and  Strauss  [41],  the 
+invisibility of work could also be positive as in the case of 
+certain  workarounds.  For  instance,  the  inter-task  time  that 
+takes place as part of the anticipation of tasks by an orderly 
+(e.g.,  when 
+transporting  a  patient  between  different 
+departments)  could  be  considered  a  case  of  a  positive 
+workaround  that  could  be  beneficial  for  the  overall 
+information  infrastructure.  To  avoid  misalignments,  in  the 
+new  infrastructure,  a,  particular  attention  should  be  given 
+not only to reconcile inter-departmental differences but also 
+intra-departmental differences due to the distributed nature 
+of  the  orderlies’  work  practices.  This  might  promote 
+coordination by avoidance [27] to prevent the interference 
+of  other  colleagues  during  the  self-prioritization  and 
+selection of tasks.  
+Supporting Local and Global Coordination  
+Our study shows how the clinicians-orderlies handoff takes 
+place among different personnel, artifacts and departments. 
+The  desktop  application  in  each  department  could  be  an 
+example of a common information space [11] that facilitate 
+information sharing, also providing clinicians with a sense 
+of  local  and  global  awareness.  Besides  the  overview 
+obtained  by  PLog, 
+the  clinicians  across  different 
+departments  do  not  get  to  participate  together  in  the 
+
+989
+
+task 
+
+in 
+
+different 
+
+challenging  when 
+
+introducing  contextual  clues, 
+
+times,  but  a  more  active  role 
+
+articulation  and  prioritization  of  tasks,  as  a  result  of  a 
+reconfiguration of coordination. The coordination becomes 
+even  more 
+process 
+interdependencies  take  place  due  to  the  departments’ 
+competing  goals,  resources  and  clinical  and  non-clinical 
+teams [2]. On the one hand, this might in some cases imply 
+that  a  more  collaborative  resource  prioritization  process 
+across departments is needed [2],  aiming for more efficient 
+patient flows since the clinical and non-clinical staff could 
+participate in taking their individual schedules into account. 
+However, having the clinical personnel as an active actor in 
+prioritizing tasks has been a concern throughout the whole 
+implementation  of  PLog.  As  presented  earlier 
+the 
+opportunistic  behaviors  of  clinical  personnel  introduced 
+buffer 
+task 
+prioritization could introduce over-assessments of their own 
+tasks.  Moreover, 
+like 
+visualizing  the  overall  waiting  time,  could  provoke  new 
+opportunistic  behaviors.  As  the  main  focus  of  the  clinical 
+personnel is the patient care, it might be counterproductive 
+to expect them to actively participate in the logistics of the 
+service work. In this case, getting a global awareness of the 
+hospital  service  work  in  addition  to  the  awareness  of 
+clinical work may be too challenging for task requesters.  
+Our  findings  suggest  that  CSCW  systems  that  support 
+orderlies’ work practices should be designed to sustain the 
+local  and  global  coordination, 
+the  redistribution  of 
+awareness,  and  the  negotiative  work  between  clinical 
+personnel and orderlies supported by the local and global 
+overviews.  The  negotiative  work  [44]  refers  to  all  the 
+activities  including  informal  and  more  formal  agreements 
+that  take  place  across  departments  between  clinical  and 
+non-clinical  personnel 
+successful 
+negotiation.  Here  the  overviews  play  an  important  role  to 
+provide  both  orderlies  and  clinical  personnel  with  a  local 
+and  global  awareness  as  orderlies  move  back  and  forth 
+across  several  departments.  While  the  desktop  application 
+overview acted as an articulation space [10] supporting the 
+intra- and inter- departmental coordination, PLog overviews 
+served as a useful boundary object [26], providing a broader 
+overview  of  tasks  and  resources  across  departments, 
+enabling a local and global coordination between clinicians 
+and  orderlies  and  facilitating  a  common  understanding  of 
+the practices using the information infrastructure. 
+Beyond Hospital Work Coordination 
+Our findings come from a case study in a specific hospital, 
+but they may be transferable to other complex environments 
+and  scenarios,  where  prioritization,  scheduling  and 
+anticipating work  are essential to support the coordination 
+of  work  practices  such  as  software  companies,  print 
+industry,  airport  and  metro  control  centers  [8,  9].  Indeed, 
+the challenges and interdependences presented above relate 
+to the third level of articulation of work [44] with planning, 
+scheduling and execution of actual activities. Our findings 
+not  only  show  how  orderlies’  work  practices  changed  but 
+also how those of clinicians changed after the introduction 
+
+to  accomplish  a 
+
+SESSION: HOSPITAL WORK
+
+of PLog. A particular strategy that could be found in other 
+complex environment apart from the hospital is the creation 
+of a buffer time in production lines to prevent unexpected 
+situations  [30].  Buffer 
+times  are  usually  created  by 
+professional workers according to past experiences [20]. As 
+presented  above,  buffer  time  was  allocated  according  to 
+nurse’s  experiences  with  a  predefined  fixed-size.  A 
+predefined fixed-size of buffer time imposes challenges in 
+settings where the work is not prioritized according to the 
+time or the order [13, 30]. For instance, prioritization in the 
+print industry would consider the complexity of the activity 
+and  how  much  time  is  required  to  perform  a  task  [13]. 
+Although  making  the  buffer  time  more  visible  could 
+support  the  coordination  of  work  practices,  future  work 
+should  consider  discovering  the  specific  particularities  of 
+each  domain.  Furthermore,  implementing  and  visualizing 
+an  adjustable  buffer  time  could  be  beneficial  (e.g.,  when 
+additional time is needed to complete a task) to support the 
+performance and coordination of work practices. 
+CONCLUSION 
+This paper discusses the importance of the often-considered 
+invisible  but  legitimate  work  performed  by  orderlies  as 
+proactive  actors  in  hospital  information  infrastructures. 
+While  few  studies  investigate  the  work  practices  of 
+orderlies,  these  have  mostly  focused  on  providing  a 
+description  of  work  practices  or  usability  tests  without 
+exploring  the  dynamic  changes  in  practices  and  in  the 
+overall  workflow  of  the  hospital.  In  contrast,  we  describe 
+the  existing  work  practices  of  orderlies  and  the  involved 
+actors  and  artifacts,  part  of  a 
+large-scale  hospital 
+information infrastructure, before and after the introduction 
+of  a  new  technology  that  support  the  tasks  coordination 
+across hospital departments. To our knowledge, this is the 
+first  study  of  technology  in  use  that  further  investigates 
+orderlies’  work  practices  and  their  dynamic  changes.  Our 
+findings  suggest  that  it  is  necessary  to  generate  a  more 
+complete  understanding  of  orderlies’  work  practices  and 
+account  for  the  challenges,  tensions,  arrangements  and 
+workarounds  discussed 
+this  paper  as  fundamental 
+knowledge to support CSCW system design. Based on our 
+findings, we provide a set of design recommendations that 
+include:  a)  supporting  the  local  and  global  overviews  to 
+sustain  the  task  informational  order  across  departmental 
+boundaries,  b)  sustaining  orderlies  proactive  role  while 
+balancing  the  visibility  of  their  work  practices,  and  c) 
+sustaining  the  redistribution  of  awareness  and  negotiative 
+work 
+These 
+recommendations might help clinicians, orderlies as well as 
+technology  designers  to  account  for  the  distributed  and 
+invisible—yet essential—work of hospital orderlies. 
+ACKNOWLEDGMENTS 
+This  work  has  been  supported  by 
+the  Danish  Advanced 
+Technology  Foundation  under  J.nr.  076-2011-  3.,  and  by  The 
+Danish  Council  for  Strategic  Research  as  part  of  the  EcoSense 
+project  (11-115331).  Furthermore,  we  would  like  to  thank  the 
+reviewers  for  their  helpful  suggestions  and  comments  as  well  as 
+Lone S. W. Christensen and Yuka Nagashima for their feedback.  
+
+clinicians 
+
+orderlies. 
+
+between 
+
+and 
+
+in 
+
+990
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+REFERENCES 
+1. 
+
+Joanna Abraham and Madhu C. Reddy.  2008. Moving 
+patients around: a field study of coordination between 
+clinical and non-clinical staff in hospitals. In Proc. 
+CSCW, ACM, 225-228. 10.1145/1460563.1460598 
+Joanna Abraham and Madhu C. Reddy. 2013. Re-
+coordinating activities: an investigation of articulation 
+work in patient transfers. In Proc. CSCW, ACM, 67-78. 
+10.1145/2441776.2441787 
+Jørgen Bansler, Erling Havn, Troels Mønsted, Kjeld 
+Schmidt and JesperHastrup Svendsen.  2013. 
+Physicians’ Progress Notes. In Proc. ECSCW, 
+Springer, 123-142. 10.1007/978-1-4471-5346-7_7 
+Jakob E Bardram and Thomas R Hansen.  2004. The 
+AWARE architecture: supporting context-mediated 
+social awareness in mobile cooperation. In Proc. 
+CSCW, ACM, 192-201. 10.1145/1031607.1031639 
+Jakob E. Bardram.  1997. "I love the system - I just 
+don't use it!". In Proc. SIGGROUP, ACM, 251-260. 
+10.1145/266838.266922 
+JakobE Bardram and Claus Bossen. (2005) Mobility 
+Work: The Spatial Dimension of Collaboration at a 
+Hospital. Comput Supported Coop Work, 14 (2). 131-
+160. 
+
+2. 
+
+3. 
+
+4. 
+
+5. 
+
+6. 
+
+8. 
+
+7.  Marc Berg. (1999) Patient care information systems 
+
+and health care work: a sociotechnical approach. Int J 
+Med Inform, 55 (2). 87-101. 
+Jeanette Blomberg and Helena Karasti. (2013) 
+Reflections on 25 Years of Ethnography in CSCW. 
+Comput Supported Coop Work, 22 (4-6). 373-423. 
+9.  Alexander Boden, Frank Rosswog, Gunnar Stevens 
+
+and Volker Wulf.  2014. Articulation spaces: bridging 
+the gap between formal and informal coordination. In 
+Proc. CSCW, ACM, 1120-1130. 
+10.1145/2531602.2531621 
+
+10.  Alexander Boden, Frank Rosswog, Gunnar Stevens 
+
+and Volker Wulf.  2014. Articulation spaces: bridging 
+the gap between formal and informal coordination. In 
+CSCW, ACM, 1120-1130. 10.1145/2531602.2531621 
+
+11.  Claus Bossen.  2002. The parameters of common 
+
+information spaces:: the heterogeneity of cooperative 
+work at a hospital ward. In Proc. CSCW, ACM, 176-
+185. 10.1145/587078.587104 
+
+12.  Claus Bossen, Lotte Groth Jensen and Flemming Witt 
+
+Udsen. (2014) Boundary-Object Trimming: On the 
+Invisibility of Medical Secretaries' Care of Records in 
+Healthcare Infrastructures. Comput. Supported Coop. 
+Work, 23 (1). 75-110. 
+
+13.  John Bowers, Graham Button and Wes Sharrock.  
+
+1995. Workflow From Within and Without: 
+Technology and Cooperative Work on the Print 
+Industry Shopfloor. In Proc. ECSCW, Springer, 51-66. 
+10.1007/978-94-011-0349-7_4 
+
+991
+
+14.  Virginia Braun and Victoria Clarke. (2006) Using 
+
+Thematic Analysis in Psychology Qualitative Research 
+in Psychology, 3, 77-101. ISI. 
+
+15.  Federico Cabitza and Carla Simone.  2013. “Drops 
+
+Hollowing the Stone”: Workarounds as Resources for 
+Better Task-Artifact Fit. In Proc. ECSCW, Springer, 
+103-122. 10.1007/978-1-4471-5346-7_6 
+
+16.  Yunan Chen, Charlotte Tang, Karen Cheng and Sun 
+Young Park. 2012. Bridging clinical and non-clinical 
+health practices: opportunities and challenges. In Proc. 
+EA, ACM, 2723-2726. 10.1145/2212776.2212705 
+17.  Gunnar Ellingsen and Kristoffer Røed. (2010) The 
+
+Role of Integration in Health-Based Information 
+Infrastructures. Comput Supported Coop Work, 19 (6). 
+557-584. 
+
+18.  Louise Færgemann, Teresa Schilder-Knudsen and 
+
+Peter H Carstensen.  2005. The Duality of Articulation 
+Work in Large Heterogeneous Settings — a Study in 
+Health Care. In Proc. ECSCW, Springer, 163-183. 
+10.1007/1-4020-4023-7_9 
+
+19.  Geraldine Fitzpatrick and Gunnar Ellingsen. (2013) A 
+Review of 25 Years of CSCW Research in Healthcare: 
+Contributions, Challenges and Future Agendas. 
+Comput Supported Coop Work, 22 (4-6). 609-665. 
+20.  Nikolaos F. Giannelos and Michael C. Georgiadis. 
+
+(2002) A Simple New Continuous-Time Formulation 
+for Short-Term Scheduling of Multipurpose Batch 
+Processes. Ind. Eng. Chem. Res., 41 (9). 2178-2184. 
+
+21.  Víctor M. González, Mónica E. Tentori, Elisa B. 
+Morán, Jesús Favela and Ana I. Martínez.  2005. 
+Understanding mobile work in a distributed 
+information space: implications for the design of 
+ubicomp technology. In Proc. CLIHC, ACM, 52-63. 
+10.1145/1111360.1111366 
+
+22.  Jane Grimson, William Grimson and Wilhelm 
+
+Hasselbring. (2000) The SI challenge in health care. 
+Commun. ACM, 43 (6). 48-55. 
+
+23.  Ole Hanseth. (2000) The economics of standards. From 
+control to drift: The dynamics of corporate information 
+infrastructures. 56-70. 
+
+24.  Naja L Holten Møller and Signe Vikkelsø.  2012. The 
+
+Clinical Work of Secretaries: Exploring the 
+Intersection of Administrative and Clinical Work in the 
+Diagnosing Process. In Proc. COOP, Springer, 33-47. 
+10.1007/978-1-4471-4093-1_3 
+
+25.  Joakim Klemets and Katrien De Moor. (2015) Patient 
+responsibility reallocation: a user-centered approach to 
+support nurses' handling of nurse calls. Personal 
+Ubiquitous Comput., 19 (3-4). 601-621. 
+
+26.  Susan Leigh Star. (2010) This is Not a Boundary 
+Object: Reflections on the Origin of a Concept. 
+Science, Technology & Human Values, 35 (5). 601-
+617. 
+
+27.  Naja Holten M and Paul Dourish.  2010. Coordination 
+
+by avoidance: bringing things together and keeping 
+them apart across hospital departments. In Proc. 
+GROUP, ACM, 65-74. 10.1145/1880071.1880081 
+28.  Randi Markussen. (1996) Politics of intervention in 
+
+design: Feminist reflections on the Scandinavian 
+tradition. AI & Soc, 10 (2). 127-141. 
+
+29.  Alison R. Murphy, Madhu C. Reddy and Nathan J. 
+
+McNeese.  2014. Exploring the perceptions and use of 
+electronic medical record systems by non-clinicians. In 
+Proc. DIS, ACM, 429-432. 10.1145/2598510.2600884 
+
+30.  Ehsan Nazarian and Jeonghan Ko. (2013) Robust 
+
+manufacturing line design with controlled moderate 
+robustness in bottleneck buffer time to manage 
+stochastic inter-task times. Journal of Manufacturing 
+Systems, 32 (2). 382-391. 
+
+31.  Christopher Nemeth, Michael O’Connor, P. Allan 
+
+Klock and Richard Cook. (2006) Discovering 
+Healthcare Cognition: The Use of Cognitive Artifacts 
+to Reveal Cognitive Work. Organization Studies, 27 
+(7). 1011-1035. 
+
+32.  Sun Young Park, Katie Pine and Yunan Chen. 2013. 
+
+Local-universality: designing EMR to support localized 
+informal documentation practices. In Proc CSCW, 
+ACM, 55-66. 10.1145/2441776.2441786 
+
+33.  Michael Quinn Patton. (1990) Qualitative evaluation 
+and research methods. SAGE Publications, Published. 
+
+34.  Rebecca Randell, Stephanie Wilson and Peter 
+
+Woodward. (2011) Variations and Commonalities in 
+Processes of Collaboration: The Need for Multi-Site 
+Workplace Studies. Comput Supported Coop Work, 20 
+(1-2). 37-59. 
+
+35.  Madhu Reddy and Paul Dourish.  2002. A finger on the 
+
+pulse: temporal rhythms and information seeking in 
+medical work. In Proc. CSCW, ACM, 344-353. 
+10.1145/587078.587126 
+
+36.  MadhuC Reddy, Paul Dourish and Wanda Pratt.  2001. 
+
+Coordinating Heterogeneous Work: Information and 
+Representation in Medical Care. In Proc. ECSCW, 
+Springer, 239-258. 10.1007/0-306-48019-0_13 
+37.  Wolfgang Reitberger, Martin Kastenmiller and 
+
+Geraldine Fitzpatrick.  2013. Invisible Work: An 
+Ambient System for Awareness and Reflection of 
+Household Tasks. In Proc. Persuasive Technology, 
+Springer, 180-191. 10.1007/978-3-642-37157-8_22 
+38.  Joshua E. Richardson and Joan S. Ash.  2008. The 
+Effects of Hands Free Communication Devices on 
+Clinical Communication: Balancing Communication 
+Access Needs with User Control. In Proc. AMIA Annu 
+Symp, AMIA, 621-625.  
+
+39.  Kjeld Schmidt and Carla Simonee. (1996) 
+
+Coordination mechanisms: Towards a conceptual 
+
+992
+
+SESSION: HOSPITAL WORK
+
+foundation of CSCW systems design. Comput 
+Supported Coop Work, 5 (2-3). 155-200. 
+
+40.  Roy G. Soto, Larry F. Chu, Julian M. Goldman, Ira J. 
+Rampil and Keith J. Ruskin. (2006) Communication in 
+Critical Care Environments: Mobile Telephones 
+Improve Patient Care. Anesthesia & Analgesia, 102 
+(2). 535-541. 
+
+41.  Susan Leigh Star and Anselm Strauss. (1999) Layers of 
+
+Silence, Arenas of Voice: The Ecology of Visible and 
+Invisible Work. Comput Supported Coop Work, 8 (1-
+2). 9-30. 
+
+42.  Allan Stisen, Henrik Blunck, Mikkel Baun Kjærgaard 
+
+and Kaj Grønbæk. 2014. Handheld versus wearable 
+interaction design for professionals: a case study of 
+hospital service work. In Proc. OzCHI, ACM, 260-269. 
+10.1145/2686612.2686651 
+
+43.  L Strauss Anselm.  1993. Continual permutations of 
+
+action, New York: Aldine de Gruyter, Published. 
+44.  Anselm Leonard Strauss, Shizuko Y Fagerhaugh, 
+
+Suczek Barbara and Wiener Carolyn. (1997) Social 
+organization of medical work. Transaction Publishers, 
+Published. 
+
+45.  Lucy Suchman. (1995) Making work visible. Commun. 
+
+ACM, 38 (9). 56-64. 
+
+46.  Charlotte Tang and Sheelagh Carpendale. 2008. 
+
+Evaluating the deployment of a mobile technology in a 
+hospital ward. In Proc. CSCW, ACM, 205-214. 
+10.1145/1460563.1460596 
+
+47.  Stqan Timinerrnans and Marc Berg Tenrple University 
+
+Press. (2004) The Gold Standard-The Challenge of 
+Evidence-Based Medicine and Standardization in 
+Health Care. Journal for Healthcare Quality, 26 (4). 
+60. 
+
+48.  Kenton T. Unruh and Wanda Pratt.  2008. The 
+
+Invisible Work of Being a Patient and Implications for 
+Health Care: “[the doctor is] my business partner in the 
+most important business in my life, staying alive.”. In 
+Proc. Ethnogr Prax Ind Conf, Blackwell Publishing 
+Ltd, 40-50. http://dx.doi.org/10.1111%2Fj.1559-
+8918.2008.tb00093.x 
+
+49.  Signe Vikkelsø. (2005) Subtle redistribution of work, 
+
+attention and risks: Electronic patient records and 
+organisational consequences. Scandinavian Journal of 
+Information Systems, 17 (1). 10. 
+
+50.  Robert L Wears, Shawna J Perry, Stephanie Wilson, 
+
+Julia Galliers and James Fone. (2007) Emergency 
+department status boards: user-evolved artefacts for 
+inter- and intra-group coordination. Cogn Tech Work, 9 
+(3). 163-170. 
+
+51.  Eviatar Zerubavel. (1979) Patterns of time in hospital 
+life: A sociological perspective. University of Chicago 
+Press, Published. 
+
+

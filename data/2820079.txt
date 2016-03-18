@@ -1,0 +1,1510 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Time to reflect: Supporting health services over time by 
+
+focusing on collaborative reflection 
+
+Anind K. Dey, Sara Kiesler 
+Carnegie Mellon University 
+
+Pittsburgh, PA 
+
+Madhu Reddy 
+
+Northwestern University 
+
+Evanston, IL 
+
+{anind, kiesler}@cs.cmu.edu 
+
+mreddy@northwestern.edu 
+
+ 
+
+Gabriela Marcu 
+Drexel University 
+Philadelphia, PA 
+
+gmarcu@drexel.edu 
+
+in 
+
+records  and 
+
+routines 
+
+in 
+
+standardized 
+
+time-critical  services 
+
+ABSTRACT 
+When  health  services  involve  long-term  treatment  over 
+months or years, providers have the ability, not present in 
+acute emergency care, to collaboratively reflect on clients’ 
+changing health data and adjust interventions. In this paper, 
+we  discuss  temporality  as  a  factor  in  the  design  of  health 
+information  technology.  We  define  a  temporal  spectrum 
+ranging  from 
+that  benefit  from 
+standardization  to  long-term  services  that  require  more 
+flexibility.  We  provide  empirical  evidence  from  fieldwork 
+that  we  performed  in  organizations  providing  long-term 
+behavioral  and  mental  health  services  for  children.  Our 
+fieldwork 
+this  context  complements  and  provides 
+contrasts  to  previous  CSCW  studies  performed  in  time-
+critical  hospital  settings.  Current  literature  shows  a  bias 
+toward 
+the 
+implementation of health information technology, a policy 
+that  may  not  be  appropriate  for  long-term  health  services. 
+We discuss how the design of information systems should 
+vary based on temporal factors.  
+Author Keywords 
+Health 
+services; 
+reflection. 
+ACM Classification Keywords 
+H.5.3 Group and Organization Interfaces: Computer- 
+supported cooperative work; J.3 Computer Applications: 
+Life and Medical Sciences—Medical information systems. 
+INTRODUCTION 
+Health  information  technology  (HIT)  that  collects,  stores, 
+and  displays  client  health  data  and  interventions  can 
+improve  accuracy,  efficiency,  and  collaboration  in  service 
+delivery, resulting in better care. Historically, the design of 
+HIT  has  emphasized  standardization  of  both  medical 
+records and the practices that surround them, with a focus 
+on  tightly  coordinated  tasks,  especially  in  emergency 
+
+systems;  collaboration; 
+
+information 
+
+to 
+
+consequences  of 
+
+settings [3, 43]. The focus on standardization and inflexible 
+coordination persists, despite mounting evidence from both 
+research  [12]  and  practice  [20]  of  the  limitations  and 
+unintended 
+this  approach.  Diana 
+Forsythe’s pioneering work in medical sociology described 
+the  problem  of  over-standardization  over  20  years  ago, 
+reasoning  that  HITs  “are  designed,  built,  and  evaluated 
+according  to  procedures  that  ‘delete  the  social’  and  mute 
+the voice of users” [10].  
+Forsythe’s  work  and  that  of  others  suggests  a  need  for 
+taking  a  sociotechnical  approach 
+the  design  and 
+implementation of HIT, to take into account organizational 
+factors,  workflow,  and  social  interactions  in  addition  to 
+technical  factors  [12,  26].  However,  there  remains  a  gap 
+between  methodological  approaches  and  clear  conceptual 
+models  of  the  role  that  HIT  plays  when  it  is  not 
+standardized. Recent reviews of the literature in 2010 [26] 
+and 2013 [9] indicate that we still lack an understanding of 
+how providers work together across health services settings 
+in  which  standardization  and  tight  coordination  has  not 
+been implemented, and may not be either possible or useful. 
+In  this  work,  we  contribute  to  the  move  away  from 
+standardization  by  building  on  sociotechnical  approaches, 
+and toward concrete descriptions of new roles and functions 
+of  technology  in  health  service  delivery.  With  extensive 
+fieldwork, we have defined a temporal spectrum (Figure 1) 
+based  on  four  pairs  of  characteristics  derived  from 
+empirical  data:  structured  or  unstructured,  sequential  or 
+iterative,  predictable  or  unpredictable,  and  standardized  or 
+adaptive. 
+The ends of our spectrum represent two main categories of 
+care:  time-critical  acute  care  and  long-term  chronic  care. 
+We have represented these categories as ends of a spectrum 
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must  be  honored. 
+Abstracting with credit is permitted. To copy otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org.  
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA   
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00   
+DOI: http://dx.doi.org/10.1145/2818048.2820079 
+
+ 
+Figure 1. The temporal spectrum of health services we define in 
+
+this paper, and use as a lens to discuss the design of HIT. 
+
+ 
+
+954
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+1 
+
+is 
+
+across 
+
+distributed 
+
+time.  Figure 
+
+to  demonstrate  a  need  for  models  of  care  that  reflect  a 
+changing healthcare system that is becoming more complex 
+and 
+an 
+oversimplification  of  health  service  delivery,  meant  to 
+emphasize how little we know about this spectrum and how 
+much  still  needs  to  be  filled  in  by  future  research.  For 
+example, diagnostic work falls somewhere in the center of 
+the  spectrum,  as  it  may  or  may  not  be  time-critical,  and 
+only certain symptoms elicit a sense of urgency. Diagnostic 
+work  is  unpredictable  in  that  the  process  and  outcome 
+cannot  be  known,  but  practices  can  be  sequential  and 
+standardized. 
+Health  services  are  likely  to  involve  elements  across  the 
+spectrum depicted in Figure 1, and also to fluctuate across 
+points along the spectrum over time. A child on the autism 
+spectrum generally requires long-term services to help him 
+develop  over  time,  but  critical  incidents  are  also  common 
+and require an urgent response to behaviors that are unsafe. 
+Even the most structured and protocol-driven settings will 
+have unexpected events that require flexibility, and even the 
+most unpredictable environments will include some amount 
+structure or protocol-driven responses.  
+The temporal spectrum in Figure 1 serves as a starting point 
+for  defining  how  practices  that  are  motivated  by  different 
+time scales should be supported. We focus on temporality 
+as a motivator in healthcare work, complementing a typical 
+focus on efficiency and accuracy, to understand the various 
+ways  in  which  temporality  drives  services.  The  leftmost 
+part  of  the  spectrum  is  well  represented  in  the  literature: 
+health services in acute care tend to involve a large number 
+of  protocols 
+standardized 
+workflows. In this work, we begin to fill in the rest of the 
+spectrum  by  understanding  what  happens  when  there  is 
+more  time  to  reflect,  to  adapt  services  more  to  individual 
+needs, and to remain flexible and malleable over time. To 
+understand  these  types  of  services,  we  studied  behavioral 
+intervention for children with special needs. 
+This  paper  addresses  the  research  question:  How  do  we 
+design  HIT  to  support  health  services  provided  over  time, 
+when  there  is  more  time  to  reflect  on  data  and  less  of  an 
+ability  to  standardize  all  practices?  We  explore  how  HIT 
+might  be  designed  to  address  different  requirements  and 
+challenges  than  are  required  in  time-  and  safety-critical 
+clinical settings. For example, behavioral interventions such 
+as  cognitive  behavioral  therapy  and  smoking  cessation 
+programs  take  time  and  adjustments  to  produce  results. 
+Consequently,  HIT  should  support  these  interventions  by 
+enabling  flexible  coordination  and 
+iterative  decision-
+making among providers. The goals of this paper align with 
+a recent theme in the CSCW community of slowing down, 
+and  thinking  about  temporality  without  assuming  that  the 
+ultimate  goals  need  relate  to  speed,  efficiency,  or  formal 
+structures [21, 25]. 
+
+for  decision-making  and 
+
+are 
+
+services 
+
+coordinated 
+
+RELATED WORK 
+Much of the literature on collaboration in health services is 
+drawn  from  studies  in  acute  care  contexts—especially 
+hospital  environments  [1,  2,  5,  14,  26,  31,  32,  37].  Time- 
+and safety-critical coordination has been studied in-depth in 
+contexts  such  as  trauma  resuscitation  [39]  and  emergency 
+rooms  [32].  In  these  high-risk  environments,  information 
+sharing  tends  to  be  focused  and  fast,  supporting  mutual 
+awareness  and  distributed  cognition.  When  temporality  is 
+discussed, the focus is typically on time-critical aspects of 
+health services [19, 37]. Few studies have investigated how 
+health 
+and 
+organizations  (e.g.,  [13,  47]),  especially  non-clinical 
+organizations (e.g., [34]). These types of studies are needed 
+for the CSCW community to form a holistic and ecological 
+view of health services.  
+Collaborative reflection  
+In their review of 25 years of CSCW research in healthcare, 
+Fitzpatrick  and  Ellingsen  [9]  identify  key  themes  and 
+contributions 
+hospitals, 
+standardization,  electronic  health 
+records,  and  other 
+structured  aspects  of  services.  Two  themes  of  particular 
+relevance to the present paper are (i) temporal coordination 
+and (ii) expanding contexts of healthcare work – emerging 
+but  still  limited  areas  of  contribution.  One  of  their 
+concluding  recommendations  was  a  need  to  address  new, 
+integrated models of care:  
+
+across 
+
+focus 
+
+show 
+
+time 
+
+that 
+
+a 
+
+on 
+
+“New  models  of  care  have  emerged  that  look  beyond 
+the 
+individual  hospital  or  episodic  encounter  of 
+healthcare.  There  is  the  notion  of  life-long  patient-
+centric records that cross institutional and professional 
+boundaries… There is also an increasing push of care 
+into the home and the community, driven by the needs 
+of  chronic  conditions, 
+integrated 
+‘spectrum of care’ model” (p. 651) 
+
+reflecting  an 
+
+The  spectrum  of  temporality  that  we  present  in  this  paper 
+scopes  the  variety  of  services  needed  from  episodic 
+encounter to life-long care, and what could lie in between. 
+The complexity of health service delivery across time and 
+place is a current theme in the HIT literature. For example, 
+Marcu,  Dey,  and  Kiesler  use  the  term  collaborative 
+reflection  to  describe  the  processes  observed  in  health 
+service  delivery  that  cannot  be  standardized  [23].  Short-
+term activities comprise of recording data, interpreting data, 
+and  corroborating 
+these 
+activities inform the long-term process of treating complex 
+and  unpredictable  chronic  conditions.  The  spectrum 
+described  in  the  present  paper  continues  to  consider  the 
+variety of activities and processes that need to be supported 
+by HIT. 
+Harrison,  Koppel,  and  Bar-Lev’s  review  [12],  using 
+sociotechnical  analysis, 
+identifies  common  unintended 
+consequences  of  HIT.  These  unintended  consequences 
+relate  to  the  temporal  spectrum  that  emerged  from  our 
+empirical investigations: 
+
+interpretations  with  others; 
+
+955
+
+•  Structured: 
+
+overload 
+
+“Causing 
+
+by 
+overemphasizing  structured  and  ‘complete’  information 
+entry or retrieval.” (Pine and Mazmanian [33] also report 
+this problem.) 
+
+cognitive 
+
+•  Sequential: “Misrepresenting collective, interactive work 
+
+as linear, clearcut, predictable workflow.” 
+
+•  Predictable:  “Interface  unsuitable  for  highly  interruptive 
+
+context.” 
+
+•  Standardized: 
+
+“Misrepresenting 
+
+as 
+information transfer” (Mentis [26] also notes the need to 
+represent and communicate more informal and subjective 
+information.) 
+
+communication 
+
+breaks 
+
+to  describe 
+
+down.  Despite 
+
+Working  toward  an  alternative  to  these  characteristics  of 
+HIT that are biased toward standardization, we draw from 
+descriptions  of  work  such  as  sensemaking,  improvisation, 
+and reflection. 
+Sensemaking, improvisation, and reflection 
+Theoretical constructs of collaboration have primarily been 
+used  to  improve  our  understanding  of  time-critical  and 
+structured  aspects  of  health  services.  For  example, 
+sensemaking  is  a  concept  often  cited  in  CSCW  literature. 
+Weick’s foundational work [46] described the enactment of 
+sensemaking,  or  how  the  process  of  making  sense  of 
+information  plays  out  through  the  actions  of  individuals 
+within  an  organization,  including  what  happens  when  the 
+process 
+the  wide-ranging 
+applicability  of  sensemaking,  in  health  service  research,  it 
+has  primarily  been  used 
+time-critical 
+information seeking and coordination in contexts such as an 
+emergency  department  and  a  surgical  intensive  care  unit 
+[32, 40].  
+Sensemaking-related  concepts  of 
+improvisation  and 
+reflection have the potential to help us understand the less 
+structured,  predictable,  and  time-critical  aspects  of  health 
+services,  however  these  theoretical  perspective  have  not 
+been  used  as  much  in  this  context.  For  example,  Klein, 
+Moon, 
+a 
+macrocognitive  model  [18]  that  describes  the  iterative 
+process of framing and interpreting data. Frames are used to 
+“shape the data (for example, a house fire will be perceived 
+differently  by  the  homeowner,  the  firefighters,  and  the 
+arson  investigators)”  and  they  also  “change  as  we  acquire 
+data” (p. 1). Through a bidirectional process, frames “shape 
+and define the relevant data, and data mandate that frames 
+change  in  nontrivial  ways”  (p.  1).  The  frame  metaphor 
+captures  unpredictability  and  a  sensemaking  process  that 
+unfolds over time.  
+Others  have  described  unpredictability  as  improvisation, 
+comparing  it  to  the  actions  of  skilled  jazz  musicians  [27, 
+41].  During  improvisation,  skill  and  memory  is  applied  to 
+unexpected,  non-routine  events.  Miner,  Bassoff,  and 
+Moorman’s  field  study  showed  how  improvisation  was 
+embedded  in  organizational  work  over  time  [27,  p.  327]. 
+Their  observations  are  similar  to  those  made  in  other 
+
+and  Hoffman’s  Data/Frame  Theory 
+
+is 
+
+SESSION: HOSPITAL WORK
+
+studies of sensemaking in organizations [2, 30], suggesting 
+that flexibility is a quality that should be explored unfolding 
+over time. When unpredictable events arise in the moment, 
+the ability to respond and improvise appears to be an ability 
+shared among members of an organization and embedded in 
+their collective practices. 
+Much  of  organizational  theory  has  focused  on  long-term 
+processes, but the concepts of improvisation and reflection 
+have distinguished these processes from those that are time-
+critical. Miner and colleagues [27] describe how short-term 
+improvisation can “serve as a ‘trial’ in long-term trial-and-
+error learning” [27, p. 321]. Schön [41] describes reflection 
+as  the  process  that  allows  professionals  to  handle  the 
+“complexity, uncertainty, instability, uniqueness, and value 
+conflicts”  (p.  14)  involved  in  domains  like  medicine, 
+management, and engineering.  
+Organizational coupling 
+Karl Weick first described the advantages of loose coupling 
+between  people, 
+tasks,  and  rewards,  which  enables 
+organizations 
+to  adapt  and  survive  under  uncertain 
+conditions  [45].  O’Looney  [29]  discusses  loosely  coupled 
+systems as sets of organizations working together for social 
+service delivery. Our fieldwork focused on both the internal 
+coordination of organizations, and their ability to coordinate 
+externally with other organizations. 
+The organizations we focused on in our study were loosely 
+coupled  because  providers  needed  to  be  flexible  and 
+adaptive in order to coordinate long-term treatment for each 
+child.  Characteristics  of  a  loosely  coupled  organization 
+include:  a  lack  of  rigidly  defined  roles  and  formal  ties; 
+collaboration  that  predominantly  happens  informally  as 
+needed to serve the needs of its clients; and events that are 
+usually  unpredictable  [29,  45].  The  traits  that  enable 
+organizations to be adaptive and malleable in order to meet 
+the  needs  of  the  people  it  serves  are  also  traits  that  make 
+technology  generally  unavailable  or  problematic 
+for 
+supporting these services. Marcu et al.’s [24] study of the 
+persistence  of  paper-based  records  in  special  education 
+provided  empirical  evidence  of 
+the  challenges  of 
+incorporating technology in these types of organizations. 
+Harrison  [11]  extended  the  concept  of  organizational 
+coupling 
+the 
+practices  and  processes  through  which  health  service 
+organizations  coordinate  and  accomplish  their  work.  He 
+distinguished 
+organic 
+sociotechnical systems. According to Harrison, mechanistic 
+systems as more standardized, bureaucratic, and inflexible – 
+traits that enable organizations to serve a higher number of 
+patients  with  more  efficiency  and  scalability.  Organic 
+systems  tend  to  be  more  flexible,  adaptive,  and  malleable 
+over time – traits that enable more individualized services 
+according  to  needs  that  may  change  over  time.  Harrison’s 
+concept of an organic system is similar to our discussion of 
+HIT  that  is  more  flexible  and  can  support  unstructured, 
+unpredictable types of coordination.  
+
+between  mechanistic 
+
+information  systems, 
+
+to  sociotechnical 
+
+and 
+
+956
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+clinical 
+
+contexts, 
+
+and 
+
+improve 
+
+METHODS 
+The  goal  of  this  work  is  to  complement  field  studies  in 
+time-critical 
+our 
+understanding  of  alternatives  to  standardization  in  the 
+design of HIT. To this end, we conducted our fieldwork in a 
+non-clinical  context  exemplifying  unpredictability  and  a 
+need  for  flexibility:  behavioral  and  mental  health  services 
+for  children  with  special  needs,  provided  within  a  school 
+setting.  
+In prior work within the context of behavioral and mental 
+heath  services,  we  found  an  overreliance  on  paper-based 
+records, and problems with adopting and incorporating HIT 
+[24]. We were surprised by the use of paper records, despite 
+their  inadequacy  for  collaborative  reflection  [23].  The 
+purpose of the present study was to further investigate this 
+technology  non-use  and  understand  what  aspects  of  these 
+health  services  defied  standardization  and  HIT  adoption. 
+Believing that HIT has failed to meet the unique needs of 
+this  setting,  we  set  out  to  examine  the  process  of 
+collaborative reflection enacted in these health services, and 
+relate our observations to the standardization of HIT.  
+Over  the  course  of  two  years,  we  conducted  151  hours  of 
+fieldwork  at  seven  organizations  providing  behavioral  and 
+mental health services for children with special needs. Six 
+of  the  sites  were  schools  (two  with  residential  programs), 
+and  one  was  a  therapy  center  providing  after-school 
+programs. While the organizations differed somewhat, their 
+behavioral and mental health services were similar. 
+We  observed  clinical  services  that  were  integrated  with 
+educational  services  to  address  behavioral,  emotional,  and 
+mental  health  needs.  We  observed  and 
+interviewed 
+treatment  teams  providing  these  services,  which  were 
+comprised  of  psychiatrists,  mental  health 
+therapists, 
+specialists,  personal  aides,  and  clinical 
+behavioral 
+supervisors.  We 
+behavioral 
+specialists,  teaching  staff,  and  aides,  whose  roles  were 
+central to coordination of services. Children had diagnoses 
+such  as  attention  deficit  hyperactivity  disorder,  autism 
+spectrum  disorders,  trauma,  oppositional  defiant  disorder, 
+and  anxiety  disorder.  The  organizations  we  studied 
+provided  treatment  in  the  form  of  behavioral  intervention, 
+frequent  positive 
+reinforcement,  cognitive  behavioral 
+therapy,  and  psychiatric  medications.  In  our  fieldwork  we 
+focused  on  the  coordination  of  these  services  among 
+members of the treatment team, according to the individual 
+needs of each child. 
+We  collected  data  through  naturalistic  observation  in 
+classroom,  hallway,  and  conference  room  settings  that 
+encapsulated both formal and informal interactions [8, 22]. 
+We conducted contextual inquiry [4] with the providers to 
+understand their practices and collaborative workflow. We 
+conducted 129 semi-structured interviews and focus groups 
+with providers to collect data on their opinions and attitudes 
+toward  their  use  of  HIT.  We  visited  sites  at  least  once  a 
+week,  sometimes  several  times  a  week.  During  fieldwork 
+
+interviewed 
+
+primarily 
+
+we  took  detailed  notes,  and  the  research  team  met  after 
+fieldwork  sessions  to  discuss  and  interpret  the  data.  We 
+used an iterative process to discuss themes while continuing 
+to gather field data. The research team met several times a 
+week to analyze and compare fieldwork data.  
+Our  approach  to  collecting  and  analyzing  field  data  was 
+based on constructivist grounded theory [6]. We focused on 
+gathering rich data using theoretical sampling across team 
+members  and  contexts,  constant  comparison  with  data 
+previously  collected,  and  inductive  thematic  analysis.  We 
+analyzed  data  by  comparing  our  findings  to  the  literature, 
+and  came  to  interpret  our  findings  using  organizational 
+theory. Emergent themes in our data led us to connect our 
+findings to literature on organizational coupling and organic 
+sociotechnical  systems,  which  we  use  to  present  our 
+findings in the following section. 
+FINDINGS 
+In this section, we describe the empirical data that formed 
+the  basis  for  our  temporal  spectrum  of  health  services  in 
+Figure  1.  The  process  of  collaborative  reflection  that  we 
+observed  was  unstructured,  iterative,  unpredictable,  and 
+adaptive.  Practices  were  unstructured  because 
+the 
+individual  and  subjective  nature  of  behaviors  being 
+monitored  made  data  management  difficult  to  standardize. 
+Practices were iterative because monitoring and interpreting 
+progress  with  behavioral 
+interventions  was  complex. 
+Practices were unpredictable because behaviors were ever-
+changing.  Practices  were  adaptive  because  services  were 
+designed  to  respond  to  the  unique  behavioral  needs  and 
+progress of each individual. 
+Unstructured 
+The  nature  of 
+services  defies 
+standardization  but  treatments  and  progress  have  to  be 
+monitored. Due to the myriad of relevant data, efforts have 
+been made to find ways to standardize data monitoring. We 
+witnessed  this  challenge  when  we  observed  some  schools 
+attempting  to  standardized  school-wide  data  monitoring. 
+All  students  in  these  schools  were  asked  to  follow  rules, 
+such as “be safe,” “use kind words,” “complete work,” and 
+“follow directions.” These rules were the basis of shaping 
+behavior,  giving  positive  behavioral  reinforcement,  and 
+recording  behaviors  in  a  standard  way.  For  example, 
+providers  would  respond  to  violence  toward  a  peer  or 
+property  destruction  by  reminding  a  student  to  be  safe, 
+physically and verbally intervening, and then recording the 
+incident  on  a  paper  data  sheet.  One  goal  of  these  records 
+was to help treatment teams reflect on cases collaboratively 
+and make sense of a child’s behaviors.  
+Despite  the  apparent  structure  of  this  approach,  records 
+varied widely. A record of an incident might be as simple as 
+adding to a running tally of the number of times a behavior 
+had occurred that day, or it might include details such as the 
+duration  of  the  behavior,  names  of  peers  involved,  or  an 
+antecedent  event,  which  could  provide  insight  into  the 
+psychological trigger of the behavior. The amount of detail 
+
+education 
+
+special 
+
+957
+
+it  would 
+
+those 
+
+them  because 
+
+team  members  with 
+
+the  data.  Providers 
+
+in a record varied across providers, based on their workload 
+and  personal  work  style,  and  encouraged  by  virtue  of  the 
+subjective  nature  of 
+resisted 
+standardization  of  both  records  and  some  of  the  practices 
+surrounding 
+interfere  with 
+individualized  and  adaptive  services.  However,  a  tradeoff 
+was inconsistency from one child’s data to another—which 
+especially  affected 
+larger 
+caseloads,  such  as  psychiatrists  and  clinical  supervisors. 
+Schools  used  training  and  inter-rater  reliability  checks  to 
+maintain  data  reliability  as  much  as  possible,  but  data 
+fidelity remained a challenge. 
+The  process  of  collaborative 
+reflection  was  also 
+unstructured, and the record system was not flexible enough 
+to  support  it.  Due  to  the  challenges  with  keeping  records 
+that  are  flexible  enough  for  this  process,  reflection  was 
+often  not  driven  by  data.  For  example,  during  a  progress 
+review  meeting  we  observed,  a  therapist  asked  a  provider 
+working  exclusively  in  that  child’s  classroom  about  the 
+frequency  of  a  newly  exhibited  behavior.  In  response,  the 
+provider  made  a  guess  that  the  behavior  was  lowering  in 
+frequency based on his intuition and the amount of pen ink 
+taking  up  one  of  his  data  sheets.  In  another  meeting,  we 
+observed  a  different  provider  making  up  an  estimate 
+because  she  also  did  not  have  detailed  enough  data  to 
+produce an accurate frequency: “I would say maybe 5% of 
+those points happened out of the room [when the child was 
+in  the  hallway  or  outdoors]”.  The  data  did  not  provide  an 
+adequate  measure  to  be  used  for  reflection,  because  data 
+sheets  were  not  flexible  enough  to  be  adapted  to  the 
+individual and changing behaviors of each child.  
+Iterative 
+Sometimes, we observed that data was accurate but still not 
+useful for reflection because it was not adaptive to changing 
+needs in an iterative process. That is, data sheets were not 
+easily  adapted  or  updated  as  new  measures  needed  to  be 
+used  to  address  a  child’s  needs.  We  observed  one  review 
+meeting in which a record keeper, therapist, and psychiatrist 
+were discussing a child’s progress and struggling to use the 
+data  for  collaborative  reflection.  The  therapist  concluded 
+that  “the  data  may  be  accurate  but  it’s  not  reflecting  how 
+he’s  really  doing”.  The  data  that  they  needed  in  that 
+moment during the child’s long-term development was not 
+available due to the difficulty of keeping up-to-date records 
+during  an  ever-changing  and  unpredictable 
+treatment 
+process. 
+Coordination  of  services  was  an  ongoing  and  iterative 
+process  in  the  special  education  environment.  Behavioral 
+intervention  in  special  education was an inductive process 
+of  continuously  monitoring  behaviors,  interpreting  data  to 
+understand progress, and iteratively adjusting interventions 
+based on observed trends. A large number of stakeholders 
+coordinated on a daily basis around the data as part of an 
+iterative  process  of  determining,  applying,  and  evaluating 
+interventions. Because providers spent the majority of their 
+
+SESSION: HOSPITAL WORK
+
+expertise 
+
+compared 
+
+time working directly with the children, leaving little time 
+for  formal  coordination,  their  coordination  was  embedded 
+in everyday practices. 
+To  give  children  the  resources  and  support  they  needed, 
+providers  with  different 
+their 
+observations and interpretations regularly. On a typical day, 
+a  teacher,  teaching  aide,  speech  therapist,  occupational 
+therapist,  psychiatrist,  and  supervisor  might  all  have 
+discussed one child’s data together or in smaller groupings. 
+For example, a clinical specialist such as a speech therapist 
+or psychiatrist was depended upon for clinical expertise, but 
+an  education  paraprofessional  such  as  a  teaching  aide 
+worked  with  the  child  on  a  daily  basis  and  had  the  most 
+intimate understanding of that child’s progress. Both types 
+of  stakeholders  contributed  their  personal  knowledge  to 
+managing a child’s case.  
+During  this  iterative  process,  records  were  not  easily 
+adapted  or  updated,  resulting  in  continuously  increasing 
+work  for  record  keepers.  One  record  keeper  recounted  a 
+conversation with his supervisor during which he was once 
+again asked to record more data without additional support. 
+Having tried different ways to ask for support, he suggested 
+to his supervisor: “we should do time studies to figure out 
+how  long  all  of  these  recording  activities  will  take.”  The 
+supervisor  rejected  the  idea,  saying,  “this  isn’t  a  factory.” 
+The record keeper’s reaction was “yes, it is”—revealing his 
+disappointment  that  the  demands  of  record  keeping  were 
+interfering with his direct work with children. This record 
+keeper  often  shared  his  feelings  with  us,  typically  using 
+sarcastic humor to express his frustration with supervisors’ 
+unrealistic expectation that he manage both “clerical work” 
+and  providing  behavioral 
+for  multiple 
+children:  “they’re  turning  this  into  an  office  job—inside  a 
+petting zoo!” These tensions that we observed related to the 
+unequal  burden  of  data  management  revealed  that  the 
+organizational  culture  was  democratic  and  meant  to  be 
+empowering  but  a  lack  of  adequate  HIT  meant  that  data 
+management practices contradicted those cultural values.  
+Supervisors also tended to have unrealistic expectations that 
+an  incident  be  recorded  in  the  moment  or  immediately 
+thereafter.  The  accuracy  and 
+timeliness  of  a  record 
+depended on the provider’s availability to create the record, 
+and they were often busy with tasks of higher priority such 
+as working directly with a child. The gap between what was 
+expected  and  what  was  possible  was  a  significant  issue 
+during HIT design work—some supervisors were unaware 
+of this gap, and all of them were unsure of how to address 
+it. We saw frustration among the record keepers expected to 
+create  and  manage  records  without  adequate  support  or 
+tools, and their frustration grew with each passing month. 
+Unpredictable 
+The provider-to-child ratio in the settings we observed was 
+high  due  to  the  need  for  close  supervision  and  frequent 
+behavioral  reinforcement.  Children’s  ever-present  and 
+changing needs and behaviors required providers to support 
+
+interventions 
+
+958
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in 
+
+jump 
+
+one  another  and 
+to  fulfill  responsibilities. 
+Regardless of whether providers held roles such as teacher, 
+therapist, or supervisor, to ensure the safety and wellbeing 
+of children and providers alike, all providers were trained to 
+respond to behavioral incidents, and did so at a moment’s 
+notice  when  the  need  arose.  For  example,  when  a  child 
+grew frustrated and left the classroom, at least one provider 
+would follow him into the hallway (or outside) to ensure his 
+safety,  talk  him  through  managing  his  emotions,  and 
+generally wait him out until he was able to calm down and 
+move  on.  This  intervention  might  take  minutes  or  hours. 
+Meanwhile,  the  remaining  providers  in  the  classroom 
+needed to continue the current activity with the rest of the 
+children,  and  ensure  that  record  keeping  continued.  A 
+provider from outside the classroom, such as a therapist or 
+supervisor,  sometimes  filled  in  if  additional  support  was 
+needed.  As  such  episodes  were  unpredictable  and  could 
+accumulate  across  multiple  children  at  any  given  moment 
+without  warning,  providers  were  always  ready  to  share 
+responsibility at a moment’s notice.  
+Providers manually recorded data throughout a school day, 
+and did not use specific, uniform rubrics or codes. People, 
+locations, activities, and types of data sheets changed many 
+times throughout one day. Different people collected data in 
+different situations. These sources of variance increased the 
+complexity  of  using  data  for  coordination.  The  various 
+stakeholders  who  collected  and  used 
+the  data  were 
+dependent on one another because they each only knew part 
+of  the  story  –  i.e.,  they  were  present  for  different  events, 
+and  they  had  different  perspectives  and  expertise  with 
+regard  to  the  data.  Moreover,  the  dynamic  environment 
+required  coordination  in  many  contexts,  ranging  from 
+formal  case  review  meetings,  to  chaotic  moments  in  the 
+classroom, to informal interactions with other providers in 
+the school hallway.  
+Providers  responsible  for  manually  capturing  data  and 
+managing records were consistently overburdened, and the 
+unpredictability  of  their  environment  further  complicated 
+their responsibilities. If a provider was busy responding to 
+an incident and intervening, he or she would not be able to 
+create the record until later. Recording accurate data in the 
+moment  was  challenging,  and  providers  adopted  unique 
+practices 
+their  work  as 
+conveniently  as  possible,  in  a  way  that  worked  for  them. 
+Freeform annotations and note taking, such as jotting down 
+notes on the margins of a piece of paper or on a post-it note, 
+were common. Providers even wrote on their hands during 
+a critical incident when they did not have access to paper. 
+They had researched software options but nothing provided 
+the flexibility of paper. 
+In  the  organizations  we  studied,  HIT  only  came  into  play 
+when it was required for reporting data to other agencies for 
+billing  and  auditing  purposes.  Providers  were  frustrated 
+with the software’s lack of usability and how cumbersome 
+it  was  to  manually  transfer  data  from  paper  to  multiple 
+
+them  accomplish 
+
+to  help 
+
+959
+
+reports  and  graphs.  Complicating  the  task  of  creating 
+records  was  that providers  (and  especially  record  keepers) 
+were responsible first and foremost for children’s safety and 
+behavioral  intervention.  Many  informants  spoke  about  the 
+logistical  impossibility  of  balancing  all  of  the  tasks  they 
+were responsible for: “there is no clerical time within the 40 
+hr work week, you do billing and paperwork on your own 
+time.”  There  were  some  efforts  to  incorporate  use  of 
+Microsoft Excel and specialized iPad apps into this process, 
+but they were not successful. 
+Adaptive 
+Children had unique needs and developed at their own pace, 
+requiring  adaptive  services.  Providers  therefore  relied 
+heavily  on  individual  children’s  data  to  monitor  progress 
+and adjust interventions as needed. They recorded data on a 
+child’s  appropriate  social  interactions  with  peers  and 
+providers, self-management of emotions, and adherence to 
+instructions and rules. They manually recorded data in the 
+form  of  quantitative  measures  (frequency,  duration),  and 
+qualitative observations (activities or factors that preceded 
+the behavior, details about the nature of the behavior).  
+The  subjective  and  individual  nature  of  this  type  of  data 
+required  a  trained  behavioral  specialist  to  record  events 
+manually and interpret them. Any new technology or device 
+was  difficult  to  introduce  in  this  setting  due  to  the 
+challenges of managing diffuse behavioral data. Behavioral 
+data tended to require a trained provider to observe an event 
+in the real world, interpret the event to record it in a useful 
+way,  and  then  use  their  understanding  of  the  child  to 
+understand what the data revealed about a child’s progress 
+over time. These organizations had attempted to incorporate 
+iPad  apps  and  web-based  tools  for  data  management,  but 
+their persistent use of paper-based records, and struggles to 
+transition to the iPad or specialized applications illustrate a 
+lack  of  appropriate  systems  to  fit  their  workflow.  Our 
+findings  align  with  those  of  studies  in  other  contexts  that 
+have 
+unintended 
+consequences  of,  introducing  HIT  [12,  26,  33,  42].  Our 
+findings  suggest  that  the  unintended  consequences  of  HIT 
+are,  at  least  in  part,  caused  by  the  difficulties  of  defining 
+problems,  standardizing  services,  and  finding  appropriate 
+technology.  
+Another  example  of  providers’  struggle  with  maintaining 
+adaptive  services  with  inadequate  HIT  was  that  insurance 
+companies 
+for  billing 
+purposes, such as detailed logs of work hours and activities. 
+Each provider was required to justify their work with each 
+child,  sometimes  down  to  the  minute,  in  order  to  receive 
+each  paycheck.  School  administrators  passed  down  these 
+instructions  to  their  employees,  sometimes  with  specific 
+software  to  be  used  for  reporting  records  for  billing. 
+Insurance  companies  requested  daily  narratives  to  be 
+written  for  each  child,  outlining  their  treatment  and 
+progress. These narratives were to be entered into a poorly 
+designed  and  time-consuming  piece  of  software.  Audits 
+
+required  specific 
+
+problems  with, 
+
+information 
+
+uncovered 
+
+and 
+
+SESSION: HOSPITAL WORK
+
+were  common,  sometimes  once  a  year,  adding  to  the 
+pressure of having to create detailed and accurate records so 
+as to not create problems for oneself or the organization.  
+Administrators were in a difficult position, having to adhere 
+to  requirements  from  insurance  companies,  and  passing 
+these down to their employees. Meanwhile, providers were 
+more  concerned  with  the  nuances  of  carrying  out  a 
+treatment  plan,  rather  than  reporting  out  progress  so 
+regularly. Providers were driven to record data that would 
+help  them  and  their  team  with  collaborative  reflection  for 
+making treatment decisions. They were therefore frustrated 
+when records were required to be created for mere logistical 
+purposes, and took up a significant amount of the time they 
+had with the children. The day before an audit, for example, 
+some  providers  who  typically  worked  full  time  in  a 
+classroom  had  to  take  time  completely  away  from  their 
+regular  jobs  in  order  to  find  a  quiet  place  to  sit  at  a 
+computer  and  work  on  records.  Even  more  frustratingly, 
+last  minute  requests  for  more  data  continued  to  come  in 
+from their supervisors. 
+DISCUSSION 
+The  persistent  use  of  paper-based  records  in  special 
+education,  and  struggles  to  transition  to  HIT,  illustrate  a 
+lack  of  appropriate  flexible  systems  to  fit  the  behavioral 
+health workflow. This problem is not unique to the context 
+of behavioral health services. A broader literature suggests 
+that  paper-based  tools  persist  because  they  are  flexible 
+
+enough  to  support  informal  and  mobile  coordination  [31, 
+44].  Bardram  and  Bossen  [2]  described  a  need  for  mobile 
+work in health services. Although their study was in a more 
+time-critical  hospital  setting,  they  identified  a  need  to 
+support  unstructured  aspects  of  services  involving  ad  hoc 
+and  unforeseen  configurations,  not 
+just  routines  and 
+protocols.  Our  findings  also  suggest  broader  applicability 
+by  echoing  four  of  O’Looney’s  [29]  characteristics  of 
+loosely  coupled  organizations  (see  Table  1):  services  are 
+adaptive  to  individual  and  environmental  needs;  services 
+are  inductive  and  malleable  over  time;  standardization  is 
+avoided;  and  problems  (and  technology)  are  difficult  to 
+define.  
+We  found 
+the 
+organizations  we  studied  and  those  that  provide  time-
+critical  services  is  the  loose  coupling  exhibited  in  their 
+coordination practices. Our findings show that many of the 
+unintended consequences in the HIT literature [12, 26, 33, 
+42] can be explained by a mismatch between the flexibility 
+and  loose  coupling  required  to  provide  services,  and  the 
+inflexibility  and  overstandardization  of  HIT 
+that  are 
+intended to support these processes. 
+We present our recommendations for the design of HIT by 
+building  on  Harrison’s 
+concept  of  organic 
+sociotechnical  systems  and  applying  it  to  HIT.  The 
+following  recommendations  describe  how  HIT  can  be 
+organic  by  incorporating  flexible  and  adaptive  qualities. 
+
+the  primary  difference  between 
+
+that 
+
+[11] 
+
+Table 1. The contribution of this paper is a typology that provides two ends of a temporal spectrum, long-term and time-critical 
+health services. We address a bias toward supporting time-critical care by discussing the rest of the spectrum: how HIT can also 
+
+support long-term and unstructured aspects of health services.  
+
+ 
+
+960
+
+to 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in 
+
+the 
+
+responsibility  of  maintaining  a 
+
+Based  on  our  fieldwork,  we  recommend  these  approaches 
+to organic HIT in order to support a range of health services 
+across a spectrum of temporality. 
+Roles  and  responsibilities  need  to  be  diffuse,  flexible 
+and change through use 
+We  observed  that  coordination  needed  to  be  flexible 
+because 
+safe 
+environment  and  providing  all  of  the  children  the  support 
+they  needed  was  dispersed  across  providers 
+the 
+organization.  
+The records themselves were not effective for coordination. 
+The paper-based records acted as a mechanistic system, and 
+failed to match the need for an organic way of keeping all 
+team  members  informed  and  adapting  to  each  situation. 
+When  records  were  not  representative  or  informative 
+enough,  providers  relied  on  past  experience  and  anecdotal 
+evidence  they  gained  from  informal  communication  with 
+other  providers.  Providers  were  able  to  ask  for  support 
+through multiple informal communication channels such as 
+gesturing to a team member, calling to any provider in the 
+hallway,  or  phoning  their  assigned  supervisor,  who  was 
+always  on  call  and  would  answer  a  mobile  phone  even 
+during meetings. 
+In  the  context  we  observed,  we  envision  organic  HIT  that 
+increases awareness and coordination rather than enforcing 
+roles that are dropped when an unpredictable incident must 
+be  handled.  Because  team  members  share  tasks  and 
+responsibilities,  the  conceptual  model  of  the  HIT  must 
+center  on  a  high  level  of  information  flow  and  a  child’s 
+individual needs. In addition, communication channels and 
+mechanisms for maintaining awareness across a team could 
+support the diffusion of responsibilities without wasted time 
+or  duplicated  effort.  For  example,  during  a  behavioral 
+incident,  the  most  proximal  provider  would  likely  be 
+engaging with the student, so location-based features could 
+both  predict  and  respond  to  an  incident  without  user 
+intervention,  notifying  other  providers  or  automatically 
+creating a record of an incident. Ultimately, the HIT should 
+be  focused  not  on  specific  tasks  but  on  each  child’s 
+progress,  and  each  team  members’  reflections  on  that 
+progress – this type of HIT support would then organically 
+lead  users  to  carry  out  appropriate  tasks  within  a  flexible 
+system of coordination.  
+Participative  forms  of  decision  making  and  reciprocal 
+interdependencies among stakeholders 
+Distributing  roles,  tasks,  and  responsibilities  more  evenly 
+across  stakeholders  with  organic  HIT  could  not  save  time 
+and  effort,  and  also  improve  coordination.  We  observed 
+close collaboration across providers with different types of 
+expertise and roles, in organizational cultures that were not 
+hierarchical.  The  knowledge  and  experience  of  each 
+provider created reciprocal interdependencies in the process 
+of interpreting a child’s data and monitoring progress, a key 
+aspect of collaborative reflection [23].  
+
+961
+
+to  be 
+
+them  more  opportunities 
+
+information  and  allowing 
+
+However,  the  mechanistic  nature  of  existing  practices 
+overburdened  some  providers  with  record  keeping  and 
+made it difficult to keep everyone informed with a child’s 
+most up-to-date data. As a result of adequate processes and 
+tools,  we  observed  providers  relying  more  on  informal 
+interactions and anecdotal evidence.  
+As an example of how HIT can have aspects that are both 
+mechanistic and organic: HIT could help record keepers be 
+more  efficient  with  tasks  that  can  be  standardized—tasks 
+which  make  them  feel  overburdened  and  undervalued—
+while providing them with more opportunities to participate 
+in  collaborative  reflection  and  decision  making.  Different 
+stakeholders should have appropriate and flexible tools that 
+allow 
+involved  with 
+interpretation, sharing, and discussion of data.  
+Since roles and responsibilities are not clearly defined, HIT 
+should  not  have  a  task-oriented  focus,  defining  a  user’s 
+activities within the organization’s workflow. Instead, HIT 
+should  encourage  collaborative  reflection  by  increasing 
+access 
+for  multiple 
+perspectives  on  data  and  decisions.  Within  the  constraints 
+of protecting private health data, HIT should give access to 
+as many stakeholders as possible, even read-only, so as to 
+keep  stakeholders  on  the  same  page  and  allow  them  to 
+coordinate around the data. Protection of data and privacy 
+could still be maintained through more sophisticated access 
+control  than  passwords,  and  expiration  dates  for  informal 
+notes that do not have to be made a part of a formal record, 
+but can help teams in collaborative reflection. 
+Decentralized,  lateral  coordination  allows  for  cross-
+functional coordination and nonroutine tasks 
+We  discovered  conflicting  coordination  needs  across 
+decision  makers,  which  helped  to  explain  the  unrealistic 
+expectations  for  recording  practices.  A  large  amount  of 
+communication  and  coordination  was  required  within  an 
+organization and to external agencies, and providers did not 
+have  adequate  support  for  sharing  data  across  these 
+complex  communication  channels.  Organic  HIT  should 
+account  for  different 
+types  of  stakeholder  contacts, 
+communication channels, and information needs across this 
+network—some of which need to be more standardized and 
+streamlined, and some of which need to be more informal 
+and  flexible.  Some  data  collection  and  sharing  can  be 
+automated, while others require interpretation and reflection 
+on the part of certain providers. 
+One  potential  benefit  of  HIT  as  opposed  to  paper-based 
+records is developing interfaces that can be flexible enough 
+to meet the needs of different types of users (i.e., different 
+expertise  levels  and  roles).  Reddy  and  colleagues  [38] 
+describe  how  the  different  interfaces  of  a  clinical  HIT 
+system  supported  the  needs  of  the  various  users  (nurses, 
+physicians,  pharmacists)  but  at  the  same  time  allowed  the 
+users to coordinate their activities. This type of mechanism 
+is  an  example  of  how  HIT  can  be  designed  to  meet  more 
+
+varied  needs  across  the  spectrum  of  temporality  we  have 
+defined in this paper, by balancing structure with flexibility. 
+Coordination  should  occur  through  flexible  plans, 
+changing goals, and evaluation over time 
+We observed a mismatch between the flexible coordination 
+required in these organizations, and the rigidity of records 
+and  data  management  practices.  Information  systems  tend 
+to  enforce  a  structure  that  does  not  allow  for  the  iterative 
+process  of  collaborative 
+reflection.  The  design  of 
+mechanistic  HIT  focuses  on  standardized  and  easy-to-
+measure  data  such  as  blood  pressure,  cholesterol,  or 
+menstrual  cycle.  Instead,  organic  HIT  could  support 
+measures  of  health  status  and  progress  that  are  more 
+complex to interpret.  
+Health  data  could,  for  example,  be  represented  by  more 
+dynamic representations that allow for reflection rather than 
+static  representations  that  tend  to  be  used  for  quick 
+information  transfer.  A  patient’s  chart  can  sometimes  be 
+represented  by  a  table  of  numbers.  In  the  context  we 
+studied, this type of static representation was not useful and 
+was  often  supplemented  by  anecdotal  evidence  and 
+opinions.  The  role  of  organic  HIT  could  be  to  provide 
+dynamic visualizations that allow team members to explore 
+and annotate the data in order to interpret it collaboratively.  
+Likewise, measures themselves should be changeable over 
+time. Some chronic conditions, like diabetes or cancer, can 
+be  monitored  using  the  same  measures.  Behavioral  health 
+requires  individualized  measures  that  could  change  over 
+time.  Organic  HIT,  therefore,  should  allow  for  both  the 
+creation of records and the review of records to account for 
+these  types  of  changes.  Data  input  should  be  adaptable  to 
+the 
+time.  Dynamic 
+visualizations of the data should help providers to interpret 
+progress with the added complexity of varied and changing 
+measures of health. 
+CONCLUSION 
+A focus on standardization has led to the design of HIT that 
+tends to overemphasize structure, and not support informal 
+documentation  and  communication  [12,  31,  44].  Informal 
+practices  tend  to  be  overlooked  in  the  design  of  HIT.  In 
+striving  for  standardized  and  perfect  accounts,  research 
+shows  that  HIT  actually  undermines  accuracy  in  records 
+[33]. In an increasingly complex health care system, there is 
+an "unprecedented requirement for adaptability" [41, p. 15], 
+which  HIT  is  not  currently  designed  for.  Studies  have 
+that  HIT  misrepresents  communication  as 
+revealed 
+information 
+collective, 
+interactive work as linear, predictable workflow [12].  
+According  to  Berg  [3],  “technology  development  still  all 
+too  often  tends  to  be  considered  as  an  autonomous  or 
+neutral process” (p. 38) – yet HIT is “thoroughly social” (p. 
+37). A focus on standardization has resulted in what Diana 
+Forsythe refers to as HIT that “delete the social” [10]. Her 
+extensive  fieldwork 
+that 
+because HIT is “designed, built, and evaluated according to 
+
+individual  and  malleable  over 
+
+in  medical  settings  showed 
+
+and  misrepresents 
+
+transfer, 
+
+SESSION: HOSPITAL WORK
+
+tend 
+
+to  require  sociotechnical  systems 
+
+procedures  that  ‘delete  the  social’  and  mute  the  voice  of 
+users,  most  of  these  systems  remain  ‘on  the  shelf,’  a  fact 
+which  is  hardly  surprising”  [10,  p.  15].  The  design 
+limitations  that  caused  the  low  adoption  rates  Forsythe 
+observed  in  the  1990s  continue  to  cause  the  unintended 
+consequences  reported  today.  Rates  of  adoption  have 
+naturally  increased  given  the  prevalence  of  information 
+technology,  yet  “despite  the  fact  that  similar  systems  had 
+been  used  outside  healthcare  for  a  number  of  years, 
+definitive  evidence  of  their  success  in  the  healthcare 
+domain remains elusive” [17, p. 1].  
+This paper describes an alternative to standardization in the 
+design  of  HIT,  through  an  empirical  study  of  paper-based 
+records  and  technology  non-use  within  behavioral  and 
+mental  health  services.  We  used  temporality  as  a  lens  to 
+show  that  these  organizations  tend  to  be  loosely  coupled 
+and 
+that  are 
+organic—i.e.,  enabling  practices  that  are  unstructured, 
+iterative,  unpredictable,  and  adaptive.  To  support  health 
+services over time, we described the design of organic HIT.  
+We  envision  organic  HIT  that  increases  awareness  and 
+coordination  rather  than  enforcing  roles  that  are  dropped 
+when  an  unpredictable  incident  must  be  handled.  Organic 
+HIT should encourage collaborative reflection by increasing 
+access 
+for  multiple 
+perspectives  on  data  and  decisions.  Organic  HIT  should 
+account  for  different 
+types  of  stakeholder  contacts, 
+communication  channels,  and  information  needs  across  a 
+network  of  providers—some  of  which  need  to  be  more 
+standardized and streamlined, and some of which need to be 
+more  informal  and  flexible.  Finally,  organic  HIT  should 
+enable the creation and review of records that may need to 
+change over time to account for new or adaptive measures 
+for monitoring chronic conditions.  
+ACKNOWLEDGMENTS 
+We are grateful to the teams and organizations we observed 
+in  our  fieldwork.  This  research  was  supported  by  the 
+National  Science  Foundation  under  Grant  No.  CCF-
+1029549,  and  a  National  Science  Foundation  Graduate 
+Research Fellowship to the first author. 
+REFERENCES 
+1. 
+
+information  and  allowing 
+
+Joanna Abraham and Madhu Reddy. 2008. Moving 
+patients around: a field study of coordination between 
+clinical and non-clinical staff in hospitals. In 
+Proceedings of the ACM Conference on Computer-
+Supported Cooperative Work (CSCW ’08), 225-228. 
+Jakob E. Bardram and Claus Bossen. 2005. Mobility 
+Work: The Spatial Dimension of Collaboration at a 
+Hospital. CSCW 14, 2, 131-160. 
+
+to 
+
+2. 
+
+3.  Marc Berg. 2003. Health Information Management. 
+
+Routledge. 
+
+4.  Hugh Beyer and Karen Holtzblatt. 1998. Contextual 
+
+Design: Defining Customer-Centered Systems. 
+Kaufmann. 
+
+962
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+5.  Claus Bossen and Lotte G. Jensen. 2014. How 
+
+physicians ‘achieve overview’: A case-based study in a 
+hospital ward. In Proceedings of the ACM Conference 
+on Computer-Supported Cooperative Work (CSCW 
+’14), 257–268. 
+
+6.  Kathy Charmaz. 2006. Constructing Grounded Theory: 
+
+A Practical Guide Through Qualitative Analysis. 
+SAGE Publications. 
+
+7.  Erik H. Erikson. 1985. The Nature of Clinical 
+
+Evidence. Daedalus 87, 4, 65-87. 
+
+8.  Kristin G. Esterberg. 2002. Qualitative Methods in 
+
+Social Research. McGraw-Hill. 
+
+9.  Geraldine Fitzpatrick and Gunnar Ellingsen. 2013. A 
+review of 25 years of CSCW research in healthcare: 
+contributions, challenges and future agendas. CSCW 
+2013, 609-665. 
+
+10.  Diana E. Forsythe. 1992. Blaming the user in medical 
+informatics: The cultural nature of scientific practice. 
+Knowledge and Society, 9, 95–111. 
+
+11.  Michael I. Harrison. 1994. Diagnosing Organizations: 
+
+Methods, Models, and Processes (2nd Ed). Sage, 
+Thousand Oaks, CA. 
+
+12.  Michael I. Harrison, Ross Koppel and Shirly Bar-Lev. 
+
+2007. Unintended Consequences of Information 
+Technologies in Health Care—An Interactive 
+Sociotechnical Analysis. Journal of the American 
+medical informatics Association 14, 5: 542-549. 
+
+13.  Mark Hartswood, Rob Procter, Mark Rouncefield, and 
+Roger Slack. 2003. Making a Case in Medical Work: 
+Implications for the Electronic Medical Record. 
+Computer Supported Cooperative Work (CSCW) 12, 3: 
+241-266. 
+
+14.  Bridget T. Kane and Saturnino Luz. 2009. Achieving 
+
+Diagnosis by Consensus. Computer Supported 
+Cooperative Work (CSCW) 18, 4: 357-392. 
+
+15.  Bridget T. Kane, Pieter J. Toussaint, and Saturnino 
+
+Luz. 2013. Shared decision making needs a 
+communication record. In Proceedings of the ACM 
+Conference on Computer-Supported Cooperative Work 
+(CSCW ’13), 79-90. 
+
+16.  Julie A. Kientz, Gillian R. Hayes, Gregory D. Abowd, 
+and Rebecca E. Grinter. (2006). From the War Room 
+to the Living Room: Decision Support for Home-Based 
+Therapy Teams. In Proceedings of the ACM 
+Conference on Computer-Supported Cooperative Work 
+(CSCW ’06), 209-218. 
+
+17.  Chris Kimble. 2014. Electronic Health Records: Cure-
+
+All or Chronic Condition? Global Business and 
+Organizational Excellence 33, 4: 63-74. 
+
+18.  Gary Klein, Brian Moon, and Robert R. Hoffman. 
+
+2006. Making Sense of Sensemaking: A 
+
+Macrocognitive Model. IEEE Intelligent Systems 21, 5: 
+88-92. 
+
+19.  Diana S. Kusunoki and Aleksandra Sarcevic. 2015. 
+
+Designing for Temporal Awareness: The Role of 
+Temporality in Time-Critical Medical Teamwork. In 
+Proceedings of the ACM Conference on Computer-
+Supported Cooperative Work (CSCW ’15), 1465-1476. 
+
+20.  David Lawrence. 2003. From Chaos To Care: The 
+Promise Of Team-based Medicine. Da Capo Press. 
+
+21.  Siân Lindley. 2015. Making Time. In Proceedings of 
+
+the ACM Conference on Computer-Supported 
+Cooperative Work (CSCW ’15), 442-1452. 
+
+22.  John Lofland, David Snow, Leon Anderson, and Lyn 
+
+H. Lofland. 2006. Analyzing social settings. 
+Wadsworth Publishing Company. 
+
+23.  Gabriela Marcu, Anind K. Dey, and Sara Kiesler. 2014. 
+Designing for Collaborative Reflection. In Proceedings 
+of the EAI International Conference on Pervasive 
+Computing Technologies for Healthcare 
+(PervasiveHealth ’14), 9-16. 
+
+24.  Gabriela Marcu, Kevin Tassini, Quintin Carlson, Jillian 
+Goodwyn, Gabrielle Rivkin, Kevin Schaefer, Anind K. 
+Dey, and Sara Kiesler. 2013. Why Do They Still Use 
+Paper? Understanding Data Collection and Use in 
+Autism Education. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems 
+(CHI ’13), 3177-3186. 
+
+25.  Melissa Mazmanian, Ingrid Erickson, and Ellie 
+
+Harmon. 2015. Circumscribed time and porous time: 
+Logics as a way of studying temporality. In 
+Proceedings of the ACM Conference on Computer-
+Supported Cooperative Work (CSCW ’15), 1453-1464. 
+
+26.  Helena M. Mentis. 2010. Emotion Awareness and 
+
+Invisibility in an Emergency Room: A Socio-Technical 
+Dilemma. Ph.D Dissertation. The Pennsylvania State 
+University, University Park, PA.  
+
+27.  Anne S. Miner, Paula Bassoff, and Christine Moorman. 
+
+2001. Organizational improvisation and learning: A 
+Field study. Administrative Science Quarterly 46, 2: 
+304-337. 
+
+28.  Zara Niazkhani, Habibollah Pirnejad, Marc Berg, and 
+Jos Aarts. 2009. The Impact of Computerized Provider 
+Order Entry Systems on Inpatient Clinical Workflow: 
+A Literature Review. Journal of the American medical 
+informatics Association 16, 539-549. 
+
+29.  John O’Looney. 1993. Beyond Privatization and 
+
+Service Integration: Organizational Models for Service 
+Delivery. Social Service Review 67, 4: 501-534. 
+
+30.  Wanda J. Orlikowski. 2002. Knowing in Practice: 
+
+Enacting a Collective Capability in Distributed 
+Organizing. Organization Science 13, 3: 249-273. 
+
+963
+
+SESSION: HOSPITAL WORK
+
+European Conference on Computer-Supported 
+Cooperative Work (CSCW ’01), 239-258. 
+
+39.  Aleksandra Sarcevic, Ivan Marsic, and Randal R. Burd. 
+2012. Teamwork Errors in Trauma Resuscitation. ACM 
+Transactions on Computer-Human Interaction 
+(TOCHI) 19, 2: 13–30. 
+
+40.  Aleksandra Sarcevic, Nadir Weibel, James D. Hollan, 
+and Randal S. Burd. 2012. A paper-digital interface for 
+information capture and display in time-critical 
+medical work. In Proceedings of the EAI International 
+Conference on Pervasive Computing Technologies for 
+Healthcare (PervasiveHealth ’12), 17-24. 
+
+41.  Donald A. Schön. 1983. The Reflective Practitioner: 
+
+How Professionals Think In Action. Basic Books. 
+
+42.  James K. Stoller. 2013. Electronic siloing: An 
+
+unintended consequence of the electronic health record. 
+Cleveland Clinic Journal of Medicine 80, 7: 406-409. 
+43.  Stefan Timmermans and Marc Berg. 2010. The Gold 
+
+Standard: The Challenges of Evidence-Based Medicine 
+and Standardization in Health Care. Temple 
+University Press. 
+
+44.  Nadir Weibel, Colleen Emmenegger, Jennifer Lyons, 
+Ram Dixit, Linda L. Hill, and James D. Hollan. 2013. 
+Interpreter-mediated physician-patient communication: 
+opportunities for multimodal healthcare interfaces. In 
+Proceedings of the EAI International Conference on 
+Pervasive Computing Technologies for Healthcare 
+(PervasiveHealth ’13), 113–120. 
+
+45.  Karl E. Weick. 1976. Educational Organizations as 
+Loosely Coupled Systems. Administrative Science 
+Quarterly 21, 1: 1-19. 
+
+46.  Karl E. Weick. 1993. The collapse of sensemaking in 
+
+organizations: The Mann Gulch disaster. 
+Administrative Science Quarterly, 38, 4: 628-652.  
+
+47.  Brit Ross Winthereik and Signe Vikkelsø. 2005. ICT 
+
+and Integrated Care: Some Dilemmas of Standardising 
+Inter-Organisational Communication. Computer 
+Supported Cooperative Work (CSCW) 14, 43-67.
+
+31.  Sun Y. Park, Katie Pine, and Yunan Chen. 2013. 
+
+Local-universality: designing EMR to support localized 
+information documentation practice. In Proceedings of 
+the ACM Conference on Computer-Supported 
+Cooperative Work (CSCW ’13), 55-66. 
+
+32.  Sharoda Paul and Madhu Reddy. 2010. Understanding 
+Together: Sensemaking in Collaborative Information 
+Seeking. In Proceedings of the ACM Conference on 
+Computer-Supported Cooperative Work (CSCW ’10), 
+321-330. 
+
+33.  Kathleen Pine and Melissa Mazmanian. 2014. 
+
+Institutional Logics of the EMR and the Problem of 
+“Perfect” but Inaccurate Accounts. In Proceedings of 
+the ACM Conference on Computer-Supported 
+Cooperative Work (CSCW ’14), 283-294. 
+
+34.  David Pinelle and Carl Gutwin. 2006. Loose Coupling 
+and Healthcare Organizations: Deployment Strategies 
+for Groupware. Computer Supported Cooperative 
+Work (CSCW) 15, 5-6: 537-572. 
+
+35.  Anne Marie Piper and James D. Hollan. 2008. 
+
+Supporting medical conversations between deaf and 
+hearing individuals with tabletop displays. In 
+Proceedings of the ACM Conference on Computer-
+Supported Cooperative Work (CSCW ’08), 147-156. 
+
+36.  Anne Marie Piper, Sarah D’Angelo, and James D. 
+
+Hollan. 2013. Going Digital: Understanding Paper and 
+Photo Documentation Practices in Early Childhood 
+Education. In Proceedings of the ACM Conference on 
+Computer-Supported Cooperative Work (CSCW ’13), 
+1319-1328. 
+
+37.  Madhu Reddy and Paul Dourish. 2002. A finger on the 
+
+pulse: temporal rhythms and information seeking in 
+medical work. In Proceedings of the ACM Conference 
+on Computer-Supported Cooperative Work (CSCW 
+’02), 344–353. 
+
+38.  Madhu Reddy, Paul Dourish, and Wanda Pratt. 2001. 
+Coordinating Heterogeneous Work: Information and 
+Representation in Medical Care. In Proceedings of the 
+
+ 
+ 
+
+964
+
+

@@ -1,0 +1,1510 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Botivist:
+
+Calling Volunteers to Action using Online Bots
+Tobias H¨ollerer
+Saiph Savage
+UC Santa Barbara
+holl@cs.ucsb.edu
+
+Microsoft Research
+amh@microsoft.com
+
+Andr´es Monroy-Hern´andez
+
+West Virginia University &
+
+National Autonomous
+University of Mexico
+
+norma.savage@mail.wvu.edu
+
+ABSTRACT
+To help activists call new volunteers to action, we present
+Botivist: a platform that uses Twitter bots to ﬁnd potential
+volunteers and request contributions. By leveraging differ-
+ent Twitter accounts, Botivist employs different strategies to
+encourage participation. We explore how people respond to
+bots calling them to action using a test case about corrup-
+tion in Latin America. Our results show that the majority of
+volunteers (> 80%) who responded to Botivist’s calls to ac-
+tion contributed relevant proposals to address the assigned so-
+cial problem. Different strategies produced differences in the
+quantity and relevance of contributions. Some strategies that
+work well ofﬂine and face-to-face appeared to hinder peo-
+ple’s participation when used by an online bot. We analyze
+user behavior in response to being approached by bots with
+an activist purpose. We also provide strong evidence for the
+value of this type of civic media, and derive design implica-
+tions.
+
+Author Keywords
+bots; volunteers; activism; micro-contributions; social media
+
+INTRODUCTION
+Activist groups usually have a small set of highly motivated
+core members who give a great deal of their own time and
+resources to make change in the world [20] – for example,
+to ﬁght corruption. However, to achieve their goals, activists
+cannot rely entirely on these core members. They usually
+require a larger crowd of volunteers who believe in the cause
+and can perform small actions, e.g.
+individuals around the
+world who can help report corruption in their local area [34].
+Activist groups need the support of casual volunteers: a group
+of interested, but less committed individuals [32].
+For years, activists went door-to-door to recruit and engage
+casual volunteers. Recently, new technologies have helped
+activists build the support of casual volunteers [6, 20]. Some
+use mailing lists to maintain continuous communication with
+
+Permission to make digital or hard copies of all or part of this work 
+for personal or classroom use is granted without fee provided that 
+copies  are  not  made  or  distributed  for  proﬁt  or  commercial 
+advantage and that copies bear this notice and the full citation on 
+the  ﬁrst  page.  Copyrights  for  components  of  this  work  owned  by 
+others than the author(s) must be honored. Abstracting with credit 
+is permitted. To copy otherwise, or republish, to post on servers or 
+to  redistribute  to  lists,  requires  prior  speciﬁc  permission  and/or  a 
+fee. Request permissions from Permissions@acm.org.
+CSCW ’16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights 
+licensed to ACM. 
+ACM 978-1-4503-3592-8/16/02...$15.00
+http://dx.doi.org/10.1145/2818048.2819985
+
+813
+
+CALLS TO ACTION
+WITH STRATEGY 1
+
+CALLS TO ACTION
+WITH STRATEGY 2
+
+CALLS TO ACTION
+WITH STRATEGY 3
+
+VOLUNTEER PRODUCED 
+
+CONTRIBUTIONS
+
+CAUSE OR 
+SOCIAL 
+PROBLEM
+
+Botivist
+
+Figure 1. Overview of Botivist: Activists ﬁrst provide the social problem
+for which they want action. Botivist then tries different strategies to
+trigger contributions from volunteers.
+
+their volunteers [27, 33]. Others are using social media [38].
+Facebook has been particularly useful to recruit and coor-
+dinate volunteers, issuing calls to action for fundraisers or
+demonstrations [39, 42]. Twitter has also enabled activist
+groups to raise awareness and mobilize even those unaffected
+by the activists’ cause or who live in distant regions [34, 35].
+However, despite the technological advancements, social
+computing has not been widely employed to connect casual
+volunteers [39]. Many eager individuals receive little di-
+rection on how to help [34]. Current technologies also do
+not help activists mobilize people. Activist groups must still
+spend time ﬁguring out how they will present their campaigns
+in order to successfully trigger action [38].
+Understanding how the presentation of a campaign (message)
+affects the engagement of volunteers and people in general
+has been extensively studied in both theories for civic engage-
+ment and marketing [12, 17, 19, 26, 37]. There has also been
+a growing interest in exploring how technology can be used
+to frame messages better and more persuasively [12]. Com-
+panies, organizations, and even governments have taken to
+social media to reach a wider audience and inﬂuence behav-
+ior [6]. Some have gone as far as to set up fake accounts op-
+erated by automated software (bots) in order to feign support
+and inﬂuence real users [13, 43].
+In Mexico’s 2012 presi-
+dential election, the winning party used over 10,000 bots to
+swamp online discussion [25].
+Large and well-funded organizations have devised complex
+social media strategies to get their message across. However,
+most activist groups are still in the dark, trying to ﬁnd the
+best strategies to mobilize people [39]. The main difﬁculty
+comes from the fact that volunteers’ level of agency changes
+
+based on how they perceive the efforts of activists [38]. But,
+social media has transformed how people interpret activists’
+varying messages and consequently their efforts [27]. It can
+thus be very difﬁcult for activist groups to keep up with new
+technology and to predict the outcomes of adopting a cer-
+tain strategy. This complexity has forced many activists to
+limit who among their organization can use social media [39].
+They usually prefer to have a “point person” in charge of the
+group’s social media strategy. However, even when the point
+person ﬁnally “ﬁgures out” the best ways to trigger participa-
+tion, it is not easy to transfer that knowledge to others [27].
+Additionally, it can be costly or impossible for the person to
+present the group’s campaigns differently to test what is the
+most effective. All of this hampers activists’ success.
+To help activists identify the best strategies, we present Bo-
+tivist, a platform that, by leveraging online bots, allows ac-
+tivist groups to try different strategies for calling volunteers
+to action. Figure 1 presents an overview of Botivist. The
+group ﬁrst presents the cause for which they want to generate
+action. The platform then tries different strategies to request
+contributions on social media, and help advance the group’s
+plans. Activist groups thus receive help about how to prompt
+contributions from strangers, reducing the need to invest time
+in people who might never contribute.
+The purpose of this paper is twofold. First, we aim to analyze
+the opportunities, limitations, and challenges of a system that
+uses online bots to call people to action in order to act upon
+social issues. Secondly, we analyze the online behaviours of
+those who are most likely to respond to activist bots. More
+speciﬁcally, (1) we focus on understanding how social me-
+dia users respond to differently-framed messages (strategies)
+when delivered by an activist bot. Most previous work stud-
+ied messages framed primarily when the information came
+from a company, organization, or individual, and has not ad-
+dressed how people respond when the messages are presented
+by an online bot, especially for the topic of activism. (2) In
+addition, an effort is made to understand the communication
+patterns of the people who decide to engage with Botivist.
+This analysis is important as these individuals could one day
+become core activists.
+For this purpose, we designed and conducted experiments on
+Twitter. We designed Botivist as a Spanish speaking agent be-
+cause we had more background with the language and its us-
+age in activism: Botivist’s main researchers are native Span-
+ish speakers, with knowledge and experience on activism in
+Latin America; we also had direct access to activists from
+Mexico1 who helped polish Botivist’s messages. We focused
+our calls to action on corruption and corrupt ofﬁcials’ im-
+punity from prosecution. These are some of the most pressing
+social issues fought in general by activists in Spanish speak-
+ing countries, especially those in Latin America [8, 21].
+
+1We had continuous discussions with activists from Mexico’s Rev-
+olutionary Action Group (GAR) who collaborate with activists’
+across the world to ﬁght corruption and bring justice to work-
+ers
+https://es.wikipedia.org/wiki/Grupo_de_Accion_
+Revolucionaria
+
+814
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Our aim was for Botivist’s calls to action to facilitate collabo-
+ration. We chose this focus because activist groups usually
+need volunteers to work together towards a common goal.
+Thus, Botivist’s tweets were structured to create collabora-
+tion by mentioning three users and suggesting that they col-
+laborate to ﬁght a social problem. Mentioned users might not
+know each other, but they would all be currently using simi-
+lar keywords, e.g., in their latest tweets all of them mentioned
+“corruption”. By suggesting collaborations, Botivist can also
+help people to meet and connect.
+To assess and compare the reactions that Botivist triggers in
+volunteers, we use methods from previous literature on reac-
+tions to different strategic presentations of a message [17, 19,
+26, 37], as well as research that analyzed the quality of in-
+formation from strangers on social media [24]. We deployed
+our platform publicly on Twitter, where our activist-designed
+and controlled bots invited people to organize around par-
+ticular social issues using different strategies. 175 volun-
+teers responded to Botivist’s calls to action. These volunteers
+made 1,236 contributions (424 tweets, and 813 favorites and
+retweets). We found that Botivist’s most effective strategy
+for prompting contributions from volunteers was to be up-
+front and direct. Interestingly, when Botivist used techniques
+designed to be persuasive and known to be effective in direct
+human-to-human interaction, it received far fewer replies. At
+times these techniques even seemed to prompt individuals to
+discuss whether bots should help solve social problems. We
+found that by being less openly persuasive in its message, Bo-
+tivist encouraged almost double the number of replies. Our
+results also indicate that those who decided to engage with
+Botivist were individuals who consistently tweeted terms re-
+lated to activism and politics, with a small sub-population of
+users who tweeted terms related to marketing analytics.
+Together, our results highlight the importance of understand-
+ing a community before simply adopting persuasive technol-
+ogy and expecting it to function. However, the beneﬁt of Bo-
+tivist is that by allowing activists to systematically test dif-
+ferent strategies, it might not be necessary to understand a
+community in detail. Our work shows the strength of this
+new type of civic media.
+
+RELATED WORK
+
+Botivist: Strategically Framed Messages
+There is extensive literature on how a message’s framing in-
+ﬂuences people’s preferences for a product, or how much they
+participate in an event [17, 19]. Such research has uncov-
+ered the power of presenting something in terms of its pos-
+itive beneﬁts or negative drawbacks can have. Framing can
+inﬂuence listeners’ opinions and levels of participation, mak-
+ing people more likely to buy a product if its ad highlights
+relevant beneﬁts, than if the ad lacks such information. Re-
+lated work has also identiﬁed the value of integrating partic-
+ular messages into a call to action to motivate participation.
+Shen [30] points out that integrating a solidarity component
+into the requests made to volunteers led to volunteers com-
+pleting their tasks more thoroughly.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+“Persuasive computing” [12] has combined this literature
+with technology to demonstrate how computation can be used
+to inﬂuence people’s behavior [6]. Many companies and or-
+ganizations are now also using social media technology to in-
+ﬂuence choices and shape the habits of their consumers [26],
+even their health choices [3]. Online platforms have also
+adopted persuasive computing to motivate greater participa-
+tion. Ling et al. [18] found that by simply reminding people
+of their connection to an online community, people posted
+more. However, most persuasive computing research has paid
+little attention to designing technology to enhance activism.
+While there has been growing interest in creating systems to
+help activists coordinate volunteers [20, 4, 9, 14, 5] most of
+these systems are not designed to audience-test the framing of
+different messages. By having different strategies for calling
+people to action, individuals can be persuaded to participate
+more in a social cause. Botivist gives activists and organizers
+ﬂexibility in framing the most effective call to action.
+
+Botivist: Online Automated Agents
+Since the 1960s, there has been a proliferation of automated
+conversational agents [40], and it is now commonplace for
+humans to respond to them [23]. We designed Botivist to
+behave in line with other mainstream conversational agents.
+Most previous work on online bots has focused more on de-
+veloping techniques to detect these agents [13, 10]. How-
+ever, this “Turing test” approach has left out the possibility
+that bots can persuade and mobilize people on social media.
+This potential has not yet been fully understood, let alone ex-
+plored in the ﬁeld of activism. Aiello et al. [1] began an explo-
+ration in the area by setting up a social experiment that exam-
+ined how people interact with a bot in an online community.
+The work uncovered how a bot could acquire social relevance
+even when using simple canned responses and lacking proﬁle
+information. Botivist builds on these ﬁndings to create on-
+line social agents that start to mobilize people to help activist
+groups.
+
+BOTIVIST
+Botivist is a web application that activist groups can use to
+call volunteers to action to help address a social issue. We
+based Botivist on the well-known idea that by simply chang-
+ing how a message is presented, it is possible to trigger di-
+verse reactions [17, 19, 26, 37]. Therefore, by simply framing
+a call to action differently, we can prompt different amounts
+and kinds of responses. However, deciding how to frame a
+call to action to obtain a desired turnout is not simple. There-
+fore Botivist probes different strategies, i.e., ways of present-
+ing a call to action.
+
+Botivist Strategies
+We selected some of the most common strategies used by ac-
+tivists to call volunteers to action [11]. The strategies are
+also known to be some of the most effective to garner par-
+ticipation [30, 37]. The messages used for each strategy were
+written by the ﬁrst author, and polished with the help of real
+activists. The activists discussed the messages, and then cor-
+rected the language to produce content that they would use.
+
+To try out each strategy, Botivist has a set of Twitter accounts
+to communicate with potential volunteers. All of the accounts
+identify themselves exactly the same. They mention they are
+bots (with a bio that states they are a bot; their proﬁle picture
+is also of a bot.) All accounts also have at least 50 followers.
+The only main difference across accounts is the strategy used
+to communicate and call volunteers to action.
+
+Direct Strategy
+This strategy is about being upfront and direct when making
+petitions [2]. When using this strategy, Botivist directly calls
+people to action to ﬁnd solutions for a social issue. For ex-
+ample: “Could we collaborate to brainstorm solutions to the
+problem of corruption?”
+
+Solidarity Strategy
+This strategy posits that feelings of solidarity or empathy can
+drive people to respond to a call to action [11, 30]. When
+using this strategy, Botivist directly calls people to action, but
+it also shares solidarity quotes. For instance, a sample call
+to action is: “Could we collaborate to brainstorm solutions
+to the problem of corruption?” “Remember, that: One for
+all, all for one!” Note that in this strategy for each call to
+action or reply, two tweets are sent: one tweet soliciting a
+reply, the same as the direct strategy, and one tweet to share
+the solidarity quote.
+
+Gain Strategy
+This strategy is about presenting a calls to action in terms of
+the gain that people would receive if they participate [37].
+These calls to action also mimic those used in the direct strat-
+egy, but add additional text to emphasize the gain. A sample
+call to action from this strategy: “Could we collaborate to
+brainstorm solutions to the problem of corruption? We might
+improve our cities!”
+
+Loss Strategy
+This strategy is about presenting a call to action in terms
+of the loss that people would receive if they do not partici-
+pate [37]. A sample call to action from this strategy: “Could
+we collaborate to brainstorm solutions to the problem of cor-
+ruption? If not, our cities might suffer!”
+We envisioned activist groups using Botivist mostly at the
+beginning of a collective project. Botivist thus focuses on
+prompting action in the form of discussions or plan proposals
+to help solve the social problem the activists are focused on,
+just as discussion and brainstorming are among the ﬁrst steps
+of any collective effort. All of Botivists’ responses echo the
+“How Might We” questions used to launch brainstorming [7].
+Depending on which strategy Botivist is pursuing, it will have
+a slightly different follow-up question. For instance, when
+following the gain strategy, Botivist asks for ideas, and then
+states that by participating in brainstorming, people could
+help improve their cities; whereas when following the soli-
+darity strategy, Botivist will ask for ideas, and share a soli-
+darity quote at the end. Table 1 presents the list of follow-up
+questions for the direct strategy. The follow-up questions of
+the other strategies are exactly the same, except for the added
+text. For instance, the gain strategy had the question: How do
+we ﬁght corruption in our cities & thus improve them? All
+
+815
+
+CAUSE
+
+(1) IDENTIFY POTENTIAL 
+
+VOLUNTEERS FROM 
+
+TWEETS
+
+(2) RANDOMLY ASSIGN VOLUNTEERS TO 
+
+EACH OF BOTIVIST’S MODALITIES
+
+(4) BOTIVISM RECEIVES 
+
+RESPONSES
+
+(3) FOR EACH OF ITS MODALITIES, BOTIVIST  
+SENDS A CALL TO ACTION TO VOLUNTEERS.
+
+(5) BOTIVISM SENDS 
+
+FOLLOW-UP QUESTIONS 
+TO GET MORE RESPONES
+
+Figure 2. Botivist’s process for calling volunteers to action and obtaining
+responses.
+
+calls to action and followup messages for brainstorming were
+veriﬁed and polished by real activists. A strategy has one par-
+ticular call to action associated and a list of replies to pursue
+brainstorming. Botivist randomizes its replies. Botivist only
+targets a person once, and engages further only if it receives
+a response.
+
+Botivst Operation
+An activist group ﬁrst deﬁnes the social problem for which
+they seek volunteers – in our test case, “corruption.” Botivist
+identiﬁes a set of potential volunteers and targets them by
+mentioning them in a tweet. Botivist then waits for replies, in
+which case it uses the opportunity to request more responses.
+We set Botivist up to target the same number of volunteers for
+each strategy category. Figure 2 shows Botivist’s work ﬂow.
+To determine who will be mentioned in a tweet, we take into
+account the ﬁndings from previous work on social media in-
+teractions between strangers [24] and research on publicly
+mentioning people in social media content [29]. Nichols et
+al. [24] showed that obtaining responses to questions from
+strangers usually had a low response rate, even under fa-
+vorable conditions. We thus designed Botivist to maximize
+the chances that people would respond to the call to action.
+Botivist targets individuals who have just publicly tweeted
+something related to the activists’ social problem of interest,
+based on simple keyword matching. For instance, if the ac-
+tivist group wants volunteers to ﬁght corruption, the system
+will target people who have just publicly shared a tweet ex-
+plicitly mentioning corruption. Group managers can provide
+a list of relevant keywords or hashtags to the system. This
+method is drawn from how activists operate online, searching
+for relevant keywords and making publicly addressed tweets
+to seek a wide range of help and build new social connec-
+tions [34]. Similar to real activists, Botivist engages people
+across countries, and has no prejudice against people based
+on their initial support or opposition to the social issue at
+hand [36].
+Once a relevant tweet is detected, its author is randomly as-
+signed to one of Botivist’s strategies. When a strategy has
+three authors (persons) assigned, Botivist sends a strategic
+tweet that mentions and calls the individuals to action to work
+together on the issue. Note that Botivist mentions multiple
+users in a tweet to facilitate cooperation among possible vol-
+unteers. Given Twitter’s space constraints, three users was the
+
+816
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+maximum that Botivist could mention in one tweet. Botivist
+is also constantly monitoring Twitter for responses to its calls
+to action. Botivist replies with canned responses that depend
+on the strategy Botivist used to communicate with the group.
+The follow-up messages all focus on prompting action from
+the volunteers.
+
+Q#
+
+1
+2
+3
+4
+5
+6
+7
+
+Question Text
+Direct Strategy
+
+How do we ﬁght corruption in our cities?
+
+How do we ﬁght corruption in our countries?
+How do we use Twitter to ﬁght corruption?
+
+How do we use the people to ﬁght corruption?
+
+What should we change personally to ﬁght corruption?
+
+What should we reduce to ﬁght corruption?
+
+What should we change at home to ﬁght corruption?
+Table 1. Questions asked in the direct strategy.
+
+EVALUATION
+This paper hypothesizes that online conversational bots can
+be used to call volunteers to action to work on solving a so-
+cial issue. We focus our evaluation on the two main aspects
+of this claim. First, for a given social problem, is it possible
+to use bots to call volunteers to action? Can Botivist obtain
+responses from strangers on social media, and what solicita-
+tion strategies are most conducive for obtaining results? Sec-
+ond, can Botivist prompt these volunteers to produce relevant
+contributions? Does Botivist trigger volunteers to discuss the
+issue or to propose plans? Similar to [24], our goal is to shed
+light on the type of contributions which autonomous agents
+can assemble in short bursts of times to get more immediate
+usable results.
+To answer these questions, we used Botivist to publicly call
+volunteers to action regarding the social problems of corrup-
+tion and impunity [8, 21].
+We were able to attract 175 volunteers over the course of two
+days. Because we did not group targeted users based on their
+location, Botivist likely called to action people from different
+countries, similarly to how real activists’ Twitter campaigns
+function [36].
+
+Method: Botivist and Volunteers’ Participation
+Botivist was active from April 26th until May 7th, 2015. We
+used the keywords “corrupcion” and “impunidad” (Spanish
+for corruption and impunity) to select users with relevant
+tweets. For both social problems, we loaded calls to action
+and follow-up questions speciﬁc to each of Botivist’s strate-
+gies. Botivist alternated between social problems, ﬁrst calling
+a group to ﬁght corruption, and subsequently calling another
+group to ﬁght impunity. To minimize any sequence effect,
+Botivist tried to make its calls to action for all strategy types
+almost at the same time. However, we randomized the delay
+time between Botivist’s calls to action to avoid being labeled
+as spam by Twitter. The researchers also constantly moni-
+tored Botivist’s Twitter accounts to ensure they were still run-
+ning and not blacklisted. All tweets received and sent by our
+system were collected in a database for further analysis.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Calls to Action
+Followup Questions
+Volunteers
+Volunteer Replies
+Reply Rate
+Interactions Bot
+Interactions Volunteers
+
+Total
+376
+557
+175
+423
+45 %
+320
+493
+
+Direct
+
+94
+158
+94
+204
+81%
+90
+274
+
+Loss Gain
+94
+94
+80
+79
+27
+31
+53
+74
+30% 43%
+57
+48
+71
+85
+
+Solidarity
+
+94
+120
+23
+92
+21%
+250
+62
+
+Table 2. Summary of Botivist’s and volunteers’ replies and interactions.
+Total column shows the results summed across strategies
+
+*Direct had the most volunteers and most number of replies.
+
+80
+
+60
+
+40
+
+20
+
+l
+
+t
+
+s
+r
+e
+e
+n
+u
+o
+V
+_
+e
+g
+a
+n
+e
+c
+r
+e
+P
+
+t
+
+t
+
+e
+a
+R
+_
+y
+p
+e
+R
+
+l
+
+40
+
+Direct
+
+20
+
+0
+
+0.9
+
+Gain
+
+Loss Solidarity
+
+Bot
+(b)
+*Direct  triggered 
+most  interactions 
+between volunteers
+
+e
+t
+a
+R
+_
+n
+o
+i
+t
+c
+a
+r
+e
+t
+n
+I
+
+0.6
+
+0.3
+
+0
+
+Direct
+
+0.6
+
+Gain
+
+Loss Solidarity
+
+Bot
+(a)
+
+*Solidarity had most  
+
+interactions 
+
+between volunteers 
+
+and Botivist
+
+0.4
+
+0.2
+
+e
+t
+a
+R
+_
+n
+o
+i
+t
+c
+a
+r
+e
+t
+n
+I
+
+0.0
+
+Direct Gain
+
+Loss Solidarity
+
+Bot
+
+(c)
+
+0.0
+
+Direct Gain
+
+Loss Solidarity
+
+Bot
+(d)
+
+Figure 3. Overview of the number of volunteers and responses that each
+strategy triggered. The direct strategy had the highest participation and
+prompted the most responses.
+
+Results
+Botivist called to action 376 groups of three: 94 groups per
+strategy (47 for corruption; 47 for impunity). In total, Botivist
+received replies from 175 volunteers. These volunteers made
+1,236 responses or other actions (424 tweets; 320 retweets
+and favorites to Botivist’s content; 493 retweets and favorites
+to the content of other volunteers.) Table 2 shows a break-
+down of the replies and interactions of Botivist and volun-
+teers. Figure 3 shows an overview of how people responded
+to Botivist’s calls to action. The number of participants varied
+across strategies, as well as their contributions.
+Figure 3a shows the percentage of people who responded
+to each strategy. There was a signiﬁcant difference in the
+number of unique contributors across strategies, based on an
+ANOVA [F(3, 174) = 38.94, p < 0.001]. The direct strat-
+egy was the most effective at mobilizing unique contributors.
+Over 50% of Botivists’ participants were gathered via this
+strategy. By being direct and upfront, Botivist was able to ob-
+tain responses from over 30% of the people it targeted. This
+compares favorably with research that shows only 21% of so-
+cial media users have participated in groups involved in polit-
+ical/social issues [31]. Based on our initial test, this form of
+outreach may yield more civic participation. However, Bo-
+tivist’s Solidarity strategy obtained participation from only
+8% of the volunteers targeted. With inadequate strategies,
+people’s civic participation is likely to be inhibited.
+
+Figure 3b presents the number of replies per Botivist tweet
+(reply rate). Reply rate is a common measure in the study of
+participation by online audiences, and has also recently been
+used to study how online audiences interact with advocacy
+organizations [28]. For Botivist, a perfect reply rate of 100%
+would be one reply per tweet sent, even if the tweet contained
+multiple user mentions, as in the call to action. We found that
+there was a signiﬁcant difference between number of replies
+across strategies (a ANOVA test gave [F(3, 932) = 8.594,
+p− value < 0.001]). The direct strategy had the highest reply
+rate (81%), receiving almost one reply per tweet sent.
+Although the direct strategy reply rate appears high, it is
+lower than that of crowdsourcing companies such as Inno-
+centive,2 which lets people pose problems for anyone to solve
+and gives cash awards for the best proposals. Innocentive re-
+ceives approximately 20 replies (proposals) per posed prob-
+lem [41]. However, a stark difference between this platform
+and Botivist is their monetary compensation. While Botivist
+relies purely on volunteers, prizes for the best proposals on
+Innocentive can range from $5,000 to $1 million dollars. We
+think there is value in exploring non-monetary ways to gen-
+erate discussion and proposals from the crowd, especially for
+activist groups who may have limited resources.
+The reply rate of Botivist’s other strategies was not as high
+compared to the direct one. The gain and loss strategies pro-
+duced reply rates similar to product reviews [24], while the
+reply rate for the solidarity strategy was even lower (21%).
+Figure 3c shows for each strategy the number of retweets
+and favorites Botivist received per tweet it sent (interaction
+rate). There was a signiﬁcant difference between number of
+retweets and favorites across strategies, show by an ANOVA
+test [F(3, 932) = 3.045, p < 0.01].
+Tweets following the solidarity strategy, particularly the soli-
+darity quote or phrase shared, received the most retweets and
+favorites from volunteers. The rest of the strategies received
+almost the same amount of interactions. However, despite
+its high interaction rate, the Solidarity strategy received the
+lowest number of replies from volunteers. Interestingly, this
+strategy appears to prompt volunteers to retweet and favorite
+content; but not necessarily to make contributions in the form
+of replies.
+Figure 3d shows the interaction rate per volunteer tweet,
+i.e., how much volunteers retweet or favorite each others’
+content. There was a signiﬁcant difference between volun-
+teer interaction rate between strategies (a ANOVA test gave
+[F(3, 492) = 19.34, p < 0.001]). Here the Direct and Loss
+strategies were the ones who harvested the most interactions
+among volunteers. We also see that people retweeted or fa-
+vorited volunteers’ content more than content original to Bo-
+tivist. This result recalls observations of the Scratch online
+community in which users valued interactions with humans
+more than with computers [22].
+
+2https://www.innocentive.com/
+
+817
+
+Method: Analysis of Volunteer Responses
+Our goal was to understand the type of volunteer responses
+(including retweets, favorites, and mentions in addition to
+replies) that systems like Botivist can trigger. We were par-
+ticularly interested to see if Botivist would prompt people
+to discuss and provide proposals for social problems. We
+used Upwork3 to hire three Spanish-speaking, college edu-
+cated individuals to independently classify Botivist’s volun-
+teers into people who contributed proposals/discussions rele-
+vant to a social problem, and people who contributed to off-
+topic conversations. We instructed these response coders to
+classify volunteers instead of single tweets because indepen-
+dent tweets can be harder to interpret. First, two coders read
+through the 423 tweets of the 175 volunteers, and classiﬁed
+each volunteer into either on-topic volunteer or off-topic vol-
+unteer based on whether the person contributed proposals or
+discussion on the assigned social problem. The two coders
+agreed on the classiﬁcation of 141 volunteers (Cohens kappa
+= 62: Substantial agreement). We subsequently asked a third
+coder to act as a tiebreaker in cases of disagreement.
+
+Results
+We found that the vast majority of volunteers (81%) re-
+sponded to Botivist’s call to action with discussions and pro-
+posals relevant to the social problem they were assigned. A
+sample of these proposals includes:“Corruption isn’t fought
+with street rallies! It’s fought by being tough on crime, having
+honesty & transparency!”
+Only 19% of all of Botivist’s volunteers contributed solely to
+off-topic discussions. The word most used in these off-topic
+discussions was: “bots.” A sample off-topic tweet:“Sorry ...
+I can’t collaborate with bots. I have a cultural bias.”
+
+Percentage Of On-Topic Volunteers
+
+Strategy
+Botivist (all strategies)
+Loss
+Gain
+Solidarity
+Direct
+Table 3. Overview per strategy of its percentage of on-topic volunteers.
+The Direct strategy had the most on-Topic volunteers.
+
+81%
+74%
+89%
+82%
+94%
+
+To understand the types of actions promoted by each strat-
+egy, we show the percentage of volunteers who responded to
+the call to action explicitly with what was requested. Table
+3 presents the percentage of volunteers who contributed pro-
+posals or discussions relevant to their assigned social prob-
+lem, split out by the strategy Botivist used toward them.
+The Loss strategy had the largest percentage of volunteers
+who responded to the call to action with off-topic replies.
+Over 60% of these replies used the term “bot.” Upon man-
+ual inspection it appeared that the replies were mainly ques-
+tioning whether autonomous agents should help solve social
+problems. The Direct strategy, on the other hand, had almost
+all of its volunteers dedicated to discussing/brainstorming so-
+lutions to their assigned social problem.
+3Upwork is an online platform to contract Freelancers to perform
+tasks online. Upwork is available at www.upwork.com/
+
+818
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+In laboratory settings of face-to-face discussions [37], the
+Loss strategy was more effective than the Direct strategy.
+However, our results indicate that online behavior follows the
+opposite pattern. This might help shed light on how mes-
+sages change when adopted by technology.
+In the case of
+Twitter, messages used in the Loss strategy prompted people
+to question the participation of bots in activism. Bots with an
+obvious agenda might be perceived as suspect and unwanted,
+whereas people with an agenda would be more easily toler-
+ated and even respected.
+
+Method: Communication Patterns of Volunteers
+Our objective here was to understand whether those who re-
+spond to Botivist communicate on social media differently
+than those who decide to not reply. It might be that people
+who discuss certain social issues are more prone to interact
+with activist bots. To this end, we examined targeted users’
+other tweets. We divided the people Botivist called to action
+into two groups: responders and non-responders. We ana-
+lyzed the public tweets from people in each group to identify
+any differences in content.
+Text-Based Differentiation. To obtain a descriptive assess-
+ment of what characterizes these groups beyind their response
+to Botivist, we use as a corpus the 200 tweets of each targeted
+user right before Botivist called them to action 4 Within this
+corpus, we ﬁrst identiﬁed the words that differentiate each
+group, and then sorted these words into different semantic
+categories.
+To identify each group’s key terms, we used a Mann-Whitney
+rank test [16]. This measure highlights the words which have
+been used more by one group than the other, per document.
+For our purposes, a document is all the tweets of an individ-
+ual group member, and the corpus is the collection of the en-
+tire group’s tweets (responders vs. non-responder). For each
+corpus, we calculate each word’s Mann-Whitney ρ measure,
+indicating how frequently the group has used that word, and
+also giving more weight to words which one group uses and
+the other group does not. This measure allows us to have
+corpora of different sizes. We then ranked the words of each
+corpus based on their Mann-Whitney ρ score, and identify
+the top 1%. These are the group’s “key terms.” In the cur-
+rent work, we found that most key terms were hashtags and
+mentions to other Twitter users.
+Next, we characterized each group’s key terms using qualita-
+tive content coding. For each group, one of our authors ﬁrst
+read a training set of 200 randomly selected tweets mention-
+ing one or more of the key terms. This helped the researcher
+understand the context in which these terms were used. This
+author also looked up the Twitter proﬁle of the users men-
+tioned, since users’ proﬁle descriptions can also provide con-
+text for the interaction. This author then began to extract cat-
+egories describing the distinguished words of both groups.
+Another author then analyzed the emerging categories and
+helped to adjust them. Finally, we looked at a set of 400 ran-
+domly selected tweets with key terms from both groups and
+
+4We used data prior to Botivist’s interaction, since our system might
+have inﬂuenced people’s future conversations [1].
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Category
+Activism: covers hashtags ﬁghting for a social cause, or twit-
+ter handles of people who appear to participate in activism.
+
+Sample Hashtag in Tweet
+“#WeAreAllAyotzinapa We continue to
+ﬁght against impunity. We won’t stop, let’s
+take this to the streets!”
+
+Politics: covers twitter handles of people who appear to ofﬁ-
+cially be part of the political system or hashtags about political
+ﬁgures
+News: covers hashtags used to give news alerts, or twitter han-
+dles of people who appear to be news reporters.
+Marketing Analytics: covers hashtags used to analyze one’s
+Twitter followers to better market oneself or Twitter handles of
+people that give advice on how to better market oneself.
+
+“Bronco & Fernando Elizondo (Mexican
+political candidates) will make history in
+Nuevo Leon #TweetForElBronco”
+“Car crash in Central Street, 2 people hurt.
+#Verfollow”
+“Over 5% of my followes have retweeted me
+in the last 24 hrs and 20% in the last month
+#usefulTweet”
+
+Sample Twitter & Proﬁle Description
+@antireforma: “REVO... REVOLUTION.!
+DAUGHTER OF THIS EARTH! LOVER OF
+LIFE! I FIGHT FOR TRUTH, JUSTICE
+AND VENEZUELA!!!”
+@epn:“President of
+States.”
+
+the United Mexican
+
+@epigmenioibarra:“I am a news reporter
+and producer.”
+@umspromotions:“Nigeria’s
+top-class
+Promo-Marketing media outﬁt:
+Digi-
+tal/Social Media Mgmt, Radio/TV Plugin,
+DJ Mixes, Strategic PR.”
+
+Table 4. Description and examples of the categories that describe the groups’ proﬁles.
+
+produced a ﬁnal list of mutually exclusive categories. Three
+Spanish-speaking, college educated colleagues who had not
+been exposed to this work were hired to categorize the key
+terms of each group. For each term, we showed the tweets in
+which it appeared, and in case the word was a Twitter han-
+dle, we showed also the user’s proﬁle description. We asked
+these two coders to categorize each of the 155 terms using the
+categories listed in Table 4. Coders selected the “most rele-
+vant” category for each term given its related information.
+The two coders agreed on 143 terms (Cohens kappa = .79).
+For the remaining 12 terms, a third coder was asked to act as
+a tiebreaker.
+
+Results
+We found that across strategies the people who responded
+to Botivist tended to consistently use more hashtags related
+to social causes, and referenced activists in their tweets.
+Over 50% of the key terms of this group were hashtags and
+user mentions related to activism. For instance, the hashtag
+#porEsoPropongo5 (#that’sWhyIPropose in English) was one
+of the most tweeted by the people who replied to Botivist.
+This hashtag has been adopted by citizens in Latin Amer-
+ica to make proposals for ﬁghting corruption and impunity
+globally and locally. In addition to activism, these individu-
+als also frequently referred to politicians and news reporters
+(25% of their key terms belonged to news and 19% to poli-
+tics). However, they made fewer of this kind of reference than
+non-responders to Botivist. The latter tweeted more consis-
+tently about high proﬁle politicians and news media (43% of
+all their key terms were about politics and 40% about news.)
+For instance, they frequently mentioned possible Argentine
+presidential candidate Jose M. de la Sota (@delasotaok) or
+Mexico’s president (@epn). They rarely used hashtags about
+social causes (only 6% of their key terms).
+A somewhat unexpected result was the presence of hashtags
+and users related to marketing analytics in the pool of respon-
+ders to Botivist. For instance, these users frequently men-
+tioned the account @m g w v, which describes itself as a
+guide to help others market themselves to obtain more follow-
+ers and retweets. Since Botivist’s purpose is to test message
+framing, it may be more natural for those who are interested
+in measuring and analyzing responses to content to respond
+to persuasive online bots.
+
+5http://www.poresopropongo.mx/
+
+Note however, that marketing analytics hashtags accounted
+for only 4% of this group’s distinct words (compared to less
+than 1% for those who did not reply). Overall, the people
+who replied to Botivist mainly used hashtags related to ac-
+tivism. Table 5 presents the top 3 key terms for each group
+and strategy, according to the Mann-Whitney ρ test (most dis-
+tinct words).
+
+Strategy Responders Key Terms
+Loss
+@antireforma (activism)
+
+Non-Responders Key Terms
+
+@epn (politics)
+
+#poresopropongo (activism)
+@umspromotions (marketing) @sanchezcastejon (politics)
+#cambioclimatico (activism)
+
+@delasotaok (politics)
+
+Gain
+
+@albert rivera (politics)
+@alvarouribevel (politics)
+
+@eldiarioes (news)
+
+@juanorlandoh (politics)
+@presidenciamx (politics)
+#radarparlamentario (news)
+
+@ccifuentes (politics)
+
+@periodicovzlano (news)
+@sumariumcom (news)
+
+Solidarity #blacklivesmatter (activism)
+
+@jaimerdznl (politics)
+
+@latati2 (activism)
+
+#ﬁcrea (activism)
+
+@maracayactiva (news)
+#handicapped (activism)
+@aristeguionline (news)
+
+#mgwv (marketing)
+
+Direct
+
+Table 5. Top 3 key terms found consistently in the tweets of people who
+replied to Botivst versus those who did not reply.
+
+DISCUSSION
+Our experiments demonstrate the potential of using online
+bots to call volunteers to action on social issues. The majority
+of people called to action by Botivist made relevant contribu-
+tions to the discussion, and even started to interact with each
+other to further drive collaboration. Our study provides in-
+sight into the deployment of platforms that use online bots
+to call volunteers to action for activism, as well as demon-
+strating their feasibility for social action groups that wish to
+expand their social media outreach. In this section, we will
+discuss the beneﬁts and limitations of the Botivist system, and
+design implications for future systems of automated activist
+communication.
+Feasibility
+Botivist’s direct strategy yielded a reply rate of over 80%.
+This strategy also produced a higher percentage of relevant
+responses (94%). This high response rate and promising col-
+lection of relevant information showcases the feasibility of
+using online bots to help activists engage with new potential
+members. Our results also highlight how online bots enable
+community scaffolding around social issues.
+
+819
+
+The differences between strategy groups in our data show that
+message framing makes a difference in terms of how much
+people participate in a Twitter discussion. This matches HCI
+ﬁndings that the way a computer presents its voice inﬂuences
+people’s responses [23]. However, we were surprised to dis-
+cover that strategies that work well face-to-face were less ef-
+fective when used by Botivist. This goes against the gen-
+eral trend for users to prefer computers that act “more hu-
+man” [23].
+Integrating solidarity quotes has long been a useful tech-
+nique that marketing experts use to increment preference for
+items [30], and which activists have also adopted to prompt
+people to action [11]. This strategy has also been effective
+online. For instance, some citizen journalists in the drug war
+added a solidarity component to their news reports to ensure
+participation to their calls to action [28]. Political activists in
+Palestine also share solidarity messages on Facebook to mo-
+bilize support [42]. But when adopted by Botivist, the tech-
+nique resulted in the lowest number of responses. Similarly,
+the loss strategy is known to trigger people to produce more
+quality work [37]. In the 2011 Egyptian uprising, activists on
+social media used the technique, stating how a lack of action
+would result in more corruption, which drove more effective
+participation [15]. But when used by Botivist, the strategy re-
+sulted in the lowest number of relevant replies, and seemed to
+make people actually question the role of bots in social issues.
+For bots to be effective, it is necessary to understand the com-
+munities in which they are deployed. We identiﬁed the people
+who responded to Botivist are individuals involved in online
+activism and marketing. They mentioned hashtags and Twit-
+ter accounts related to social causes and marketing analytics.
+Since Botivist made no attempt to disguise itself as a human
+user, it is likely that people linked Botivist to online market-
+ing schemes. Therefore, the individuals who responded to
+Botivist were those who already found it natural to engage
+with marketing agents. However, the persuasiveness of the
+strategy also inﬂuenced people’s contributions. People re-
+sponded more to activist bots that did not appear to have a
+“secret agenda” and are transparent about their purpose.
+The proliferation of persuasive technology in social me-
+dia [13] may effect how people react to certain strategies, per-
+haps driving a preference for less “manipulative” tactics. On
+the other hand, the fact that simply changing a bot’s message
+changed subsequent response rates, without needing any in-
+terface modiﬁcation or design of complex bot behavior, sug-
+gests that designing adequate dialog for online automated
+agents can have a strong effect on increasing volunteer par-
+ticipation in activism.
+Generalizability
+Botivist can be adapted to focus on any social issue for which
+a message can be formulated. Activists have the opportunity
+to use Botivist to crowd-source solutions that improve edu-
+cation, health care, and economic conditions. City planners
+could use systems like Botivist to call to action experts, stake-
+holders, or minorities to design novel, more inclusive urban
+spaces.
+
+820
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Bootstrapping
+Previous volunteer systems have identiﬁed the difﬁculties in
+ﬁnding participants [4]. Botivist shows the power of boot-
+strapping onto existing networks of people to call volunteers
+to action using automated agents. However, if such auto-
+mated social actors were to become popular, a large number
+of these bots might compete for people’s time and attention.
+It would be useful for social media platform developers to
+enable functionality for these bots via APIs. For instance,
+bots could be notiﬁed of which users have already been tar-
+geted by other agents, to eliminate duplicating volunteering
+requests, and reduce users’ “compassion fatigue.” Addition-
+ally, if a strategy is known to be ineffective, the system could
+recommend a different strategy to the bot.
+Maintainability
+Our results show that a reasonable proportion of people were
+willing to make relevant contributions to Botivist’s causes for
+free. This is meaningful because cost is a key problem in
+maintaining systems that rely on crowds.
+However, the long-term success of systems like Botivist may
+require automated social agents that can continuously engage
+the volunteers they have recruited. Such systems should take
+into account that while they do need to maintain contact with
+volunteers, they should not ping them so frequently that vol-
+unteers tune them out.
+Additionally, by mentioning different individuals in a tweet,
+Botivist enabled strangers to meet and start collaborating. Fu-
+ture work could also analyze how to design for long-term co-
+operation and even maintaining lasting relationships among
+volunteers. In particular, researchers could study designs that
+follow up with volunteers about their experiences, recognize
+them for their work, help them feel part of the activist group,
+and build a sense of community [39].
+On the other hand, some activists follow “syntax rules” when
+writing tweets to ease coordination [34], Botivist could also
+motivate standardized contributions that use a certain format
+or hashtag. This might also help long-term collaborations.
+
+CONCLUSIONS AND FUTURE WORK
+This paper introduced Botivist, a system that uses Twitter bots
+to engage volunteers in a discussion about social issues. The
+system uses the bots to quickly probe different strategies for
+calling volunteers to action. People on Twitter responded to
+Botivist’s calls to action and provided relevant contributions
+to the discussion about corruption and impunity that we used
+as Botivist’s test case. Volunteers also began to interact with
+each other, showing the potential for using bots to scaffold
+collective efforts. We found that the strategy which Botivist
+uses to call volunteers to action does matter. Tactics known
+to be effective when used by humans were not as effective
+when adopted by online bots. A direct strategy was the most
+effective for getting relevant participation. We believe that
+the growing number of persuasive online agents [13, 25] has
+made people prefer interactions with greater transparency and
+a less “manipualtive” approach. Nevertheless, our experi-
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ments highlight the real-world feasibility of using online bots
+to call volunteers to action.
+The insights from this work are limited by the methodology
+used and population studied. For example, those targeted
+by Botivist were all Spanish speakers, likely with their own
+cultural biases towards automated accounts (especially given
+the recent accusations that Latin American governments have
+used online bots to change political discussions [6]). Our re-
+sults might therefore not generalize to an English-, Russian-
+or Chinese-speaking population. Future work could study
+how people across the globe engage with bots to better under-
+stand the phenomenon. Our methods also focused on breadth
+instead of depth. Future work could conduct longitudinal
+studies and engage in in-depth interviews with volunteers.
+Acknowledgements. Special thanks to Mako Hill, Dario
+Taraborelli, William Das, and the anonymous reviewers for
+their great feedback in this work.
+
+REFERENCES
+1. Luca Maria Aiello, Martina Deplano, Rossano Schifanella, and
+
+Giancarlo Ruffo. 2012. People are Strange when youre a Stranger:
+Impact and Inﬂuence of Bots on Social Networks. Links 697, 483,151
+(2012), 1–566.
+
+2. Turadg Aleahmad, Aruna D. Balakrishnan, Jeffrey Wong, Susan R.
+Fussell, and Sara Kiesler. Fishing for Sustainability: The Effects of
+Indirect and Direct Persuasion. In Extended Abstracts on Human
+Factors in Computing Systems.
+
+3. Eric P.S. Baumer, Sherri Jean Katz, Jill E. Freeman, Phil Adams,
+
+Amy L. Gonzales, John Pollak, Daniela Retelny, Jeff Niederdeppe,
+Christine M. Olson, and Geri K. Gay. 2012. Prescriptive Persuasion
+and Open-ended Social Awareness: Expanding the Design Space of
+Mobile Health. In Proceedings of the ACM 2012 Conference on
+Computer Supported Cooperative Work (CSCW ’12). 475–484.
+
+4. Erin Brady, Meredith Ringel Morris, and Jeffrey P Bigham. 2015.
+
+Gauging Receptiveness to Social Microvolunteering. In Proceedings of
+the 33rd Annual ACM Conference on Human Factors in Computing
+Systems. ACM, 1055–1064.
+
+5. Deana Brown, Gary Marsden, and Ulrike Rivett. 2012. WATER Alert!:
+
+Using mobile phones to improve community perspective on drinking
+water quality in South Africa. In Proceedings of the Fifth International
+Conference on Information and Communication Technologies and
+Development. ACM, 230–240.
+
+6. Nanette Byrnes. 2015. Persuasive technologies surround us, and theyre
+
+growing smarter. How do these technologies work? And why?. In
+Technology and Persuasion. MIT Technology Review.
+
+7. Maureen Carroll, Shelley Goldman, Leticia Britos, Jaime Koh, Adam
+Royalty, and Michael Hornstein. 2010. Destination, imagination and
+the ﬁres within: Design thinking in a middle school classroom.
+International Journal of Art & Design Education 29, 1 (2010), 37–53.
+
+8. Pew Research Center. Crime and Corruption Top Problems in
+
+Emerging and Developing Countries. Pew Research Center (????).
+http://www.pewglobal.org/2014/11/06/crimeandcorruptiontop-
+problemsinemerginganddevelopingcountries/.
+
+9. Justin Cheng and Michael Bernstein. 2014. Catalyst: triggering
+
+collective action with thresholds. In Proceedings of the 17th ACM
+conference on Computer supported cooperative work & social
+computing. ACM, 1211–1221.
+
+10. Emilio Ferrara, Onur Varol, Clayton Davis, Filippo Menczer, and
+Alessandro Flammini. 2014. The rise of social bots. arXiv preprint
+arXiv:1407.5225 (2014).
+
+11. John A Fleishman. 1980. Collective action as helping behavior: Effects
+of responsibility diffusion on contributions to a public good. Journal of
+Personality and Social Psychology 38, 4 (1980), 629.
+
+12. Brian J Fogg. 2002. Persuasive technology: using computers to change
+
+what we think and do. Ubiquity 2002, December (2002), 5.
+
+13. Michelle Forelle, Phil Howard, Andr´es Monroy-Hern´andez, and Saiph
+Savage. 2015. Political Bots and the Manipulation of Public Opinion in
+Venezuela. arXiv preprint arXiv:1507.07109 (2015).
+
+14. Aaron Halfaker, Oliver Keyes, and Dario Taraborelli. 2013. Making
+
+Peripheral Participation Legitimate: Reader Engagement Experiments
+in Wikipedia. In Proceedings of the 2013 Conference on Computer
+Supported Cooperative Work (CSCW ’13). ACM, New York, NY, USA,
+849–860. DOI:
+http://dx.doi.org/10.1145/2441776.2441872
+
+15. Naila Hamdy and Ehab H Gomaa. 2012. Framing the Egyptian uprising
+
+in Arabic language newspapers and social media. Journal of
+Communication 62, 2 (2012), 195–211.
+
+16. Adam Kilgarriff. 2001. Comparing corpora. International journal of
+
+corpus linguistics 6, 1 (2001), 97–133.
+
+17. Irwin P Levin, Sara K Schnittjer, and Shannon L Thee. 1988.
+
+Information framing effects in social and personal decisions. Journal of
+Experimental Social Psychology 24, 6 (1988), 520–529.
+
+18. Kimberly Ling, Gerard Beenen, Pamela Ludford, Xiaoqing Wang,
+
+Klarissa Chang, Xin Li, Dan Cosley, Dan Frankowski, Loren Terveen,
+Al Mamunur Rashid, and others. 2005. Using social psychology to
+motivate contributions to online communities. Journal of
+Computer-Mediated Communication 10, 4 (2005), 00–00.
+
+19. Durairaj Maheswaran and Joan Meyers-Levy. 1990. The inﬂuence of
+
+message framing and issue involvement. Journal of Marketing research
+(1990), 361–367.
+
+20. Elaine Massung, David Coyle, Kirsten F Cater, Marc Jay, and Chris
+
+Preist. 2013. Using crowdsourcing to support pro-environmental
+community activism. In SIGCHI Conf. on Human Factors in
+Computing Systems. ACM.
+
+21. Patrice McSherry and Molina Raul. 1999. Introduction to Shadows of
+
+State Terrorism: Impunity in Latin America. Social Justice 26, 4
+(1999). https://www.socialjusticejournal.org/SJEdits/78Edit.html.
+
+22. Andr´es Monroy-Hern´andez, Benjamin Mako Hill, Jazmin
+
+Gonzalez-Rivero, and danah boyd. 2011. Computers Can’t Give Credit:
+How Automatic Attribution Falls Short in an Online Remixing
+Community. In SIGCHI Conf. on Human Factors in Computing
+Systems.
+
+23. Clifford Nass, Jonathan Steuer, and Ellen R Tauber. Computers are
+
+social actors. In SIGCHI Conf. on Human Factors in Computing
+Systems.
+
+24. Jeffrey Nichols, Michelle Zhou, Huahai Yang, Jeon-Hyung Kang, and
+
+Xiao Hua Sun. 2013. Analyzing the quality of information solicited
+from targeted strangers on social media. In Proceedings of the 2013
+conference on Computer supported cooperative work. ACM, 967–976.
+25. Mike Orcutt. 2012. Twitter Mischief Plagues Mexico’s Election. MIT
+
+Technology Review (2012).
+
+26. Ruth Rettie, Ursula Grandcolas, and Bethan Deakins. 2005. Text
+
+message advertising: Response rates and branding effects. Journal of
+Targeting, Measurement and Analysis for Marketing 13, 4 (2005),
+304–312.
+
+27. Saqib Saeed, Markus Rohde, and Volker Wulf. 2011. Analyzing
+
+political activists organization practices: ﬁndings from a long term case
+study of the european social forum. Computer Supported Cooperative
+Work (CSCW) 20, 4-5 (2011), 265–304.
+
+28. Saiph Savage and Andr´es Monroy-Hern´andez. 2015. Participatory
+
+Militias: An Analysis of an Armed Movement’s Online Audience. In
+Proceedings of the 18th ACM Conference on Computer Supported
+Cooperative Work & Social Computing (CSCW ’15). 724–733.
+
+29. Saiph Savage, Andres Monroy-Hernandez, Kasturi Bhattacharjee, and
+Tobias H¨ollerer. 2015. Tag Me Maybe: Perceptions of Public Targeted
+Sharing on Facebook. In Proceedings of the 26th ACM Conference on
+Hypertext &#38; Social Media (HT ’15). 299–303.
+
+821
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+30. Lijiang Shen. 2010. Mitigating Psychological Reactance: The Role of
+
+Message-Induced Empathy in Persuasion. Human Communication
+Research 36, 3 (2010), 397–422.
+
+31. Aaron Smith. 2013. Civic engagement in the digital age. Pew Internet
+
+(2013).
+
+32. David Horton Smith. 1981. Altruism, volunteers, and volunteerism.
+
+Journal of Voluntary Action Research (1981).
+
+33. Erich Sommerfeldt. 2011. Activist online resource mobilization:
+
+Relationship building features that fulﬁll resource dependencies. Public
+Relations Review 37, 4 (2011), 429–431.
+
+34. Kate Starbird and Leysia Palen. 2011a. ”Voluntweeters”:
+
+Self-organizing by Digital Volunteers in Times of Crisis. In
+Proceedings of the SIGCHI Conference on Human Factors in
+Computing Systems (CHI ’11). ACM, New York, NY, USA,
+1071–1080. DOI:
+http://dx.doi.org/10.1145/1978942.1979102
+
+35. Kate Starbird and Leysia Palen. 2011b. Voluntweeters: Self-organizing
+
+by digital volunteers in times of crisis. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems. ACM,
+1071–1080.
+
+36. Kate Starbird and Leysia Palen. 2012. (How) will the revolution be
+
+retweeted?: information diffusion and the 2011 Egyptian uprising. In
+Proceedings of the acm 2012 conference on computer supported
+cooperative work. ACM, 7–16.
+
+37. Amos Tversky and Daniel Kahneman. 1986. Rational choice and the
+
+framing of decisions. Journal of business (1986), S251–S278.
+
+38. Alcides Velasquez and Robert LaRose. 2014. Youth collective activism
+
+through social media: The role of collective efﬁcacy. New Media &
+Society (2014), 1461444813518391.
+
+39. Amy Voida, Ellie Harmon, and Ban Al Ani. 2012. Bridging between
+
+organizations and the public: volunteer coordinators’ uneasy
+relationship with social computing. In SIGCHI Conference on Human
+Factors in Computing Systems. ACM.
+
+40. Joseph Weizenbaum. 1966. ELIZA: a Computer Program for the Study
+
+of Natural Language Communication Between Man and Machine.
+Commun. ACM 9, 1 (Jan. 1966), 36–45. DOI:
+http://dx.doi.org/10.1145/365153.365168
+
+41. Wikipedia. 2015. InnoCentive. (2015).
+
+http://en.wikipedia.org/wiki/InnoCentive.
+
+42. Volker Wulf, Konstantin Aal, Ibrahim Abu Kteish, Meryem Atam, Kai
+Schubert, Markus Rohde, George P Yerousis, and David Randall. 2013.
+Fighting against the wall: Social media use by political activists in a
+Palestinian village. In SIGCHI Conf. on Human Factors in Computing
+Systems. ACM, 1979–1988.
+
+43. Xiaofeng Yang, Qian Yang, and Christo Wilson. 2015. Penny for Your
+
+Thoughts: Searching for the 50 Cent Party on Sina Weibo. In Ninth
+International AAAI Conference on Web and Social Media.
+
+822
+
+

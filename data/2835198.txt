@@ -1,0 +1,2434 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Embracing Cultural Diversity: Online Social Ties in 
+
+Distributed Workgroups 
+Kate Ehrlich 
+IBM Research 
+
+Michael M. Macy 
+Cornell University 
+Ithaca, NY, USA 
+m.macy@cornell.edu
+
+Cambridge, MA, USA 
+
+katee@us.ibm.com 
+
+Wei Dong 
+
+Cornell University 
+Ithaca, NY, USA 
+wd96@cornell.edu 
+
+Michael Muller 
+IBM Research 
+
+Cambridge, MA, USA 
+
+michael_muller@us.ibm.com 
+
+ABSTRACT 
+Cross-cultural  network  ties  have  been  shown  to  improve 
+decision-making,  creativity,  conflict-resolution  and  use  of 
+collaborative  technologies.  Nevertheless,  cultural  barriers 
+are  difficult  to  overcome.  We  used  data  from  an  internal 
+Social Networking System (SNS) in a large global company 
+to see if membership in the same company might reduce the 
+effect of cultural homophily. We found no effect. However, 
+when  we 
+focused  on  members  of  87  distributed 
+workgroups, we found that the effect of cultural differences 
+actually  reversed,  indicating  greater  cultural  diversity  in 
+online  friendship  ties  than  observed  in  the  company  at 
+large.  We  discuss  alternative  explanations  for  this  finding 
+and  the  implications  for  work  environments  in  global 
+companies. 
+
+Author Keywords 
+SNA; Homophily; Social Networks; Culture; Geography; 
+Distance; MNC; Social Media
+ACM Classification Keywords 
+H.5.3. Group & organizational interfaces: CSCW
+
+INTRODUCTION 
+People rely on their friends to provide reliable information 
+needed  to  further  their  work  and  career  [3,  7,  17,  47]. 
+Moreover, having a diverse set of friends may contribute to 
+more  productive  collaborations  [5],  higher 
+individual 
+performance  in  work  settings  [6],  and  higher  economic 
+development  of  communities  [11].  In  addition  to  network 
+diversity,  cultural  diversity  has  been  shown  to  improve 
+decision-making  [50],  creative  outcomes  [57],  conflict-
+resolution  [44]  and  use  of  collaborative  technologies  [45]. 
+Despite the value of diversity, research reveals widespread 
+homophily: the tendency to interact with people of similar 
+
+Permission to make digital or hard copies of all or part of this work for personal 
+or classroom use is granted without fee provided that  copies are not made or 
+distributed for profit or commercial advantage and that copies bear this notice 
+and the full citation on the first page. Copyrights for components of this work 
+owned by others than the author(s) must be honored. Abstracting with credit is 
+permitted. To copy otherwise, or republish, to post on servers or to redistribute 
+to  lists,  requires  prior  specific  permission  and/or  a  fee.  Request  permissions 
+from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2835198 
+
+background and interests [2, 26, 27, 37, 38]. Similarity can 
+be  based  on  many  dimensions,  including  age,  gender, 
+ethnicity, occupation, religion, politics, and lifestyle [38]. 
+However,  the  early  research  on  homophily  only  examined 
+offline  social  ties.  In  the  virtual  world  where  work  is 
+frequently  mediated  through  communication  technologies, 
+employees are exposed to a greater diversity of people than 
+in  a  physical  environment  [30,  41,  60].  The  growth  of 
+Social  Networking  Systems  (SNS)  within  corporations 
+further  increases  visibility  and  awareness  of  people  in 
+remote locations [1, 10, 23, 35]. These technologies may be 
+beneficial  because  companies  have  a  shared  culture  and 
+context  which  establishes  a  level  of  trust  [10,  39].  As  a 
+consequence, corporations sometimes promote  diversity in 
+collaborative partners by encouraging the use of external or 
+internal SNS [10, 23, 53]. Despite easier access to diverse 
+global populations, recent research indicates that homophily 
+remains a dominant factor in online social networks [31, 32, 
+54, 55]. The strong benefit of diversity, however, prompts 
+us to re-examine homophily in two organizational settings.  
+Of particular relevance to the present paper is a recent study 
+by  State  and  colleagues  [52]  that  used  global  data  from 
+online  interactions  to  see  if  "cultural  fault  lines"  in  the 
+offline  world  were  attenuated  in  cyberspace.  These  fault 
+lines were posited by Huntington [24, 25] in his provocative 
+account  of  the  “clash  of  civilizations”,  which  was  written 
+prior  to  the  widespread  use  of  social  media.  State  and 
+colleagues  used  data  from  Twitter  as  well  as  email  since 
+these platforms may have different network properties [18]. 
+Email  lacks  mechanisms  to  enable  users  to  discover  one 
+another  and  therefore  tends  to  reflect  existing  social  ties, 
+while Twitter is better equipped to facilitate the formation 
+of  new  social  relationships  [52].  They  also  adjusted  the 
+between-country  social  densities  to  account  for  disparities 
+in  population,  internet  access,  and  market  share.  Results 
+showed  that  countries  were  clustered  in  culturally  distinct 
+communities  corresponding  to  the  eight  “civilizations” 
+posited by Huntington based on a combination of religious, 
+secular, nationalist and political differences. The effects of 
+cultural  homophily  remained  statistically  significant  even 
+after  controlling  for  economic,  political,  geo-spatial,  and 
+linguistic measures. 
+Although  the  ability  to  interact  online  does  not  seem  to 
+have  attenuated  cultural  homophily,  a  company-wide 
+
+274
+
+survey 
+
+[54]  examined 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+internal SNS may be more effective in promoting diversity 
+compared  to  generic  platforms,  since  companies  have  a 
+shared culture and context which establishes a level of trust 
+[10, 39]. Company-based SNS communication has not been 
+widely  investigated  but  the  results  from  one  study  found 
+clustering  around  country-based  similarity.  Thom-Santelli 
+and  colleagues 
+respondents’ 
+propensity  to  form  connections  with  people  in  other 
+countries  using  an  internal  corporate  SNS,  and  found  that 
+the majority of connections were within the same country. 
+Kossinets  and  Watts  [32]  collected  email  communication 
+within a large university setting to look at the evolution of 
+network  ties  over  time  as  a  function  of  similarity  of 
+demographics  (e.g.  status,  gender,  age),  organizational 
+affiliation, courses and email variables (e.g. messages sent, 
+messages received, in-degree, out-degree). They found that 
+individuals who were similar were more likely to form ties 
+and that this effect was even more pronounced when they 
+had friends in common. 
+A  more  complex  picture  emerges  when  we  consider  the 
+pattern  of  social  ties  within  distributed  workgroups  where 
+the motivation to connect to other people may be driven by 
+the coordination needs of the project [13, 21] and the need 
+to  get  rapid  access  to  expertise  within  the  group  [14,  59]. 
+These instrumental motivations may reduce the significance 
+and relevance of culture in the choice of collaborators. In a 
+study on open source projects, Shen and Monge [51] found 
+that  developers  were  more  likely  to  chose  projects  with 
+people 
+levels  of 
+performance, experience, skill and reputation rather than on 
+the  basis  of  demographic  similarity.  Yuan  and  Gay  [61] 
+studied  the  frequency  of  task-related  and  non-task-related 
+communication among 32 students from 2 universities who 
+used email to communicate with each other on engineering 
+projects in a distance learning class. They did not find any 
+effect of similarity of gender or race on the social ties for 
+either the task-related or non-task-related relationships after 
+controlling for prior relationships.  
+Other  studies  have  found  evidence  for  cultural  homophily 
+in workgroups despite the potential performance gains from 
+diversity.  Hinds  and  colleagues  [22]  found  a  consistent 
+preference to select future workgroup partners of the same 
+race  in  small  undergraduate  software  projects.  Ruef  and 
+colleagues  [49]  studied  the  composition  of  entrepreneurial 
+teams  and  found  a  strong  effect  of  ethnic  similarity.  In  a 
+study  of  enterprise  crowdfunding 
+in  which  people 
+collaborated  online  to  propose  or  support  new  projects, 
+Muller  and  colleagues  [40]  found  that  supporters  of  a 
+project were more likely to come from the same country as 
+the  proposer.  However,  they  also  found  that  there  were 
+similar  effects  if  supporters  and  proposers  had  another 
+attribute in common, such as same organizational division 
+or same team. This outcome suggests a more flexible view 
+of what factors drive homophilous associations. 
+
+they  perceived  as  having  similar 
+
+275
+
+The differences in the findings may reflect the small size of 
+the workgroups. The smaller the population, the greater the 
+network density and therefore the lower the expected level 
+of clustering. A more rigorous test of homophily requires a 
+population  large  enough  to  accommodate  homophilous 
+sorting.  We  therefore  examined  the  clustering  of  online 
+social  ties  in  a  large  global  corporation.  The  study  was 
+conducted  with  data  from  a  proprietary  SNS,  which  had 
+been deployed for several years throughout the corporation 
+with  widespread  adoption.  In  alignment  with  State  and 
+colleagues, 
+the  present  study  also  uses  Huntington’s 
+classification, but extends the question scope from generic 
+online platforms to work settings. Specifically, we want to 
+examine whether working in the same company is sufficient 
+to overcome a bias towards cultural homophily, or, whether 
+smaller  organizational  units,  in  our  case  87  distributed 
+workgroups,  may  attenuate  a  bias 
+toward  cultural 
+homophily in online friendship ties. 
+BACKGROUND 
+We chose to analyze cultural differences using Huntington's 
+framework  in  order  to  align  our  study  with  State  and 
+colleagues  [52].  Their  study  was  designed  to  test  whether 
+the reduction of spatial constraints on social interaction in 
+online  networks  was  sufficient  to  overcome  the  cultural 
+divisions posited by Huntington. They found that it was not. 
+We build on those results by testing whether organizational 
+settings are sufficient, at the level of an entire company and 
+at the workgroup level. 
+Huntington’s  core  claim  is  that  “in  the  post-Cold  War 
+world,  the  most  important  distinctions  among  peoples  are 
+not  ideological,  political,  or  economic.  They  are  cultural.” 
+(p.  21)  [25].  He  classified  the  world’s  national  states  into 
+“eight civilizations”, the Western, Orthodox, Islamic, Latin 
+American,  African,  Sinic,  Hindu,  and  Buddhist.  The 
+countries in each of these eight civilizations are similar in 
+religion, language, and regional location but his typology is 
+not reducible to these dimensions. For example, Huntington 
+emphasizes the deep religious divisions within the Islamic 
+world,  and  multiple  languages  are  spoken  in  each.  While 
+countries  may  be  culturally  similar  to  their  neighbors,  the 
+vast  territorial  span  of  a  civilization  means  that  there  can 
+also be culturally similar that are far apart. In addition, there 
+are  religious  and  language  similarities  and  shared  borders 
+between  countries  in  different  locations  in  Huntington’s 
+typology.  Instead,  Huntington  claims  that  the  common 
+denominator of each civilization is a deeply rooted cultural 
+affinity and identity that has accumulated over centuries of 
+economic 
+imperial 
+expansion,  population  migration,  and  regional  conflict. 
+With  the  demise  of  the  former  Soviet  Union,  Huntington 
+contends, these ancient cultural divisions have resurfaced as 
+the “fault lines” in global conflicts and the “flash points for 
+crisis  and  bloodshed.”  Despite  the  bitter  and  sometimes 
+violent religious divisions between Sunni and Shia (and for 
+that  matter 
+and  Protestants), 
+
+interaction,  political 
+
+between  Catholics 
+
+integration, 
+
+implications 
+
+that  Huntington  drew 
+
+ 
+ 
+Huntington’s  poster  child  is  the  Middle  East:  “On  both 
+sides the interaction between Islam and the West is seen as 
+a clash of civilizations.” [24] 
+While  Huntington’s  typology  is  a  useful  template  for 
+measuring  cultural  homophily,  we  explicitly  reject  the 
+policy 
+from  his 
+classification.  In  addition,  some  of  his  classifications  are 
+contestable,  such  as  placing  Suriname  in  the  Africa 
+category or Jamaica in the Western category (Appendix 1). 
+Despite these concerns, we adopted Huntington’s typology 
+in  order  to  align  our  analysis  with  the  results  reported  by 
+State  and  colleagues  [52].  Their  study  differed  from 
+Huntington’s  in  two  important  ways.  First,  Huntington 
+constructed  his  typology  “top  down,"  based  on  cultural 
+affinities  among  different  nations,  while  State  and 
+colleagues  measured  the  “bottom  up”  between-country 
+density  of  social  interaction  among  individuals.  Second, 
+Huntington focused on conflict (the “clash of civilizations”) 
+while  State  and  colleagues  focused  on  interaction  (the 
+“mesh  of  civilizations”).  Nevertheless,  they  found  that 
+communication  densities  corresponded  to  the  cultural 
+divisions  posited  by  Huntington.  Alignment  with  their 
+design  allows  us  to  address  the  central  question  that 
+motivates our study: whether organizational ties can bridge 
+the fault lines of civilization.  
+METHODS 
+Setting 
+The  study  was  conducted  within  a  large  multinational 
+corporation 
+that  provided  a  proprietary  social  media 
+platform  to  all  its  employees.  The  platform  includes 
+discussion forums, blogs, wikis, shared bookmarks, shared 
+files, feeds and activities as well as profile information and 
+opportunities  for  “friending”  others.  Any  employee  can 
+invite  any  other  employee  to  join  their  network.  The 
+connection is made when the invitation is accepted.  
+A  large  multinational  corporation  provides  an  exceptional 
+opportunity 
+the  effects  of  a  shared  social, 
+professional,  organizational  and  technical  environment  on 
+the  formation  and  persistence  of  social  ties  that  span 
+cultural  divisions  [10,  39].  Most  importantly,  we  have  an 
+opportunity  to  go  beyond  existing  studies  [32,  52,  54]  to 
+examine  whether  cultural  homophily  is  attenuated  among 
+members  of  workgroups.  We  had  access  to  a  large 
+population  of  employees  across  97  countries,  providing 
+sufficient coverage to evaluate cultural homophily.  
+For  the  workgroup  analysis  we  selected  87  sales  account 
+groups that provide technical products and services to large 
+multinational  accounts  based  in  Europe,  Asia,  South 
+America or North America. Each sales group was led by a 
+senior executive, who was supported by a distributed group 
+of  people  from  multiple  sales,  services  and  technical 
+functions.  Sales  leads  were  dedicated  to  a  single  account 
+
+to 
+
+test 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+while technical and other specialists could support multiple 
+accounts. 
+Groups have a matrix structure such that members represent 
+different  functional  divisions  and  report  to  a  division 
+manager  rather  than  the  team  executive.  Team  members 
+work out of multiple offices, including home-based offices. 
+Face-to-face  meetings  that  include  all  team  members 
+typically occur less than twice a year. More often, members 
+communicate  via 
+technology  or  during  unplanned 
+encounters  at  company  or  client  sites.  Although  members 
+can operate largely independently of each other, they need 
+to coordinate and pool their information about the customer 
+in  order  to  meet  sales  targets,  deadlines  and  their  own 
+performance goals. 
+At any given time there are multiple projects for planning, 
+proposal  development,  product  or  service  delivery,  and 
+support activities. Projects could be as short as a few weeks 
+or  extend  over  many  months  and  involve  five  or  fewer 
+people  or  a  team  of  30  or  more.  The  groups  were  loosely 
+structured;  people  joined  the  group  if  they  were  needed 
+even if the need was temporary. 
+The  particular  groups  we  included  in  the  study  were 
+selected  based  on  an  opportunistic  sampling  method  [42]. 
+About  a  year  before  the  data  collection,  these  groups  had 
+been  selected  to  participate  in  an  initiative  to  use  online 
+communities to improve sharing within a sales account. The 
+communities, which were set up within the SNS platform, 
+were  designed  to  provide  a  place  where  each  sales  group 
+could privately share data, files and information  about the 
+account.  All  the  communities  used  the  same  design 
+template, were all set up within a few months of each other 
+and  had 
+increase  sharing  and 
+dissemination  of  account  knowledge.  While  members  of 
+each  sales  group  were  encouraged  to  make  use  of  the 
+community  by  adding  and  reading  content,  participation 
+was not mandated and was not markedly different than the 
+participation level in other active online communities in the 
+company.  Namely,  some  groups  were  very  active  and 
+engaged  in  their  community  while  other  groups  lagged 
+behind.  The  design,  development  and  deployment  of  the 
+online  communities  to  the  87  groups  provided  us  with  an 
+opportunity  to  collect  data  from  a  set  of  workgroups  who 
+had similar functions, were all part of the same organization 
+and  were  exposed  to  a  similar  set  of  online  social 
+experiences over the same period of time.  
+It is important to note, however, that the workgroup data in 
+the current study came from friendship ties, formed in the 
+open SNS platform, scoped to one or more members of the 
+sales groups. Membership in an online community offered a 
+common experience for the members within each of the 87 
+workgroups,  but  the  friendship-tie  data  in  the  study  came 
+from the public platform. That is, all employees, including 
+sales group members, can freely become friends with other 
+
+the  same  goal 
+
+to 
+
+276
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+employees  company-wide.  No  friendship  tie  was  imposed 
+or required when the communities were introduced. 
+Data Collection 
+We obtained a snapshot of the entire social network on the 
+platform,  involving  over  a  quarter  million  individuals  and 
+over two million undirected ties across 97 countries. Aside 
+from  country  of  employment,  we  did  not  have  individual-
+level  measures  of  cultural  attributes  such  as  ethnicity, 
+language,  or  religion,  and  therefore  followed  the  same 
+procedure  used  by  State  and  colleagues  [52],  analyzing 
+cultural  homophily  using  pairwise  between-country 
+network  densities  adjusted  for  the  different  employee 
+population  size  in  each  country.  We  did,  however,  have 
+individual-level  measures  of  online  friendship  ties.  Thus, 
+the pairwise densities are aggregate measures of individual-
+level friendships between employees in two countries. 
+We  downloaded  a  single  copy  of  the  entire  friendship 
+network from the platform as it appeared in August 2014. 
+Using  the  API  provided  by  the  platform,  we  iterated 
+through  every  user  and  downloaded  all  his/her  friends. 
+These  data  were  used  to  construct  the  global  company 
+graph as well as the global sales group graph (see Table 1). 
+In  addition  to  the  friendship  network,  we  also  collected 
+each  employee’s  country  or  region  of  employment1 from 
+the  company’s  HR  database.  Countries  were  coded 
+according 
+eight 
+civilizations  (see  Appendix  1).  Following  [52],  we  also 
+collected  each  country’s  language,  historical  international 
+alignment,  religion  and  geographic  location  using  public 
+sources  (see  Appendix  2).  These  country  level  variables 
+will  be  used  as  control  variables  in  our  statistical  models. 
+Since  Huntington's  cultural  classifications  do  not  map 
+directly  onto  any  single  dimension  such  as  religion  or 
+language,  by  controlling  for  the  above  variables,  any 
+residual  effect  reflects  the  national  culture  after  language, 
+religion and location have been excluded. 
+Full Social Network 
+At the time of data collection, the platform had more than 
+half  a  million  users,  the  majority  of  whom  had  been 
+actively using the platform. During the month prior to the 
+data  collection,  over  330k  users  had  used  the  platform  at 
+
+classification  of 
+
+to  Huntington’s 
+
+ 
+
+N(employees) 
+N(employees) (degree > 0) 
+N(friendship ties) 
+N(countries) 
+
+Full 
+
+Network 
+588,752 
+262,806 
+2,235,622 
+
+97 
+
+Sales 
+
+Network 
+22,746 
+15,602 
+58,449 
+
+53 
+
+Table 1: Descriptive statistics for the two networks 
+
+                                                 
+1Although a small number, a few regions, such as Hong Kong, are listed 
+and  analyzed  separately.  For  simplicity,  we  use  the  term  “countries” 
+instead of “countries and regions” for the rest of the paper. 
+
+277
+
+level  network.  Using 
+
+least once, and over 200k users had been using the platform 
+weekly.  After  removing  users  with  no  friends  and  non-
+person  user  profiles  used  by  the  company  for  functional 
+purposes,  the  friendship  network  consisted  of  2,235,622 
+undirected  edges  among  262,806  unique  employees  with 
+one or more friends located in 97 different countries. 
+Work Group Network 
+The  sales  groups  (work  groups)  ranged  from  2  to  1,797 
+members, with a mean of 314.5 and median of 166. There 
+were  22,746  unique  employees  who  were  members  of  at 
+least one of the 87 sales groups. After removing nodes with 
+no friendship edges, the sales network consisted of 58,449 
+edges among 15,602 employees from 53 different countries 
+and represented all major divisions within the company. 
+DATA ANALYSES 
+We  conducted  parallel  analyses  for  the  full  and  the 
+workgroup  network.  Instead  of  testing  homophily  at  the 
+individual level, we aggregated the friendship network into 
+a measure of adjusted friendship density (explained in detail 
+below)  between  each  pair  of  countries,  and  generated  a 
+country 
+the  between-country 
+friendship density measure, we examined whether countries 
+belonging  to  the  same  civilization  (homophily)  have 
+stronger ties (aggregated from all employees) than countries 
+belonging to different civilizations in three analyses: 
+First,  we  created  visualizations  to  illustrate  the  distinct 
+clustering patterns of countries in the two networks.  
+Second,  we  used  two  community  detection  algorithms  to 
+empirically 
+level 
+network, and examined their agreement with Huntington’s 
+classification.  
+Third,  we  used  multiple-regression  quadratic  assignment 
+procedure  (MRQAP)  to  statistically  test  the  effect  of 
+Huntington’s  classification  on  the  strength  of  between 
+country  friendship  densities,  controlling  for  other  country 
+level  variables.  MRQAP  is  a  multiple-regression  method 
+designed  for  network  data,  where  the  assumption  of 
+independent observations cannot be met. More details will 
+be provided as we discuss the results of these models.  
+Lastly, we show that similar result patterns can be observed 
+by comparing within- and between-country friendship ties. 
+Adjusted Friendship Density 
+We  measured  network  densities  following  the  method  in 
+State  and  colleagues  [52].  We  used  the  number  of 
+friendship ties between employees in each pair of countries 
+to represent the strength of between-country relations on the 
+internal  SNS  online  platform.  To  account  for  the  fact  that 
+the  company  has  different  numbers  of  employees  in 
+different  countries,  we  compared  the  observed  number  of 
+
+friendship  ties (𝑁!") between  country 𝑖 and  country j to  the 
+expected number  𝐸𝑥𝑝  𝑁 !" if all employees in all countries 
+
+were  to  form  friends  randomly  (within-country  friendship 
+
+identify  clusters  from 
+
+the  country 
+
+ 
+ 
+
+density  is  calculated  when 𝑖=𝑗).  The  adjusted  friendship 
+density D!" is then the log ratio of observed to expected ties: 
+
+𝐷!"=log
+
+!!"
+!"#!!". 
+
+The expected number of friendship ties was derived from a 
+random  network  generated  by  Maslov-Snelling  edge 
+randomization  [19].  This  procedure  iteratively  replaces  a 
+random pair of edges (u-v, x-y) with new edges (u-x, v-y), 
+until all of the original edges have been replaced (allowing 
+some  of  the  originals  to  be  reinvented  by  chance).  The 
+double-swap  procedure  randomizes  the  network  structure 
+while preserving the degree of each node. 
+
+The  adjusted  friendship  density 𝐷!"  can 
+spanning  from  negative  to  positive. 𝐷!">0 indicates  that 
+expected,  meaning  that  employees  in  countries  𝑖 and  𝑗 are 
+randomly from all users in the corporation. When 𝐷!"≤0, 
+
+more likely to be friends than if they were to choose friends 
+
+the  observed  number  of  friendship  ties  is  greater  than 
+
+take  values 
+
+location 
+
+the  observed  number  of  friendship  ties  is  no  greater  than 
+chance. 
+RESULTS 
+Visualizing Between-Country Friendship Density 
+Using  the  adjusted  between-country  friendship  densities, 
+we visualized the network using the Fruchterman-Reingold 
+algorithm  [16],  which  requires  that  edge  weights  be 
+normalized to the unit interval using linear transformations. 
+Figure  1  visualizes  the  country  level  friendship  density 
+graph generated from the full population (1a) and the sales 
+network (1b). Country nodes were color-coded according to 
+the  country’s 
+in  one  of  Huntington’s  eight 
+civilizations. To minimize noise, only the 69 countries with 
+20  or  more  employees  were  included  in  the  full  company 
+visualization, which included the 53 countries used for the 
+sales  group  visualization.  Although  node  location  was 
+determined using all edge weights, we avoided a “hairball 
+visualization” by only displaying the 600 densest edges. 
+The  monochromatic  clusters  in  Figure  1(a)  are  consistent 
+with  Huntington’s  cultural  fault  lines  and  with  the  results 
+reported in State and colleagues [52] for global email and 
+Twitter users. That is, we can see that countries in the same 
+civilization category tend to cluster together. In contrast, the 
+sales  network  shows  no  clustering  on  this  same  cultural 
+dimension. That is, there do not appear to be clusters based 
+on civilization categories. In other words, the results show 
+effects  of  cultural  homophily  for  the  organization  as  a 
+whole but not for the workgroups. 
+Community Detection 
+The monochromatic clusters in Figure 1(a) are not the only 
+possible  pattern.  Imagine  all  the  nodes  were  uncolored 
+circles  but  with  the  identical  location.  Would  you  still  be 
+able to see the same clusters? Following the procedure used 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+by  State  and  colleagues  [52],  we  compared  Huntington’s 
+theory-based classification with two atheoretic community2 
+detection  algorithms  –  the  Spinglass  [4]  and  Fastgreedy 
+[48] – using the igraph package in Python. Both atheoretic 
+algorithms detected 6 to 8 communities in both the full and 
+sales group networks. Figure 2 illustrates the communities 
+detected by the Spinglass algorithm, visually demonstrating 
+its high agreement with Huntington’s classification for the 
+full  network  and  low  agreement  for  the  sales  group  in 
+Figure 1.  
+We  used  the  Rand  index  [46],  a  measure  similar  to  inter-
+coder  agreement,  to  measure  the  pairwise  proportion  of 
+nodes  that  are  classified  identically  by  each  of  the  three 
+methods (i.e., the agreement on whether to put two nodes in 
+the  same  cluster,  or  in  different  clusters).  Table  2  shows 
+that  Huntington’s  classification  had  high  agreement  with 
+the two community detection algorithms for the full sample. 
+In fact, the agreement is slightly higher than the agreement 
+between 
+two  community  detection  algorithms, 
+suggesting that although Huntington’s may not be the only 
+division possible, this top-down culture-based classification 
+is  at  least  as  plausible  as  the  clusters  derived  from 
+algorithmic optimization. In contrast, the agreement among 
+the three classification methods is much lower for the sales 
+network.  Huntington’s  classification  performs  worse  than 
+the  empirical  algorithms,  indicating  that  no  consistent 
+clustering pattern can be detected from the sales network. In 
+short,  cultural  barriers  to  social  interaction  persist  in  the 
+company-wide full network, but not in the sales network. 
+
+the 
+
+ 
+
+Huntington - Spinglass 
+Huntington - Fastgreedy 
+Spinglass - Fastgreedy 
+
+Full 
+
+Network 
+
+Sales 
+
+Network 
+
+.739 
+.770 
+.709 
+
+.579 
+.683 
+.660 
+
+Table 2: Rand index of pairwise agreement among three 
+
+classifications 
+
+MRQAP models 
+The  results  for  the  full  network  in  Figure  1,  Figure  2  and 
+Table  2  are  consistent  with  cultural  homophily  at  the 
+company  level,  but  they  do  not  identify  which  cultural 
+dimensions are responsible. Following State and colleagues 
+[52],  we  used  multiple-regression  quadratic  assignment 
+procedure  (MRQAP)  to  model  the  effects  of  common 
+civilization  net  of  other  pairwise  cultural  similarities  that 
+might  account  for  the  zero-order  correlation  between  co-
+location in one of Huntington’s civilizations and friendship 
+density.  MRQAP  uses  random  permutations  of  the  rows 
+and columns of the adjacency matrix to locate the observed  
+                                                 
+2The term “community” refers to an empirical network cluster and should 
+not be confused with the formal sales group communities that exist on the 
+SNS platform. 
+
+278
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+(a) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+(b) 
+
+!
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Figure 1: Between-country friendship density graphs for the full company (a) and sales group (b). 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+(a) 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+
+(b) 
+
+Figure 2: Between-country friendship density graphs with nodes colored based on the Spinglass 
+
+ community detection algorithm for the full company (a) and sales group (b). 
+
+ 
+
+279
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the  distribution  of 
+
+ 
+ 
+coefficients  within 
+randomized 
+coefficients. If the observed coefficient is larger than 95% 
+of those randomly generated, then the observed coefficient 
+can  be  said  to  be  statistically  significant  at  the  .05  level. 
+This method provides a robust alternative to the estimation 
+of  standard  errors  using  OLS  for  network  data  where  the 
+assumption of independent observations cannot be met [8, 
+9,  33].  Despite  the  different  assumptions  used  to  estimate 
+standard errors, model coefficients should be interpreted in 
+the same way as regular multiple-regression models. 
+
+(𝐷!")  matrix  as  the  outcome  measure.  In  addition  to  co-
+
+We  used  the  adjusted  between-country  friendship  density 
+
+location  in  one  of  Huntington’s  eight  civilizations,  we 
+included  shared 
+language,  shared religion,  geographic 
+proximity,  and  common  historical  international  alignment 
+as control variables (see Appendix 2 for how each variable 
+was calculated). The units are country pairs and the model 
+predicts  between-country  friendship  density  as  a  linear 
+function of similarity on each of the above measures (e.g. it 
+is not the religion that matters but the religious similarity). 
+
+  Intercept 
+  Common Civilization 
+
+ 
+s
+e
+l
+b
+a
+i
+r
+a
+V
+
+ 
+l
+o
+r
+t
+n
+o
+C
+
+  Cultural Alignment 
+      Shared Language 
+      Shared Religion 
+      Ln Distance (km) 
+      Shared Border 
+  International Alignment 
+      Both Western Bloc 
+      Both Eastern Bloc 
+      Both Non-Aligned Movement 
+      Shared Colonial Ties 
+      Shared Commonwealth Ties 
+
+  Model Fit 
+      Adjusted R2 
+      F-statistics 
+      DF 
+***: p< .001, **: p< .01, *: p< .05, +: p< .10 
+
+Model 0 
+-1.30 *** 
+.66 *** 
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+.06 
+82.05 
+1, 1376 
+
+ 
+
+ 
+
+Model 1 
+-1.35 *** 
+.58 *** 
+
+.81 *** 
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+.09 
+67.65 
+2, 1375 
+
+Model 2 
+-.71 * 
+.63 *** 
+
+.87 *** 
+.11 ** 
+-.11 ** 
+.76 *** 
+
+  
+
+  
+  
+  
+  
+  
+  
+
+.16 
+52.51 
+5, 1372 
+
+Model 3 
+-.71 * 
+.61 *** 
+
+  
+
+  
+
+.77 *** 
+.07 * 
+-.10 *** 
+.73 *** 
+
+-.42 ** 
+.25  
+1.17 *** 
+.18  
+-.07  
+
+.24 
+45.55 
+10, 1367 
+
+Model 4 
+-.55 * 
+  
+  
+
+.89 *** 
+.01  
+-.10 *** 
+.96 *** 
+
+  
+-.37 * 
+.34  
+1.22 *** 
+.15  
+-.25  
+
+.21 
+41.27 
+9, 1368 
+
+ 
+
+ 
+
+ 
+
+Table 3: Coefficients of MRQAP models predicting between country friendship density from similarity along multiple 
+
+dimensions (Full Network, N = 53 countries, 1378 country pairs) 
+
+ 
+
+ 
+
+  Intercept 
+  Common Civilization 
+
+ 
+s
+e
+l
+b
+a
+i
+r
+a
+V
+
+ 
+l
+o
+r
+t
+n
+o
+C
+
+  Cultural Alignment 
+      Shared Language 
+      Shared Religion 
+      Ln Distance (km) 
+      Shared Border 
+  International Alignment 
+      Both Western Bloc 
+      Both Eastern Bloc 
+      Both Non-Aligned Movement 
+      Shared Colonial Ties 
+      Shared Commonwealth Ties 
+
+  Model Fit 
+      Adjusted R2 
+      F-statistics 
+      DF 
+***: p< .001, **: p< .01, *: p< .05, +: p< .10 
+
+Model 0 
+-.19 + 
+-.17 * 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+.01 
+15.69 
+1, 1376 
+
+ 
+
+ 
+
+ 
+Model 1 
+-.19 * 
+-.17 * 
+  
+.04  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+.01 
+8.02 
+2, 1375 
+
+Model 2 
+.09  
+-.16 * 
+  
+.07  
+.03  
+-.04 ** 
+.15 + 
+  
+  
+  
+  
+  
+  
+
+.03 
+9.76 
+5, 1372 
+
+Model 3 
+.08  
+-.17 * 
+  
+.11  
+.02 ** 
+-.04 + 
+.12  
+  
+
+-.13 ** 
+.56 * 
+.21  
+.25  
+-.15  
+
+.05 
+7.63 
+
+10, 1367 
+
+ 
+
+ 
+
+Model 4 
+.04  
+  
+  
+.08  
+.04 + 
+-.04 ** 
+-.05  
+  
+-.15  
+.53 ** 
+.19 * 
+.26  
+.10  
+
+.04 
+6.98 
+9, 1368 
+
+ 
+
+Table 4: Coefficients of MRQAP models predicting between country friendship density from similarity along multiple 
+
+dimensions (Sales network, N = 53 countries, 1378 country pairs) 
+
+ 
+ 
+280
+ 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+Model  0  reports  the  zero-order  coefficient  for  common 
+civilization as a statistical test of the clustering illustrated in 
+Figure  1.  The  results  are  reported  in  Table  3  for  the  full 
+organizational  network  and  Table  4  for  the  sales  network. 
+To  rule  out  selection  effects,  we  report  results  for  the  full 
+company  based  on  the  same  53  countries  as  the  sales 
+network. (We also estimated the full company model for all 
+97 countries and found no noteworthy differences). 
+Comparison of the Model 0 coefficients in Tables 3 and 4 
+reveals  a  striking  difference.  In  both  networks,  common 
+membership  in  one  of  Huntington's  civilizations  is  a 
+significant predictor of between country friendship density. 
+However,  the  sign  of  the  coefficients  reverses!  In  the  full 
+network,  co-location  in  the  same  civilization  is  a  strong 
+predictor  of  network  density  (i.e.,  belonging  in  the  same 
+civilization is associated with stronger tie strength between 
+two  countries,  as  illustrated  in  Figure  1(a)).  This  result  is 
+consistent with the results reported by State and colleagues. 
+and  the  cultural  homophily  observed  and  verified  in 
+numerous previous studies.  
+In  contrast,  among  the  sales  group  members,  the  effect  of 
+common  culture  remains  strong  but  the  effect  is  reversed. 
+Surprisingly,  employees  in  culturally  co-located  countries 
+were  actually  less  likely  to  become  friends  compared  to 
+those  located  in  different  civilizations.  This  is  consistent 
+with the absence of monochromatic clusters in Figure 1(b). 
+A possible interpretation is that workers in the sales group 
+not  only  tolerate  diversity,  they  exhibit  a  preference  for 
+cultural diversity. 
+Models  1  to  3  use  a  stepwise  linear  model  to  search  for 
+mediating  variables  that  might  explain  the  zero-order 
+results.  The  models  test  the hypothesis  that  the  zero-order 
+coefficient for common civilization in Model 0 will decline 
+when  we  control  for  mediating  covariates. The  stepwise 
+model  introduces  the  controls  one  set  at  a  time,  and  the 
+decline in the effect of common civilization indicates which 
+cultural  dimensions  might  underlie 
+the  zero-order 
+coefficient. 
+Model 1 introduces common language by itself in order to 
+rule  out 
+that  social  media 
+communication is not otherwise possible. The results show 
+little  change  in  the  zero-order  coefficient  for  common 
+civilization  between  Models  0  and  1  for  the  full  network 
+and no change in the sales network. Common language is at 
+most a partial explanation, which is not surprising given the 
+widespread  use  of  lingua  franca  in  global  social  media 
+communication. 
+Model  2  introduces  the  remaining  cultural  covariates  – 
+shared religion, shared borders, and physical proximity. All 
+three measures have significant effects in the full network 
+but  only  distance  is  significant  in  the  sales  network.  This 
+shows that the full company network exhibits homophily in 
+language,  religion  and  geographical  proximity,  while  the 
+
+trivial  explanation 
+
+the 
+
+281
+
+language, 
+
+to 
+
+the 
+
+in 
+
+In  other  words, 
+
+sales  group  employees  ignored  language  and  religion,  and 
+the  effect  of  geographical  proximity  was  substantially 
+religion,  and 
+weakened. 
+geographical  homophily  are  also  attenuated 
+the 
+full  network. 
+workgroup  network  compared 
+Moreover, the coefficient for common civilization actually 
+increases slightly in the full network and hardly changes in 
+the sales network, which means that language, religion and 
+location  have  some  explanatory  power  as  main  effects 
+(especially in the full network) but not as mediators of the 
+effects  of  common  civilization.  Simply  put,  common 
+civilization is not the only source of cultural homophily, but 
+it is also not reducible to language, religion and location. 
+Model 3 shows that Cold War alignments remain relevant 
+for  friendship  densities  in  both  the  full  network  and  the 
+sales network, while colonial alignments do not. However, 
+these  alignments  do  not  explain  the  effect  of  common 
+civilization for which the coefficient hardly changes. 
+Model 4 removes common civilization to address concerns 
+that the covariance with the cultural controls might lead to 
+multicollinearity.  The  results  show  no  important  changes. 
+The absence of multicollinearity is further confirmed by the 
+zero-order  correlations  between  common  civilization  and 
+religion  (r=.048),  common 
+language  (r=.276),  shared 
+border  (r=.332),  and  spatial  proximity  (r=.487)  (See 
+Appendix  3  for  the  complete  correlation  matrix).  Using 
+MRQAP,  the  nine  control  variables  explain  23.7%  of  the 
+variance in Huntington’s measure. In short, these analyses 
+support  Huntington’s  assertion  that  his  typology  captures 
+salient  cultural  differences  that  are  not  reducible  to 
+language, religion, or location. However, the available data 
+do  not  allow  us  to  identify  the  precise  content  of  these 
+differences  or 
+these 
+differences  are  deeply  rooted  in  historical  experiences 
+whose  cumulative  effects  have  shaped  regional  cultural 
+identities, affinities, and hostilities. 
+While we are unable to pin down the meaning of common 
+civilization,  the  results  do  allow  us  to  address  the  central 
+question that motivates this study – the relative salience of 
+common  civilization  for  friendship  densities  in  the  full 
+network and the sales network. To that end, it is useful to 
+consider not only the valence of the coefficients but also the 
+effect  sizes.  Taken  together,  all  the  similarity  measures  in 
+Model 3 accounted for a much larger proportion of variance 
+in friendship density for the full network (adjusted R2=.24), 
+compared  to  the  sales  network  (adjusted  R2=.05).  The 
+difference  in  the  model  fit  suggests  that  homophily, 
+whether  cultural  or  with  respect  to  all  control  variables 
+included  in  the  model,  becomes  less  important  in  the 
+distributed sales network. 
+Additional Analyses 
+As  an  additional  test  of  the  differences  between  the  full-
+company  and  sales  group  networks,  we  compared  the 
+
+to  confirm 
+
+the  hypothesis 
+
+that 
+
+ 
+ 
+within-country  and  between-country  densities.  The  results 
+are reported in Table 5. 
+In  both  networks,  the  adjusted  within-country  friendship 
+densities are universally positive, indicating that employees 
+are  more  likely  than  chance  to  friend  others  in  the  same 
+country.  The  within-country  densities  are  also  higher  than 
+between-country  for  both  the  full  company  and  the  sales 
+network.  However,  the  full  network  has  higher  within-
+country densities and lower between-country densities than 
+the sales group network, whether the full company network 
+includes  all  97  countries  or  is  limited  to  the  same  53 
+countries  as  the  sales  group  network.  The  difference 
+between  the  average  within-country  and  between-country 
+friendship densities is much larger in the full network (4.75) 
+than the sales network (3.40). The difference is even larger 
+when  we  compare  the  same  53  countries  in  the  two 
+networks (5.72 vs. 3.40), indicating that the strong tendency 
+for  employees  to  friend  others  in  the  same  country  is 
+alleviated in the sales network. 
+Range 
+
+Median  Mean  SD 
+
+Table 5: Descriptive statistics of adjusted within- and 
+
+between-country friendship density 
+
+DISCUSSION 
+Homophily  has  been  widely  observed  in  both  offline  and 
+online networks [31, 32, 40, 54, 55]. Recent work by State 
+and  colleagues  [52]  found  that  cultural  homophily  is  also 
+evident  in  online  networks.  Although  online  interaction 
+facilitates  awareness  and  access  to  people  with  highly 
+diverse backgrounds, the results from [52] indicate that the 
+reduction  of  spatial  constraints  in  online  networks  is  not 
+sufficient  to  minimize  effects  of  cultural  differences  as 
+measured by location in Huntington's eight civilizations. 
+We  extended 
+there  are 
+organizational settings in which online friendship ties might 
+be  immune  to  cultural  differences.  Using  data  from  an 
+internal,  proprietary  social  networking  system  for  a  large 
+multinational corporation, we systematically tested whether 
+common  membership  in  an  organization  as  an  employee 
+was  sufficient.  The  results  show  clearly  that  this  is  not 
+enough.  Huntington’s  cultural  differences  were  just  as 
+prominent within a single company as they were overall in 
+[52]. However, when we focused on workgroups, there was 
+no effect of cultural homophily. Not only did membership 
+
+test  whether 
+
+their  study 
+
+to 
+
+ 
+Within-country 
+  Full network 
+    97 countries 
+    53 countries 
+  Sales network 
+Between-country 
+  Full network 
+    97 countries 
+    53 countries 
+  Sales network 
+
+ 
+
+     0 – 7.01 
+0.76 – 7.01 
+     0 – 5.05 
+
+ 
+
+-4.55 – 4.71 
+-4.55 – 4.22 
+-4.08 – 2.57 
+
+ 
+
+4.06 
+4.38 
+2.92 
+
+ 
+
+-1.20 
+-1.38 
+-0.69 
+
+ 
+
+ 
+
+ 
+
+ 
+
+3.71  1.86 
+4.48  1.20 
+2.65  1.43 
+
+-1.04  1.33 
+-1.24  1.24 
+-0.75  1.09 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+its 
+
+impact 
+
+research  on  homophily  and 
+
+in  workgroups  increase  tolerance  of  cultural  diversity  in 
+social  ties,  it  appears  to  promote  a  surprising  increase  in 
+diverse  ties.  Our  results  suggest  that  people  who  work 
+together will form ties with each other – not just in spite of 
+cultural  differences  [40]  –  but  perhaps  even  because  of 
+these  differences.  This  surprising  result  contributes  to  on-
+going 
+for 
+relationships formed online [31, 40, 43, 50, 54, 57, 60, 61]. 
+The  present  study  differs  from  previous  research  [22,  49, 
+51,  61]  by  studying  a  population  that  is  large  enough  to 
+overcome  statistical  limitations,  and  is  one  of  the  few 
+studies  to  demonstrate  that  homophily  is  not  a  foregone 
+conclusion. 
+Note  that  positive  cross-cultural  friendships  were  formed 
+within  the  same  underlying  corporate  culture  in  which  we 
+found  homophily.  However,  there  are  three  differences 
+between the workgroup and the larger enterprise that might 
+account  for  the  differences  in  tie  formation,  although  we 
+emphasize that these hypotheses are highly speculative and 
+are  enumerated  as  directions  for  future  research,  not  as 
+explanations. 
+First,  the  sales  groups  worked  on  global  accounts,  hence 
+their  friendship  ties  could  be  expected  to  include  more 
+people from other cultures. This might explain the tolerance 
+of cultural differences in workgroups but it is harder to see 
+how  it  can  account  for  a  preference  for  different  cultures, 
+unless  working  together  with  people  from  a  different 
+culture  is  sufficient  to  attenuate  cultural  boundaries,  a 
+possibility that we hope to test in future research. 
+Second, workgroup members have a shared interest in team 
+productivity. Corporations have been shown to foster social 
+ties that improve productivity [27, 61]. When people work 
+together  on  a  common  project  they  may  be  motivated  to 
+improve their communication and collaboration [13, 14, 21] 
+toward their shared productivity goal. This might lead them 
+to  form  ties  based  on  common  work  interests  despite 
+cultural differences. 
+A third possible explanation is suggested by social identity 
+theory  [56],  which  posits  that  people  form  their  identity 
+based  on  their  perception  of  commonality  with  others, 
+leading them to prefer to interact with people perceived as 
+having  a  shared  identity.  Membership  in  the  same  large 
+multinational company is a relatively weak source of social 
+identity, due to the size and heterogeneity of the population 
+of  employees.  In  contrast,  workgroups  with  (on  average) 
+several  hundred  members  with  a  shared  stake  in  group 
+performance, may identify with the group and thus seek to 
+unify the group despite differences in cultural background. 
+Interaction  with  culturally  different  in-group  members 
+affirms the primacy of the shared identity, while interaction 
+only with those who are culturally similar has the potential 
+to  weaken  the  salience  of  group  membership  as  a  shared 
+identity. 
+
+282
+
+that 
+
+found 
+
+cultural 
+
+crowdfunding 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+There  is  some  evidence  from  prior  research  that  supports 
+identity-theoretic  explanation.  A  recent  study  of 
+the 
+enterprise 
+and 
+organizational  similarity  and  membership  in  the  same 
+workgroup  were  equally  important  in  the  choice  of 
+collaborative  partners  [40].  Muller  and  colleagues  argue 
+that  if  decisions  about  collaborative  partners  are  based  on 
+physical  proximity,  distance  and  not  organizational 
+similarity should have predicted the result. 
+LIMITATIONS, IMPLICATIONS, AND FUTURE 
+RESEARCH 
+An  important  strength  of  our  study  is  that  we  measured 
+friendship ties at the individual level yet on a global scale. 
+In contrast, the most serious limitation is that we measured 
+cultural differences between countries, not individuals. We 
+did this because we do not have individual level measures 
+of  cultural  background,  language,  or  demographics.  Also, 
+we  wanted  to  align  our  study  with  State  and  colleagues 
+[52]. Hopefully individual level cultural data for a company 
+SNS will become available at some point in the future. 
+We also had no information on the strength of ties between 
+SNS  users.  We  cannot  rule  out  the  possibility  that  the 
+preference for cultural diversity in the workgroup does not 
+hold  for  close  friends.  Moreover,  we  only  measured 
+friendship  ties  and  so  cannot  predict  the  effect  for  other 
+relationships  such  as  choice  of  work  partner  [22,  40,  49]. 
+Finally, these results come from a single, albeit very large, 
+company. As such, results could be different for companies 
+that are smaller or engaged in a different line of work. 
+Although these limitations are serious, it is also important 
+to  keep  in  mind  that  we  used  the  same  measures  for  both 
+the full company and the workgroups. Thus, the differences 
+we observed between the two organizational levels cannot 
+be  attributed  entirely  to  the  limitations  in  the  measures. 
+Differences of this magnitude seem unlikely to disappear if 
+and when better measures become available. 
+Nevertheless,  before  generalizing  from  these  results,  more 
+studies  are  needed  using SNS  data  from  other  global 
+companies.  With  that  caveat  in  mind,  we  call  attention  to 
+the implications for the relative importance of physical and 
+cultural constraints on social interaction may be one way of 
+increasing cross-cultural interaction in social networks. 
+The  present  findings  have  implications  for  the  relative 
+importance  of  physical  and  cultural  constraints  on  social 
+interaction.  Just  as  religious  and  cultural  divisions  can  be 
+spatially  differentiated,  so  too  difficulties  in  collaboration 
+previously attributed to physical distance [41] may actually 
+reflect religious or cultural differences. The same data and 
+technology,  contributed  to  findings  of  homophily  for 
+corporate-wide social networks and lack of homophily for 
+workgroup networks. 
+Diversity  and  heterogeneity  have  many  benefits  for 
+individuals  and  for  groups  [5,  6,  44,  45,  50,  57],  but 
+
+283
+
+overcoming homophily has proven to present a formidable 
+challenge.  The  dramatic  change  we  observed  between 
+organizational  levels  points  to  possible  strategies  for 
+promoting  diversity.  We  studied 
+loosely  structured 
+workgroups  that  came  together  to  support  a  single  sales 
+account.  Each  workgroup  also  had  access  to  an  online 
+community,  which  was  carefully  designed  to  support 
+members  who  were  distributed  across  many  countries  and 
+who may spend only a small portion of their time with the 
+group.  While  we  cannot  evaluate  the  specific  contribution 
+of  the  online  community  to  the  heterogeneity  of  ties,  it  is 
+reasonable to speculate that the communities helped people 
+appreciate their shared goals [39] which could reinforce the 
+importance  of  the  group  and  its  projects  over  cultural  
+differences  [12,  58].  Given  current  research  into  online 
+communities  [34,  36],  we  suggest  that  bringing  groups 
+together online may be one way of increasing cross-cultural 
+interaction in social networks. 
+ACKNOWLEDGMENTS 
+We would like to thank Mike Martin for his help with data 
+collection from the teams.  
+This  research  was  partially  sponsored  by  the  Army 
+Research Laboratory 
+under 
+Cooperative Agreement  Number  W911NF-09-2-0053.  The 
+views and conclusions contained in this document are those 
+of the authors and should not be interpreted as representing 
+the official  policies,  either  expressed  or  implied,  of  the 
+Army Research  Laboratory  or  the  U.S.  Government.  The 
+U.S. Government is authorized to reproduce and distribute 
+reprints for  Government  purposes  notwithstanding  any 
+copyright notation here on. 
+ 
+REFERENCES 
+1.  Anne Archambault and Jonathan Grudin. 2012. A 
+
+accomplished 
+
+and  was 
+
+longitudinal study of facebook, linkedin, & twitter use. 
+in Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems: ACM. 
+
+2.  Daniel J Brass. 1985. Men's and women's networks: A 
+
+study of interaction patterns and influence in an 
+organization. Academy of management journal, 28(2): 
+p. 327-343. 
+
+3.  Ronald S Burt. 2005, Brokerage and closure: An 
+
+introduction to social capital: Oxford University Press. 
+
+4.  Aaron Clauset, Mark EJ Newman, and Cristopher 
+Moore. 2004. Finding community structure in very 
+large networks. Physical review E, 70(6): p. 066111. 
+5.  Rob Cross and Jonathon N Cummings. 2004. Tie and 
+
+network correlates of individual performance in 
+knowledge-intensive work. Academy of management 
+journal, 47(6): p. 928-937. 
+
+6.  Rob Cross, Thomas H Davenport, and Susan Cantrell. 
+
+2003. The social side of performance. MIT Sloan 
+Management Review, 45(1): p. 20-22. 
+
+ 
+ 
+7.  Rob Cross and Lee Sproull. 2004. More Than an 
+
+Answer: Information Relationships for Actionable 
+Knowledge. Organization Science, 15(4): p. 446-462. 
+
+8.  David Dekker, David Krackhardt, and Tom AB 
+Snijders. 2003. Mulicollinearity Robust QAP for 
+Multiple Regression. in CASOS Working Paper. 
+Carneige Mellon University. 
+
+9.  David Dekker, David Krackhardt, and Tom AB 
+Snijders. 2007. Sensitivity of MRQAP tests to 
+collinearity and autocorrelation conditions. 
+Psychometrika, 72(4): p. 563-581. 
+
+10.  Joan DiMicco, David R Millen, Werner Geyer, et al. 
+2008. Motivations for social networking at work. in 
+Proceedings of the 2008 ACM conference on Computer 
+supported cooperative work: ACM. 
+
+11.  Nathan Eagle, Michael Macy, and Rob Claxton. 2010. 
+Network diversity and economic development. Science, 
+328(5981): p. 1029-1031. 
+
+12.  Kate Ehrlich, Michael Muller, Tara Matthews, et al. 
+
+2014. What motivates members to contribute to 
+enterprise online communities? in Proceedings of the 
+companion publication of the 17th ACM conference on 
+Computer supported cooperative work & social 
+computing: ACM. 
+
+13.  J Alberto Espinosa, Sandra A Slaughter, Robert E 
+
+Kraut, et al. 2007. Team knowledge and coordination 
+in geographically distributed software development. 
+Journal of Management Information Systems, 24(1): p. 
+135-169. 
+
+14.  Samer Faraj and Lee Sproull. 2000. Coordinating 
+
+expertise in software development teams. Management 
+science, 46(12): p. 1554-1568. 
+
+15.  Shelly D Farnham and Elizabeth F Churchill. 2011. 
+Faceted identity, faceted lives: social and technical 
+issues with being yourself online. in Proceedings of the 
+ACM 2011 conference on Computer supported 
+cooperative work: ACM. 
+
+1991. Graph drawing by force-­‐directed placement. 
+
+16.  Thomas MJ Fruchterman and Edward M Reingold. 
+
+Software: Practice and experience, 21(11): p. 1129-
+1164. 
+
+17.  Mark S Granovetter. 1973. The strength of weak ties. 
+
+American Journal of Sociology: p. 1360-1380. 
+
+18.  Ido Guy, Michal Jacovi, Noga Meshulam, et al. 2008. 
+
+Public vs. private: Comparing public social network 
+information with email. in Proceedings of the 2008 
+ACM conference on Computer supported cooperative 
+work: ACM. 
+
+2008. Exploring network structure, dynamics, and 
+function using NetworkX. in Proceedings of the 7th 
+Python in Science Conference (SciPy2008). Pasadena, 
+CA, USA. 
+
+20.  Esther Hauk and Hannes Mueller. 2013. Cultural 
+leaders and the clash of civilizations. Journal of 
+Conflict Resolution: p. 0022002713503793. 
+
+284
+
+19.  Aric A. Hagberg, Daniel A. Schult, and Pieter J. Swart. 
+
+36.  Tara Matthews, Jilin Chen, Steve Whittaker, et al. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+21.  James D Herbsleb and Deependra Moitra. 2001. Global 
+
+software development. Software, IEEE, 18(2): p. 16-
+20. 
+
+22.  Pamela J Hinds, Kathleen M Carley, David 
+
+Krackhardt, et al. 2000. Choosing work group 
+members: Balancing similarity, competence, and 
+familiarity. Organizational behavior and human 
+decision processes, 81(2): p. 226-251. 
+
+23.  Lester Holtzblatt, Jill L Drury, Daniel Weiss, et al. 
+
+2013. Evaluating the uses and benefits of an enterprise 
+social media platform. J. of Social Media for 
+Organizations, 1(1). 
+
+24.  Samuel P Huntington. 1993. The clash of civilizations? 
+
+Foreign affairs: p. 22-49. 
+
+25.  Samuel P Huntington. 1996, The clash of civilizations 
+
+and the remaking of world order: Penguin Books India. 
+
+26.  Herminia Ibarra. 1992. Homophily and differential 
+
+returns: Sex differences in network structure and access 
+in an advertising firm. Administrative science 
+quarterly: p. 422-447. 
+
+27.  Herminia Ibarra. 1995. Race, opportunity, and diversity 
+
+of social circles in managerial networks. Academy of 
+management journal, 38(3): p. 673-703. 
+
+28.  Ronald Inglehart and Pippa Norris. 2003. The true 
+
+clash of civilizations. Foreign policy: p. 63-70. 
+
+29.  Todd M Johnson and Brian J Grim. 2008. World 
+
+Religion Database. Leiden/Boston: Brill. 
+
+30.  Sara Kiesler and Jonathon N Cummings. 2002. What 
+
+do we know about proximity and distance in work 
+groups? A legacy of research. Distributed work, 1: p. 
+57. 
+
+31.  Adam M Kleinbaum, Toby E Stuart, and Michael L 
+
+Tushman. 2013. Discretion within constraint: 
+Homophily and structure in a formal organization. 
+Organization Science, 24(5): p. 1316-1336. 
+
+32.  Gueorgi Kossinets and Duncan J Watts. 2009. Origins 
+
+of homophily in an evolving social network1. 
+American Journal of Sociology, 115(2): p. 405-450. 
+33.  David Krackhardt. 1988. Predicting with networks: 
+
+Nonparametric multiple regression analysis of dyadic 
+data. Social Networks, 10(4): p. 359-381. 
+
+34.  Robert E Kraut, Paul Resnick, Sara Kiesler, et al. 2012, 
+
+Building successful online communities: Evidence-
+based social design: Mit Press. 
+
+35.  Paul M Leonardi. 2014. Social media, knowledge 
+
+sharing, and innovation: Toward a theory of 
+communication visibility. Information Systems 
+Research, 25(4): p. 796-816. 
+
+2014. Goals and perceived success of online enterprise 
+communities: what is important to leaders & members? 
+in Proceedings of the 32nd annual ACM conference on 
+Human factors in computing systems: ACM. 
+
+37.  J Miller McPherson and Lynn Smith-Lovin. 1987. 
+
+Homophily in voluntary organizations: Status distance 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+
+and the composition of face-to-face groups. American 
+sociological review: p. 370-379. 
+
+38.  Miller McPherson, Lynn Smith-Lovin, and James M. 
+Cook. 2001. Birds of a Feather: Homophily in Social 
+Networks. Annual Review of Sociology, 27: p. 415-444. 
+
+39.  Michael Muller, Kate Ehrlich, Tara Matthews, et al. 
+
+2012. Diversity among enterprise online communities: 
+collaborating, teaming, and innovating through social 
+media. in Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems: ACM. 
+
+40.  Michael Muller, Werner Geyer, Todd Soule, et al. 
+2014. Geographical and organizational distances in 
+enterprise crowdfunding. in Proceedings of the 17th 
+ACM conference on Computer supported cooperative 
+work & social computing: ACM. 
+
+41.  Gary M Olson and Judith S Olson. 2000. Distance 
+
+matters. Human-Computer Interaction, 15(2): p. 139-
+178. 
+
+42.  Michael Quinn Patton. 2002, Qualitative Research & 
+
+Evaluation Methods. 3rd ed. Thousand Oaks, CA: 
+SAGE. 
+
+43.  Souren Paul and Priya Seetharaman. 2004. Cultural 
+Diversity, Conflict and Team Facilitation in Global 
+Virtual Teams-a Research Model. AMCIS 2004 
+Proceedings: p. 65. 
+
+44.  Souren Paul, Priya Seetharaman, Imad Samarah, et al. 
+
+2004. Impact of heterogeneity and collaborative 
+conflict management style on the performance of 
+synchronous global virtual teams. Information & 
+Management, 41(3): p. 303-321. 
+
+45.  Praveen Pinjani and Prashant Palvia. 2013. Trust and 
+
+knowledge sharing in diverse global virtual teams. 
+Information & Management, 50(4): p. 144-153. 
+46.  William M Rand. 1971. Objective criteria for the 
+evaluation of clustering methods. Journal of the 
+American Statistical association, 66(336): p. 846-850. 
+
+47.  Ray Reagans and Bill McEvily. 2003. Network 
+structure and knowledge transfer: The effects of 
+cohesion and range. Administrative science quarterly, 
+48(2): p. 240-267. 
+
+48.  Jörg Reichardt and Stefan Bornholdt. 2006. Statistical 
+mechanics of community detection. Physical review E, 
+74(1): p. 016110. 
+
+49.  Martin Ruef, Howard E Aldrich, and Nancy M Carter. 
+
+2003. The structure of founding teams: Homophily, 
+strong ties, and isolation among US entrepreneurs. 
+American sociological review: p. 195-222. 
+50.  Pnina Shachaf. 2008. Cultural diversity and 
+
+information and communication technology impacts on 
+
+ 
+
+ 
+
+285
+
+global virtual teams: An exploratory study. Information 
+& Management, 45(2): p. 131-142. 
+
+51.  Cuihua Shen and Peter Monge. 2011. Who connects 
+with whom? A social network analysis of an online 
+open source software community. First Monday, 16(6). 
+52.  Bogdan State, Patrick Park, Ingmar Weber, et al. 2015. 
+
+The Mesh of Civilizations in the Global Network of 
+Digital Communication. PLoS One, 10(5): p. 
+e0122543. 
+
+53.  Charles Steinfield, Joan M DiMicco, Nicole B Ellison, 
+
+et al. 2009. Bowling online: social networking and 
+social capital within the organization. in Proceedings 
+of the fourth international conference on Communities 
+and technologies: ACM. 
+
+54.  Jennifer Thom-Santelli, David R Millen, and Joan M 
+DiMicco. 2010. Characterizing global participation in 
+an enterprise SNS. in Proceedings of the 3rd 
+international conference on Intercultural 
+collaboration: ACM. 
+
+55.  Jennifer Thom-Santelli, David R Millen, and Darren 
+Gergle. 2011. Organizational acculturation and social 
+networking. in Proceedings of the ACM 2011 
+conference on Computer supported cooperative work: 
+ACM. 
+
+56.  John C Turner and Katherine J Reynolds. 2001. The 
+
+social identity perspective in intergroup relations: 
+Theories, themes, and controversies. Blackwell 
+handbook of social psychology: Intergroup processes, 
+4: p. 133-152. 
+
+57.  Hao-Chuan Wang, Susan R Fussell, and Dan Cosley. 
+2011. From diversity to creativity: Stimulating group 
+brainstorming with cultural differences and 
+conversationally-retrieved pictures. in Proceedings of 
+the ACM 2011 conference on Computer supported 
+cooperative work: ACM. 
+
+58.  M McLure Wasko and Samer Faraj. 2000. “It is what 
+one does”: why people participate and help others in 
+electronic communities of practice. The Journal of 
+Strategic Information Systems, 9(2): p. 155-173. 
+59.  Daniel M Wegner. 1987. Transactive memory: A 
+
+contemporary analysis of the group mind, in Theories 
+of group behavior. Springer. p. 185-208. 
+
+61.  Y Connie Yuan and Geri Gay. 2006. Homophily of 
+
+60.  Jiang Yang, Zhen Wen, Lada Adamic, et al. 2011. 
+Collaborating globally: culture and organizational 
+computer-mediated communications. 
+
+in Computer-­‐Mediated Distributed Teams. Journal of 
+Computer-­‐Mediated Communication, 11(4): p. 1062-
+
+Network Ties and Bonding and Bridging Social Capital 
+
+1084. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+ 
+APPENDIX 1 
+Huntington’s classification of all the countries and regions involved in the current study 
+African 
+AO 
+BF 
+CD 
+
+Bangladesh 
+Algeria 
+Egypt 
+Indonesia 
+
+Japan 
+
+Angola 
+Burkina Faso 
+Democratic 
+Republic of Congo 
+Congo - Brazzaville 
+
+Saudi Arabia 
+Senegal 
+Chad 
+Tunisia 
+Turkey 
+
+Pakistan 
+
+BD 
+DZ 
+EG 
+ID 
+KW  Kuwait 
+MA  Morocco 
+MY  Malaysia 
+Niger 
+NE 
+OM  Oman 
+PK 
+QA  Qatar 
+SA 
+SN 
+TD 
+TN 
+TR 
+ 
+Latin American 
+Argentina 
+AR 
+Brazil 
+BR 
+Bahamas 
+BS 
+Chile 
+CL 
+Colombia 
+CO 
+Costa Rica 
+CR 
+Ecuador 
+EC 
+MX  Mexico 
+PE 
+UY  Uruguay 
+Venezuela 
+VE 
+ 
+
+Peru 
+
+Lone 
+JP 
+ 
+Sinic 
+CN 
+HK  Hong Kong SAR 
+
+China 
+
+China 
+South Korea 
+Singapore 
+Taiwan 
+Vietnam 
+
+KR 
+SG 
+TW 
+VN 
+ 
+Slavic Orthodox 
+Bulgaria 
+BG 
+Cyprus 
+CY 
+Greece 
+GR 
+Croatia 
+HR 
+Romania 
+RO 
+Serbia 
+RS 
+Russian Federation 
+RU 
+Slovenia 
+SI 
+UA  Ukraine 
+ 
+Western 
+AT 
+AU 
+BB 
+BE 
+BM 
+CA 
+
+Austria 
+Australia 
+Barbados 
+Belgium 
+Bermuda 
+Canada 
+
+Estonia 
+Spain 
+Finland 
+France 
+
+Switzerland 
+CH 
+Czech Republic 
+CZ 
+Germany 
+DE 
+DK  Denmark 
+EE 
+ES 
+FI 
+FR 
+GB  Great Britain 
+HU  Hungary 
+Ireland 
+IE 
+Israel 
+IL 
+Italy 
+IT 
+Jamaica 
+JM 
+Lithuania 
+LT 
+Latvia 
+LV 
+Netherlands 
+NL 
+Norway 
+NO 
+New Zealand 
+NZ 
+Philippines 
+PH 
+Poland 
+PL 
+Portugal 
+PT 
+Sweden 
+SE 
+Slovak Republic 
+SK 
+Trinidad and 
+TT 
+Tobago 
+United States 
+
+US 
+
+CG 
+GA  Gabon 
+GH  Ghana 
+Kenya 
+KE 
+MG  Madagascar 
+MU  Mauritius 
+MW  Malawi 
+Nigeria 
+NG 
+Sierra Leone 
+SL 
+Suriname 
+SR 
+Tanzania 
+TZ 
+UG  Uganda 
+S. Africa 
+ZA 
+Zambia 
+ZM 
+ 
+Buddhist 
+LK 
+TH 
+ 
+Hindu 
+IN 
+ 
+Islamic 
+AE 
+
+Sri Lanka 
+Thailand 
+
+India 
+
+United Arab 
+Emirates 
+
+ 
+APPENDIX 2 
+Variable definitions for MRQAP models 
+ 
+
+1.  Shared Language: a dummy variable coded as 1 when two countries share the same official language, and 0 when 
+
+not. When a country has multiple official languages, all of the languages were included in the coding process. 
+ 
+
+2.  Shared Border: a dummy variable coded as 1 if two countries share a land border, and 0 when not. 
+
+3.  Ln Distance: the natural log of the distance between the geometric centroids of two countries. 
+4.  Shared  Religion:  Data  on  the  religious  composition  of  world  countries  (for  Atheism,  Buddhism,  Christianity, 
+
+Hinduism and Islam) was obtained from the  World  Religion  Database  [29]. For every pair of countries (𝑖,𝑗) we 
+log𝑝!!+12
+Here 𝑟 indexes the world religion and 𝑖 and 𝑗 index the country pair. 
+
+defined religious divergence as the Jensen-Shannon divergence of their religious composition:  
+
+𝑑𝑖𝑣𝑖,𝑗 =12
+
+log𝑝!!𝑝!!
+
+log𝑝!!𝑝!!
+
+log𝑝!! 
+
+!
+
+!
+
+5.  Shared Colonial Ties: dummy variable based on whether two countries share a common colonial past 
+6.  Shared Commonwealth Ties: dummy variable based on whether countries are members of the Commonwealth 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ 
+
+286
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+ 
+ 
+
+7. 
+
+ 
+
+ 
+
+ 
+Czech Republic 
+Hungary 
+ 
+Chile 
+Colombia 
+Denmark 
+Ecuador 
+France 
+ 
+
+International Alignment Coding 
+Eastern Bloc 
+Bulgaria 
+China 
+Western Bloc 
+Argentina 
+Australia 
+Belgium 
+Brazil 
+Canada 
+Non-Aligned Movement 
+Algeria 
+Angola 
+Argentina 
+Bangladesh 
+Burkina Faso 
+Chile 
+
+Colombia 
+Ecuador 
+Egypt 
+Ghana 
+India 
+Indonesia 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+Poland 
+Romania 
+ 
+Great Britain 
+Italy 
+Japan 
+Mexico 
+Pakistan 
+
+ 
+
+ 
+
+Kenya 
+Madagascar 
+Malawi 
+Malaysia 
+Morocco 
+Nigeria 
+
+ 
+
+ 
+Russia 
+Slovakia 
+ 
+Philippines 
+Portugal 
+Thailand 
+Turkey 
+United Sates 
+
+ 
+
+Pakistan 
+Peru 
+Saudi Arabia 
+Senegal 
+Singapore 
+Sri Lanka 
+
+ 
+
+ 
+
+ 
+Ukraine 
+Vietnam 
+ 
+Venezuela 
+ 
+ 
+ 
+ 
+
+ 
+
+Tunisia 
+U.A.E 
+Zambia 
+ 
+ 
+ 
+
+ 
+ 
+ 
+APPENDIX 3 
+Pairwise Zero-order correlations (estimated using QAP method) among independent variables in MRQAP models 
+ 
+
+1 
+
+  
+
+ 
+1.  Common Civilization 
+2.  Shared Language 
+3.  Both Western Bloc 
+4.  Both Eastern Bloc 
+5.  Both Non-Aligned Movement 
+6.  Shared Colonial Ties 
+7.  Shared Commonwealth Ties 
+8.  Shared Religion 
+9.  Ln Distance (km) 
+10. Shared Border 
+   ***: p< .001, **: p< .01, *: p< .05, +: p< .10 
+
+.276 *** 
+.294 *** 
+.099 *** 
+.166 *** 
+.026  
+.070 ** 
+.048 + 
+.487 *** 
+.332 *** 
+
+2 
+
+  
+  
+
+.209 *** 
+.000  
+.218 *** 
+.046 + 
+.556 *** 
+.098 *** 
+.303 *** 
+.181 *** 
+
+3 
+
+  
+  
+  
+.000  
+.038  
+.034  
+.093 *** 
+.199 *** 
+.415 *** 
+.128 *** 
+
+4 
+
+  
+  
+  
+  
+.000  
+.000  
+.000  
+.024  
+.073 ** 
+.147 *** 
+
+5 
+
+  
+  
+  
+  
+  
+.000  
+.185 *** 
+.283 *** 
+.312 *** 
+.096 *** 
+
+6 
+
+  
+  
+  
+  
+  
+  
+.000  
+.033  
+.058 * 
+.000  
+
+.111 *** 
+.214 *** 
+.031  
+
+.649 *** 
+.066 * 
+
+.193 *** 
+
+7 
+
+8 
+
+9 
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+287
+
+

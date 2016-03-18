@@ -1,0 +1,1631 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Promoting Joint Attention with Computer Supported 
+
+Collaboration in Children with Autism  
+
+Sumita Sharma1, Saurabh Srivastava2*, Krishnaveni Achary3, Blessin Varkey3,  
+Tomi Heimonen1, Jaakko Hakulinen1, Markku Turunen1, and Nitendra Rajput4  
+
+1University of Tampere, Tampere, Finland  
+
+2Xerox Research Centre India, Bangalore, India 
+
+3Autism Research Center, Tamana School of Hope, New Delhi, India 
+
+4IBM Research, New Delhi, India 
+
+{firstname.lastname, sumita.s.sharma}@sis.uta.fi, saurabh.srivastava@xerox.com, 
+
+{krishnaveni.achary, blessinvarkey}@gmail.com, rnitendra@in.ibm.com 
+
+ 
+
+in  social 
+
+improvements 
+
+ABSTRACT 
+There  exists  mounting  evidence  in  favor  of  computer 
+supported  autism  interventions  at  the  individual  level. 
+However, 
+the  potential  benefits  of  using  computer 
+supported  collaboration  to  encourage  social  interactions 
+between  individuals  with  autism  and  typically  developed 
+individuals  are  underexplored,  particularly  in  developing 
+regions. We present an exploratory study of a collaborative 
+gesture-based  application,  Balloons.  The  application 
+encourages  joint  attention,  which  is  defined  as  the  shared 
+attention between two individuals towards the same object. 
+Using  mixed  methods,  we  evaluated  Balloons  for  three 
+weeks  in  New  Delhi  with  ten  medium-low  functioning 
+autistic children. Our findings suggest that employing CSC 
+interventions for children  with autism  in India provide (a) 
+observable 
+interaction  with 
+typically developed peers, (b) the opportunity to customize 
+and individualize intervention to cater to a large spectrum 
+of  children  and  (c)  the  potential  opportunity  of  reducing 
+fears of certain objects. 
+Author Keywords 
+Computer  Supported  Collaborative  Work;  Gesture-based 
+Interaction; Joint Attention; Autism Spectrum Disorder 
+ACM Classification Keywords 
+H.5.3  [Information  Interfaces]:  Group  and  Organization 
+Interfaces - Computer-supported cooperative work. 
+General Terms 
+Design and Human Factors 
+INTRODUCTION 
+Autism is highly individualized and hence, the term Autism 
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission 
+from 
+Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to 
+ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00 
+DOI: http://dx.doi.org/10.1145/2818048.2819930 
+
+fee.  Request  permissions 
+
+and/or 
+
+a 
+
+1560
+
+Spectrum Disorder (ASD) is used to represent the varying 
+levels  of  behavioral,  cognitive  and  social  challenges  the 
+individual  faces.  Previous  research  has  established  that 
+computer supported interventions provide a controlled and 
+safe environment for individuals on the autism spectrum [4 
+and 21]. However, research on computer supported autism 
+interventions  is  primarily  focused  at  either  the  individual 
+level  [5,  14,  17,  21,  26],  asynchronous  online  social 
+communication [7] or human-robot social interaction [6, 27, 
+28].  Furthermore,  much  of  the  research  is  concentrated  in 
+the  developed  world,  neglecting  emerging  economies, 
+where  Autism is largely  misunderstood. Studies show that 
+in  India,  autism  diagnosis  is  affected  by  inherent  social 
+taboos regarding mental illnesses, the lack of awareness, the 
+lack of relevant information for parents and first level local 
+pediatricians,  and  the  limited  number  of  schools  and 
+therapeutic centers [10 and 18]. For children on the autism 
+spectrum  early  interventions  are  critical  for  maximizing 
+outcomes  [11]  and  thus,  as  soon  as  a  child  is  diagnosed, 
+they  require 
+individualized 
+interventions.  
+In  this  paper,  we  draw  attention  to  the  use  of  computer-
+to1encourage 
+social 
+supported 
+(CSC) 
+interaction  between  medium-low 
+functioning  autistic 
+children and typically developed individuals. Medium-low 
+functioning autistic children have a limited vocabulary, low 
+motivation for social interaction and are prone to displaying 
+socially isolating repetitive behavior. Our goal was to study 
+ways  to  facilitate  the  adoption  of  the  critical  skill  of  joint 
+attention [8], defined as the shared focus of two individuals 
+on the same object. Working with a special school in New 
+Delhi,  India,  we  explored  the  potential  benefits  of  using 
+gesture-based  CSC  within  the  classroom  environment. 
+Although  the  school  is  already  working  with  tablet-based 
+interventions for autism, the TOBY Playpad [31], they have 
+found that tablets themselves tend to limit the collaborative 
+nature  of  social  interactions  and  confine  the  children  to 
+uncomfortable stationary positions. Additionally, the school 
+
+intensive  and 
+
+collaboration 
+
+immediate 
+
+                                                           
+*  This  work  was  done  while  Saurabh  was  affiliated  with 
+IBM Research. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+two 
+
+individuals 
+
+encourages 
+
+lacked interventions focused on joint attention. To address 
+these  issues,  we  designed,  developed,  and  evaluated  a 
+gesture-based  application  to  support  joint  attention,  called 
+Balloons,  which 
+to 
+simultaneously  select  an  object.  Our  work  started  with  a 
+user-centered  design  process  of  the  application  wherein 
+researchers  held  group  discussions  with  school  specialists 
+consisting  of  educators,  occupational  therapists,  speech 
+therapists  and  psychologists.  An  exploratory  user  study, 
+using  mixed  methods  analysis,  was  carried  out  over  three 
+weeks  with  ten  medium-low  functioning  autistic  children 
+collaborating with typically developed individuals.  
+Our study is one of a kind at two levels. First, we employed 
+gesture-based  interaction  for  underserved  Indian  children 
+on the autism spectrum. Second, we applied gesture-based 
+CSC  for  joint  attention  between  medium-low  functioning 
+children  with  autism  and  typically  developed  individuals. 
+To  our  knowledge,  the  only  study  close  to  our  work  is 
+reported  by  Bauminger-Zviely  et  al.  [5]  who  looked  at 
+socially collaborative interventions, but using multi-mice or 
+multi-touch  interactions  and  for  collaboration  among  high 
+(not medium-low) functioning autistic children in Israel.  
+In  our  study  we  observed  that  the  social  and  cognitive 
+challenges  faced  by  medium-low  functioning  Indian 
+children  with  autism  are  similar  to  those  documented  by 
+Bartoli et al. [3 and 4] from a developed world context. Our 
+findings suggest that by supporting collaborative interaction 
+the  autism  spectrum  can  be 
+paradigms,  children  on 
+introduced 
+interactions.  This  builds 
+confidence and independence, and provides a mechanism to 
+be  integrated  with  typically  developed  peers.  We  propose 
+tapping  into  the  potential  of  using  virtual  objects  and 
+environments to reduce fears or phobias of individuals with 
+autism. Furthermore, specialists can use these applications 
+in innovative ways for promoting social collaborations, and 
+motor  and  verbal  skills.  For  example,  by  using  target 
+pointing 
+including 
+different objects to teach vocabulary.  
+Specific to the Indian context, it was interesting to observe 
+the  motivation  to  customize  and  individualize  a  simple 
+gesture-based application to teach several different skills to 
+several  different  children  on  the  autism  spectrum.  This 
+resonates  with  the  observable  Indian  attitude  of  jugaad  or 
+innovative problem solving with limited resources [32]. The 
+school  educators  also  played  the  role  of  social  mediators 
+helping promote technology acceptance in the community.  
+In this paper, we first situate our research with the related 
+work in this domain, followed by a description of our user-
+centered  design  process,  and  the  Balloons  application  and 
+its interaction. Next, we present our user study at the school 
+including the evaluation methodology. Then we present our 
+results  and  extend  our  observations  to  bring  out  several 
+common  themes  as  identified  by  the  interviews  with  the 
+school  specialists.  We  conclude  by  discussing 
+the 
+
+improve  postural  stability  and 
+
+to  subtle  social 
+
+to 
+
+the 
+
+implications  of  our  results  and  findings  to  gesture-based 
+CSC research in autism.  
+RELATED WORK 
+We  describe  the  previous  research  by  first  understanding 
+the  role  of  joint  attention  in  autism  and  associated  CSC 
+interventions.  Second,  we  present 
+technological 
+interventions  focused  on  individual  interaction  and  not 
+collaboration.  We  then  highlight  the  opportunities  for 
+employing  gesture-based  interaction  for  joint  attention 
+interventions in CSC applications. What must be noted here 
+is  that  current  research  on  technological  interventions  for 
+children with autism is spread across the developed world, 
+with little to no reports from the developing world. 
+Joint Attention and Autism 
+Joint attention pays a pivotal role in early autism detection 
+and is linked to language acquisition and social interaction 
+in  the  later  stages  of  the  neurological  development  of  a 
+child [8]. Joint attention is defined as the social interaction 
+over  a  common  goal  or  object  relating  to  shared  attention 
+and experience, regarded as  a critical skill  for children on 
+the autism spectrum. In fact, lack of joint attention plays a 
+crucial role in diagnosing autism in infants [13]. Befittingly, 
+interventions  for  young  children  focus  on  improving  joint 
+attention  and  shared  experiences  between  children  with 
+autism  and  their  caregivers  [23].  These  interventions  are 
+largely video recorded and later analyzed by the therapist to 
+extrapolate the object of attention by observing the child’s 
+gaze and attention [16, 22], which is laborious. The focus in 
+towards 
+technology-driven 
+employing 
+[14] 
+to 
+individuals  with  autism,  largely  ignoring  CSC  for  joint 
+attention  between  individuals  with  autism  and  typically 
+developed individuals.  
+In the last 15 years significant research has focused on joint 
+attention  mediated  by  virtual  conversational  agents  [1  and 
+2] or robots [5, 27, and 28]. In the Aurora project [27, 28], 
+researchers  studied  social  interaction,  mediated  by  robot-
+toys, between children with autism and their care-givers or 
+therapists. They also studied how the appearance of robots 
+affected the child’s interaction, specifically the less human 
+features (clothes, face) the robot had, the more appealing it 
+was. Although Bekele et al. [6] developed an adaptive and 
+individualized  robot  to  encourage  social  interaction,  using 
+speech  and  gaze,  between  children  with  autism  and  the 
+robot;  it  was  only  evaluated  with  typically  developed 
+individuals.  ECHOES  is  a  serious  game  with  intelligent 
+virtual  characters  for  encouraging  social  communication 
+employing gaze and large touch screens [1, 2]. However, it 
+also  remains  to  be  studied  if  interaction  with  virtual 
+characters  promotes 
+social  communication  between 
+children with autism and typically developed individuals. 
+for 
+Bauminger-Zviely  et  al. 
+collaboration  among  high  functioning  autistic  children 
+using  multi-mice  and  multi-touch  interfaces.  Their  results 
+showed that children with autism gradually improved their 
+
+[5],  developed  games 
+
+shifted 
+instructions 
+
+computer-supported 
+
+interventions  has 
+
+1561
+
+to 
+
+face 
+
+in 
+
+that 
+
+social 
+
+challenges 
+
+social  conversation,  joint  collaborations,  and  problem-
+solving skills strengthening the case for computer supported 
+collaboration  for  joint  attention  interventions.  However, 
+they  do  not  consider  bodily  interaction  and  the  inherent 
+benefits it offers for children with autism. 
+Technology for Individual Interactions 
+Technology  can  be  used  to  provide  a  controlled,  safe  and 
+stimulating  environment  for  children  with  autism  who  are 
+known 
+interaction, 
+communication,  and  imagination.  Previous  research  also 
+strongly  suggests 
+information  and  entertainment 
+technologies,  including  tablets,  mobile  phones,  TV  and 
+video  games,  are  appealing  to  autistic  children  [14,  21]. 
+Consequently, emerging HCI research in autism is heading 
+towards autism interventions employing various interaction 
+technologies. For example, The TOBY (Therapy Outcomes 
+by  You)  Playpad  is  an  iPad  educational  intervention  for 
+autistic  children,  which  “aims  to  empower  parents  to 
+commence  early  intervention  to  maximize  their  child’s 
+development”  [31].  It  provides  touch-based  interactive 
+games  focused  on  improving  cognitive  abilities  such  as 
+attention,  memory,  object  recognition,  and  learning  of 
+complex activities by imitation using videos. 
+As  stated  by  Keay-Bright  [17],  computer-based  learning 
+environments  as  a  medium  help  reduce  the  multi-sensory 
+distractions  occurring  in  real  world,  which  can  induce 
+anxiety  in  many  people  with  autism  and  may  hinder  their 
+participation  in  social  communication.  Her  ReacTickles 
+software,  popularly  used  with  the  Smart™  Interactive 
+Whiteboard, promotes relaxation in children with autism by 
+spontaneous  playful  activities.  Moreover,  Ringland  et  al. 
+[26]  focused  on  augmenting  existing  physical  sensory 
+integration  therapies  by  employing  tangible  interaction 
+using  rubber  balls.  Their  application,  SensoryPaint,  was 
+found  to  improve  body-awareness  and  proprioception  in 
+children  with  autism.  Interestingly,  both  SensoryPaint  and 
+ReacTickles support the use of bodily interaction to provide 
+more  kinesthetic  forms  of  expressions  for  children  with 
+autism. However, these applications  focused on individual 
+interaction and do not fully utilize the potential of computer 
+supported  social  interaction  between  children  with  autism 
+and typically developed individuals. 
+Gesture-based Applications for Autism 
+With  affordable  motion  tracking  technologies,  such  as  the 
+Microsoft  Kinect,  gaining  momentum  in  the  educational 
+space,  ongoing  autism  research  is  also  moving  towards 
+immersive  and  engaging  gesture  interactions  [3,  4,  9,  11, 
+25]. There is a strong body of research by Bartoli et al. [3, 
+4],  the  Lakeside  Center  for  Autism2,  MEDIATE  [24,  25] 
+and Kinems3 providing evidence of the potential benefits of 
+gesture interaction for therapeutic and learning experiences. 
+We discuss their work to highlight the extensive benefits of 
+                                                           
+2 http://lakesideautism.com/ 
+3 http://kinems.com/ 
+
+1562
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+gesture-based  interaction  for  children  with  autism,  which 
+are extendable to CSC interventions.  
+The Lakeside Center for Autism in Washington State, US, 
+started a Kinetix Academy in 2012 to develop applications 
+for  children  with  autism  focusing  on  motor,  speech, 
+cognitive, and social skills for educational and therapeutic 
+interventions.  MEDIATE  [24,  25] 
+is  a  multisensory 
+interactive  environment  that  “generates  real  time  visual, 
+aural  and  vibrotactile  stimuli”  for  low  functioning  autistic 
+children. Children are allowed to explore the spaces at their 
+own  pace  and  there  is  no  time  limit  to  the  interaction. 
+Results from user studies, conducted in London, Hilversum 
+(Netherlands),  Barcelona,  and  Portsmouth  have  shown  a 
+high acceptance of its interactive space by autistic children, 
+who  are  able  to  creatively  express  themselves  using  the 
+several multimodal applications presented in the space. 
+A  more  recent  online  community,  Kinems,  spread  across 
+the  US,  Greece,  and  Netherlands  develops  Kinect-based 
+games  to  improve  cognitive  abilities  of  children  with 
+learning  disabilities 
+including  hand-eye  coordination, 
+memory,  attention,  and  basic  problem  solving.  Their 
+findings  suggest  that  even  though  kinesthetic  interaction 
+induces  fatigue,  it  provides  an  immersive  and  engaging 
+learning  environment  that  can  help  children  concentrate. 
+There  is  also  research  on  gesture-based  games  to  match 
+visual  facial  expressions  [9]  using  existing  Kinect  sports 
+games  to  improve  hand-eye  coordination,  attention  and 
+focus  [1],  and  gesture  recognition  to  detect  repetitive 
+behavior or tantrums [12]. 
+Furthermore, research by Bartoli et al. [4] provides design 
+guidelines  for  gesture-based  playful  interactions  based  on 
+their ongoing research with children in autism in Italy. They 
+divide their guidelines as general or goal specific focusing 
+on  motor,  cognitive,  and  social  skills  which  are  important 
+considerations  for  children  classified  with  medium-low 
+functioning autism.  
+COLLABORATIVE BALLOON APPLICATION 
+Our collaborative balloon application focuses on promoting 
+joint  attention  between  medium-low  functioning  autistic 
+children and typically developed individuals. Its users have 
+the  task  of  collaboratively  selecting  one  of  three  balloons 
+by  pointing  to  it.  This  necessitates  the  need  for  social 
+interaction  between 
+their 
+typically  developed  team  mate.  The  use  of  a  CSC  system 
+reduces  the  social  awkwardness  of  face  to  face  social 
+communication  or  making  direct  eye  contact,  a  defining 
+characteristic of autism. 
+Design Process 
+Our  application  was  designed  through  a  user-centered 
+design  approach 
+twenty-three  participants: 
+nineteen  school  specialists,  three  parents  and  two  high 
+functioning  autistic  children.  In  order  to  understand  the 
+process  of  conducting  educational 
+two 
+researchers  spent  the  first  week  at  the  school  becoming 
+
+the  autistic  participant  and 
+
+interventions, 
+
+involving 
+
+to 
+
+therapy 
+
+rooms,  occupational 
+
+familiar with the ongoing interventions and therapies. They 
+observed  various  specialists  conduct  group  sessions  and 
+visited each of the therapy labs in the school including the 
+speech 
+rooms, 
+psychologist’s  rooms,  a  computer  lab,  the  TOBY  Playpad 
+lab, and the dance halls. 
+After  this  first  week,  semi-structured  interviews  were 
+conducted  over  the  course  of  two  weeks  with  nineteen 
+specialists:  twelve  educators,  two  occupational  therapists, 
+two  psychologists,  two  speech  therapists  and  also  three 
+parents who attended the school with their child. Two of the 
+twelve  educators  were  responsible  for  technology-based 
+intervention for the school and were involved in the TOBY 
+Playpad  [31]  interventions.  These  two  educators  worked 
+very  closely  with  the  researchers;  they  were  present  in 
+every  discussion,  moderated  the  evaluation  sessions,  and 
+are  also  coauthors  of  this  work.  The  focus  of  these 
+interviews was to uncover specialists’ challenges with their 
+own specific therapy sessions and their suggestions on how 
+to  overcome  them.  The  interviews  usually  started  with  a 
+specialist  demonstrating 
+their  usual  session  protocol, 
+followed by in-depth discussions about the specific therapy, 
+its  outcomes  and  challenges,  and  how 
+introduce 
+technological  aids.  The  specialist  also  shared  their  own 
+intervention  design  guidelines  as  compiled  over  several 
+years of hands-on work with the children.  
+Based  on  the  common  themes  that  emerged  from  the 
+interviews,  we  conducted  two  focus  group  discussions 
+during the fourth week. We started by consolidating a list of 
+application requirements, and then built on them to design 
+and  develop  our  application’s  interaction,  interface,  and 
+intension.  These  discussions 
+school 
+psychologists  and  the  two  educators  who  work  with  the 
+TOBY  Playpad.  It  was  during  these  discussions  that  the 
+familiarity  of  balloons  as  a  rewarding  object  for  the 
+children, taken from the TOBY Playpad observations, was 
+mentioned several times. This led us to incorporate balloons 
+in  our  own  application.  After  developing  the  application, 
+we  further  interacted  with  two  high  functioning  autistic 
+children from the school to pilot test our application.   
+We  summarize  the  school’s  prime  aim  as  being  able  to 
+develop self-sustainable life skills in children with autism to 
+allow  them  to  function  well  independently.  Children  with 
+autism face several challenges including personal hygiene, 
+concepts  of  collaborative  gameplay  and  team  work,  and  a 
+lack  of  motivation  for  social  interaction.  The  children 
+occasionally  display  repetitive  behavior  when  stressed  or 
+uncomfortable, and even  while enjoying a certain activity. 
+This type of behavior is socially isolating for the child and 
+requires  special  attention.  The  specialists  mentioned  the 
+success  of  occupational 
+involving  bodily 
+movement  for  self-expression  and  exercises  to  pacify  the 
+children  behaving  hyperactively.  We  next  present  our 
+consolidated set of application requirements.  
+
+therapies 
+
+included 
+
+the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+therapy 
+
+its 
+
+importance 
+
+Application Requirements  
+A.  Designing for improvement of social skills of medium-
+low  functioning  autistic  children  in  the  school  who  have 
+limited  verbal  communication.  The  skill  was  identified  as 
+joint  attention  because  of 
+in  social 
+interaction  for  autistic  children  and  lack  of  such  a  joint 
+attention  focused  technology  intervention  currently  at  the 
+school.  
+B.  Providing  adequate  rewards  to  encourage  children  to 
+interact,  regardless  of  their  performance,  for  example, 
+applause from the system.   
+C.  Providing  a  well-defined  start  and  end  of  a  session  in 
+order  to  allow  the  children  to  understand  when  a  task  is 
+over.    
+D.  Encouraging  socially  acceptable  gestures  and  a  simple 
+pointing  gesture  was  decided  upon  for  the  application. 
+Using gestures such as kicking or jumping were thought to 
+possibly  provide  encouragement  to  kick  and  jump  outside 
+of  the  session,  which  can  be  dangerous  and  socially 
+isolating. 
+E.  Providing  multimodal 
+feedback,  both  visual  and 
+auditory, as the children have varying levels of visual and 
+auditory preferences, sensitivities, and capabilities.  
+F.  Include 
+smooth  visual 
+movements  and  illustrations  to  captivate  attention  for 
+longer time spans. 
+G.  The interaction should be empowering by involving the 
+child in decision making. 
+Gesture Interaction Design  
+Our CSC application focuses on encouraging medium-low 
+functioning  autistic  children  to  explore  proto-declarative 
+pointing  [15]  leading  to  shared  experiences  by  virtue  of 
+joint  attention  (requirement  A).  The  application  interface 
+consists of three different colored balloons (requirement F). 
+A player’s hands are represented by onscreen hand cursors 
+that  move accordingly (requirement G). A snapshot of the 
+game with one player’s right hand is shown in Figure 1. 
+
+colorful  graphics  with 
+
+Figure 1: Application screen with a participant’s right hand 
+
+pointing near the blue balloon 
+
+ 
+
+requires  a 
+
+two  member 
+
+The  application 
+to 
+collaboratively  select  the  same  virtual  balloon  out  of  the 
+three  possible  options,  further  encouraging  the  need  for 
+social  interaction,  verbal  or  non-verbal,  between  the  team 
+members.  Balloons  are  selected  by  pointing  for  a  fixed 
+dwell time (requirement D). If one player member selects a 
+
+team 
+
+1563
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+balloon, a star is shown on the screen as a reward. If both 
+team  members  collaboratively  select  the  same  balloon,  a 
+rainbow  that  grows  in  size  is  shown  on  the  screen  with 
+pleasant  background  music  (requirements  B  and  E).  The 
+rainbow and star are shown in Figure 2.  
+The  balloon  application 
+requires 
+to 
+simultaneously select one balloon (requirement G) and after 
+trying  the  application  with  the  school  specialist  and  two 
+high  functioning  autistic  children  (who  were  not  a  part  of 
+our subsequent user study) the dwell time for selection was 
+set to three seconds. To increase the level of difficulty, the 
+balloons  would  slowly  fly  upwards  after  five  minutes  of 
+continuous interaction. 
+
+two  players 
+
+Kinect  service  is  a  thin  client  over  the  Microsoft  Kinect 
+SDK  that  connects  to  the  core  logic  over  TCP  socket. 
+Microsoft Kinect is used to track a user’s hand with respect 
+to his body  within a 3D pointing area, called the physical 
+interaction  zone  [20].  This  physical  interaction  zone  is 
+relative  to  the  user’s  hand,  and  not  the  display,  making  it 
+more flexible to point at larger distances (Figure 4).  
+All audio and graphical content is rendered using the Panda 
+3D4  graphics  engine.  The  core  logic  is  a  Python  based 
+application  that  consists  of  an  input/output  management 
+module,  handling all  the  inter-process  communication  and 
+acting  as  an  interface  between  the  core  logic,  the  Kinect, 
+and the graphics engine.  
+
+Figure 2: A star and a rainbow as visual rewards 
+
+ 
+
+Figure 4: Physical interaction zone area, in blue, as seen from 
+the (a) front (b) side (c) bird’s-eye view (adapted from [20]) 
+
+ 
+
+The  application  has  a  predefined  active  area  where  the 
+system  starts  responding  to  a  user’s  gestures  (Figure  3). 
+This active area is 4 m x 1.5 m, 1 m away from the center 
+of the Kinect. A game starts when the Kinect system detects 
+at least one player in the active area and plays a welcome 
+message  followed  by  a  short  music  clip  and  a  black 
+background screen  fades out  to a  white application screen 
+as shown in Figure 1 (requirement C). While a player is in 
+the  active  area,  the  system  responds  to  his  gestures.  The 
+application  allows  for  a  maximum  of  two  players  at  any 
+given time. When there is no longer a player in the active 
+area,  the  application  screen  goes  back  to  its  initial  black 
+screen  and  an  applause  audio  clip  is  played  (requirement 
+B). 
+EVALUATION METHODOLOGY 
+We  evaluated  Balloons  with  ten  medium-low  functioning 
+autistic  children  from  the  school  over  a  course  of  three 
+weeks, with two to four sessions per week. The application 
+was  installed  in  one  of  the  school’s  classrooms,  which  is 
+commonly  used  by  the  participants  in  order  to  provide  a 
+familiar  environment.  The  evaluations  were  moderated  by 
+the  two  school  specialists  who  are  a  part  of  our  research 
+team.  There  were  no  external  researchers  present  during 
+these  sessions  to  eliminate  any  unnecessary  stress  and 
+discomfort  for  the  children  caused  by  an  unfamiliar 
+presence.  The  absence  of  external  observers  was 
+compensated  by  the  specialists  being  better  equipped  to 
+understand 
+the  participants’  emotional  response.  For 
+
+                                                           
+4 https://www.panda3d.org/ 
+
+Figure 3: Game Setup showing the center line of Kinect 
+
+ 
+
+The game setup consists of a Microsoft Kinect connected to 
+a computer and display, as shown in Figure 3. The Kinect is 
+placed at the center of the display and the two players stand 
+more  than  one  meter  away  from  it.  Their  individual  on-
+screen hand cursors are visible on the display and guide the 
+interaction. Standing next to each other the players have to 
+decide,  either  verbally  or  by  pointing,  which  balloon  to 
+select  collaboratively.  They  watch  each  other’s  actions 
+through  the  movement  of  the  respective  on-screen  hand 
+cursors. Thus, the players use the on-screen hand cursor to 
+select the same balloon, reducing the need for difficult face 
+to  face  communication.  In  this  way,  Balloons  provides  a 
+comfortable method for children with autism to collaborate 
+with  a 
+individual  without  being 
+intimidated by being asked to make eye contact. 
+System Description 
+The  application  is  based  on  an  in-house  application 
+framework  consisting  of  three  main  processes;  a  Kinect 
+service,  graphics  engine,  and  application  core  logic.  The 
+
+typically  developed 
+
+1564
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in 
+
+issues 
+
+example, they understood whether a participant’s tantrum is 
+because  of  excitement,  boredom,  or  a  need  to  visit  the 
+restroom. A session was held before the evaluations where 
+they  were  briefed  on  the  observational  requirements  and 
+provided easy to fill in data sheets with a behavioral signals 
+table,  adapted  from  Bartoli  et  al.  [3].  The  behavioral 
+observations  comprised  of  participant  specific  behavior  to 
+indicate positive emotions, frustrations or distress, need for 
+interaction  with  Balloons. 
+assistance  and 
+Furthermore,  the  specialists  were  extensively  interviewed 
+after the evaluations. 
+As  mentioned  in  the  design  process,  we  decided  to  use 
+balloons  because  the  children  were  already  familiar  with 
+them from the TOBY Playpad sessions. This removed the 
+complexity of introducing a new object and eliminated the 
+effects  of  joint  attention  motivated  by  interaction  with  a 
+novel or unfamiliar object. During the evaluations, our ten 
+participants  were  exempt  from  all  similar  activities  and 
+applications  that  targeted  social  skills,  thus  these  sessions 
+were conducted as a separate activity.  
+To understand if the children are able to transfer learning of 
+joint attention interactions from one context to another, we 
+devised the physical balloon test. Children with autism find 
+it difficult to draw parallels  between two similar contexts, 
+for example,  what is  suitable behavior in the occupational 
+lab such as jumping, is not suitable in other classrooms. The 
+physical  balloon  tests  had  tasks  similar  to  the  virtual 
+application  but  with  real  balloons  and  in  a  different 
+classroom,  in  order  to  understand  whether  joint  attention 
+skills carried over to the real world from the virtual.  
+Ethical Considerations 
+Parents  or 
+for 
+participation for all the children involved in our study. The 
+school  insisted  that  all  children  be  provided  the  potential 
+benefits  of  the  application  and  no  child  should  be  left 
+behind.  To  honor  their  request,  we  did  not  establish  a 
+control group for our user studies. The absence of a control 
+group  steered  us  away  from  focusing  on  the  potential 
+learning  gains  from  our  application.  Instead  we  chose  to 
+understand the challenges and opportunities of introducing 
+gesture-based  CSC  interventions  in  a  classroom,  and  as 
+explained later, this provided us with a far more interesting 
+perspective.  We  made  the  application  available  to  the 
+school after the evaluation.  
+Participants 
+Studies were conducted with 10 autistic children (6 male, 4 
+female)  diagnosed  by  the  Autism  Diagnostic  Observation 
+Schedule  (ADOS)  [19].  These  ten  children  also  met  the 
+criteria  for  autism  on  the  Childhood  Autism  Rating  Scale 
+(CARS) [30] (M=34, SD=3) and the Social communication 
+Questionnaire (SCQ) [29] (M=48, SD=13). Seven of the ten 
+children  have  a  vocabulary  of  100-200  words  while  the 
+other three were considered non-verbal communicators with 
+a  vocabulary  of  less  than  50  words.  All  children  were 
+categorized as medium-low functioning autistic children by 
+
+legal  guardians  provided  consent 
+
+the  school  therapist  as  they  had  low  motivation  for  social 
+interaction  and  communication  (both  verbal  and  non-
+verbal),  and  displayed  various  isolating  behaviors  and 
+interests.  The  participants  were  able  to  understand  simple 
+instructions,  and  displayed  repetitive  behaviors,  attention, 
+mood  behaviors,  and  lacked  the  social  skill  of  joint 
+attention. None of our participants had any prior experience 
+with gesture-based interactions, gaming or otherwise. 
+Procedure  
+The  procedure  consisted  of  three  phases;  phases  I  and  III 
+were carried out with actual balloons for a pre and post-trial 
+analysis  and  phase  II  with  the  Balloons  application.  This 
+also  helped  us  understand  whether  the  learning  from  a 
+virtual  application  is  translated  to  the  physical  world.  The 
+‘autistic participants’, referred to as ‘participants’ from now 
+onwards,  were asked to choose a typically developed peer 
+or a school specialist as a team member, depending on their 
+comfort 
+the  causal  effect  between 
+participants’  familiarity  with  their  teammate  and  their 
+improved task performance is difficult to measure, we must 
+note  here  that  our  participants  lacked  joint  attention  skills 
+regardless of their familiarity  with  their team  mate,  which 
+suggests 
+familiarity  effect  was  minimal. 
+Conducting  the  evaluations  in  a  known  environment  and 
+with  a  known  teammate  reduced  the  participants’  social 
+discomfort allowing for serendipitous interactions.     
+
+level.  Although 
+
+that  any 
+
+Figure 5: A participant (center) and his teammate (left) 
+
+ 
+
+ 
+
+Figure 6: A participant playing Balloons 
+
+Phases I and III: Physical Balloon Test 
+In a physical balloon test, actual balloons of different colors 
+were arranged on the school’s wall as shown in Figure 5.  
+The task included two steps: 
+1.  A  participant’s  typically  developed  team  mate  had  to 
+select  one  of  the  colored  balloons  on  the  wall  and  point 
+towards it, standing at a distance. 
+2.  The participant had to then go and touch that balloon.  
+
+1565
+
+For  collaboration,  the  team  mate  used  both  physical 
+prompting  (pointing)  and  verbal  prompting  (saying  the 
+color).  This  task  was  repeated  three  times  with  different 
+colored  balloons.  The  pre-trial  physical  balloon  tests 
+assisted  in  understanding  a  participant’s  ability  for  social 
+interaction  and  joint  attention  by  pointing.  The  phase  I 
+participants then also took part in the phases II and III. 
+Phase II: Balloons Application 
+Phase II consisted of the virtual balloon application and the 
+Kinect setup was installed in one of the classrooms of the 
+school as shown in Figure 6. Phase II evaluation consisted 
+of a maximum of eleven sessions (n=4) and a minimum of 
+three  sessions  (n=1)  per  participant  during  the  three  week 
+period  (M=8,  SD=3). This  large  variation  was  due  to  two 
+participants who did not attend the school regularly during 
+the evaluations. The ten participants spent an average of 1 
+minute and 46 seconds per session (SD=24 seconds).  
+Data Collection 
+During the phase II trials, we collected system logs for the 
+number  of  balloons  selected,  specialist  observations,  and 
+behavioral responses of the participants.  These behavioral 
+responses  consisted  of  commonly  expressed  gestures  or 
+habits  by  the  participants  to  indicate  positive  emotions 
+(such as  smiling or clapping), frustrations or distress (loss 
+of  attention,  asocial  or  inappropriate  gesturing),  need  for 
+assistance  (verbal  or  physical  pacifying)  and  issues  with 
+system  interactions  [3].  When  working  with  participants 
+with  autism,  these  behavioral  signals  provide  a  way  to 
+understand their experience as whole and are also a means 
+of communication with their care-giver and therapists. 
+In phases I and III, the task completion time and outcomes 
+were  collected.  The  school  specialists,  who  conducted  the 
+sessions, were later interviewed to understand in detail the 
+various themes that emerged from their observations.  The 
+interviews  were 
+on 
+understanding  the  participants’  and  specialists’  experience 
+with Balloons. 
+RESULTS 
+the  moderators 
+During 
+observed  changes  in  participants’  interaction  experiences 
+with  the  task  and  our  application.  During  phase  I,  the 
+participants familiarized themselves with the task, and they 
+possibly  carried  over  the  understanding  of  the  task  from 
+phase  I  to  phase  II.  During  phase  II,  the  participants  first 
+learnt how to use the application and then collaborate with 
+their team mates, which carried forward to phase III where 
+we  noticed  an  improvement  in  average  balloon  selection 
+time. In phase I (pre-trial) the average time to select the first 
+balloon collaboratively was 66 seconds (SD = 65). In phase 
+III  (post-trial),  average  time  to  select  the  first  balloon 
+collaboratively  was  7  seconds  (SD  =  5).  This  shows  a 
+the  Balloons 
+promising 
+application to the real world scenario. 
+
+three  evaluation  phases, 
+
+semi-structured 
+
+learning  from 
+
+translation  of 
+
+focused 
+
+and 
+
+the 
+
+1566
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+to 
+
+Interestingly, the school specialists found two ways to use 
+Balloons  for  joint  attention.  The  first  innovative  method 
+materialized  upon  need  and  consisted  of  the  specialist 
+standing behind the participant to guide the interaction, as 
+show  in  Figure  7.  This  way,  the  specialist  was  able  to 
+collaboratively point and guide at the same time, although 
+the system would recognize them as a single user and show 
+the  star  as  a  reward.  The  second  was  as  intended,  by 
+standing  next 
+the  participant  and  collaboratively 
+selecting  the  same  balloon.  In  this  case  the  system  would 
+recognize two users and a rainbow would be shown as the 
+reward.  The  sessions  started  with  the  first  method  of 
+collaboration and gradually moved towards the second. We 
+also  observed  that  this  transition  from  the  first  method  to 
+the second started with the blue balloon, probably because 
+of  its  central  position.  Out  of  a  total  of  280  successful 
+balloons  collaboratively  selected  in  phase  II,  146  (52%) 
+were  by  the  first  method  (star  as  the  reward)  and  the 
+remaining  134  (47%)  by  the  second.  This  shows  a  clear 
+potential for the application in improving joint attention and 
+shared  experiences,  from  instructional-based  collaboration 
+to collaborating as individuals. 
+
+ 
+Figure 7: A specialist guides the child’s interaction 
+
+0123456
+
+ 
+
+s
+n
+o
+o
+l
+l
+a
+B
+ 
+f
+o
+r
+e
+b
+m
+u
+N
+
+ 
+
+ 
+
+ 
+
+ 
+
+n
+i
+m
+r
+e
+p
+d
+e
+t
+c
+e
+l
+e
+S
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+Sessions 
+
+7
+
+8
+
+9 1011
+
+ 
+
+Figure 8: Average number of balloons selected per minute for 
+
+each session in Phase II 
+
+the 
+
+transition  between 
+
+Figure 8 shows the average number of balloons selected per 
+minute  in  each  session  for  the  ten  participants.  It  must  be 
+noted  here  that  the  slight  dip  in  the  5th  and  6th  sessions 
+indicates 
+two  modes  of 
+collaboration. Although we can see an overall improvement 
+in  the  average  number  of  joint  attention  collaborations 
+between the first and the last session; actual improvements 
+varied  across  participants.  This  can  be  seen  by  the 
+increasingly varied SD from sessions 8 to 11. We attribute 
+
+the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(b) 
+
+(n=6)  and 
+
+this to (a) the number of participants who did not complete 
+all  11  sessions 
+the  variability  of 
+improvements  commonly  expected  within  the  autistic 
+spectrum.  
+Looking at the individual performance of participants who 
+attended 8 or more sessions in phase II (n=5) in Figure 9, it 
+is  evident  that  participants  P1  and  P5  do  not  show  any 
+improvement  while  participants  P2,  P3  and  P4  do.  We 
+purport  that  given  enough  sessions,  all  our  participants 
+would  have  benefited  from  the  phase  II  intervention.  We 
+discuss  next  the  implications  of  our  results  and  the 
+challenges and opportunities of our study. 
+
+ 
+
+0246810
+
+s
+n
+o
+o
+l
+l
+a
+B
+ 
+f
+o
+r
+e
+b
+m
+u
+N
+
+ 
+
+everything  for  everyone.  We  also  note  the  collaborative 
+nature  of  our  entire  study;  from  designing  the  application 
+with  the  educators  to  empowering  them  as  social  and 
+technology  agents  of  change.    Next,  we  expand  on  these 
+findings and discuss the benefits of using CSC applications 
+for children with Autism. 
+Behavioral Observations and Post Evaluation Interviews 
+Overcoming Fear of Balloons 
+One  of  the  participants  was  scared  of  balloons,  and  as 
+observed  during  phase  I  he  would  not  touch  the  physical 
+balloon but stand next to it with his ears covered. However, 
+during  phase  II  evaluations,  he  realized  that  the  virtual 
+balloons  did  not  pop  loudly  and  instead  have  pleasant 
+rewards. He began to interact with the application. This was 
+extremely exciting for the specialists, who were able to use 
+our  application  to  reduce  his  fear  of  balloons,  and  they 
+expressed  their  desire  to  apply  this  to  other  children  who 
+might fear other specific objects. Using a virtual application 
+to overcome phobias in children with autism is a relatively 
+unexplored, with the exception of the Blueroom project5.         
+Rewards and Feedback 
+Bartoli et al. [4] emphasize motivating children with autism 
+by  using  appropriate  rewards  and  feedback.  We  also 
+noticed  that  audio  feedback  (applause)  was  successful  in 
+making  the  participant  feel  rewarded  regardless  of  their 
+performance  as  several  participants  would  also  start 
+clapping.  The  specialists  suggested  the  use  of  culturally 
+specific  objects  or  the  participant’s  current  object  of 
+affection for more effective rewards. From their experience 
+with 
+that 
+firecrackers,  emblematic  of  the  Indian  festive  of  Diwali, 
+were  highly  fascinating  for  the  children.  However,  our 
+participants  in  the  study,  as  observed  with  children  with 
+autism,  were  generally  more  inclined  towards  visual 
+stimuli.  Whether  fire-crackers  are  a  cultural  reinforcement 
+or have a more universal appeal, remains to be studied.  
+Attention and Engagement 
+Although the application supported movement of balloons, 
+the configurable delay of five minutes was too long and not 
+changeable  on  the  fly.  The  specialists  also  noted  that  the 
+three second dwell time was too quick for some participants 
+to collaboratively select the balloon, resulting in a star and 
+not a rainbow as the reward. This caused a loss of attention 
+and interest. One of the participants with known behavioral 
+emotion  of  walking  out  of  the  room  when  bored,  would 
+walk  out  of  the  classroom.  Such  sudden  inattention  and 
+disengagement  are  common  behavioral  responses  from 
+children with autism [4].  
+found  Balloons 
+However,  one  of 
+background  color  change,  from  black  (system  inactive)  to 
+white 
+intriguing.  He  would 
+purposefully move between the active and inactive area to 
+                                                           
+5 http://www.ncl.ac.uk/ion/news/news/blueroom/ 
+
+(system  active),  very 
+
+the  participants 
+
+interventions, 
+
+tablet  based 
+
+they  found 
+
+the 
+
+P1P2P3P4P5
+
+ 
+
+1 2 3 4 5 6 7 8 9 1011
+
+who attended 8 sessions or more (P1-P5) 
+
+Figure 9: Individual Performance in Phase II of Participants 
+
+DISCUSSION 
+Our results suggest that using gesture-based interaction for 
+CSC between medium-low functioning autistic children and 
+typically developed individuals is a promising way forward. 
+Although  the  lack  of  a  control  group  steers  us  away  from 
+strongly  claiming  our  potential  learning  benefits,  our 
+behavioral  observations  and  post-evaluation  interviews 
+reveal  several  challenges  and  the  opportunities  of  our 
+intervention.  Collaborative  gesture-based  applications  can 
+utilize  the  appeal  of  visual  stimuli  and  provide  engaging 
+classroom  activities  that  allow  caregivers  to  control  the 
+learning  environment,  and  the  possibility  to  improve 
+postural  stability;  findings  that  resonate  with  previous 
+research  from  the  developed  world  [3,  24].  Additionally, 
+these  applications  provide  a  mechanism  to  help  children 
+overcome  fears  of  specific  object.  These  user  specific 
+findings seem to be culturally independent for medium-low 
+autistic children using gesture interaction for joint attention. 
+Thus,  we  believe  that  developed  world  interventions  can 
+largely benefit children with autism in India, and vice versa.   
+The benefits of using CSC for promoting joint attention, as 
+uncovered from our study, include motivating the educators 
+to  employ  innovative  method  for  social  collaboration  and 
+overcoming 
+tablet-based 
+interventions. While these benefits seem to be extendable to 
+the developed world, further research is required to support 
+it.  Furthermore,  we  experienced  a  high  expectation  of 
+technology from the school educators and caregivers, due to 
+the  Indian  need  of  using  a  single  resource  to  try  to  solve 
+
+limitations 
+
+the 
+
+the 
+
+of 
+
+1567
+
+improvement 
+
+is  quite  a  common  phenomenon 
+
+experience this dramatic visual change, but was then unable 
+to focus on the application tasks.  
+The two school educators, who moderated the evaluations, 
+foresee these digital interventions as a catalyst in enhancing 
+learning outcomes while keeping the participants interested 
+and engaged. One of them mentioned that engaging digital 
+medium of learning encourages classroom activities, “when 
+a  student  is  engaged  with  a  system,  I  get  enough  time  to 
+focus and monitor them one by one”. The other said that “in 
+special  needs  school  like  ours,  the  management  greatly 
+values  how  we  handle  our  students,  and  maintain  the 
+decorum of the class.  This  system is very helpful as  while 
+one  student  performs,  other  students  are  engaged  in 
+watching his activities.”  
+We  observed  several  different  behavioral  attitudes  of  the 
+participants;  ranging  from 
+the  positive  emotions  of 
+excitement  and  happiness  (clapping  and  hugging  the 
+specialists)  to  the  more  negative  feeling  of  frustration 
+(physically abusive).  For instance, one of the participants 
+repeatedly requested to play the game over and over again. 
+This 
+in  autism 
+interventions; participants become too attached to a specific 
+object or game.  
+Improving Postural Stability 
+The  specialist  noticed  an 
+the  hand 
+movement  of  two  participants  as  the  gesture  interaction 
+required  a  steady  hand  increasing  postural  stability  [4].   
+These participants were able to use the on-screen cursor to 
+guide their hands to the balloon and with the dwell time of 
+three seconds, encouraged them to keep their hands steady 
+for  that  duration.  This  can  potentially  improve  hand-eye 
+coordination,  body  awareness  and  pointing  at  a  target, 
+which  was  highly  motivating  for  the  specialists  as  the 
+benefits  were  quickly  visible  and  experienced  and  also 
+carried  forward  to  real  world  situation  (pointing  with  a 
+steady  hand).  The  specialist  suggested  being  able  to  vary 
+the  balloon  (target)  size  and  dwell  time  (hold  steady)  for 
+continuing the improvement in postural stability. 
+Benefits  of  Computer  Supported  Collaboration  for 
+Children with Autism  
+The benefits of gesture-based interaction for children  with 
+autism are well established in the developed world [3, 4, 9, 
+24,  25].  We  discuss  our  findings  from  our  collaborative 
+gesture-based CSC application for children with autism.   
+Innovative Method for Collaboration 
+Our  most  positive  finding  is  from  the  school  specialist’s 
+usage of balloons in two innovative ways for joint attention. 
+They  initially  used  the  first  method,  i.e.,  standing  behind 
+the  participants  and  helping  them  to  select  a  balloon. 
+Although  this  method  would  produce  only  a  star  as  the 
+reward, it proved to be beneficial for our participants who 
+were all new to gesture interaction. The second method was 
+the intended way, two players selecting the same balloon to 
+be  rewarded  with  the  rainbow.  In  this  way,  the  school 
+specialists  were  able  work  collaboratively  in  teaching  the 
+
+in 
+
+1568
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+the 
+
+tablet  based 
+
+child  how  to  use  the  interaction  by  focusing  on  the  same 
+balloon.  We  find  this  in  line  with  the  Indian  jugaad,  or 
+innovative  life-hacks,  a  practice  observed  across  various 
+domains [32].  
+Moreover, after the evaluation period, several parents of our 
+participants (n=3) commented on how their child mentioned 
+a balloon game at home. This is very surprising because our 
+participants  did  not  have  a  tendency  to  share  their 
+experiences from the school at home. We believe this to be 
+an  extension  of  joint  attention  via  sharing  of  experiences 
+outside  of  the  evaluation  context,  a  promising  outcome  of 
+our study. These parents also wanted the school to continue 
+the rigorous Balloons trials, which is a big breakthrough in 
+technology acceptance for the school.  
+Touch vs Touchless Interaction 
+The  specialists  discussed  their  different  experiences  in 
+conducting  the  intervention  between  touch  and  touchless 
+interactions.  With 
+interventions, 
+participants  are  able  to  serendipitously  discover  the  close 
+button  on  an  application  window  or  the  device.  Upon 
+discovery,  they  tend  to  close  the  application  or  device  as 
+soon  as  they  are  bored  or  disengaged.  With  the  gesture-
+based  interaction,  the  specialists  commented  that  distance 
+between the actual hardware and the participants eliminated 
+such  disruptive  behaviors  and  encouraged  the  participants 
+to  work  longer.  Another  important  observation  is  that 
+participants  sometimes  tend  to  throw  or  swing  a  tablet, 
+increasing  the  chances  of  getting  hurt  or  hurting  someone 
+else.  With  a  gesture-based  system  such  behavior  was  not 
+supported,  much 
+the  specialists. 
+Furthermore,  one  of  the  specialists  mentioned,  “we  have 
+limited tablets with us and children have to wait to work on 
+them, but a system like Balloons allows more students to be 
+engaged while viewing the activity on the screen together.” 
+Furthermore,  when  the  participants  learn  to  use  the  touch 
+modality for the tablet, they tend to extend this interaction 
+to other objects and also to different applications within the 
+tablet.  A  gesture-based 
+touchless  system  allows  for 
+different modes of interaction, even using different parts of 
+the  body  such  as  hands  or  feet,  making  it  easier  to 
+differentiate  between  applications.  It  will  be  interesting  to 
+study how participants carry forward their interaction with 
+the Balloon application to other gesture-based applications 
+requiring different hand gestures. Although not used in the 
+Balloons  application,  a  gesture-based  intervention  could 
+also study participants’ body posture or gait and share the 
+data with the occupational therapists. 
+Technology Expectations 
+The  school  specialists  expressed  their  desire  to  customize 
+the  application  based  on  the  participant’s  individual  skill 
+level,  for  example,  varying  the  virtual  balloon’s  color  (to 
+teach  different  colors)  or  the  size  (to  teach  postural 
+stability). They also suggested including culturally specific 
+or  participant  specific  (participant’s  current  object  of 
+affection) rewards to increase motivation [4] and supporting 
+
+relief  of 
+
+to 
+
+the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+multiple  languages.  For  a  multilingual  country  like  India, 
+participant’s  parents  prefer  using  a  specific  language  at 
+home  and  wish  that  their  child  also  learn  the  same  in 
+school. 
+This  desire  to  customize  an  application  for  individual 
+autistic  participants  resonates  with  previous  research  [4] 
+and  can  be  handled  in  various  ways,  for  instance  by 
+creating user profiles for the participants. However, what is 
+surprising is the high level of expectation, of customization 
+on  the  fly,  from  a  simple  application  focused  on  joint 
+attention.  As  discussed  before,  when  working  with  users 
+from  emerging  markets,  it  has  been  observed  that  their 
+expectations  of  technology  can  be  higher  because  devices 
+are  usually  seen  as  a  shared  resource  that  should  cater  to 
+each  user’s  need  [32],  and  there  is  an  inherent  scarcity  of 
+such  resources.  Technology  needs  to  satisfy  both  the 
+individualized learning goals and the stakeholders’ resource 
+utilization  goals.  Thus,  there  is  a  strong  desire  to  use  one 
+application for all children on the autism spectrum; that is, 
+the expectation that a single technical intervention can solve 
+everything for everybody.  
+CSC Applications for Children with Autism in India 
+The  specialists  shared  their  experiences  with  introducing 
+technology  based  educational  interventions  at  the  school. 
+They  have  noticed  an  overall  reluctance  to  adopt  new 
+technology-driven interventions, as was evident during the 
+introduction  of  the  tablet  based  therapies  in  their  school. 
+However,  this  attitude  has  gradually  changed  and  as  we 
+mentioned  before,  several  parents  of  our  participants 
+insisted  on  the  continual  use  of  Balloons  for  their  child. 
+Many also enquired about the Kinect hardware cost and if 
+they  could  use  this  system  at  home  with  a  TV  or  even  a 
+mobile  phone.  One  of  the  parents  stated,  “I  am  a  strong 
+believer  of  doing  things  practically.  I  am  happy  that  the 
+school  has  taken  an  initiative  where  children  are  being 
+exposed to physical real life interventions.” This makes us 
+believe  that  the  urban  Indian  attitude  is  experiencing  a 
+positive  shift  towards  technology  creating  a  hotbed  of 
+opportunities for further research.  
+Our  findings  of  participants’  behavioral  responses  to  new 
+technological interventions resonate with previous research 
+[3,  24]  suggesting  that  Indian  children  with  medium-low 
+autism face similar behavioral challenges to their developed 
+world  peers.  We  thus  argue  that  children  with  autism  in 
+India  can  benefit  from  interventions  available  to  the 
+developed  world.  However,  we  also  observed  extremely 
+high  expectations  of  technology  from  the  educators  and 
+caregivers of children with autism, which we purport to be 
+culturally specific to developing countries. 
+Extending Collaboration Beyond the Application  
+We  note  here  the  collaborative  nature  of  our  entire  study; 
+educators from the school worked with us from its design to 
+its publication. The study also invoked innovative responses 
+to  crucial  needs;  from  the  two  methods  of  joint  attention 
+collaborations  to  the  call  for  further  individualization  and 
+
+1569
+
+Rajendran, Tim Smith, Oliver Lemon, Kaska Porayska-
+Pomsta, Mary Ellen Foster, Katerina Avramides, 
+
+customization  to  cater  to  a  larger  group  of  children  with 
+incremental  learning  goals.  The  application  provided  a 
+mechanism to empower educators to conduct and plan more 
+efficient  and  effective  interventions,  and  benefit  from  the 
+increasingly  positive  researched  phenomenon  of  bodily 
+interaction  for  children  with  autism.  Additionally,  the 
+educators also played an important role as social mediators 
+to  promote  technology  acceptance  among  caregivers  and 
+other stakeholders. Based on the positive experiences from 
+this  study,  the  school  has  already  dedicated  resources  to 
+further  explore  gesture-based  interventions  for  children 
+with  autism.  We  believe  our  small  study  has  sparked  a 
+revolution in the special school in New Delhi and we hope 
+to carry it forward to other schools around India.  
+CONCLUSION 
+Employing gesture interaction for children with autism has 
+gained favor in recent years with many researchers working 
+towards developing innovative applications to motivate and 
+encourage  autistic  children  to  learn  and  interact  socially. 
+However, much of this research is focused on children from 
+developed countries and is at the individual level, as most 
+of  the  applications  are  not  collaborative  in  nature.  Our 
+research  examined  the  challenges  and  opportunities  in 
+introducing  CSC  for  social  interaction,  focusing  on  joint 
+attention,  through  pointing  gestures  for  children  with 
+autism.  
+Our  study  is  a  first  of  its  kind  by  employing  gesture 
+interaction  for  (a)  children  with  Autism  in  India  and  (b) 
+designing  collaboration  between  children  with  autism  and 
+typically  developed  individuals.  We  identified  several 
+challenges 
+introducing  computer  supported  social 
+interventions  in  developing  countries;  such  as  catering  to 
+the high expectations of technology by providing on the fly 
+customization and allowing  for one application to be used 
+by a spectrum of children and overcoming low technology 
+acceptance. 
+Through  our  promising  findings  we  encourage  other 
+researchers  to  actively  extend  their  participation  to  the 
+underserved  community  of  children  with  autism  from 
+emerging economies. We also encourage other researchers 
+working  in  this  domain  to  design  collaborative,  not  only 
+individual,  social  interaction  paradigms  for  children  with 
+autism.  This  assists  them  in  building  confidence,  gaining 
+independence  and  provides  a  mechanism  to  be  integrated 
+with 
+the 
+motivation behind most autism interventions.  
+ACKNOWLEDGMENTS 
+We  express  our  sincere  gratitude  to  all  the  children  who 
+took  part  in  our  study  and  also  thank  all  the  school 
+specialists for their valuable time and guidance.  
+REFERENCES 
+1.  Alyssa Alcorn , Helen Pain, Gnanathusharan 
+
+typically  developed 
+
+in 
+
+individuals,  which 
+
+is 
+
+Christopher Frauenberger, and Sara Bernardini. 2011. 
+Social communication between virtual characters and 
+children with autism. Artificial Intelligence in 
+Education. Springer Berlin Heidelberg, 7-14. 
+
+2.  Sara Bernardini, Kaśka Porayska-Pomsta, and Tim J. 
+
+Smith. 2014. ECHOES: An intelligent serious game for 
+fostering social communication in children with 
+autism. Information Sciences, 264, 41-60. 
+
+3.  Laura Bartoli, Clara Corradi, Franca Garzotto, and 
+
+Matteo Valoriani 2013. Exploring motion-based 
+touchless games for autistic children's learning. In 
+Proceedings of the 12th International Conference on 
+Interaction Design and Children (IDC’13), ACM, 102-
+111. 
+
+4.  Laura Bartoli, Franca Garzotto, Mirko Gelsomini, 
+
+Luigi Oliveto, and Matteo Valoriani.  2014. Designing 
+and Evaluating Touchless Playful Interaction for ASD 
+Children. In Proceedings of the International 
+Conference on Interaction Design and Children 
+(IDC’14), ACM, 17-26.   
+
+5.  Nirit Bauminger-Zviely, Sigal Eden, Massimo 
+
+Zancanaro, Patrice L. Weiss, and Eynat Gal. 2013. 
+Increasing social engagement in children with high-
+functioning autism spectrum disorder using 
+collaborative technologies in the school environment. 
+Autism, 17(3), 317-339. 
+
+6.  Esubalew Bekele, Uttama Lahiri, Julie Davidson, 
+
+Zachary Warren, and Nilanjan Sarkar. 2011. 
+Development of a novel robot-mediated adaptive 
+response system for joint attention task for children 
+with autism. In RO-MAN 2011 IEEE, 276-281. 
+
+7.  Moira Burke, Robert Kraut, and Diane Williams. 2010. 
+
+Social use of computer-mediated communication by 
+adults on the autism spectrum. In Proceedings of the 
+ACM conference on Computer Supported Cooperative 
+Work (CSCW’10), ACM, 425-434. 
+
+8.  Tony Charman. 2003. Why is joint attention a pivotal 
+
+skill in autism? Philosophical Transactions of the 
+Royal Society of London. Series B: Biological Sciences 
+358(1430), 315-324. 
+
+9.  Eirini Christinaki, Georgios Triantafyllidis, and 
+
+Nikolas Vidakis. 2013. A gesture-controlled Serious 
+Game for teaching emotion recognition skills to 
+preschoolers with autism. In Proceeding of the 
+International Conference on the Foundations of Digital 
+Games, (FDG’13), 417-418. 
+
+10.  Tamara C Daley, 2004. From symptom recognition to 
+diagnosis: Children with autism in urban India. Social 
+Science & Medicine, 58(7), 1323-1335. 
+
+11.  Geraldine Dawson and Julie Osterling. 1997. Early 
+intervention in autism. In M. J. Guralnick (Ed.), The 
+Effectiveness of Early Intervention. Baltimore, 307–
+326.  
+
+1570
+
+SESSION: ACCESSIBILITY AND UNIVERSAL DESIGN
+
+12.  Niall Firth. 2012. Kinect cameras watch for autism. 
+
+New scientist, 214(2863), 17.  
+
+13.  Kristen Gillespie-Lynch. 2013. Response to and 
+
+initiation of joint attention: Overlapping but distinct 
+roots of development in autism? OA Autism (2013, 
+May) 01;1(2):13. 
+
+14.  Tina R. Goldsmith and Linda A. LeBlanc. 2004. Use of 
+Technology in Interventions for Children with Autism. 
+Journal of Early and Intensive Behavior Intervention, 
+1(2), 166-178. 
+
+15.  Frances Goodhart and Simon Baron-Cohen. 1993. How 
+
+many ways can the point be made? Evidence from 
+children with and with-out autism. First Language, 
+13(38), 225-233. 
+
+16.  Connie Kasari, Stephanny Freeman, and Tanya 
+
+Paparella. 2006. Joint attention and symbolic play in 
+young children with autism: A randomized controlled 
+intervention study. Journal of Child Psychology and 
+Psychiatry, 47(6), 611-620. 
+
+17.  Wendy Keay-Bright. 2007. Can computers create 
+relaxation? Designing ReacTickles© software with 
+children on the autistic spectrum. CoDesign, 3(2), 97-
+110. 
+
+18.  Achary Krishnaveni. 2009. Autistic Children in India: 
+
+An Insight. PhD Thesis, University of Delhi, New 
+Delhi, India. 
+
+19.  Catherine Lord, Susan Risi, Linda Lambrecht, Edwin 
+
+H. Cook Jr, Bennett L. Leventhal, Pamela C. DiLavore, 
+Andrew Pickles, and Michael Rutter. 2000. A standard 
+measure of social and communication deficits 
+associated with the spectrum of autism. Journal of 
+autism and developmental disorders, 30(3), 205-223. 
+20.  Microsoft Corporation, Kinect for Windows Human 
+
+Interface Guidelines v1.8.0, 2013. 
+
+21.  Beth A. Mineo, William Ziegler, Susan Gill, and 
+Donna Salkin. 2009. Engagement with electronic 
+screen media among students with autism spectrum 
+disorders. Journal of autism and developmental 
+disorders, 39(1), 172-187. 
+
+22.  Peter C. Mundy, Marian Sigman, and Connie Kasari. 
+
+1990. A longitudinal study of joint attention and 
+language development in autistic children. Journal of 
+Autism and developmental Disorders, 20(1), 115-128. 
+23.  Peter Mundy and Mary Crowson. 1997. Joint attention 
+
+and early social communication: Implications for 
+research on intervention with autism. Journal of Autism 
+and Developmental disorders, 27(6), 653-676. 
+
+24.  Narcís Parés, Anna Carreras, Jaume Durany, Jaume 
+
+Ferrer, Pere Freixa, David Gómez, Orit Kruglanski et 
+al. 2005. Promotion of creative activity in children with 
+severe autism through visuals in an interactive 
+multisensory environment. In Proceedings of the 2005 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+conference on Interaction design and children, 
+(IDC’05), ACM, 110-116. 
+
+25.  Narcís Parés, Anna Carreras, Jaume Durany, Jaume 
+
+Ferrer, Pere Freixa, David Gómez, Orit Kruglanski et 
+al. 2004. MEDIATE: An interactive multisensory 
+environment for children with severe autism and no 
+verbal communication. In Proc. of the Third 
+International Workshop on Virtual Rehabilitation. 
+26.  Kathryn E. Ringland, Rodrigo Zalapa, Megan Neal, 
+Lizbeth Escobedo, Monica Tentori, and Gillian R. 
+Hayes. 2014. SensoryPaint: a multimodal sensory 
+intervention for children with neurodevelopmental 
+disorders. In Proceedings of the International Joint 
+Conference on Pervasive and Ubiquitous Computing, 
+(UbiComp’14), ACM, 873-884. 
+
+27.  Ben Robins, Ben, Paul Dickerson, Penny Stribling, and 
+
+Kerstin Dautenhahn. 2004. Robot-mediated joint 
+attention in children with autism: A case study in 
+robot-human interaction. Interaction studies, 5(2), 161-
+198. 
+
+28.  Ben Robins, Ben, Kerstin Dautenhahn, and Janek 
+Dubowski. 2006. Does appearance matter in the 
+
+interaction of children with autism with a humanoid 
+robot? Interaction Studies, 7(3), 509-542.  
+
+29.  Michael Rutter, Anthony Bailey, and Cathrine Lord. 
+
+2003. The social communication questionnaire: 
+Manual. Western Psychological Services. 
+
+30.  Eric Schopler, Robert J. Reichler, Robert F. DeVellis, 
+
+and Kenneth Daly. 1980. Toward objective 
+classification of childhood autism: Childhood Autism 
+Rating Scale (CARS). Journal of autism and 
+developmental disorders, 10(1), 91-103. 
+
+31.  Svetha Venkatesh, Dinh Phung, Thi Duong, Stewart 
+
+Greenhill, and Brett Adams. 2013. TOBY: early 
+intervention in autism through technology. In 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems, (CHI’12), ACM, 3187-
+3196. 
+
+32.  Amanda M. Williams and Lilly Irani. 2010. There's 
+
+methodology in the madness: toward critical HCI 
+ethnography. In CHI'10 Extended Abstracts on Human 
+Factors in Computing Systems, (CHI’10), ACM, 2725-
+2734. 
+
+ 
+
+ 
+
+1571
+
+

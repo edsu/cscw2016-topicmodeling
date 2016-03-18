@@ -1,0 +1,1853 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+The Effect of Exposure to Social Annotation on Online 
+
+Informed Consent Beliefs and Behavior 
+
+Martina Balestra 
+New York University 
+New York, U.S.A. 
+mb5758@nyu.edu 
+
+Orit Shaer 
+
+Wellesley College 
+Wellesley, U.S.A. 
+
+oshaer@wellesley.edu 
+
+Johanna Okerlund 
+Wellesley College 
+Wellesley, U.S.A. 
+
+jokerlun@wellesley.edu 
+
+ 
+ 
+ 
+ 
+
+Madeleine Ball 
+
+PersonalGenomes.org 
+
+Boston, U.S.A. 
+
+madeleine@personalgenomes.org 
+
+in  online  consent 
+
+ 
+ABSTRACT 
+In  this  study  we  explore  the  impact  of  exposure  to  social 
+annotation,  embedded 
+forms,  on 
+individuals’ beliefs and decisions in the context of informed 
+consent.   In  this  controlled  between-subjects  experiment, 
+participants were presented with an online consent form for 
+a  personal  genomics  study.  Individuals  were  randomly 
+assigned to either a social annotation condition that exposed 
+them  to  previous  users’  comments  on-screen,  or  to  a 
+traditional consent form without social input. We compared 
+participants’ perceptions about their consent decision, their 
+trust  in  the  organization  seeking  the  consent,  and  their 
+actual  consent  across  conditions.  While  no  significant 
+difference  was  observed  between  actual  consent  rates,  we 
+found  that  on  average  individuals  exposed  to  social 
+annotation felt that their decision was more informed, and 
+furthermore,  that  the  effect  of  the  exposure  to  social 
+annotation  was  stronger  among  users  characterized  by 
+relatively 
+levels  of  prior  privacy  preserving 
+behaviors.   
+Author Keywords 
+Informed  consent;  social  annotations;  social  influence; 
+personal genomics 
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous;  
+INTRODUCTION 
+Social  media,  mobile  and  wearable 
+connected  devices  have 
+
+technology,  and 
+the 
+
+significantly  expanded 
+
+lower 
+
+Permission to  make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission 
+from 
+Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to 
+ACM. 
+ACM 978-1-4503-3592-8/16/02...$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2820012 
+
+fee.  Request  permissions 
+
+and/or 
+
+a 
+
+Oded Nov 
+
+New York University 
+New York, U.S.A. 
+
+onov@nyu.edu 
+
+ 
+ 
+ 
+ 
+
+to 
+
+facilitate  biomedical 
+
+opportunities  for  conducting  research  online.  Already 
+recognized  as  a  rich  resource  for  psychological  and  social 
+research  [31],  biomedical  research  is  taking  increasing 
+interest  in  these  digital  methods.  Apple’s  launch  of 
+ResearchKit  in  April  2015  provides  an  example  of  a  tool 
+created  specifically 
+research 
+through online processes and interactions [3]. The reduced 
+barrier  to  entry  for  participation  in  online  biomedical 
+research  and  the  sensitivity  of  the  resultant  data  highlight 
+the  importance  of  informed  consent  processes  and  require 
+us to reevaluate their effectiveness and potential in this new 
+context. 
+Electronic consent poses new challenges when contrasted to 
+traditional  consent  processes.  Whereas  individuals  were 
+formerly able to ask questions or engage with a professional 
+in additional face-to-face dialogue, potential online research 
+participants  have  fewer  opportunities  to  ask  questions  and 
+express their concerns in real time. Furthermore, the use of 
+certain  presentation  techniques  and  design  interventions 
+may  influence  an  individual’s  decision  to  participate  [14; 
+24],  raising  concerns  regarding  voluntariness.  In  response 
+to  these  and  other  concerns,  federal  agencies  are  drafting 
+guidelines for electronic consent [21]. 
+the  participant-
+While  electronic  consent  can  reduce 
+researcher  dialogue,  the  online  environment  allows  the 
+consent deliberation process to move from solitary to social 
+settings.  A  computer-supported  social  environment  could 
+enable individuals deliberating on their consent decision to 
+connect  with  each  other,  share  information,  formulate  and 
+evaluate  different  perspectives,  and  ultimately  understand 
+the risks and benefits of the research beyond the scope of 
+one-on-one dialogue with a research staff member. 
+In  this  empirical  study  we  build  upon  prior  research  on 
+social  annotation  to  examine  the  effect  of  exposing 
+participants to a socially augmented online consent form (a 
+“social consent form”) on their perceptions and behaviors in 
+the  context  of  informed  consent. Existing  studies  on  the 
+relationship  between  consent  form  design  and  potential 
+participants’  behaviors  have  predominantly  focused  on 
+
+900
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+graphical or multimedia interventions to highlight important 
+or  complex  information  and  improve  comprehension  (see 
+[23]  for  a  review). We  propose  that  this  approach  is 
+insufficient - it assumes that the information in the consent 
+form  is  exhaustive,  and  does  not  necessarily  encourage 
+individuals to deliberate and synthesize information in ways 
+that  are  meaningful  to  them. Rather,  we  follow  a  social 
+perspective  on  learning  which  “changes  the  locus  of  the 
+learning process from that of the mind of the individual to 
+the  participation  patterns  of 
+individual  members  of 
+organizations in which learning takes place” [18], much in 
+the  same  way  that  research  on  communications-driven 
+group decision support systems sought to capitalize on the 
+distributed  knowledge  of  many  to  converge  on  the  best 
+decisions [45]. 
+Building on prior CSCW research on social annotation and 
+social  influence,  this  study  is  a  first  step  in  a  research 
+program that aims to develop and evaluate social annotation 
+tools  to  transform  the  nature  of  the  informed  consent 
+deliberation  process  from  individual  to  social.  To  make 
+such  evaluation  as  rigorous  as  possible,  we  distinguish 
+between  two  aspects  of  social  annotation  research:  (1) 
+evaluating the effect of being exposed to social annotation 
+on user behavior; and (2) evaluating the effect of creating 
+and  actively  engaging  with  social  annotation  on  user 
+behavior.  These  two  aspects  are  inherently  related,  and 
+finding that exposure to social annotations has an effect on 
+user  behavior  has 
+tools 
+enabling users’ creation and engagement with annotations. 
+Taken 
+together,  such  findings  will  offer  preliminary 
+guidelines  for  developing  tools  that  add  a  collaborative 
+dimension  to  the  informed  consent  deliberation  process. 
+Our  study  addresses  the  first  aspect:  we  hypothesize  that 
+exposure to social annotation in information-dense consent 
+forms will help individuals to capitalize on the knowledge 
+of others to bring to light questions, problems, and concerns 
+they  may  not  have  considered  on  their  own.  It  may  also 
+help  to  recreate  aspects  of  the  type  of  discourse  that 
+potential 
+research 
+administrators in the face-to-face setting. In doing so, social 
+annotation  may  ultimately 
+individual’s 
+comprehension  of 
+research 
+organization when presented in an online environment, and 
+help 
+for 
+themselves.                      
+In addition, the findings of the paper contribute to current 
+CSCW research on social influence by exploring its role in 
+socially enabled, digitally mediated consent processes when 
+explicit organizational and social structures are necessarily 
+missing because of the highly sensitive context of medical 
+research.   This  study  demonstrates  how  aspects  of  the 
+consent  document,  surfaced  and  discussed  online  through 
+social  annotation, 
+informed  consent 
+deliberation and perceptions. 
+                                            
+
+implications  for  developing 
+
+participants  would 
+
+the  material  and 
+
+influence  users’ 
+
+them  make 
+
+the 
+
+right 
+
+decisions 
+
+have  with 
+
+improve  an 
+
+the 
+
+information,  are 
+
+BACKGROUND 
+Application Domain: Personal Genomics 
+Traditionally,  medical  genetic  testing  targeted  individual 
+loci and was performed for specific medical contexts (e.g. 
+when  investigating  a  suspected  genetic  condition).  A 
+medical expert mediated the consent process for testing and 
+returning  results.  A  precipitous  decline  in  the  costs  of 
+genome-scale  testing,  however,  has  led  to  widespread 
+access  of  personal  genomic  data.  Several  companies 
+currently  offer  genome-scale  testing  services  directly  to 
+consumers.  Direct-to-consumer genetic testing (DTCGT) is 
+a  relatively  new  and  developing  online  service,  which 
+enables  individuals  to  acquire  genetic  information  without 
+the  mandatory  involvement  of  a  healthcare  provider  by 
+sending a saliva sample to a DTCGT company at the cost of 
+a  few  hundred  dollars.  DTCGT  users  are  often  asked  to 
+share  their  genetic  and  family  history  information  with 
+biomedical  researchers  who  partner  with  the  DTCGT 
+provider.  Genetic  results,  including  traits,  ancestry  and  in 
+some  cases,  health 
+reported  using 
+interactive  online  applications  [47;  48].  With  DTCGT, 
+computer-mediated  consent  and  the  presentation  of  results 
+have  become  core  aspects  of  giving  individuals  access  to 
+their  genome-scale  test  results.  At  the  same  time,  these 
+aspects  raise  concerns  that  policy  makers  as  well  as 
+researchers attempt to address [21]. 
+Informed Consent 
+The decision to consent to participate in medical research is 
+mediated by two main factors: participants’ comprehension 
+of  the  details  of  the  study  and  their  trust  in  the  research 
+organization [30]. 
+Informed  consent  consists  of  four  core  tenets  (disclosure, 
+comprehension,  voluntariness,  competence)  and  describes 
+the process of educating individuals on a procedure so that 
+they are able to make a well-reasoned decision about their 
+voluntary  agreement  to  participate  [24;  38].  The  moral 
+obligation  of  consent  seekers  is  widely  recognized  as 
+providing “those facts that all rational persons would want 
+to  know,  namely,  the  various  goods  and  evils  that  result 
+from alternative modes of treatment, including severity and 
+probability”  [12]. Ubel  and  Lowenstein  [53]  suggest  that 
+this  approach  falls  short  of  helping  individuals  make 
+decisions that fit with their values. They propose to find a 
+way 
+to  combine  medical  facts  with  attributes  and 
+considerations 
+to  participants  with 
+suspicions, hopes, fears, and anxieties.  With this study we 
+assert that adding a computer-supported social aspect to the 
+consent  deliberation  process  means  bringing  in  other 
+perspectives on what "information" is valuable for informed 
+consent.   
+Consent Forms 
+Prior  research  on  the  design  of  consent  forms  has  not 
+yielded  consistent  results.   Early  studies  on  the  design  of 
+text  readability  [27;  39]. 
+consent  forms  focused  on 
+Following 
+realization 
+that 
+readability  does  not 
+necessarily relate to comprehension [16], research shifted to 
+
+that  are  relevant 
+
+the 
+
+901
+
+explore  different  ways  to  communicate  the  content  of 
+consent forms and other legal documents. Recent studies on 
+consent form design focus predominantly on the impact of 
+content structure, graphical enhancements, and multimedia 
+on  comprehension.   Dresden  and  Levitt  [15]  demonstrate 
+greater comprehension when a consent form is shortened to 
+contain only details that the researchers believe to be most 
+relevant  to  a  potential  participant.   In  a  test  comparing 
+comprehension  of  a 
+traditional  consent  form  and  a 
+graphically enhanced form, however, Stiles et al. [51] found 
+no  significant  difference  in  the  rate  of  comprehension. 
+Murphy  et  al.  [40]  show  a  significant  increase  in  consent 
+form  comprehension  scores  with  a  combination  of  re-
+structured 
+text,  simplified  vocabulary  and  sentence 
+structure,  and  the  use  of  illustrations  to  communicate  key 
+concepts.  Dunn  et  al.  [17]  found  that  the  participants 
+assigned to read a consent form formatted as a structured, 
+computerized  slideshow  scored  higher  in  comprehension 
+tests than participants assigned to a traditional consent form 
+condition.   Other  studies,  however,  show  that  replacing  a 
+traditional consent form with an interactive computer-based 
+presentation does not result in consistent improvements in 
+comprehension [2; 33]. Multimedia interventions have used 
+video  to  replace  or  complement  textual  consent  forms, 
+though comprehension tests have widely demonstrated that 
+video  has  little  effect  on  consent  form  comprehension  [2; 
+25].  To the best of our knowledge, the design for a social 
+consent form introduced in this paper is the first of its kind. 
+Social Annotation 
+Social  annotations  are  constituted  of  three  elements:  the 
+resource  (i.e.  the  text  in  question),  the  users,  and  the 
+metadata created by the users.  In a paper on the collective 
+dynamics  of  social  annotation,  Catutto  et  al.  [8]  define 
+social  annotation  as  “freely  established  associations 
+between  web  resources  and  metadata  [keywords  and 
+descriptive labels, categories, ratings, comments and notes] 
+performed  by  a  community  of  web  users  with  little  or  no 
+central  coordination”  (p.  10511)  that  captures  the  relevant 
+collective  knowledge  of  all  users.   Gao  [26]  asserts  that 
+access  to  this  type  of  social  annotation  allows  users  to 
+discuss  content  collaboratively  and  asynchronously,  and 
+presents evidence that there is more discussion that is more 
+thoughtful, more focused, and more related to the text when 
+users  had  access  to  social  annotations.   Further,  Nelson  et 
+al.  [41]  demonstrate  substantial  learning  effects  among 
+participants in exploratory learning tasks who had access to 
+laboratory 
+social 
+experiment. 
+forms, 
+incorporating  social  information  may  allow  individuals  to 
+benefit  and 
+from  others’  novel  perspectives, 
+knowledge  and  ideas  by  encouraging  discussion  and 
+helping to focus attention on the issues they find important. 
+Cross  and  Sproull  [11]  argue  that  the  value  of  social 
+information  is  fundamental  and  not  limited  to  the  online 
+environment. 
+information 
+relationships  the  authors  find  that  individuals  tend  to  seek 
+
+ In  a  qualitative  study  of 
+
+annotations  during 
+
+ Within 
+
+the  context  of  consent 
+
+a 
+
+controlled 
+
+learn 
+
+SESSION: ETHICS AND POLICY
+
+out  relationships  that  support  problem  reformulation  (in 
+which  others  help  to  define  or  redefine  dimensions  of  a 
+problem  not  previously  considered.)   In  the  context  of  the 
+social consent form, Cross and Sproull’s findings show that 
+individuals  would  perceive  the  information  relationships 
+embodied  in  social  annotations  as  valuable  resources  for 
+vetting the risks and benefits of participation.  
+Access  to  socially  constructed  information  can  impact  the 
+decisions  an  individual  makes  in  areas  ranging  from 
+consumer  products  [28]  to  travel  [55]  and  security  feature 
+adoption  [13].  Das  et  al.  [13]  find  that  information 
+exchanges  on  the  topic  of  security  tend  to  begin  with  an 
+individual’s  desire  to  warn  others  of  immediate  or  novel 
+threats, or to acquire information useful for understanding a 
+particular system or solving a problem.  This suggests to us 
+that  participants  would  be  motivated 
+to  use  social 
+annotations in the context of consent, and that the decisions 
+they make about consenting could be influenced in turn by 
+the knowledge and experiences of others.    
+When  user-contributed  information  is  contributed  like  this 
+it is not usually policed by a centralized authority [8] and 
+therefore annotations may contain inaccurate information or 
+perceptions.  Though  Bernstein  et  al.  [6]  use  the  social 
+features of Collabio to show that the tags produced by users 
+had a high-degree of accuracy, they attribute this accuracy 
+to  social  motivators  that  prevented  serious  misuse  or  off-
+topic  tags.   These  social  motivators  may  not  necessarily 
+exist in a context like medical research where anonymity is 
+not only valued, but also legally mandated.  Further, in the 
+absence  of  personal  identifiers,  potential  participants  may 
+perceive  certain  others  as  “experts”,  which  are  more 
+valuable and more persuasive than others, where they might 
+not necessarily be [19; 32]. 
+Any  potential  for  false  information  can  have  significant 
+impacts on prospective participants. An individual’s ability 
+to respond appropriately to a situation requires the ability to 
+correctly  interpret  and  react  to  incoming  information, 
+particularly 
+[9].  The 
+individual relying on socially-constructed information may 
+therefore  be  making  decisions  based  on  erroneous 
+information  or  misplaced  beliefs,  which  can  substantially 
+detriment not only the participant, but in cases like genomic 
+research, also participants’ ancestors and offspring. 
+Trust and Social Annotation 
+Beyond  the  effective  and  appropriate  communication  of 
+information,  previous  research  shows  that  trust  plays  a 
+crucial role in the decision to disclose sensitive information 
+online  [35].   Similarly,  trusting  the  physician  or  research 
+organization  plays  a  fundamental  role  in  the  decision  to 
+participate  in  medical  research  [36].   Following  from  [37] 
+we take trust in the medical context to be “the expectation 
+that institutions and professionals will act in one’s interests” 
+(pg.  661).   In  this  context  trust  is  comprised  of  five 
+dimensions:  expectations  about  the  research  organization's 
+competence,  the  extent  to  which  the  organization  is 
+
+in  compliance-gaining  settings 
+
+902
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+confidential 
+
+trustworthiness,  and 
+
+information, 
+in  providing  and 
+
+concerned  with  their  patient’s  welfare,  the  organization’s 
+control  over  decision  making, 
+the  organization’s 
+and 
+management  of 
+the 
+organization’s  openness 
+receiving 
+information [37].  In traditional consent seeking procedures 
+the  individual  examines  independently  the  information 
+provided by the authors of a consent form along these five 
+dimensions  before  making  a  decision  about  consent.   By 
+implementing  social  annotations  we  enable  prospective 
+participants  to  capitalize  on  the  experiences  of  others  to 
+discern 
+therefore  add  a  social 
+perspective  to  the  user’s  development  of  trust  in  the 
+organization seeking consent. 
+HYPOTHESES 
+Deliberating whether to participate in medical research can 
+be  an  incredibly  complex  process,  though  individuals’ 
+decision-making  abilities  are  limited  [53].  Prior  research 
+has  shown  that  in  such  scenarios,  individuals  tend  to 
+simplify  these  deliberations  by  ignoring  large  amounts  of 
+information  while  focusing  on  a  subset  of  information 
+relevant  to  their  value  system  [52;  51].  In  the  context  of 
+consent, we suggest that social annotations serve to connect 
+individuals’  value  systems  to  the  content  of  the  consent 
+form  in  an  explicit  manner.   Prospective  participants  are 
+able  to  observe,  identify  with,  and  learn  from  the  issues, 
+questions, and concerns raised by previous participants on 
+topics  relevant 
+to 
+their 
+deliberations  around 
+the 
+efficiency  and  effectiveness  of  their  deliberative  process. 
+Ultimately, we believe that this will lead participants to feel 
+more informed about their decision to participate (or not) in 
+medical  research.   Therefore,  our  first  hypothesis  is  as 
+follows: 
+H1a.  Participants  exposed  to  social  annotations  in  a 
+consent  form  will  feel  more  informed  in  their  consent 
+deliberation  compared  to  those  not  exposed  to  social 
+annotation. 
+Furthermore, novices (i.e. individuals new to the subject at 
+hand) tend to have relatively basic mental models compared 
+with  experts 
+individuals 
+therefore do not benefit from the predictive and explanatory 
+power  of  informed  mental  models  for  understanding 
+situations  and 
+that 
+knowledgeable individuals do.  Kittur et al. [29] show that 
+having  access  to  others’  mental  models  and  knowledge 
+representations can help individuals to build and refine their 
+own  schemas.   We  therefore  hypothesize  that  these  less 
+knowledgeable participants stand to benefit more from the 
+effects  of 
+than  knowledgeable 
+participants: 
+H1b.   The  effect  of  exposure  to  social  annotations  on 
+feeling 
+less 
+knowledgeable  participants 
+the  effect  on  more 
+knowledgeable participants. 
+
+their  values, 
+these 
+
+ Less  knowledgeable 
+
+informed  will 
+
+thus  focusing 
+
+interactions 
+
+issues  and 
+
+improving 
+
+annotations 
+
+[50] 
+
+in 
+
+the  way 
+
+social 
+
+[50]. 
+
+be 
+
+stronger 
+
+among 
+
+than 
+
+to 
+
+individuals 
+
+in  helping 
+
+Nelson  et  al.’s  [41]  show  that  social  annotations  can  be 
+useful 
+learn  unfamiliar 
+topics. Social annotations provide a mechanism for bringing 
+others’  knowledge  and  insights  to  bear  on  difficult-to-
+understand topics, allowing participants to capitalize on the 
+collective knowledge of previous participants. Furthermore, 
+the  additional  information  contained  in  social  annotations 
+may  function  as  a  “scaffold  for 
+learning”  [41]  (p. 
+1798).   That  is,  annotations  not  only  contribute  previous 
+participants’ knowledge of complex, confusing, or obscure 
+information, but can serve as “navigational signposts” [41] 
+(p.1798)  that  aid  subsequent  users  to  navigate  these 
+complex  concepts.  We  therefore  examine  the  following 
+hypothesis: 
+H2. Participants exposed to social annotations will feel that 
+they understand the content of the consent form more than 
+those who were not exposed to social annotations. 
+Finally, we propose that social annotations can play a role 
+in  determining  trust  a  prospective  participant  may  feel 
+towards  the  organization  seeking  consent. Prior  research 
+explored  the  role  of  technology-mediated  social  influence 
+in  protecting  users  in  trust-related  situations  such  as 
+security  and  privacy  threats  [13],  as  well  as  antisocial  or 
+exploitative  behavior  [22].  Potential  concerns  shared  by 
+prior  users  about  information  provided  to  users,  may 
+therefore  influence  users’  perception  of  the  information 
+[34]. Further,  prior  studies  demonstrate  that  negatively 
+framed  information  is  significantly  more  effective  than 
+positively framed information in shaping users’ perceptions 
+[42;  49].  Based  on  these  findings,  we  hypothesize  that 
+negative annotations in the consent form will have a greater 
+(negative) effect on prospective participants’ perception of 
+the  research  organization  seeking 
+ We 
+therefore hypothesize the following: 
+H3.  Participants  will  trust  the  research  organization  less 
+when  exposed  to  social  annotations  in  the  consent  form 
+compared with the control condition. 
+METHODOLOGY 
+Procedure 
+We  conducted  a  between-subjects  experimental  study  to 
+explore  the  effects  of  exposure  to  social  annotation, 
+embedded  in  an  online  consent  form  for  a  personal 
+genomics study, on users’ beliefs and decisions.   
+A  website  was 
+this 
+experiment.   A  link  to  the  study  was  made  available  on 
+Amazon Mechanical Turk and participants were paid $5.00 
+for completing the questionnaires. Participation in the study 
+was limited to English speakers with a record of at least 100 
+prior  tasks  at  an  approval  rate  exceeding  99%.   Since 
+DTCGT is marketed to the general population, we chose to 
+recruit users via Amazon Mechanical Turk. The population 
+of Amazon Mechanical Turk is diverse and reflective of the 
+general population,  which  make  it  a  viable  venue  for  data 
+collection  [4;  44].  The  choice  in  high  prior  approval  rate 
+
+the  consent. 
+
+specifically 
+
+developed 
+
+for 
+
+903
+
+to 
+
+increase 
+
+in  which 
+
+the  perspective  of  previous  potential 
+
+and  the  relatively  high  pay  was  made  in  order  to  increase 
+the likelihood that participants will be reliable and that they 
+will  take  their  time  when  considering  the  various  choices 
+they have to make as they go through the study. 
+Participants  were  asked  to  take  part  in  a  study  seeking  to 
+understand  how  users  engage  and  learn  from  personal 
+genomic  information.   Participants  were  first  asked  to 
+answer  several  questions  about  their  Internet  usage  and 
+complete a tutorial on genomics.  They were then asked to 
+review  the  consent  form  for  an  additional  study  in  which 
+they  could  participate  that  would  result  in  the  mapping  of 
+their own genome.  Users were randomly assigned to view 
+a control condition (a standard consent form without social 
+annotations) or the intervention condition (a social consent 
+form  with  annotations  containing  concerns  and  questions 
+from 
+study 
+participants.) Figures 1 and 2 demonstrate each condition. 
+In  order  to  maintain  ecological  validity,  participants  were 
+led  to  believe  that  the  additional  genome  mapping  study 
+was  a  real  study 
+they  could  participate. 
+Participants were told that if they consented, they would be 
+linked  to  an  external  page  where  they  would  be  asked  to 
+provide their email address, phone number, and basic health 
+information, and would be contacted by an administrator of 
+the  genomics  study  to  coordinate  further  (figure  4).  This 
+deception  was  used 
+that 
+participants would take the time to make an informed and 
+honest  decision  based  on  the  information  provided  in  the 
+consent  form.  We  did  not  disclose  to  participants  that  the 
+genomic study was fictional until the end of the Mechanical 
+Turk  study,  when  they  were  told  the  true  objective  of  the 
+study  was  to  learn  about  the  process  of  consent. No 
+identifying  information  (email,  phone-number,  etc.)  was 
+ultimately collected.   
+Research Instruments 
+Privacy Questionnaires 
+A  privacy  questionnaire  and  personal  genomics  tutorial 
+preceded the consent form.  Hypothesis H1b dealt with the 
+relationship between how knowledgeable a participant was 
+and how informed they felt when they made their decision 
+to  consent  or  not.    Because  many  of  the  risks  and  issues 
+with  digitally  mediated  research  center  on  data  privacy 
+(particularly in the context of genomics research), we chose 
+to  use  a  measure  of  pre-existing  privacy  attitudes  and 
+behaviors  as 
+topical 
+knowledge.   We  used  a  standard  questionnaire  developed 
+by  Buchanan  et  al.  [7]  based  on  Westin’s  privacy  index 
+[54].  The  survey  consists  of  three  short  scales  measuring 
+privacy related attitudes (‘Privacy Concern’) and behaviors 
+(‘General Caution’ and ‘Technical Protection’). 
+Genomics Tutorial 
+The personal genomics tutorial  was  comprised  of  learning 
+materials  on  the  human  genome  and  personal  genomics 
+developed  by  the  Personal  Genetics  Education  Project 
+[46].   Participants’  understanding  of  the  material  was 
+
+the  measure  of  an 
+
+individual’s 
+
+likelihood 
+
+the 
+
+904
+
+SESSION: ETHICS AND POLICY
+
+Project 
+
+personal 
+
+Genomes 
+
+assessed using a short six-question quiz.   Participants were 
+then presented with a sample personal genomics report for 
+an imaginary individual named Jamie, followed by another 
+comprehension task. This task was used to demonstrate the 
+type  of  information  provided  by  genetic  testing.  Jamie’s 
+report was developed for this study using a fictional data set 
+in  which  sex  and  ethnicity  did  not  have  a  specific  effect, 
+and  was  modeled  on  GET-Evidence  [46],  Harvard’s 
+Personal 
+genomics 
+report.   Participants  were  asked  to  study  the  report  and  to 
+answer three comprehension questions. Figure 3 shows the 
+personal genomics report presented to users 
+Social Consent Form 
+Following the genomics tutorial participants were presented 
+with  the  consent  form  for  an  additional  optional  study  in 
+which  their  genomes  would  be  mapped  and  their  family 
+health  history  and  trait  information  would  be  collected 
+online.   The  study  was  framed  as  a  voluntary  contribution 
+to  research  (rather  than  a  commercial  service  in  exchange 
+for  payment),  but  those  who  chose  to  participate  would 
+receive their results in a free, online report.  The content of 
+the consent form was based on Office for Human Research 
+Protections  guidelines  [43]  and  the  23andMe  informed 
+consent  document  (publicly  available  online  at  [1]). 
+Modifications to improve the clarity of the text were made 
+based  on  feedback  provided  in  pilot  tests  with  other 
+Amazon Mechanical Turk users. 
+Participants  were  randomly  assigned  to  either  a  control 
+consent  form  condition  or  an  intervention  condition.   The 
+control  condition  consisted  of  the  consent  form  text  with 
+minimal  graphical 
+ The 
+intervention condition social consent form consisted of the 
+same text in the same format as the control condition, but 
+included  callouts  containing  social  annotations  in  the 
+margins of the screen (Figure 2).  
+Participants  were  told  that  these  annotations  had  been 
+contributed  by  previous  prospective  Mechanical  Turk 
+participants  who  had  seen  the  same  consent  form.   In 
+reality,  the  social  annotations  were  derived  from  feedback 
+provided by participants during pilot tests and manipulated 
+by  the  researchers.   The  previous  participants’  feedback 
+was  edited  to  reflect  an  equal  balance  of  positive  and 
+negative  sentiments  in  an  effort  to  prevent  artificially 
+encouraging participants to consent or not. The annotations 
+included  questions,  concerns,  personal  perspectives,  and 
+contextual information related to the consent form.  Though 
+they  were  manipulated,  deriving  the  annotations  from  real 
+content allowed us to use annotations that touched on topics 
+that  were 
+current 
+participants.   Each  comment  also  included  an  indicator 
+showing  how  many  other  hypothetical  study  participants 
+“liked” the comments, though participants could neither add 
+comments  nor  “like”  existing  comments  in  this  condition. 
+The numbers of “likes” were determined by the researchers 
+to balance positive and negative sentiment. 
+
+to  be  meaningful 
+
+(Figure  1). 
+
+interventions 
+
+likely 
+
+to 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+
+ 
+
+Figure 1. Example of control condition of consent form 
+
+ 
+
+Figure 2. Example of social annotations in social consent form 
+
+ 
+
+Figure 3. Example of personal genomics report shown to users during training 
+
+905
+
+SESSION: ETHICS AND POLICY
+
+informed 
+
+(i.e. 
+
+decision 
+
+was 
+
+incorrectly. 
+
+the  genome  report  questions, 
+
+Domain Comprehension 
+To  ensure  sufficient  domain  understanding  we  presented 
+participants  with  training  material  and  comprehension 
+questions.  Only 11 (out of 259) answered fewer than 3 out 
+of 6 genome introduction questions, or fewer than 2 out of 3 
+of 
+ These 
+individuals  were  removed  from  the  dataset,  leaving  248 
+viable participants (132 in the control condition and 116 in 
+the  social  intervention).  Correlation  analysis  was  used  to 
+test  whether  the  domain  comprehension  scores  from  the 
+entire  population  impacted  the  extent  to  which  they  felt 
+their 
+informed 
+consent).   Results  of  this  test  were  marginally  significant   
+(r = 0.11, p=0.08).  Within the subset of viable participants, 
+the  correlation  analysis  showed  a  significant  correlation 
+between comprehension score and the measure of informed 
+decision  (r=0.15,  p=0.02).  The  domain  comprehension 
+score  was  therefore  controlled  for  in  our  analyses  going 
+forward. 
+Time on Consent Form 
+Participants  spent  an  average  of  326  seconds  (SD=222) 
+assessing  the  consent  form  (before  deciding  whether  to 
+consent)  in  the  social  intervention,  and  242  seconds 
+(SD=206) in the control condition.  A t-test comparing the 
+mean  times  spent  in  each  condition  shows  that  the 
+difference  reaches  statistical  significance  (t  (236)  =  -3.06, 
+p=0.002).   Additional  analysis  showed  that  in  the  control 
+(i.e.  no  social  annotation)  condition,  participants  who 
+consented  (M=201.13s,  SD=152.63s)  spent  significantly 
+more  time  on  the  consent  form  than  those  who  did  not 
+consent 
+(121)  =  2.23, 
+p=0.028).  The  significant  difference  among  those  who 
+consented (M=338.63s, SD=211.98s) and those who did not 
+(M=317.30s,  SD=227.71s)  was  not  found  in  the  social 
+annotation condition (t (107) = -0.51, p=0.61).    
+Behavior and Perceptions 
+The  rate  of  consent  did  not  differ  significantly  across 
+conditions (46.2% in the social condition vs. 42.2% in the 
+control condition). However, the social annotation exposure 
+did  seem  to  impact  the  way  participants  perceived  their 
+decision, 
+average, 
+participants rated the extent to which they felt their decision 
+(to  consent  or  not)  was  informed  higher  in  the  social 
+annotation condition (M=4.46, SD=0.66) than in the control 
+condition (M=4.26, SD=0.95; t (234) = -1.85, p=0.06).  At 
+the 
+their  perceived 
+understanding  of  the  material  marginally  higher  in  the 
+control  condition  (M  =  4.28,  SD=0.79)  than  in  the  social 
+condition  (M  =  4.07,  SD=0.94,  t  (225)  =  1.89,  p=0.06), 
+leading  us  to  reject  hypothesis  H2.  Finally,  participants 
+rated 
+the  research 
+organization  seeking  their  consent  significantly  higher  in 
+the control condition (M=3.87, SD=1.01) than in the social 
+annotation  condition  (M  =  3.56,  SD=0.97,  t  (244)  =  2.46, 
+p=0.01), in support of hypothesis H3.  Table 2 summarizes 
+these results. 
+
+(M=277.93s,  SD=236.54s; 
+
+hypothesis  H1a: on 
+
+time,  participants 
+
+supporting 
+
+the  extent 
+
+to  which 
+
+they 
+
+trust 
+
+same 
+
+rated 
+
+t 
+
+Figure 4. Consent question 
+
+ 
+
+Measures 
+Following  their  decision  about  consent  to  the  additional 
+study,  users  were  presented  with  questions  about  their 
+deliberative  process  and  perception  of  the  consent  form 
+(Table 1).  All measures were single-item and self-reported, 
+measured  on  a  5-point  Likert  scale  (strongly  agree  - 
+strongly disagree).  Below we report the questions used to 
+address each hypothesis: 
+ 
+
+Hypothesis 
+
+Question 
+
+H1a 
+
+H2 
+
+H3 
+
+“I  feel  that  my  decision  (to  consent  or 
+not) was an informed decision.” 
+
+“I  feel  that  I  understood  the  material 
+presented  and  I  have  no  additional 
+questions” 
+“Based on what I have seen and read in 
+this  consent  form,  I  feel  like  I  can  trust 
+the  [research  organization  name,  which 
+is identifying] to use and protect my data 
+in  the  ways  outlined  in  the  consent 
+form.” 
+
+Table 1. Questions used to evaluate each hypothesis 
+
+asked 
+
+participants 
+
+ 
+Participants in the social consent form condition were also 
+asked to report on the degree to which they used the social 
+annotations. 
+Demographics and Disclosure 
+Finally, 
+demographic 
+were 
+questions.   They  were  then  informed  that  the  study  was 
+fictitious, and that the true research question related to the 
+process of consent and consent forms. 
+RESULTS 
+Demographics 
+259  individuals  participated  in  this  study,  with  138 
+participants  in  the  control  condition  and  121  in  the  social 
+annotation  intervention.  The  average  age  of  participants 
+was  35.5  years  old  (SD=10.7),  and  58.8%  of  participants 
+were female. On average, participants’ mean privacy index 
+score was 3.07 (out of 5, SD=0.87). 
+
+906
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ 
+
+Social 
+
+is 
+
+to 
+
+the 
+
+this 
+
+they 
+
+rote. 
+
+form. 
+
+social 
+
+ While 
+
+thought 
+
+that  exposure 
+
+findings  demonstrate 
+
+between  the  two  conditions  in  terms  of  how  informed 
+participants felt, among individuals who engaged in privacy 
+preserving behaviors more frequently. 
+The extent to which participants felt informed in the social 
+condition  was  also  negatively  correlated  with  how 
+influential (r= - 0.20, p=0.03) and how helpful (r = -0.24, 
+p<0.01) 
+annotations 
+were. Participants  who  felt  more  informed  perceived  the 
+annotations as less influential and less helpful than people 
+who  reported  feeling  less  informed  when  they  made  their 
+decision. 
+DISCUSSION 
+Informed Consent and Understanding Consent Material 
+The 
+social 
+annotations results in participants feeling that their decision 
+was  more  informed,  but  simultaneously  less  confident  in 
+their  understanding  of  the  genomics  material  presented  in 
+the  consent 
+finding  may  seem 
+contradictory,  it  contributes  to  our  understanding  of  the 
+relationship  between  the  comprehension  of  consent  form 
+content  and  the  extent  to  which  people  feel  that  their 
+decision 
+informed.  The  discrepancy  between  how 
+informed  a  participant  felt  and  how  well  they  understood 
+the material was studied by Ubel and Lowenstein [53], who 
+challenged  the  assumption  that  an  individual  is  informed 
+simply  because  they  understand  the  content  of  a  consent 
+form  by 
+that 
+participants are informed when they comprehend a relevant 
+subset  of  facts  within  the  context  of  their  particular  value 
+system.   By  this  logic  -  and  contrary  to  conventional 
+wisdom - feeling informed and understanding the material 
+are  two  separate  constructs  that  do  not  need  to  be 
+concordant for either to be true.  
+Previous  research  [13]  indicates  that  the  most  productive 
+role for social annotation in the context of consent is as a 
+decision  aid.   In  particular,  people  tend  to  engage  around 
+negative  aspects  of  the  consent  process  –  specifically,  the 
+information  provider’s  desire  to  warn  others  about  threats 
+and  the  information  seeker’s  desire  to  acquire  more 
+information  about  a  potential  problem. 
+ Our  findings 
+suggest that drawing attention to limitations in the content 
+of  the  consent  form  using  social  annotation  may  also 
+highlight  limitations  in  participants’  own  knowledge.   At 
+the  same  time,  sheer  awareness  of  shortcomings  in  the 
+consent  form  revealed  by  the  social  annotations  may 
+contribute  to  participants  simultaneously  feeling  more 
+informed. 
+Informed Consent and Privacy Preserving Behaviors 
+The findings indicate that the people who benefit most from 
+social  annotation  in  terms  of  feeling  informed  were  those 
+that  reported  engaging  in  privacy  preserving  behavior  the 
+least.   This  finding  could  be  explained  by  Cross  and 
+Sproull’s  work 
+looked  specifically  at 
+information 
+relationships  between  experts  and  non-
+experts.  They found that information seekers’ task-relevant 
+
+the  authors  suggested 
+
+[11],  which 
+
+ Rather, 
+
+907
+
+0.79 
+
+1.01 
+
+4.07 
+
+3.56 
+
+0.64 
+
+ns 
+
+X 
+
+X 
+
+M 
+
+SD 
+
+4.54 
+
+0.72 
+
+2.82 
+
+1.14 
+
+3.15 
+
+1.13 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+X 
+
+0.94 
+
+4.28 
+
+0.97 
+
+3.87 
+
+0.51 
+
+4.56 
+
+0.66 
+
+4.26 
+
+0.95 
+
+4.46 
+
+4.56 
+
+0.01 
+
+0.06 
+
+0.06 
+
+p value 
+
+Control 
+
+annotation 
+SD 
+M 
+perception of decision 
+Decision was 
+informed 
+Made the 
+right decision 
+Understood 
+all the 
+material  
+Trust the 
+organization 
+seeking my 
+consent 
+Read 
+comments 
+Comments 
+influenced 
+decision 
+Comments 
+helped make 
+decision 
+Time on task 
+Time 
+Consent rate 
+Consent 
+No consent 
+Table 2. A comparison between the experimental conditions 
+To rule out a mere exposure effect (that is, the possibility 
+that  just  spending  more  time  on  a  consent  form  impacts 
+perceptions)  independent  correlations  were  constructed 
+comparing the log of the time spent on the consent form to 
+the  measures  of  how  informed  a  participant  felt,  whether 
+they felt that they understood the material, and the extent to 
+which they trusted the research organization.  None of these 
+correlations was statistically significant, indicating that the 
+amount  of  time  a  participant  spent  on  the  form  was 
+unrelated to how they perceived their decision. 
+Expanding  on  the  analysis  of  how  informed  participants 
+felt,  an  Ordinary  Least  Squares  (OLS)  regression  model 
+demonstrated  that  exposure  to  social  annotation  had  a 
+significant  main  effect  on  how  informed  a  participant  felt 
+(B=0.86,  p=0.03),  and  an  individual’s  privacy  index  score 
+had  a  marginally  significant  effect  (B=0.16,  p=0.065),  as 
+did the interaction of the intervention and the privacy index 
+(B=0.23,  p=0.069).   That  is,  the  intervention  had  a  larger 
+impact on how informed people felt when they engaged in 
+privacy preserving behaviors less frequently, in support of 
+hypothesis  H1b.  There  has  been  no  significant  difference 
+
+61 (46.2%) 
+
+49 (42.2%) 
+
+0.002 
+
+222 s 
+
+326 s 
+
+242 s 
+
+206 s 
+
+67 
+
+ 
+
+X 
+
+ns 
+
+71 
+
+expertise  had  a  significant  impact  on  their  ability  to 
+reformulate  and  synthesize  problems.   Participants  who 
+were less knowledgeable in the domain of the task were less 
+efficient in their deliberative processes.  The authors found 
+that  socially  constructed  information  could  significantly 
+benefit  these  non-expert  information  seeker’s  deliberative 
+processes, and that the source of the social information did 
+not have to be expert for information seekers to benefit. 
+We  found  that  while  there  was  no  significant  difference 
+between  users  who  reported  high  and 
+low  privacy 
+preserving behavior with respect to how informed they felt 
+in  the  non-social  condition,  users  with  low  privacy  index 
+scores  felt  significantly  more  informed  than  those  high 
+privacy scores in the social annotation exposure condition. 
+This  finding  may  be  explained  using  Cross  and  Sproull’s 
+[11]  insights. If  people  who  have  lower  privacy  index 
+scores are also less knowledgeable about privacy risks, they 
+stand  to  gain  more  from  the  knowledge  and  expertise  of 
+others,  communicated  through  social  annotation. By  the 
+same logic, individuals who had high privacy index scores 
+were  more  knowledgeable  in  the  domain,  and  benefitted 
+less  from  additional  information  contained  in  the  social 
+input. 
+Trust and Social Annotation 
+Participants  reported  trusting  the  organization  soliciting 
+consent significantly more in the control condition than in 
+the  social  annotation  condition.   One  explanation  for  this 
+finding  may  be  that  social  annotation  impacts  subjective 
+understanding  of  consent  materials  (the  extent  to  which 
+participants felt they understood the content of the consent 
+form);  that  is,  as  participants  are  confronted  with  the 
+shortcomings in the consent form through social annotation, 
+they become less trusting of the organization.  It has been 
+shown  that  people  tend  to  look  to  socially  constructed 
+information  to  understand  negative  aspects  of  consenting 
+(e.g.  risks  and  consequences)  rather  than  the  positive 
+aspects (e.g. the benefits of participation) [13]. 
+Time on Consent Form 
+On  average,  participants  spent  84  seconds  (34.71%)  more 
+studying the consent form in the social annotation condition 
+than  in  the  control  condition.  Thus  we  assume  that 
+participants  actually  read  the  social  annotations  in  the 
+treatment  condition.   This  is  further  supported  by  the  fact 
+that  social  annotation  participants  reported  reading  almost 
+all  of  the  social  annotations  (M=4.54,  SD=0.72,  rated 
+between  1  and  5  where  1  is  “strongly  disagree”  and  5  is 
+“strongly  agree”  with  the  statement  “I  read  most  of  the 
+other  users’  comments”).  The  difference  in  time  spent  on 
+the  consent  form  could  also  be  attributed  to  increased 
+cognitive  engagement  in  the  information-processing  task. 
+Previous  work  shows  that  targeted  information  exchange 
+can  lead  users  to  become  more  cognitively  engaged  in  an 
+information  processing  task,  leading  to  an  increase  in  the 
+proportion of time spent thinking [19]. 
+
+908
+
+SESSION: ETHICS AND POLICY
+
+in 
+
+it  was 
+
+suggested 
+
+that 
+
+forms  affect 
+
+than  participants 
+
+this  study  demonstrate 
+
+The  findings  also  show  that  participants  who  gave  their 
+consent  in  the  control  condition  spent  significantly  more 
+time  studying  the  consent  form  than  those  who  did  not 
+consent. This may be because those who consent need more 
+time  to  deliberate  on  their  decision  (compared  with  those 
+who  do  not  consent).  Interestingly,  this  difference  in  time 
+deliberating  between  those  who  consented  and  those  who 
+did  not  was  not  significant  in  the  social  intervention.  We 
+hypothesize that this discrepancy indicates that participants 
+exposed  to  social  annotations  could  deliberate  on  consent 
+more  effectively 
+the  control 
+condition. Support for this explanation can be found in [19], 
+where 
+socially  constructed 
+information functions as a cognitive aid in the deliberation 
+process, thus helping people to deliberate more effectively. 
+Research Implications and Contributions 
+The  findings  of 
+that  social 
+annotation  techniques  implemented  in  the  context  of 
+consent 
+the  perception  of  prospective 
+participants  in  ways  that  traditional  interface  interventions 
+are  not  likely  to  achieve.  In  particular,  we  showed  that 
+turning  the  informed  consent  deliberation  process  from 
+solitary to socially-informed, can result in individuals (and 
+particularly  those  less  knowledgeable  on  relevant  topics) 
+feeling more informed about their decision to consent, and 
+less trusting about the organization seeking the consent. 
+This study is a first step in developing and evaluating social 
+annotation  tools  to  transform  the  nature  of  the  informed 
+consent deliberation process, from individual to social. To 
+that  end,  two  complementary  aspects  of  the  research  into 
+users’ perceptions and behavior are needed: evaluating the 
+effect  of  users’  exposure 
+to  social  annotation;  and 
+evaluating the effect of creating and actively engaging with 
+social  annotation.  These  two  issues  are  inherently  related, 
+and finding that exposure to social annotations has an effect 
+on  user  perceptions  and  behavior  has  implications  for 
+developing effective tools to enable users’ creation of, and 
+engagement  with,  annotations.  The  study  presented  here 
+addresses  the  first  aspect  and  its  importance  therefore  lies 
+not only in demonstrating that exposure to social annotation 
+contributes  to  shaping  users’  perception  and  behavior,  but 
+also  in  laying  the  foundation  for  the  development  of  a 
+research-driven  collaborative  deliberation  and  decision 
+making tool. 
+In addition, the findings of the paper contribute to current 
+CSCW  research  on  social  influence.  Social  influence  in 
+online environments and its effect on users in systems such 
+as  social  recommender  systems  has  been  the  topic  of 
+substantial  CSCW  research 
+in  recent  years  [5;  14; 
+20].   These  studies  have  largely  examined  the  effects  of 
+explicit  organizational  and  social  structures  (that 
+is, 
+relationships,  professional  hierarchy,  physical  proximity, 
+etc.) on social influence [10].  Our study contributes to this 
+body of literature by exploring the role of social influence 
+in  socially  enabled,  digitally  mediated  consent  processes 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+when these explicit organizational and social structures are 
+necessarily missing because of the highly sensitive context 
+of  medical  research.   Indeed,  the  findings  of  this  research 
+contribute a new and expanded understanding of the multi-
+dimensionality  of  social  annotation  in  a  decision-making 
+context.  Social  annotation  does  not  merely  improve  or 
+worsen  the  user’s  experience  as  put  forth  in  existing 
+studies; rather, it changes how participants reflect on their 
+ability  to  make  informed  decisions  for  themselves  in 
+complex  ways.  Where  previous  studies  focused  on 
+efficiency  gains,  learning  effects,  and  accuracy,  this  study 
+uniquely  examines  the  impact  of  social  annotation  on 
+individuals’ 
+sentiments  and  perceptions.  We  have 
+demonstrated  how  these  complex  aspects  of  the  consent 
+document,  surfaced  and  discussed  online  through  social 
+annotation,  influence  users’  informed  consent  deliberation 
+and perceptions.  The system presented here draws on key 
+components  of  communication-based  group  decision 
+support systems to deal with asymmetries in the distribution 
+of information that can exist among prospective participants 
+of medical research.  This research has provided a proof-of-
+concept  for  a  group  decision  support  system  in  which  the 
+focus of deliberation is not among members for the purpose 
+of consensus agreement, but within the individual [45]. 
+Ethical Implications 
+Beyond extending our knowledge of the contexts in which 
+social  annotation  can  be  used  effectively,  this  study  has 
+demonstrates that social annotation interventions can have a 
+real  impact  in  uniquely  sensitive  and  highly  regulated 
+settings. In  contrast  to  the  spaces  where  social  annotation 
+studies  have  traditionally  been  conducted  (for  example, 
+with respect to consumer products, online search platforms, 
+and  security  feature  adoption)  human  subjects  research 
+requires decisions that are intensely personal and can have 
+substantial ramifications for the individual as well as their 
+offspring. Despite  this,  the  present  research  demonstrates 
+that  strangers’  perspectives  and  knowledge  can  play  a 
+significant role in how individuals make these decisions for 
+themselves, implying a shift in the way that we think about 
+and execute consent-seeking processes. 
+Researchers  have  ethical  and  legal  obligations  to  give 
+individuals an appropriate context for making decisions that 
+may  have  material  risks  [12]. Many  important  questions 
+remain 
+that  will  help  us  determine  whether  social 
+annotation  interventions  are  appropriate  in  this  context: 
+how  comments  and  feedback  to  be  implemented  in  the 
+consent form are gathered, whether individuals who provide 
+those  comments  are  at  risk  themselves  (for  example  of 
+exposing  too  much  about  themselves),  and  how  (or 
+whether) to “police” information contributed by anonymous 
+others  in  a  form  with  such  a  significant  impact. Knowing 
+that  we  may  be  able  to  improve  certain  aspects  of  the 
+process of deliberating consent by incorporating novel and 
+non-traditional  sources  of  information,  however,  obligates 
+us  as  a  community 
+to  explore  social  annotation 
+interventions further. 
+
+909
+
+social 
+
+annotations 
+
+impacts 
+
+informed  suggests 
+
+LIMITATIONS AND FUTURE RESEARCH 
+While this study demonstrates how exposure to computer-
+supported 
+individuals’ 
+perceptions  in  the  context  of  informed  consent,  it  has  a 
+number of limitations. 
+Though  we  believe  that  the  demonstrated  increase  in  the 
+that  social 
+perception  of  being 
+annotations  can  benefit  prospective  participants, 
+the 
+experiment was structured to study the effects of exposure 
+to  annotations  on  participants’  perceptions,  and  did  not 
+examine  whether  they  objectively  benefitted  from  the 
+intervention. Future  research  is  needed  to  explore  whether 
+improvements  in  the  perception  of  making  an  informed 
+decision  we  observed  result  in  quantifiable  and  objective 
+improvements in the process of analyzing complex consent 
+forms,  and  whether  it  results  in  objectively  “better” 
+outcomes for the individual. 
+Furthermore,  participants  were  led  to  believe  that  the 
+comments were provided by former study participants, and 
+behaved without additional information on the accuracy or 
+the bias of the comments. As discussed earlier, individuals 
+may be exposed to, and therefore influenced by, comments 
+that  contain  wrong  information  or  substantial  bias. This  is 
+particularly  true  for  the  most  vulnerable  segment  of  the 
+population  -  those  that  are  least  likely  to  protect  their 
+privacy  (as  found  in  this  study). Future  studies  should 
+explore  the  impact  of  erroneous  information  and  bias  on 
+participants’ deliberative processes and consent decisions. 
+Finally, a number of high-level questions remain for further 
+investigation.  In terms of extending research on the effect 
+of exposure to social information on user behavior, there is 
+a  need  to  understand  the  impact  of  information  on 
+participants’ perception and decisions when annotations are 
+not  balanced 
+this 
+information leads users to make objectively better decisions 
+for themselves. On the other hand, evaluating the effect of 
+creating  and  actively  engaging  with  social  annotation  on 
+user behavior lead requires us to understand how to solicit 
+meaningful  content  from  participants,  what  motivates 
+individuals  to  contribute  content,  what  privacy  issues  are 
+associated  with  contributing  and  accessing  health-related 
+information,  and  whether  and  how 
+to  police  user-
+contributed information. 
+CONCLUSIONS 
+Electronic  consent  has  become  increasingly  popular  in 
+Internet  research  in  general  and  biomedical  research  in 
+particular. The work presented here explores the effects of 
+adding  a  computer-supported  social  dimension  to  the 
+consent  deliberation  process.  We  find  that  exposure  to 
+social  annotations  results  in  participants  feeling  that  their 
+decision  was  more  informed,  but  simultaneously  less 
+confident  in  their  understanding  of  the  genomics  material 
+presented in the consent form as well as less trusting of the 
+organization soliciting the consent. Based on these findings, 
+we assert that augmenting the consent deliberation process 
+
+in  valence,  and 
+
+to  understand 
+
+if 
+
+that  are  right  for 
+
+with multiple voices enable individuals to capitalize on the 
+knowledge  of  others,  which  brings  to  light  questions, 
+problems,  and  concerns  they  may  not  have  considered  on 
+their own.  Thus, social annotations can help people make 
+informed  consent  decisions 
+them 
+according to their values.  
+The  study  has  implications  for  the  design  of  electronic 
+consent forms. Rather than designing electronic forms that 
+contain  simple  re-iteration  of  traditional  consent  elements, 
+online consent should leverage uniquely available features 
+of  digital  contexts  such  as  social  annotation  that  can 
+contribute  to  a  more  effective  deliberation  process  where 
+users consider various perspectives on what information is 
+important for their consent. The findings also call for future 
+research  in  CSCW,  which  may  extend  the  research  on 
+collaborative  online  consent  forms  to  examine  the  role  of 
+novel  user  generated  sources  of  information,  and  develop 
+new measures and indicators for evaluating social informed 
+consent. 
+ACKNOWLEDGMENTS 
+This  work  was  partially  funded  by National  Science 
+Foundation grants IIS-1017693 and IIS-1422706. 
+REFERENCES 
+1.  23andMe Consent Form. Retrieved May 1, 2015 from 
+
+https://www.23andme.com/about/consent/ 
+
+2.  Patricia Agre and Bruce Rapkin. 2003. Improving 
+
+informed consent: a comparison of four consent tools. 
+IRB: Ethics & Human Research. 
+
+3.  Apple ResearchKit. Retrieved May 1, 2015 from 
+
+http://www.apple.com/researchkit/ 
+
+4.  Christoph Bartneck, Andreas Duenser, Elena 
+Moltchanova, and Karolina Zawieska. 2015. 
+Comparing the Similarity of Responses Received from 
+Studies in Amazon’s Mechanical Turk to Studies 
+Conducted Online and with Direct Recruitment. PloS 
+one 10, 4. 
+
+5.  Eric Baumer, Sherri Katz, Jill Freeman, et al. 2012. 
+
+Prescriptive persuasion and open-ended social 
+awareness: expanding the design space of mobile 
+health. Proceedings of the ACM conference on 
+Computer Supported Cooperative Work: 475-484. 
+6.  Michael Bernstein, Desney Tan, Greg Smith, Mary 
+
+Czerwinski, and Eric Horvitz. 2009. Collabio: a game 
+for annotating people within social networks. 
+Proceedings of the ACM symposium on User interface 
+software and technology: 97-100. 
+
+7.  Tom Buchanan, Carina Paine, Adam Joinson, and Ulf-
+
+Dietrich Reips. 2007. Development of measures of 
+online privacy concern and protection for use on the 
+Internet. Journal of the American Society for 
+Information Science and Technology 58, 2: 157-165. 
+
+8.  Ciro Cattuto, Alain Barrat, Andrea Baldassarri, 
+
+Gregory Schehr, and Vittorio Loreto. 2009. Collective 
+
+910
+
+SESSION: ETHICS AND POLICY
+
+dynamics of social annotation. Proceedings of the 
+National Academy of Sciences 106, 26: 10511-10515. 
+
+9.  Robert Cialdini, and Noah Goldstein. 2004. Social 
+
+influence: Compliance and conformity. Annual  Review 
+of Psychology 55: 591-621. 
+
+10.  Rob Cross, Ronald Rice, and Andrew Parker. 2001. 
+
+Information seeking in social context. IEEE 
+Transactions on Systems, Man, and Cybernetics, Part 
+C 31, 4: 438-448.  
+
+11.  Rob Cross and Lee Sproull. 2004. More than an 
+answer: Information relationships for actionable 
+knowledge. Organization Science 15, 4: 446-462. 
+
+12.  Charles Culver and Bernard Gert. 1982. Philosophy in 
+
+Medicine: Conceptual and Problems Medicine and 
+Psychiatry. Wadsworth.  
+
+13.  Sauvik Das, Tiffany Kim, Laura Dabbish, and Jason 
+
+Hong. 2014. The effect of social influence on security 
+sensitivity. In Proc. SOUPS.  
+
+14.  Sauvik Das, Adam Kramer, Laura Dabbish, and Jason 
+Hong. 2015. The Role of Social Influence In Security 
+Feature Adoption. Proceedings of the ACM Conference 
+on Computer Supported Cooperative Work. 1416-1426. 
+15.  Graham Dresden and Andrew Levitt. 2001. Modifying 
+a standard industry clinical trial consent form improves 
+patient information retention as part of the informed 
+consent process. Academic Emergency Medicine 8, 3: 
+246-252. 
+
+16.  Thomas Duffy, and Paula Kabance. 1982. Testing a 
+readable writing approach to text revision. Journal of 
+Educational Psychology 74, 5: 733. 
+
+17.  Laura Dunn, Laurie Lindamer, Barton Palmer, et al. 
+
+2002. Improving understanding of research consent in 
+middle-aged and elderly patients with psychotic 
+disorders. The American Journal of Geriatric 
+Psychiatry 10, 2: 142-150. 
+
+18.  Bente Elkjaer. 2003. Social learning theory. The 
+
+Blackwell handbook of organizational learning and 
+knowledge management. 38-53. 
+
+19.  Brynn Evans, Sanjay Kairam, and Peter Pirolli. 2010. 
+Do your friends make you smarter?. Information Proc. 
+& Management 46, 6: 679-692. 
+
+20.  Rosta Farzan, Laura Dabbish, Robert Kraut, and Tom 
+
+Postmes. 2011. Increasing commitment to online 
+communities by designing for social presence. 
+Proceedings of the ACM conference on Computer 
+supported cooperative work. 321-330. 
+
+21.  Food and Drug Administration. 2015. Use of 
+
+Electronic Informed Consent in Clinical Investigations 
+Questions and Answers Guidance for Industry. 
+
+22.  Matthew Feinberg, Robb Willer, Jennifer Stellar, and 
+
+Dacher Keltner. 2012. The virtues of gossip. Journal of 
+personality and social psychology 102, 5: 1015 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+23.  James Flory and Ezekial Emanuel. 2004. Interventions 
+
+to improve research participants' understanding in 
+informed consent for research: a systematic review. 
+JAMA 292, 13: 1593-1601. 
+
+24.  Batya Friedman, Edward Felten, and Lynette Millett. 
+
+2000. Informed consent online. CSE Technical Report. 
+
+25.  Ian Fureman, Kathleen Meyers, Thomas McLellan, 
+
+David Metzger, and George Woody. 1997. Evaluation 
+of a video-supplement to informed consent. AIDS 
+Education and Prevention 9, 4: 330-341. education and 
+prevention: official publication of the International 
+Society for AIDS Education 9, 4, 330-341. 
+
+26.  Fei Gao. 2013. A case study of using a social 
+
+annotation tool to support collaboratively learning. The 
+Internet and Higher Education 17: 76-83. 
+27.  Bradford Gray, Robert Cooke, and Arnold 
+
+Tannenbaum. 1978. Research involving human 
+subjects. Science 201, 4361: 1094-1101. 
+
+28.  Nan Hu, Ling Liu, and Jie Zhang. 2008. Do online 
+
+reviews affect product sales?. Information Technology 
+and Management 9, 3: 201-214. 
+
+29.  Aniket Kittur, Andrew Peters, Abdigani Diriye, and 
+
+Michael Bove. 2014. Standing on the schemas of 
+giants: socially augmented information foraging. 
+Proceedings of the ACM conference on Computer 
+supported cooperative work, 999-1010. 
+
+30.  Shawn Kneipp, Barbara Lutz, and Deirdra Means. 
+
+2009. Reasons for enrollment, the informed consent 
+process, and trust among low-­‐‑income women 
+participating in a community-­‐‑based participatory 
+research study. Public Health Nursing 26, 4: 362-369. 
+
+31.  Robert Kraut, Judith Olson, Mahzarin Banaji, Amy 
+Bruckman, Jeffrey Cohen, and Mick Couper. 2004. 
+Psychological research online: report of Board of 
+Scientific Affairs' Advisory Group on the Conduct of 
+Research on the Internet. American psychologist 59, 2: 
+105.  
+
+32.  Chinmay Kulkarni and Ed Chi. 2013. All the news 
+
+that's fit to read: a study of social annotations for news 
+reading. In Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems: 2407-2416. 
+33.  Hilary Llewellyn-Thomas, Elaine Thiel, et al. 1995. 
+
+Presenting clinical trial information. Patient education 
+and counseling 25, 2: 97-107. 
+
+34.  Todd McElroy and Keith Dowd. 2007. Susceptibility to 
+anchoring effects. Judgment and Decision Making 2, 1: 
+48-53. 
+
+35.  Harrison McKnight, Nancy Lankton, and John Tripp. 
+2011. Social networking information disclosure and 
+continuance intention. IEEE Hawaii International 
+Conference on System Sciences. 
+
+911
+
+36.  David Mechanic. 1994. Trust and informed consent to 
+
+rationing. The Milbank Quarterly: 217-223. 
+
+37.  David Mechanic. 1998. The functions and limitations 
+
+of trust in the provision of medical care. Journal of 
+Health Politics, Policy and Law 23, 4: 661-686. 
+
+38.  Lynette Millett, Batya Friedman, and Edward Felten. 
+
+2001. Cookies and web browser design: toward 
+realizing informed consent online. Proceedings of the 
+SIGCHI conference on Human factors in computing 
+systems: 46-52. 
+
+39.  Gary Morrow. 1980. How readable are subject consent 
+
+forms? JAMA 244, 1: 56-58. 
+
+40.  Dean Murphy, Z. O'Keefe, and Alexander Kaufman. 
+
+1999. Improving comprehension and recall of 
+information for an HIV vaccine trial among women at 
+risk for HIV. AIDS Education and Prevention 11,5: 
+389-399.  
+
+41.  Les Nelson, Christopher Held, Peter Pirolli, Lichan 
+
+Hong, Diane Schiano, and Ed Chi. 2009. With a little 
+help from my friends: examining the impact of social 
+annotations in sensemaking tasks. In Proceedings of 
+the SIGCHI conference on human factors in computing 
+systems: 1795-1798. 
+
+42.  Oded Nov and Ofer Arazy. 2015. Asymmetric 
+
+recommendations: the interacting effects of social 
+ratings’ direction and strength on users’ ratings. 
+Proceedings of ACM Conference on Recommender 
+Systems.  
+
+43.  Office for Human Research Protection. Informed 
+
+Consent Checklist - Basic and Additional Elements. 
+http://www.hhs.gov/ohrp/policy/consentckls.html 
+44.  Gabriele Paolacci, Jesse Chandler, and Panagiotis 
+Ipeirotis. 2010. Running experiments on amazon 
+mechanical turk. Judgment and Decision Making 5, 5: 
+411-419. 
+
+45.  Daniel Power. 2008. Decision support systems: a 
+
+historical overview. In Handbook on Decision Support 
+Systems 1: 121-140. 
+
+46.  Project, Personal Genome Education Retrieved May 1, 
+
+2015 from http://www.pged.org 
+
+47.  Orit Shaer, Oded Nov, Johanna Okerlund, Martina    
+
+Balestra, Elizabeth Stowell, Laura Ascher, Joanna 
+Bi  Claire Schlenker, and Madeleine Ball (2015). 
+Informing the Design of Direct-to-Consumer 
+Interactive Personal Genomics Reports. Journal of 
+medical Internet research, 17(6). 
+
+48.  Shaer, O., & Nov, O. (2014). HCI for personal  
+
+genomics. ACM Interactions, 21(5), 32-37. 
+
+49. Baba Shiv, Julie Britton, and John Payne. 2004. Does 
+elaboration increase or decrease the effectiveness of 
+negatively versus positively framed messages? Journal 
+of Consumer Research 31, 1: 199-208. 
+
+SESSION: ETHICS AND POLICY
+
+50. Nancy Staggers and Anthony Norcio. 1993. Mental 
+models: concepts for human-computer interaction 
+research. International Journal of Man-machine 
+studies 38, 4: 587-605. 
+
+51. Paul Stiles, Norman Poythress, Alicia Hall, Diana 
+
+Falkenbach, and Robyn Williams. 2001. Improving 
+understanding of research consent disclosures among 
+persons with mental illness. Psychiatric Services 52, 6: 
+780-785. 
+
+52. Amos Tversky and Daniel Kahneman. 1974. Judgment 
+under uncertainty: Heuristics and biases. Science 185, 
+4157: 1124-1131. 
+
+53. Peter Ubel and George Loewenstein. 1997. The role of 
+decision analysis in informed consent. Social science & 
+medicine 44, 5: 647-656. 
+
+54. Alan Westin, Danielle Maurici, Price Waterhouse,  and 
+Louis Harris. 1998. E-commerce & privacy. Privacy & 
+American Business. 
+
+55. Qiang Ye, Rob Law, Bin Gu, and Wei Chen. 2011. The 
+
+influence of user-generated content on traveler 
+behavior. Computers in Human Behavior 27: 634-639. 
+
+ 
+
+912
+
+

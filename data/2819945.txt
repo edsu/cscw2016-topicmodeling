@@ -1,0 +1,1898 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+It’s (Not) Simply a Matter of Time: The Relationship 
+
+Between CMC Cues and Interpersonal Affinity 
+
+Noah Liebman 
+
+Northwestern University 
+
+Evanston, IL USA 
+
+nliebman@u.northwestern.edu 
+
+Darren Gergle 
+
+Northwestern University 
+
+Evanston, IL USA 
+
+dgergle@northwestern.edu 
+
+in 
+
+text-based 
+
+ABSTRACT 
+Nonverbal,  paralinguistic  cues  such  as  punctuation  and 
+emoticons  are  believed  to  be  one  of  the  mechanisms 
+through which interpersonal relationship development takes 
+place 
+interactions.  We  use  a  novel 
+experimental  apparatus  to  manipulate  these  cues  in  a  live 
+Instant  Message  conversation.  Results  show  a  positive 
+causal relationship of conversation duration and cue use on 
+perceived  affinity,  and  the  relationship  is  contingent  upon 
+whether  or  not  partners  are  able  to  see  each  other’s  cues. 
+Further analysis of the dialogue reveals that reciprocity may 
+play  a  central  role  in  supporting  this  effect.  We  then 
+demonstrate how one’s cue use is influenced by a partner’s 
+cue use, and show that cues are often used in greeting and 
+sign-off rituals. 
+Author Keywords 
+Language use; affinity; instant messaging (IM); computer-
+mediated communication (CMC) 
+ACM Classification Keywords 
+H.5.3  [Information  Interfaces  and  Presentation]:  Group 
+and  Organization  Interfaces  –  collaborative  computing, 
+computer-supported cooperative work 
+INTRODUCTION 
+In recent years we have seen an abundance of interactions 
+that 
+in  computer-mediated  communication 
+(CMC)  environments.  We  effectively  argue,  debate,  and 
+persuade  one  another  in  forums  and  discussion  threads 
+[15,36], we express a wide variety of emotions in blog posts 
+[13,32],  have  exchanges  with  people  we  know  as  well  as 
+those  we  have  never  met,  and  we  can  form,  maintain  and 
+dissolve  relationships 
+in  various  online  communities 
+[4,34].  We  can  trust  those  we  have  just  met  [41],  and 
+deceive those we know well [2,17] – and we can do all of 
+these things using text-based communication technologies. 
+
+take  place 
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies 
+are not made or distributed for profit or commercial advantage and that 
+copies bear this notice and the full citation on the first page. Copyrights 
+for components of this work owned by others than the author(s) must be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission  and/or  a 
+from 
+Permissions@acm.org.
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to 
+ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2819945
+
+fee.  Request  permissions 
+
+570
+
+support 
+
+to  better 
+
+Yet,  while  recent  literature  and  common  practice  suggests 
+that  text-based  communication  is  widespread  and  capable 
+of  yielding  positive  relational  outcomes,  we  still  lack  a 
+detailed  understanding  of  the  particular  mechanisms  by 
+which such outcomes are achieved. When and how do we 
+craft  our  messages 
+relational 
+communication when we have a seemingly diminished set 
+of cues available? How do different cues help us to better 
+establish positive relationships? 
+In this paper we aim to answer these questions by making 
+use  of  a  novel  experimental  platform  that  allows  us  to 
+surreptitiously  alter  the  messages  being  sent  from  one 
+person to another. Our approach permits examination of the 
+causal role that paralinguistic cues (e.g., “that’s *reallllly* 
+great!!!”)  play  in  the  development  of  perceived  affinity 
+between partners by varying the duration of conversations 
+and whether or not certain cues are removed. 
+In a laboratory study of sixty pairs we show that time spent 
+engaged in an instant message conversation and the use of 
+paralinguistic CMC cues [26] are both positively associated 
+with  perceived  affinity  based  on  previously  validated 
+measures. We make use of conditional process analysis [20] 
+to  uncover  some  of  the  mechanisms  through  which  these 
+effects  operate,  and  we  expand  on  the  relationship  among 
+conversation  duration,  cue  use  and  reciprocity.  We  show 
+that CMC cues are a causal mechanism through which the 
+effect  of  duration  on  perceived  affinity  operates.  We  then 
+go  on  to  show  that  the  effect  of  cue  use  is  dependent  on 
+whether partners can see each other’s cues, suggesting that 
+they  play  a  more  social  and  communicative  role.  Finally, 
+we show that cues appear to be more effective when used in 
+a reciprocal fashion, and that they are often used toward the 
+beginnings  and  ends  of  conversations,  suggesting  a  more 
+phatic  role.  We  conclude  by  offering  implications  for 
+theory and design. 
+BACKGROUND 
+In  everyday  face-to-face  communication,  speakers  use  a 
+variety  of  verbal  and  non-verbal  behaviors  to  achieve 
+interpersonal  outcomes.  For  example,  conversational  pairs 
+have been shown to converge in their word use and facial 
+expressions as a way to indicate social receptiveness [12], 
+and these behaviors are associated with positive outcomes 
+such as increased liking and better negotiation results. 
+However,  many  of 
+relationships 
+
+to  establish 
+in  face-to-face  environments  are  simply 
+
+the  behaviors  used 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Partner Cues
+
+(M)
+
+Duration
+
+(X)
+
+Cue 
+
+Removal (V)
+
+Perceived 
+
+Afﬁnity
+
+(Y)
+
+Figure 1. Conceptual representation capturing the 
+
+conditional nature of the mechanisms by which duration 
+
+influences perceived affinity. 
+
+in 
+
+identified 
+
+such  as  body 
+
+text-based  CMC.  Non-verbal 
+language, 
+
+and 
+unavailable 
+facial 
+paralinguistic  cues 
+expression, and vocal tone are all missing. This deficit, it is 
+often  argued,  sets  up  a  rather  pernicious  environment  for 
+effective  interpersonal  exchange.  While  older  theories 
+suggested  that  relational  development  is  impeded  in  text-
+based  environments  [6],  an  emerging  consensus  suggests 
+that  speakers  simply  take  more  time  [51]  and  rely  on  a 
+different set of cues [28,50] to achieve similar outcomes to 
+those in face-to-face environments. Furthermore, patterns of 
+linguistic  convergence  have  been 
+in  both 
+laboratory  settings  [e.g.,  42]  as  well  as  large-scale  online 
+environments such as Twitter [7] and Wikipedia pages [8]. 
+The Role of Time, CMC Cues and Reciprocity 
+The  social  information  processing  (SIP)  model  provides 
+guidance  for  understanding  how  relational  development  is 
+possible  in  text-based  CMC  [47].  The  SIP  model  was 
+originally developed as a critique of earlier deficit theories 
+(e.g., [6,29]) and it aimed to account for the proliferation of 
+field  data  suggesting  that  users  of  text-based  CMC  were 
+able to develop rich and lasting interpersonal relationships. 
+The  model  has  been  widely  applied  to  help  explain  a 
+number  of  phenomena  in  CSCW  and  social  computing 
+including recent work on how non-native speakers interpret 
+emotion  in  text  [18],  how  Twitter  users  choose  whom  to 
+follow  [22],  and  how  users  choose  media  to  develop 
+relationships [40] or deal with conflicts [43], among others. 
+Two factors are particularly salient for relational formation 
+in text-based CMC according to SIP theory. The first is that 
+an appropriate amount of time is needed for the exchange 
+of messages [47]. SIP posits that relational development in 
+CMC  takes  longer  than  in  face-to-face,  and  suggests  this 
+may  be  due  to  the  lower  time  density  of  cues  in  CMC, 
+which  makes  the  transmission  of  affective  information 
+slower [49, p.535]. Utz [45] expanded this notion to suggest 
+that it is the number of nonverbal cues transmitted per unit 
+time  that  ultimately  influences  interpersonal  development, 
+and  her  correlational  research  suggests  that  both  time  and 
+cue  usage  are  associated  with  friendship  development 
+within  a  single  text-based  CMC  environment  [45].  The 
+notion  that  time  is  an  important  factor  has  been  further 
+supported in work on trust in text-based environments [42], 
+where  the  evidence  suggests  pairs  can  achieve  equivalent 
+
+levels to face-to-face environments; it simply takes longer 
+to achieve [51]. 
+Second, SIP posits that users adapt and develop new ways 
+to  express  relational  information,  and  in  doing  so  it 
+elaborates a richer view of verbal and non-verbal cues than 
+other  theories.  Deficit  theories  tend  to  treat  text-based 
+exchanges  as  a  simple  collection  of  alpha-numeric 
+characters and little more. The SIP model suggests that non-
+verbal  cues  from  a  face-to-face  environment  can  be 
+replaced by new cues unique to the technology [50], what 
+have come to be called CMC cues [26]. These CMC cues 
+can  be  chronemic  cues  [27,28,50]  that  capture  the  time-
+related  aspects  of  messages  such  as  response  latencies  or 
+the time of day when a message was sent, or paralinguistic 
+cues [3,25,26] that include the creative use of punctuation 
+and  capitalization,  emoticons  (“:-)”),  elongated 
+letter 
+repetitions (“wheeee”), or kinesic surrogates (“<grin>”). 
+Researchers  have  also  highlighted  the  role  of  higher-level 
+discourse strategies as they relate to relational development 
+in text-based CMC. One such dialogue pattern is reciprocity 
+– the extent to which conversational pairs converge in their
+use of words or sets of conventions and norms. Reciprocity 
+can  take  many  forms,  including  linguistic  style  matching
+[14] or similarities based on semantic, syntactic, or stylistic 
+properties  of  the  dialogue  [41,42].  It  can  also  vary  in 
+granularity from semantic word clusters to individual words 
+to  the  timing  of  individual  characters.  In  this  paper  we 
+examine  reciprocity  by  looking  for  similar  use  in  sets  of 
+cues as opposed to exact cue matching. Studies have shown 
+that these adaptations, in the aggregate, are correlated with 
+outcomes  such  as  increased  group  cohesiveness  and  trust 
+[14,42].  While  the  particular  forms  of  these  adaptations 
+vary (for a review see [44]), they all rely on the ability of 
+the partner to see the conversations1. 
+Toward an Integrated Model 
+While  prior  work  has  identified  the  relationship  among 
+many pairs of variables, our research aims to integrate these 
+separate  findings  into  a  unified  and  integrated  process
+model.  Figure  1  presents  the  conceptual  model  under 
+investigation that links together notions of time (duration), 
+cue  usage  (partner  cues)  and  cue  visibility  (via  cue 
+removal)  to  better  reveal  both  when  and  how  perceived 
+affinity  develops 
+text-based  CMC.  Our  analytical 
+approach  is  based  on  conditional  process  analysis  [20], 
+which  integrates  mediation  and  moderation  analyses  to 
+unveil  the  causal  and  dependent  relations  among  the 
+variables in the conceptual path model. 
+To  review,  prior  work  has  shown  time  to  be  an  important 
+factor  that  enables  positive  social  outcomes  in  text-based 
+CMC  environments  [e.g.,  45,51].  This  relationship  is 
+
+in 
+
+1 It should be noted that the degree to which conversational partners need
+to  be  cognizant  of  these  patterns  is  an  active  research  area  in  the 
+psycholinguistics discipline and the subject of considerable debate. 
+
+571
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+H2a: Pairs that converse in the long duration condition will 
+produce a greater number of cues than those that converse 
+in the short duration condition (i.e., (cid:3)→(cid:1)). 
+H2b:  Pairs  that  produce  a  greater  number  of  cues  will 
+exhibit higher perceived affinity ratings (i.e., (cid:1)→(cid:4)). 
+If CMC cues are indeed a mechanism through which pairs 
+establish positive social outcomes, then we should expect to 
+see that conversational duration has an indirect influence on 
+perceived  affinity 
+through  cue  production.  However, 
+visibility is important for both impression formation as well 
+as reciprocity. Therefore, we expect this relationship to be 
+conditional  on  whether  or  not  the  pairs  can  see  one 
+another’s  cues.  In  other  words,  it  is  not  simply  the 
+production of cues per se, but rather that both partners can 
+see the cues, form impressions, and have the opportunity to 
+reciprocate that matters. If this is the case, then we should 
+expect:  
+H3: Conversational duration will lead to higher perceived 
+affinity through the indirect path of cue generation, but only 
+when those cues are visible to the partner (i.e., an indirect 
+effect of (cid:3)→(cid:1)→(cid:4), conditioned upon (cid:2)) 
+Alternatively,  if  we  see  the  influence  of  cue  usage 
+regardless  of  cue  visibility,  it  may  suggest  more  of  a 
+reflection of internal state resulting from affinity (e.g., I’m 
+happy  with  how  things  are  going,  so  I  produce  more 
+paralinguistic cues). This is analogous to a smile serving a 
+communicative function as opposed to being a reflection of 
+an  internal  state  of  happiness  [30].  Another  possible 
+alternative  is  that  it  is  simply  homophily  in  language  use 
+and not a pair-based social language phenomenon. 
+In addition to these path relations, we also explore the role 
+of  reciprocity  on  the  production  of  cues  over  the  entire 
+conversation  in  order  to  gain  deeper  insight  into  the 
+temporal  and  partner-contingent  patterns  of  cue  use.  We 
+expect  that  mutual  visibility  and  its  ability  to  support 
+reciprocity  is  a  mechanism  through  which  pairs  converge 
+on cue use, and therefore: 
+H4:  Pairs  who  can  see  each  other’s  CMC  cues  will  use 
+similar numbers of cues, while those who cannot will not. 
+THE CURRENT STUDY 
+To  examine  the  degree  to  which  CMC  cues  can  influence 
+perceived  affinity,  and  to  better  understand  the  interactive 
+processes  by  which 
+this  occurs,  we  designed  an 
+experimental paradigm that allowed us to manipulate real-
+time transmission of CMC cues to a conversational partner. 
+While  previous  research  has  experimentally  manipulated 
+nonverbal  cues,  it  has  done  so  largely  through  the  use  of 
+pre-constructed stimuli in a non-interactive fashion [e.g.,  
+
+captured in Figure 1 as the direct effect from conversation 
+duration 
+to  perceived  affinity  ((cid:3)→(cid:4)(cid:5).  As  previously 
+discussed, prior work has also revealed connections among 
+important process-level constructs such as the link between 
+time  and  the  production  of  CMC  cues  ((cid:3)→(cid:1)),  and  the 
+relationship  between  the  presence  of  CMC  cues  and 
+relational outcomes such as trust and rapport ((cid:1)→(cid:4))2. The 
+link between cues and social outcomes has been shown to 
+result from impression formation [27,50] that often requires 
+visibility  of 
+the  cues.  Furthermore,  reciprocity-based 
+research  [14,42]  suggests  that  partner-specific  linguistic 
+adaptations  such  as  mimicry  are  also  correlated  with 
+relational  outcomes  such  as  trust  and  cohesiveness,  and 
+they too rely on visibility. 
+The goal of our work is to bring these previously discrete 
+findings  together  under  an  integrated    model  and  to 
+experimentally  identify  the  causal  path  through  which 
+duration  influences  perceived  affinity.  We  propose  that 
+increased duration leads to increased cue production, which 
+in  turn  leads  to  increased  perceived  affinity.  However, 
+when the pairs do not see the cues ((cid:2)) and therefore cannot 
+form  cue-based  impressions  or  engage  in  reciprocal  cue 
+usage, the mediated path through cue generation should no 
+longer be effective. In other words, the indirect effect that 
+duration  has  on  relational  outcomes  through  CMC  cue 
+generation ((cid:3)→(cid:1)→(cid:4)) should be contingent upon the pairs 
+being  able 
+their  partner’s  cues.  A  key 
+contribution  of  our  study  is  the  ability  to  experimentally 
+manipulate whether one can see a partner’s cues during the 
+conversation,  as  it  allows  us  to  examine  a  conditional 
+influence  on  the  degree  to  which  cues  affect  relational 
+outcomes such as perceived partner affinity. 
+HYPOTHESES 
+The 
+thinking 
+regarding the role of conversation duration, cue usage and 
+cue  visibility.  Based  on  the  links  between  time  and  social 
+outcomes, we might expect a direct effect whereby:  
+H1: Pairs that converse in the long duration (15 minutes) 
+condition will have higher perceived affinity ratings of the 
+pair  than  those  that  converse  in  the  short  duration  (5 
+minutes) condition (i.e., a direct effect from X→Y). 
+Increased  conversational  duration  provides  more  time  to 
+affiliate  and  produce  a  greater  number  of  cues,  and  prior 
+literature  also  suggests  that  greater  cue  production  is 
+associated  with  positive  social  outcomes.  Therefore,  we 
+should also expect:  
+
+following  hypotheses 
+
+to  witness 
+
+summarize  our 
+
+                                                             
+2  In  this  paper  we  only  investigate  one  of  numerous  potential  models. 
+Other conversational tasks and settings may exhibit different linkages such 
+as bidirectional influence when pairs or groups already know one another 
+(e.g., Y→M along with M→Y). Our goal is to establish definitive causal 
+relations  for  the  constructs  and  paths  discussed,  and  we  are  not  arguing 
+that these are the only possible relationships that may exist. 
+
+572
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Original message sent by 
+participant A 
+
+What participant A sees in 
+their chat window 
+
+What participant B sees in 
+their chat window 
+
+Original message sent by 
+participant B 
+
+Hey! 
+
+- 
+
+A: Hey! 
+
+B: What? 
+
+A: Hey. 
+
+B: What?! 
+
+- 
+
+What?! 
+
+this is gonna be so hard :(  
+
+A: this is gonna be so hard :( 
+
+A: this is gonna be so hard 
+
+- 
+
+- 
+
+B: clearly shes good at that 
+
+B: clearly shes GOOD at that 
+
+clearly shes GOOD at that 
+
+Table 1. Illustration showing example messages and how they looked for both the sender and receiver  
+
+when in the condition where the CMC cues were manipulated. 
+
+called 
+
+the 
+
+to 
+
+automatically 
+
+remove 
+
+insights 
+
+environment 
+
+this  can  reveal 
+
+ 5,27,28,48,50].  While 
+into 
+outcomes  such  as  perceptions  of  a  message  sender,  it 
+reveals  little  about  the  dynamic  processes  by  which  cues 
+influence  relational  outcomes  over  time.  Our  approach 
+isolates  the  effect  of  CMC  cues,  yet  retains  the  language 
+and timing of naturally occurring instant-message dialogue. 
+Our  study  apparatus  makes  use  of  a  customized  instant 
+messaging 
+Dialogue 
+Experimentation  Toolkit,  or  DiET [21].  DiET  is  a  Java-
+based  instant  messaging  client–server  package  specifically 
+designed to manipulate conversations. We created a custom 
+manipulation 
+targeted 
+paralinguistic cues in real time. This allowed us to perform 
+experimental  manipulations  on  naturalistic  conversation 
+with no perceivable delay, similar to an approach used by 
+[16] in a different context. 
+Using  this  customized  instant  messaging  environment,  we 
+assigned  some  pairs  to  have  certain  CMC  cues3  removed 
+from their conversation. For the pairs in the cues removed 
+condition,  we  targeted  several  specific  paralinguistic  cues: 
+emoticons,  exclamation  points,  interrobangs  (e.g.,  ?!)  and 
+repeated question marks, the use of asterisks for emphasis 
+(e.g., “that’s *really* great”), and words in all capital letters 
+(e.g.,  “SO  ANNOYING”).  We  focused  on  these  cues 
+because they are commonly used [39] and can be detected 
+and  manipulated  without  significantly  influencing  the 
+semantic meaning of the message. 
+Messages were manipulated as follows: exclamation points 
+were  replaced  with  periods,  combinations  of  consecutive 
+question marks and exclamation points were replaced with 
+a  single  question  mark,  asterisks  for  emphasis  and 
+emoticons  were  removed,  and  words  written  in  all  capital 
+letters were changed to lowercase. When developing these 
+manipulations,  we  were  careful  to  minimize  any  impact 
+they could have on message meaning. For example, while 
+we changed any number of exclamation points to a single 
+period, if the string of exclamation points contained one or 
+more  question  marks,  the  entire  string  was  reduced  to  a 
+question  mark.  This  is  because  a  question  mark  carries 
+                                                             
+3  For  the  sake  of  brevity,  when  discussing  this  study  we  use  the  term 
+“CMC cues” to refer only to the cues that we manipulated rather than the 
+full array of CMC cues that users may have in their repertoire. 
+
+is 
+
+more semantic meaning than an exclamation point. We did 
+not  see  any  unexpected  shifts  in  meaning  when  we 
+reviewed  the  final  transcripts  and  the  changes  that  were 
+made by our system. 
+To maintain the integrity of the experiment, it appeared to 
+participants that their messages were transmitted intact even 
+if  cues  were  removed.  In  other  words,  there  was  no 
+indication to the sender that their message was being altered 
+as only the receiver saw the manipulated text strings. None 
+of the participants stated that they were aware that the cues 
+were being removed. Table 1 presents some examples from 
+the final corpus and shows what the lines in the chat history 
+looked like for both the sender and receiver. 
+METHOD 
+Participants were randomly assigned to two-person groups 
+and each group was then randomly assigned to one of four 
+experimental  conditions  drawn  from  a  2  ×  2  between-
+subjects  design:  The  first  factor 
+the  duration  of 
+conversation  (5  minutes  vs.  15  minutes),  and  the  second 
+factor  is  the  cue  removal  condition  (cues  intact  vs.  cues 
+removed). We determined conversation durations based on 
+pilot testing, with the shorter time being near the minimum 
+needed to complete the task. 
+Participants 
+Participants (N = 120, 71% female) were students, staff, and 
+members  of  the  surrounding  community  of  a  mid-sized 
+Midwestern  U.S.  university.  Their  mean  age  was  22.9 
+years. Five (8.3%) of the dyads were male–male, 30 (50%) 
+were  female–female,  and  25  (41.6%)  were  mixed  gender. 
+Participants  did  not  know  or  see  their  partner  before  or 
+during  the  study,  and  were  not  made  aware  of  their 
+partner’s gender. Additionally, they were instructed not to 
+divulge personal information during the conversation. 
+Procedure 
+The  study  took  place  in  two  physically  separate  rooms. 
+Arrival times were staggered and participants arrived at two 
+separate locations and were then taken individually to their 
+respective  study 
+rooms.  Upon  arriving,  participants 
+consented  to  enrollment  and  then  completed  a  pre-chat 
+demographics  questionnaire.  They  then  engaged  in  an 
+instant message conversation with their partner for five or 
+fifteen  minutes.  Participants  were  told  how  long  their 
+
+573
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+conversation would be, and were given a warning when one 
+minute was left so they could conclude their conversation.  
+Because the goal of this study was to understand the ways 
+in  which  CMC  cues  are  related  to  beliefs  regarding  pair 
+affinity,  we  required  a  conversational  elicitation  task  that 
+would  generate  lively  discussions.  Pairs  were  asked  to 
+engage in a discussion about a moral dilemma with the aim 
+of arriving at a resolution (adapted from [46]). Each partner 
+was also given a potential resolution that they could argue 
+for  during  the  conversation.  An  example  of  such  a  moral 
+dilemma is:  
+
+ “You  and  your  partner  have  a  mutual  friend  who  is 
+engaged  to  be  married  in  two  months.  You  both  just 
+learned  that  your  friend’s  fiancé  may  have  recently 
+cheated  on  your  friend.  You  and  your  partner  are 
+discussing what to do with this information. 
+The goal of your discussion is to try to agree on what 
+to do in this situation. 
+For  the  purposes  of  this  discussion,  your  opinion  is 
+that you need to tell your friend what you heard.” 
+
+Other scenarios addressed whether friends should hide their 
+cohabiting relationship from unsuspecting parents, and how 
+to deal with the suspicion that a friend’s sibling was a thief. 
+Each partner was instructed to try to convince their partner 
+of their assigned position, but only one participant in each 
+pair was told that they could better convince their partner to 
+take their stance if their partner liked them. To that end, that 
+participant  was  given  a  sheet  of  paper  with  suggested 
+strategies  to  increase  liking  in  text-based  communication, 
+including using the CMC cues we were manipulating: “Be 
+positive!;  Use  emoticons  :);  Don’t  wait  too  long  between 
+messages;  Show  how  you’re  feeling  –  ‘Vocal  surrogates’ 
+like haha or uggghhh are ways to do this; Be expressive – 
+feel  free  to  use  CAPS  or  *emphasis*”.  This  was  done  to 
+ensure some production of cues and to permit examination 
+of  reciprocity  effects,  as  our  pilot  testing  indicated  that 
+some  participants  were  unsure  whether  they  were  allowed 
+to use a wide variety of cues to express themselves. 
+To  maintain  participants’  privacy  and  minimize  any 
+potential  gender  effects,  each  participant  was  assigned  a 
+unique ID number and username. The usernames were not 
+English  words,  did  not  strongly  evoke  another  word,  and 
+did  not  evoke  anything  gender  normative.  This  was  done 
+with  a  password  generator  for  pronounceable  passwords 
+such as Zorest, Pajles, and Jerigl. 
+At  the  conclusion  of  the  instant  message  conversation, 
+participants recorded responses for two scales that captured 
+how  they  believed  their  partner  perceived  the  rapport  and 
+likeability of the pair. 
+Measures 
+We  assessed  the  impact  of  conversation  duration  and  cue 
+usage on both outcome and process measures. The primary 
+
+rapport  and 
+
+outcome measure, perceived affinity, was constructed from 
+multi-item  response  scales  that  captured  beliefs  about  the 
+relational  constructs  of 
+likeability.  We 
+measured  these  using  partner-based  assessments  (e.g.,  “I 
+think  my  partner  believes  I  am…”)  to  better  capture 
+relationship-level  dyadic  perceptions  rather  than  direct 
+assessments of the other individual. 
+Perceived  rapport  was  measured  using  LaFrance’s  6-item 
+scale  [31].  Each  of  six  semantic  differential  items  was 
+measured  on  a  7-point  bipolar  scale  (e.g.,  with  endpoints 
+“out  of  step  –  in  step”  or  “incompatible  –  compatible”). 
+Perceived  likeability  was  measured  using  Jones’  4-item 
+scale  [23].  Each  of  four  semantic  differential  items  were 
+measured  on  a  7-point  bipolar  scale  (e.g.,  with  endpoints 
+“not friendly at all – very friendly” or “not understanding at 
+all – very understanding”). 
+Principal  component  analysis  was  used  to  assess  the 
+dimensionality  of  the  questions.  The  Kaiser  criterion  was 
+used  and  suggested  a  single  factor  existed.  We  therefore 
+combined the rapport and likeability questions into a single 
+composite index by taking the mean of all of the items from 
+both of the scales. Throughout the remainder of this paper 
+we  refer  to  this  variable  as  perceived  affinity,  and  it  was 
+normally distributed (M = 4.74, SD = 1.07) and composed 
+of highly reliable items (Cronbach’s α = .95). 
+A  number  of  process  measures  were  also  computed  from 
+the interaction logs. These include the total number of cues, 
+the number of cues generated by each participant and their 
+partner, and when the cues occurred. These measures serve 
+as the basis for secondary analyses such as the reciprocity 
+results described below. 
+RESULTS 
+Our results are presented in three stages. The first stage of 
+analysis  presents  descriptive  statistics  that  capture  the 
+amount  of  conversation  produced  and  provide  insight  into 
+the types of CMC cues produced by the pairs. The second 
+stage applies conditional process analysis [20] techniques to 
+examine the moderated mediation effect of CMC cues and 
+the  cue  removal  condition  (see  Figure  1).  Finally,  we 
+conclude  with  an  analysis  of  reciprocal  cue  use  between 
+partners,  and  a  temporal  analysis  of  when  cues  are  used 
+during  the  conversations  to  glean  additional  insight  into 
+when and how the pairs made use of the cues. 
+
+ 
+
+Exclamation points 
+Interrobangs and repeated 
+question marks 
+Emoticons 
+All caps 
+Emphasis 
+All cues 
+
+Cues 
+Removed 
+Condition 
+88 
+12 
+
+Cues 
+Intact 
+Condition 
+102 
+4 
+
+30 
+25 
+0 
+155 
+
+44 
+14 
+2 
+166 
+
+ 
+Total 
+
+190 
+16 
+
+74 
+39 
+2 
+321 
+
+Table 2. CMC cues generated by participants. 
+
+574
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+  Coeff. 
+
+ 
+
+ 
+
+ 
+
+Partner Cues (M) 
+t-value 
+SE 
+
+p 
+
+Duration (X) 
+Partner Cues (M) 
+Cue Removal (V) 
+Partner Cues × Cue 
+Removal (M×V) 
+Intercept 
+ 
+ 
+
+a 
+ 
+ 
+ 
+
+i1 
+ 
+
+ 
+
+1.744 
+--- 
+--- 
+--- 
+
+-.8433 
+ 
+
+.434 
+--- 
+--- 
+--- 
+
+.301 
+ 
+
+4.02 
+--- 
+--- 
+--- 
+
+-2.80 
+ 
+
+.0001 
+--- 
+--- 
+--- 
+
+.006 
+ 
+
+F (1,114) = 16.18, p < .001 
+
+ 
+ 
+
+ 
+
+ 
+
+  Coeff. 
+
+c' 
+b1 
+b2 
+b3 
+
+i2 
+ 
+
+.3605 
+.1498 
+.0399 
+-.1627 
+
+4.5213 
+ 
+
+ 
+
+ 
+
+ 
+
+Perceived Affinity (Y) 
+SE 
+
+t-value 
+
+p 
+
+.2044 
+.0482 
+.1897 
+.0820 
+
+1.76 
+3.11 
+.2102 
+-1.9858 
+
+.1650 
+ 
+F (4,111) = 3.95, p < .01 
+
+27.4 
+ 
+
+.081 
+.002 
+.8339 
+.0495 
+
+.0001 
+ 
+
+Table 3. Model coefficients for the conditional process model presented in Figure 1 and formalized in Eqs. (1.0) and (2.0). 
+
+Descriptive Statistics 
+Sixty pairs generated a total of 23,467 words across 2,363 
+lines of text chat. The duration of the conversation had the 
+expected  effect  on  the  amount  of  content  produced.  The 
+pairs  produced  more  words4  in  conversations  of  longer 
+duration than those of shorter durations (M15-mins = 577.6 vs. 
+M5-mins  =  204.7;  t(58)  =  11.23,  p  <  .001).  Yet,  the  cue 
+removal  manipulation  did  not  appear  to  alter  the  overall 
+amount  of  words  produced  (Mcues-removed  =  408.3  vs.  Mcues-
+intact  =  373.9;  t(58)  =  0.58,  p  =  0.56).  This  is  important 
+because it shows that cue removal did not artificially stifle 
+conversation. 
+The  pairs  also  generated  a  number  of  CMC  cues  in  the 
+study.  These  include  exclamation  points,  interrobangs  and 
+repeated  question  marks,  emoticons,  all  capital  usage  and 
+other  emphasis  cues.  The  mean  number  of  cues  produced 
+by each pair was 5.35 (with a mean of 3.33 cues in the 5-
+min  condition  and  7.34  in  the  15-min  condition).  Table  2 
+presents  the  number  of  cue  types  produced  broken  out  by 
+their particular form. The partner in each pair that received 
+the list of strategies used a mean of 3.31 cues compared to 
+1.83 for those who did not. In total, 9.7% of lines included a 
+CMC  cue  based  on  our  operationalization.  Of  the  1,426 
+lines  generated  by  participants 
+the  cue  removal 
+condition,  155  cues  on  105  lines  (7.36%  of  lines)  were 
+removed by our system5. 
+The Contingent Effects of Duration and Cue Usage 
+Conditional  process  analysis 
+[20,  p.327],  or  more 
+specifically moderated mediation in path analytic terms [9], 
+allows  us  to  better  understand  how  time  and  cue  usage 
+influence perceived affinity. It reveals the degree to which 
+duration directly affects perceived affinity or whether some 
+other variables—in this case the production and availability 
+of  CMC  cues—appear  to  be  mechanisms  through  which 
+duration  acts  upon  perceived  affinity.  We  make  use  of 
+                                                             
+4  The  same  pattern  of  findings  is  found  when  examining  the  number  of 
+lines of chat produced for each of the various conditions. 
+5 These rates tend to be in line with rates found in other natural settings. 
+For example, 9.7% of English tweets contain at least one emoticon [39], 
+while  our  corpus  had  3.1%  of  contributions  contain  an  emoticon,  and 
+13.6%  of  lines  contain  any  of  the  cues  we  considered  (including 
+exclamation points). 
+
+in 
+
+575
+
+ 
+
+ 
+
+Hayes’  PROCESS  macro6  to  statistically  analyze  the 
+conceptual  model  presented  in  Figure  1,  which  can  be 
+formally specified with two equations: 
+             M = i1 + aX + eM 
+(1.0) 
+             Y  = i2 + c'X + b1M + b2V + b3MV + eY   (2.0) 
+The results7 of the model are presented in Table 3.  
+When  investigating  H1,  we  start  by  seeing  an  effect  of 
+duration  on  perceived  affinity,  t(118)  =  2.20,  p  =  .029. 
+However, when controlling for the indirect effect of partner 
+cues  the  remaining  direct  effect  of  duration  on  perceived 
+affinity is no longer significantly different from zero (c' = 
+.3605,  p  =  .081).  This  supports  the  idea  that  partner  cues 
+resulting  from  duration,  and  not  conversation  duration 
+itself, is the mechanism that drives perceived affinity8. 
+Further  examination  of 
+that 
+the  results  demonstrates 
+conversation duration leads to greater production of partner 
+cues (a  = 1.744, p < .0001), in support of H2a. In addition, 
+an  increase  in  partner  cues  also  leads  to  higher  ratings  of 
+perceived affinity (b1  = .1498, p = .002), in support of H2b. 
+However,  this  relationship  depends  on  whether  or  not  the 
+cues were removed. The effect of partner cues on perceived 
+affinity is contingent upon whether or not they are removed 
+and therefore visible by the partner. This can be seen in the 
+partner  cues  ×  cue  removal  interaction  (b3  =  -.1627,    p  = 
+.0495), in support of H3. 
+Calculating  the  conditional  indirect  effects  of  duration  on 
+perceived affinity reveals a more detailed understanding of 
+                                                             
+6  Readers  may  be  familiar  with  the  related  “causal  steps  approach”  of 
+Baron  &  Kenny  [1]  and  we  find  a  similar  pattern  of  results  using  this 
+approach; however, the causal steps approach has been challenged due to 
+its  low  power  and  lack  of  direct  statistical  inferences  regarding  the 
+mediating path [10,19,35]. 
+7 While the parameters in the final model are correlated to an extent, they 
+did  not  exhibit  multicollinearity  at  a  problematic  level.  The  Variance 
+Inflation Factors (VIFs) were < 1.25 for all of the final model parameters. 
+This is considered well within the range of acceptable practice. 
+8 It should be noted that the remaining direct effect approaches statistical 
+significance  (p  =  .081).  While  a  significant  finding  here  would  not 
+invalidate  any  claims  made  in  this  paper,  it  would  suggest  that  partial 
+mediation  may  be  occurring  and  that  duration  itself  may  also  have  a 
+significant impact on the dependent variable. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+find 
+
+support 
+
+statistical 
+
+the  partner  cues  ×  cue  removal  interaction.  The  indirect 
+influence  of  partner  cues  on  perceived  affinity  remains 
+significant and positive when the cues are intact and visible 
+to  the  partner  (.2614  with  95%  bootstrapped  CI’s  [.1030, 
+.5065]),  but  it  appears  to  have  no  effect  when  cues  are 
+removed  (-.0225  with  95%  CI  [-.3357, 
+.2247]);  the 
+difference  between  these  conditional  indirect  effects  is 
+significant (-.2838 with 95% CI [-.7039, -.0166]). 
+In  other  words,  we 
+that 
+conversational  duration  yields  more  cues,  and  those  cues 
+lead to greater perceived affinity, but only when the partner 
+can see them. This latter point is particularly important as it 
+suggests  that  the  visible  presence  of  cues  are  a  causal 
+mechanism,  whereas  prior  literature  has  not  definitively 
+demonstrated  either  the  causal  effect  of  increased  cues  on 
+affinity or the causal effect of greater affinity on cue usage. 
+We  demonstrate  the  former,  but  this  does  not  necessarily 
+preclude the latter. 
+By  showing  that  cues  are  a  mechanism  through  which 
+added time can lead to greater positive social outcomes, we 
+provide  evidence  for  the  notion  that  time  plays  a  critical 
+role in how people form positive beliefs regarding affinity 
+in our task setting, and that cues appear to be a mechanism 
+through which this is achieved. 
+Social and Paralinguistic Processes 
+In addition to establishing the role that CMC cues play in 
+developing  perceived  affinity,  it  is  also  important  to 
+examine  how  and  when  cues  are  used.  One  important 
+question centers on whether cue use takes place in isolation, 
+or whether partners converge on a set of expected behaviors 
+during  a  conversation.  An  advantage  of  using  natural 
+conversations is the ability to test whether a feedback loop 
+of  cue  use  is  present.  Previous  work  [14,42]  has  found 
+correlations between partner cue use, but here we are able 
+to  demonstrate  that  the  number  of  cues  a  participant  uses 
+not only depends on how many cues their partner uses, but 
+also whether or not they can see those cues. In other words, 
+it is not just a result of similarity in general language use. 
+To investigate the degree of cue reciprocity occurring, for 
+each pair we predicted one partner’s cue use based on the 
+other’s. We employed a Poisson regression approach where 
+the  response  (Y)  has  a  Poisson  distribution,  and  we  apply 
+generalized linear modeling with a log link function (ln(μi)), 
+since  cue  usage  exhibits  a  distributional  form  typical  of 
+count data. The model can be formally specified as follows: 
+
+logY = i1 + b1X1 + b2X2 + b3X1X2 + eY   (3.0) 
+
+The  model  included  partner  total  cue  use  (X1),  a  binary 
+indicator  variable  for  cue  removal  condition  (X2),  and  an 
+interaction  of  the  two  terms  (X1,  X2).  The  resulting 
+coefficient can be interpreted as the impact of a unit change 
+in the predictor on the difference in the log of the expected 
+count of one’s own cue usage. 
+
+576
+
+(cid:1)
+
+(cid:9)
+(cid:6)
+(cid:11)
+(cid:2)
+(cid:7)
+(cid:12)
+(cid:3)
+(cid:1)
+(cid:9)
+(cid:13)
+(cid:6)
+(cid:7)
+(cid:3)
+
+Y
+
+10
+
+8
+
+6
+
+4
+
+2
+
+(cid:2)(cid:14)(cid:8)(cid:12)(cid:1)(cid:3)(cid:10)(cid:13)(cid:5)(cid:6)(cid:13)
+
+ 
+
+ 
+
+6
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+4
+
+partner-totalcues
+
+ 
+
+ 
+
+ 
+
+ 
+0
+
+ 
+
+ 
+
+2
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+10
+
+8
+
+Y
+
+6
+
+4
+
+2
+
+8
+
+10
+
+(cid:2)(cid:14)(cid:8)(cid:12)(cid:1)(cid:4)(cid:8)(cid:9)(cid:11)(cid:15)(cid:8)(cid:7)
+
+       
+
+       
+
+0
+
+      
+
+      
+
+  
+
+  
+
+    
+
+    
+
+2
+
+   
+
+   
+
+4
+
+ 
+
+ 
+
+   
+
+   
+
+ 
+
+ 
+
+6
+
+ 
+
+8
+
+(cid:4)(cid:5)(cid:8)(cid:10)(cid:7)(cid:6)(cid:8)(cid:13)(cid:9)(cid:1)(cid:2)(cid:11)(cid:6)(cid:9)
+
+partner-totalcues
+
+10
+
+ 
+
+Figure 2. Partner cues influence one’s own cue uses, but only 
+
+when the cues are intact and can be seen. The left panel 
+
+presents the regression line and 95% CI’s when the cues were 
+left intact, and the  right panel presents the regression line and 
+
+95% CIs when the cues were removed. 
+
+We find a significant relationship between partner cues and 
+one’s  own  cues  (b1  =  0.087,  p  <  .012),  but  this  is  driven 
+primarily  by  the  reciprocity  exhibited  in  the  cues  intact 
+condition,  as  seen  in  the  significant  interaction  between 
+partner cues and cue manipulation (b3 = 0.072, p < 0.029). 
+The interaction is illustrated in Figure 2. This graph shows 
+that the number of cues someone uses depends on whether 
+they can see their partner’s cues. In other words, reciprocity 
+appears  to  play  a  primary  role  in  determining  cue  use 
+patterns  within  our  pairs.  This  is  in  support  of  H4:  users 
+who can see each other’s cues use similar numbers of cues, 
+but there is no relationship between partners’ cue use when 
+they are unable to see each other’s cues. 
+This  interaction  between  cue  reciprocity  and  the  cue 
+removal  condition  suggests  a  kind  of  conversation-level 
+entrainment  or  style-matching.  If  this  is  taking  place,  we 
+would also expect to see that pairs whose cues are not being 
+manipulated  will  be  more  likely  to  continue  using  cues 
+throughout  a  conversation,  while  those  whose  cues  are 
+being removed will have their cue use largely confined to 
+the beginning of their conversations, before the norms have 
+been entrenched. 
+A  histogram  of  the  temporal  distribution  of  cue  use  is 
+shown  in  Figure  3.  The  horizontal  axis  is  the  time  into  a 
+conversation,  as  a  fraction  of  the  total  length  of  the 
+conversation (in lines). The top figure shows that, when a 
+conversation’s  cues  are  left  intact,  cues  seem  to  be  used 
+more  at  the  beginning  and  end  of  the  conversation  – 
+essentially during greetings and signoffs. The bottom figure 
+shows the same distribution when cues are removed. Here 
+the number of cues starts off similarly high, but levels off at 
+a  low  rate  that  stays  relatively  constant  though  the  rest  of 
+the  conversation,  with  a  much  smaller  uptick  toward  the 
+end.  These  patterns  are  partially  confirmed  using  χ2  tests 
+that  reveal  little  difference  in  the  beginning  third  of  the 
+distributions (χ2 (1, N = 274) = 0.068, p = 0.81), while the 
+latter third of the distributions appear to be different at the 
+trend level (χ2 (1, N = 274) = 3.33, p = 0.056). This further 
+suggests some degree of reciprocity may be involved when 
+people are crafting messages that include CMC cues. 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Cue distribution by line position (cues not removed)
+
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+Line position
+
+Cue distribution by line position (cues removed)
+
+y
+c
+n
+e
+u
+q
+e
+r
+F
+
+0
+3
+
+0
+2
+
+0
+1
+
+0
+
+y
+c
+n
+e
+u
+q
+e
+r
+F
+
+0
+3
+
+0
+2
+
+0
+1
+
+0
+
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+Line position
+
+ 
+
+Figure 3. CMC cue distributions (normalized over different 
+
+conversation lengths). 
+
+DISCUSSION 
+In this paper we set out to establish the relationship between 
+time, CMC cues, and perceived affinity, and integrate these 
+findings into a more comprehensive model that captures the 
+processes, mechanisms and conditions under which each of 
+these  factors  operate.  As  previously  discussed,  prior  work 
+has  shown  time  to  be  an  important  variable  related  to 
+positive  social  outcomes  in  text-based  environments,  links 
+have been drawn between time and the production of cues, 
+and  cue  usage  has  been  correlated  to  important  social 
+outcomes such as rapport. However, prior work falls short 
+of  describing  how  these  variables  interoperate  and  as  a 
+result we are left with a fragmented theoretical picture that 
+does not capture the contingent relations among the various 
+variables.  The 
+richer  process-oriented  understanding 
+developed  here  also  provides  deeper  insight  into  the  ways 
+in  which  these  findings  can  be  applied  to  technological 
+systems. 
+Theoretical Implications 
+We find that conversation duration appears, at first glance, 
+to have an effect on perceived affinity: more time facilitates 
+better  social  outcomes.  However,  our  results  go  beyond 
+demonstrating  the  existence  of  this  effect  to  uncover  the 
+conditions  under  which  it  operates,  as  well  as  expose  the 
+boundaries  and  limits  of  those  conditions.  An  important 
+point to highlight is our finding that the effect of duration, 
+which in the past has been trumpeted as a primary driver of 
+positive social outcomes, does not appear to have a direct 
+effect  upon  perceived  affinity.  Instead,  its  effectiveness 
+appears  to  come  from  enabling  conversational  strategies 
+that  are  more  directly  related  to  relational  outcomes.  In 
+other words, it is not simply a matter of time. 
+The  number  of  CMC  cues  that  a  participant’s  partner 
+produces  mediates  the  effect  of  duration  on  perceived 
+affinity. Put another way, in this study we show that longer 
+conversations  yield  more  partner  cues,  and  more  partner 
+cues  yield  greater  perceived  affinity.  This  indirect  effect, 
+
+577
+
+however,  is  conditional:  It  depends  upon  the  pairs  being 
+able  to  see  the  cues.  When  we  experimentally  remove  the 
+ability  of  pairs  to  see  their  partners’  cues,  the  effect 
+disappears altogether.  
+The  fact  that  the  partner  needs  to  see  the  cues  is  an 
+important  piece  of  causal  evidence  in  support  of  the  idea 
+that  CMC  cues  themselves  can  directly  influence  one’s 
+perception of important social outcomes such as likeability 
+and rapport. Prior approaches examining cue generation in 
+natural  dialogue  have  not  been  able  to  exclude  reverse 
+causality.  For  example,  Scissors  et  al.  [42]  point  out  that, 
+based on their findings and methodology, they were unable 
+to  say  whether  the  use  of  CMC  cues  influences  positive 
+social  outcomes,  or  whether  positive  social  outcomes  lead 
+to more cues. While we do not rule out that affinity can lead 
+to  increased  cue  usage  (i.e.,  there  may  still  exist  a  bi-
+directional  relationship),  we  definitively  demonstrate  that 
+increased  and  visible  cue  usage  mediates  the  effect  of 
+duration  on  perceived  affinity.  This 
+is  because  our 
+methodology  allows  us  to  turn  off  specific  dialogue 
+behaviors and observe the causal impact that doing so has 
+on social outcomes. With our approach we can disentangle 
+the direction of the relationship between cues and perceived 
+affinity  and  show  that,  at  least  in  this  context,  visible  cue 
+usage  influences  perceived  affinity.  The  relationship  may, 
+in hindsight, appear unsurprising; but demonstrating causal 
+direction is a novel and important contribution to theory. 
+The  implications  of  visibility  and  the  role  of  reciprocity 
+also merit discussion. Recall that we find that an increase in 
+partner  cues  yields  increased  ratings  of  perceived  affinity; 
+however,  when  those  cues  are  not  visible  due  to  the  cue 
+removal condition, an increase in partner cues is no longer 
+effective.  From  the  perspective  of  impression  formation, 
+this  makes  sense,  as  we  need  to  “see”  what  was  said  in 
+order for the cues to influence our impressions. Reciprocity 
+effects,  however,  pose  a  slightly  more  complex  challenge. 
+Seeing a partner reciprocate one’s own use of cues can be 
+perceived  as  an  indicator  of  affinity.  Alternatively,  a 
+participant  that  produces  their  own  cues  and  does  not  see 
+them  reciprocated  may  form  a  negative 
+impression. 
+Unfortunately, our analytical approach does not specifically 
+include these dyadic contingencies and therefore we cannot 
+say with certainty how reciprocity plays a direct role upon 
+perceived  affinity.  However,  we  present  evidence  of 
+reciprocal  cue  production  when  the  cues  are  visually 
+available, and this suggests that reciprocity plays some role. 
+Disentangling this relationship requires additional studies. 
+We  also  examined  the  temporal  aspects  of  cue  use  within 
+conversations. It is interesting to note that while reciprocity 
+appears to be driving much of the cue use (or lack thereof) 
+within the pairs, their social function occurred in large part 
+during  greetings  and  sign-offs.  It  has  been  suggested  that 
+emoticons  may  serve  as  a  form  of  phatic  communication; 
+that is, they serve a social function rather than contain much 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+content  [48].  Our  data  corroborate  this:  the  following 
+contains numerous cues, but is nearly devoid of content: 
+
+Mavagl:   Hello! 
+Ralect:   Hi! 
+Mavagl:   How was your day? 
+Ralect:   So far, so good 
+Ralect:   yours? 
+Mavagl:   I'm glad :). Mine was good as well! 
+
+In this example, we can see the extent to which cues are a 
+part  of  ritualized  communication  because  this  particular 
+pair  is  unable  to  see  each  other’s  cues,  yet  they  both  use 
+them  to  open  their  conversation.  This  is  despite  the  more 
+general trend of cue use being reciprocal. While we do not 
+investigate phatic communication in depth in this work, we 
+feel it is a potentially rich area for future work that aims to 
+focus on the temporal aspects of cue usage [cf. 33,37,38]. 
+Finally,  it  is  worth  mention  that  our  manipulation  only 
+removed a small subset of cues; yet, even with removal of 
+only  a  small  subset  of  cues  we  were  still  able  to 
+demonstrate  their  mediating  role.  In  this  regard  the 
+manipulation  demonstrates  strong  causal  efficacy.  Even 
+more surprising is that these effects exist despite allowing 
+word  choice,  verbal  content,  the  timing  of  the  exchanges, 
+and other properties of the discourse to remain intact. That 
+being said, verbal content and word choice are quite likely 
+to play an influential role – and previous work [48] suggests 
+that  some  affective  verbal  content  can  overwhelm  the 
+influence of certain CMC cues. So while a cue may serve to 
+heighten  a  given  expression,  the  use  of  a  superlative  may 
+have even greater impact. Our results rely on assumptions 
+of similar verbal content, while it is likely that both content 
+and  cue  usage  would  change  in  tandem  during  natural 
+dialogue. This aspect of the work merits further exploration. 
+Practical Implications 
+The SIP model contends that communication media that can 
+transmit a higher quantity of cues per time should facilitate 
+relationship  development  in  less  time,  and  work  by  Utz 
+[45],  in  concert  with  our  findings,  extend  this  idea  to 
+relationship  development 
+in  a  single  communication 
+technology.  Our  analysis  shows  that  cues  can  lead  to 
+positive  perceptions  regarding  social  outcomes.  Taken  in 
+isolation  from  our  other  findings,  this  suggests  that  text-
+based technologies that allow for higher cue density may be 
+better suited to enabling relationship formation.  
+From a design perspective, it is important to know whether 
+nonverbal  cues  in  CMC  are  primarily  useful  to  help  form 
+relationships,  or  whether  they  are  useful  to  maintain  and 
+strengthen existing ones. In our work, even in the short time 
+in the laboratory, we found that cue use was associated with 
+the formation of positive impressions regarding pair affinity 
+for  individuals  that  do  not  know  one  another.  Thus,  our 
+findings  are  potentially  important  for  systems  that  aim  to 
+support  text-based  relational  development  on  important 
+social, relational and group outcomes (e.g., team assembly 
+and new group formation, online dating, etc.). 
+
+578
+
+Another  practical  application  a  richer  understanding  of 
+nonverbal cues in text-based communication can provide is 
+in  automated  chat  agents.  Many  industries  have  begun 
+using  automated  chat  agents  as  part  of  their  customer 
+support chains. The ability of such agents to establish and 
+maintain high levels of sociability can have a direct impact 
+on companies and customers alike. Certain behaviors, like 
+limiting the use of paralinguistic cues to the beginning and 
+ends  of  conversations,  and  using  them  at  a  rate  and  in  a 
+contingent fashion similar to that of the human interlocutor, 
+may help make the automated agent easier to get along with 
+or  feel  more  humanlike.  Such  an  agent  could  also  have  a 
+richer  computational  model  that  would  enable  it  to  better 
+interpret the state of a conversation. 
+FUTURE WORK AND LIMITATIONS 
+There  are  a  number  of  important  limitations  and  avenues 
+for future research. First, when examining the role of cues, 
+we were only able to manipulate them in one way: removal. 
+It would be interesting to investigate the effects of adding 
+cues,  as  well.  This  presents  challenges,  however,  because 
+while  we  did  remove  cues,  we  did  our  best  to  retain  all 
+semantic  meaning.  For  example,  while  an  exclamation 
+point became a period, a group of mixed exclamation points 
+and question marks became a single question mark, thereby 
+interrogative  nature  of 
+retaining 
+the  sentence. 
+the 
+Algorithmically 
+inserting  CMC  cues  while  retaining 
+semantic meaning is a much more challenging proposition. 
+Second, we suspect that, as a laboratory study in which the 
+conversation topic is given, participants may have been less 
+willing  to  fully  exploit  the  affordances  of  text-based 
+communication.  This  may  have  pushed  cue  use  and 
+perceived  affinity  outcomes  down. 
+to 
+considering broader deployments and different contexts of 
+use,  future  work  should  try  to  replicate  our  results  among 
+other  populations  and  with  other  task  types.  Many  of  the 
+participants in our study were associated with a university, 
+which  means  that  they  skewed  younger  and  female.  This 
+population  is  known  to  use  CMC  differently  than  other 
+groups [52]. In order to make more generalizable claims, a 
+sample  that  is  more  representative  of  all  CMC  users  is 
+needed.  Another  promising  future  direction  would  be  to 
+integrate  richer  models  of  paralinguistic  cue  usage  into 
+models 
+that 
+relational 
+development 
+large-scale  online 
+communities and environments [e.g., 11,24]. 
+Third,  the  tasks  used  in  this  study  contained  emotional 
+content and asked participants to be persuasive. Because we 
+chose a task with high emotional content, it is possible that 
+the topic may have exposed more CMC cues than would be 
+expected  in  a  less  emotional  conversation.  This  was 
+partially  by  design,  as  we  wanted  a  strong  experimental 
+manipulation, but may have introduced a bias that makes it 
+harder  to  generalize  to  CMC  use  in  general.  Similarly, 
+persuasion  may  have 
+induced  certain  conversational 
+strategies  beyond  what  would  have  naturally  been 
+
+longer-term 
+in 
+
+In  addition 
+
+that 
+
+takes  place 
+
+examine 
+
+the 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+employed.  Whether  or  not  the  interpersonal  dynamics  in 
+this study differ from those in other types of conversations 
+is left to future work. 
+Finally, it is important to keep in mind that this is simply 
+one  experiment  and  one  way  of  specifying  a  potential 
+model. The study was designed to help identify the causal 
+path  through  which  duration  influences  perceived  affinity. 
+The  finding  that  visible  cue  usage  plays  a  mediating  role 
+does  not  preclude  the  fact  that  as  affinity  grows  it  could 
+also  influence  cue  usage.  In  other  words,  demonstrating 
+causality  in  one  direction  does  not  necessarily  mean 
+causality  does  not  occur  in  the  other  direction  as  well.  In 
+fact,  it  is  quite  likely  that  in  other  conversational  settings, 
+task environments, etc. a bi-directional influence may exist. 
+Uncovering  this,  however,  will  require  new  experimental 
+techniques and additional studies. 
+CONCLUSION 
+The  contributions  of  this  work  are  three-fold.  First,  we 
+make use of conditional process analysis to elaborate some 
+mechanisms  by  which  duration  and  cue  usage  effects 
+operate.  Second,  we  demonstrate  that  social  reciprocity 
+likely plays a role: seeing cues influences someone to use 
+them  themself.  Finally,  we  offer  a  novel  experimental 
+paradigm in which CMC cues are manipulated in order to 
+make stronger causal claims about the role of CMC cues in 
+text-based social interaction. 
+ACKNOWLEDGEMENTS 
+We thank the reviewers for their insightful feedback on this 
+work.  We  also  thank  Danielle  Pierre  and  Allison  Ho  for 
+their assistance with data collection, and Yoram Kalman for 
+his helpful discussions of the work. This work was funded 
+by National Science Foundation grant #0953943.  
+REFERENCES 
+1.  Reuben M. Baron and David A. Kenny. 1986. The 
+moderator–mediator variable distinction in social 
+psychological research: Conceptual, strategic, and 
+statistical considerations. Journal of personality and 
+social psychology 51, 6, 1173. 
+Jeremy Birnholtz, Jamie Guillory, Jeff Hancock, and 
+Natalya Bazarova. 2010. “on my way”: Deceptive 
+Texting and Interpersonal Awareness Narratives. 
+Proceedings of CSCW ’10, 1-4. 
+
+2. 
+
+3.  Samuel Brody and Nicholas Diakopoulos. 2011. 
+
+Cooooooooooooooollllllllllllll‼‼‼‼‼‼‼: Using word 
+lengthening to detect sentiment in microblogs. 
+Proceedings of EMNLP ’11, 562–570. 
+
+4.  Moira Burke and Robert E. Kraut. 2014. Growing 
+closer on Facebook. Proceedings of CHI ’14, 4187–
+4196. 
+
+5.  Kristen Byron and David C. Baldridge. 2007. E-Mail 
+Recipients’ Impressions of Senders’ Likability: The 
+Interactive Effect of Nonverbal Cues and Recipients’ 
+Personality. Journal of Business Communication 44, 2, 
+137–160. 
+
+579
+
+6.  Richard L. Daft and Robert H. Lengel. 1984. 
+
+Information richness: a new approach to managerial 
+behavior and organizational design. Research in 
+Organizational Behavior 6, 191–233. 
+
+7.  Cristian Danescu-Niculescu-Mizil, Michael Gamon, 
+
+and Susan Dumais. 2011. Mark my words!: Linguistic 
+style accommodation in social media. Proceedings of 
+WWW '11, 745–754. 
+
+8.  Cristian Danescu-Niculescu-Mizil, Lillian Lee, Bo 
+Pang, and Jon Kleinberg. 2012. Echoes of power: 
+Language effects and power differences in social 
+interaction. Proceedings of WWW '12, 699–708. 
+Jeffrey R. Edwards and Lisa S. Lambert. 2007. 
+Methods for integrating moderation and mediation: A 
+general analytical framework using moderated path 
+analysis. Psychological Methods 12, 1, 1–22. 
+
+9. 
+
+10.  Matthew S. Fritz and David P. Mackinnon. 2007. 
+
+Required sample size to detect the mediated effect. 
+Psychological Science 18, 3, 233–239. 
+
+11.  Eric Gilbert and Karrie Karahalios. 2009. Predicting tie 
+
+strength with social media. Proceedings of CHI '09, 
+211–220. 
+
+12.  Howard Giles, Justine Coupland, and Nikolas 
+
+Coupland (eds.). 1991. Contexts of Accommodation. 
+Cambridge University Press. 
+
+13.  Alastair J. Gill, Robert M. French, Darren Gergle, and 
+
+Jon Oberlander. 2008. The Language of Emotion in 
+Short Blog Texts. Proceedings of CSCW '08, 299–302. 
+
+14.  Amy L. Gonzales, Jeff Hancock, and James W. 
+
+Pennebaker. 2010. Language Style Matching as a 
+Predictor of Social Dynamics in Small Groups. 
+Communication Research 37, 1, 3–19. 
+
+15.  Rosanna E. Guadagno and Robert B. Cialdini. 2005. 
+
+Online persuasion and compliance: Social influence on 
+the Internet and beyond. In The social net: The social 
+psychology of the Internet, Yair Amichai-Hamburger 
+(ed.). Oxford University Press, New York, 91–113. 
+
+16.  Joshua Hailpern, Marina Danilevsky, Andrew Harris, 
+Karrie Karahalios, Gary Dell, and Julie Hengst. 2011. 
+ACES: Promoting Empathy Towards Aphasia Through 
+Language Distortion Emulation Software. Proceedings 
+of CHI '11,  609-618. 
+
+17.  Jeff Hancock, Jeremy Birnholtz, Natalya Bazarova, 
+
+Jamie Guillory, Josh Perlin, and Barrett Amos. 2009. 
+Butler lies: Awareness, deception and design. 
+Proceedings of CHI '09, 517–526. 
+
+18.  Ari M.J. Hautasaari, Naomi Yamashita, and Ge Gao. 
+
+2014. “Maybe it was a joke”: Emotion detection in 
+text-only communication by non-native English 
+speakers. Proceedings of CHI '14, 3715–3724. 
+
+19.  Andrew F. Hayes. 2009. Beyond Baron and Kenny: 
+
+Statistical Mediation Analysis in the New Millennium. 
+Communication Monographs 76, 4, 408–420. 
+
+20.  Andrew F. Hayes. 2013. Introduction to Mediation, 
+
+Moderation, and Conditional Process Analysis. 
+Guilford Press. 
+
+21.  Patrick G.T. Healey and Gregory J. Mills. 2008. A 
+
+Dialogue Experimentation Toolkit. Language, 
+Cognition, Culture. 
+
+22.  C.J. Hutto, Sarita Yardi, and Eric Gilbert. 2013. A 
+longitudinal study of follow predictors on twitter. 
+Proceedings of CHI '13, 821–830. 
+
+23.  Eli Jones, Jesse N. Moore, Andrea J. S. Stanaland, and 
+
+Rosalind A.J. Wyatt. 1998. Salesperson Race and 
+Gender and the Access and Legitimacy Paradigm: 
+Does Difference Make a Difference? The Journal of 
+Personal Selling and Sales Management 18, 4, 71–88. 
+
+24.  Jason J. Jones, Jaime E. Settle, Robert M. Bond, 
+
+Christopher J. Fariss, Cameron Marlow, and James H. 
+Fowler. 2013. Inferring Tie Strength from Online 
+Directed Behavior. PLoS ONE 8, 1, e52168. 
+
+25.  Yoram M. Kalman and Darren Gergle. 2010. CMC 
+
+Cues Enrich Lean Online Communication: The Case of 
+Letter and Punctuation Mark Repetitions. Proceedings 
+of MCIS '10. 
+
+26.  Yoram M. Kalman and Darren Gergle. 2014. Letter 
+repetitions in computer-mediated communication: A 
+unique link between spoken and online language. 
+Computers in Human Behavior 34, 187–193. 
+
+27.  Yoram M. Kalman and Sheizaf Rafaeli. 2011. Online 
+pauses and silence: Chronemic expectancy violations 
+in written computer-mediated communication. 
+Communication Research 38, 1, 54–69. 
+
+28.  Yoram M. Kalman, Lauren E. Scissors, Alastair J. Gill, 
+
+and Darren Gergle. 2013. Online chronemics convey 
+social information. Computers in Human Behavior 29, 
+3, 1260–1269.  
+
+29.  Sara Kiesler and Lee Sproull. 1992. Group decision 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+handbook of research methods in psychology, Vol 2: 
+Research designs: Quantitative, qualitative, 
+neuropsychological, and biological, H. Cooper, P.M. 
+Camic, D.L. Long, A.T. Panter, D. Rindskopf and K.J. 
+Sher (eds.). American Psychological Association, 313–
+331. 
+
+36.  David R. Millen and John F. Patterson. 2002. 
+
+Stimulating Social Engagement in a Community 
+Network. Proceedings of CSCW '02, 306–313. 
+
+37.  Sean Rintel and Jeffery Pittam. 1997. Strangers in a 
+
+strange land: Interaction management on Internet 
+Relay Chat. Human Communication Research 23, 4, 
+507–534. 
+
+38.  Michael Schandorf. 2012. Mediated gesture: 
+Paralinguistic communication and phatic text. 
+Convergence: The International Journal of Research 
+into New Media Technologies, 19, 3, 319-344. 
+
+39.  Tyler Schnoebelen. 2012. Emotions Are Relational: 
+
+Positioning and the Use of Affective Linguistic 
+Resources. Dissertation at Stanford University. 
+
+40.  Lauren E. Scissors and Darren Gergle. 2013. “Back 
+and Forth, Back and Forth”: Channel Switching in 
+Romantic Couple Conflict. Proceedings of CSCW '13, 
+237–248. 
+
+41.  Lauren E. Scissors, Alastair J. Gill, and Darren Gergle. 
+2008. Linguistic mimicry and trust in text-based CMC. 
+Proceedings of CSCW '08, 277–280.  
+
+42.  Lauren E. Scissors, Alastair J. Gill, Kathleen Geraghty, 
+and Darren Gergle. 2009. In CMC We Trust: The Role 
+of Similarity. Proceedings of CHI '09, 527–536.  
+43.  Lauren E. Scissors, Michael E. Roloff, and Darren 
+Gergle. 2014. Room for Interpretation: The Role of 
+Self-esteem and CMC in Romantic Couple Conflict. 
+Proceedings of CHI '14, 3953–3962. 
+
+44.  Catalina L. Toma. 2014. Towards Conceptual 
+
+Convergence: An Examination of Interpersonal 
+Adaptation. Communication Quarterly 62, 2, 155–178. 
+
+45.  Sonja Utz. 2000. Social Information Processing in 
+MUDs: The Development of Friendships in Virtual 
+Worlds. Journal of Online Behavior 1. 
+
+46.  Joseph B. Walther, Tracy Loh, and Laura Granka. 
+2005. Let Me Count the Ways: The Interchange of 
+Verbal and Nonverbal Cues in Computer-Mediated 
+and Face-to-Face Affinity. Journal of Language and 
+Social Psychology 24, 1, 36–65. 
+
+47.  Joseph B. Walther. 1992. Interpersonal Effects in 
+
+Computer-Mediated Interaction A Relational 
+Perspective. Communication Research 19, 1, 52–90. 
+48.  Joseph B. Walther and Kyle P. D’Addario. 2001. The 
+
+Impacts of Emoticons on Message Interpretation in 
+Computer-Mediated Communication. Social Science 
+Computer Review 19, 3, 324–347. 
+
+49.  Joseph B. Walther and Malcolm R. Parks. 2002. Cues 
+
+Filtered Out, Cues Filtered In. In Handbook of 
+interpersonal communication, M.L. Knapp and J.A. 
+Daly (eds.). 529–563. 
+
+580
+
+making and communication technology. 
+Organizational Behavior and Human Decision 
+Processes 52, 1, 96–123. 
+
+30.  Robert E. Kraut and Robert E. Johnston. 1979. Social 
+
+and emotional messages of smiling: An ethological 
+approach. Journal of Personality and Social 
+Psychology 37, 9, 1539–1553.  
+
+31.  Marianne LaFrance. 1979. Nonverbal Synchrony and 
+Rapport: Analysis by the Cross-Lag Panel Technique. 
+Social Psychology Quarterly 42, 1, 66–70. 
+
+32.  Gilly Leshed and Jofish Kaye. 2006. Understanding 
+
+How Bloggers Feel: Recognizing Affect in Blog Posts. 
+Proceedings of CHI ’06, 1019-1024. 
+
+33.  Christian Licoppe and Zbigniew Smoreda. 2005. Are 
+
+social networks technologically embedded?: How 
+networks are changing today with changes in 
+communication technology. Social Networks 27, 4, 
+317–335. 
+
+34.  Pamela J. Ludford, Dan Cosley, Dan Frankowski, and 
+
+Loren Terveen. 2004. Think Different: Increasing 
+Online Community Participation Using Uniqueness 
+and Group Dissimilarity. Proceedings of CHI '04, 631–
+638. 
+
+35.  David P. MacKinnon, JeeWon Cheong, and Angela G. 
+
+Pirlott. 2012. Statistical mediation analysis. In APA 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+50.  Joseph  B.  Walther  and  Lisa  C.  Tidwell.  1995. 
+Nonverbal cues in computer‐mediated communication, 
+and 
+relational 
+communication. Journal of Organizational Computing 
+5, 4, 355–378.  
+
+chronemics  on 
+
+51.  Jeanne M. Wilson, Susan G. Straus, and Bill McEvily. 
+
+the 
+
+effect  of 
+
+2006. All in due time: The development of trust in 
+computer-mediated and face-to-face teams. 
+Organizational Behavior and Human Decision 
+Processes 99, 1, 16–33. 
+
+ 
+ 
+
+52.  Alecia Wolf. 2000. Emotional Expression Online: 
+
+Gender Differences in Emoticon Use. 
+CyberPsychology & Behavior 3, 5, 827–833. 
+
+ 
+ 
+ 
+ 
+ 
+
+581
+
+

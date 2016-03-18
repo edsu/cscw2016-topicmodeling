@@ -1,0 +1,1857 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Privacy Nudges for Mobile Applications: Effects on the 
+
+Creepiness Emotion and Privacy Attitudes 
+
+ 
+
+Bo Zhang 
+
+The Pennsylvania State University 
+
+University Park, PA, USA 
+
+buz114@psu.edu 
+
+ABSTRACT 
+To  assist  users’  privacy  decision-making  with  mobile 
+applications,  prior  research  has  investigated  ways  of 
+enhancing information transparency, via improving privacy 
+permission  interfaces.  This  study  takes  a  soft  paternalism 
+approach  by  proposing  two  interface  cues  as  “privacy 
+nudges”  in  a  mobile  permission  interface:  the  frequency 
+nudge  indicates  how  frequently  user  information  is  used, 
+and the social nudge presents the percentage of other users 
+approving certain data permission. We compared the effects 
+of  these  privacy  nudges  on  users’  creepiness  emotion  and 
+privacy  attitudes, 
+through  a  between-subject  online 
+experimental  study  (n=387).  Our  results  suggest  that 
+privacy  nudges  are  effective  in  altering  privacy  attitudes, 
+but the direction of effects depends on the nudge’s framing 
+valence.  In  addition,  the  creepiness  emotion  mediates  the 
+relationship between nudging and privacy attitudes. 
+Author Keywords 
+Privacy;  mobile  applications;  Android;  nudge;  creepiness; 
+privacy attitudes  
+ACM Classification Keywords 
+H.5.2.  User  Interfaces:  Evaluation/methodology;  K.4.1. 
+Public Policy Issues: Privacy. 
+INTRODUCTION 
+Unprecedented  growth  of  mobile  applications  (apps)  in 
+recent  years  and  their  wide-ranging  user  data  access  have 
+raised serious privacy concerns. One prevailing issue is that 
+mobile apps sometimes track data and access functionality 
+of  users’  phones  in  unsolicited  ways,  which  makes  users 
+feel  creepy  and  uncomfortable  [47].  Although  mobile 
+platforms  such  as  Android  and  iOS  provide  privacy 
+permission interfaces to show what data/functionality each 
+app  may  use,  sufficient  explanations  on  how  and  why 
+certain  data  is  used  are  absent.  Users  thus  lack  a  clear 
+understanding  of  mobile  apps’  privacy  practices,  which 
+
+Permission to  make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must  be  honored. 
+Abstracting with  credit  is  permitted. To copy  otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2820073 
+ 
+
+1676
+
+Heng Xu 
+
+The Pennsylvania State University 
+
+University Park, PA, USA 
+
+hxu@ist.psu.edu 
+
+in 
+
+influencing 
+
+makes their privacy decisions on data sharing very difficult, 
+and  may  even  trigger  regrets  over  disclosure  or  reactance 
+toward the app or service provider.  
+Past  privacy  research  and  regulatory  policies  both  suggest 
+enhancing  information  transparency  in  service  providers’ 
+data  practices  [23,  39],  so  as  to  raise  users’  privacy 
+awareness  and  reduce  their  cognitive  load  in  privacy 
+decision making. However, critiques have also pointed out 
+that inappropriate implementation of transparency can also 
+backfire  by  adding  more  burdens  to  users.  Taking  these 
+issues  in  a  mobile  phone  context,  several  studies  have 
+attempted  to  design  an  efficient  permission  interface  with 
+various  features  of  privacy  notices  to  increase  users’ 
+privacy sensitivity levels, inform users about apps’ privacy 
+practices,  and  provide  justifications  for  data  release  [24, 
+31].  
+to  privacy  enhancing 
+Among  psychological  reactions 
+features,  and  to  other  technologies,  users’  emotional 
+reactions  play  a  powerful  role 
+their 
+subsequent attitudes and behaviors [22, 33]. In the context 
+of privacy, creepiness stands out as an important emotional 
+response,  mixing  fear,  anxiety  and  strangeness,  which  has 
+been  found  to  be  particularly  associated  with  new  service 
+launch  [48].  Given  the  massive  concerns  about  privacy 
+permissions  in  mobile  apps,  we  find  it  timely  to  study 
+whether differing privacy setting interfaces can trigger the 
+emotion  of  creepiness,  and  ultimately  influence  users’ 
+judgments about the app.  
+The privacy literature suggests that individuals’ perceptions 
+and  behaviors  are 
+their  bounded 
+rationality  [41],  which  prevents  them  from  systematically 
+evaluating  costs  and  benefits  before  making  decisions  on 
+privacy  [2],  especially  in  a  fast-moving  and  restricted 
+mobile environment. Instead, users tend to rely on external 
+ratings,  number  of 
+assistance  and  hints 
+downloads) 
+information 
+disclosure and app installations [44]. Built on this stream of 
+literature, research on persuasive technology has proposed a 
+soft paternalism strategy in nudging users toward the right 
+decision  direction  with  minimum  cognitive  effort  and 
+biases 
+in  privacy 
+intervention  [1].  For  example,  Wang  et  al.  [53]  employed 
+this  approach  by  designing 
+interface  cues  on 
+Facebook  to  help  users  make  content  posting  decisions 
+without 
+theories  on  cognitive 
+
+[46],  which  has  great  potential 
+
+to  make  quick  decisions  on 
+
+largely 
+
+limited  by 
+
+regret. 
+
+Inspired  by 
+
+(e.g.,  star 
+
+three 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+psychology and persuasive technology, as well as previous 
+work on privacy nudge in web-based platforms, the current 
+study examines the effectiveness of two privacy nudges in a 
+mobile  privacy  permission  interface  on  users’  perceived 
+creepiness emotion and privacy attitudes. 
+Specifically,  we  proposed  two  interface  cues  as  privacy 
+nudges  (i.e.,  frequency  nudge  and  social  nudge)  and 
+compared their effects with a no-nudge, baseline condition. 
+Our  objective  is  to  mitigate  users’  cognitive  burden  in 
+privacy  decision  making  by  providing  them  subtle  but 
+sufficient  decision  justifications.  We  argue  that  privacy 
+nudge  is  a  powerful  approach  in  enhancing  information 
+transparency and rectifying users’ privacy attitudes; and the 
+creepiness emotion serves as the psychological mechanism 
+mediating such effects. By conducting an online controlled 
+experiment  with  387  participants,  we  found  empirical 
+evidence  supporting  the  effectiveness  of  privacy  nudges 
+and 
+the  mediating  role  of  creepiness  emotion.  Our 
+contributions  are  trifold:  1)  providing  insights  into  the 
+effects  of  enhancing  data  use  transparency  on  privacy 
+attitudes; 2) designing new privacy nudges in a mobile app 
+context to facilitate user decision making; 3) explaining the 
+role  of  the  creepiness  emotion  in  influencing  privacy 
+attitudes. 
+RELATED WORK 
+Mobile Privacy Permissions 
+From  the  perspectives  of  individual  users,  privacy  is 
+defined as a state of limited access to personal information 
+[42]. Privacy has become one of the most prevalent issues 
+in mobile platforms today due to the proliferation of mobile 
+apps. Mobile apps often attempt to access a wide variety of 
+user  data  stored  on  phones  for  not  only  properly 
+functioning,  but  also  personalized  advertising  to  gain 
+revenue. During the year of 2013 solely, approximately 43 
+billion  apps  were  downloaded  to  users’  mobile  devices 
+[32], which is unavoidably associated with a vast amount of 
+use and misuse of users’ personal data. According to Felt et 
+al. [19], 796 out of 856 free apps, and 83 out of 100 paid 
+apps  examined  had  at  least  one  potentially  malicious 
+permission  request  (e.g.,  sending  emails  on  users’  behalf, 
+accessing camera to take pictures).  
+However, mobile users often lack sufficient knowledge [17] 
+and awareness [3] to understand the privacy risks, and make 
+appropriate decisions accordingly. King [27] found through 
+an  interview  study  that,  mobile  users  did  not  fully 
+understand  an  app’s  capability  in  terms  of  accessing  user 
+data.  The  permission  interface  about  data  access  and  use 
+often  does  not  provide  users  with  enough  explanations  on 
+how the permissions work, nor does it afford users with any 
+actual  permission  control  before  app  installations.  For 
+example,  Android  presents  a  list  of  data  use  permission 
+groups  before  the  installation  phase,  but  users  don’t  have 
+much  flexibility  in  selectively  accepting  data  use  requests 
+before installing the app. On the other hand, iOS does offer 
+users  an  opportunity  to  turn  off  specific  data  access  after 
+
+app installation. But on the over-simplified privacy setting 
+page, there is no information on how the data will be used, 
+leaving users with confusions and privacy concerns. 
+In recent years, great endeavor has been taken at improving 
+privacy  permission  interfaces  to  make  them  scaffolds  of 
+users’  decision-making  process.    For  example,  Lin  et  al. 
+[31]  proposed  a  privacy  summary  screen  on  the  Android 
+platform 
+that  highlighted  unexpected  and  suspicious 
+privacy  practices  by  apps  and  presented  them  to  users  via 
+warning signs and striking colors. And they found the new 
+interface was perceived better than the original one in terms 
+of  information  comprehensiveness  [31].  Kelley  et  al.  [26] 
+introduced  a  privacy  permission  interface  with  a  list  of 
+privacy facts—types of data being collected by the app as 
+well  as  those  not  collected  (omitted  in  other  permission 
+interfaces).  Through  a  lab  experiment  and  a  follow-up 
+survey,  they  found  that  the  additional  factual  information 
+about apps’ data access served as clear explanations to keep 
+users  aware  of  potential  privacy  breaches.  Nauman  et  al. 
+[36]  proposed  a  policy  enforcement  framework,  Apex,  to 
+allow users make selective disclosures to Android apps and 
+set constrains on the apps’ resource use. 
+While  most  prior  work  on  mobile  privacy  permission 
+focused on presenting additional factual information about 
+data use to enhance transparency, the current research takes 
+the  approach  of  soft  paternalism  by  employing  privacy 
+nudges  on  a  mobile  permission  interface  to  facilitate  
+privacy decision-making. 
+Information Transparency and Privacy Nudges 
+Many privacy studies suggest that online users’ awareness 
+of  privacy  should  be  enhanced  by  providing  information 
+transparency  about  what  data  is  collected,  how  it  is  used, 
+and  whom  it  is  shared  with  [56].  In  the  literature, 
+researchers  have  examined  multiple  ways  of  enhancing 
+transparency,  such  as  providing  explicit  textual  privacy 
+statements  [39],  presenting  privacy  facts  in  the  form  of 
+nutrition  labels  [24],  using  warning  icons  to  suggest 
+suspicious data use [31], and using justification messages to 
+explain information disclosure [28]. Transparency is also at 
+heart  of  existing  and  proposed  regulatory  schemes.  For 
+instance, the U.S. Consumer Privacy Bill of Rights suggests 
+that  “companies  should  provide  clear  descriptions  of  [...] 
+why they need the data, how they will use it” [23].  
+While  empowering  users  with  privacy  comprehensiveness 
+is  a  desirable  approach  to  raise  awareness  and  improve 
+privacy management, information transparency itself cannot 
+guarantee user privacy. If implemented inappropriately, the 
+strategies  can  even  backfire.  For  instance,  practices  to 
+enhance  information  transparency  have  been  criticized  for 
+i) burdening users’ cognitive load via having users process 
+long  and  ambiguous  statements,  and  ii)  leading  to  a 
+“context collapse” where users lack contextual explanations 
+and  justifications  to  aid  their  real-time  privacy  decision 
+making  [51].  The  additional  mental  and  behavioral  efforts 
+to  make  decisions  and  execute  can  even  cause  reactance 
+
+1677
+
+[29]. Not surprisingly, privacy researchers started claiming 
+that  “transparency-and-choice  has  failed”  [37]  and  some 
+even called transparency a “sleight” of privacy [4]. 
+Therefore,  it  becomes  imperative  to  find  a  more  effective 
+way to present and implement transparency for facilitating 
+decision-making  process  on 
+information  sharing  and 
+disclosure. Currently the Android platform still provides a 
+privacy  permission  screen  before  the  installation  phase  of 
+an app, informing users which of their data may be used by 
+the app. But it does not provide any explanation on why and 
+how  such  data  is  used,  thereby  is  not  efficient  in  aiding 
+users’  decision  making  about  app  installation.  In  Android 
+4.3, a third-party app, App Ops, once provided users with a 
+comprehensive  list  of  privacy  permissions  and  enabled 
+users  to  manage  their  privacy  by  approving  or  denying 
+apps’ access to each type of data [7, 50]. However, Google 
+restricted  App  Ops  in  later  versions  of  Android.  In  the 
+current version of Google Play, users can only see a list of 
+permission groups that the app can access on the download 
+screen, but are left with no control options. Google recently 
+announced  more  user  control  options  for  Android  apps 
+allegedly  [6],  which  could  significantly  reduce  privacy 
+concerns. In Apple’s iOS system, there is no such privacy 
+notice  before  app  installation,  but  users  could  choose  to 
+manually  toggle  on  or  off  an  app’s  access  to  and  use  of 
+personal data after installation in a separate privacy-setting 
+screen.  However,  there  is  no  explanation  on  where  such 
+data will be used, nor is there any supporting information to 
+help users make easier choices. In addition, prior research 
+has repeatedly shown that the existing privacy permissions 
+are  difficult  to  interpret  for  users  [20,  25],  which  hinders 
+them  from  making  decisions 
+true 
+preferences. Therefore, providing users with appropriate yet 
+clear justifications on data use by apps is a permanent need. 
+In  this  research,  we  propose  two  new  mobile  privacy 
+permission interfaces to address the transparency issue and 
+help users make justified decisions. 
+Privacy Nudges 
+As  stated  above,  due  to  the  incomprehensiveness  and 
+complexity of app permissions, it becomes more and more 
+difficult  for  users  to  make  privacy  decisions  from  their 
+mobile  phones.  Although  the  privacy  calculus  perspective 
+argues  that  users  make  rational  privacy  decisions  by 
+weighing  the  benefits  and  costs  of  information  disclosure 
+[15],  human  beings’  bounded  rationality  seems  to  hinder 
+this  propensity  [41]  especially  in  a  mobile  context  where 
+every decision needs to be made in the heat of the moment. 
+Rather,  users  tend  to  be  “cognitive  misers”  by  relying  on 
+limited  available  resources  to  make  judgments  [20].  This 
+view is consistent with the heuristic-systematic model [12] 
+and  the  elaboration  likelihood  model  [38]  in  psychology, 
+such  that  people  process  information  superficially  when 
+they  do  not  have  enough  resources  or  motivation.  The 
+rationale for their decisions could be either past experience, 
+or stereotypical judgmental rules.  
+
+that  reflect 
+
+their 
+
+1678
+
+SESSION: MOBILE DESIGN AND USAGE
+
+following  Thaler  and  Sunstein’s 
+
+Considering the limitation of people’s bounded rationality, 
+privacy  enhancing  solutions  should  strive  to  relieve  some 
+cognitive  burden  from  users,  such  as  making  privacy 
+features  easier  to  comprehend  and  execute,  and  providing 
+scaffolding  mechanisms  to  facilitate  decision  making. 
+Towards  this  end,  Fogg’s  [52]  work  on  “persuasive 
+technology” and Thaler and Sunstein’s [46] work on “soft 
+paternalism”  are  the  most  helpful  theoretical  frameworks. 
+Specifically, 
+[46] 
+suggestions,  the  first  step  in  supporting  users’  privacy 
+decisions would be to nudge these decisions into the “right 
+direction” [1]. A nudge is a soft, paternalistic intervention, 
+usually manifested as a subtle yet persuasive cue that makes 
+people  more  likely  to  decide  in  one  direction  or  the  other 
+[46].  An  effective  nudge  in  the  right  direction  makes  it 
+easier for users to make decisions, and thus relieve some of 
+the  decision  burden  from  users.  For  example,  Wang  et  al. 
+[53] studied the effects of three types of privacy nudges—
+picture,  timer,  and  sentiment—on  Facebook  via  a  field 
+study,  and  found  that  they  were  effective  in  mitigating 
+cognitive  biases  about  privacy  and  preventing  unintended 
+disclosure.  Other  nudging  examples  include  hints  on 
+encouraging  users  to  create  stronger  passwords  in  online 
+sign-up  interfaces  [21]  and  security  dialogs  for  warning 
+users about potential malicious email attachments [11].  
+We argue that privacy nudges would be even more effective 
+in a mobile environment, because most decisions made on a 
+mobile  phone  are  in  a  timely  manner  due  to  the  portable 
+characteristic  of  the  device.  Therefore,  inspired  by  prior 
+research  on  privacy  nudges  in  web-based  platforms,  we 
+proposed  two  types  of  privacy  nudges  (frequency  and 
+social)  on  a  mobile  permission  interface  and  compared 
+them with the typical permission interface without a nudge. 
+Detailed  design  rationale  and  descriptions  are  in  the 
+methodology section. 
+The Creepiness Emotion 
+Although the importance of emotions has been recognized 
+in  technology  acceptance  research,  the  role  it  plays  in 
+privacy  attitudes  has  been  under  studied.  Emotion  as  a 
+mental status can greatly influence people’s attitudes, guide 
+decision  making,  and  activate  subsequent  behaviors  [22]. 
+Rafaeli and Vilnai-Yavetz found that technological artifacts 
+and  features  can  cause  emotional  reactions  when  they 
+interrupt people’s normal routine in work or life [40]. Based 
+on the stimulus-organism-response (S-O-R) model, Li et al. 
+studied  online 
+information  disclosure  as  a  result  of 
+emotional reactions to interacting with e-commerce vendors 
+[30]. They identified two distinct emotions -- joy and fear, 
+formed  from  website  interactions,  which  significantly 
+influenced online consumers’ privacy protection beliefs and 
+perceived privacy risks. 
+Instead  of  causing  actual  harms, 
+in  many  privacy-
+concerning cases, what novel technological features do is to 
+trigger a sense of expectation violation, or loss of control. 
+In privacy research, creepiness is one particular emotional 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+there 
+
+lacks 
+
+[8].  Although 
+
+reaction to novel technological features, which is a mixture 
+of  fear,  anxiety,  and  strangeness.  For  example,  Ur  et  al. 
+discovered through an interview study that people generally 
+found online behavioral targeting to be smart yet creepy at 
+the same time [49]. Barnard further showed that this sense 
+of  creepiness  can  discourage  online  consumers’  purchase 
+intention 
+a  universal 
+conceptualization  of  creepiness  and  its  causes,  prior  work 
+has  suggested  that  it  is  a  feeling  mixing  fear,  uneasiness, 
+and  disturbance,  that  is  closely  associated  with  privacy 
+harms  coming  from  new  technological  practices  [45,  46]. 
+Since the current study introduces new privacy nudges in a 
+mobile context, which is intended to alter users’ emotional 
+reactions so as to help them with privacy decision making, 
+we  anticipate  that  some  nudging  mechanism  on  a  privacy 
+permission  interface  may  trigger  users’  alertness  and 
+perceived  creepiness  of  the  mobile  app  presented.  Among 
+psychological reactions to technological features, emotions 
+play a powerful role in influencing subsequent attitudes and 
+behaviors  [22,  33],  serving  as  a  central  mechanism  in 
+explaining  the  relationship  between  technology  and  user 
+attitudes. Further, the affect-as-information model [14] has 
+been  introduced  to  explain  how  emotional  feelings  may 
+serve as affective feedback that guides people’s judgement, 
+information processing and decisions. Applying this stream 
+of  literature  to  the  privacy  context,  we  argue  that  when 
+mobile users interact with a nudge in a privacy-permission 
+setting interface, the nudge will generate affective reaction 
+such  as  the  creepiness  emotion  that  will  trigger  users’ 
+privacy attitudes. Therefore, we propose the mediating role 
+creepiness plays between the effects of privacy nudges and 
+users’ subsequent privacy attitudes. A simplified theoretical 
+model is demonstrated in Figure 1.  
+
+ 
+
+Figure 1. The Mediating Role of the Creepiness Emotion 
+
+METHODOLOGY 
+Experimental Design 
+To  propose  an  effective  privacy  permission  interface  to 
+facilitate  users’  privacy  decision-making,  we  conducted  a 
+between-subjects  online  experiment  with  participants 
+recruited  from  Amazon  Mechanical  Turk  (MTurk),  a 
+popular  online  crowdsourcing  service.  Privacy  nudge  was 
+manipulated as the independent variable, with 3 conditions: 
+none, frequency, and social. 
+Privacy Nudge Manipulations 
+Synthesizing  the  advantages  and  disadvantages  of  the 
+current privacy permission interfaces employed by Android 
+and  iOS,  our  design  is  not  limited  to  any  particular 
+smartphone system, but is inspired by prior work, especially 
+App Ops. 
+
+1679
+
+the 
+
+top  of 
+
+interfaces.  As 
+
+Design Rationale 
+To  assure  a  realistic  setting  in  interacting  with  our 
+permission interface, we created our experimental scenarios 
+with  a  fictitious  app,  Kuaile,  for  which  the  privacy 
+permissions apply to. In our study, we introduced Kuaile as 
+a social networking app with functions similar to Facebook. 
+In this study, we used a fictitious app rather than a real one 
+to control the potential effect of brand reputation that may 
+influence users’ trust beliefs, and their privacy attitudes and 
+decisions.  Also,  we  frame  the  app  as  a  social  networking 
+service  to  justify  that  our  data  requests  in  experimental 
+scenarios are both common and reasonable in this context.  
+Recently there has been a trend in online services that alters 
+the  wording  of  privacy-related  justifications  with  more 
+generic  terms.  [11].  For  example,  Facebook  has  modified 
+the  label  of  “privacy  settings”  on  its  home  page  to 
+“settings”. We follow this trend by displaying the label of 
+the app privacy permission-setting simply as “App settings” 
+on 
+for  specific  privacy 
+permissions,  6  types  of  data  (i.e.,  location,  read  contacts, 
+read  call  log,  vibrate,  post  notification,  and  camera)  are 
+presented on the proposed interfaces. These data types are 
+commonly requested by mobile apps in reality. 
+The Nudges 
+Currently  existing  privacy  permission  interfaces  do  not 
+provide any form of privacy justifications to “nudge” users 
+to make decisions. We hereby present two types of privacy 
+nudges—frequency and social—on mobile platforms. They 
+are  presented  as  visual  cues  on  our  mockup  interfaces  for 
+each type of data requested by our fictitious app Kuaile.  
+Baseline condition.  To examine the net influence of each 
+proposed  privacy  nudge,  we  included  a  baseline  (i.e.,  no-
+nudge)  condition  (Figure  2)  as  a  control  condition  to 
+compare  with  the  two  nudges.  In  this  condition,  all  the 
+functionality/information requested by the app is presented 
+on the permission interface without additional information. 
+Frequency nudge indicates how often  each type of data is 
+used by the app (Figure 3). This is the most intuitive cue, 
+objectively indicating the extent to which the app uses each 
+type of data. It attempts to directly inform users about apps’ 
+privacy  practices  and  lead  them  to  make  appropriate 
+decisions.  Since  the  framing  of  this  nudge  focuses  on  the 
+app’s direct usage of user data, it might also remind users of 
+potential  data  misuse, 
+thus  engendering  a  sense  of 
+creepiness. 
+Social nudge suggests the percentage of other users  of this 
+app that approve the use of each type of data permissions 
+(Figure 4). This design is built on previous work on social 
+influence [13], such that the majority’s decision is likely to 
+alter one’s perception and behavior in the same way. This is 
+intended to serve as a social norm indicator, which may 
+ease users’ concerns about privacy, because others do the 
+same too. 
+ 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+Figure 2. No nudge 
+
+ 
+
+ 
+
+Figure 3. Frequency nudge  
+
+Sample 
+Three  hundred  and  ninety-six  participants  were  recruited 
+from MTurk. Since our proposed interfaces were designed 
+for  smart  phones,  non-smart-phone  users  were  filtered  out 
+by a screening question. We also limited our sample pool to 
+include  those  with  a  North  American  IP  address  and  a 
+previous  Human  Intelligence  Task  (HIT)  approval  rate  of 
+90% or higher on MTurk. In addition, to ensure the quality 
+of data, participants who did not complete the entire study 
+or  spent  too  little  time  on  the  questionnaire  were  also 
+excluded. Applying these criteria, we ended up having 387 
+qualified  and  valid  participants  (baseline:  128,  frequency: 
+129, social: 130). The average age of the sample was 31.78 
+(SD = 9.85, range = 18-70), 42.1% of them were female, 
+
+1680
+
+Figure 4. Social nudge 
+
+  
+
+72.3% reported being Caucasian or white. The participants’ 
+education backgrounds ranged from less than high school to 
+a  Ph.D.  degree.  The  study  protocol  was  approved  by  our 
+institution’s IRB. 
+Study Procedure 
+Participants on MTurk were first instructed to participate in 
+an online study for the purpose of evaluating a new mobile 
+app  permission  service.  Detailed  instructions  on  the  study 
+purpose, procedure steps, approximate completion time (20-
+30  minutes),  and  monetary  compensation  ($0.8  for 
+completing the study) were given before they accepted the 
+assignment. They were also instructed about the  option of 
+quitting  the  study  anytime  during  the  process.  Upon 
+accepting  our  assignment  on  MTurk,  participants  were 
+directed  to  our  main  questionnaire  hosted  on  Qualtrics 
+(www.qualtrics.com). 
+Participants  first  answered  a  screening  question  about 
+whether  or  not  they  used  a  smart  phone.  Fulfilling  the 
+smartphone-user  requirement, 
+they  were  asked  about 
+several  questions  on  individual  characteristics,  including 
+disposition  to  value  privacy,  general  trust  toward  other 
+people,  previous  privacy  violation  experience,  personal 
+innovativeness 
+technologies,  and  demographic 
+information  (i.e.,  age,  gender,  ethnicity,  education  level, 
+mobile phone use). 
+After  answering  the  pre-test  questions,  participants  were 
+randomly assigned to one of our three mockup interfaces. A 
+detailed description of the fictitious app, Kuaile, as well as 
+the mockup privacy permission interface was introduced.  
+Stimulus  interface  exposure  was  followed  by  the  post-test 
+questionnaire,  which  measured  the  dependent  variables  in 
+the study, including perceived creepiness, perceived ease of 
+use,  perceived  usefulness,  perceived  control,  perceived 
+
+toward 
+
+Definition 
+
+Construct 
+Privacy 
+
+Nudge 
+
+Creepiness 
+
+Perceived 
+Control 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+in 
+
+this 
+
+studied 
+
+relevance of information requested, future use intention of 
+the  permission  interface,  and  comfort  level  in  sharing 
+personal  information  with  the  app.  After  completing  the 
+questionnaire, each participant was assigned with a unique 
+confirmation  code  for  monetary  reward  redemption  on 
+MTurk. They were then thanked and debriefed. The average 
+time  each  participant  spent  on  the  entire  study  procedure 
+was around 15 minutes. 
+Measurements 
+Table  1  lists  the  definitions  of  all  the  independent  and 
+dependent  variables  we 
+research. 
+Measurements  of  each  variable  were  adapted  from 
+previously  validated  scales  to  the  extent  possible,  with 
+minor adjustments of the wordings to fit the current study 
+context. All the measures were built on 7-point Likert-type 
+scales, unless otherwise specified, with “1” representing the 
+lowest level, and “7” being the highest, which can be found 
+in the appendix. 
+Independent Variables 
+The independent variables in this study (two different types 
+of privacy nudges) were experimentally manipulated rather 
+than  evaluated  as  self-report  measures.  A  complete  list  of 
+the  measures  of  the  dependent  variables  discussed  below 
+can be found in the appendix. 
+Dependent Variables 
+Permission  Interface  Evaluation.  In  evaluating 
+the 
+emotional  reactions  to  the  privacy  nudges,  perceived 
+creepiness  of  the  app  permissions  was  measured  with  7 
+adjectives adopted from prior literature [8, 9, 49] (α = .94); 
+four items that captured perceived ease of use (α = .89) and 
+five  measuring  usefulness  (α  =  .92)  of  the  permission 
+interface  were  derived  from  [16];  and  intention  to  use  the 
+app permission-setting interface in the future was measured 
+by 4 items from [57] (α = .87). 
+App-related  Perception.  Several  variables  measured 
+perceptions  related  to  the  stimulus  app,  Kuaile.  Perceived 
+control  of  information  disclosure  was  gauged  by  4  items 
+from  [54]  (α  =  .93);  perceived  relevance  of  information 
+requested  by  the  app  was  assessed  by  3  statements  from 
+[43]  (α  =  .86);  and  privacy  concern  was  measured  by  4 
+items from [18] (α = .92). 
+Comfort  Level  in  Information/Functionality  Sharing. 
+The  proposed  privacy  permission  interfaces  present  6 
+different types of user information and phone functionality 
+that are commonly requested by mobile apps in reality. As 
+an  outcome  evaluation  of  the  effectiveness  of  the  privacy 
+nudges, participants’ comfort levels in allowing the mobile 
+app, Kuaile, to access and use each of them was measured. 
+The  mean  of  the  comfort  levels  of  these  6  types  of 
+information/functionality was also calculated as an overall 
+measure  of  comfort  level  in  information/functionality 
+sharing with the app (α = .76). 
+ 
+
+1681
+
+A  state  of  limited  access  to  personal  information 
+[42]. 
+A  soft,  paternalistic  intervention,  usually  manifest 
+as  a  subtle  yet  persuasive  cue  that  makes  people 
+more likely to decide in one direction or the other 
+[46]. 
+An emotion associated with privacy perceptions of 
+novel  technological  developments,  mixing  fear, 
+anxiety, and strangeness [45, 48]. 
+An  individual’s  belief  about  the  presence  of  
+factors    that    may    increase    or  decrease    the  
+amount    of    control    over    the    release    and 
+dissemination of personal information [56].  
+Concerns  about  possible  loss  of  privacy  as  a  
+result  of information disclosure [56]. 
+Comfort 
+information 
+functionality sharing with the mobile app.  
+
+sharing  or 
+
+in 
+
+level 
+
+Privacy 
+Concern 
+Disclosure 
+Comfort 
+Table 1. Definitions of independent and dependent variables 
+Control Variables 
+Prior literature has identified two categories of factors that 
+have  direct  effects  on  individuals’  privacy  concerns  [56], 
+including  (i)  individuals’  personal  characteristics,  and  (ii) 
+situational  cues  that  enable  individuals  to  assess  the 
+consequences  of  information  disclosure.  In  this  research, 
+we examine privacy nudges as informational cues that may 
+trigger an individual’s privacy attitude through the effect of 
+creepiness  emotion.  To  control  for  the  potential  effects  of 
+individuals’  personal  characteristics,  we  have  included  the 
+following variables as control variables:   
+First, to account for the influences of personality traits, we 
+measured an individual’s disposition to value privacy with 
+4  items  from  [55]  (α  =  .82),  general  trust  toward  other 
+people with four questions from [34] (α = .76), and personal 
+innovativeness  with  4  items  adopted  from  [5]  (α  =  .70). 
+Second,  previous  privacy  violation  experience  has  been 
+found  to  affect  privacy  attitudes.  Thus  we  include  it  as  a 
+covariate  measured  by  3  questions  from  [42]  (α  =  .86). 
+Third,  we 
+included  demographic  characteristics:  age, 
+gender,  race,  education  level,  as  well  as  the  amount  of 
+smart phone use on average (asked by the number of hours 
+spent on using smart phone each week on average). 
+RESULTS 
+Effects  of 
+Privacy Nudges 
+We  compared  the  two  types  of  privacy  nudges  (i.e., 
+frequency,  social)  and  the  no-nudge,  baseline  condition  in 
+terms of their effects on outcome variables. Results from a 
+multivariate general linear model showed that, overall, the 
+presence  of  privacy  nudge  had  significant  main  effects  on 
+users’ perceptions, Wilk’s λ = .88, F (20, 732) = 3.21, p < 
+.001, η2 = .08, accounting for the influences of disposition 
+to  value  privacy,  general  trust  toward  others,  previous 
+
+Information  Transparency:  Comparing 
+
+(ANCOVA) 
+
+revealed 
+
+attitudes 
+
+affected  participants’ 
+
+violation  experience,  personal  innovativeness,  mobile  use, 
+and  demographic 
+information.  Following  univariate 
+that  privacy  nudge 
+analyses 
+significantly 
+toward 
+perceived ease of use (F (2, 375) = 2.45, p < .05, η2 = .02) 
+and usefulness (F (2, 375) = 5.08, p < .01, η2 = .04) of the 
+privacy  permission  setting,  their  perceived  control  (F  (2, 
+375) = 3.53, p < .05, η2 = .02) and relevance (F (2, 375) = 
+5.15, p < .01, η2 = .03) of data used by the app, as well as 
+their intention to use the permission-setting function in the 
+future (F (2, 375) = 3.02, p < .05, η2 = .02). Detailed mean 
+comparisons  are  presented  in  Table  2.  The  overall  pattern 
+can be easily detected from Figure 5, such that participants 
+had more positive perceptions toward the interface without 
+a  privacy  nudge  and  the  interface  with  the  social  nudge. 
+These two conditions were not significantly different across 
+all  the  dependent  variables  (Table  2).  In  contrary,  the  app 
+permission interface with the frequency nudge was rated as 
+the  lowest  regarding  user  evaluations,  which  was  almost 
+always  perceived  as  significantly  worse  than  the  social 
+nudge and no nudge. 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+We  also  examined 
+the  effect  of  privacy  nudge  on 
+participants’  emotional  reaction  toward  the  app’s  data  use 
+practices.  Although  privacy  nudges  may  provide  a 
+comprehensive  justification  for  users  who  cannot  make 
+their  decisions  on  data  sharing,  they  can  also  serve  as  a 
+reminder of potential data misuse risks (e.g., how frequent 
+the app uses my data, when the last time was the app used 
+my data) to users, thereby eliciting negative emotions such 
+as annoyance and creepiness. We focused on creepiness in 
+the  current  study  as  recent  research  has  shown  the 
+importance  of  understanding  this  emotion  in  a  privacy 
+context,  especially  in  app  space  [40,  46].  Through  an 
+ANCOVA, a significant main effect of privacy nudge was 
+discovered on perceived creepiness (F (2, 375) = 16.11, p < 
+.001, η2 = .11). Consistent with earlier results, we found that 
+the  frequency  nudge  raised  the  highest level  of  creepiness 
+emotion among the three conditions (M = 3.45, SE = .13), 
+which is significantly higher than the social nudge (ΔM = 
+1.11, p < .001), and the no-nudge condition (ΔM = 1.07, p < 
+.001).  There  is  no  significant  difference  on  perceived 
+creepiness between the social nudge and no-nudge. Figure 7 
+demonstrates the comparison. 
+
+3	  3.5	  4	  4.5	  5	  5.5	  6	  
+
+Ease	  of	  Use	  
+
+Usefulness	  
+None	  
+
+Perceived	  
+Control	  
+Frequency	  
+
+Perceived	  
+Relevance	  
+Social	  
+
+Future	  Use	  
+Intention	  
+
+Figure 5. Main effects of privacy nudge.  
+
+ 
+
+ 
+
+Ease of Use 
+Usefulness  
+Control 
+Relevance 
+Future Use 
+Creepiness 
+Comfort 
+Camera 
+
+None 
+5.51a (.11) 
+5.71a (.12) 
+3.84a (.14) 
+4.17a (.13) 
+5.58a (.11) 
+2.38a (.13) 
+3.57ab (.10) 
+2.62ab (.16) 
+
+Frequency 
+5.17b (.11) 
+5.20b (.12) 
+3.33b (.14) 
+3.68b (.13) 
+5.17b (.11) 
+3.45b (.13) 
+3.31a (.10) 
+2.32a (.16) 
+
+Social 
+5.52a (.11) 
+5.61a (.13) 
+3.93a (.14) 
+4.29a (.13) 
+5.40ab (.11) 
+2.34a (.13) 
+3.73b (.10) 
+3.00b (.16) 
+
+F 
+2.45* 
+5.08** 
+3.53* 
+5.15** 
+3.02* 
+
+16.11*** 
+
+3.26* 
+3.31* 
+
+Note:  Superscripts  not  sharing 
+letter  denote  significant 
+differences  between  groups;  *  p  <  .05,  **  p  <  .01,  ***  p  <  .001;  all 
+measures given as Mean (SE). 
+
+the  same 
+
+Table 2. Statistics of the main effects of privacy nudge 
+
+1682
+
+2	  2.2	  2.4	  2.6	  2.8	  3	  3.2	  3.4	  
+
+2.2	  2.4	  2.6	  2.8	  3	  3.2	  3.4	  3.6	  3.8	  
+
+None	  
+Frequency	  
+Social	  
+
+Creepiness	  
+
+ 
+
+Figure 6. Effect of privacy nudge on perceived creepiness. 
+
+In regards of data sharing behavior, we tested participants’ 
+comfort  levels  in  disclosing  6  types  of  common  personal 
+data/phone functionality that the app requested. Significant 
+findings were only found for the average comfort level of 
+sharing all the data types (F (2, 375) = 3.26, p < .05, η2 = 
+.04) and that of approving the app’s use of camera  
+
+None	  
+Frequency	  
+Social	  
+
+General	  
+
+Camera	  
+
+ 
+Figure 7. Effect of privacy nudge on comfort in data sharing. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+* p < .05, ** p < .01, *** p < .001 
+
+Figure 8. SEM demonstrating the conceptual model with creepiness as a mediator 
+
+ 
+
+felt 
+
+frequency  nudge  and 
+participants 
+
+ 
+ (F (2, 375) = 3.31, p < .05, η2 = .05) (Figure 7). Post-hoc 
+analyses  revealed  the  significant  differences  only  existed 
+between 
+the 
+social  nudge. 
+Specifically, 
+significantly  more 
+comfortable to let the app use their data when they saw the 
+social nudge than the frequency nudge (ΔM = .42, p < .05). 
+This  significance  is  especially  evident  when  the  app 
+requested to access the camera function on mobile phones 
+(ΔM = .68, p < .05). 
+These  findings  seem  to  suggest  powerful  influence  of 
+framing  strategy,  such  that  if  the  nudge  is  framed  as  how 
+frequent the app accesses data, users would not interpret it 
+as a helpful feature, but rather a creepy warning, whereas if 
+the  nudge  is  framed  as  a  social  norm  or  collective 
+expectation  of  information  sharing,  it  would  be  easier  for 
+users to approve apps’ data use practices. 
+Creepiness as a Mediator 
+Rooted in prior research on emotions as a natural response 
+to external stimulus and a key factor in influencing users’ 
+thinking  and  decision  making,  we  hereby  explore  a 
+particular  emotion,  creepiness  and 
+the 
+psychological mechanism of the nudges’ effects on privacy-
+related attitudes. Guided by the S-O-R model, we mapped 
+out  the  relationships  among  our  tested  variables  using 
+structural  equation  modeling  (SEM),  with  our  proposed 
+nudges as the independent variable, perceived creepiness as 
+the  mediator  (Figure  8).  Since  perceived  control  is  often 
+linked with privacy attitudes such that a lack of control can 
+result in serious privacy concerns [54], we expected it to be 
+first  impacted  by  the  sense  of  creepiness  and  then  alter 
+privacy  perceptions.  Therefore,  perceived  control  was 
+considered  as  the  second  mediator  in  the  SEM.  Privacy 
+concern about the app and willingness to disclose personal 
+information  after  being  exposed  to  the  privacy  permission 
+interface  were  the  dependent  variables  of  this  model.  All 
+the  control  variables  were  also  included  in  this  model  as 
+covariates,  to  rule  out  any  possible  confounding  effects. 
+After all, the structure had nine latent variables with forty 
+individual  items.  Statistics  showed  that  the  model  has  a 
+good  fit:  χ2  =  2218.832,  df  =  848,  p  <  .001,  root  mean 
+
+role  as 
+
+its 
+
+1683
+
+square  error  of  approximation  (RMSEA)  =  .056,  90% 
+confidence intervals (CI): .053-.059, comparative fit index 
+(CFI) = .897. Figure 8 presents the model with standardized 
+path coefficients. 
+The  overall  good-fitting  model  suggested 
+that  our 
+theoretical model (Figure 1) indeed worked as expected: the 
+nudges  in  the  privacy  permission  interface  influenced 
+people’s attitudes about app privacy through the creepiness 
+emotion.  But  To  further  test  the  mediating  role  of  the 
+creepiness  emotion 
+this  model,  we  employed 
+bootstrapping procedures using 2000 bootstrap samples and 
+a bias-corrected confidence interval. This analysis revealed 
+significant  indirect  effects  for  creepiness  between  the 
+presence of social nudge and perceived control (β = .05, p < 
+.001), privacy concern (β = -.04, p < .001), and comfort in 
+disclosing personal information (β = .03, p < .001); as well 
+as between the frequency nudge and perceived control (β = 
+-.09,  p  <  .001),  privacy  concern  (β  =  .07,  p  <  .001),  and 
+disclosure  comfort    (β  =  -.05,  p  <  .001).  Therefore,  as 
+anticipated,  the  creepiness  emotion  indeed  explained  how 
+the  social  nudge  and  frequency  nudge  influenced  mobile 
+users’  privacy  attitudes.  In  other  words,  the  social  nudge 
+effectively  reduced  users’  privacy  concern  and  elevated 
+their comfort in self-disclosing through a decreased sense of 
+creepiness;  whereas  the  frequency  nudge  made  users  feel 
+creepy, thereby led to their negative perceptions.  
+Moderating  Role  of  Previous  Privacy  Violation 
+Experience 
+In addition to the main effects of privacy nudges, we also 
+detected 
+of 
+participants’  previous  privacy  violation  experience.  It  is 
+worth noting that previous privacy violation experience was 
+measured as a continuous variable on a 7-point Likert scale, 
+and all the statistics reported here were based on tests with 
+the continuous variable. But for the ease of illustration, we 
+performed a median split on previous violation experience 
+and made it a two-level ordinal variable in the figures, with 
+the two levels being lower level of previous violation (blue 
+lines  in  Figure  9  &  10)  and  higher  level  of  previous 
+violation 
+below).
+
+interesting  moderation 
+
+figures 
+
+effects 
+
+some 
+
+(red 
+
+in 
+
+lines 
+
+in 
+
+the 
+
+3	  3.2	  3.4	  3.6	  3.8	  4	  
+
+Less	  Intrusion	  
+
+More	  Intrusion	  
+
+None	  
+
+Frequency	  
+
+Social	  
+
+ 
+
+SESSION: MOBILE DESIGN AND USAGE
+
+Less	  Intrusion	  
+
+More	  Intrusion	  
+
+None	  
+
+Frequency	  
+
+Social	  
+
+ 
+
+5	  5.2	  5.4	  5.6	  5.8	  6	  
+
+Figure 9. Interaction effects between privacy nudge and 
+previous privacy violation experience on comfort level in 
+
+sharing location information 
+
+Figure 10. Interaction effects between privacy nudge and 
+previous privacy violation experience on comfort level in 
+
+approving use of vibrate function 
+
+Figure  9  shows  a  significant  interaction  between  privacy 
+nudge  and  previous  privacy  violation  experience  on 
+participants’  comfort  level  of  letting  the  app  access  their 
+precise  location  data,  F  (45,  445)  =  1.48,  p  <  .05.  More 
+specifically, for users with relatively less negative privacy 
+experience,  there  was  not  much  difference  between  the 
+frequency  nudge  and  no  nudge  when  they  consider 
+disclosing  location  data  to  a  mobile  app,  but  the  social 
+nudge served as an effective assurance for location release. 
+For  those  with  more  violation  experience  before,  the 
+frequency nudge led to least comfort because it served as a 
+potential reminder of their negative past; even the presence 
+of  the  social  nudge  did  not  ease  this  tension  much,  which 
+were  both  severely  below  the  levels  for  those  with  less 
+violation experience. It seems that negative prior experience 
+might  make  these  people  more  cautious  about  how  apps 
+make  use  of  their  data  and  suspicious  about  what  others 
+consider to be good, thus resulting in a more conservative 
+attitude toward location sharing. 
+Another  significant  interaction  was  found  on  the  comfort 
+level of approving the app’s access to the vibrate function 
+of  the  phone,  F  (45,  445)  =  1.44,  p  <  .05.  As  shown  in 
+Figure 10, participants with less previous privacy violation 
+experience  were  consistently  more  comfortable  in  this 
+regard  than  those  with  more  violation  experience.  The 
+presence of the social nudge further elevated such comfort. 
+In contrast, the presence of any type of privacy nudge only 
+resulted in decreasing the comfort level.  
+These  interaction  effects  show  how  individuals’  prior 
+privacy  experiences  may  interfere  the  effectiveness  of 
+privacy  nudges.  For  example,  although  the  social  nudge 
+was found to be universally desired in main effects, it may 
+not  work  as  expected  for  those  who  had  relatively  more 
+negative privacy experience. 
+DISCUSSION 
+The  findings  of  the  current  study  suggest  that  embedding 
+privacy  nudges  in  a  pre-installation  permission  interface 
+can  greatly  influence  mobile  phone  users’  privacy-related 
+attitudes and their comfort level in letting apps access their 
+
+personal  data  and  phone  functionality.  More  specifically, 
+privacy  nudges  conveying  information  transparency  can 
+enhance users’ understanding of apps’ privacy practices and 
+help them make informed decisions on data releasing more 
+easily.  Detailed  result  interpretation  and  discussion  are 
+presented next. 
+Effectiveness of Transparency 
+Current mobile platforms either do not provide any data use 
+permission  choice  to  users  (e.g.,  Android)  or  only  offer 
+over-simplified  permission  configuration  after  the  app 
+installation  is  done  (e.g.,  iOS).  And  such  permission 
+presentation  and  management  usually  does  not  contain 
+much explanation on why and how user data is requested by 
+each app. Prior research has repeatedly shown that users do 
+not  understand  the  privacy  practices  performed  by  mobile 
+apps  due  to  a  lack  of  information  transparency  [20,  25], 
+thus  bear  privacy  concerns  [10].  Google  recently  has 
+allegedly provided some improvements on privacy control 
+to allow users to be in charge of their personal information 
+disclosure to mobile apps on Android [6]. This move could 
+make  great  impact  on  users’  privacy  experience  with 
+mobile  apps,  but  neither  the  interface  design  nor  the 
+consequential effect is clear at this moment. Therefore, the 
+mobile privacy permission interfaces we studied are timely. 
+Our findings include many significant effects of improving 
+information  transparency  (i.e.,  adding  privacy  nudges)  on 
+privacy attitudes, but they largely rely on how transparency 
+is conveyed. Each type of privacy nudge reflects a framing 
+valence  (e.g.,  positive,  negative,  neutral)  that  is  closely 
+related 
+to  users’  emotional  reaction  (i.e..,  perceived 
+creepiness) and their comfort level in sharing personal data 
+(e.g., approving the app’s use of the camera function on the 
+phone). In addition to the various outcomes of the privacy 
+nudges,  one’s  previous  privacy  violation  experience  also 
+served  as  an  important  factor  in  altering  users’  attitudes 
+toward  the  app’s  practice  in  using  location  data  and  the 
+vibrate function. 
+The  objective  of  our  proposed  interfaces  was  to  increase 
+privacy  awareness  by  providing  them  with  appropriate 
+
+1684
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+to 
+
+justification  for  apps’  access  to  user  data  and  facilitating 
+decision-making  on  privacy  management.  Our  findings 
+showed that information transparency is indeed a powerful 
+way 
+induce  privacy  awareness  and  alter  users’ 
+perceptions about apps’ privacy practices. 
+Privacy  Nudges:  Easing  Concern  or  Triggering 
+Creepiness? 
+Consistent  with 
+the  definition  of  nudge  as  a  soft 
+paternalistic  strategy  [46],  our  design  did  not  impose  any 
+strong  requirements 
+to  users,  but  simply  presenting 
+objective indicators of how users’ data is used by the app, 
+and  what  others  typically  react  to  these  requests,  as  an 
+implicit interventions.  
+The frequency nudge was designed to provide users with a 
+relatively objective view of the extent to which their data is 
+used  by  an  app,  thus  making  the  decision-making  process 
+more  efficient.  However,  our  findings  suggested  that  the 
+presence of the frequency nudge backfired in almost every 
+aspect. Not only was perceived creepiness rated the highest 
+among  the  three  conditions,  the  frequency  cue  also  led 
+participants to perceive the app as more difficult to use, less 
+useful,  and  feel  more  uncomfortable  to  share  information 
+with the app. It turned out to be difficult for users to accept 
+the “real truth” of mobile apps’ data usage.  
+To  reduce  difficulty  in  making  decisions  on  data  sharing, 
+the  social  nudge  was  designed  to  offer  users  a  social 
+indicator  about 
+in  privacy 
+permission setting. Persuasion literature has already shown 
+the  power  of  social 
+individual 
+perceptions  and  behaviors  [13].  And  our  findings  further 
+proved  its  effectiveness  in  increasing  users’  propensity  to 
+look  to  others  for  how  to  behave  in  permitting  data  use, 
+which  is  reflected  in  our  findings  about  the  heightened 
+comfort  level  in  sharing  data  with  the  app  (Figure  9).  In 
+addition,  the  appearance  of  the  social  cue  also  led  to  a 
+significantly low level of perceived creepiness compared to 
+the  other  two  nudges.  As  a  result,  users’  evaluations  on 
+other aspects of the privacy permission interface (e.g., ease 
+of use, usefulness, perceived relevance, future use intention) 
+were all elevated by seeing that it is normal for other people 
+to approve the data use. In all, the social privacy nudge was 
+the most effective one among the three.  
+However,  the  design  implications  of  the  social  nudge  are 
+not  straightforward.  In  particular,  the  use  of  social  nudge 
+suggests  signal  collective  norms  of  information  sharing, 
+which  may  encourage 
+information  disclosures.  One 
+practical  implication  is  that  practitioners  could  subtly 
+indicate  how  other  users  behave  through  the  use  of  social 
+nudges  (e.g.,  by  highlighting  91%  users  allow  the  mobile 
+app to access their location information, to suggest that the 
+majority  shares  location)  to  facilitate  users’  decision 
+making and encourage certain information disclosure (e.g., 
+sharing location information). While using privacy nudges 
+for norm-shaping can be very helpful in guiding users who 
+do not understand privacy settings or are not familiar with 
+
+the  normative  standard 
+
+influence 
+
+in  altering 
+
+frequency  nudge  allows  users 
+
+the  interfaces,  it  may  also  lead  to  less  benign  outcomes, 
+such  as  intentional  collection  of  unnecessary  user  data  for 
+targeted  advertising.  Ill-intentioned  service  providers  may 
+manipulate  their  design  choices  on  privacy  nudges  to 
+encourage users’ information sharing behaviors. Therefore, 
+this is an ethical issue that needs extra caution. We also call 
+for  more  future  research  on  the  ethical  implications  of 
+privacy nudge designs on shaping privacy norms. 
+Our results suggest that manipulations of privacy interface 
+cues (i.e., privacy nudge) have strong influences on users’ 
+privacy attitudes, comfort levels, and behavioral tendencies. 
+But  the  mechanisms  between  social  nudge  and  frequency 
+nudge are vastly different. People refer to the social nudge 
+as  a  way  to  reduce  their  cognitive  burden  and  facilitate 
+decision  making  by  following  what  others  typically  do. 
+This is similar to the bandwagon effect in psychology [35]. 
+The 
+to  make  more 
+independent  decisions  by  referring  to  factual  information, 
+which  on  the  one  hand  may  seem  informative,  but  on  the 
+other  can  also  overwhelm  users  or  even  creep  them  out 
+without  comprehensive  explanation.  We  compared  these 
+two  very  different  designs/mechanisms  and  showed  both 
+sides  of  them,  aiming  to  not  only  provide  novel  design 
+options,  but  also  inform  service  providers  about  the 
+complexity (e.g., the ethical concerns as discussed earlier) 
+behind design. 
+It is worth noting that other than the specific privacy nudge, 
+interfaces  in  all  conditions  were  identical,  and  the  app’s 
+privacy  practices  also  remained  the  same.  However,  the 
+simple manipulation of an interface cue (i.e., privacy nudge) 
+had  strong  influences  on  users’  attitudes,  comfort  levels, 
+and behavioral tendencies. This is yet another proof of the 
+gap between an ideal rational mind and the reality of non-
+normative behavior suggested by prior research [2]. In other 
+words, users tend to process information in a heuristic way 
+rather than a systematic approach, especially in the mobile 
+environment where decisions often need to be made in the 
+heat  of  the  moment.  Therefore,  users’  decisions  can’t 
+always  rely  on  effortful  calculations  of  privacy  risks,  but 
+may instead depend on previously established, brief mental 
+judgments  that  are  triggered  by  interface  cues  [58].  The 
+variation  in  users’  perceptions  among  the  two  privacy 
+nudge conditions was an outcome of the framing valence of 
+the nudges. 
+However, although privacy nudges are a promising way to 
+raise privacy awareness and alter user perceptions, it is not 
+a  panacea.  Caution  should  be  taken  when  interpreting  our 
+results and designing for future platforms. First, we found 
+that  the  social  nudge  did  not  significantly  differ  from  the 
+no-nudge  condition  in  most  user  evaluations.  This  by  no 
+means  suggested  the  ineffectiveness  of  the  social  nudge; 
+rather,  in  the  no-nudge  condition,  because  users  were  not 
+provided with any justification on apps’ data use, they were 
+unaware of the potential use and misuse of data, hence in a 
+naïve situation. And the heightened user evaluations in the 
+
+1685
+
+in 
+
+interpretation 
+
+implemented  strategically 
+
+no-nudge  condition  may  have  come  from  a  reduced 
+cognitive  load,  as  there  was  no  additional  information  for 
+them  to  process  and  make  judgment  on.  However,  this 
+approach  is  not  preferred  because  it  does  not  help  users 
+with 
+and  understanding  of  privacy 
+permissions. Second, the effectiveness of privacy nudges on 
+data  revealing  practices  is  moderated  by  individuals’ 
+previous  privacy  violation  experience.  As  Figure  9  and 
+Figure 10 show, the frequency nudge and the social nudge 
+differed  significantly  for  users  with  various  previous 
+violation  experience.  It  is  not  difficult  to  understand  that 
+previous negative experience may make users more careful 
+and suspicious when their personal data is requested. This 
+again suggests that privacy permission interfaces need to be 
+designed  and 
+triggering 
+appropriate perceptions, so as not to intrude users. 
+Limitations and Future Research 
+The  current  study  has  several  limitations  that  may  inspire 
+future research directions. 
+First,  to  conduct  an  online  experimental  study,  we  used  a 
+mockup  interface  to  present  privacy  permissions  and  the 
+privacy  nudges,  rather 
+than  a  real  mobile  service. 
+Participants  might  have  been  well  aware  of  the  fact  that 
+their  decisions  in  this  study  would  not  affect  their  actual 
+mobile  use,  thus  not  behaving  truly  as  in  real  life.  For 
+example,  we  did  not  detect  any  significant  findings  on 
+privacy  concern  toward  Kuaile’s  data  usage.  This  may  be 
+because participants felt the potential malicious data access 
+was not relevant to them, thus not having the same extent of 
+reactions  as  they  would  in  real-life  situations.  In  addition, 
+as  with  any  other  experimental  studies,  the  study  was  not 
+able  to  catch  users’  reactions  in  real  time  in  a  naturalistic 
+setting, but rather created an artificial context. Future work 
+can build on current findings to deploy real mobile privacy 
+permission  interfaces  with  the  nudges  we  proposed,  and 
+then test their effectiveness in a longitudinal field study to 
+achieve more reliable results.  
+Secondly,  the  current  study  created  a  fictitious  social 
+networking app, Kuaile, to test the effectiveness of privacy 
+permissions  with  privacy  nudges.  This  was  to  avoid  any 
+brand effect so that we could obtain the net influence of the 
+factors  under  investigation.  But  the  fake  app  could  also 
+bring  about  less  motivation  to  manage  privacy  and  less 
+engagement  in  thinking  about  own  behavior  during  the 
+study  process,  although  this  influence  was  universal  in  all 
+conditions. Future work can  look at other types  of mobile 
+apps and maybe do a comparison between famous apps and 
+none-famous  apps  in  terms  of  users’  privacy  attitudes  and 
+behaviors. 
+Thirdly, we listed six types of personal information in the 
+permission  interface,  but  did  not  explore  the  varying 
+sensitivity  of  them  and  study  the  nudges’  effects  on  them 
+individually.  These 
+information  range  across  various 
+categories and may differ vastly from each other in terms of 
+users’  privacy  concerns  about  them.  Future  work  should 
+
+1686
+
+SESSION: MOBILE DESIGN AND USAGE
+
+attitudes.  Through 
+
+interface  and  compared 
+
+integrate data mining techniques to study more closely how 
+these information types are used by SNS apps and how they 
+vary in sensitivity and triggering privacy-related attitudinal 
+and behavioral outcomes.  
+Lastly,  due  to  the  nature  of  the  mockup  interface  and 
+experimental  design,  we  did  not  capture  any  actual 
+behavior, such as the final decisions on using the app and 
+disclosing  personal  data  to  the  app,  but  only  measured 
+participants’  comfort  level  in  approving  the  app’s  use  of 
+their  data.  Future  work  should  consider  different  ways  to 
+record  users’  real  behavior,  which  would  be  more 
+convincing as a decision outcome. 
+CONCLUSION 
+In  enhancing  privacy  awareness  and  helping  users  make 
+decisions  in  a  more  efficient  fashion,  the  current  work 
+two  privacy  cues  as  nudges  on  a  mobile 
+designed 
+their  effects  on 
+permission 
+influencing  privacy 
+an  online 
+experimental  study,  we  found  that  privacy  nudges  were 
+powerful  in  altering  users’  privacy  attitudes,  thereby 
+facilitating users’ decision-making on information sharing. 
+Among  the  two  privacy  nudges,  the  frequency  nudge 
+induced a sense of creepiness, and the social nudge led to 
+generally positive evaluation toward the permission setting 
+function as well as more comfort in revealing personal data. 
+In addition, the nudges’ effects also need to be interpreted 
+with the premise of previous privacy violation experience. 
+In  sum,  we  provided  empirical  evidence  for  mobile 
+interface  cues  to  nudge  people’s  privacy  attitudes  and 
+behavioral intentions, which sheds light on both persuasive 
+technology  and  privacy  research,  as  well  as  mobile 
+permission interface design. 
+ACKNOWLEDGEMENTS 
+The    authors    are    very    grateful    to    the    AC    and  
+anonymous reviewers  for  their  constructive  comments. 
+This research was supported by the U.S. National Science 
+Foundation  under  grant  CNS-0953749.  Any  opinion, 
+findings, and  conclusions  or  recommendations  expressed  
+in  this  material are  those  of  the  authors and  do  not  
+necessarily    reflect    the  views  of  the  National  Science 
+Foundation. 
+REFERENCES 
+1.    Alessandro Acquisti. 2012. Nudging privacy: The 
+
+behavioral economics of personal information. Digital 
+Enlightenment Yearbook (2012), 193. 
+
+2.    Alessandro Acquisti. and Jens Grossklags. 2005. 
+
+Privacy and rationality in individual decision making. 
+IEEE Security & Privacy 2, (2005): 24-30. 
+
+3.    Anne Adams and Martina Angela Sasse. 1999. Users 
+
+are not the enemy. Communications of the ACM 42, 12 
+: 40-46. 
+
+4.     Idris Adjerid, Alessandro Acquisti, Laura Brandimarte, 
+
+and George Loewenstein. 2013. Sleights of privacy: 
+Framing, disclosures, and the limits of transparency. In 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Proceedings of the Ninth Symposium on Usable 
+Privacy and Security (SOUPS '13), 9. 
+http://doi.acm.org/10.1145/2501604.2501613 
+
+5.    Ritu Agarwal and Jayesh Prasad. 1998. A conceptual 
+
+and operational definition of personal innovativeness in 
+the domain of information technology. Information 
+Systems Research 9, 2: 204-215. 
+
+6.  Alistair Barr. 2015. Google Offers Users More Control 
+
+Over Sharing Data with Android Apps. Retrieved 
+August 22, 2014 from 
+http://blogs.wsj.com/digits/2015/05/28/google-offers-
+users-more-control-over-sharing-data-with-android-
+apps/ 
+
+7.   Ron Amadeo. 2013. App Ops: Android 4.3's Hidden 
+
+App Permission Manager, Control Permissions for 
+Individual Apps! Retrieved http://www. androidpolice. 
+com/2013/07/25/app-ops-android-4-3s-hidden-
+apppermission-manager-control-permissionsfor-
+individual-apps. 
+
+8.    Lisa Barnard. 2014. The Cost of Creepiness: How 
+Online Behavioral Advertising Affects Consumer 
+Purchase Intention. Doctoral dissertation, The 
+University of North Carolina at Chapel Hill.  
+
+9.   Lauren G. Block. 2005. Self-referenced fear and guilt 
+
+appeals: The moderating role of self-construal. Journal 
+of Applied Social Psychology 35, 11: 2290-2309. 
+
+10.  Laura Brandimarte, Alessandro Acquisti, and George 
+
+Loewenstein. 2013. Misplaced confidences privacy and 
+the control paradox. Social Psychological and 
+Personality Science 4, 3: 340-347. 
+
+11. Jose C. Brustoloni and RicardoVillamarin-Salomon. 
+
+2007. Improving security decisions with polymorphic 
+and audited dialogs. In Proceedings of the 3rd 
+Symposium on Usable Privacy and Security (SOUPS 
+'07), 76-85. http://doi.acm.org/ 
+10.1145/1280680.1280691 
+
+12.  Serena Chen and Shelly Chaiken. 1999. The heuristic-
+systematic model in its broader context. Dual-process 
+theories in social psychology, 73-96. 
+
+13.  Robert B. Cialdini. 1993. Influence: The Psychology of 
+
+Persuasion. New York: HarperCollins. 
+
+14.  Gerald L. Clore, Karen Gasper, and Erika Garvin. 
+
+2001. Affect as information. In Handbook of Affect and 
+Social Cognition. Joseph. P. Forgas (ed.). Lawrence 
+Erlbaum Associates, Inc, Mahwah, NJ, 121-144. 
+
+15.  Mary J. Culnan and Robert J. Bies. 2003. Consumer 
+
+privacy: Balancing economic and justice 
+considerations. Journal of social issues 59, 2: 323-342. 
+
+16.  Fred D. Davis. 1989. Perceived usefulness, perceived 
+
+ease of use, and user acceptance of information 
+technology. MIS quarterly 13, 3: 319-340. 
+
+17.  Rachna Dhamija, J. D. Tygar, and Marti Hearst. 2006. 
+
+Why phishing works. In Proceedings of the SIGCHI 
+conference on Human Factors in computing systems. 
+(CHI '06), 581-590. 
+http://doi.acm.org/10.1145/1124772.1124861 
+
+18.  Tamara Dinev and Paul Hart. 2006. An extended 
+
+privacy calculus model for e-commerce transactions. 
+Information Systems Research 17, 1: 61-80. 
+
+19.   Adrienne P. Felt, Serge Egelman, and David Wagner. 
+2012. I've got 99 problems, but vibration ain't one: A 
+survey of smartphone users' concerns. In Proceedings 
+of the second ACM workshop on Security and privacy 
+in smartphones and mobile devices (SPSM '12), 33-44. 
+http://doi.acm.org/10.1145/2381934.2381943 
+
+20.  Susan T. Fiske and Shelly E. Taylor. 2013. Social 
+
+cognition: From brains to culture. Sage. 
+
+21.  Alein Forget, Sonia Chiasson, P. C. van Oorschot, and 
+
+Robert Biddle. 2008. Improving text passwords 
+through persuasion. In Proceedings of the 4th 
+Symposium on Usable Privacy and Security (SOUPS 
+'08), 1-12. 
+http://doi.acm.org/10.1145/1408664.1408666  
+
+22.  Jonathan Gratch and Stacy Marsella. 2004. A domain-
+
+independent framework for modeling emotion, 
+Cognitive Systems Research 5, 4: 269-306. 
+http://doi.acm.org/10.1016/j.cogsys.2004.02.002 
+23.  White House. 2012. Consumer data privacy in a 
+
+networked world: A framework for protecting privacy 
+and promoting innovation in the global digital 
+economy. White House, Washington, DC. 
+
+24.  Patrick G. Kelley, Joanna Bresee, Lorrie F. Cranor, and 
+Robert W. Reeder, 2009. A nutrition label for privacy. 
+In Proceedings of the 5th Symposium on Usable 
+Privacy and Security (SOUPS '09). 
+http://doi.acm.org/10.1145/1572532.1572538 
+
+25.  Patrick G. Kelley, Sunny Consolvo, Lorrie F. Cranor, 
+Jaeyeon Jung, Norman Sadeh, and David Wetherall. 
+2012. A conundrum of permissions: installing 
+applications on an android smartphone. In Financial 
+Cryptography and Data Security 7398, 68-79. 
+
+26.  Patrick G. Kelley, Lorrie F. Cranor, and Norman 
+Sadeh. 2013. Privacy as part of the app decision-
+making process. In Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems 
+(CHI '13), 3393-3402. 
+http://doi.acm.org/10.1145/2470654.2466466 
+27.  Jennifer King. 2012. “How come I'm allowing 
+
+strangers to go through my phone?”—Smartphones and 
+Privacy Expectations.  
+
+28.  Bart P. Knijnenburg and Alfred Kobsa. 2013. Making 
+
+decisions about privacy: information disclosure in 
+context-aware recommender systems. ACM 
+
+1687
+
+Transactions on Interactive Intelligent Systems (TiiS) 
+3, 3: 20. http://doi.acm.org/10.1145/2499670 
+
+29.  Bart P. Knijnenburg, Alfred Kobsa, and Hongxia Jin. 
+
+2013. Preference-based location sharing: are more 
+privacy options really better? In Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems. (CHI '13), 2667-2676. 
+http://doi.acm.org/10.1145/2470654.2481369 
+
+30.  Han Li, Rathindra Sarathy, and Heng Xu. 2011. The 
+
+role of affect and cognition on online consumers' 
+decision to disclose personal information to unfamiliar 
+online vendors. Decision Support Systems 51, 3: 434-
+445. 
+
+31.  Jialiu Lin, Shahriyar Amini, Jason I. Hong, Norman 
+
+Sadeh, Janne Lindqvist, and Joy Zhang. 2012. 
+Expectation and purpose: understanding users' mental 
+models of mobile app privacy through crowdsourcing. 
+In Proceedings of the 2012 ACM Conference on 
+Ubiquitous Computing. (Ubicomp '12), 501-510. 
+http://doi.acm.org/10.1145/2370216.2370290 
+
+32.  Steven Loeb. 2013. A whopping 70 billion apps to be 
+
+downloaded in 2013. Retrieved from: 
+http://vator.tv/news/2013-03-04-a-whopping-70-
+billion-apps-to-be-downloaded-in-2013. 
+
+33.  George F. Loewenstein, Elke U. Weber, Christopher K. 
+
+Hsee, and Ned Welch. 2001. Risk as feelings. 
+Psychological Bulletin 127, 2: 267-286. 
+
+34.  D. Harrison McKnight, Vivek Choudhury, and Charles 
+
+Kacmar. 2002. Developing and validating trust 
+measures for e-commerce: an integrative typology. 
+Information Systems Research 13, 3: 334-359. 
+
+35.  Richard Nadeau, Edouard Cloutier, and J. -H. Guay. 
+
+1993. New evidence about the existence of a 
+bandwagon effect in the opinion formation process. 
+International Political Science Review 14, 2: 203-213. 
+
+36.   Mohammad Nauman, Sohail Khan, and Xinwen 
+
+Zhang. 2010. Apex: extending android permission 
+model and enforcement with user-defined runtime 
+constraints. In Proceedings of the 5th ACM Symposium 
+on Information, Computer and Communications 
+Security (ASIACCS '10), 328-332. 
+http://doi.acm.org/10.1145/1755688.1755732 
+
+37.  Helen Nissenbaum. 2011. A contextual approach to 
+
+privacy online. Daedalus 140, 4: 32-48. 
+
+38.  Richard E. Petty and John T. Cacioppo. 1986. The 
+
+elaboration likelihood model of persuasion. Advances 
+in experimental social psychology 19, 123-205. 
+
+39.  Irene Pollach. 2006. Privacy statements as a means of 
+
+uncertainty reduction in WWW interactions. Journal of 
+Organizational and End User Computing (JOEUC)18, 
+1: 23-49. 
+
+1688
+
+SESSION: MOBILE DESIGN AND USAGE
+
+40.  Anat Rafaeli and Iris Vilnai-Yavetz. 2004. Emotion as 
+
+a connection of physical artifacts and organizations. 
+Organization Science 15, 6: 671-686.  
+
+41.  Herbert A. Simon. 1982. Models of Bounded 
+
+Rationality: Empirically Grounded Economic Reason. 
+MIT press. 
+
+42.  H. Jeff Smith, Sandra J. Milberg, and Sandra J. Burke. 
+
+1996. Information privacy: measuring individuals' 
+concerns about organizational practices. MIS quarterly 
+20, 2: 167-196. 
+
+43.  Dianna L. Stone. 1982. The Effects of the Valence of 
+
+Outcomes for Providing Data and the Perceived 
+Relevance of the Data Requested on Privacy-Related 
+Behaviors, Beliefs, and Attitudes.  Ph.D. Dissertation. 
+ProQuest Information & Learning. 
+
+44.  S. Shyam Sundar. 2008. The MAIN model: A heuristic 
+
+approach to understanding technology effects on 
+credibility. Digital media, youth, and credibility, 73-
+100. 
+
+45.  Omer Tene and Jules Polonetsky. 2013. A theory of 
+
+creepy: Technology, privacy and shifting social norms. 
+Yale Journal of Law & Technology 16, 1: 2.  
+
+46.  Richard H. Thaler and Cass R. Sunstein. 2008. Nudge: 
+
+Improving decisions about health, wealth, and 
+happiness. Constitutional Political Economy 19, 4: 
+356-360. 
+
+47.  Adi Robertson. 2012. Path Uploads Your Entire 
+
+iPhone Address Book to Its Servers.  Retrieved from 
+http://mclov.in/2012/02/08/path-uploads-your-entire-
+address-book-to-their-servers.html. 
+
+48.  Adam Thierer. 2013. Pursuit of privacy in a world 
+
+where information control is failing. Harvard Journal 
+of Law & Public Policy 36, 409-456. 
+
+49.  Blasé Ur, Pedro G. Leon, Lorrie F. Cranor, Richard 
+Shay, and Yang Wang. 2012. Smart, useful, scary, 
+creepy: perceptions of online behavioral advertising. In 
+Proceedings of the Eighth Symposium on Usable 
+Privacy and Security (SOUP '12).  
+http://doi.acm.org/10.1145/2335356.2335362 
+
+50.  Will Verduzco. 2013. App Ops Brings Granular 
+
+Permissions Control to Android 4.3. Retrieved from 
+http://www.xda-developers.com/app-ops-brings-
+granular-permissions-control-to-android-4-3/ 
+
+51.  Jessica Vitak. 2012. The impact of context collapse and 
+
+privacy on social network site disclosures. Journal of 
+Broadcasting & Electronic Media 56, 4: 451-470. 
+
+52.  B. J. Fogg. 2002. Persuasive technology: using 
+
+computers to change what we think and do. Ubiquity, 
+5. http://doi.acm.org/10.1145/764008.763957 
+
+53.  Yang Wang,  Pedro Giovanni Leon, Kevin Scott, 
+
+Xiaoxuan Chen, Alessandro Acquisti, and Lorrie F. 
+Cranor. 2013. Privacy nudges for social media: an 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+exploratory Facebook study. In Proceedings of the 
+22nd international conference on World Wide Web 
+companion (WWW '13), 763-770. 
+
+54.  Heng Xu. 2007. The effects of self-construal and 
+
+perceived control on privacy concerns. In Proceedings 
+of the International Conference on Information 
+Systems (ICIS '07), 125. 
+
+55.  Heng Xu, Tamara Dinev, Jeff Smith, and Paul Hart. 
+
+2011. Information privacy concerns: linking individual 
+perceptions with institutional privacy assurances. 
+Journal of the Association for Information Systems 12, 
+12: 1.   
+
+industry self-regulation, and government regulation on 
+privacy concerns: a study of location-based services. 
+Information Systems Research 23, 4: 342-1363. 
+57.  Theodora Zarmpou, Vaggelis Saprikis, Angelos 
+
+Markos, and Maro Vlachopoulou. 2012. Modeling 
+users’ acceptance of mobile services. Electronic 
+Commerce Research 12, 2: 225-248. 
+
+58.  Bo Zhang,  Mu Wu, Hyunjin Kang, Eun Go, and S. 
+
+Shyam Sundar. 2014. Effects of security warnings and 
+instant gratification cues on attitudes toward mobile 
+websites. In Proceedings of the 32nd Annual ACM 
+Conference on Human Factors in Computing Systems. 
+(CHI '06). ACM, 111-114. 
+
+56.  Heng Xu, Hock-Hai Teo, Bernard Tan, and Ritu 
+
+Agarwal. 2012. Effects of individual self-protection, 
+
+ 
+ 
+APPENDIX: CONSTRUCT MEASUREMENTS 
+Perceived Creepiness 
+1.  Afraid  
+2.  Creepy 
+3.  Tense  
+4.  Agitated 
+5.  Weird 
+6.  Disturbing 
+7.  Irritating 
+Perceived Ease of Use 
+1.  It is clear and understandable how to interact with the app permission setting. 
+2.  Interacting with the app permission setting would not require a lot of mental effort. 
+3.  I find the app permission setting easy to use. 
+4.  It would be easy to get the app permission setting to do what I want it to do. 
+Perceived Usefulness 
+1.  The app permission setting would improve the user's performance in deciding what information to disclose. 
+2.  Using the app permission setting would make it easier to decide what information to disclose. 
+3.  Using the app permission setting would enhance the user's effectiveness in deciding what information to disclose. 
+4.  Using the app permission setting would allow the user to decide what to disclose more quickly. 
+5.  I found the app permission setting to be useful in deciding what information to disclose. 
+Future Use Intention 
+1.  I intend to use the app permission setting in the future when it is available. 
+2.  I believe my interest toward the app permission setting will increase in the future. 
+3.  I intend to use the app permission setting as much as possible when it is available. 
+4.  I recommend that others use the app permission setting when it is available. 
+Perceived Control 
+1.  I believe I have control over who can get access to my personal information collected by a mobile application. 
+2.  I think I have control over what personal information is released by a mobile application. 
+3.  I believe I have control over how personal information is used by a mobile application. 
+4.  I believe I can control my personal information provided to a mobile application. 
+Perceived Relevance 
+1.  Information gathered seemed relevant for using Kuaile. 
+2.  Information on the app permission-setting interface appeared to have a bearing upon the purpose of using Kuaile. 
+3.  Information collected look appropriate for using Kuaile. 
+Privacy Concern 
+1.  I would be concerned that the information I disclose to Kuaile could be misused. 
+
+1689
+
+SESSION: MOBILE DESIGN AND USAGE
+
+2.  I would be concerned that others could find private information about me from Kuaile. 
+3.  I would be concerned about providing information to Kuaile because of what others might do with it. 
+4.  I would be concerned about providing information to Kuaile because it could be used in ways I could not predict. 
+Disposition to Value Privacy 
+5.  Compared to others, I am more sensitive about the way my personal information is handled. 
+6.  Keeping my information private is the most important thing to me. 
+7.  Compared to others, I tend to be more concerned about threats to my information privacy. 
+General Trust 
+1.  Most of the time, people care enough to try to be helpful, rather than just looking out for themselves. 
+2.  Most people are honest in their dealings with others. 
+3.  Most professionals are very knowledgeable in their chosen field. 
+4. 
+Previous Privacy Violation 
+1.  How often have you disagreed with a service about their use of your personal information? 
+2.  How  often  have  you  experienced  incidents  where  your  personal  information  was  used  by  a  service  without  your 
+
+I usually trust people until they give me a reason not to trust them. 
+
+authorization? 
+
+3.  How often have you personally been a victim of what you felt was an improper invasion of privacy? 
+Personal Innovativeness 
+1.  If I heard about a new information technology, I would look for ways to experiment with it. 
+2.  Among my peers, I am usually the first to try out new information technologies.  
+3.  In general, I am hesitant to try out new information technologies. (reverse coded) 
+4.  I like to experiment with new information technologies. 
+ 
+
+1690
+
+

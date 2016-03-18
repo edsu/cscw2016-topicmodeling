@@ -1,0 +1,1701 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(cid:15)(cid:26)(cid:41)(cid:26)(cid:43)(cid:33)(cid:17)(cid:38)(cid:1)(cid:15)(cid:44)(cid:36)(cid:43)(cid:34)(cid:42)(cid:28)(cid:41)(cid:30)(cid:30)(cid:38)(cid:4)(cid:1)(cid:11)(cid:41)(cid:39)(cid:44)(cid:40)(cid:1)(cid:21)(cid:30)(cid:36)(cid:30)(cid:45)(cid:34)(cid:42)(cid:34)(cid:39)(cid:38)(cid:1)(cid:24)(cid:26)(cid:43)(cid:28)(cid:33)(cid:34)(cid:38)(cid:32)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)
+
+(cid:12)(cid:38)(cid:43)(cid:30)(cid:41)(cid:26)(cid:28)(cid:43)(cid:34)(cid:39)(cid:38)(cid:1)(cid:34)(cid:38)(cid:1)(cid:26)(cid:1)(cid:23)(cid:34)(cid:30)(cid:46)(cid:34)(cid:38)(cid:32)(cid:1)(cid:9)(cid:28)(cid:39)(cid:36)(cid:39)(cid:32)(cid:47)(cid:1)
+
+Edward Anstead 
+
+UCL Interaction Centre 
+
+University College London 
+
+London, UK. 
+
+e.anstead@ucl.ac.uk
+
+Steve Benford 
+
+Mixed Reality Lab 
+
+University of Nottingham 
+
+Nottingham, UK. 
+
+Robert Houghton 
+
+Human Factors Research Group 
+
+University of Nottingham 
+
+Nottingham, UK. 
+
+steve.benford.nottingham.ac.uk 
+
+robert.houghton@nottigham.ac.uk 
+
+(cid:5)(cid:6)(cid:20)(cid:21)(cid:19)(cid:5)(cid:7)(cid:21)(cid:1)
+This paper reports and discusses the findings of an exploratory 
+study  into  collaborative  user  practice  with  a  multiscreen 
+television application. MarathOn Multiscreen allows users to 
+view, share and curate amateur and professional video footage 
+of a community marathon event. Our investigations focused on 
+collaborative  sharing  practices  across  different  viewing 
+activities and devices, the roles taken by different devices in a 
+viewing  ecology,  and  observations  on  how  users  consume 
+professional  and  amateur  content.  Our  Work  uncovers 
+significant  differences  in  user  behaviour  and  collaboration 
+when engaged in more participatory viewing activities, such as 
+sorting  and  ranking  footage,  which  has  implications  for 
+awareness of other users’ interactions while viewing together 
+and alone. In addition, user appreciation and use of amateur 
+video content is dependent not only on quality and activity but 
+their personal involvement in the contents.   
+Author Keywords 
+Video; Multiscreen; Television; Groupware 
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous. 
+(cid:12)(cid:16)(cid:21)(cid:19)(cid:17)(cid:8)(cid:22)(cid:7)(cid:21)(cid:12)(cid:17)(cid:16)(cid:1)
+Television watching is an evolving landscape of technology 
+and  practice.  Our  viewing  is  becoming  a  progressively 
+connected  and  interactive  experience  through  the  use  of 
+innovations  such  as;  video  on  demand  services,  enhanced 
+programme guides and mobility [4]. In addition, viewing is 
+being  distributed  to  multiple  display  devices  operating  in 
+concert with the traditional big screen. Increasingly, users are 
+bringing mobile computing devices into the living room whilst 
+watching  television,  using  them  as  a  second  screen. 
+Multiscreen applications, bespoke second screen experiences 
+Permission to make digital or hard copies of all or part of this work for personal 
+or classroom use is granted without fee provided that copies are not made 
+or distributed for profit or commercial advantage and that copies bear this 
+notice and the full citation on the first page. Copyrights for components of this 
+work owned by others than ACM must be honored. Abstracting with 
+credit is permitted. To copy otherwise, or republish, to post on servers or to 
+redistribute to lists, requires prior specific permission and/or a fee. Request 
+permissions from Permissions@acm.org.  
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02...$15.00 
+DOI: http://dx.doi.org/10.1145/2818048.2820003  
+
+the 
+
+that  augment  and  enhance  programming  with  additional 
+content,  are  one  mechanism  by  which  viewers  consume 
+synchronously between TV set and mobile computing device 
+[5].  At  the  same  time,  the  rise  of  user-generated  video  is 
+bringing  “traditional  notions  of 
+‘amateur’  and 
+‘professional’  into  question”  as  amateur  content  is  an 
+increasingly  important  part  of  media  production  and 
+consumption [21]. In this paper we present an exploratory study 
+of  the  confluence  of  these  two  trends  to  better  understand 
+collocated collaborative interaction and highlight implications 
+for existing groupware research.  
+Television watching is a social experience that often takes 
+place with friends and family. With the increasing presence of 
+multiple devices across this activity, it is likely that future 
+viewing  experiences  will  entail  complex  and  evolving 
+configurations of devices, users, television programming and 
+group practice. Such experiences are currently ad-hoc, and the 
+collaborative context is poorly understood. As designers and 
+curators of these experiences, our role is to create useable and 
+enticing opportunities for incorporating multiple displays in 
+ways that are both novel and reflective of collaborative social 
+practice.  To  this  end,  CSCW  techniques  and  practices 
+surrounding groupware in other collaborative contexts may 
+offer  the  opportunity  to  extend  a  richer  understanding. 
+However,  a  key  tension  remains;  television  watching  is 
+embedded  in  the  domestic  context  and  is  often  about 
+entertaining and relaxing experiences rather than productivity 
+and performance [14]. Therefore, if we are to transfer known 
+practice and techniques from other contexts, any incorporation 
+will  also  need  to  be  sensitive  to  the  specific  nuances  of 
+television watching. It is our intention that this research begins 
+the work of drawing together these two perspectives.  
+Our study responds to two emerging trends in the consumption 
+of  television  and  video  content;  (1)  second  or  multiscreen 
+viewing,  and  (2)  the  integration  of  professional  and  user 
+generated content. Recent years have seen an explosion in the 
+creation of crowd-sourced amateur video footage. Everyone is 
+now capable of being a videographer, and most people will 
+carry a video camera with them, allowing them to document 
+their lives at any time. The inclusion of user-generated content 
+in our investigations requires users to act as curator as well as 
+viewer, transitioning between passively viewing and actively 
+engaging  with  a  corpus  of  content;  making  decisions  on 
+personal interest, quality and preference, before activities such 
+
+405
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+as 'viewing', 'sharing' or 'mashing'. Our discussions centre on 
+the  evaluation  of  a  prototype  multiscreen  application  that 
+allows users to watch and organise video from a community 
+marathon. Using ‘MarathOn Multiscreen’, an interacting group 
+of  collocated  users  were  able  to  watch  a  combination  of 
+professional and amateur footage across an ecology of display 
+devices,  playback  videos  of  a  specific  runner  and  find 
+unidentified videos of them, and generate organised playlist of 
+videos. We conducted a qualitative user trial of the application, 
+which  sought  to  collect  observations  of  user  strategies  for 
+coordinating  viewing,  and  explore  the  efficacy  of  the 
+application in supporting the sharing and navigation of amateur 
+video. 
+We begin with an overview of relevant literature that guided 
+our  objective  and  design  direction,  before  describing  the 
+MarathOn  Multiscreen  application  and  study  method. 
+Subsequently we report on the user trial results and conclude 
+with a discussion of implications for groupware literature and 
+design practice. We uncover the importance and challenges of 
+user awareness in multiscreen television applications across 
+different modes of viewing, and the implications of sharing 
+content where users have a personal investment.  
+(cid:19)(cid:9)(cid:14)(cid:5)(cid:21)(cid:9)(cid:8)(cid:1)(cid:24)(cid:17)(cid:19)(cid:13)(cid:1)
+Over the last decade CSCW research has dramatically extended 
+the scope of investigation into group practices, looking beyond 
+the workplace and investigating other environments including 
+the home [27]. Television watching, while social, is also a 
+relaxing and entertaining pursuit that often takes place in the 
+domestic  context,  where  metrics  such  as  efficiency  and 
+performance  are  not  the  primary  or  sole  considerations.  
+Instead,  systems  may  be  evaluated  on  the  basis  of  user 
+engagement, associated social practice or entertainment value. 
+Since  interactive  and  multiscreen  television  serves  diverse 
+populations who are principally engaged in entertainment and 
+leisure pursuits [14], this social context is further complicated. 
+To date there has been little reported work on group viewing 
+behaviour  and  television  watching.  Existing  practices  and 
+approaches have developed without consideration of how they 
+might  be  reconfigured  to  work  effectively  with  emerging 
+interactive  television  applications  and  systems,  and  the 
+associated social practices.  
+Groupware  is  a  key  tenet  of  CSCW  and  HCI  literature, 
+describing  interactions  by  multiple  users  working  in  a 
+collocated environment with a single display [45, 9, 29, 43], 
+multiple displays [35, 10, 33, 22], and interactions which are 
+geographically  distributed  [30,  25].  Much  of  this  research 
+centres  on  the  issues  of  user  collaboration  practices  and 
+promoting group awareness of the interactions of others across 
+shared space and data [28, 20].  
+In terms of collaborative action, Prior CSCW studies have 
+investigated  the  process  of  television  production  [26],  the 
+social  practices  of  viewing  [39,  46]  and  collaboration  and 
+sharing of media collections at home [42]. However, given the 
+traditionally  passive  nature  of  television  watching,  limited 
+research  has  considered  group  interaction  with  both  the 
+
+television and other devices. Within the field of HCI, early 
+examples of interaction between the television and a mobile 
+computing device include Robertson et al.’s prototype of a real 
+estate information service [40] that facilitated user interaction 
+with a television from a PDA. Over recent years there has been 
+increased interest from the HCI communities in second screen 
+television and media experiences that span multiple devices, 
+extending the interaction proposed by Robertson to involve 
+broadcast television content. Viewing that merges multiple 
+screen  and  content  streams  has  become  part  of  everyday 
+viewing practice [15]. In a unifying review of existing studies, 
+Cesar  et  al.,  [13]  describe  the  possibilities  for  multiscreen 
+television  as  to  ‘control  enrich  and  share’  the  television 
+experience.  
+(cid:8)(cid:30)(cid:42)(cid:34)(cid:32)(cid:38)(cid:34)(cid:38)(cid:32)(cid:1)(cid:31)(cid:39)(cid:41)(cid:1)(cid:21)(cid:30)(cid:36)(cid:30)(cid:45)(cid:34)(cid:42)(cid:34)(cid:39)(cid:38)(cid:1)(cid:24)(cid:26)(cid:43)(cid:28)(cid:33)(cid:34)(cid:38)(cid:32)(cid:1)(cid:1)
+The television is a cornerstone of everyday life. This ubiquitous 
+medium  and  appliance  mediates  and  guides  contemporary 
+political and social discourse, weaving itself “profoundly and 
+intimately into the fabric of our daily lives” [44]. Traditional 
+television watching has been considered a ‘lean back’ activity 
+[38], in which viewers are passive actors, contrasted with ‘lean 
+forward’ activities, where users are actively interacting with the 
+content, such as the familiar desktop and mobile paradigms. 
+However,  the  television  landscape  is  evolving  and  greater 
+levels of interactivity are being introduced. For example, the 
+rise of personal video recorders and Internet streaming offer 
+new means of storing programmes and organising viewing [4]. 
+Recent innovations in television research and usage include the 
+distribution of programmes broadcast to mobile devices [12], 
+improvements to electronic programme guides, such as search 
+and recommendation [31], and the integration of companion 
+applications to extend programme content to a second screen 
+device [13]. Each of these innovations has allowed viewers 
+increasing agency in their viewing habits, changing the way 
+programming is scheduled, shared and otherwise consumed, 
+enabling  interactions  and  experiences  not  possible  with 
+conventional linear broadcasting alone. Vinyagamoorthy et al. 
+[48] posit that, as some content displayed on the television 
+becomes  increasing  interactive,  so  the  traditional  view  of 
+television as a ‘lean back’ activity needs to be revised.  
+Existing literature on multiscreen television has explored a 
+variety of the potential application areas and user experiences 
+of real-world broadcasting and augmentation. The interaction 
+of television and social media has received much attention 
+through their ad-hoc combination. This has allowed researchers 
+to explore how users experience television and share it with 
+friends, family, the wider community [19], and programme-
+specific forums [6]. 
+Other studies have also focused on means of enhancing the 
+viewer experience through bespoke applications. For example, 
+through offering extended EPG (electronic programme guide) 
+and control mechanisms on a second screen, [16] or providing 
+extended content that enhances the linear broadcast programme 
+over the course of a season [37].  
+
+406
+
+SESSION: CO-PRESENT AND REMOTE MEDIA USE
+
+Sport is a natural sphere of study for multiscreen research, as 
+viewers  of  the  genre  tend  to  integrate  other  sources  of 
+information  into  the  viewing  experience  such  as  prior 
+knowledge  of  statistics  and  historical  performance  [24]. 
+Sporting  events  are  regularly  mediated  through  multiple 
+channels and interfaces, allowing users greater agency as to 
+when  and  how  they  receive  information  and  balance  their 
+viewing  experience.  Anstead  et  al.  [1]  explored  the 
+augmentation  of  sports  broadcast  across  a  ‘many-screens’ 
+ecology of interacting users and devices. Additionally, some 
+grounding exists in the experience of sports spectatorship and 
+the  simultaneous  documenting  with  mobile  video.  For 
+example, Jacucci et al. [34] discuss the co-experience of groups 
+of spectators videoing a motorsport rally, and Bentley & Groble 
+[8] detail a system for the near-live delivery of multimedia 
+artefacts,  including  user  generated  video  for  spectators 
+watching  in  the  stadium.  Dezfuli  et  al.  [18],  describes  the 
+implementation of a multiscreen television application that 
+integrates both broadcast video footage from sports events, and 
+mobile phone footage taken in the stadium. 
+Our study sits at the intersection of these strands of literature, 
+offering a novel understanding of the features and tensions that 
+are surfaced through merging user-generated video content and 
+its consumption via the television. We find that second screen 
+viewing is uniquely positioned to offer complex interactive 
+forms that have the potential to enhance viewing experiences 
+for users, while presenting new challenges for usable design of 
+aware and consistent interfaces. 
+(cid:20)(cid:21)(cid:22)(cid:8)(cid:25)(cid:1)(cid:8)(cid:9)(cid:20)(cid:12)(cid:11)(cid:16)(cid:1)
+We conducted a qualitative lab-based study of the MarathOn 
+Multiscreen application, which permitted the close observation 
+of  user  collaborations  and  allowed  for  the  study  to  be 
+constrained to the precise behaviours of interest. The study was 
+designed 
+to  collate  participant  opinions  and  record 
+observations of their interactions across multiple tablet devices. 
+Our study was led by the following questions: 
+•(cid:1)How is viewing shared across activities and devices? 
+•(cid:1)What roles do devices take in supporting group collaboration 
+across a viewing ecology?  
+•(cid:1)And  how  do  users  consume  and  curate  professional  and 
+amateur video footage? 
+
+For example, do coordinating strategies evolve that help users 
+to consume and share the video across the ecology of devices, 
+between  the  two  types  of  content,  and  across  the  viewing 
+activities  users  engaged  with.  The  inherent  sociality  of 
+television  watching  is  enhanced  by  the  possibilities  of 
+companion applications to enable sharing of programming 
+across supplementary devices. This sociality is reflected in the 
+social nature of spectating sports events [36] that the MarathOn 
+Multiscreen application was designed to support through the 
+review  and  selection  of  marathon  videos.  The  usage  and 
+coordination of multiple devices is characterised by the task 
+that users are engaged with, their aptitude and experience; prior 
+research  has  referred  to  these  configurations  as  display 
+ecologies [32]. The focus of our study was narrower however, 
+describing interaction with television content across multiple 
+
+407
+
+devices, viewing and video selection. Herein we refer to the 
+interaction between participants, television and companion 
+devices as a viewing ecology.  
+The MarathOn Multiscreen application was built to support a 
+collection of video recorded during the Nottingham ‘Robin 
+Hood Marathon’, which takes place each September in the UK. 
+We derived the amateur video corpus from a prior project 
+investigating the capture of video footage at marathon events 
+by spectators, RunSpotRun [23]. The RunSpotRun app allows 
+users to video record their experiences of spectating a marathon 
+using  a  mobile  phone  camera.  While  videoing,  users  ‘tag’ 
+runners by recording their bib number as they pass using an 
+onscreen keypad. These user-generated tags along with the 
+time, duration and geolocation of the video were associated 
+with the video as metadata. This allowed for the organisation 
+and selection of footage, i.e. all videos of a particular runner, 
+or all videos from a region of the course. The RunSpotRun 
+application was evaluated at the 2013 event and 17 spectators 
+took part in the trial, generating over 11 hours of footage.  
+During the MarathOn Multiscreen evaluation participants had 
+access to both the amateur corpus of footage, taken as part of 
+the RunSpotRun trial, and a professionally shot video that had 
+been uploaded to social media sites shortly after the race. The 
+two video sets allowed for user reflection on the characteristics 
+of both types of footage. Several of the participants in this study 
+had taken part in the RunSpotRun evaluation meaning that they 
+also  considered  the  impact  of  footage  that  they  had  shot 
+themselves. Other participants had taken part in the marathon 
+and so had the opportunity to review footage that had been 
+taken of them competing. 
+Based upon this substantial video dataset, our work here is 
+concerned with how users interact, across multiple display 
+devices, when presented with both this spectator footage and a 
+professional  video.  Within  our  study, 
+the  MarathOn 
+Multiscreen application makes use of this metadata to enable 
+both organising interfaces and the tagging of runners.  
+(cid:20)(cid:21)(cid:22)(cid:8)(cid:25)(cid:1)(cid:18)(cid:19)(cid:17)(cid:7)(cid:9)(cid:8)(cid:22)(cid:19)(cid:9)(cid:1)(cid:5)(cid:16)(cid:8)(cid:1)(cid:5)(cid:18)(cid:18)(cid:14)(cid:12)(cid:7)(cid:5)(cid:21)(cid:12)(cid:17)(cid:16)(cid:1)(cid:8)(cid:9)(cid:20)(cid:12)(cid:11)(cid:16)(cid:1)(cid:1)
+A prototype multiscreen viewing application was developed 
+which allowed a group of viewers to watch, organise and sort 
+professional  and  amateur  video  of  a  community  marathon 
+event.  Using  the  application,  participants  completed  two 
+periods of viewing, engaging in different levels of interactivity. 
+The first viewing activity was a passive ‘lean-back’ interaction 
+where users selected footage to watch on both the television 
+and tablet, or they read supplementary companion content on 
+the tablet. In the second viewing activity additional application 
+functionality was unlocked, allowing users to watch videos and 
+find  unidentified  footage  of  a  specific  runner,  Jason.  In 
+addition, users were asked to build a playlist of the best videos 
+of him for inclusion in a video souvenir. While this second 
+viewing  activity  is  akin  to  more  traditional  groupware 
+practices, it also represents a necessary step in the development 
+of video souvenirs from the marathon, a desired output of the 
+corpus discussed in [23]. However, our implementation of the 
+activity  was  designed  to  reflect  a  more  familiar  televisual 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+experience, for example, incorporating simple interactions and 
+full screen video playback on the television.  The two-part 
+structure of the trial highlighted differences between viewing 
+activities, aiding our analysis and simplifying the briefing of 
+application  functionality  to  participants.  The  following 
+subsections describe the available functionality for each task 
+and the study procedure. 
+(cid:18)(cid:26)(cid:42)(cid:42)(cid:34)(cid:45)(cid:30)(cid:1)(cid:23)(cid:34)(cid:30)(cid:46)(cid:34)(cid:38)(cid:32)(cid:1)(cid:21)(cid:26)(cid:42)(cid:35)(cid:1)
+
+allowing  them  to  review  a  runner’s  video,  find  untagged 
+footage  and  create  a  shared  playlist.  In  the  evaluation  the 
+application was configured to show both general footage and 
+possible footage of Jason. When the application was operating 
+in the second mode, the following functionality was available 
+in addition to the features from the first viewing activity: 
+
+ 
+
+Figure 1. Video playback on the application 
+
+During the passive viewing task users were asked to watch the 
+footage using both the television and the tablet application. In 
+addition, users could review auxiliary information about the 
+professional content, synchronised with the video. There was 
+no remote control available to users and all interaction with the 
+television was conducted from the tablet application. In the first 
+mode, the application had the following functionality:  
+Playback of video content on the tablet: Professional and 
+amateur videos were available to select and watch back on the 
+tablet. Users had the option to play video from the beginning or 
+to resume from a previous playback location. Figure 1 is a 
+screen grab of amateur video playback on the tablet.   
+Control and Playback on the television: Users could select 
+videos  on  the  tablet  for  playback  on  the  television. 
+Additionally,  users  could  pause,  rewind  and  fast  forward 
+content playing on the television from the tablet application. 
+Facts  and  figures  information  pages:  A  collection  of 
+information pages about the professional video content was 
+made available to users, in sync with playback. These pages 
+included, race history, course, results and marathon facts.  
+Upon  completing  the  briefing  users  had  approximately  25 
+minutes to watch the professional and amateur footage. This 
+was followed by a short semi-structured interview. During the 
+interview participants were asked to discuss their preference for 
+either amateur or professional content, focusing on the values 
+that each type of content brought to the experience of watching 
+back the marathon. They were also asked to reflect upon how 
+they shared content between themselves, how the devices were 
+divided between them, and which content was best shown on 
+the different devices.   
+(cid:20)(cid:39)(cid:41)(cid:43)(cid:34)(cid:38)(cid:32)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)(cid:17)(cid:41)(cid:32)(cid:26)(cid:38)(cid:34)(cid:42)(cid:34)(cid:38)(cid:32)(cid:1)(cid:23)(cid:34)(cid:30)(cid:46)(cid:34)(cid:38)(cid:32)(cid:1)(cid:21)(cid:26)(cid:42)(cid:35)(cid:1)
+In the second half of the study, users had access to the sorting, 
+organising and playlist features offered by the application, 
+
+ 
+
+Figure 2. The map interface 
+
+Watch a runner clip: The application allowed users to watch 
+clips  of  footage  where  a  runner  had  been  tagged.  The 
+application included two interfaces to help users navigate the 
+amateur corpus for footage of Jason, a map (figure 2) and a list. 
+The  map  interface  that  organised  tags  of  a  runner,  and 
+highlighted points in the video where that runner might be, was 
+based on their running speed and video timestamp. The list 
+interface displayed the same videos vertically. When users 
+selected one of the videos to watch, they had the option to view 
+these on either the tablet or the television. 
+Runner tagging: The application allowed users to add tags to 
+the RunSpotRun dataset. When users selected one of the videos 
+showing a location where the runner might, they had the option 
+to view these on either the tablet or the television. Whichever 
+they chose, a tagging button was displayed on the tablet. When 
+a user clicked the tag button, a new tag of the runner was added 
+to the videos metadata. New tags were updated on both tablets 
+interfaces immediately. 
+Playlist: Users could build a playlist of short video clips that 
+contained tags of runners. Videos on the playlist could be 
+reorganised, removed, or played back on either the television 
+or the tablet. A single playlist was common to all tablets in the 
+viewing ecology, therefore additions and changes were shared 
+and displayed across the devices.  
+Once this new functionality was explained to users, they had a 
+further 25 minutes to use the application. During this second 
+phase of interaction, users were asked to look for new video 
+footage of the runner Jason using their choice of either the map 
+or list interface, and to tag any times they spotted him in the 
+footage where he had not been previously tagged. In addition, 
+users were asked to build a playlist of videos of Jason during 
+this time, and to order their choices by preference. Users were 
+told  to  think  of  the  playlist  as  a  selection  of  videos  to  be 
+included in a video souvenir of Jason’s race. Upon completion 
+of the interactive part of the study, a second 10 minute semi-
+structured  interview  was  conducted.  Questioning  in  this 
+
+408
+
+SESSION: CO-PRESENT AND REMOTE MEDIA USE
+
+interview  centred  on  the  practice  of  how  users  found  and 
+organised videos of Jason from the race, and elicited revised 
+opinions based on the experiences of the second part of the trial. 
+Finally, users were asked to reflect on the videos they had 
+selected to be included in a souvenir, why these were chosen, 
+and the rationale behind their playlist order.  
+(cid:18)(cid:5)(cid:19)(cid:21)(cid:12)(cid:7)(cid:12)(cid:18)(cid:5)(cid:16)(cid:21)(cid:20)(cid:2)(cid:1)(cid:14)(cid:5)(cid:25)(cid:17)(cid:22)(cid:21)(cid:1)(cid:5)(cid:16)(cid:8)(cid:1)(cid:8)(cid:5)(cid:21)(cid:5)(cid:1)(cid:7)(cid:5)(cid:18)(cid:21)(cid:22)(cid:19)(cid:9)(cid:1)
+Participants took part in the study in groups of three, but only 
+two tablets were made available to them during the trial. This 
+allocation was chosen to maximise the possibilities for sharing 
+behaviour, generating more potential configurations than a 
+single tablet and ensuring user didn't simply interact with one 
+device each.  
+Thirty participants, in ten groups of three, completed the study. 
+Five of the groups had an active interest and investment in the 
+video content; each of these groups was composed from a 
+combination of runners, spectators who had shot video using 
+the RunSpotRun application and those who had not, and friends 
+of Jason. Any videos contributed by members of the study 
+group remained unanonymised for their evaluation session. The 
+other five, non-invested groups, were made up of participants 
+who  did  not  take  part  in  the  RunSpotRun  study,  but  had 
+expressed an interest in watching back footage of the marathon 
+as a community event. 
+For the purposes of anonymity, each participant and group has 
+been assigned a user code. Each participant is either labelled as 
+(a)  spectator;  a  spectator  who  watched  the  marathon,  (b) 
+spectator (app); a spectator who watched the marathon and 
+used  the  RunSpotRun  application,  (c)  friend  of  Jason;  a 
+participant who wasn’t present at the marathon but knows the 
+runner Jason, (d) community; a participant who is not invested 
+in the race but lives and works in the local area and has an 
+interest in the community event, or (e) runner; a competitor in 
+the marathon event. Table 1 summarises the participant user 
+codes  and  their  investment  in  the  race.  Participants  were 
+recruited in existing friendship groups, to ensure comfortable 
+social interaction during the study.  To some extent this dictated 
+the spread of users' connection to the race, however an even 
+split between invested and uninvested groups was maintained.  
+The laboratory layout was designed to minimise the unnatural 
+effects of the setting and data capture. Comfortable seating was 
+arranged  around  a  medium  sized  flat  panel  television  and 
+participants were invited to sit where they wanted. Tablets were 
+placed neutrally on a coffee table in front of users so as not to 
+imply ownership of a particular user.  
+(cid:8)(cid:26)(cid:43)(cid:26)(cid:1)(cid:7)(cid:26)(cid:40)(cid:43)(cid:44)(cid:41)(cid:30)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)(cid:7)(cid:39)(cid:29)(cid:34)(cid:38)(cid:32)(cid:1)
+During the evaluation, user behaviour was video recorded.  The 
+purpose of this was to capture deep observations on sharing of 
+content and subtlety of communication between participants. 
+The camera was positioned under the television, pointing at 
+users.  The  video  data  was  combined  with  interaction  logs 
+generated by the application while in use. Post trial, the logs 
+were synchronised with the video, to allow interpretation of 
+social  and  system  interaction.  The  user  interview  that 
+
+409
+
+completed each part of the study was also video recorded. Both 
+observational and interview data was coded thematically on the 
+basis of both recurrent practice and aspects considered to be of 
+substantive  significance.  The  initial  study  objectives  were 
+utilised as ‘analytic foci’ [41], providing a framing for the 
+analysis.  Initial  nodes  were  generated  by  identifying  key 
+interactions from the participant videos. These nodes were then 
+grouped into organising themes and then further distilled into 
+global themes. These global themes have been used to organise 
+our findings section below. 
+Group  Participant 1 
+I1 
+I2 
+
+I11: Community  I12: Community  I13: Community 
+I21: spectator  
+
+Participant 2 
+
+Participant 3 
+
+I23: runner 
+
+I22: spectator 
+(app) 
+I32: spectator 
+(app) 
+
+I33: spectator 
+(app) 
+
+I31: spectator 
+(app) 
+I41: Community  I42: Community  I43: Community 
+I51: Community  I52: Community  I53: Community 
+I61: friend of 
+Jason 
+I71: Community  I72: Community  I73: Community 
+I81: Community  I82: Community  I83: Community 
+I91: spectator 
+
+I63: friend of 
+Jason 
+
+I62: friend of 
+Jason 
+
+I3 
+
+I4 
+I5 
+I6 
+
+I7 
+I8 
+I9 
+
+I10 
+
+I101: runner 
+
+I92: spectator 
+(app) 
+I102: runner 
+
+I93: Spectator 
+(app) 
+I103: runner 
+
+Table 1. Participants and their investment in the marathon 
+
+(cid:10)(cid:12)(cid:16)(cid:8)(cid:12)(cid:16)(cid:11)(cid:20)(cid:1)
+This section begins by describing the strategies and sharing 
+practices users exhibited, and interactions with the available 
+content.  Overall,  the  application  was  well  received;  21 
+participants responded favourably, finding it broadly usable.  
+(cid:7)(cid:39)(cid:39)(cid:41)(cid:29)(cid:34)(cid:38)(cid:26)(cid:43)(cid:34)(cid:39)(cid:38)(cid:1)(cid:39)(cid:31)(cid:1)(cid:45)(cid:34)(cid:30)(cid:46)(cid:34)(cid:38)(cid:32)(cid:1)(cid:1)
+During  the  first  part  of  the  study,  users  watched  the 
+professional  and  amateur  video  content  freely,  without  a 
+focused  task.  As  one  might  expect  with  passive  television 
+watching, participants were not observed to formulate explicit 
+strategies that coordinated or structured their viewing across 
+the television and tablets. The only exception to this was the 
+initial decision point where participants decided which type of 
+content to screen on the television. Seven of the groups actively 
+discussed which content to play on the television first, six of 
+these groups opted for the professional video. 
+Groups organised themselves in an ad-hoc manner, applying 
+social norms of politeness and sharing to ensure that everyone 
+got a fair chance at using the tablets when they wanted. The 
+following quote from group I9 exemplified the feelings of 
+many participants about managing the limited resource of the 
+tablet amongst the groups in the first part of the study. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+I91: “The British polite way, I guess. I waited for those social 
+cues that felt it was alright for me to take it. I would have just 
+grabbed it off her otherwise. [Laughs]”  
+I93: “I think [I92] took the first tablet, so I waited a little bit 
+and it seemed like you two were going to share, Then I picked 
+up the other one” 
+Users did however share out information about what they were 
+reading on the facts and figures display, accessible through the 
+tablets, by verbalising what they were reading. Participants 
+shared  race  statistics  and  information  with  others,  clearly 
+relating it with what was being watched on the television. Eight 
+of the study groups were observed to use the facts and figures 
+display, with seven of these groups actively sharing around 
+what they were reading with others in the group; enhancing and 
+extending the experience of watching the professional video 
+footage. For example, the following exchange by group I6 
+where I61 was able to inform his fellow viewers of the race 
+route, and they were able to reflect on the surrounding areas of 
+Nottingham. 
+I63: [talking about the race route to I62] “I guess it goes up 
+through the Victoria Embankment then it goes.” 
+I61: “Here it is, it starts down here” [I61 holds out the tablet, 
+I62 and I63 lean in to look and explore the race route] 
+Impromptu coordination of the TV watching was contrasted 
+against the more strategic and organised approaches adopted by 
+users in the tagging and ranking part of the trial. In five groups 
+users  tried  to  ensure  that,  with  the  tablets  divided  among 
+several group participants, other members of the group did not 
+review the same video for possible sightings of Jason. This 
+strategy for the division of labour was guided by the interface 
+that the group chose to use. When using the map interface, users 
+divided the suggested videos geographically. When using the 
+alternative list interface, one tablet user would select videos 
+from the top of the list, while the other would start at the bottom 
+of the list.  
+I21: “So is it worth just having a quick split are you starting at 
+the top of Jason's list” 
+I23: “No” 
+I21: “You've just selected one at Random. That's really useful. 
+[Sarcastically]” 
+ 
+I62: “So shall we focus on one area the same or shall we do it 
+with two different areas. So do some greys on the left [points to 
+I63] and some greys on the right [point to I61]” 
+(cid:24)(cid:39)(cid:41)(cid:35)(cid:34)(cid:38)(cid:32)(cid:1)(cid:5)(cid:36)(cid:39)(cid:38)(cid:30)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)(cid:21)(cid:39)(cid:32)(cid:30)(cid:43)(cid:33)(cid:30)(cid:41)(cid:1)
+During the tagging and ranking section of the study, groups 
+were divided evenly between those that worked together, and 
+those that adopted a strategy in which 2 participants worked 
+together and 1 worked alone. Users were not able to work 
+individually given the limited resource of two tablets between 
+three. The users who adopted the ‘working alone’ strategy were 
+always those physically located at the periphery of the group 
+rather than those sitting in the middle. When asked about why 
+I93 adopted this behaviour, she and I92 reasoned about how 
+design of the app had led to problems with their strategy.  Their 
+
+inability to see what was being done by others was seen as 
+limiting the effectiveness of 'working alone'. 
+Researcher: “So, you saw what they were doing and went off 
+and did your own thing a little bit just because it was easier?” 
+I93: “Maybe, I wasn't really sure what they were doing” [to 
+I91 and I92]. 
+I92: “It took a lot of mental energy to remember what you were 
+doing in the app, so when two people were doing it, you're not 
+just focusing on the app, your talking between you [...], so you 
+forget what you were doing, as opposed to if it were a focused 
+task for one individual,[...] it's a lot of work.” 
+Figure 3 shows a configuration of users where 2 participants 
+work  together  and  1  alone,  and  figure  4  the  whole  group 
+collaborating together.  
+
+ 
+Figure 3. Participants working alone and together 
+
+Group  I4,  evolved  a  strategy  that  involved  each  of  them 
+working together collaboratively across the TV and the two 
+tablets. I43 described the strategy as having developed after the 
+start of the task, when they had no structure to their selections; 
+he described their lack of a strategy as leading to “complete 
+chaos”. In their approach I41 controlled which videos were 
+watched by the group on the TV, while I42 was primed to press 
+the pause button should any of them spot Jason on the other 
+tablet. I41would then tap the tag button. Both group I4 and I9 
+were relatively successful, spotting and tagging Jason in 4 
+videos each, however the strategy adopted by group I9 led to 
+two duplicated tags, whereas as all I4’s tags were unique. In 
+four  out  of  the  five  groups  that  adopted  a  system  of  two 
+participants working together and one working alone, duplicate 
+tags of Jason were created. 
+
+Figure 4. Participants all working together 
+
+While the Jason tagging task led groups to employ a range of 
+strategies and practices, the ranking task showed much more 
+consistent behaviour amongst the groups. Seven out of the ten 
+
+ 
+
+410
+
+SESSION: CO-PRESENT AND REMOTE MEDIA USE
+
+groups worked together as a three to rank the videos of Jason 
+into order. 
+(cid:10)(cid:15)(cid:19)(cid:15)(cid:28)(cid:18)(cid:25)(cid:18)(cid:22)(cid:21)(cid:1)(cid:11)(cid:21)(cid:14)(cid:1)(cid:5)(cid:22)(cid:21)(cid:26)(cid:24)(cid:22)(cid:19)(cid:1)(cid:1)
+In the TV watching section of the trial all groups watched most 
+or  all  of  the  professional  video  content  on  the  Television. 
+Group I6 said that this organised their viewing of the content 
+during the first part of the study. This provided them with the 
+“main focus” by which they could orientate their viewing on 
+the tablet, investigate the facts and figures, and select spectator 
+footage. 
+I62: “Main focus yeah, I think we all kind of thought we would 
+could  connect  everything  in  and  watch  it  […].  Watch  the 
+highlights of the race, look at the map, try and figure out some 
+sort of connection to the snippets [amateur content] as well.” 
+I63: “[…]I would have trouble changing it without people 
+saying it's what they wanted. So there is a social aspect” 
+The television was clearly cast as the social hub of viewing, an 
+evident focal point across all of the groups. Subsequently, users 
+were also cautious about making sure it was appropriate to 
+change  the  channel  with  the  rest  of  the  group  and  not  to 
+interfere with another participant’s viewing. As one might 
+expect, the size of the television played its part in ensuring that 
+it  was  an  important  component  of  the  viewing  ecology. 
+Additionally, users from group I4 responded positively to the 
+enhanced  methods  of  television  control  offered  by  the 
+application, indicating that the features had added depth to their 
+experience: 
+I43: “Larger screen, more real estate, picture quality.” 
+I41: “I do like the fact that it's more interactive with your TV, 
+its not just a stationary object any more, it's the fact you can 
+throw stuff on there, you can control it many ways, you can't do 
+that  with  a  controller  normally.  So  I  think  that  that’s  an 
+appealing fact that you can play around with your TV with a 
+lot more depth.” 
+Additional television preferences were stated after the tagging 
+and  ranking  section  of  the  trial.  As  discussed  earlier,  the 
+characteristics of the television supported various strategies for 
+tagging Jason, as a group. Group I2 said that the television’s 
+scale enabled them to collectively confirm the identity of the 
+runner. Participants also responded that the process of spotting 
+him together was not only made easier but also more enjoyable. 
+I33:  “We  didn't  really  watch  any  of  it  on  the  tablet  just 
+collaboratively stared at the screen to see if we could spot him, 
+I guess as a backup if you missed him you could maybe rely on 
+someone else to have spotted him. [...] I think it's just more 
+enjoyable  to  do  it  together  [...]  it  definitely  made  it  more 
+interesting than working on our own.” 
+(cid:7)(cid:21)(cid:26)(cid:15)(cid:24)(cid:3)(cid:14)(cid:15)(cid:28)(cid:18)(cid:13)(cid:15)(cid:1)(cid:9)(cid:15)(cid:19)(cid:11)(cid:26)(cid:18)(cid:22)(cid:21)(cid:25)(cid:17)(cid:18)(cid:23)(cid:1)
+In  some  instances,  users  struggled  with  the  relationship 
+between the devices. In the TV watching part of the study, the 
+tablets operated independently, meaning that either user was 
+able to start and control playback on the television at any time. 
+Moreover, the viewing history was unique to each tablet, so that 
+
+411
+
+resuming  content  on  the  TV  would  pick  up  from  the  last 
+watched  place  on  either  the  TV  or  that  tablet.  Subsequent 
+progress on the other tablet was not taken into consideration. 
+This model was intuitive to most users, however there was 
+some confusion [group I5] in identifying that a video could be 
+played on the tablet, whilst still being able to use the television 
+controls.  
+The inter-device relationship was altered subtly during the 
+tagging and ranking section of the trial, where the tablets shared 
+a  common  playlist  of  videos  and  tag  list  of  runners.  This 
+functionality facilitated users working together to find videos 
+of Jason and to order them. In four of the groups, duplicate 
+videos were added to the playlist from different tablets, making 
+the ranking task more confusing and longer, as participants 
+tried to sort the same video more than once. Several user groups 
+expressed frustration at not having enough information about 
+what fellow group members were doing on the other tablet, and 
+what was playing on the television while they were tagging. 
+I52: “[The] problem is, if another user selects a video on the 
+TV, we don't know who did that” 
+Table 2 shows the number of tags each group generated of 
+Jason and the number of duplicated tags. Group I7 was the only 
+group to tag runners who were not Jason.  
+
+Group 
+Tags 
+
+I1  I2  I3  I4  I5  I6  I7  I8  I9  I10 
+3 
+4 
+Duplicates  0 
+1 
+
+5 
+1 
+
+5 
+0 
+
+4 
+1 
+
+4 
+0 
+
+1 
+0 
+
+9 
+0 
+
+4 
+0 
+
+6 
+2 
+
+Table 2. Tags and duplicated tags by groups 
+
+(cid:5)(cid:22)(cid:21)(cid:26)(cid:15)(cid:21)(cid:26)(cid:1)(cid:5)(cid:22)(cid:21)(cid:26)(cid:24)(cid:22)(cid:19)(cid:1)
+Users articulated several reasons for pushing content that was 
+initially being watched on the tablet, to the television. Sharing 
+amateur content was common. Users wanted to share video or 
+facts and figures with the group because they saw interesting 
+footage or information or, in the case of the invested groups, 
+they wanted to share the content which they had produced  
+I23: “You definitely look like you were filming as I ran passed 
+[…]” 
+I21: [Watching I23's video on the tablet] “So where do you 
+think you were”  
+I23: “you were on Castle Boulevard […]” 
+I22: [takes the tablet to see for himself] 
+I21: “Stick it on the TV [I22 puts the video on the TV]” 
+In the 'lean forward' part of the trial, users continued with this 
+practice when searching for video footage that included Jason. 
+They did however find this to be a difficult process, and not one 
+that the application was optimised for. Finding the video that 
+they wanted to share with the group was hard as the interfaces 
+didn’t differentiate the videos that they had already seen, or 
+have  a  mechanism  for  switching  the  tablet  video  to  the 
+television  and  vice-versa;  functionality  akin  to  that  of 
+technologies such as Apple Airplay [3]. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+towards 
+
+(cid:5)(cid:37)(cid:26)(cid:43)(cid:30)(cid:44)(cid:41)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)(cid:18)(cid:41)(cid:39)(cid:31)(cid:30)(cid:42)(cid:42)(cid:34)(cid:39)(cid:38)(cid:26)(cid:36)(cid:1)(cid:23)(cid:34)(cid:29)(cid:30)(cid:39)(cid:1)
+At the conclusion of the first part of the trial all spectators were 
+asked  to  indicate  which  type  of  footage,  professional  or 
+amateur, offered better value for watching the marathon. 19 
+participants  stated  a  preference  for  the  professional  video, 
+favouring the cleaner and more polished view of the race; this 
+was particularly true of the groups who had not run or spectated 
+the marathon.  
+However, of the eight spectators that took part in the trial, six 
+attributed  more  value  to  the  amateur  spectator  footage, 
+regarding it as a better reflection of the experience of being 
+there. This preference was not shared by competitors in the 
+race, with group I10 stating a preference for the professional 
+video. As keen runners, they liked being able to see how the 
+professional athletes performed at the head of the pack, offering 
+a viewpoint unavailable during the race.  
+I101: “The nice thing about the video is seeing things you can't 
+see. Especially with the professional one, those runners are 
+twice as fast as I am, so I'm never going to see them.” 
+Opinions 
+the  amateur  footage  were  revised 
+significantly during the second part of the trial, with many 
+participants, including the runners from group I10, stating a 
+preference for the crowd sourced videos in the tagging and 
+selecting part of the trial: 
+I102: “definitely worked better for looking at the amateur 
+footage compared to the first task, which was, here is a load of 
+videos which vary from ok to rubbish and this was like here are 
+some videos that might have something interesting in.” 
+Appreciation of amateur footage involved a balance between 
+recording  quality  and  user  interest  in  its  content.  Ranking 
+practices were mostly based on content quality. The amateur 
+footage  was  variable  in  quality  and  factors  such  as  the 
+shakiness, and the correctness of exposure and focus were 
+paramount in informing decisions about video ranking. The 
+quality of the footage of Jason was also a factor, with users 
+preferring footage where he could be clearly identified. 
+I was clear that users made considered choices before watching 
+this content on the television. As already stated, professional 
+content  was  watched  by  all  groups  on  the  television.  This 
+practice was observed without the group reflecting on what it 
+may  contain  or  their  interest  in  it.  For  uninvested  groups, 
+amateur video, and video not captured by group members, was 
+selected from the list without much consideration. However 
+sometimes users would make reference to the location of the 
+video, or they would want to share something they had seen on 
+the  tablet  with  others.  For  the  participants  that  had  taken 
+content, there were several reasons to watch and to share this 
+content with the group. For example, participants from group 
+I3 watched their videos on the tablets and did not share them 
+with each other. During the interview they stated their reasons 
+for watching and not sharing: 
+I33: “I had a quick look on the tablet but I already knew the 
+footage I filmed was incredibly dull [laughs].” 
+
+I31: “so did I [...] was more a self-conscious thing I wanted to 
+check was I say anything stupid.”  
+Participant I93 took this approach even further by refusing to 
+watch her video at all, avoiding any social embarrassment and 
+stating that she “thought it might a bit rubbish”. Participant I92 
+on the other hand was more ready to share and watch her videos 
+with the group. As a prolific videographer at the marathon, she 
+had generated over an hour of footage and was keen to see her 
+work. Group I9 were unique in the study in that they started 
+with  a  spectator  video  on  the  television  rather  than  the 
+professional  video,  playing  I92’s  footage.  However,  I22’s 
+video,  which  group  I2  believed  contained  footage  of  I23 
+running the marathon, was initially watched by I21 and I22 on 
+the tablet. When they reached the part of the video where I23 
+was  likely  to  have  been  captured,  the  group  collectively 
+switched to watching the video on the television so they could 
+all easily see him on the big screen.  
+During  the  first  part  of  the  trial  users  in  three  groups 
+commented on a preference for the map interface for amateur 
+footage. They felt this aided the video selection during the first 
+part of the trial, and while this was rectified in the second part 
+of the study, users suggested it as a way to help organise and 
+navigate the spectator footage in the passive section of the 
+evaluation. Conversely the group of runners [I10], found the 
+spatial  organisation  of  the  race  information  not  to  be  as 
+important to them as the timing information. They already had 
+a good understanding of the race route, having run it, and were 
+more interested in working out how long after the start gun the 
+video was taken. This information would allow them to see the 
+professional and club runners taking part, and to aid in spotting 
+themselves in the footage.  
+I102: “I think as a runner, it's a linear route, you know you've 
+gone passed it at some point so it's just about the time” 
+(cid:8)(cid:12)(cid:20)(cid:7)(cid:22)(cid:20)(cid:20)(cid:12)(cid:17)(cid:16)(cid:1)
+We organise our discussions around emergent themes from the 
+data in respect of (a) our research questions, and (b) the existing 
+literature from groupware, television and content consumption. 
+We conclude each subsection with design implications and 
+strategies  for  other  practitioners  working  with  multiscreen 
+viewing ecologies. 
+(cid:14)(cid:30)(cid:26)(cid:38)(cid:34)(cid:38)(cid:32)(cid:1)(cid:27)(cid:26)(cid:28)(cid:35)(cid:46)(cid:26)(cid:41)(cid:29)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)(cid:31)(cid:39)(cid:41)(cid:46)(cid:26)(cid:41)(cid:29)(cid:1)(cid:1)
+Tasks, such as the runner tagging and ranking activities we 
+report on here, may seem contrary to the normally relaxing 
+experience of television watching [44]. However, we believe 
+that  multiscreen  applications  which  interact  with  large 
+quantities  of  crowd  sourced  content,  such  as  MarathOn 
+Multiscreen,  require  users  to  act  as  curators  to  generate 
+personal narrative experiences. Traditionally television has 
+been a ‘lean back’ activity, however increased interactivity 
+suggests this view may need revision [48]. Recent work in 
+second screen viewing applications has pushed the boundary of 
+television  watching  as  a  passive  viewing  experience, 
+introducing  new  opportunities  to  interact  with  relevant 
+additional content through secondary devices [37] or social 
+
+412
+
+SESSION: CO-PRESENT AND REMOTE MEDIA USE
+
+media updates [19]. We map the two phases of the user trial to 
+these modalities. The passive viewing activity, where users 
+viewed the video content was a ‘lean back’ activity, whilst the 
+tagging and ranking tasks were ‘lean forward’.  
+During the first, lean back, section of the user trial, users were 
+observed  not  employing  strategies  or  coordination  in  their 
+viewing, much as one would expect from traditional passive 
+television watching. Content selection and control were ad-hoc 
+and  governed  by  users’  polite  willingness  to  share.  This 
+approach spread effectively to the sharing of facts and figures 
+and distribution of devices. During the ranking activity, a lean 
+forward task, users tended to orientate together and worked 
+collaboratively  with  the  single  playlist.  Groups  had  few 
+difficulties using this interface to sort the videos. However 
+during the tagging part of the trial, where participants were 
+asked to search for additional footage of the marathon runner 
+Jason, they struggled to coordinate and organise themselves. 
+The observed lack of coordination resulted in user frustration 
+and unnecessary doubling of effort across the group. Where 
+users adopted a strategy of two participants working together 
+with one tablet, and the other participant working alone, it was 
+observed that this resulted in the generation of duplicate tags of 
+Jason. Even though the application revised both list and map 
+views instantly when a new tag was created, across all devices, 
+this did not stop users from tagging a video that had already 
+been selected. In contrast to those groups who tried to divide 
+content between each other, Group I4’s strategy of working 
+together by dividing the tasks of selecting video and tagging 
+between the tablets was more successful as they generated no 
+duplicate tags. 
+Groupware literature highlights the importance of awareness 
+and visibility of other users’ interactions for good usability of 
+collaborative applications [28, 9, 20]. MarathOn Multiscreen’s 
+awareness  features  were  lacking  in  comparison  with 
+capabilities of these examples, and proved insufficient even for 
+the relatively simple collaborative tasks users undertook with 
+the application. This held true for the passive viewing task 
+where  users  were  comfortable  coordinating  their  viewing 
+between the television and the tablets. However, in the later 
+part of the trial the need for awareness of others' actions was 
+increased, and the mechanisms provided by the application 
+were insufficient, affecting the applications effectiveness as a 
+curation tool. In a real world setting, the transition between 
+viewing activities would be fluid and interfaces would need to 
+respond to this change, promoting awareness of the activities 
+of others where needed. In situations where these features are 
+less  necessary,  they  may  be  seen  as  undesirable  by  users, 
+potentially interfering with the relaxed sociality of viewing and 
+with the privacy afforded by independent viewing. As currently 
+designed, the viewing ecology promoted by the application 
+supports a flexible sharing of devices between users who work 
+together and alone; offering feedback on a per-user basis may 
+not  provide  adequate  awareness  as  devices  are  exchanged 
+between users.  
+
+Users of the MarathOn Multiscreen application struggled with 
+awareness of others’ content-related actions. One approach 
+worthy of further investigation may be the introduction of ‘role 
+restrictive’ mechanisms suggested by Dourish & Bellotti [20], 
+formalising the strategy adopted by group I4 by only allowing 
+certain  devices  to  perform  particular  functions  of  the 
+application across the ecology. Whilst the authors are critical 
+of this approach, stating that it limits the potential activities of 
+a user and that it challenges these roles being renegotiated 
+during the activity, it is our belief that in this context, the simple 
+nature of these interactions would require little renegotiation. 
+As an alternative, the system could report not on what a user is 
+attending  to,  but  what  work  has  been  completed,  and 
+suggesting an effective next video for users to view. In the case 
+of  MarathOn  Multiscreen  this  information  would  include 
+identification of the videos that have already been watched, 
+tagged (by any user, with any device), and then suggest the next 
+most likely video of Jason. 
+(cid:8)(cid:30)(cid:45)(cid:34)(cid:28)(cid:30)(cid:1)(cid:41)(cid:39)(cid:36)(cid:30)(cid:42)(cid:1)(cid:34)(cid:38)(cid:1)(cid:43)(cid:33)(cid:30)(cid:1)(cid:30)(cid:28)(cid:39)(cid:36)(cid:39)(cid:32)(cid:47)(cid:1)(cid:1)
+The television was the centre of the application’s ecology and 
+the social hub of viewing for users. The big screen allowed 
+users to share and review video footage between the group as a 
+whole, in ways not possible with the intrinsically individual 
+display of the tablets. The subtleties of usage and coordination 
+of the devices in the ecology however, were characterised by 
+the tasks and modality that users were engaged with [32]. 
+Usage of the television and interaction differed between the 
+two modalities of lean forward and lean backwards. While 
+leaning  backwards  and  watching  the  breadth  of  content, 
+professional  video  dominated  the  television.  The  editorial 
+polish and high quality camera work marked it out as fitting 
+better with the communal display. Decisions around whether to 
+share  spectator  content  during  this  modality  were  more 
+involved and often entailed viewing the content first on the 
+tablet to decide what was interesting and worth sharing with the 
+group. During the lean forward part of the trial the large scale 
+and communal aspects of the television were utilised to support 
+tagging Jason, where the TV allowed users to view together. In 
+this context, being able to swiftly move content between the 
+devices became important to users.  
+The relationship between the tablets necessarily evolved with 
+the changing characteristics of the activities users engaged 
+with. The introduction of a shared playlist and video list caused 
+some  users  issues  with  understanding  the  reach  and 
+implications of their interactions.  
+In addition, the application included interfaces with both shared 
+(runner views and playlist) and device specific data models 
+(tablet playhead progress). Users understanding of the reach of 
+their actions was compromised by the transition between these 
+models,  posing  the  question;  when  is  it  appropriate,  and 
+understandable  to  users,  to  include  interfaces  that  share  a 
+dataset  between  devices?  Additionally,  how  can  these 
+interfaces' functionality be best articulated to users in order to 
+avoid confusion and wasted effort?  
+
+413
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(cid:18)(cid:41)(cid:39)(cid:31)(cid:30)(cid:42)(cid:42)(cid:34)(cid:39)(cid:38)(cid:26)(cid:36)(cid:1)(cid:26)(cid:38)(cid:29)(cid:1)(cid:5)(cid:37)(cid:26)(cid:43)(cid:30)(cid:44)(cid:41)(cid:1)(cid:7)(cid:39)(cid:38)(cid:43)(cid:30)(cid:38)(cid:43)(cid:1)
+The  quality  of  professional  video  footage  was  starkly 
+contrasted  for  users  against  the  variability  of  the  amateur 
+footage, which at times was shaky, poorly framed and badly 
+exposed. These factors had a negative effect on many users’ 
+enjoyment of the video and the value that they attached to it. 
+However user investment in the footage and the task at hand 
+had a positive effect on how the amateur video was perceived.  
+Organisation of this content, both for invested and uninvested 
+groups, provided important structuring for viewing or tagging 
+tasks. Several of the users suggested, prior to seeing the map 
+for the tagging task, that a locative interface would help them 
+to  identify  the  amateur  video  footage  they  wanted  to  see. 
+Additionally  group  I10,  which  was  made  up  of  three  race 
+runners, preferred an organisation scheme that would show the 
+run times of runners in the video.  This would allow them to 
+select footage based on the quality of a runner or to look out for 
+footage of themselves. In the lean forward part of the study, 
+where  some  of  these  features  were  available  to  users,  the 
+content was better received and users were more effectively 
+able to navigate it. Future iterations of the application could use 
+the map interface in both lean forward and backward modalities 
+to enhance content navigation. This interface could additionally 
+contain mechanisms by which users might filter the footage by 
+runner time.  
+Our user-suggested enhancements for a locative interface in the 
+lean  back  application  mode  could  be  a  useful  addition  to 
+functionality. However, this design direction would be highly 
+context  specific  and  would  not  transpose  to  other  similar 
+applications  operating  in  different  domains  with  different 
+design constraints; for example stadium based sport spectating 
+[18] or reconstructing amateur footage from music concerts 
+[47].  Therefore,  we  recommend  that  presentation  and 
+organisation of crowd-sourced video should be a foremost 
+consideration when consulting users during design process.  
+(cid:8)(cid:27)(cid:12)(cid:19)(cid:18)(cid:13)(cid:2)(cid:1)(cid:23)(cid:24)(cid:18)(cid:28)(cid:11)(cid:26)(cid:15)(cid:1)(cid:11)(cid:21)(cid:14)(cid:1)(cid:4)(cid:28)(cid:22)(cid:18)(cid:14)(cid:18)(cid:21)(cid:16)(cid:1)(cid:6)(cid:20)(cid:12)(cid:11)(cid:24)(cid:24)(cid:11)(cid:25)(cid:25)(cid:20)(cid:15)(cid:21)(cid:26)(cid:1)
+Avoiding  embarrassment  arising  from  crowd-generated 
+content  was  a  concern  for  several  participants.  While  the 
+communal display of the television was the preferred location 
+for viewing professional content and searching for Jason, users 
+had a more complex relationship with video that they had either 
+shot or where they were the subject. For some, the opportunity 
+to share the video they had shot was seized upon and they 
+wanted to share this on the television. Likewise, if a group 
+member who had run the marathon was featured, or believed 
+that they might be in some of the footage, this was presented 
+publicly for the whole group to see on the television. This 
+behaviour was not universal to all participants however, with 
+others wanting to vet their video before it was cleared for public 
+viewing. In one instance, a participant completely refused to 
+watch any of the footage she took at the marathon, believing it 
+to be of poor quality and limited length. The opportunity to 
+privately watch footage before sharing with the group was 
+enabled by the feature that allowed video footage to be viewed 
+on the tablet as well as on the television.  
+
+Public  display  literature  has  explored  embarrassment  with 
+interacting in a public space [7, 17]. Additional work from 
+cultural studies, such as [11], has explored the embarrassment 
+of watching television content containing adult themes within 
+the family. In HCI however, less has been written about how 
+embarrassment  is  dealt  with  in  respect  of  user-generated 
+content.  Anstead,  et  al.,  [2]  compare  the  impact  of 
+embarrassing photos between family and friendship groups in 
+a theme park, concluding that the inclusion of embarrassing 
+footage in souvenirs can negatively impact an individual’s 
+public image. In this study we observed participants being 
+equally cautious toward footage in which they were invested.  
+Successful designs for software that include personal footage 
+should ensure that there are opportunities for users to watch 
+footage back privately before sharing it with the group on a 
+communal  display.  A  future  system,  with  more  rigorous 
+protection for user privacy, could potentially offer interactive 
+mechanisms for users to be able to pull content from either 
+being viewed publicly or being used in lean forward tasks such 
+as tagging and ranking. 
+(cid:14)(cid:12)(cid:15)(cid:12)(cid:21)(cid:5)(cid:21)(cid:12)(cid:17)(cid:16)(cid:20)(cid:1)
+The evaluation we report here was designed to generate results 
+on the difference between lean forward and backward tasks, 
+and our findings show a distinction in collaboration practices 
+and organisation. However, the lean forward tasks and the 
+tagging and sorting of video clips of Jason exhibit interactions 
+common to traditional groupware activities presented in a style 
+suitable to television viewing. As such our study is limited to 
+reflecting two very polarised forms of interaction rather than 
+fully exploring the full range of collaborative lean forward 
+applications  that  are  possible.  For  example,  applications 
+including alternative lean forward interactions, such as playing 
+along with a quiz show, may not exhibit the distinctions shown 
+here, whilst demonstrating more recognisable and entertaining 
+television experiences. In addition, the two-part structure of our 
+study did not show a natural transition between the tasks, as 
+one might see in the home, where users organically migrate 
+from passively viewing to being active curators.   
+For  the  evaluation  of  MarathOn  Multiscreen  we  choose  a 
+tightly controlled setting to conduct our study. This decision 
+was motivated by a desire to manage specific variables such as 
+the number of users in each group, the number and type of 
+device, and the replication of the study conditions, for example, 
+room  layout  and  initial  placement  of  devices.  In  addition, 
+MarathOn  Multiscreen  is  a  relatively  novel  prototype  not 
+compatible with current broadcasting technologies, therefore, 
+setup  in  the  home  would  require  additional  researcher 
+intervention that would reduce the natural behaviours such a 
+study would intend to capture. By taking this approach we also 
+allow for potential replication and extension to a larger sample 
+size than would be tractable within a naturalistic setting. Whilst 
+our approach may limit the generalizability of our findings and 
+guidelines, we see controlled studies as an important step in the 
+evolution of multiscreen applications and believe this approach 
+
+414
+
+SESSION: CO-PRESENT AND REMOTE MEDIA USE
+
+will help to inform applications and studies that take place in 
+the wild.  
+Within the confines of our controlled study we investigated a 
+viewing ecology comprised of three users, two tablets and a 
+single television. While these limitations allowed for consistent 
+results,  we  do  not  seek  to  draw  conclusions  on  different 
+configurations of viewers and devices. Furthermore, as the 
+devices used in the study were provided, their use was not 
+contextualised  by  ownership.  The  balance  between  tablet 
+ownership  and  access  is  a  complex  and  nuanced  set  of 
+questions that can be shaped by collaborative interactions and 
+user  relationships  [49].  In  a  future  study  conducted  in  the 
+domestic context, device coordination may well be guided by 
+who within the interacting group owned the devices used.  
+(cid:7)(cid:17)(cid:16)(cid:7)(cid:14)(cid:22)(cid:20)(cid:12)(cid:17)(cid:16)(cid:1)(cid:1)
+We  have  presented  the  evaluation  of  a  collaborative 
+multiscreen  television  application.  MarathOn  Multiscreen 
+explored  the  consumption  of  amateur  and  professional 
+television content of a community marathon across a viewing 
+ecology of display devices. During the study users were asked 
+to  engage  with  passive  and  active  viewing  activities  and 
+observations  were  made  about  sharing  and  collaborative 
+practice between users' devices and content. In addition, our 
+investigations sought findings on use and curation of a corpus 
+of user generated footage. Our discussions lead to implications 
+and guidance for designers of future collaborative multiscreen 
+systems,  and  avenues  for  further  study  and  research.  We 
+observed issues of awareness of other users’ actions while 
+actively engaged with the sorting organising viewing task, 
+which were less present during passive viewing. The fluidity of 
+the  viewing  ecology  that  promotes  ad-hoc  sharing  of 
+information, devices, and transitions between activity requires 
+a dynamic approach to user feedback, articulating other users' 
+interaction  where  needed  and  maintaining  a  lightweight 
+interaction where not.  
+In our study, the presentation and sharing of amateur content 
+was shown to be user and context specific. Where users had an 
+active  investment  in  video  footage,  they  were  often  more 
+accepting of poor quality camera work and a lack of editing. 
+However, some users regarded the sharing of their own amateur 
+footage as potentially embarrassing in the social context of 
+friends and peers. To this end, allowing for users to pre-screen 
+their videos before sharing, encodes the level of user control 
+required  in  order  to  allow  users  to  manage  the  boundary 
+between the public and private screening of their content within 
+the television viewing ecology. 
+(cid:5)(cid:7)(cid:13)(cid:16)(cid:17)(cid:24)(cid:14)(cid:9)(cid:8)(cid:11)(cid:15)(cid:9)(cid:16)(cid:21)(cid:20)(cid:1)
+We would like to thank all the study participants for their time 
+and input. The first author is supported by RCUK (Grant No. 
+EP/G037574/1). The study was carried out at the Mixed Reality 
+Lab at the University of Nottingham 
+(cid:19)(cid:9)(cid:10)(cid:9)(cid:19)(cid:9)(cid:16)(cid:7)(cid:9)(cid:20)(cid:3)(cid:1)
+1.(cid:1) Edward Anstead, Steve Benford, and Robert J. Houghton. 
+2014.  Many-screen  viewing:  evaluating  an  olympics 
+
+415
+
+companion application. In Proceedings of the 2014 ACM 
+international conference on Interactive experiences for TV 
+and 
+103–110. 
+'14), 
+http://doi.org/10.1145/2602299.2602304  
+
+online 
+
+(TVX 
+
+video 
+
+2.(cid:1) Edward  Anstead,  Abigail  Durrant,  Steve  Benford,  and 
+David Kirk. 2012. Tabletop games for photo consumption 
+at  theme  parks.  In  Proceedings  of  the  2012  ACM 
+international  conference  on  Interactive  tabletops  and 
+surfaces 
+61-70. 
+http://doi.org/10.1145/2396636.2396646  
+
+3.(cid:1) Apple Inc. 2015. Apple - iPad - Stream music and movies 
+wirelessly  with  AirPlay.  Retrieved  July  20,  2015  from 
+http://www.apple.com/ipad/features/airplay.html 
+
+(ITS’12), 
+
+4.(cid:1) Louise Barkhuus and Barry Brown. 2009. Unpacking the 
+television: User practices around a changing technology. 
+ACM  Trans.  Comput.-Hum.  Interact.  16,  3  (September 
+2009), 1–22. http://doi.org/10.1145/1592440.1592444  
+5.(cid:1) Santosh Basapur, Gunnar Harboe, Hiren Mandalia, Ashley 
+Novak, Van Vuong, and Crysta Metcalf. 2011. Field trial of 
+a dual device user experience for iTV. In Proceedings of 
+the 9th international interactive conference on Interactive 
+television 
+127-136. 
+http://doi.org/10.1145/2000119.2000145  
+
+(EuroITV 
+
+6.(cid:1) Santosh  Basapur,  Hiren  Mandalia,  Shirley  Chaysinh, 
+Young Lee, Narayanan Venkitaraman, and Crysta Metcalf. 
+2012.  FANFEEDS:  evaluation  of  socially  generated 
+information  feed  on  second  screen  as  a  TV  show 
+companion.  In  Proceedings  of  the  10th  European 
+conference on Interactive tv and video (EuroiTV '12), 87–
+96. http://doi.org/10.1145/2325616.2325636  
+
+7.(cid:1) Ben Bedwell and Theresa Caruana. 2012. Encouraging 
+spectacle to create self-sustaining interactions at public 
+displays.  In  Proceedings  of  the  2012  International 
+Symposium  on  Pervasive  Displays 
+'12). 
+http://doi.org/10.1145/2307798.2307813  
+
+8.(cid:1) Frank  R.  Bentley  and  Michael  Groble.  2009.  TuVista: 
+meeting the multimedia needs of mobile sports fans. In 
+Proceedings of the 17th ACM international conference on 
+Multimedia 
+471-480. 
+http://doi.org/10.1145/1631272.1631337  
+
+9.(cid:1) Eric A. Bier and Steven Freeman. 1991. MMM: a user 
+interface architecture for shared editors on a single screen. 
+In Proceedings of the 4th annual ACM symposium on User 
+interface  software  and  technology  (UIST  '91),  79–86. 
+http://doi.org/10.1145/120782.120791  
+
+10.(cid:1)Kellogg S. Booth, Brian D. Fisher, Chi Jui Raymond Lin, 
+and  Ritchie  Argue.  2002.  The  “Mighty  Mouse”  Multi-
+screen  Collaboration  Tool.  In  Proceedings  of  the  15th 
+Annual ACM Symposium on User Interface Software and 
+Technology 
+209–212. 
+ACM, 
+http://doi.org/10.1145/571985.572016  
+
+(UIST’02), 
+
+11.(cid:1)S.  Bragg  and  D.  Buckingham.  2004.  Embarrassment, 
+Education  and  Erotics:  The  Sexual  Politics  of  Family 
+Viewing.  European  Journal  of  Cultural  Studies  7,  4 
+(November 
+441–459. 
+http://doi.org/10.1177/1367549404047145  
+
+2004), 
+
+(PerDis 
+
+(MM 
+
+'11), 
+
+'09), 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+12.(cid:1)Shelley  Buchinger,  Simone  Kriglstein,  and  Helmut 
+Hlavacs. 2009. A comprehensive view on user studies: 
+survey and open issues for mobile TV. In Proceedings of 
+the seventh European conference on European interactive 
+television 
+’09), 
+179-188. 
+http://doi.org/10.1145/1542084.1542121  
+
+conference 
+
+13.(cid:1)Pablo Cesar, Dick C A Bulterman, and A J Jansen. 2008. 
+Usages of the secondary screen in an interactive television 
+environment: control, enrich, share, and transfer television 
+content. In Proceedings of the 6th European conference on 
+Changing Television Environments (EUROITV '08), 168–
+177. http://doi.org/10.1007/978-3-540-69478-6_22  
+
+(EuroITV 
+
+14.(cid:1)Konstantinos  Chorianopoulos  and  Diomidis  Spinellis. 
+2006. User Interface Evaluation of Interactive TV: A Media 
+Studies Perspective. Univers. Access Inf. Soc. 5, 2 (August 
+2006),  209–218.  http://doi.org/10.1007/s10209-006-
+0032-1  
+
+15.(cid:1)Cédric Courtois and Evelien D’heer. 2012. Second screen 
+applications  and  tablet  users:  constellation,  awareness, 
+experience,  and  interest.  In  Proceedings  of  the  10th 
+European conference on Interactive tv and video (EuroiTV 
+'12), 153-156. http://doi.org/10.1145/2325616.2325646  
+16.(cid:1)Leon Cruickshank, Emmanuel Tsekleves, Roger Whitham, 
+Annette  Hill,  and  Kaoruko  Kondo.  2007.  Making 
+interactive TV easier to use: Interface design for a second 
+screen  approach.  The  Design  Journal  10,  3,  41–53. 
+http://doi.org/10.2752/146069207789271920  
+
+(SAM 
+
+17.(cid:1)Nigel Davies, Marc Langheinrich, Sarah Clinch, et al. 2014. 
+Personalisation  and  privacy  in  future  pervasive  display 
+networks.  In  Proceedings  of  the  32nd  annual  ACM 
+conference on Human factors in computing systems (CHI 
+'14) 
+2357-2366. 
+http://doi.org/10.1145/2556288.2557287  
+
+18.(cid:1)Niloofar  Dezfuli,  Sebastian  Günther,  Mohammadreza 
+Khalilbeigi, Max Mühlhäuser, and Jochen Huber. 2013. 
+CoStream@Home: connected live event experiences. In 
+Proceedings of the 2nd international workshop on Socially-
+aware 
+33-36. 
+'13), 
+http://doi.acm.org/10.1145/2509916.2509927 
+
+multimedia 
+
+19.(cid:1)Mark  Doughty,  Duncan  Rowland,  and  Shaun  Lawson. 
+2012. Who is on your sofa?: TV audience communities and 
+second screening social networks. In Proceedings of the 
+10th  European  conference  on  Interactive  tv  and  video 
+(EuroiTV 
+79-86. 
+http://doi.org/10.1145/2325616.2325635  
+
+20.(cid:1)Paul Dourish and Victoria Bellotti. 1992. Awareness and 
+coordination in shared workspaces. In Proceedings of the 
+1992 ACM conference on Computer-supported cooperative 
+work 
+107-114. 
+http://doi.org/10.1145/143457.143468  
+
+21.(cid:1)Arvid  Engström,  Mark  Perry,  and  Oskar  Juhlin.  2012. 
+Amateur vision and recreational orientation:: creating live 
+video together. In Proceedings of the ACM 2012 conference 
+on Computer Supported Cooperative Work (CSCW '12), 
+651-660. http://doi.org/10.1145/2145204.2145304  
+
+(CSCW 
+
+'92), 
+
+'12), 
+
+416
+
+22.(cid:1)Joel  E.  Fischer,  Stuart  Reeves,  Stuart  Moran,  Chris 
+Greenhalgh,  Steve  Benford,  and  Stefan  Rennick-
+Egglestone.  2013.  Understanding  Mobile  Notification 
+Management in Collocated Groups. In Proceedings of the 
+13th  European  Conference  on  Computer  Supported 
+Cooperative 
+21–44. 
+http://doi.org/10.1007/978-1-4471-5346-7_2  
+
+(ECSCW’13), 
+
+23.(cid:1)Martin D. Flintham, Raphael Velt, Max L. Wilson, et al. 
+2015. Run Spot Run: Capturing and Tagging Footage of a 
+Race by Crowds of Spectators. In Proceedings of the 33rd 
+Annual ACM Conference on Human Factors in Computing 
+Systems 
+747–756. 
+http://doi.org/10.1145/2702123.2702463 
+
+Work 
+
+(CHI 
+
+'15), 
+
+24.(cid:1)Walter Gantz, Zheng Wang, Bryant Paul, and Robert F. 
+Potter. 2006. Sports Versus All Comers: Comparing TV 
+Sports  Fans  With  Fans  of  Other  Programming  Genres. 
+Journal of Broadcasting & Electronic Media 50, 1 (1994), 
+95–118. http://doi.org/10.1207/s15506878jobem5001_6  
+25.(cid:1)Aaron M. Genest, Carl Gutwin, Anthony Tang, Michael 
+Kalyn, and Zenja Ivkovic. 2013. KinectArms: A Toolkit for 
+Capturing  and  Displaying  Arm  Embodiments 
+in 
+Distributed Tabletop Groupware. Proceedings of the 2013 
+Conference on Computer Supported Cooperative Work 
+(CSCW’13), 
+157–166. 
+http://doi.org/10.1145/2441776.2441796 
+
+2 
+
+1, 
+
+1994), 
+
+26.(cid:1)Eric Gidney, Annmarie Chandler, and Greg Mcfarlane. 
+1994.  CSCW  for  film  and  TV  preproduction.  IEEE 
+MultiMedia 
+(Summer 
+16–26. 
+http://doi.org/10.1109/93.311657  
+
+27.(cid:1)Rebecca E. Grinter, W. Keith Edwards, Mark W. Newman, 
+and Nicolas Ducheneaut. 2005. The Work to Make a Home 
+Network Work. In Proceedings of the ninth conference on 
+European Conference on Computer Supported Cooperative 
+Work (ECSCW'05), 469–488. http://doi.org/10.1007/1-
+4020-4023-7_24  
+
+28.(cid:1)Tom  Gross,  Chris  Stary,  and  Alex  Totter.  2005.  User-
+Centered Awareness in Computer-Supported Cooperative 
+Work-Systems: Structured Embedding of Findings from 
+Social  Sciences.  International  Journal  of  Human-
+Computer 
+323–360. 
+http://doi.org/10.1207/s15327590ijhc1803_5 
+
+Interaction 
+
+29.(cid:1)Carl Gutwin and Saul Greenberg. 1999. The effects of 
+workspace awareness support on the usability of real-time 
+distributed groupware. ACM Transactions on Computer-
+Human  Interaction  6,  3,  243–281  (September  1999). 
+http://doi.org/10.1145/329693.329696  
+
+30.(cid:1)Carl Gutwin, Saul Greenberg, and Mark Roseman. 1996. 
+Workspace  Awareness 
+in  Real-Time  Distributed 
+Groupware:  Framework,  Widgets,  and  Evaluation.  In 
+Proceedings of HCI on People and Computers XI (HCI 
+'96), Martina Angela Sasse, Jim Cunningham, and Russel 
+L. Winder (Eds.), 281-298. http://doi.org/10.1007/978-1-
+4471-3588-3_18  
+
+31.(cid:1)Chris  Harrison,  Brian  Amento,  and  Larry  Stead.  2008. 
+iEPG:  an  ego-centric  electronic  program  guide  and 
+recommendation  interface.  In  Proceedings  of  the  1st 
+
+18, 
+
+3, 
+
+SESSION: CO-PRESENT AND REMOTE MEDIA USE
+
+international  conference  on  Designing  interactive  user 
+experiences  for  TV  and  video  (UXTV  '08),  23-26. 
+http://doi.acm.org/10.1145/1453805.1453811  
+
+32.(cid:1)Elaine M. Huang, Elizabeth D. Mynatt, and Jay P. Trimble. 
+2006. Displays in the wild: understanding the dynamics and 
+evolution of a display ecology. In Proceedings of the 4th 
+international  conference  on  Pervasive  Computing 
+(PERVASIVE'06), 
+321-336. 
+http://doi.org/10.1007/11748625_20   
+
+33.(cid:1)Shahram  Izadi,  Harry  Brignull,  Tom  Rodden,  Yvonne 
+Rogers, and Mia Underwood. 2003. Dynamo: A Public 
+Interactive Surface Supporting the Cooperative Sharing and 
+Exchange of Media. Proceedings of the 16th Annual ACM 
+Symposium on User Interface Software and Technology 
+(UIST’03), 
+159–168. 
+http://doi.org/10.1145/964696.964714  
+
+34.(cid:1)Giulio Jacucci, Antti Oulasvirta, and Antti Salovaara. 2006. 
+Active construction of experience through mobile media: a 
+field study with implications for recording and sharing. 
+Personal and Ubiquitous Computing 11, 4 (April 2006), 
+215–234. http://doi.org/10.1007/s00779-006-0084-5  
+35.(cid:1)Andrés Lucero, Jussi Holopainen, and Tero Jokela. 2011. 
+Pass-them-around: collaborative use of mobile phones for 
+photo sharing. In Proceedings of the SIGCHI Conference 
+on Human Factors in Computing Systems (CHI '11), 1787-
+1796. http://doi.acm.org/10.1145/1978942.1979201  
+
+36.(cid:1)Martin Ludvigsen and Rune Veerasawmy. 2010. Designing 
+technology  for  active  spectator  experiences  at  sporting 
+events.  In  Proceedings  of  the  22nd  Conference  of  the 
+Computer-Human Interaction Special Interest Group of 
+Australia on Computer-Human Interaction (OZCHI'10), 
+96-103. http://doi.acm.org/10.1145/1952222.1952243  
+37.(cid:1)Abhishek  Nandakumar  and  Janet  Murray.  2014. 
+Companion apps for long arc TV series: supporting new 
+viewers in complex storyworlds with tightly synchronized 
+context-sensitive annotations. In Proceedings of the 2014 
+ACM international conference on Interactive experiences 
+for  TV 
+3-10. 
+(TVX'14), 
+http://doi.acm.org/10.1145/2602299.2602317  
+
+38.(cid:1)Jakob  Nielson.  2008.  Writing  Style  for  Print  vs.  Web. 
+from 
+
+Retrieved 
+http://www.nngroup.com/articles/writing-style-for-
+print-vs-web/  
+
+39.(cid:1)Jon O’Brien, Tom Rodden, Mark Rouncefield, and John 
+Hughes.  1999.  At  home  with  the  technology:  an 
+trial.  ACM 
+ethnographic  study  of  a  set-top-box 
+Transactions  on  Computer-Human  Interaction  6,  3 
+
+online 
+
+video 
+
+2015 
+
+July 
+
+and 
+
+20, 
+
+(cid:1)
+
+(September 
+http://doi.org/10.1145/329693.329698  
+
+2009), 
+
+282–308. 
+
+Systems 
+
+40.(cid:1)Scott Robertson, Cathleen Wharton, Catherine Ashworth, 
+and  Marita  Franzke.  1996.  Dual  Device  User  Interface 
+Design: PDAs and Interactive Television. In Proceedings 
+of  the  SIGCHI  Conference  on  Human  Factors  in 
+Computing 
+79–86. 
+http://doi.org/10.1145/238386.238408  
+
+41.(cid:1)Penelope  M.  Sanderson  and  Carolanne  Fisher.  1994. 
+Exploratory sequential data analysis: foundations. Hum.-
+Comput. Interact. 9, 4 (September 1994), 251-317. 
+
+(CHI’96), 
+
+42.(cid:1)Robin  Sease  and  David  W.  McDonald.  2009.  Musical 
+fingerprints: collaboration around home media collections. 
+In Proceedings of the ACM 2009 international conference 
+on  Supporting  group  work  (GROUP  '09),  331-340. 
+http://doi.org/10.1145/1531674.1531724  
+
+43.(cid:1)Garth B. D. Shoemaker and Kori M. Inkpen. 2001. Single 
+display  privacyware:  augmenting  public  displays  with 
+private  information.  In  Proceedings  of  the  SIGCHI 
+Conference on Human Factors in Computing Systems (CHI 
+'01), 522-529. http://doi.org/10.1145/365024.365349  
+44.(cid:1)Roger Silverstone. 2004. Television and Everyday Life. 
+
+Routledge. 
+
+45.(cid:1)Jason Stewart, Benjamin B. Bederson, and Allison Druin. 
+1999. Single display groupware: a model for co-present 
+collaboration. In Proceedings of the SIGCHI conference on 
+Human Factors in Computing Systems (CHI '99), 286-293. 
+http://doi.acm.org/10.1145/302979.303064  
+
+46.(cid:1)Alex Taylor and Richard Harper. 2003. Switching On to 
+Switch Off. In Inside the Smart Home, Richard Harper 
+(ed.). Springer London, 115–126. 
+
+concerts. 
+
+47.(cid:1)Sami Vihavainen, Sujeet Mate, Lassi Seppälä, Francesco 
+Cricri, and Igor D. D. Curcio. 2011. We want more: human-
+computer collaboration in mobile social video remixing of 
+music 
+287. 
+http://doi.org/10.1145/1978942.1978983  
+
+48.(cid:1)Vinoba  Vinayagamoorthy,  Penelope  Allen,  Matt 
+Hammond, and Michael Evans. 2012. Researching the user 
+experience  for  connected  tv:  a  case  study.  In  CHI  '12 
+Extended  Abstracts  on  Human  Factors  in  Computing 
+Systems 
+589-604. 
+http://doi.acm.org/10.1145/2212776.2212832  
+
+49.(cid:1)Nicola Yuill, Yvonne Rogers, and Jochen Rick. 2013. Pass 
+the  iPad:  collaborative  creating  and  sharing  in  family 
+groups.  In  Proceedings  of  the  SIGCHI  Conference  on 
+Human Factors in Computing Systems (CHI '13), 941-950. 
+http://doi.acm.org/10.1145/2470654.2466120  
+
+(CHI 
+
+'12), 
+
+EA 
+
+417
+
+

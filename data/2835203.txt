@@ -1,0 +1,1388 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Jokebox: Coordinating Shared 
+Encounters in Public Spaces 
+
+Mara Balestrini1, Paul Marshall2, Raymundo Cornejo³, Monica Tentori³, Jon Bird4  
+
+and Yvonne Rogers2
+
+1 Intel ICRI Cities, University College London, UK, m.balestrini@cs.ucl.ac.uk  
+
+2 UCL Interaction Centre, University College London, UK, {paul.marshall, y.rogers}@ucl.ac.uk  
+³ Department of Computer Science, CICESE, Ensenada, Mexico,{rcornejo, mtentori}@cicese.mx 
+
+4Department of Computer Science, City University London, UK, jon.bird@city.ac.uk  
+
+ABSTRACT 
+Eye contact is crucial to shared encounters in public spaces. 
+However, most urban technologies that aim to foster social 
+interaction  tend  to  rely  on  screens,  directing  a  significant 
+proportion of the users’ attention towards the device rather 
+than to those with whom the encounter is shared. We pre-
+sent the design and evaluation of the Jokebox, a lightweight 
+technology  that  requires  two  passers-by  to  coordinate  ac-
+tions to hear a joke. In three in the wild studies at different 
+locations  we  found  that  our  design  supported  micro-level 
+coordination in a consistent manner: by encouraging people 
+to make eye contact and by using audible jokes, users en-
+gaged in interactions that often led to further conversation 
+and  laughter.  We  describe  how  opportunities  for  macro-
+level  coordination  were  key  to  the  success  of  the  installa-
+tion, but varied by context. Finally, we present design im-
+plications for considering both the micro and macro levels 
+of social coordination.  
+Author Keywords 
+Public display; coordination; audio interface; in the wild 
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous;  
+INTRODUCTION 
+Novel  interactive  devices  are  increasingly  populating  the 
+urban landscape, typically with the aim of increasing  effi-
+ciency  and  productivity  through  processes  automation  [5], 
+but often reducing opportunities to interact with others. For 
+example, in finding our way around the city using a naviga-
+tion system we may not ask strangers for directions, or by 
+using a flight check-in kiosk we are unlikely to engage in 
+small  talk  with  the  counter  assistant.  When  focused  on 
+screens and devices that deliver visual content, we also lose 
+Permission to make digital or  hard copies  of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+from 
+specific  permission 
+Permissions@acm.org.  
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed 
+to ACM. 
+ACM 978-1-4503-3592-8/16/02…$15.00   
+DOI: http://dx.doi.org/10.1145/2818048.2835203 
+
+fee.  Request  permissions 
+
+and/or 
+
+a 
+
+the opportunity to make  eye  contact with  others, a behav-
+iour known to be crucial in the organisation of shared en-
+counters [2, 11]. 
+
+Figure 1. Two passers-by interacting with the Jokebox. 
+
+Face-to-face social interaction is associated with the cohe-
+sion of communities and the development of social capital 
+[30]. At an individual level, interacting with others increas-
+es  happiness  and  wellbeing  [15].  Encounters  that  include 
+humour  and  conversation  can  support  psychological  and 
+physiological  health  [32,  8,  18].  This  suggests  that  such 
+social interactions should be encouraged. 
+However,  facilitating  social  interaction  in  public  spaces  is 
+hard to achieve [8, 22, 34, 11, 27, 18]. This is in part due to 
+the fact that city dwellers often adopt a “blasé attitude” [34] 
+or  civil  inattention  [11]  to  separate  themselves  from  the 
+plethora  of  stimuli  available  in  cities  [22].  Strangers  typi-
+cally glance at each other and then look away demonstrat-
+ing that they are aware of each others’ presence, but do not 
+wish to interact. These rules of non-interaction seem to be 
+accentuated when we share constrained spaces [22, 11] or a 
+routine with a stranger. Milgram [22] coined the term “fa-
+miliar  stranger”,  which  had  previously  been  discussed  by 
+Jacobs  [16]  to  refer  to  those  people  who  we  frequently 
+encounter  (e.g.  at  the  bus  stop  every  morning)  but  never 
+interact  with.  He  also  noted  that  there  are  exceptions  to 
+these  rules  of  non-interaction:  if  we  come  across  familiar 
+strangers outside the everyday routine (e.g. while away on 
+holiday)  or  in  the  presence  of  a  highly  unexpected  event 
+that serves as an “ice breaker”.  
+A number of researchers have investigated how urban tech-
+nology  can  act  as  an  “ice  breaker”  facilitating  shared  en-
+counters  [37]  in  public  spaces  [9,  35,  19].  A  prevailing 
+approach  has  been  to  deploy  interactive  displays  and 
+
+38
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+screens [9] delivering a wide range of visual contents [1, 4, 
+21, 33, 35, 36]. Many urban technologies require interaction 
+by one person (or a group) to play a game (e.g. [19, 26]). 
+They are often costly and hard to deploy (particularly in the 
+case  of  media  facades  and  augmented  furniture),  needing 
+power and connection to the internet, which makes it diffi-
+cult to easily deploy them at different locations. Typically, 
+their  content  offers  limited  ways  to  elicit  “synchronous 
+social  interactivity”,  such  as  face-to-face  encounters  [36]. 
+Moreover,  their  interfaces  tend  to  rely  on  interaction  with 
+visual information, which means that a significant propor-
+tion  of  the  users’  attention  must  be  directed  towards  the 
+device  rather  than  to  those  with  whom  the  encounter  is 
+shared. Some researchers have begun to explore how audio 
+[19,  28]  may  promote  social  interactions  in  public  spaces, 
+but  the  use  of  audio  to  mediate  synchronised  cooperation 
+between pairs of people remains largely unexplored [17].  
+Sharing a social encounter can often lead to a positive expe-
+rience [8, 18], especially if it is brought about by an unex-
+pected  [22]  or  wondrous  [28]  event.  However,  given  the 
+sophisticated strategies that people use to not interact with 
+others, it is important that interaction with any intervention 
+is  discretional  [27].  How  can  urban  interfaces  enable  eye 
+contact  and  lead  to  shared  encounters,  while  at  the  same 
+time  protecting  people’s personal  space  and  therefore  eas-
+ing social apprehension? To address this question we pro-
+pose the Jokebox, a novel lightweight technology that can 
+attract two passers-by to look at each other and coordinate a 
+sequence of actions in order to hear a joke.  
+We followed a qualitative approach to evaluate the Jokebox 
+in  an  in-the-wild-study  [31]  at  three  different  locations  in 
+Mexico:  a  bus  stop,  a  park,  and  a  shopping  centre.  Our 
+results demonstrate that designing the Jokebox to encourage 
+micro-level coordination facilitated a wide range of shared 
+encounters that were quite consistent in their structure. By 
+encouraging people to make eye contact and by using audio 
+rather than having the content appear on a screen the system 
+engaged  them  in  a  process  of  face-to-face  interaction  that 
+often  led  to  further  conversation  and  laughter.  We  also 
+found how opportunities for macro-level coordination were 
+crucial to the success of the installation, but varied widely. 
+Firstly, the context in which the Jokebox was situated sig-
+nificantly  influenced  how  well  this  kind  of  sequencing 
+worked; and secondly we observed how strangers champi-
+oned  interactions  by  guiding  and  encouraging  others  to 
+engage with the Jokebox, and how returning users and local 
+characters appropriated it for their own purposes. Our con-
+tributions inform the design and deployment of novel inter-
+faces that aim to support shared encounters in public places. 
+BACKGROUND 
+One  of  the  main  characteristics  of  a  city  is  its  ability  to 
+create  opportunities  for  encounters  among  strangers  [16]. 
+This has long inspired researchers and artists to design and 
+deploy urban interfaces aimed at encouraging such encoun-
+
+ters  and  ultimately  facilitating  community  connectedness 
+[9, 21, 28, 35].  
+A  prevailing  approach  for  urban  technologies  has  been  to 
+deploy  interactive  displays  and  media  facades  that  deliver 
+visual  information.  These  studies  highlight  a  number  of 
+contextual factors that influence how people organise their 
+interactions  with  and  around  the  display.  We  characterise 
+these  as  the  macro-level  coordination  of  behaviour  to  dis-
+tinguish  them  from  the  micro-level  coordination  of  joint 
+actions with the interface itself. For example, Brignull and 
+Rogers  [4]  found  that  social  activity  around  the  device 
+could create a ‘honeypot effect’, drawing attention to it and 
+encouraging  others  to  engage.  Fischer  and  Hornecker  [9] 
+suggested  that  physical  features  such  as  walls  and  pillars 
+can  provide  ‘comfort  spaces’,  where  people  can  see  the 
+display but are protected from having to join in the interac-
+tion.  The  placement  of  a  technology  intervention  can  also 
+have  an  impact  on  how  people  interact  with  it,  but  social 
+context  can  be  more  important  that  physical  location  [1]. 
+O’Hara et al. [26] observed that an unfamiliar audience can 
+discourage interactions and create a sense of social inhibi-
+tion for some people, although “comperes” [26] and “emer-
+gent  champions”  [1]  may  help  legitimise  participation  by 
+members  of  the  public.  In  contrast,  for  “local  characters” 
+familiarity with the place and situation may promote inter-
+actions  by  reducing  social  apprehension  [26].  Other  re-
+searchers have found that people may be willing to engage 
+with a novel device once they have learnt how to do it. This 
+can  occur  either  by  cooperative  interaction  or  by  first  ob-
+serving others and then attempting to interact, often leading 
+to  “chains  of  interaction”  [29].  Furthermore,  it  has  been 
+argued that passers-by tend to find technology that has been 
+deployed in public spaces interesting, which sometimes can 
+enable social interaction [21, 29]. 
+Studies of micro-level coordination with screen-based tech-
+nologies have highlighted some of the challenges of inter-
+acting together. Peltonen et al. [29] report that most people 
+who participated with their CityWall application worked in 
+parallel rather than coordinating, and sometimes came into 
+conflict because of a lack of awareness of others’ activity. 
+However, users also playfully appropriated the application, 
+for  example,  throwing  images  at  each  other,  creating  an 
+impromptu game of Pong. Marshall et al. [20] describe how 
+strangers  would  often  come  into  conflict  while  trying  to 
+simultaneously use a tabletop interface designed to be used 
+by  a  coherent  group.  Hinrichs  and  Carpendale  [13]  report 
+how people learned how to use a public tabletop interface 
+through mentoring and demonstration. 
+A  different  approach  to  interactive  screens  has  been  to 
+deploy augmented artefacts, from digitally enhanced furni-
+ture  [25]  to  “objects  of  wonderment”  [28].  More  recently, 
+researchers who deployed a playful intervention based on a 
+network of bespoke trees and birds suggested that recruiting 
+and  incentivising  people  to  “check  in”  together  in  public 
+
+39
+
+spaces encouraged shared encounters and community cohe-
+sion [19]. 
+The  potential  for  using  sound  as  an  interaction  output  to 
+facilitate  social  interactions  in  public  has  rarely  been  ex-
+plored.  In  contrast  to  a  visual  display,  people  cannot  turn 
+away from a sound and are often drawn to its origin [17]. 
+Furthermore,  while  most  urban  technologies  just  require 
+one  person  to  trigger  an  interaction,  fewer  designs  have 
+explored how to create shared encounters by requiring two 
+people to act in tandem or by facilitating eye contact. How 
+can  novel  interfaces,  which  are  broadly  accessible  to  any-
+body, engage passers-by to do something together in public 
+without  being  self-conscious?  In  the  next  section  we  de-
+scribe  the  design  and  implementation  of  the  Jokebox,  a 
+prototype aimed to encourage eye contact and foster shared 
+encounters in public spaces. 
+THE JOKEBOX 
+The  Jokebox  is  a  simple  technology  prototype  aimed  to 
+attract  passers-by  and  provide  an  opportunity  for  them  to 
+engage with both the installation and each other. Based on 
+Ellis  et  al.’s  [7]  CSCW  taxonomy,  the  Jokebox  enables  a 
+synchronous face-to-face interaction, where both input and 
+output are situated at the same place and time. The design 
+rationale is informed by the literature review, which identi-
+fies that: 
+
+-  A  prevailing  approach  to  urban  technologies  has 
+been  to  design  large  displays  for  individual  use  that 
+deliver  visual  content,  which  often  prevents  people 
+from making eye contact [1, 4, 9, 21, 26, 29, 33, 35, 
+36]. We therefore chose to design (i) a tangible physi-
+cal  affordance  that  does  not  include  a  screen,  (ii)  an 
+audio instruction to draw in passers-by, which requires 
+two people to coordinate their actions by pressing two 
+buttons at the same time; and (iii) a blinking light to 
+attract attention and help with the coordination.  
+- The use of audio, which is a shared media and can 
+easily attract people, has been largely unexplored [17]. 
+Hence  we  included  (iv)  an  audio  instruction  and  a 
+short  spoken  joke  to  encourage  people  to  listen  to-
+gether,  look  at  each  other,  and  maybe  even  laugh  or 
+talk.  
+-  Public  displays  and  augmented  furniture  are  often 
+costly and require Internet connection and/or electrici-
+ty  [1,  4,  9].  We  instead  designed  a  lightweight  and 
+portable installation that can be easily deployed at dif-
+ferent outdoor locations. 
+- While in public space, people employ sophisticated 
+strategies  to  avoid  interacting  with  others  [8,  22,  34, 
+11,  18,  25]  and  technology  should  not  cause  social 
+awkwardness [27]. We therefore designed the Jokebox 
+to be non intrusive and protect people’s personal spac-
+es.  The  installation  comprises  two  wooden  boxes  (1 
+meter high) with arcade buttons at the top and embed-
+ded speakers. Both boxes can be paired within a dis-
+tance of 2 to 5 meters. However, an unexpected event 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+may  encourage  people  to  overcome  the  rule  of  non-
+interaction  [22].  Therefore  the  Jokebox  uses  unusual 
+content such as jokes to foster social encounters. 
+
+More  specifically,  the  Jokebox  was  designed  to  attract 
+passers-by and incentivise them to coordinate actions. Each 
+box can detect people nearby and invites them to interact by 
+playing an audio file with the instructions: “If you want to 
+hear a joke, press both buttons at the same time”. Once the 
+boxes have played the instructions, they go into a playing 
+mode. In this mode, two people have a three seconds win-
+dow  of  time  to  press  both  buttons  at  the  same  time;  thus 
+they  have  to  coordinate  explicitly.  Each  button  emits  a 
+blinking light pattern to indicate that the play session is on 
+going;  the  blinking  pattern  increases  its  speed  within  the 
+last 10 seconds to indicate the time window is almost over. 
+The boxes play a joke when being pressed synchronously. 
+Otherwise  an  error  audio  file  is  triggered.  Moreover,  the 
+device was designed to make it clear what users should do 
+with it, but why they should use it, who had created it, and 
+why it was installed in a particular context was ambiguous 
+[10] and left to their own interpretation. 
+
+XBee module 
+
+RGB LED Strip 
+
+PIR module 
+
+Portable 
+speaker 
+
+Push button 
+
+ 
+
+Figure 2. Technical implementation of the Jokebox. 
+
+Implementation 
+The  Jokebox  was  implemented  using  a  master-slave  com-
+munication (see figure 2). The master box (boxM) sets the 
+states of the game and sends the actions over the slave box 
+(boxS). We used an Arduino Uno board integrated with an 
+MP3 shield and a Jokebox shield. The Jokebox shield com-
+prises  an  XBee  antenna  for  communication,  a  PIR  sensor 
+for  motion  detection,  and  an  arcade  pushbutton  with  an 
+RGB  LED  strip.  Each  box  shield  notifies  the  other  box 
+when it detects movement and the boxM establishes the state 
+of the game (i.e. detect people, play audio file instructions, 
+on  going  game  session,  end  of  game,  play  audio  file  with 
+result of game) and sends the action to perform to boxS. The 
+MP3 shield decodes the MP3 files. For example, when the 
+boxM establishes the state “play audio file instructions”, the 
+MP3 shield plays the audio file with the instructions “If you 
+want to hear the Joke, press both buttons at the same time”. 
+Similarly, the MP3 shield decodes and plays the MP3 files 
+for  error,  and  jokes  when  it  is  either  a  failure  or  success 
+attempt.  The  decoded  MP3  files  are  stored  in  a  microSD 
+
+40
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+card  connected  to  the  MP3  shield  and  played  through  a 
+portable  speaker.  Each  box  weighed  less  than  three  kilo-
+grams  and  was  powered  by  Li-Polymer  batteries  that  pro-
+vided up to five hours of autonomy. This made the Jokebox 
+particularly easy to deploy at diverse locations even if there 
+was  no  electricity  available.  The  cost  of  the  device  was 
+below US $250. 
+Pilot study 
+To test whether people could coordinate their actions with 
+the  Jokebox,  we  built  a  working  prototype  and  informally 
+evaluated it with eight participants (4 female, 4 male) who 
+ranged in age (23 to 50). The device was deployed indoors 
+at a university campus and pairs were invited to play with it 
+for  about  10  minutes.  We  conducted  observations  and  in-
+terviews, and analysed the data in a debriefing session. The 
+results  were  classified  in  terms  of:  interaction  experience, 
+and design and content issues.  
+Interaction experience. All participants interacted with the 
+Jokebox at least five times per session even when they had 
+successfully  triggered  a  joke.  They  communicated  with 
+each  other  to  coordinate  action,  discussed  the  jokes,  and 
+laughed  when  the  interaction  was  successful.  They  under-
+stood  that  they  needed  to  press  both  buttons  at  the  same 
+time (as indicated in the instructions) but half of them didn't 
+understand that the action had to take place while the but-
+tons were blinking. 
+Design and content issues. Half of the participants associat-
+ed  the  red  buttons  with  terms  such  as  “danger”  or  “emer-
+gency”  and  suggested  that  they  wouldn’t  press  them  in  a 
+public space. But they thought that the blinking feature was 
+attractive and invited them to interact. Although they con-
+sidered  the  audio  volume  was  appropriate  for  the  setting, 
+three of them suggested that the voice recording was “too 
+fast”. All participants indicated that they liked the laughter 
+at  the  end  of  the  jokes  (e.g.  “It  makes  you  laugh!”).  Six 
+understood  that  the  error  noise  meant  that  they  had  done 
+something wrong. Half of them suggested that it would be 
+more comfortable if the boxes were higher. 
+Content 
+To ensure the content delivered by the Jokebox was locally 
+meaningful, we used Facebook to crowdsource jokes (along 
+with a rating from 1 to 5, from “not funny” to “very funny”) 
+among members of the community. Three theatre students 
+with local accents were recruited to record the 25 jokes with 
+the highest ratings and the instructions in Spanish.  
+IN THE WILD STUDY 
+We conducted an in-the-wild deployment  [31] in a city in 
+the  Northwest  of  Mexico.  The  findings  from  the  initial 
+study were used to inform the design of the Jokebox. Aes-
+thetic changes were made (e.g. blue push buttons) and the 
+threshold  for  interaction  (pressing  both  buttons)  was  ex-
+tended  from  one  to  three  seconds  to  allow  more  time  to 
+succeed  in  triggering  a  joke.  The  shape  and  height  of  the 
+
+boxes,  and  sensors  were  adjusted  to  provide  a  better  user 
+experience.  
+LOCATIONS 
+We  followed  a  rapid  ethnography  [23]  approach  to  select 
+where in the public spaces to deploy the Jokebox and eval-
+uate it in situ. Over a two-week period, four observers con-
+ducted  18  hours  of  direct  observation  at  six  of  the  most 
+salient places in the city, on both weekdays and weekends 
+and at different times of the day. We analysed the data at a 
+debriefing  session  and  chose  three  places  based  on  their 
+potential to attract different types of people, enable diverse 
+activities  (playing,  waiting,  passing  by,  etc.),  and  social 
+interactions.  The  locations  were  also  selected  for  their 
+pathways  and  walking  areas  that  offer  the  potential  for  
+“incidental interactions” [1]. The three settings were: 
+(i)  A Park - a recreational area that attracts a wide range of 
+
+individuals, including children, older people, sellers, 
+families and couples that gather to eat, play or walk.  
+(ii)  A shopping centre – a bustling place that attracts fami-
+lies, individuals and teenagers who gather in groups. 
+
+(iii) A bus stop - a quiet place in the entrance of a university 
+
+campus where students and university staff wait for a bus 
+to go to work or study.  
+
+METHOD 
+Rapid  ethnography  [23]  was  again  used  to  evaluate  how 
+passers-by  interacted  with  the  Jokebox.  The  device  was 
+installed five times at each location during two-hour slots, 
+for  a  total  of  ten  hours  at  each  place.  We  recorded  each 
+deployment, accounting for a total of 30 hours of footage. 
+During each deployment two observers collected qualitative 
+data in a covert manner, sometimes mixing among partici-
+pants to hear their conversations and take a closer look as 
+they  interacted  with  the  Jokebox.  They  also  made  field 
+notes  and  sketches,  and  took  photos.  The  same  observers 
+were  assigned  to  the  same  locations  throughout  the  de-
+ployments to control for returning interactors. Where possi-
+ble, observers took notes from informal interviews conduct-
+ed in situ with participants. 
+We analysed the video footage using an interaction analysis 
+approach [12]. This method is appropriate to evaluate social 
+interactions  in  natural  environments.  Researchers  focused 
+on sequences of behaviours and on how other objects and 
+actions  in  the  context  affected  the  interactions  [12].  Inter-
+esting  sequences  were  transcribed  and  triangulated  using 
+the data provided by the observers.  
+Deployment 
+(i)  The  Revolucion  park  is  a  large  public  green  space  of 
+about one acre located near the city centre. The park is open 
+to the public all the time but is significantly busier during 
+weekends. It comprises three key areas: the eating area, the 
+playing area, and the main kiosk. The eating area contains 
+communal  tables  with  seating  and  four  food  kiosks.  The 
+space is mainly occupied by groups and used as a pathway 
+to other areas in the park. While families and groups engage 
+
+41
+
+in  conversation  as  they  enjoy  their  food,  individuals  who 
+shared  a  table  with  strangers  often  focus  on  their  mobile 
+phones  and  avoid  interacting  with  others.  The  playground 
+includes  games  for  children  and  five  communal  tables.  It 
+attracts  families  with  children  and  some  couples  and  is 
+considerably  louder  than  the  eating  area.  The  kiosk  area 
+comprises a large kiosk and a number of benches. This area 
+of  the  park  is  often  frequented  by  ice-cream  sellers  and 
+other  pedlars  (that  are  akin  to  local  characters,  cf.  [26]). 
+Many already know each other, and frequently take breaks 
+and talk to each other.  
+We placed the Jokebox on a central pathway at the intersec-
+tion  of  the  playing  area  and  a  green  area,  in  front  of  the 
+kiosk – that would ensure a flow of people encountering it. 
+We collected data (footage and observations) for a total of 
+ten hours over three consecutive weekends both during the 
+morning  and  the  afternoon.  We  indexed  85  sequences  of 
+interactions of which 19 were chains of interactions and 15 
+occurred as a result of championing provided by individuals 
+and  groups.  Interactions  varied  from  five  seconds  to  play 
+sessions extending for 20 minutes. Approximately 70% of 
+the users were children, 25% were adults and older adults, 
+and the remainder were teenagers.  
+(ii) The Macroplaza is a large semi open-air shopping cen-
+tre.  It  comprises  a  variety  of  shops,  a  cinema  and  a  food 
+court.  While  families  and  individuals  walk  around  the 
+shopping area and the food court, groups of teenagers and 
+other  individuals  frequently  gather  in  front  of  the  cinema, 
+an area that is mainly used as a meeting point. In front of 
+the cinema are a large flowerbed, two benches and two mall 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+kiosks. People use the flowerbed to wait for others (a com-
+fort space (cf. [9]). This area is particularly busy on Satur-
+days and Sundays between 6 and 11pm, and average wait-
+ing times range from 5 to 15 minutes. While waiting, those 
+who  are  in  groups  tend  to  engage  in  conversation  while 
+those who are by themselves look at their mobile phones. 
+We deployed the Jokebox next to a lamppost between the 
+entrance to the cinema and the flowerbed (as it was a focal 
+point for groups passing by) for three consecutive weekends 
+from 6 to 11pm. This location was visible to those waiting 
+but  people  who  went  from  the  parking  site  into  the  shop-
+ping  area  also  transited  it.  We  indexed  69  sequences  of 
+interactions: 29 were frugal or incomplete (e.g. pressing one 
+button and leaving), 25 occurred as a result of championing 
+provided  by  others  who  had  already  played  or  followed 
+from a chain of interactions, and 15 occurred among pairs 
+and groups.  
+(iii) The bus stop is located at the main entrance of a gradu-
+ate research centre, which extends through hilly terrain. The 
+space has a semi-circular shape with benches on each side. 
+We  chose  this  bus  stop  as  it  provided  an  opportunity  to 
+evaluate  the  Jokebox  in  a  physically  constrained  semi-
+public  space  where  colleagues  and  strangers  wait  for  the 
+bus  to  be  taken  to  the  on  campus.  There  is  only  one  bus 
+service  that  comes  approximately  every  15  to  20  minutes 
+but it is unreliable meaning many have to wait. 
+We deployed the Jokebox at one of the entrances to the bus 
+stop, and each box was located to one side of the pathway 
+that  goes  through  the  semi-circle.  We  collected  data  from 
+
+Study 
+Location 
+
+Affordances 
+
+of space 
+
+Type of 
+visitors 
+
+Activities 
+
+Micro-level 
+coordination 
+
+Macro-level coordination 
+Context 
+
+Park 
+
+ 
+
+Shopping 
+
+centre 
+
+ 
+
+Bus stop 
+
+ 
+
+Outdoor, public 
+space. Jokebox 
+was placed on a 
+pathway at the 
+intersection of a 
+playing area a 
+green area, and 
+a kiosk. 
+
+Outdoor, semi-
+public space. 
+Jokebox was 
+placed between 
+the entrance to 
+the cinema and 
+a flowerbed. 
+Semi-indoors, 
+semi-public 
+space. Benches 
+on each side and 
+pathway in the 
+middle. 
+
+Children, 
+adults (par-
+ents, local 
+sellers, 
+passers-by), 
+and teenag-
+ers. 
+
+Groups of 
+teenagers, 
+families 
+with chil-
+dren, and 
+adults. 
+
+Graduate 
+students, 
+university 
+staff. 
+
+Playing, 
+eating, 
+talking, 
+walking by, 
+selling. 
+
+Walking by, 
+shopping, 
+waiting. 
+
+Waiting, 
+walking by. 
+
+Making eye con-
+tact and counting 
+to three or shout-
+ing. Returning 
+users established 
+new forms of 
+coordination. 
+
+Making eye con-
+tact and counting 
+to three. 
+ 
+
+Making eye con-
+tact and counting 
+to three. 
+ 
+ 
+
+Playful environment. 
+Children facilitated 
+chains of interaction. 
+Jokes attracted audienc-
+es creating honey-pot 
+effects. Incidental inter-
+actions fostered curiosi-
+ty and engagement. 
+
+Competing stimuli 
+caused display deafness 
+(noise, signs and blink-
+ing lights). People 
+waiting at comfort 
+places learnt to play 
+through social learning. 
+Quiet waiting space. 
+Incidental interactions 
+created anxiety. Social 
+inhibition due to physi-
+cal proximity. 
+
+Table 1. Summary of findings from all three sites where the Jokebox was deployed. 
+
+42
+
+Championing 
+Emergent champi-
+oning by children 
+and parents. Oppor-
+tunistic champion-
+ing by local charac-
+ters: clown, man 
+giving away pup-
+pies, sweets seller. 
+
+Emergent champi-
+oning by groups of 
+teenagers, parents 
+and an adult. 
+
+Opportunistic 
+championing by 
+local character: bus 
+driver  
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+observations and footage during ten hours in three consecu-
+tive  deployments  carried  out  in  weekdays  (between  9am 
+and  2pm).  We  indexed  65  sequences  of  interactions  of 
+which 42 were incidental and the remaining 23 were either 
+encouraged  by  championing  or  by  groups  of  friends  who 
+walked by the bus stop or were waiting for the bus. There 
+were never more than eight people at the bus stop, and for 
+long periods of time there were only one or two individuals 
+waiting. 
+FINDINGS 
+The data from each of the three sites were analysed using 
+two  broad  themes:  micro-level  and  macro-level  coordina-
+tion.  This  provides  a  framing  for  how  different  aspects  of 
+coordination  took  place.  Micro  includes  the  behaviours 
+enacted by users in order to interact with the Jokebox while 
+macro refers to factors associated with the broader context 
+of interaction and the forms of championing carried out by 
+individuals who drew others to play with the device. Table 
+1 summarises the findings from each of the three locations 
+categorized in terms of the space, types of visitors, activi-
+ties and the forms of coordination used. 
+
+Figure 3. Each thumbnail represents a paired interaction 
+
+mediated by Jokebox (in yellow squares). 
+
+ 
+
+Micro-level coordination 
+There was a pattern in the fine-grained ways in which peo-
+ple coordinated behaviours to play with the Jokebox in all 
+three settings. To press both buttons at the same time and 
+successfully trigger a joke, 80% of the users would stand by 
+each box in the park, make eye contact and count to three. 
+By  enabling  eye  contact  this  coordination  strategy  turned 
+out to be a powerful “ice breaker”, allowing people to easi-
+ly communicate even if they had never talked before. Con-
+versations  that  began  with  this  coordination  often  led  to 
+more  extended  ones.  The  remaining  20%,  who  were  typi-
+cally  children,  would  either  look  at  the  buttons  and  press 
+them as soon as they started blinking or shout at each other 
+
+43
+
+Figure 4. Chains of interaction enabled by parents and children. 
+
+“now!”  to  press  them  at  the  same  time.  Similarly,  most 
+people at the shopping centre and the bus stop coordinated 
+their  behaviour  to  press  the  buttons  at  the  same  time  by 
+making eye contact and counting to three. This “ice break-
+ing social protocol” was used by some who had started to 
+explain to others how to use the installation by acting like 
+“champions”  (see  figure  4  and  5).  For  example,  Figure  8 
+shows how a bus driver explained how the Jokebox worked 
+to a lady waiting there. He convinced her to play with him 
+and guided the interaction by making eye contact with her 
+and counting from one to three.  
+Macro-level coordination 
+A more course grain level of analysis was also conducted to 
+examine the effects of context, championing and appropria-
+tion of the Jokebox. 
+Context. In the park, we observed that the interactions with 
+the  Jokebox  were  constant  and  cheerful.  Children  were 
+easily  drawn  to  the  device  and  encouraged  others  to  play. 
+Other  passers-by  approached  the  Jokebox  because  they 
+were curious to find out what it was. People approached the 
+interactive space and tried to understand what it was before 
+attempting  to  use  it.  In  six  sequences,  these  interactions 
+enabled  conversation  between  visitors  and  resulted  in  a 
+honeypot effect that attracted others. When curiosity led to 
+active  exploration,  a  chain  of  interactions  based  on  social 
+learning would begin.  
+We  also  observed  several  instances  of  ‘incidental  interac-
+tions’ in the park. While not all led to direct engagement by 
+those who triggered the sensors, they tended to draw atten-
+tion from others in the vicinity (see Figure 3). In an average 
+play  session,  we  observed  players  triggering  at  least  five 
+jokes. This  created an opportunity for a small audience to 
+gather around the JokeBox. In all cases people would react 
+to  the  jokes  by  looking  at  each  other  and  laughing  when 
+they  were  perceived  as  being  funny  or  by  mocking  those 
+that were “too silly”. 
+The shopping centre was a loud environment crowded with 
+displays  and  luminous  signs  (cf.  [3])  where  the  Jokebox 
+didn’t  stand  out  as  much  -  a  phenomenon  that  might  be 
+characterised as display deafness (cf. [24]). A large number 
+of  individuals  walked  past  and  barely  noticed  it.  People 
+were more likely to look at the Jokebox when the buttons 
+were  blinking  or  when  others  where  interacting  with  it  (a 
+honeypot effect, cf. [4]). Although this attracted passers-by, 
+in  80%  of  the  sequences  they  wouldn’t  interfere  with  the 
+
+ongoing session, but rather waited for their turn or left. We 
+observed that people behaved differently if they were wait-
+ing  or  just  walking  by:  while  the  latter  were  less  keen  to 
+explore and more likely to leave immediately if they failed 
+to trigger a joke, those who had been waiting at the flower-
+bed  were  more  likely  to  spend  time  watching  how  others 
+interacted and behave as instructors later (emergent cham-
+pions,  cf.  [1]).  Over  two  thirds  of  the  interactions  among 
+strangers occurred when there were children involved. 
+There were two main groups of people who interacted with 
+the Jokebox in the shopping mall: children with their par-
+ents who were walking by and teenagers who were waiting 
+in front of the cinema. We observed that as families walked 
+by,  children  were  attracted  to  the  Jokebox.  However,  par-
+ents,  who  were  leading  the  way,  conversing  or  looking  at 
+the  shops,  typically  ignored  the  installation  and  prevented 
+the children from interacting by pulling them away as they 
+walked.  The  second  group  comprised  those  who  were  sit-
+ting at the bench looking at the installation and could hear 
+the instructions being triggered by passers-by. However, as 
+the  flowerbed  provided  a  comfort  space  [9]  they  did  not 
+immediately  stand  up  to  play  with  it  or  only  engaged  in 
+brief interactions (e.g. 50 seconds).  
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+At the bus stop, frequent incidental interactions [1] caused 
+anxiety among those who were waiting for the bus. Because 
+the two boxes were deployed at each side of the pathway, 
+every time someone walked between the devices they trig-
+gered the instructions. However, 60% of those walking by 
+were using headsets, chatting with others or on the phone, 
+which meant that they didn’t notice the instruction (display 
+deafness,  cf.  [24]).  We  identified  a  few  individuals  who 
+were sitting alone and stood up and left the bus stop, seem-
+ingly annoyed by the constant noise. 
+Furthermore,  the  number  of  people  available  at  this  site 
+seemed to hinder the number of interactions. For example, 
+in 14 sequences where there were only two people waiting 
+at the bus stop, only one pair interacted with the Jokebox. 
+Nevertheless,  we  identified  that  direct  interaction  with  the 
+installation  wasn’t  always  necessary  to  foster  shared  en-
+counters  among  strangers.  In  almost  all  cases,  although 
+pairs did not play with the Jokebox they briefly talked about 
+it. An exemplar sequence is illustrated in Figure 6: a lady 
+was sitting at the bench (A, blue) and when a man stood by 
+the installation an instruction was triggered. They looked at 
+each other and smiled. Five seconds later, she stood up and 
+walked towards the Jokebox. As they spoke, he discovered 
+the other box and pointed it out to her but she was too shy 
+to press it. One minute later she walked away smiling (E). 
+The man sat at the bench and used his mobile phone (F). 
+
+ 
+
+Figure 5. Emergent champions drawing others to interact with 
+
+the Jokebox at the shopping centre. 
+
+ 
+
+There  were  16  sequences  where  people  played  with  the 
+Jokebox following chains of interactions. In such cases they 
+would  observe  others  as  they  played,  learn  how  the  tech-
+nology worked and give it a try. We identified that laughter, 
+both  from  interactors  and  from  the  audio  content,  was  a 
+driver for engagement and created a honey-pot effect [4]. In 
+these situations people engaged in conversations about the 
+jokes  and  discussed  how  they  thought  the  technology 
+worked. 
+
+44
+
+by the Jokebox at the bus stop.  
+
+Figure 6. An interaction between a lady and a man mediated 
+
+ 
+ 
+Championing.  Chains  of  interactions  were  started  through 
+different forms of emergent and opportunistic championing 
+in all sites. In the park the children, parents and local char-
+acters took on the role. Children were easily drawn to the 
+Jokebox  and  attracted  others  to  play  with  it  by  providing 
+instructions, starting game sessions or acting as demonstra-
+tors.  For  example,  figure  3  illustrates  a  typical  sequence 
+comprising a pair of children who initiate a chain of interac-
+tions and a honey-pot effect. A more explicit type of emer-
+gent  championing  occurred  when  a  boy,  who  after  having 
+played repeatedly with the device, asked passers-by if they 
+wanted  to  "hear  a  joke".  When  people  accepted  he  taught 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ing  others  to  use  it.  The  clown  even  identified  one  of  the 
+observers and offered to become a “compere” demonstrat-
+ing how to use the device to passers-by. In three sequences 
+children  and  families  approached  the  man  giving  away 
+puppies  to  ask  about  the  Jokebox.  He  showed  them  the 
+puppies as he explained how to use it, and they proceeded 
+to  play.  In  other  three  sequences,  the  clown  and  the  man 
+selling  ice  cream  also  provided  information  about  the  de-
+vice and invited children to play. While informing passers-
+by  was  an  effective  way  of  fostering  interactions,  inviting 
+them  to  play  wasn’t  always  effective  (figure  7)  unless  an 
+adult accompanied the children. 
+At the shopping mall, there were nine chains of interactions 
+fostered by three different emergent champions: a group of 
+girls and a group of boys (aged ≈ 15), and a man. While the 
+first  two  groups  became  champions  by  playing  and  then 
+voluntarily helped others or instructed them on how to play, 
+the man spent over 20 minutes observing how others inter-
+acted  before  he  decided  to  teach  strangers  how  to  use  the 
+device. Figure 5 presents a sequence of interactions where 
+emergent championing [26] by a group of girls took place. 
+This led to chains of interactions [29] and honey-pot effects 
+[1] that included an adult, a clown, parents and their chil-
+dren. 
+The main champion at the bus stop was the bus driver. He 
+was also a local character (cf. [26]) - familiar with the loca-
+tion and who normally spent long periods of time waiting 
+on the bus while people gathered at the station. After driv-
+ing  them  through  to  the  different  stops  at  the  campus  we 
+observed him returning to the main station where the Joke-
+box was deployed. As a result he became very familiar with 
+the Jokebox, and quickly found ways to integrate it into his 
+routine for his own situated needs. By championing interac-
+tions  with  the  Jokebox  he  had  the  opportunity  to  talk  and 
+play with those who were waiting, possibly transforming a 
+dull moment into a joyful one. Sometimes he warned peo-
+ple about the jokes not being “always funny” and proposed 
+that the Jokebox should deliver “romantic songs” to provide 
+a more subtle form of entertainment during “waiting times”.  
+Successful interactions tended to lead to chains of interac-
+tions as they drew attention from passers-by. For example, 
+as  the  bus  driver  interacted  with  a  lady  (see  figure  8)  a 
+passer-by stopped to look at them. The bus driver addressed 
+him  to  explain:  “This  is  something  to  entertain  people  as 
+they  wait  for  the  bus”  and  explained  how  the  installation 
+worked. The man then engaged in conversation with them. 
+
+them how to play by positioning himself at one of the boxes 
+and telling them when to press the button on the other box. 
+Other  chains  of  interaction  led  to  group  re-assemblages. 
+This  meant  that  new  players  mixed  with  others  who  were 
+already  playing,  particularly  if  members  of  the  former 
+group  had  left.  While  group  assemblages  among  children 
+who  did  not  know  each  other  seemed  to  be  frequent,  this 
+was  not  the  case  between  children  and  adults  who  were 
+strangers.  
+
+Figure 7. Opportunistic championing enacted by the ice-cream 
+
+seller at the park. 
+
+A form of opportunistic championing was also carried out 
+by  three  local  characters  at  the  park  (cf.  [26]):  a  clown,  a 
+man  selling  ice  cream  and  a  man  who  was  giving  away 
+puppies  (not  unusual  in  Latin  America).  These  characters 
+approached the area where the Jokebox was deployed and 
+found a strategic space to display what they were offering, 
+making them visible to those gathering around it. This ad-
+hoc  appropriation  of  the  interaction  space  supported  their 
+goal  of  attracting  potential  customers  but  also  validated 
+their  interaction  with  passers-by.  For  example,  figure  3 
+shows the ice cream seller standing by his trolley about 8 
+meters away from the installation. The man looked around 
+and saw children playing with the device. Ten minutes later 
+(in  Figure  7)  he  relocated  to  the  vicinity  of  the  Jokebox, 
+placing himself and his trolley in a salient position by the 
+installation.  
+These characters championed interactions with the Jokebox 
+in two ways: by providing information about it and by invit-
+
+45
+
+Returning  users  and  appropriation.  The  Jokebox’s  design 
+supported  appropriation,  typically  by  children  who  were 
+returning  users.  We  observed  14  sequences  that  included 
+returning  users.  While  most  of  them  played  several  times 
+during  a  single  deployment,  we  recognised  three  children 
+who returned on different days. An interesting aspect of this 
+was that as they became more familiar with the installation 
+they changed the way they interacted with it. For example, 
+a group of girls who had previously used the device estab-
+lished  new  rules  to  play,  where  instead  of  pressing  both 
+buttons at the same time the girls had to take turns to indi-
+vidually run from one box to the other to press both buttons 
+within the three-second threshold. A third group comprising 
+four  children  split  to  press  the  buttons  and  then  reunited 
+around one of the boxes to listen to the joke and comment 
+on it.  
+The Jokebox design afforded diverse forms of championing 
+and  appropriation  in  the  different  settings  but  in  each  set-
+ting  the  same  kinds  of  micro-coordination  were  observed. 
+Below, we discuss how the context and design of a public 
+installation can facilitate social interactions that begin with 
+eye contact between strangers and can end with champions 
+appropriating them for their own purposes. 
+DISCUSSION 
+The  Jokebox  successfully  enabled  the  coordination  of 
+shared  encounters  and  conversations  at  two  levels.  At  a 
+micro-level, it was clear what to do with the system: pairs 
+followed  a  sequence  of  behaviours  that  started  by  making 
+eye contact and aimed at synchronising movements to trig-
+ger  the  jokes.  This  often  led  to  further  conversation  and 
+even laughter. At a macro-level, there was more flexibility 
+in how the Jokebox was used, that related to different inter-
+pretations of why the Jokebox was in the context in which it 
+had been deployed: a number of social interactions emerged 
+among audiences  that gathered  around the  installation fol-
+lowing  a  honeypot  effect.  Social  interactions  with  local 
+characters,  or  emergent  champions,  occurred  from  their 
+deliberate guidance of first time players that gave meaning 
+to the interactions.  
+Our  results  suggest  that  both  the  micro  and  macro  levels 
+have to be considered carefully in the process of designing 
+urban technologies to foster shared encounters. Below, we 
+propose  a  number  of  considerations  and  implications  that 
+are intended to inform the design and deployment of novel 
+interfaces for shared encounters in public places. 
+Micro-coordination 
+Eye contact and inter-subjectivity  
+While most urban technologies have tended to deliver visu-
+al content on a display, which responds to the actions of a 
+single  user,  the  Jokebox  demanded  coordination,  enabled 
+eye contact and delivered audio content. The affordances of 
+such a design created a successful ice-breaker, even provid-
+ing  opportunities  for  participants 
+inter-
+subjectivity through interaction when trying to figure out if 
+
+to  establish 
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Figure 8. Championing and micro-coordination enabled by 
+
+the bus driver. 
+
+the  other  person  had  found  the  joke  funny  or  not  before 
+reacting to it, either laughing, making gestures of approval 
+or disapproval, and commenting on it.  
+To  support  micro-coordination,  the  technology  should  al-
+low for interaction in tandem and include features that indi-
+cate  that  coordinated  action  is  required,  for  example  by 
+providing  instructions  (e.g.  increasing  the  frequency  that 
+the  lights  blink),  and  using  simple,  tactile  controls  that 
+allow people to make eye contact rather than focus on the 
+interface.  Using  audio  rather  than  visual  content  can  pro-
+vide opportunities for participants to continue to make eye 
+contact  as  they  interpret  the  content,  which  increases  the 
+likelihood that conversation will emerge between them [2, 
+11]. 
+Macro-coordination 
+Coordination at the macro level was a result of the particu-
+lar context where the Jokebox was deployed. The interven-
+tion  enabled  a  diversity  of  group  interactions,  particularly 
+among  the  audience  who  gathered  around  the  device  and 
+through  chains  of  interactions.  As  shown  in  Table  1  the 
+characteristics  of  the  context  of  the  deployment  have  a 
+major  impact  on  the  type  of  interactions  that  can  emerge 
+around  a  technology  intervention.  Researchers  seeking  to 
+enable shared encounters at public spaces should consider:  
+The  affordances  of  space:  open  and  public  spaces  where 
+diverse  groups  of  people  congregate  [1]  seem  to  be  more 
+effective at supporting interactions, particularly when there 
+are places of comfort [9] such as benches, seats and flower-
+beds. However, spaces that are more constrained and where 
+small numbers of strangers share physical proximity [22] do 
+not  seem  to  naturally  encourage  interactions  with  playful 
+interventions. Moreover, the ambient noise in each site can 
+have an impact on the acceptance of a technology that de-
+livers  audio  content.  Although  counter-intuitive,  louder 
+environments  such  as  the  park  and  the  shopping  centre 
+could  be  augmented  through  the  use  of  playful  audible 
+systems. In contrast, in quieter spaces such as the bus stop 
+
+46
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+audio content (e.g. loud jokes, sound of laughter) could be 
+disturbing and deter interaction. 
+The type of visitors: it is important to survey optimal places 
+in a location before deploying a technology to ensure visi-
+tors are attracted to it. Diverse crowds visit different places 
+at  distinct  times  and  deployments  can  opportunistically 
+profit  from  this.  For  example,  while  teenagers  mostly  ig-
+nored  the  Jokebox  in  the  park  (possibly  because  children 
+and their parents were primarily using it) they engaged with 
+it at the shopping centre. We had previously observed that 
+teenagers  used  this  place  to  congregate  every  evening, 
+which  might  have  contributed  to  them  feeling  ownership 
+over the space and thus enabled engagement with the sys-
+tem (cf. [26]). 
+The activities: the activities that people carry out in a cer-
+tain place can determine how successful a situated interven-
+tion might be. In shopping centres visitors tend to focus on 
+consumption  [3]  and  the  competing  stimuli  can  lead  to 
+“display blindness” [24]. However, within the same venue, 
+at  places  where  people  meet  and  sit  idle,  the  intervention 
+can capture more attention. 
+It is important to consider the context where urban playful 
+technologies  should  be  deployed  to  successfully  facilitate 
+shared  encounters  rather  than  foster  social  awkwardness. 
+One strategy might be to use flexible lightweight prototypes 
+that allow them to test features on-the-fly to identify which 
+are more likely to foster pleasant social interactions in each 
+context.  Moreover,  our  findings  suggest  that  micro  and 
+macro coordination can be evaluated in the design process 
+at  different  stages.  While  a  lab-based  usability  study  pro-
+vides  an  appropriate  setting  to  investigate  how  well  an 
+interactive  system  facilitates  micro  coordination,  in  situ 
+deployments  can  reveal  whether  and  how the  details  of 
+macro  coordination manifest  themselves  in  a  particular 
+context. 
+Championing and appropriation 
+Although  the  Jokebox  was  carefully  designed  to  enable 
+micro-coordination,  it  was  open-ended  and  ambiguous 
+enough  to  enable  ad-hoc  appropriation  [10]  by  returning 
+users and local characters. In all three locations, champion-
+ing was a key driver, fostering further interactions with the 
+Jokebox  where  the  lack  of  specificity  of  what  it  was  for 
+enabled  people  to  make  their  own  meaning.  O'Hara  et  al. 
+[26] and Akpan et al. [1] have described how local charac-
+ters, comperes and emergent champions play a key role in 
+encouraging others to interact with public displays but prior 
+descriptions of how such characters appropriate an installa-
+tion remain simplistic, and do not provide insight regarding 
+the motivations of champions or how they used the display 
+opportunistically for their own situated purposes. Our study 
+has shown how the situated actions of emergent champions 
+and  local  characters  can  also  encourage  different  ways  of 
+appropriating  the  interactive  space  and  drawing  others  to 
+the  interaction.  In  particular,  local  characters  tended  to 
+opportunistically  champion  interactions  to  support  their 
+
+47
+
+own needs. The sellers and clowns (study 1 and 2) used the 
+installation to display their products and engage with poten-
+tial buyers; the man with the puppies found opportunities to 
+show the puppies and try to give them away. The bus driver 
+used the intervention to turn dull waiting into playful inter-
+actions with passengers.  
+Hence,  we  suggest  that  appropriation  by  local  characters 
+and emergent champions can be supported by leaving cer-
+tain aspects of the placement and purpose of the technology 
+open  to  opportunistic  interpretations  [10].  Such  ambiguity 
+encourages people to make their own explanations and use 
+them  to  engage  others  in  conversation.  Moreover,  to  pro-
+vide  opportunities  for  macro-coordination  to  emerge,  the 
+system needs to grab attention (e.g. by using lights, sounds, 
+or  enabling  curiosity)  and  deliver  rich  content  (i.e.  more 
+than one joke) so people to return to the interactive space. 
+Also, it needs to be deployed in places where people pass-
+by [1], wait and congregate [4].  
+CONCLUSION 
+We have presented the design and evaluation of the Joke-
+box, a novel lightweight technology that requires two pass-
+ers-by to come together by coordinating a sequence of be-
+haviours in order to hear a joke. Our findings indicate that 
+the  Jokebox  is  a  successful  “ice  breaker”  enabling  a  wide 
+range of social interactions and conversations among pass-
+ers-by  while  respecting  their  personal  space  in  most  con-
+texts.  We  found  that  drawing  people  together  through  en-
+couraging eye contact, coordination of behaviours and lis-
+tening  to  a  joke  can  create  shared  encounters  and  enable 
+processes  of  inter-subjectivity.  Additionally,  strangers  fol-
+lowed these coordination strategies to guide and encourage 
+others to engage with the Jokebox, facilitating a diversity of 
+social interactions. Our study offers new insights into how 
+to design and deploy interactive technologies that can facili-
+tate shared encounters in public places through encouraging 
+strangers to look each other in the eye. 
+FUTURE WORK 
+With  the  goal  to  deepen  our  understanding  on  which  and 
+how certain design features may affect social coordination 
+at the micro and macro levels, we are currently conducting 
+a  second  phase  of  the  Jokebox  study.  We  have  developed 
+an  even  lighter-weight  version  of  the  system  based  on  a 
+Wizard of Oz, which allows researchers to control the de-
+vice’s interactive features on-the-fly. In the future we will 
+evaluate  the  new  prototype  at  different  public  spaces  with 
+the aim to test in situ as many design variables as possible 
+both  at  the  micro  level  (e.g.  type  of  content  and  instruc-
+tions,  volume  of  audio,  speed  of  blinking,  cooperation 
+threshold) and macro (e.g. type of visitors, characteristics of 
+the space, context, activities). We hope that these new stud-
+ies will further contribute to the design of novel and engag-
+ing  interactive  urban  technologies  aimed  to  foster  shared 
+encounters, eye contact and conversation in public spaces.   
+
+SESSION: MUSEUMS AND PUBLIC SPACES
+
+Systems (CHI '11). ACM, New York, NY, USA, 3023-
+3032.  
+
+13.  James S. House. 2001. Social isolation kills, but how 
+and why? Psychosomatic Medicine, 63(2), 273-274. 
+14.  Jane Jacobs. 1961. The death and life of great Ameri-
+can cities. Modern Library Editions & Random House 
+Inc. New York. 
+
+15.  Antti Jylhä, Cumhur Erkut and Giulio Jacucci. (2013, 
+April). I Can Hear You Private, Public, and Social Son-
+ic Interactions in Public Spaces. In CHI'13 Workshop 
+on Experiencing Interactivity in Public Spaces (EIPS). 
+ACM. 
+
+16.  Esther C. Kim. 2012. Nonsocial transient behavior: 
+
+Social disengagement on the greyhound bus. Symbolic 
+Interaction, 35(3), 267-283. 
+
+17.  Thomas Laureyssens, Tanguy Coenen, Laurence 
+
+Claeys, Peter Mechant, Johan Criel, and Andrew Van-
+de Moere. 2014. ZWERM: a modular component net-
+work approach for an urban participation game. 
+In Proceedings of the 32nd annual ACM conference on 
+Human factors in computing systems(CHI '14). ACM, 
+New York, NY, USA, 3259-3268. 
+
+18.  Paul Marshall, Richard Morris, Yvonne Rogers, Stefan 
+Kreitmayer, and Matt Davies. 2011. Rethinking 'multi-
+user': an in-the-wild study of how groups approach a 
+walk-up-and-use tabletop interface. In Proceedings of 
+the SIGCHI Conference on Human Factors in Compu-
+ting Systems (CHI '11). ACM, New York, NY, USA, 
+3033-3042. 
+
+19.  Nemanja Memarovic, Marc Langheinrich, Florian Alt, 
+
+Ivan Elhart, Simo Hosio, and Elisa Rubegni. 2012. 
+Using public displays to stimulate passive engagement, 
+active engagement, and discovery in public spaces. 
+In Proceedings of the 4th Media Architecture Biennale 
+Conference: Participation(MAB '12). ACM, New 
+York, NY, USA, 55-64. 
+
+20.  Stanley Milgram, John Ed Sabini, and Maury Ed Sil-
+
+ver. 1992. The individual in a social world: Essays and 
+experiments. Mcgraw-Hill Book Company. 
+
+21.  David R. Millen. 2000. Rapid ethnography: time dee-
+pening strategies for HCI field research. In Proceedi-
+ngs of the 3rd conference on Designing interactive sys-
+tems: processes, practices, methods, and techni-
+ques (DIS '00), Daniel Boyarski and Wendy A. Ke-
+llogg (Eds.). ACM, New York, NY, USA, 280-286. 
+
+22.  Jörg Müller, Dennis Wilmsmann, Juliane Exe-
+
+ler, Markus Buzeck, Albrecht Schmidt,Tim 
+Jay, Antonio Krüger. 2009. Display Blindness: The Ef-
+fect of Expectations on Attention Towards Digital 
+Signage. In Proceedings of the 7th International Con-
+ference on Pervasive Computing (Pervasive '09). 
+Springer-Verlag, Berlin, Heidelberg, 1-8. 
+
+ACKNOWLEDGEMENTS 
+We  thank  Jesus  Favela,  Alejandro  Rangel,  Daniel  García 
+Rosas and Rodrigo Juárez for their invaluable work helping 
+run this study; and Karina, Rosa and Raul for recording the 
+Jokebox’s  content.  Special  thanks  to  Jose  Molina,  Ed 
+Maklouf, Odon and Sofia Brugada for their support during 
+the intervention. This research was partially funded by Intel 
+ICRI  Cities  and  EU-FP7  Marie  Curie  IRSES  UBI-
+HEALTH: Exchange of Excellence in Ubiquitous Compu-
+ting Technologies to Address Healthcare Challenges.  
+REFERENCES 
+1. 
+
+Imeh Akpan, Paul Marshall, Jon Bird, and Daniel Ha-
+rrison. 2013. Exploring the effects of space and place 
+on engagement with an interactive installation. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '13). ACM, New 
+York, NY, USA, 2213-2222.  
+
+2.  Michael Argyle and Janet Dean. 1965. Eye-contact, 
+
+distance and affiliation. Sociometry, 289-304. 
+
+3.  Marc Augé. 2008. Non-Places: An Introduction to 
+
+Supermodernity. Verso. 
+
+4.  Harry Brignull and Yvonne Rogers. 2003. Enticing 
+
+People to Interact with Large Public Displays in Public 
+Spaces. In Proceedings of INTERACT, Zurich, 17-24.  
+5.  Mike Crang and Stephen Graham. 2007. Sentient cities 
+
+ambient intelligence and the politics of urban spa-
+ce. Information, Communication & Society, 10(6), 789-
+817. 
+
+6.  Clarence A. Ellis, Simon J. Gibbs, and Gail Rein. 1991. 
+
+Groupware: some issues and experiences.Commun. 
+ACM 34, 1 (January 1991), 39-58. 
+
+7.  Nicholas Epley and Juliana Schroeder. 2014. Mistaken-
+ly seeking solitude. Journal of Experimental Psycholo-
+gy: General, 143(5), 1980. 
+
+8.  Patrick Tobias Fischer and Eva Hornecker. 2012. Ur-
+
+ban HCI: spatial aspects in the design of shared en-
+counters for media facades. In Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems (CHI '12). ACM, New York, NY, USA, 307-
+316.  
+
+9.  William W. Gaver, Jacob Beaver, and Steve Benford. 
+2003. Ambiguity as a resource for design. InProceedi-
+ngs of the SIGCHI Conference on Human Factors in 
+Computing Systems (CHI '03). ACM, New York, NY, 
+USA, 233-240. 
+
+10.  Erving Goffman. 1972. Relations in Public. Penguin. 
+11.  Christian Heath, Jon Hindmarsh, and Paul Luff. 2010. 
+
+Video in qualitative research. Sage. 
+
+12.  Uta Hinrichs and Sheelagh Carpendale. 2011. Gestures 
+in the wild: studying multi-touch gesture sequences on 
+interactive tabletop exhibits. In Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+
+48
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+23.  Løssing, Tobias, Thomas Fabian Delman, Sofie Kinch, 
+Rune Nielsen, Kätte Bønløkke Andersen, and Jan Fugl. 
+2013: Light Spots - Interactive Urban Furniture. In 
+Proceedings of the 4th Global Lighting Design Confe-
+rence (PLDC’13), Copenhagen, DK. 
+
+24.  Kenton O'Hara, Maxine Glancy, and Simon Roberts-
+haw. 2008. Understanding collective play in an urban 
+screen game. In Proceedings of the 2008 ACM confe-
+rence on Computer supported cooperativ work (CSCW 
+'08). ACM, New York, NY, USA, 67-76.  
+
+25.  Eric Paulos and Elizabeth Goodman. 2004. The fami-
+liar stranger: anxiety, comfort, and play in public pla-
+ces. In Proceedings of the SIGCHI Conference on Hu-
+man Factors in Computing Systems(CHI '04). ACM, 
+New York, NY, USA, 223-230. 
+
+26.  Eric Paulos, Tom Jenkins, August Joki, and Parul Vora. 
+
+2008. Objects of wonderment. In Proceedings of the 
+7th ACM conference on Designing interactive sys-
+tems (DIS '08). ACM, New York, NY, USA, 350-359. 
+27.  Peter Peltonen, Esko Kurvinen, Antti Salovaara, Giulio 
+Jacucci, Tommi Ilmonen, John Evans, Antti Oulasvirta, 
+and Petri Saarikko. 2008. It's Mine, Don't Touch!: in-
+teractions at a large multi-touch display in a city centre. 
+In Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems (CHI '08). ACM, New 
+York, NY, USA, 1285-1294. 
+
+28.  Robert D. Putnam. 1993. The prosperous community: 
+social capital and public life. The American Prospect, 
+4(13), 35-42. 
+ 
+ 
+
+ 
+
+29.  Yvonne Rogers. Interaction design gone wild: striving 
+
+for wild theory. Interactions 18, 4 (2011), 58–62. 
+
+30.  Willibald Ruch (Ed.). 1998. The sense of humor: Ex-
+
+plorations of a personality characteristic (Vol. 3). 
+Walter de Gruyter. 
+
+31.  Ronald Schroeter. 2012. Engaging new digital locals 
+with interactive urban screens to collaboratively im-
+prove the city. In Proceedings of the ACM 2012 confe-
+rence on Computer Supported Cooperative 
+Work (CSCW '12). ACM, New York, NY, USA, 227-
+236.  
+
+32.  Georg Simmel. 1903. The metropolis and mental 
+
+life. Individuality and Social forms. 
+
+33.  Nick Taylor and Keith Cheverst. 2012. Supporting 
+
+community awareness with interactive displays. IEEE 
+Computer 45, 5, 26–32. 
+
+34.  Nina Valkanova, Robert Walter, Andrew Vande Moe-
+re, and Jörg Müller. 2014. MyPosition: sparking civic 
+discourse by a public interactive poll visualization. 
+In Proceedings of the 17th ACM conference on Compu-
+ter supported cooperative work & social compu-
+ting (CSCW '14). ACM, New York, NY, USA, 1323-
+1332. 
+
+35.  Katharine S. Willis, George Roussos, Konstantinos 
+
+Chorianopoulos, and Mirjam Struppek, eds. 2010. Sha-
+red Encounters. Springer.
+
+49
+
+

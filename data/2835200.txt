@@ -1,0 +1,1940 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Avalanche Beacon Parks: Skill Development and Team 
+
+Coordination in a Technological Training Ground 
+
+Audrey Desjardins1, Saul Greenberg2, Ron Wakkary1,3 and Jeff Hambelton4 
+
+1School of Interactive Arts + Technology, Simon Fraser University, Surrey, British Columbia, Canada 
+
+2Department of Computer Science, University of Calgary, Calgary, Alberta, Canada 
+
+3Eindhoven University of Technology, Eindhoven, The Netherlands 
+
+4Mountain Education Center at Mt. Baker, Bellingham, Washington, United States 
+
+adesjard@sfu.ca, saul.greenberg@ucalgary.ca, rwakkary@sfu.ca, jhambelton@gmail.com 
+
+ 
+
+technological 
+
+ABSTRACT 
+High-risk outdoor recreation allows its enthusiasts to reach 
+unprecedented  levels  of  adrenaline;  it  also  contains  risks 
+and  requires  specific  training  (in  part  technological).  In 
+particular, its participants must be ready to react efficiently 
+during  an  emergency  or  in  response  to  an  accident. 
+Technological  training  grounds  can  simulate  particular 
+contexts  and  emergency  situations  as  a  place 
+for 
+recreationists to train and practice. In this paper, we use the 
+practice of avalanche companion rescue as a case study to 
+explore  how 
+training  grounds  support 
+recreationist  training.  Our  results  offer  insights  into  how 
+avalanche beacon training parks support skill development 
+and  team  coordination  training.  We  also  present  strategies 
+to  orient  the  design  of  technological  training  grounds 
+beyond avalanche companion rescue.  
+Author Keywords 
+Avalanche rescue; avalanche beacons; training in context; 
+simulation; communities of practice; team cognition. 
+ACM Classification Keywords 
+H.5.3 [Group and Organization Interfaces]:  Computer 
+supported cooperative work; H.1.2 [User/Machine 
+Systems]: Human factors.  
+INTRODUCTION 
+In  the  past  years,  there  has  been  an  increase  in  high-risk 
+outdoor recreation activities, sometimes labeled as extreme 
+sports, 
+‘skilled 
+adventures’  [6]  or  risky  forms  of  recreation  [4].  Those 
+sports  have  been  characterized  as  “specialised,  highly 
+technological and demanding a high degree of preparation, 
+and  are  associated  with  individual  endeavour,  risk,  speed, 
+and  excitement”  [37:36].  Examples  include  climbing, 
+skydiving,  mountain  biking,  big  wave  surfing,  BASE 
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  the  author(s)  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific  permission 
+from 
+Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright  is  held  by  the  owner/author(s).  Publication  rights  licensed  to 
+ACM. 
+ACM 978-1-4503-3592-8/16/02$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2835200 
+ 
+
+‘modern  outdoor 
+
+fee.  Request  permissions 
+
+activities’ 
+
+[37], 
+
+and/or 
+
+a 
+
+872
+
+jumping,  white  water  kayaking,  kite  boarding,  heli-skiing, 
+and backcountry skiing. Such sports are also characterized 
+by ‘communities of interest’ [4:12], comprising people who 
+participate  in  those  activities,  use  specific  areas  in  the 
+outdoors, and use particular equipment.  Members of  these 
+communities demonstrate a desire for risk-taking, while at 
+the  same  time  cultivating  a  high  knowledge  for  the  sport 
+they practice, including its risks and dangers [6].  
+As sports and recreation continue to develop into the more 
+extreme and risky spheres, there is also a growing need for 
+ongoing  simulated  practice  and  training  for  recreationists 
+and outdoor enthusiasts. That need is even more important 
+for situations within the practice that happen rarely but that 
+can  be  life  threatening.  Examples  include  rappel  rescue 
+techniques  for  rock-climbing  accidents,  canyon  extraction 
+for  canyoneers,  swiftwater  rescue  for  paddlers  in  danger, 
+and  avalanche  rescue  for  backcountry  skiers.  Yet  unlike 
+professional guides, the typical recreationist training relies 
+on  a  few  short  (and  possibly  superficial)  courses. 
+Furthermore,  they  are  rarely  exposed  to  real  situations 
+requiring that training. Thus even ‘trained’ enthusiasts can 
+become  quite  rusty  over  time.  At  the  same  time,  digital 
+technology  is  becoming  increasingly  incorporated  into 
+many  of  these  activities,  particularly  through  the  use  of 
+portable devices running specialized apps. As these devices 
+are integrated into those activities, they need to be included 
+as part of the training program. For example, GPS devices 
+are  critical  both 
+the 
+backcountry,  and  for  deciding  on  alternative  routes  when 
+problems occur (e.g. [14]). Personal satellite trackers (e.g., 
+the  SPOT  GPS  Messenger,  www.findmespot.ca)  allow 
+people  to  check  in  periodically  to  inform  others  not  only 
+about  their  location  and  well-being,  but  to  send  out  a 
+distress  and  location  signal  when  they  require  rescue. 
+Various  apps  and  devices  let  people  monitor  specialized 
+environmental forecasts and bulletins in order to help their 
+decision  making,  such  as  extreme  changes  in  weather 
+during backcountry travel, winds when skydiving, potential 
+for  flash  floods  when  canyoneering,  and  local  avalanche 
+conditions 
+(e.g., 
+www.avalanche.ca).  Some  devices  are  solely  dedicated  to 
+handling particular emergency situation, such as avalanche 
+transceivers  (beacons)  that  help  people  locate  victims 
+buried in an avalanche [13]. 
+
+backcountry 
+
+finding 
+
+routine 
+
+skiing 
+
+when 
+
+route 
+
+for 
+
+in 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+For these devices to be used effectively, recreationists need 
+to understand how to use them within the context of their 
+real-world  activity.  This  goes  beyond  reading  the  user 
+manual. While one can read about the functions of (say) a 
+GPS  unit  or  an  avalanche  transceiver,  their  actual  use 
+during the high-risk activity demands far more knowledge 
+and  expertise.  The  consequences  of  misuse  or  inefficient 
+use  can  be  extremely  serious.  Misreading  a  GPS  while 
+skiing on a glacier during a whiteout can lead the group to 
+extremely hazardous terrain. Inefficient use of an avalanche 
+transceiver  can  lead  to  delays  during  rescue,  resulting  in 
+suffocation of the buried victims before they are found [12]. 
+The challenge is that people need to learn how to use these 
+devices  and  the  best  practices  around  them  within  their 
+recreational context. Yet learning while actually doing the 
+activity is often impractical due to the inherent danger and 
+time  constraints  of  the  activity,  and  the  relative  rarity  of 
+critical  events.  Hence,  training  often  occurs  in  specially 
+crafted physical settings - technological training grounds - 
+that simulate particular contexts and emergency situations.  
+Our  goal  in  this  paper  is  to  understand  the  use  of  these 
+technological  training  grounds  and  how  to  better  design 
+them. We chose to study the case of backcountry skiing and 
+the  specific  practice  of  the  avalanche  companion  rescue 
+protocol within avalanche training beacon parks (both will 
+be described shortly). Avalanche companion rescue training 
+is particularly interesting to both HCI and CSCW because 
+its  success  relies  on  several  aspects:  how  each  rescuer 
+masters the skills of using his or her tools during particular 
+emergency  scenarios  (including  technology  such  as  an 
+avalanche transceiver), how the rescuers as a team are able 
+to  collaborate  and  coordinate  on  scene  while  using  that 
+technology, and how people support the training of others 
+through facilitation and mentorship.  
+In  this  paper,  we  take  on  the  dual  roles  of  being  CSCW 
+researchers  as  well  as  backcountry  skiing  recreationists. 
+One  of  the  authors  and  observers  is  a  professional 
+is  a 
+avalanche  education  specialist.  Another  author 
+recreationist  with 
+running 
+avalanche simulations: he was once completely buried in an 
+avalanche,  and  had  to  be  found  and  rescued  by  his  team 
+(see account in Part I, [7]). The third is a recent convert to 
+the  activity  and  who  has  run  through  training  sessions 
+herself.  While  we  use  the  observations  we  made  of  our 
+participants  to  ground  our  analysis,  we  also  interpret  and 
+extend  what  we  saw  to  our  own  in-depth  experiences  of 
+similar situations done 'in the wild'.  
+After describing related work, we present the two parts of 
+our  research:  1)  an  observational  study  of  recreationists 
+training  in  the  avalanche  beacon  training  park  with 
+subsequent 
+interviews,  and  2)  our 
+reflections  on  maintaining  a  beacon  park.  We  report  our 
+results  under  the  themes  of  skill  development,  team 
+coordination  training,  and  designing  beacon  parks  as  a 
+technological  training  ground.  To  foreshadow,  our  main 
+
+semi-structured 
+
+considerable 
+
+experience 
+
+findings articulate the value of a progressive difficulty scale 
+of scenarios, the importance of levels of fidelity, finding a 
+balance  between  skill  development  vs.  team  coordination 
+training,  and  the  challenges  in  supporting  communities  of 
+practice in simulations for recreationists. 
+
+RELATED WORK 
+Team cognition and team training 
+Training,  and  specifically  training  of  non-professionals  to 
+work  as  an  ad-hoc  team  in  critical  situations,  is  central  to 
+our work. Previous research has articulated in great details 
+team cognition, cross training, and the importance of shared 
+mental  models.  We  present  a  very  brief  summary  of  this 
+more  general  work  and  will  come  back  to  concepts 
+mentioned here in the presentation of our results.  
+Team training 
+Teams  are  understood  to  be  “social  entities  composed  of 
+members  with  high  task  interdependency  and  shared  and 
+valued  common  goals”  [36:541].  Moreover,  teamwork 
+requires  the  ability  to  adapt  coordination  strategies  by 
+communicating  and  orienting  the  team  towards  reaching 
+their  goal 
+[38].  Achieving  successful  and  efficient 
+teamwork is not easy and requires team training. In addition 
+to  mastering  one’s  role  and  tasks,  it  has  been  argued  that 
+each team member should also gain a shared mental model 
+of the team goals, tasks, and needs. Shared mental models 
+are particularly useful for people working in teams because 
+it  allows  individuals  to  predict  and  explain  what  is 
+happening  around  them  and  further  allows  them  to  make 
+decisions about what to do [32].  
+In  avalanche  companion  rescue,  a  group  of  recreationists 
+must quickly become a team when they have the shared and 
+valued goal of rescuing one of their companions. However, 
+unlike  most  teams  discussed  in  the  literature,  the  group  is 
+ad hoc. Some may not have met before, they may not have 
+trained  together,  and  the  level  of  training  and  practice 
+between  team  members  can  vary  considerably.  As  well, 
+individuals may not be familiar with each other’s skill level, 
+which can affect how roles within the team are assigned and 
+how well they are carried out.  
+Thus  we  find  particular  value  in  the  concept  of  cross 
+training (specifically, positional rotation [8]): a strategy in 
+which each team member learns about and is trained on the 
+other  roles  and  tasks  within  the  team  [30,42].  This  allows 
+each  team  member  to  gain  a  better  mental  model  of  the 
+team’s work and can lead to enhanced implicit coordination 
+in the team (by reducing the need for overt communication 
+and explanations) [29] and to more seamlessly exchanging 
+roles ad hoc within the team.  
+Team training through simulations  
+CSCW has focused on the collaborative aspect of training 
+in  emergency  situations.  Examples  include  observational 
+studies  of  air 
+traffic  control  [11],  health  care  [3], 
+firefighting  [21,39,40],  avalanche  rescue  [13]  and  real-
+world emergencies [27]. Researchers have also created new 
+
+873
+
+in 
+
+studied 
+
+fidelity 
+
+three  dimensions  of 
+
+in  CSCW  are  oriented 
+
+systems  to  better  support  training,  often  focusing  on 
+collaborative practices. Proposed solutions include tabletop 
+systems [11], wearables [9,22], games [27,40], and virtual 
+environments [28].  
+The  literature  on  simulations  and  training  discusses  the 
+different dimensions and types of simulation. For example, 
+Beaubien  and  Baker  [3]  offer  three  types  of  simulation 
+(case studies/role plays, part task trainers, and full mission) 
+and 
+simulations 
+(environment,  equipment,  and  psychological).  The  authors 
+articulate  how  each  training  exercise  or  facility  can  offer 
+more or less fidelity on each dimension, which can reflect 
+particular sub-areas of a more complex practice. However, 
+they also state: “although the three fidelity components are 
+inter-related, psychological fidelity [the degree to which the 
+trainee perceives the simulation to be a believable surrogate 
+for the trained task] is generally considered to be the most 
+essential  requirement  for  team  training”  [3:i52].  Literature 
+on simulations also proposes that some aspects of practices 
+can be learned without a complete simulation [40] and that 
+in fact a full simulation can be unnecessary [35].  
+However, it is important to note here how our work differs 
+from the above. As mentioned, the training and simulations 
+typically 
+towards 
+professionals  and  experts  in  emergency  management  and 
+rescue. That audience is distinctly different from high-risk 
+recreationists (such as the companion rescuers in the case of 
+an  avalanche  [13]).  Unlike  professionals,  they  do  not 
+necessarily commit or have the time to commit to extensive 
+formal  training.  Unlike  professionals,  recreationists  often 
+form  ad  hoc  groups  for  each  outing  vs.  stable  teams  that 
+work together over time. Thus no single group learns how 
+to work together as a team during emergencies. As well, a 
+particular  group  may  include  strangers  and/or  people  of 
+quite  different  (and  perhaps  unknown)  levels  of  expertise. 
+These distinctions are at the center of the motivation for this 
+paper: how are technological training grounds used by these 
+recreational groups, and how can they be designed to best 
+train  people  to  respond  to  the  life  or  death  situations 
+inherent in their practices? 
+Ad hoc and volunteer teams 
+CSCW  has  an  established  tradition  in  studying  and 
+designing for disaster communities and emergency response 
+groups,  with  a  particular  focus  on  ad  hoc  and  improvised 
+collaborative  volunteer  work.  Past  research  has  addressed 
+the  important  role  of  social  media  (e.g.  [19,20,33])  and 
+virtual  communities  (e.g.  [31,38])  in  disasters  and  mass 
+emergency  events.  Improvisation  and  ad  hoc  teaming 
+resonate  very  strongly  with  the  practice  of  avalanche 
+companion rescue since it is impossible to know who will 
+be part of the rescue team and what role everyone will need 
+to  play  (as  we  will  describe  in  the  Our  Study  section). 
+However, avalanche companion rescue has its own unique 
+characteristics  that  differ  from  this  past  work,  mostly 
+because of the immediacy of the event. Expertise cannot be 
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+its  players  strongly 
+
+called in, as the remote areas involving backcountry skiing 
+means there is often no wireless or cellular network access, 
+and thus no access to social media or virtual communities. 
+All the teamwork has to be performed on site, with only the 
+people who are present as rescuers, with only the equipment 
+immediately  available,  and  within  a  short  period  of  time. 
+Even if people can communicate to the outside world, the 
+arrival of additional parties is often far later than the critical 
+time required for finding and unburying the victim alive. 
+Communities of practice and situated learning 
+Most  high-risk  recreational  activities  occur  in  a  social 
+context,  where 
+identify  with  a 
+community  of  like-minded  people.  Formal  and  informal 
+clubs  are common, specialized social media sites develop, 
+open  invitation  social  gatherings  abound,  and  courses  are 
+offered by both professional and lay people [4]. Similarly, 
+training is often part of a social event. 
+This  social  structure  is  captured  by  the  concept  of 
+communities  of  practice  as  developed  by  anthropologists 
+Jean Lave and Etienne Wenger [24,43]. These communities 
+refer to groups of people who share a passion, a craft, or a 
+profession. Central to these communities is how learning is 
+situated in the social, where practitioners share knowledge 
+and experience of their field of the practice, and thus learn 
+from  each  other  [23].  Communities  of  practice  display  a 
+shared repertoire of experience, stories, best practices, and 
+equipment  and  tools,  all  which  help  inform  its  members. 
+The act of learning is further situated in the real world [24], 
+as  it  often  occurs  as  they  perform  their  shared  practice. 
+Wenger [43] argues that it is by being part of a community 
+of practice and by practicing alongside ‘old timers’ (people 
+with considerable experience) that newcomers can learn the 
+skills,  techniques,  values  and  norms  of  a  community  of 
+experts. This process takes time and ‘repeated and enduring 
+exposure’ is necessary for learning to happen [25]. 
+In  the  case  of  backcountry  skiing  recreationists,  some 
+aspects  of  the  practice  are  passed  on  via  this  situated 
+learning  as  they  are  performing  the  activity.  Examples 
+include  the selection  and  review  of  appropriate  equipment 
+by  members  at  the  start  of  the  activity,  route  finding  and 
+terrain choice discussion while travelling, and even critique 
+and  fine-tuning  of  skiing  techniques.  The  practice  of 
+avalanche  companion  rescue  does  not  benefit  as  much  in 
+situated  learning.  Since  avalanches  are  rare  but  serious 
+occurrences, learning must happen  in  different ways, such 
+as through reading and instructional videos, and by taking 
+formal  courses.  While  simulations  can  occur  in  the  field 
+(e.g., by one member of a group burying a transceiver while 
+others try to find it), they are rarely and often hastily done: 
+people would rather ski.  
+We  are 
+the  notion  of 
+communities  of  practice,  where  we  see  it  as  one  way  to 
+better understand the use of technological training grounds 
+by  outdoor 
+recreationists,  both 
+skill 
+development and team coordination. 
+
+thus  particularly  sensitive 
+
+terms  of 
+
+to 
+
+in 
+
+874
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+OUR STUDY 
+Our  study  took  place  in  a  dedicated  area  at  Mount  Baker 
+Ski  Area  in  Washington,  U.S.A.  Our  study  comprised  2 
+parts: an observational study with interviews of participants 
+using the beacon park, and a reflection on our own practice 
+of installing and modifying the beacon park in response to 
+what we observed. As the two parts of the study happened 
+simultaneously and influenced each other, we continuously 
+evolved  and  refined  our  research  questions.  Two  of  the 
+authors,  a  CSCW  researcher  (also  newly  a  backcountry 
+skier)  and  a  professional  avalanche  education  specialist 
+were on site to install, maintain a wireless beacon park, and 
+conduct  the  study  for  4  weekends,  one  day  per  weekend. 
+The education specialist served a dual role, where he acted 
+as  both  as  an  observer  and  as  a  facilitator  for  those 
+requiring or asking for help.  
+Before  we  go  further,  we  provide  necessary  background 
+information  on  backcountry  skiing,  companion  rescue  and 
+the  functioning  of  avalanche  beacon  training  parks.  A 
+detailed  description  of  the  avalanche  rescue  protocol 
+written for a CSCW audience can be found in [13].  
+Backcountry Skiing, Avalanches & Companion Rescue 
+Backcountry  skiing  (and  snowboarding)  is  a  popular 
+activity.  Skiers  travel  under  their  own  power  (both  uphill 
+and  down)  outside  of  ski  resorts  in  mountains.  Rewards 
+include breath-taking views, vigorous exercise, challenging 
+and rewarding ski lines, and pristine untouched snow. The 
+risk  is  an  avalanche,  a  large  volume  of  loose  snow  that 
+rapidly slides down a slope [12], which can bury and injure 
+skiers, and that can have fatal consequences. When caught 
+and  buried  in  an  avalanche,  victims  rely  on  teams  of 
+rescuers,  often  their  traveling  companions,  to  save  them 
+through  a  process  called  avalanche  companion  rescue. 
+Companion  rescue  is  challenging,  stressful,  complex,  and 
+time  sensitive  as 
+the  chance  of  survival  decreases 
+significantly after 15 minutes in a complete burial [16].  
+Most backcountry skiers carry tools to perform companion 
+avalanche  rescue.  Avalanche  transceivers  (also  called 
+beacons)  are  portable  electronic  devices  that  transmit  a 
+locatable signal. Each skier wears one turned on as a matter 
+of  routine.  Rescuers  can  use  the  same  beacon  on  receive 
+mode to search for the victim, where rescuers try to locate 
+the snowpack surface directly above or nearby the victim. 
+In addition, collapsible probes (long poles several meters in 
+length)  are  used  to  physically  probe  the  snowpack  area  to 
+locate  a  victim.  Avalanche  shovels  –  collapsible  for 
+transport – are used to dig out the victim. While other safety 
+tools  are  available  on  the  market,  the  trio  of  transceiver-
+probe-shovel 
+the  most  commonly  used  amongst 
+recreationists. Transceivers are the technological tools used 
+to find the most buried victims (as per the last two decades 
+statistics in the U.S.A. [2]). 
+Companion rescue with an avalanche transceiver follows a 
+well-defined  protocol.  Avalanche  rescue  educators  and 
+researchers  have  developed  and  improved  this  protocol 
+
+is 
+
+since the 1970s. It is taught in rescue literature, avalanche 
+rescue  classes,  and  workshops  (e.g.  [12,41]).  While  slight 
+variations  in  advance  techniques  exist,  the  main  steps 
+remain  the  same  [18].  It  begins  with  initial  coordination. 
+Rescuers  (the  victim’s  or  victims’  companions  who  have 
+witnessed  the  avalanche)  quickly  coordinate  themselves. 
+They  discuss  further  risks  for  themselves  as  rescuers  (e.g. 
+potential future avalanches, or dangerous terrain like cliffs), 
+and  gather  information  concerning  who  saw  what.  They 
+rapidly discuss what needs to be done, where each assumes 
+an initial role with particular duties (e.g., leader, searcher, 
+prober). While taking a minute or two, initial coordination 
+leads to better overall efficiency, better safety management, 
+and makes sure that no time is wasted [13].  
+The next step is the signal search. Here, searchers travel on 
+skis  on  the  avalanche  path  and  the  avalanche  debris 
+(generally settled hard chunks of snow and ice) in a pattern 
+that  covers  the  whole  area  that  could  contain  the  buried 
+victim. They use their beacons on search mode to find the 
+signal emitted by the victim’s beacon under the snow. Once 
+a signal is found, usually at a range of less than 60 meters, 
+the  rescuer  starts  the  coarse  search  and  follows  the 
+indications  on  the  beacon  (a  visual  distance  and  direction 
+cue, and an audible cue) to get closer to the victim. When 
+close to the victim, the rescuer removes his skis, kneels and 
+starts  the  fine  search  of  the  strongest  signal  (called 
+bracketing)  to  further  narrow  down  the  victim’s  location. 
+Depending on the depth of the burial and other factors, this 
+location  may  still  not  be  exactly  over  the  victim.  To 
+pinpoint the location of the victim, the searcher calls in the 
+probers who start probing – repeatedly pushing the probes 
+through the snow in a regular pattern around that region – 
+where they try to strike (and thus locate) the victim. Next is 
+shoveling the snow out of the way, first to bring an airway 
+to the victim, and then to extract the victim from the snow. 
+As shoveling through a settled snow pack is non-trivial and 
+exhausting  work,  there  is  even  a  protocol  that  dictates 
+efficient  methods  for  team  shoveling.  When  the  victim  is 
+uncovered, first aid begins. The last step is to transport the 
+victim out of the backcountry as needed.   
+While  this  protocol  sounds  straightforward,  much  can  go 
+wrong. For the search portion, beacon signals can be lost or 
+confused, with searchers backtracking or even going around 
+in circles. Rescuers may fixate on one victim’s signal, at the 
+cost of another victim. If a party member had accidentally 
+left  their  transceiver  on  ‘transmit’  mode,  that  signal  could 
+mislead  other  searchers.  Probers  and  searchers  doing  the 
+fine  search  work  atop  the  same  small  area:  probers  may 
+miss  areas  that  should  be  covered,  or  think  they  have  a 
+‘strike’  when  they  do  not,  and  searchers  may  miss  the 
+strongest signal. All leads to confusion. Shoveling through 
+avalanche  debris  must  be  done  efficiently  (via  a  well-
+defined method) as it is otherwise extremely difficult, tiring 
+and  time-consuming.  These  all  matter  greatly,  as  even  the 
+loss  of  a  few  minutes  in  the  process  may  mean  the 
+difference between life and death.  
+
+875
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+ 
+
+the  above,  best  practices  demand 
+learn  and  regularly  practice  with 
+
+an  event.  Beacon  parks  include  a  control  box  (Fig  1b) 
+controlling the operation of the practice beacons.  
+To  use  the  beacon  park,  recreationists  arrive  on  site  with 
+their  own  beacons.  They  turn  on  one  or  more  practice 
+beacons  through  the  control  box.  They  use  their  personal 
+beacons to do the coarse and fine search towards one signal 
+at  a  time  and  then  use  their  probes  to  detect  the  plywood 
+holding the practice beacon through the snow. The practice 
+stops  there.  Unfortunately,  while  an  important  skill  to 
+practice,  digging  is  generally  not  done  within  the  beacon 
+park for different reasons: the heavily-trodden snow is often 
+frozen into place and makes digging unrealistic; it keeps the 
+terrain as smooth as possible to eliminate hints for others; it 
+keeps the snow depth deep which simulates deep burials.  
+Research Questions  
+We focus specifically on avalanche beacon training parks as 
+an illustrative case study of a technological training ground. 
+We ask: 
+•  How  do  recreationists  use  beacon  parks  for  both  skill 
+
+    Figure 1. a) Practice beacon in waterproof case on plywood. b) Beacon park control box. c) Beacon park area. 
+Because  of 
+that 
+recreationists 
+their 
+equipment,  understand  the  protocol  for  finding  a  victim, 
+and  know  the  procedures  for  working  as  a  companion 
+rescue  team  [1].  They  must  also  be  ready  to  work  with 
+strangers. They must be ready to improvise and readjust the 
+protocol depending on who is doing the rescue, how many 
+people are available, and to accommodate everyone’s skill 
+levels.  Recreationists  are  highly  encouraged 
+take 
+professional  avalanche  courses,  where  an  instructor  offers 
+the basics of avalanche safety, and additionally encouraged 
+to  practice  their  skills  on  their  own  (individually  or  as  a 
+team), at least once every ski season [13]. Another option is 
+to  train  in  an  avalanche  beacon  training  park  (or  beacon 
+park  for  short).  Unfortunately,  there  are  no  data  available 
+that can inform us on the number of recreationists that take 
+classes, how they practice, how many use beacon parks, etc. 
+What is known is that there is a huge diversity of training. 
+While  many  recreationists  take  training  very  seriously, 
+there  are  many  backcountry  users  with  little  training.  
+Concerted efforts have been made to improve this situation 
+by  providing  more  avalanche  training  such  as  avalanche 
+awareness courses to high-risk groups (e.g. high school and 
+university students who have recently taken up backcountry 
+boarding  or  skiing,  and  snow-mobilers  who  have 
+traditionally  eschewed  avalanche  courses).  However, 
+avalanche awareness courses are insufficient by themselves: 
+their  goal  is  to  have  its  attendees  recognize  the  risk  of 
+avalanches, and to persuade them to take proper avalanche 
+courses  (e.g.  see  www.avalanche.ca/training#overview). 
+The second effort to increase avalanche training is through 
+the provision of avalanche beacon training parks 
+Avalanche Beacon Training Parks 
+An  avalanche  beacon  training  park  is  a  practice  field 
+containing  pre-installed  avalanche  beacons  [10].  They  are 
+usually located at ski hills or at road heads in backcountry 
+areas, and their locations are advertised and signed (Fig 1c). 
+A beacon park typically comprises 8 to 16 practice beacons 
+that  emit  the  same  radio  signal  (457  Hz)  as  normal 
+avalanche  beacons.  Beacons  are  protected  in  a  waterproof 
+case, and screwed to a 50 cm2 plywood sheet (Fig 1a) that 
+simulates the victim’s surface area when probing. Beacons 
+are  buried  under  the  snow  at  the  beginning  of  the  season, 
+with  their  depth  varying  over  time  with  the  snowpack.  A 
+beacon  park  can  also  be  installed  temporarily,  such  as  for 
+
+The  domain  of  avalanche  rescue 
+largely  one  of 
+practitioners  and  practitioner  expertise.  While  there  are 
+conferences on all aspects of avalanche  (e.g. International 
+Snow  Science  Workshop),  the  topic  of  companion  rescue 
+and its associated risks does not lend itself to the kinds of 
+academic 
+typical 
+academic  CSCW  research.  Thus  our  methodology  is  not 
+purely objective. We add a subjective component, where we 
+provide our own insights into issues of transceiver use and 
+avalanche risks, and in interpreting what participants do in 
+beacon parks. We stress that our views are not unusual, but 
+they echo views commonly held by avalanche professionals 
+and recreationists. Finally, as we will describe shortly, our 
+methodology  is  observational  by  default,  but  moves  to 
+interventionist  both  to  be  helpful  to  the  participants  (who 
+are using the beacon park for a real purpose) and to see how 
+that intervention helps.  
+Part I: Observational study and interviews  
+Part  I  of  the  study  focused  on  our  first  research  question. 
+Observational  data  was  gathered  with 
+the  goal  of 
+constructing  a  detailed  portrait  of  how  recreationists  used 
+
+•  How can we design beacon parks to better fit the needs 
+
+of the recreational community of backcountry skiers? 
+
+treatment 
+
+that  we  could  expect 
+
+in 
+
+development and team coordination? 
+
+is 
+
+to 
+
+876
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the Mount Baker beacon park somewhat ‘in the wild’: they 
+were  allowed  to  pursue  their  own  activities,  but  had  the 
+option of using an on-site expert as a resource. 
+Participants.  We  recruited  participants  by  advertising  the 
+opportunity  to  practice  avalanche  companion  rescue  in  a 
+beacon park, with the option of participating in a study. We 
+advertised  on  online  sports-related  forums,  through  sports 
+equipment shops’ social media, with print ads in the local 
+community, and on the Mount Baker ski area’s website. We 
+had 22 participants (5 female, 17 male). 12 were related to 
+the Mount Baker ski area and 10 from the general public. 
+We had 10 participants that came individually, 3 teams of 2, 
+and 2 teams of 3. 10 had never used a beacon park, while 
+the  rest  had  used  them  at  other  ski  resorts.  There  was  a 
+broad  range  of  backcountry  ski  experience,  from  no 
+experience  to  16  years  of  experience.  All  had  at  least 
+several  years  of  resort  skiing  experience.  We  note  that 
+downhill skiing expertise did not necessarily correlate with 
+backcountry experience or companion rescue expertise. For 
+example, several volunteer ski patrollers participating in the 
+study  did  not  routinely  go  backcountry  skiing,  and  had 
+limited companion rescue training (if at all).  
+We  recognize  that  our  participant  sample  is  broad  and 
+varied,  and  may  seem  ‘at  odds’  with  a  formal  study.  The 
+benefit  is  that  this  variety  is  representative  of  people  who 
+actually  use  beacon  parks  ‘in 
+the  wild’.  This  was 
+intentional.  Rather  than  select  a  narrow  slice  of  potential 
+beacon park users, we wanted to have enough diversity to 
+observe a range of the ways people went through scenarios. 
+This in turn provides rich and detailed qualitative data. We 
+should  also  add  that  this  participant  diversity  matches  our 
+own personal experiences in seeing who uses beacon parks.  
+Tasks.  Participants  came  to  the  tent  (Fig  1c),  where  we 
+introduced  a  particular  avalanche  rescue  scenario.  They 
+would  then  do  a  scenario,  usually  returning  to  the  tent 
+afterwards for the next scenario. The facilitator would offer 
+his  expertise  to  participants  (perhaps  after  observing 
+participants  or  on  participants’  request),  where  he  would 
+offer tips, comments and even help them through particular 
+scenarios. Otherwise, we let the participants use the beacon 
+park in the way they wanted to keep the ecological validity 
+of  the  study.  We  invited  participants  to  perform  as  many 
+rescues as they wanted. If participants had come alone, we 
+let them use it by themselves. If they had come as a group, 
+we suggested that they perform practices as a team.  
+Data Collection. We conducted a pre-activity questionnaire 
+to  gather  information  about  each  participant’s  motivation 
+for  using  the  beacon  park,  and  their  level  of  expertise  in 
+skiing, companion rescue, and beacon parks.  
+As the participants used the beacon park, we observed them 
+with the shadowing technique. We asked them to describe 
+what  they  were  thinking  as  they  were  doing  their  practice 
+rescues.  One  researcher  followed  them  and  took  hand 
+written notes. We also filmed the participants for the length 
+
+ 
+Figure 2. Aerial view of day 3’s beacon park. Red circles show 
+the  simulated  avalanche  debris  zones;  numbers  indicate  the 
+buried beacons. Yellow dotted lines and arrows indicate each 
+scenario’s  starting  gate  and  direction  of  the  simulated 
+avalanche.  (From  Google  Maps:  during  the  study,  snow 
+covered the whole area) 
+
+conducted  post-activity 
+
+of the search with a GoPro camera. We wrote a report for 
+each participant summarizing our observations on how they 
+performed the rescues, how they used the beacon, how they 
+collaborated  with  others,  and  how  they  modified  their 
+strategies of search from one scenario to another. 
+semi-structured 
+Finally,  we 
+interviews  with  those  participants  who  were  willing  (9  in 
+total).  The  interview  questions  focused  on  participants’ 
+experience  of  the  beacon  park  (including  positive  and 
+challenging  aspects  of  practice,  the  development  of  skills, 
+and  the  practice  of  coordination)  and  on  beacons  and 
+beacon parks could be designed in the future. 
+Part II: Reflections on maintaining a beacon park 
+Part II of the study focused on our second research question 
+where  we  reflected  on  the  design  strategies  we  used  to 
+install  and  maintain  the  beacon  park,  and  the  changes  we 
+made to our installation over the course of the study based 
+on our observations in Part I. 
+Installing and Maintaining the Beacon Park. For each day 
+that we were on site, we created a series of scenarios. For 
+each,  we  positioned  and  buried  each  practice  beacon  to 
+create a variety of scenarios for participants. Each scenario 
+used  bamboo  poles  to  indicate  the  start  and  end  of  the 
+simulated  avalanche  path.  Scenarios  ranged  in  expected 
+difficulty.  The  simplest  were  those  simulating  a  single 
+burial.  More  difficult  scenarios  simulated  two  victims 
+located  at  various  distances  from  one  another.  Multiple 
+burials  make  it  more  difficult  to  locate  a  signal  (due  to 
+multiple  beacon  signals),  coordination  complexity,  and 
+added  stress  due  to  the  greater  number  of  victims  for  the 
+same  survivable  amount  of  time.  For  each  day,  we  used 
+insights gathered from the previous study day to modify the 
+beacon park setup.  
+Data  Collection.  The  two  on-site  authors  debriefed  each 
+other at the end of each study day. Through a written report, 
+they  recorded  what  they  had  observed  in  relation  to  the 
+organization  of  the  beacon  park,  the  way  the  scenes  were 
+installed,  the  way  information  was  communicated  to 
+
+877
+
+participants,  and  impressions  for  what  worked  well  and 
+what  needed  adjustment.  We  took  photos  of  the  training 
+scenes and our installation. We also produced an aerial map 
+of the beacon park locating each scenario (as in Fig. 2). 
+Data analysis 
+We  conducted  a  thematic  analysis  [5]  with  all  the  data 
+collected  from  both  parts  I  and  II,  i.e.,  we  identified  and 
+recorded  patterns  of  phenomenon  that  emerged  across  the 
+observations,  interviews,  and  reports  that  comprise  our 
+primary data. We identified various themes, discussed next.  
+
+starting  with  an 
+
+RESULTS 
+Our results are presented in five themes as reflected in our 
+data analysis, each with a variety of sub-themes.  Dominant 
+themes  include:  1)  individual  skill  development  with  the 
+technology  in  context;  2)  team  coordination  training 
+including communication, role distribution, and team rescue 
+strategies;  3)  the  false  sense  of  confidence;  4)  the  beacon 
+park as technological training ground, and 5) the role of the 
+facilitator.  
+Individual skill development in context 
+The  beacon  park  allowed  for  participants  to  practice 
+individual  skills  with  their  beacons  and  advance  team 
+strategies  for  more  efficient  rescues.  We  observed  a 
+necessary  progression 
+individual’s 
+familiarization with the technological tool and its functions, 
+learning how to use that tool in the context of the simulated 
+search, and then to a mastery of particular rescue skills.   
+From familiarization to a mastery of skills in context  
+All participants used the beacon park to develop and master 
+particular  skills,  from  beginners  learning  how  to  use  a 
+beacon  to  advanced  practitioners  focusing  on  sharpening 
+their skills in complex multiple burial scenarios.  
+For some participants (e.g. P1, P13, P15b)1, the beacon park 
+was  their  first  experience  with  a  beacon  and  with  the 
+avalanche  companion  rescue  protocol.  Their 
+learning 
+largely  revolved  around  the  basics  of  the  avalanche 
+transceiver technology: how to turn the beacon on, how to 
+switch  between  transmit  and  receive  modes,  and  how  to 
+read  the  signals  as  one  moved  over  the  terrain.  Even 
+experienced  people  practiced  with  their  technology.  For 
+example, the beacon park was seen as a good place to get to 
+know new equipment, as functions and modes often differ 
+between beacons. As P10b said, her motivation for coming 
+to the beacon park was to “get used to my new beacon and 
+practice avalanche rescue”. The beacon park also served as 
+a catalyst for participants to become aware of technical or 
+logistical  issues  with  their  equipment  such  as  the  lack  of 
+recharged batteries for example (P4).  
+
+                                                             
+1  Participants  who  came  to  the  beacon  park  by  themselves  are 
+referred to as P#. Participants who came as a group are referred to 
+as P#a, P#b and P#c, with same #. 
+
+878
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+Beyond  familiarization  with  the  beacon,  participants  used 
+the  beacon  park  to  master  certain  skills.  For  example, 
+couple P11a and P11b pushed each other to get the fastest 
+times  on  the  single  burial  scenarios.  While  one  was 
+performing  the  rescue,  the  other  timed  the  rescue.  This 
+additional  stress  augmented  the  level  of  psychological 
+fidelity  [3]  as  well  as  provided  a  baseline  for  comparing 
+results and progress for those participants. 
+In addition to focusing on the technology (at least initially), 
+participants  were  also  interested  in  acquiring  skills  about 
+using that technology within the context of an actual search.  
+As P3c said: “It’s not just about turning the beacon on, but 
+about  the  way  to  do  the  rescue  too”.  For  instance, 
+participants  P3b,  P5  and  P10c  all  mentioned  that  they 
+wanted  to  use  the  beacon  park  specifically  as  a  way  to 
+become  more  proficient  in  the  context  of  multiple  burial 
+scenarios.  In  their  case,  they  used  the  simpler  scenarios 
+(single burials) as a warm up exercise before engaging with 
+the scenarios they wanted to gain more experience with.  
+The beacon park – more than an individual training tool 
+It was interesting to note that almost half of our participants 
+came alone to the beacon park. Participants came on their 
+own for a multitude of reasons: they are new to backcountry 
+skiing and are looking for a group to go with (e.g. P1), they 
+had  some  free  time  between  ski  runs  by  themselves  (e.g. 
+P8), or they wanted to focus practice on their device (e.g. 
+P13). Some of them were aware of the potential to practice 
+as a group while others were not. But in any case, all found 
+great  value  in  using  the  beacon  park  and  in  practicing 
+individual skill development with the built in scenarios.  
+Team coordination training 
+Our  second  study  theme  was  how  the  beacon  park 
+supported  team  coordination  training.  While  we  saw  that 
+the beacon park can provide a fruitful setting for individual 
+skill  development,  we  also  see  its  immense  potential  for 
+practicing 
+important,  as 
+coordination  is  a  critical  component  of  a  successful 
+companion  rescue  that  also  needs  practice.  In  addition, 
+when  participants  came  alone  to  the  beacon  park,  they 
+missed opportunities to learn from each other and to further 
+deepen  their  relationships  with  other  members  of  their 
+community  of  practice.  Some  of 
+them  also  missed 
+opportunities to learn from an expert (if available), such as 
+our own on-site facilitator. 
+As  we  described  previously,  coordination  is  one  of  the 
+hardest  aspects  of  avalanche  companion  rescue,  and 
+therefore  one  of  the  areas  with  the  most  opportunities  for 
+improvement.  In  our  discussions  with  participants,  they 
+were enthusiastic at the idea of practicing as part of a team:  
+“I think that a group setting is more effective, and more fun 
+than training alone. It is rare, or at least unwise, to travel 
+in  the  backcountry  alone,  so  training  with  other  people 
+seems  to  make  sense.  Also,  from  personal  experience, 
+communication 
+in  emergency 
+
+team  coordination.  This 
+
+is 
+
+is  absolutely  crucial 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+situations,  and  it’s  something  that  is  often  overlooked,  so 
+working  it  with  other  forms  of  practice,  or  training  is  a 
+good idea.” (P13) 
+Although  most  participants  agreed  that  coordination  and 
+communication  were  highly  important  for  the  success  of 
+companion  rescue,  only  6  out  of  22  reported  to  have 
+practiced team coordination in the last year. In addition, as 
+we will show below, practicing coordination did not come 
+intuitively to various participants. 
+Coordination: beyond the beacon 
+One of the main challenges we observed in the beacon park 
+was to move beyond understanding the beacon technology, 
+to  gain  a  larger  perspective  of  the  situation.  When  teams 
+arrived  on  scene,  we  seldom  saw  overt  discussions  about 
+roles  or  strategies  for  the  rescue  they  were  about  to 
+perform.  Instead,  we  saw  teams  going  in  a  scenario  and 
+focusing each on their beacons to look for signals. That is, 
+participants  focused  on  the  technology  rather  than  team 
+coordination, and on the details of their search rather than 
+the  big  picture  of  what  was  going  on.  This  lack  of 
+communication often continued the rest of the search.  
+For  example,  the  team  of  P3a,  P3b  and  P3c  began  their 
+search by finding the first signal and focusing on it. As the 
+three  participants  started  to  do  a  fine  search  on  the  first 
+signal, they were too close together. P3a and P3b were in 
+the way of P3c who was trying to narrow the probing area. 
+Not only was this sub-optimal, but it also meant that no one 
+was searching for the second victim. This could have easily 
+been  prevented  by  simple  and  short  communication 
+between the participants, e.g. ‘I’ll finish this search, P3b get 
+your  probe  out,  and  P3c  start  the  coarse  search  for  the 
+second victim’. Similarly, had a leader been selected, their 
+role would have included identifying and remedying issues 
+such as these.  
+After observing the above situation, the facilitator debriefed 
+these  points  with  the  participants.  The  participants  then 
+moved  to  the  second  multiple  burial  scenario  and  were 
+encouraged to work more closely as a team and specifically 
+to  communicate  better.  They  agreed  that  communication 
+was important and that they should plan differently for the 
+next  scenario.  However,  in  practice,  and  even  with  the 
+proper  intentions  of  the  participants,  communication  was 
+lacking  and  participants  still  showed  signs  of  working 
+individually instead of as a team. In fact, it seemed that the 
+participants were still very much focused on understanding 
+their own beacons and that most of their attention remained 
+on  the  technology  rather  than  the  teamwork.  This  finding 
+reveals that coordination and communication may not come 
+easily, and that considerable practice is required to achieve 
+a  level  of  team  coordination  proficiency.  In  summary, 
+participants  in  teams  that  lacked  communication  unduly 
+focused their attention on the beacon. They did not maintain 
+a  broader  perspective  of  the  situation,  which  resulted  in  a 
+loss of situational awareness. This is similar to the finding 
+described in [13] and critiqued as a flaw in beacon designs.  
+
+As a contrasting example to the previous case, the team of 
+P10a, P10b, and P10c (who had never performed a rescue 
+together) had much better communication and were able to 
+coordinate  on  the  scene.  At  the  entrance  of  the  scenario, 
+P10c proposed to his teammates to split the avalanche path 
+into  search  paths  for  each  of  them.  As  they  walked  down 
+the  hill,  P10c  reached  the  first  victim.  P10a  and  P10b  got 
+closer  to  him  as  well,  as  their  beacons  also  indicated  that 
+direction.  While  P10b  got  ready  to  help  P10c  by  probing, 
+P10a recognized that he was not needed there and walked 
+past them to search and find the second victim. In this case, 
+the  team  was  able  to  monitor  each  other’s  actions  and 
+fluidly  take  the  roles  that  were  the  best  for  the  team’s 
+success (rapidly deciding to be a prober, or to leave the first 
+victim  and  start  the  search  of  the  second).  This  finding 
+illustrates  what  Faraj  and  Xiao  [17]  describe  as  Plug-and-
+Play  teaming,  where  team  members  can  take  on  different 
+roles,  as  long  as  the  requisite  expertise  is  adequate  and 
+situation  awareness  is  maintained.  The  teams  that  are 
+flexible enough to subdivide and reconstitute themselves in 
+an  ad  hoc  manner  are  more  successful  in  emergency 
+situations [17]. 
+Mastering specialized roles  
+Our results also show another strategy for teams practicing 
+together:  mastering  specialized  roles  as  part  of  a  team.  In 
+some cases, participants, often teams of 2, would each lean 
+towards  a  role  that  they  would  keep  from  scenario  to 
+scenario. For example, P11a acted as the prober while P11b 
+did the fine search and the bracketing: 
+“The  most  challenging  parts  were  probably  working  out 
+how to best work efficiently as a team. After several tries, 
+we realized that it was best if as soon as one of us got a 
+signal, the other one immediately started getting out their 
+probe.  Since  it  is  relatively  quick  to  follow  a  signal  and 
+relatively  time-consuming  to  get  out  a  probe,  it  almost 
+always still worked out that the person following the signal 
+was  bracketing  the  site  by  the  time  the  person  with  the 
+probe was ready to start trying to get strikes”. (P11a) 
+Their  strategy  led  to  very  efficient  practice  rescues. 
+However, the challenge with this strategy is in the lack of 
+flexibility  between  the  roles.  In  a  real  accident,  one  never 
+knows who might be a victim and thus not able to perform 
+their  role  as  rescuer.  Similarly,  the  person  with  that 
+expertise  may  be  downslope,  where 
+take 
+considerable  time  to  return  uphill  to  the  avalanche  site. 
+Hence, it is as important to practice other roles to be more 
+versatile.  This  strategy  can  be  a  stepping  stone  before 
+practicing  a  more  fluid  exchange  of  roles  in  the  practice. 
+P11a  and  P11b  eventually  recognized  this  as  a  problem, 
+where  they  exchanged  roles  during  their  last  scenario  in 
+order  to  get  a  feel  for  each  other’s  role.  This  example 
+exemplifies  one  of  the  types  of  cross  training  [42]: 
+positional  rotation,  a  strategy  where  each  team  member 
+learns about each others’ tasks and roles by doing them first 
+hand [8]. In addition, this strategy was reported to lead to 
+
+it  would 
+
+879
+
+inter-positional  knowledge  which  is  crucial  to  “team 
+functioning  because  it  allows  team  members  to  anticipate 
+the  task  needs  of  fellow  team  members,  thus  allowing 
+enhanced  coordination  with  a  minimal  communication 
+requirement”  [42:88].  Moreover,  it  is  central  to  avalanche 
+companion  rescue  practice  since  it  is  impossible  for 
+rescuers  to  predict  what  role  they  will  need  to  take 
+depending on the situation. 
+
+Breaking the false sense of confidence 
+In previous research, it was pointed out that practice that is 
+too  simple  or  too  easy  can  lead  to  a  false  sense  of 
+confidence  for  backcountry  recreationists  [13].  In  this 
+study, we found that the way the scenarios were organized 
+in  the  beacon  park  and  the  variety  of  their  expected 
+difficulty could help break that false sense of confidence for 
+participants.  This  allowed  them  to  realize  the  complexity 
+and  challenges  that  are  part  of  some  avalanche  accidents 
+and served as a confirmation that practicing is important for 
+avalanche preparedness.  
+We often observed the following pattern. Participants who 
+began  with  a  sequence  of  single  burial  scenarios  became 
+faster and more efficient at finding the single victim. This 
+boosted  their  sense  of  confidence  about  their  ability  to 
+perform  successful  rescues.  When  participants  moved  to 
+more  challenging  scenarios,  such  as  a  coarse  search  on  a 
+multiple burial scene, difficulty increased significantly, for 
+example because they encountered confusing indications on 
+beacon  signals,  and  because  more  team  coordination  was 
+required. In these cases, we saw some participants able to 
+find  a  first  victim  but  not  the  second  one.  In  other  cases, 
+participants could find both victims but took a much longer 
+time  relative  to  the  single  burial  scenarios.  In  most  cases, 
+the harder scenarios shook the participants’ confidence and 
+trust in their beacon.  
+One issue appears to be that participants – particularly those 
+with  less  experience  –  had  an  incorrect  view  of  the 
+accuracy,  precision  and  robustness  of  the  technology  they 
+were  using.  Beacons  have  significant  problems  with  the 
+multiple signals received in a multiple burial scenario. They 
+do  not  always  display  competing 
+in  an 
+understandable  manner.  For  example,  some  beacons 
+alternate distance numbers between the two victims, which 
+some found confusing (e.g. P1), while others fix onto one 
+signal while hiding the other. Beacons sometimes lose the 
+signal  due  to  the  rapid  movements  of  a  searcher. In  other 
+beacons, the screen can even go black. Some beacons try to 
+simplify  searching  by  allowing  the  search  to  hide  a 
+particular  signal  (called  ‘marking’),  yet  this  is  considered 
+an  advanced  feature  and  introduces  further  problems.  A 
+beacon  may  even  have  to  be  turned  off  and  on  again  to 
+reacquire a lost signal (e.g. P5). These events are, of course, 
+stressful (as reported by various participants) as this is often 
+the first time they have seen their beacon act like this. Their 
+confidence  is  shaken,  and  their  mental  model  of  the 
+technology is broken. It is only through practice, repetition 
+
+signals 
+
+880
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+and mentoring that participants were able to make sense of 
+the nuances of their beacon and of those signals, where they 
+could eventually perform rescues more successfully.  
+A sequence of progressively more difficult scenarios helps 
+mitigate this loss of confidence. Although harder scenarios 
+were  more  challenging,  participants  appreciated 
+the 
+opportunity  to  sharpen  their  skills.  For  example,  P15a 
+suggested: “Keep the progression of difficulty going. Maybe 
+also add a 3 person burial scenario, something even more 
+complex”.  Our  decision  to  seed  the  beacon  park  with 
+multiple scenarios representing different levels of difficulty 
+thus proved important. Scenarios of similar difficulty allow 
+people to return and practice their skills; advancing to the 
+next  level  gives  them  opportunity  to  tackle  more  complex 
+situations, which forced them to acquire a higher skill level 
+(which they appreciated) and increased confidence. 
+Designing  beacon  parks  as  technological  training 
+grounds 
+An  important  component  of  how  a  beacon  park  is 
+experienced relies on its set up on the terrain and how it is 
+presented  to  recreationists.  In  this  work,  we  evolved  the 
+beacon  park  over  our  study  period.  Based  on  our 
+observations  and  self-reflections  about  our  practices,  we 
+now  share  the  varied  decisions  we  made  about  this 
+technological  training  ground,  and  how  it  influenced 
+participants’ ability to practice and develop their skills and 
+team coordination practices.  
+Physical constraints in the beacon park  
+The  beacon  park  is  a  technology-augmented  context  for 
+training,  where  it  should  be  designed  to  mimic  real-life 
+threat situations. This implies a combination of two things: 
+real  life  elements  as  reflected  in  the  terrain;  and  the 
+technology itself. 
+Ideally,  we  wanted  terrain  that  was  on  a  steep  slope 
+resembling an avalanche slope. However, this desire had to 
+be balanced against how accessible the beacon park would 
+be  for  participants,  and  the  constraints  imposed  by  the 
+terrain  the  ski  resort  management  provided  for  us  to  use. 
+The  somewhat  flat  terrain  we  used  (which  is  true  of  most 
+beacon parks) did not match a typical avalanche slope. As 
+well,  the  snow  quality  differed  from  the  varied  snow  that 
+could result from an avalanche, as P3c critiqued:  
+“The beacon park is generally in a flat area, on snow that is 
+easy to access and walk on. In a real avalanche, the terrain 
+would be much steeper and walking in avalanche debris is 
+more  like  walking  on  boulders.  So  this  is  not  exactly 
+realistic.” (P3c) 
+In addition, the trampled ground of a beacon park does not 
+visually  resemble  a  real  avalanche,  which  rescuers  would 
+normally  scan  for  visual  cues  to  determine  the  avalanche 
+path and the debris zone.  
+The  technological  factors  are  the  number  of  practice 
+beacons  and  how  they  were  located  and  buried  across  the 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+that 
+
+require 
+
+(P10a).  Factors 
+
+area  at  various  depths.  This  greatly  influences  scenario 
+difficulty. Deeper burials are more difficult to pinpoint, and 
+particular combinations and distances of activated beacons 
+alters how searchers see signals. Yet the terrain constrains 
+the  burial  depth  (e.g.,  due  to  the  current  snow  depth)  and 
+how far apart one can place the beacons (due to site size). 
+Thus our terrain choice and where to position each beacon 
+had  an  important  impact  on  the  range  and  degree  of  a 
+scenario’s simulated avalanche accident fidelity.  
+Scenarios require explicit communication of their details 
+Because there is no real avalanche, details of scenarios have 
+to  be  explicitly  communicated  to  the  participants.  This 
+includes where the scenarios are located and the number of 
+victims. In our study, the facilitator verbally explained each 
+scenario to the participants, and bamboo poles marking the 
+top  and  bottom  of  the  imagined  avalanche  zone  served  as 
+visual  cues.  Although  participants  were  generally  able  to 
+imagine  the  avalanche  path  and  the  debris  zone,  others 
+found that more challenging. For example, P10a mentioned: 
+“The run out zone (or where the debris would be) requires 
+a  lot  of  imagination  on  my  part,  maybe  this  could  be 
+improved.” 
+explicit 
+communication  affect 
+learning  because  psychological 
+fidelity is undermined. 
+Beacon park flexibility 
+While  we  had  to  adjust  to  the  physical  constraints  of  the 
+terrain,  the  beacon  park  system  is  very  simple—a  set  of 
+buried beacon signals that can individually be turned on or 
+off—which  makes  it  highly  configurable  and  flexible  in 
+terms  of  constructing  scenarios  for  different  learning 
+situations,  e.g.,  how  people  navigated  through  the  park, 
+how they configured it for single or multiple burials, how 
+different skills could be practiced, and how more structured 
+teaching can be layered atop of it.  
+Through  our  observations,  we  saw  how  the  beacon  park 
+was  sometimes  seen  as  this  flexible  platform  supporting  a 
+variety of learning activities. We observed various teaching 
+strategies both between the facilitator and participants, and 
+between  participants.  More  experienced  participants  in  a 
+group  would  teach  the  less  experienced  participant  basic 
+skills.  For  example,  P16a  (who  had  companion  rescue 
+experience)  used  the  beacon  park  as  a  place  to  show  his 
+girlfriend  (P16b)  the  basic  search  movements  during  the 
+coarse and fine search, including how one should respond 
+to the signal seen in the beacon. In the example of P11a and 
+P11b timing each other, we see how certain exercises could 
+be created ad hoc in the technological setting of the beacon 
+park without the need of external facilitation or suggestion. 
+
+The role of the facilitator  
+A good facilitator is someone recognized as an ‘old timer’ 
+[24]  in  the  practice  of  backcountry  skiing  and  avalanche 
+companion  rescue,  and  one  who  is  able  to  pass  on  their 
+skills  and  knowledge  to  others.  However,  most  beacon 
+parks do not operate with a facilitator. Thus if a team uses 
+
+881
+
+from 
+
+feedback 
+
+the  beacon  park,  its  members  often  rely  on  a  more 
+experienced  team  member  to  mentor  them  (although  that 
+person may not necessarily have appropriate training).   
+In  our  study,  many  of  our  participants  were  novices  and 
+needed  some  orientation  for  how  to  use  the  beacon  park. 
+The first role of our facilitator was to introduce the park and 
+how to best use it, including what scenarios to do, in what 
+order,  and  where  scenarios  are  physically  located.  As 
+participants  pursued  scenarios,  the  facilitator  answered 
+many  questions,  ranging  from  specific  questions  about 
+advanced functions on beacons to deeper understanding of 
+that  participants 
+rescue  strategies.  Finally,  we  found 
+appreciated  debrief  sessions  or 
+the 
+facilitator.  Once  a  scenario  was  completed,  the  facilitator 
+summarized  his  observations  and  asked  participants  to 
+describe what they saw, how they felt and how they think 
+things could have been better. Through this discussion, the 
+facilitator  encouraged  the  participants  to  realize  what  they 
+could  do  differently.  Those  conversations  often  led  to 
+improvement in the next scenario performed. For example, 
+with the couple P11a and P11b, the facilitator explained a 
+specific  strategy  for  probing  that  is  particularly  efficient 
+with 
+tried  and  found 
+successful in the next scenario. Participants recognized the 
+value of the facilitator: “Having [the beacon park] staffed 
+also really helped, because when you have someone teach 
+you, this makes a large difference.” (P10c) 
+In  our  view,  the  presence  of  an  ‘old  timer’  was  very 
+significant  for  an  effective  use  of  the  park.  However, 
+staffed  beacon  parks  are  not  the  norm.  Without  the 
+facilitator,  people  could  easily  develop  poor  practices  that 
+could  jeopardize  how  they  performed  companion  rescue 
+during a real avalanche.  
+
+two  rescuers;  a  strategy 
+
+they 
+
+DISCUSSION 
+Our results provide insights into particular changes that can 
+make beacon parks more efficient, more inviting and more 
+tailored  to  the  training  of  backcountry  recreationists.  In 
+addition,  our  work  also  has  particular  ramifications  for 
+CSCW.  Specifically,  the  advent  of  mobile  computing 
+means 
+that  non-expert  collaborators  are  now  using 
+sophisticated  technology  while  on  the  move  and  within 
+specific contexts. Unlike desktop computers that people can 
+learn  while  at  home  or  in  the  office,  training  in  the  field 
+becomes  increasingly  important.  For  this  reason,  in  this 
+discussion,  we  focus  on  high-level  strategies  that  can  be 
+applied to technological training grounds beyond avalanche 
+companion  rescue.  These  include  training  and  simulation 
+systems  for  non-experts  in  many  fields,  including  but  not 
+limited to extreme sports. 
+The value of progressive scales of difficulty 
+We  saw  significant  value  in  using  progressive  scales  of 
+difficulty 
+in  beacon  park  scenarios.  As  previously 
+described, the facilitator encouraged participants to follow a 
+progression, where he suggested to do simple single burial 
+
+[26]). 
+
+In  spite  of 
+
+scenarios  first  until  they  mastered  their  basic  skills,  and 
+only  then  to  make  their  way  to  the  complex  multiple 
+burials.  While  solidifying  basic  skills  increased  self-
+assurance, the complexity progression of the scenarios also 
+helped  break  the  false  sense  of  confidence.  We  saw  how 
+more complex scenarios provided a space to ask questions, 
+reflect  on  more  difficult  situations,  understand  device  and 
+personal  limitations,  and  overall  provide  a  sense  for  how 
+hard companion rescue could be. Learning is influenced by 
+the progression of scenarios, by practicing in context even 
+if  simulated,  and  (sometimes)  by  team  mentoring.  This 
+follows  the  theory  of  situated  learning  [24]  where  the 
+physical  and  social  situation  constructs  a  context  for 
+participants  to  make  sense  of  some  functions  or  errors  of 
+their beacons as they pursue their practice.   
+The idea of progressive learning and learning by mastering 
+is,  of  course,  not  new.  Indeed,  many  formal  learning 
+environments  are  structured  so  that  students  must  achieve 
+proficiency  at  a  given  difficulty  level  before  they  are 
+allowed  to  continue  to  the  next  level  (for  an  example  in 
+computational  games,  see 
+this, 
+technological  training  grounds  are  not  structured  in  this 
+manner;  instead,  they  are  offered  as  environments  where 
+people  attempt  to  learn  on  their  own  and  in  an  ad-hoc 
+manner. We believe these training grounds can be improved 
+dramatically  by  offering  scenarios  of  increasing  difficulty 
+(as  we  did),  by  explicitly  describing  skills  that  should  be 
+mastered at that level, and by offering a way for learners to 
+‘grade’  themselves  in  terms  of  mastering  a  scenario  level. 
+Based on our findings, we also suggest that this information 
+should be communicated to recreationists in ways that are 
+appropriate  to  the  activity  and  the  physical  context.  For 
+example,  in  outdoor  training  grounds,  using  weather 
+resistant  posters 
+scenarios,  potentially 
+augmented  by  digital  material  (accessible  via  a  mobile 
+device)  to  describe  best  practices  and  learning  goals. 
+Beyond  extreme  sports  training,  this  strategy  can  also  be 
+applied to train volunteers and citizens who are helping in 
+disaster  relief  and  emergency  situations.  In  the  cases  of 
+volunteer  work  and  citizen-to-citizen  communication  [34], 
+short training sessions can also include a progressive scale 
+of  difficulty 
+to  help  build  assurance  but  not  over-
+confidence.  
+A variety of levels of fidelity 
+The  beacon  park  is  a  technological  training  ground  that 
+includes  a  variety  of  levels  of  fidelity  along  the  three 
+aspects  of  environment,  equipment  and  psychological  [3] 
+(as described in our related works section). Throughout our 
+results we have articulated how certain aspects could reach 
+a higher level of fidelity while others could not. For beacon 
+parks,  the  level  of  environmental  fidelity  is  difficult  to 
+manage,  for  it  is  heavily  constrained  by  the  terrain 
+available.  If  varied  terrain  is  available,  areas  should  be 
+chosen  to  match  the  scenario  conditions  (e.g.  steepness  of 
+the slope, the presence of terrain traps, etc.).  However, the 
+level of fidelity for equipment is under our control. As we 
+
+to  describe 
+
+882
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+in 
+
+the 
+
+to 
+
+areas 
+
+environment 
+
+saw, signals from buried beacons are indistinguishable from 
+real beacons, and we expect learners to bring in their own 
+personal  equipment  including  their  personal  beacons.  This 
+situation  might  be  similar  to  how  other  researchers  are 
+aiming  at  training  with  new  wearable  technologies  where 
+the environmental aspect cannot be adapted, but where the 
+technology is “real” and not simulated (e.g. [9,22]). 
+The  low  level  of  environmental  fidelity  can  be  partially 
+remedied  by  manipulating  the  psychological  level  of 
+fidelity,  i.e.,  the  ways  participants  construct  believable 
+stories  for  themselves  about  the  rescue  situation.  This  is 
+especially  important  for  practicing  team  collaboration  [3]. 
+In  our  study,  this  was  done  by  constructing  scenarios  that 
+included  a  story  of  how  the  avalanche  happened,  using 
+buried  beacons  to  represent  victims,  and  by  visually 
+marking 
+simulate 
+environmental  conditions  (e.g.,  bamboo  poles  indicating 
+avalanche  boundaries).  We  saw  that  participants  were 
+largely able to construct the story in their minds and reach a 
+higher level of psychological fidelity. This strategy echoes 
+what  Klann  describes  in  his  work  with  fire  fighters  [22], 
+where he argues that it is through ‘playing out’ a scene that 
+firemen  best  expressed  their  skills  and  experiences.  The 
+novelty  of  each  scenario  added  to  their  believability  since 
+others  created 
+the  scenarios.  In  addition,  we  could 
+manipulate  people’s  stress  (e.g.,  by  observing,  timing  and 
+critiquing  people’s  rescue  performance),  which  proved 
+effective in increasing the level of psychological fidelity. 
+More  generally,  technological  training  grounds  should 
+follow similar practices. When environmental high fidelity 
+is  rarely  possible,  which  is  often  the  case  with  natural 
+disasters  and  emergency  situations,  they  should  offer  a 
+story  behind  each  scenario  (again,  through  on-site  posters 
+and  visual  markers,  and/or  through  digital  media).  At  its 
+best, the technological training ground should offer a ‘full 
+mission’ context for practice (in the words of Beaubien and 
+Baker  [3])  while  still  operating  within  the  constraints  of 
+multiple ranges of fidelity.  
+Balancing skill development and coordination training 
+We  saw  a  large  number  of  participants  focus  on  learning 
+individual  skills  at 
+the  cost  of  communication  and 
+coordination  training.  This  likely  occurs  because,  at  the 
+surface  level,  the  beacon  park  emphasizes  the  technology 
+itself (beacon search), whereas the need for communication 
+and  coordination 
+thus  easily 
+overlooked.  This  very 
+likely  happens  with  other 
+technological training grounds, particularly in activities that 
+require  a  personal  digital  device  while  in  a  group  setting 
+(e.g. with wearable devices [9,22]). More specifically, there 
+is  relatively  little  research  that  looks  at  how  non-experts 
+familiarize  themselves  with  a  new  mobile  device  before 
+focusing on communication and coordination.  
+The  solution  is,  in  part,  to  make  communication  and 
+coordination learning an explicit activity. Toups et al. [40] 
+argued  for  focusing  solely  on  distributed  cognition  and 
+
+tacit  and 
+
+learning 
+
+is 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+team  coordination 
+training  for  firefighters,  both  for 
+economical  and  focus  reasons.  They  proposed  a  ‘zero-
+fidelity’ computational simulation that removes the realistic 
+elements found in higher fidelity simulations to keep only 
+the bare essentials for learning team coordination (such as 
+eliminating fire and smoke visualizations but keeping time 
+pressure for example). In outdoor physical training grounds, 
+the simulation takes place in a real world setting and offers 
+the opportunity to focus solely on the coordination practices 
+if  desired.  The  scenarios  and 
+learning  descriptions 
+mentioned earlier should include these not only as goals to 
+incrementally master, but should describe the steps on how 
+to  achieve  them.  If  individuals  (rather  than  teams)  appear 
+on  site,  the  usage  descriptions  of  the  area  should  highly 
+encourage them to find other like-minded people to do the 
+exercises together. Perhaps meeting times can be advertised 
+as a way for ad hoc groups to gather opportunistically. This 
+solution,  of  course,  will  show  better  results  if  participants 
+are  familiar  with  the  technology  required  before  and  can 
+focus  on  the  coordination  training  rather  than  mastering 
+their own device.  
+Supporting the community of practice 
+As  we  have  presented  earlier,  we  see  backcountry 
+recreationists as a community of practice. However, we also 
+observed  that  learning  from  others  within  beacon  parks  is 
+not as common as it could be. As with communication and 
+coordination, this is also likely due to the emphasis on the 
+technology,  which  seemingly 
+individual  skill 
+development  over  team  learning.  This  also  likely  occurs 
+with other technological training grounds. 
+A  partial  solution  is  to  recast  the  technological  training 
+ground in a way that encourages mentorship and facilitation 
+within the community of practice. Since the scenarios can 
+be structured and ready to use, members of the community 
+can go straight to the heart of the topic without spending a 
+whole  day  preparing  the  site,  which  was  identified  as  a 
+challenge  in  previous  research  on  avalanche  companion 
+rescue  [10].  Importantly,  technological  training  grounds 
+such as beacon parks can be designed as a common space 
+where  members  of  the  community  can  group  and  build 
+relationships 
+create 
+opportunities for more knowledge exchanges.  
+For  example,  technological  training  grounds  could  be 
+presented  and  advertised  as  an  area  inviting  people  with 
+more skills to teach novices particular skills. For instance, 
+when a person has mastered a particular scenario difficulty 
+and skill, they could be encouraged to mentor others going 
+through simpler scenarios. The payback is that people often 
+gain even more mastery by teaching. In addition, a training 
+ground can advertise particular times as a ‘meet and greet’ 
+event  for  like-minded  people  to  learn,  socialize,  and  meet 
+potential  activity  partners  (for  example  ski  partners  in  the 
+case of the beacon park). Moreover, a training ground can 
+leverage  existing  social  organizations,  such  as  clubs, 
+schools  and  groups.  Communities  of  practice  often  have 
+
+other,  which 
+
+between 
+
+favors 
+
+each 
+
+competition 
+
+(e.g.,  mountain  bike 
+
+structured  clubs  where  its  members  gladly  teach  others 
+through courses, or act as facilitators to share their expertise 
+and support discussion amongst all participants (similarly to 
+the role our facilitator played on site). Finally, many high-
+risk  communities  of  practice  encourage  skill  development 
+through 
+racing, 
+competitive  rock  climbing).  The  training  ground  can  be 
+offered  as  a  place  for  holding  competitions,  where  teams 
+‘race’ against each other.  
+Overall, we found that it is important to create opportunities 
+for  recreationists  to  meet  with  others  and  to  exchange 
+knowledge. The strategies proposed above can be applied in 
+cases  where  unacquainted  people  engage  in  real  life 
+exercises to train for a variety of situations. For example, in 
+emergency response, teams of on-site workers or volunteers 
+would  benefit  from  learning  from  each  other  as  part  of  a 
+community  of  practice,  even  if  they  are  supported  by 
+coordinators who are in a remote command center [9]. The 
+ability 
+team 
+coordination and situational awareness and hence take away 
+some of the strain on the link between the command center 
+and the disaster scene.  
+
+together  on  site  can 
+
+to  work 
+
+increase 
+
+LIMITATIONS OF THE STUDY 
+The study we presented in this paper has some limitations 
+(which we see as great starting points for future research). 
+The  study  was  conducted  on  a  short  period  of  time  (4 
+observation  days)  and  would  benefit  from  an  extended 
+observation period to see if more practice patterns emerge 
+and also to try other strategies in maintaining and designing 
+the practice scenarios. On the positive side, the study results 
+we  saw  are  very  much  in  keeping  with  our  own  previous 
+experiences in beacon parks, where what we saw appears to 
+be  a  representative  sample.  Of  course,  further  participants 
+could  also  lead  to  a  more  detailed  understanding  of  the 
+experience and nuances of using the beacon park. 
+Our  results  are  qualitative,  where  they  helped  us  identify 
+particular 
+the  beacon  park 
+training ground.  A next step is to collect performance data 
+after  completing  various  learning  stages  to  evaluate  the 
+efficiency  of 
+in  making 
+recreationists faster at companion rescue.  
+
+learning  strategies  within 
+
+strategies 
+
+learning 
+
+these 
+
+team 
+
+grounds 
+
+training 
+and 
+
+can 
+coordination 
+
+CONCLUSION 
+In  this  paper,  we  have  looked  at  the  specific  case  of 
+avalanche beacon training parks as a way to illustrate how 
+skill 
+technological 
+development 
+for 
+recreationists.  With  regards  to  the  design  of  technological 
+training  grounds  beyond  avalanche  training  parks,  our 
+findings  point  to  the  importance  of  progressive  scales  of 
+difficulty;  the  management  of  different  levels  of  fidelity; 
+the  balance  between 
+team 
+coordination  training;  and  strategies  for  supporting  a 
+community of practice. These findings not only point to the 
+future  design  of  technological  training  parks  for  multiple 
+
+skill  development  and 
+
+support 
+training 
+
+883
+
+communities  of  practice,  but  also  build  on  and  expand 
+beyond  previous  work  in  CSCW  about  team  training,  ad 
+hoc and volunteer teams and emergency coordination.  
+We reiterate that one of the distinctive aspects of this work 
+is  our  focus  on  recreationists  ad  hoc  teams  rather  than 
+professionals.  We  also  believe  our  findings  can  apply  to 
+other  non-expert  teams  in  non-extreme  situations.  For 
+example,  Dunlap  et.  al.  [15]  explored 
+the  role  of 
+technological  training  grounds  for  learning  by  citizen 
+scientists  who  may  have  little  background  in  the  area. 
+While  the  authors  initially  focused  on  skill  acquisition 
+(which  also  involved  a  mobile  device),  feedback  from 
+citizen  science  experts  suggested  that  they  should  also 
+consider  citizen  science  as  a  community  of  practice,  i.e., 
+where  citizen  scientists  should  be  expected  to  learn  and 
+perform  the  activity  together,  including  self-coordination. 
+While  their  context  and  methodology  differs  significantly 
+from ours, the fact that their results are similar to our own 
+suggests  that  these  results  are  likely  generalizable  to 
+technological 
+supporting  different 
+communities of practice in a variety of domains.  
+
+training  grounds 
+
+ACKNOWLEDGMENTS 
+We  thank  BCA  for  providing  the  beacon  park  equipment, 
+Mount  Baker  Ski  Area,  and  all  our  participants.  This 
+research  was  funded  in  part  by  SSHRC,  the  NSERC 
+Discovery  Grant  and  by  the  NSERC  /  AITF  /  Smart 
+Industrial Chair in Interactive Technologies. 
+
+REFERENCES 
+1.  Dale Atkins. 1999. Companion rescue and avalanche 
+
+transceivers: the US experience. AAAP Avalanche 
+Review. 
+
+2.  Dale Atkins. 2010. Avalanche Rescue: The United 
+
+3. 
+
+States Experience, 1999/00 to 2008/09. 2010 
+International Snow Science Workshop: 289–295. 
+J. M. Beaubien and D. P. Baker. 2004. The use of 
+simulation for training teamwork skills in health care: 
+how low can you go? Quality and Safety in Health 
+Care 13, suppl 1: i51–i56. 
+http://doi.org/10.1136/qshc.2004.009845 
+
+4.  Simon Bell. 2008. Design for Outdoor Recreation. 
+
+Taylor & Francis. 
+
+5.  Virginia Braun and Victoria Clarke. 2006. Using 
+
+thematic analysis in psychology. Qualitative Research 
+in Psychology 3, 2: 77–101. 
+http://doi.org/10.1191/1478088706qp063oa 
+
+6.  Ralf Buckley. 2012. Rush as a key motivation in 
+
+skilled adventure tourism: Resolving the risk recreation 
+paradox. Tourism Management 33, 4: 961–970. 
+http://doi.org/10.1016/j.tourman.2011.10.002 
+
+7.  Bill Buxton. 2007. Sketching User Experiences: 
+Getting the Design Right and the Right Design. 
+Morgan Kaufmann, San Francisco, CA. 
+
+884
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+8. 
+
+Janis A. Cannon-Bowers, Eduardo Salas, Elizabeth 
+Blickensderfer, and Clint A. Bowers. 1998. The Impact 
+of Cross-Training and Workload on Team Functioning: 
+A Replication and Extension of Initial Findings. 
+Human Factors: The Journal of the Human Factors 
+and Ergonomics Society 40, 1: 92–101. 
+http://doi.org/10.1518/001872098779480550 
+
+9.  Daniel Cernea, Simone Mora, Alfredo Perez, et al. 
+
+2012. Tangible and Wearable User Interfaces for 
+Supporting Collaboration among Emergency Workers. 
+In Collaboration and Technology, Valeria Herskovic, 
+H. Ulrich Hoppe, Marc Jansen and Jürgen Ziegler 
+(eds.). Springer Berlin Heidelberg, 192–199. Retrieved 
+August 25, 2015 from 
+http://link.springer.com.proxy.lib.sfu.ca/chapter/10.100
+7/978-3-642-33284-5_18 
+
+10.  Steve Christie. 2004. Transceiver Training Parks: 
+
+Shortening the Beacon Learning Curve. Proceedings of 
+the 2004 International Snow Science Workshop, 
+Jackson Hole, Wyoming: 351–354. 
+
+11.  Stéphane Conversy, Hélène Gaspard-Boulinc, Stéphane 
+
+Chatty, Stéphane Valès, Carole Dupré, and Claire 
+Ollagnon. 2011. Supporting Air Traffic Control 
+Collaboration with a TableTop System. Proceedings of 
+the ACM 2011 Conference on Computer Supported 
+Cooperative Work, ACM, 425–434. 
+http://doi.org/10.1145/1958824.1958891 
+
+12.  Tony Daffern. 2009. Backcountry Avalanche Safety: 
+
+Skiers, Climbers, Boarders, Snowshoers. Rocky 
+Mountain Books Ltd. 
+
+13.  Audrey Desjardins, Carman Neustaedter, Saul 
+
+Greenberg, and Ron Wakkary. 2014. Collaboration 
+Surrounding Beacon Use During Companion 
+Avalanche Rescue. Proceedings of the 17th ACM 
+Conference on Computer Supported Cooperative Work 
+& Social Computing, ACM, 877–887. 
+http://doi.org/10.1145/2531602.2531684 
+
+14.  Alain Duclos and Thierry Vallée. 2013. New 
+
+Technologies: What Roles in the Education and 
+Training? Feedback and Examples. International Snow 
+Science Workshop Grenoble – Chamonix Mont-Blanc - 
+October 07-11, 2013: 453–455. 
+
+15.  Matthew A. Dunlap, Anthony Hoi Tin Tang, and Saul 
+Greenberg. 2015. Applying geocaching principles to 
+site-based citizen science and eliciting reactions via a 
+technology probe. Personal and Ubiquitous 
+Computing: 1–17. http://doi.org/10.1007/s00779-015-
+0837-0 
+
+16.  Markus Falk, Hermann Brugger, and Liselotte Adler-
+
+Kastner. 1994. Avalanche survival chances. 368, 6466: 
+21–21. http://doi.org/10.1038/368021a0 
+
+17.  Samer Faraj and Yan Xiao. 2006. Coordination in Fast-
+
+Response Organizations. Management Science 52, 8: 
+1155–1169. http://doi.org/10.1287/mnsc.1060.0526 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+18.  Manuel Genswein and Ragnhild Eide. 2008. The 
+Efficiency of Companion Rescuers with Minimal 
+Training. Proceedings Whistler 2008 International 
+Snow Science Workshop September 21-27, 2008: 581. 
+
+19.  Joseph M. Hellerstein and David L. Tennenhouse. 
+
+2011. Searching for Jim Gray: A Technical Overview. 
+Commun. ACM 54, 7: 77–87. 
+http://doi.org/10.1145/1965724.1965744 
+
+20.  Sergio Herranz, Paloma Díaz, David Díez, and Ignacio 
+
+Aedo. 2013. Studying Social Technologies and 
+Communities of Volunteers in Emergency 
+Management. Proceedings of the 6th International 
+Conference on Communities and Technologies, ACM, 
+140–148. http://doi.org/10.1145/2482991.2483009 
+21.  Xiaodong Jiang, Nicholas Y. Chen, Jason I. Hong, 
+
+Kevin Wang, Leila Takayama, and James A. Landay. 
+2004. Siren: Context-aware Computing for 
+Firefighting. In Pervasive Computing, Alois Ferscha 
+and Friedemann Mattern (eds.). Springer Berlin 
+Heidelberg, 87–105. Retrieved February 18, 2013 from 
+http://link.springer.com.proxy.lib.sfu.ca/chapter/10.100
+7/978-3-540-24646-6_6 
+
+22.  Markus Klann. 2007. Playing with Fire: User-Centered 
+
+Design of Wearable Computing for Emergency 
+Response. In Mobile Response, Jobst Löffler and 
+Markus Klann (eds.). Springer Berlin Heidelberg, 116–
+125. Retrieved August 31, 2015 from 
+http://link.springer.com.proxy.lib.sfu.ca/chapter/10.100
+7/978-3-540-75668-2_13 
+
+23.  Jean Lave. 1991. Situating learning in communities of 
+practice. In Perspectives on socially shared cognition 
+2. 63–82. 
+
+24.  Jean Lave and Etienne Wenger. 1991. Situated 
+Learning: Legitimate Peripheral Participation. 
+Cambridge University Press. 
+
+25.  Charlotte P. Lee and Drew Paine. 2015. From The 
+
+Matrix to a Model of Coordinated Action (MoCA): A 
+Conceptual Framework of and for CSCW. Proceedings 
+of the 18th ACM Conference on Computer Supported 
+Cooperative Work & Social Computing, ACM, 179–
+194. http://doi.org/10.1145/2675133.2675161 
+
+26.  Conor Linehan, George Bellord, Ben Kirman, Zachary 
+H. Morford, and Bryan Roche. 2014. Learning Curves: 
+Analysing Pace and Challenge in Four Successful 
+Puzzle Games. Proceedings of the First ACM SIGCHI 
+Annual Symposium on Computer-human Interaction in 
+Play, ACM, 181–190. 
+http://doi.org/10.1145/2658537.2658695 
+
+27.  Conor Linehan, Shaun Lawson, Mark Doughty, and 
+Ben Kirman. 2009. Developing a Serious Game to 
+Evaluate and Train Group Decision Making Skills. 
+Proceedings of the 13th International MindTrek 
+Conference: Everyday Life in the Ubiquitous Era, 
+
+885
+
+ACM, 106–113. 
+http://doi.org/10.1145/1621841.1621861 
+
+28.  Ke Liu, Xiaojun Shen, Nicolas D. Georganas, 
+
+Abdulmotaleb El Saddik, and Azzedine Boukerche. 
+2007. SimSITE: The HLA/RTI Based Emergency 
+Preparedness and Response Training Simulation. 
+Proceedings of the 11th IEEE International Symposium 
+on Distributed Simulation and Real-Time Applications, 
+IEEE Computer Society, 59–63. 
+http://doi.org/10.1109/DS-RT.2007.40 
+
+29.  Jean MacMillan, Elliot E. Entin, and Daniel Serfaty. 
+2004. Communication overhead: The hidden cost of 
+team cognition. Team cognition: Process and 
+performance at the interand intra-individual level. 
+American Psychological Association, Washington, DC. 
+Available at http://www. aptima. 
+com/publications/2004_MacMillan_EntinEE_Serfaty. 
+pdf. Retrieved May 21, 2013 from 
+http://www.aptima.biz/publications/2004_MacMillan_
+EntinEE_Serfaty.pdf 
+
+30.  Michelle A. Marks, Mark J. Sabella, C. Shawn Burke, 
+
+and Stephen J. Zaccaro. 2002. The Impact of Cross-
+Training on Team Effectiveness. Journal of Applied 
+Psychology 87, 1: 3–13. 
+
+31.  Janet Marsden. 2013. Stigmergic self-organization and 
+
+the improvisation of Ushahidi. Cognitive Systems 
+Research 21: 52–64. 
+http://doi.org/10.1016/j.cogsys.2012.06.005 
+
+32.  John E. Mathieu, Gerald F. Goodwin, Tonia S. Heffner, 
+
+Eduardo Salas, and Janis A. Cannon-Bowers. 2000. 
+The Influence of Shared Mental Models on Team 
+Process and Performance. Journal of Applied 
+Psychology 85, 2: 273–283. 
+
+33.  Leysia Palen, Kenneth M. Anderson, Gloria Mark, et 
+al. 2010. A Vision for Technology-mediated Support 
+for Public Participation & Assistance in Mass 
+Emergencies & Disasters. Proceedings of the 2010 
+ACM-BCS Visions of Computer Science Conference, 
+British Computer Society, 8:1–8:12. Retrieved July 6, 
+2015 from 
+http://dl.acm.org/citation.cfm?id=1811182.1811194 
+
+34.  Leysia Palen and Sophia B. Liu. 2007. Citizen 
+
+Communications in Crisis: Anticipating a Future of 
+ICT-supported Public Participation. Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems, ACM, 727–736. 
+http://doi.org/10.1145/1240624.1240736 
+
+35.  L. Reder and R. L. Klatzky. 1994. Transfer: Training 
+
+for performance. In Learning, Remembering, 
+Believing: Enhancing Human Performance. National 
+Academies Press, 25–56. 
+
+36.  Eduardo Salas, Nancy J. Cooke, and Michael A. Rosen. 
+
+2008. On Teams, Teamwork, and Team Performance: 
+Discoveries and Developments. Human Factors: The 
+
+Journal of the Human Factors and Ergonomics Society 
+50, 3: 540–547. 
+http://doi.org/10.1518/001872008X288457 
+
+37.  Margrete Skår, Alf Odden, and Odd Inge Vistad. 2008. 
+
+Motivation for mountain biking in Norway: Change 
+and stability in late-modern outdoor recreation. Norsk 
+Geografisk Tidsskrift - Norwegian Journal of 
+Geography 62, 1: 36–45. 
+http://doi.org/10.1080/00291950701865101 
+
+38.  Gwyneth Sutherlin. 2013. A voice in the crowd: 
+
+Broader implications for crowdsourcing translation 
+during crisis. Journal of Information Science: 
+0165551512471593. 
+http://doi.org/10.1177/0165551512471593 
+
+39.  Zachary O. Toups and Andruid Kerne. 2007. Implicit 
+
+coordination in firefighting practice: design 
+implications for teaching fire emergency responders. 
+Proceedings of the SIGCHI Conference on Human 
+Factors in Computing Systems, ACM, 707–716. 
+http://doi.org/10.1145/1240624.1240734 
+
+ 
+
+SESSION: EDUCATION IN THE CLASSROOM AND BEYOND
+
+40.  Zachary O. Toups, Andruid Kerne, William A. 
+
+Hamilton, and Nabeel Shahzad. 2011. Zero-fidelity 
+Simulation of Fire Emergency Response: Improving 
+Team Coordination Learning. Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems, ACM, 1959–1968. 
+http://doi.org/10.1145/1978942.1979226 
+
+41.  Bruce Tremper. 2013. Avalanche Essentials: A Step-
+by-Step System for Safety and Survival. Mountaineers 
+Books. 
+
+42.  Catherine E. Volpe, Janis A. Cannon-Bowers, Eduardo 
+Salas, and Paul E. Spector. 1996. The Impact of Cross-
+Training on Team Functioning: An Empirical 
+Investigation. Human Factors: The Journal of the 
+Human Factors and Ergonomics Society 38, 1: 87–100. 
+http://doi.org/10.1518/001872096778940741 
+
+43.  Etienne Wenger. 1999. Communities of practice: 
+
+learning, meaning, and identity. Cambridge University 
+Press, Cambridge. 
+
+886
+
+

@@ -1,0 +1,1748 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Crafting the Image in Surgical Telemedicine 
+Helena M. Mentis  
+
+Ahmed Rahim and Pierre Theodore 
+
+Department of Surgery 
+
+University of California San Francisco Medical Center 
+
+{Ahmed.Rahim, Pierre.Theodore}@ucsf.edu   
+
+Department of Information Systems 
+
+University of Maryland, Baltimore County 
+
+mentis@umbc.edu 
+
+ABSTRACT 
+In the past few years, surgical telemedicine has emerged as 
+a  promising  answer  to  the  increasing  needs  of  everyday 
+surgical collaboration and education. The implicit desire is 
+to  allow  a  remote  surgeon  to  see  the  body  as  the  local 
+surgeon does in order to engage in shared decision-making 
+or  instruction.  With  this  paper  we  take  a  step  back  by 
+discussing  the  productive  and  cross-referential  nature  of 
+surgical  practice  and  image  use. We  discuss  how  it  is  not 
+simply  a  case  of  transferring  recorded  video,  but  rather  a 
+new practice is instantiated in creating a view of the body 
+for  the  remote  surgeon.  In  order  to  investigate  these 
+practices for capturing and using video, we have deployed a 
+head-mounted  video  camera  (via  the  Google  Glass)  in  six 
+transplant  organ 
+recovery  assessments.  Drawing  on 
+observations  and  analysis  of  the  video  recordings,  we 
+examine how the transmitting surgeon crafts a view for the 
+remote surgeon in order to facilitate the co-construction of 
+knowledge  and  shared  decision  making.    We  use  these 
+findings to discuss further design directions for video use in 
+expert telecommunication. 
+Author Keywords 
+Video recording; head-mounted; telemedicine; surgery; 
+communication; co-construction. 
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous.  
+INTRODUCTION 
+There  has  been  extensive  research  in  the  human-computer 
+interaction  and  computer  supported  cooperative  work 
+communities  on  the  tools  necessary  to  foster  effective 
+collaboration  among  distributed  workers  (e.g.,  [9,12,27]). 
+These studies have shown that video of the work area can 
+help  people  collaborate  on  a  complex  task,  such  as  bike 
+repair,  by  aiding  the  development  and  maintenance  of 
+common  ground  [10,12,15,30,31].  However,  there  is  an 
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not  made  or  distributed  for  profit  or  commercial  advantage  and  that 
+copies bear this notice and the full citation on the first page. Copyrights 
+for  components  of  this  work  owned  by  others  than  ACM  must  be 
+honored.  Abstracting  with  credit  is  permitted.  To  copy  otherwise,  or 
+republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+from 
+specific  permission  and/or  a 
+Permissions@acm.org.
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819978 
+
+fee.  Request  permissions 
+
+744
+
+underlying assumption that what is seen in the transmitted 
+images  or  video  are  unadulterated  –  that  it  is  what  one 
+would  see  if  they  were  looking  directly  at  the  object  and, 
+thus, knowledge from one form of visual representation to 
+the other is easily captured and transferred. As we argue in 
+this  paper,  simply  transmitting  an  image  does  not  directly 
+translate 
+to  collaborators  acquiring  an  effective  co-
+constructed gaze. Much guidance is needed in interpreting 
+and working with that image towards the particular goals of 
+the collaborative pair.  
+These are fundamental practices that have been extensively 
+explored within the social studies of science. Many studies 
+of  medical  image  use  discuss  the  negotiations  around  and 
+interpretation  of  images  in  clinical  and  surgical  work  (cf. 
+[2,23,26,37]), and that perception of visuals is situated and 
+interactional  (cf.  [18,21,22,39]).  For  instance,  studies  of 
+collocated medical and scientific collaboration have shown 
+images, such as brain CT scans, being manipulated through 
+rotation  during  discussions  to  aid  in  understanding  (e.g. 
+[23,26,37]). Furthermore, the need for collaborative image 
+interaction is intensified when one party does not impart the 
+same level of expertise or ‘professional vision’ as the other 
+[17,29].  In  this  sense,  the  question  of  interest  is  not  how 
+video  imparts  additional  information,  but  rather  in  what 
+way  do  the  collaborators  structure  the  video  in  order  to 
+impart their view of the work to one another. 
+Telemedicine is one domain where interaction with highly 
+specialized  images  are  vital  for  the  efficient  and  effective 
+conveyance  of  expert  information,  and  yet  collaborating 
+individuals  may  not  have  the  same  form  of  expertise 
+([1,3,7]).  This 
+in  surgical 
+telemedicine, which has emerged as a promising answer to 
+the increasing needs of everyday surgical collaboration and 
+education  [1,7,35].  However,  in  telemedicine,  the  remote 
+surgeon cannot work with the body or the images – they are 
+at  the  will  of  the  view  that  is  provided  to  them  by  the 
+transmitting  surgeon.  This  in  turn  translates  to  the  work 
+required  of  the  transmitting  surgeon  to  create  the  images 
+for  both  surgeons  to  engage  in  the  co-construction  of 
+knowledge  and  shared  decision-making.  In  this  paper,  we 
+show that surgeons do not simply transmit images, but they 
+engage in crafting the image, ultimately to be used to some 
+collaborative  aim.  By  ‘crafting’  we  mean  the  deliberate 
+execution  on  what  to  capture  and  how  to  capture  it,  thus, 
+invoking  a  particular  view  of  the  body  and  actions  on  the 
+body to be shared. 
+
+is  particularly 
+
+the  case 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+transplant 
+
+recording  device 
+
+Towards our goal of elucidating these crafting practices, we 
+have  studied  the  deployment  of  a  head-mounted  video 
+recording  device  in  telemedicine  during  transplant  organ 
+recovery surgery. The scarcity of donor organs and the need 
+to  ensure  that  all  implanted  organs  will  provide  quality, 
+long-term  function  for  their  recipients,  mandates  very 
+careful  organ  selection.  Often,  organ  recovery  for  use  in 
+transplant  surgery  occurs  far  from  the  hospital  of  the 
+transplant  recipient.  In  order  to  save  precious  time,  the 
+recovery team travels to the donor to assesse the organs for 
+viability while the transplant team will begin to prepare the 
+patient. Currently, a remote recovery surgeon discusses any 
+concerns  regarding  donor  organ  assessment  with  the 
+implant surgeon by phone prior to proceeding with explant 
+or  terminating  the  recovery.  In  order  to  enhance  co-
+construction  of  knowledge,  and  improve  assessment  in  a 
+limited window of time, we have deployed a head-mounted 
+video 
+recovery 
+assessments. The video, coupled with consultation with an 
+implanting surgeon at the time of procurement, promises to 
+permit improved sharing of organ function assessment and 
+facilitate  decision-making  between  recovery  and  implant 
+surgeons. 
+With this paper, we show the considerable work in  which 
+surgeons  engage  in  order  to  capture  and  use  video 
+effectively  for  communication  and  decision-making.  Our 
+primary  aim  was  to  consider  the  ways  in  which  surgeons 
+may craft the video in order to allow others to see the body 
+through  indirect  vision.  Examining  these  occasions  when 
+crafting  is  performed  exposes  how  a  recovery  surgeon’s 
+interpretation  based  on  knowledge  and  experience  is 
+manifest and glean insights in how practitioners choose to 
+communicate  through  and  around  video.  From  these 
+findings,  our  secondary  aim  to  consider  mechanisms  to 
+enable  surgeons  to  observe  and  perceive together  in  order 
+to  co-construct  their  understanding.  Although  the  use  of 
+telemedicine  systems  and  opportunities  for  the  design  of 
+mechanisms 
+is 
+increasingly  important,  this  research  can,  more  broadly, 
+improve  our  understanding  of  how  using  video 
+in 
+distributed collaboration in any domain is not without work. 
+BACKGROUND 
+CSCW has had a long history of interest in video studies, 
+such  as  by  Heath  and  Luff  [19,20]  and  John  Tang 
+[24,40,41],  showing  the  benefit  of  video  for  collaboration 
+above  and  beyond  voice.  In  particular,  a  shared  video 
+stream  of  the  object  of  work  (as  opposed  to  videos  of 
+to 
+collaborators’ 
+significantly 
+and 
+collaborative  work  outcomes.  For  instance,  collaborators 
+prefer  to  look  at  and  benefit  most  from  video  of  the 
+physical workspace, the task tools, and the worker’s hands 
+as opposed to the worker’s face or other aspects of the work 
+environment  [11,14].  In  addition,  collaborators  perform 
+better when they are provided video of the workspace than 
+
+talking  heads)  has  been 
+improve 
+
+communication  practices 
+
+interaction  around 
+
+those  videos 
+
+shown 
+
+in 
+
+six 
+
+for 
+
+it 
+
+required 
+
+interaction 
+
+[25]  discussion  of 
+
+through  fluoroscopic  X-ray 
+
+when  they  are  using  audio  only  communication  [6,8–
+10,15,30,31].  
+It is easy then to simply state that the transmitted images – 
+whether  video  or  stills  –  offer  an  unadulterated  means  of 
+seeing the body in telemedicine. However, medical images 
+do not offer unmediated access to a body that exists outside 
+of language and human actions. Rather physicians and other 
+scientists  need  to  work  with  the  images  in  order  to 
+understand  them  [5,26,37].  For  instance,  Alač  [2],  in  a 
+study  of  neuroscientists’  use  of  fMRI  brain  images, 
+observed  the  manipulation  of  medical  images  by  both 
+parties,  e.g.  zooming  and  rotating  the  images,  during 
+discussions in order to collaboratively understand and make 
+meaningful what they were seeing.  
+In surgery, the domain of our study, the importance of the 
+manipulation of images on understanding is seen in the way 
+surgeons  advance  through  images  as  demonstrated  by 
+Johnson  et  al.’s 
+interventional 
+radiologists  viewing  the  temporal  sequencing  of  images 
+when  advancing 
+images. 
+Koschmann  has  shown  the  importance  of  the  interpretive 
+nature of seeing images in surgery and the effect it has over 
+action [28,29]. Mentis and colleagues [32,34] in particular 
+have shown that simply seeing surgical images was not an 
+endpoint; 
+discussion. 
+Understanding is not achieved simply through moments of 
+looking, but by virtue of seeing as the presentation unfolds. 
+The perception and determination of location of ducts and 
+arteries,  and  the  team’s  ability  to  comprehend  why  and 
+where action should occur are accomplished in and through 
+the  interaction  between  the  surgeons,  the  tools,  and  the 
+images.  In  these  cases,  collaborative  interaction  with  the 
+images allows for the surgeons to co-create a view and then 
+to  co-construct  their  understanding  of  the  information 
+before  them.  Thus,  simply  presenting  an  image  does  not 
+directly translate to an effective medical gaze: manipulating 
+an image so it is understood is first necessary before it can 
+be used to guide procedures.  
+The  consequence  of  this  manipulation  is  a  disciplined 
+image  [23]  –  in  other  words,  the  body  is  visualized  and 
+configured in such a way that it conforms to the needs of 
+the surgeon and thus plays an important role in the way an 
+image  is  discussed  and  acted  upon  [37].  Disciplining  the 
+image is akin to the exposition of the body that has been an 
+integral part of the practice of surgery from the beginning. 
+Dissection is a process through which the internal body is 
+made visible and identifiable [23]. This method of viewing 
+the  body  is  a  part  of  the  training  and  visual  learning  of 
+human  anatomy  that  a  surgeon  must  undergo  –  to  see  the 
+body as parts that are separable from the whole body [23]. 
+Thus, interactions with the body or the images of the body 
+do not reveal the inner body as much as produce the body; 
+and that in order to produce that body, the surgeon needs to 
+discipline it.  
+
+and 
+
+745
+
+As we argue in this paper, simply capturing and presenting 
+an image does not directly translate to an effective medical 
+gaze.  Thus,  this  points  to  the  need  to  investigate  how 
+surgeons create a view towards co-construction when they 
+are  distributed  in  time  and  space  as  they  typically  are  in 
+surgical telemedicine. 
+In  the  following  paper  we  describe  the  use  of  a  head-
+mounted video recording device during the organ recovery 
+phase of transplant surgery. The intention of video capture 
+in  this  setting  is  to  facilitate  communication  regarding 
+donor organ viability before the transplant recipient is to be 
+prepared for surgery at another hospital. Through this trial, 
+we  are  provided  with  the  opportunity  to  explore  how  and 
+what surgeons capture, how the technology becomes a part 
+of  the  practice  of  and  affects  organ  viability  discussions, 
+and,  in  turn,  how  video  can  be  better  facilitated  in  the 
+surgical environment.  
+TRANSPLANT ORGAN RECOVERY ASSESSMENT 
+In  the following, we describe  the crucial concerns in  lung 
+and  heart  organ  assessment  in  cardiothoracic  transplant 
+surgery.  There  is  a  need  to  conduct  these  assessments 
+thoroughly  yet  quickly  and  then  be  able  to  effectively 
+transmit  the  crucial  pieces  of  information  back  to  the 
+implant  surgeon  for  final  recovery  decision-making.  It  is 
+important  to  note  that  the  local  assessment  of  organs 
+involve  both  a  visual  assessment  as  well  as  a  tactile 
+assessment.  
+Lung Assessment 
+For lung assessment the recovery surgeon is concerned with 
+whether the lungs can properly function and whether there 
+is any structural damage to the tissue. First, they will assess 
+the  lungs  for  fluid  and  tumors  through  palpation  (feeling 
+with the fingers or hand) and visually investigate for signs 
+of damage. Further investigation is necessary if there is any 
+significant concern. 
+For  instance,  atelectasis  (partially  collapsed  lung)  is  a 
+typical  concern. 
+inhalation 
+oxygenates  the  blood  cells.  The  structures  that  allow  the 
+transfer of oxygen molecules from the air inside the lung to 
+a blood cell are alveoli. If the alveoli fail to inflate, then the 
+bloods cells will not be oxygenated, which can prove fatal 
+for  the  transplant  recipient.  In  organ  recovery  assessment, 
+the anesthesiologist inflates the lungs with an endotracheal 
+tube. At the same time, the surgeon manipulates the lungs 
+in order to ‘pop open’ the structure, and prove the organ is 
+usable.  This  is  a  visual  assessment  where  a  sanguine 
+coloration shows the recruitment of alveoli – i.e., they open 
+up and take on oxygen. 
+Heart Assessment 
+In heart assessment the recovery surgeon is concerned with 
+proper  functioning  of  the  heart  and  whether  there  is  any 
+structural  damage  to  the  organ.  They  note  whether  it  is 
+beating,  whether  the  blood  pressure  is  acceptable,  and 
+whether  or  not  there  is  something  grossly  wrong  with  the 
+
+In  healthy 
+
+tissue, 
+
+lung 
+
+746
+
+SESSION: HEALTHCARE PROVIDERS
+
+ID 
+
+Type 
+
+1 
+
+2 
+
+3 
+4 
+5 
+6 
+
+Heart and 
+Lungs 
+Heart-Lung 
+Block 
+Lungs 
+Lungs 
+Lungs 
+Heart 
+
+Recovery 
+Surgeon 
+Recovery A 
+
+Implant 
+Surgeon(s) 
+Implant A & B 
+
+Recovery B 
+
+Implant A & B 
+
+Recovery C 
+Recovery B & C 
+Recovery C 
+Recovery A 
+
+Implant A 
+Implant A 
+Implant A 
+Implant B 
+
+Table 1. Surgery trials with recovery and implant surgeon 
+
+team configurations. 
+
+rooms  around 
+
+tissue,  such  as  a  hematoma  from  impact.  However, 
+ventricular function is difficult to quantify and substantiate 
+verbally.  Often,  the  assessment  is  tied  up  in  an  expert’s 
+experience  of  what  does  and  does  not  constitute  a  well-
+functioning heart. In these situations, communication ends 
+with the assessment that “it’s not twisting correctly” or “it’s 
+not squeezing correctly”.  
+METHODS 
+The  authors  deployed  a  first-person  video  capture  device 
+during six (6) heart and lung organ recovery procedures in 
+three  operating 
+the  San  Francisco 
+metropolitan  area  (Table  1).  Our  intention  with  this 
+deployment was to observe the telemedicine-enabled organ 
+recovery  procedures  while  understanding  the  collaborative 
+organization  of  the  work  practices  and  the  use  of  first-
+person video within those practices. 
+Data Collection 
+Data collection included observations of initial system use 
+and integration of this new way of coordinating work into 
+their  surgical  practices,  videos  that  were  captured  and 
+shared by the device, and interviews with surgeons after the 
+trial.  During  the  observations,  we  had  the  opportunity  to 
+interact  with  the  recovery  surgeon,  providing  us  with 
+additional  explanations  of  the  pathologies  and  procedures 
+being undertaken, details of the concerns identified, use of 
+the device, and explanations of decisions made.  
+Following  the  collection  of  observation  notes  and  videos, 
+we engaged in a series of interviews with the recovery and 
+implant  surgeons.    During  these  interviews,  the  surgeons 
+were asked to watch the collected videos again, and during 
+these  review  sessions,  comment  on  what  was  occurring, 
+what  they  were  attempting  to  capture,  why  they  were 
+capturing  it,  and  what  the  outcome  of  the  case  was.    We 
+also  took  these  interviews  as  an  opportunity  to  probe  the 
+surgeons  on  current  practices  – 
+the  challenges  of 
+communication 
+recovery 
+assessments  and  the  opportunities  for  enhancing  these 
+practices. 
+
+decision-making 
+
+and 
+
+in 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+after 
+
+assessment 
+
+these 
+
+are 
+
+IN  ORGAN 
+
+At that time, the researcher would ensure the device was on 
+and recording and then placed the device on the head of the 
+surgeon.  The surgeon would return to the field of operation 
+to record their investigation and presentation of the organs 
+(see Figure 1).  When completed, the surgeon would turn to 
+the  researcher  to  have  them  remove  the  device.    The 
+researcher  would  then  sync  the  device  with  a  laptop 
+computer  in  order  to  upload  the  videos  to  a  secure  file 
+sharing  service.  The  researcher  would  then  send  an  email 
+with a link to the folder to the implant surgeon indicating 
+that the video was now available.   
+CURRENT  DISCUSSION  PRACTICES 
+ASSESSMENT 
+To  begin,  we  will  review  the  current  practices  in  organ 
+assessment  as  evidenced  by  the  interviews  we  conducted 
+with the implant and recovery surgeons.  
+In  organ  recovery,  much  of  the  assessment  of  organ 
+viability relies on the experience and ‘eye’ of the recovery 
+surgeon. The recovery surgeon is to primarily communicate 
+whether  there  is  a  problem  of  consequence;  otherwise  he 
+does  not  comment  on  issues  that  may  be  perceived  as  a 
+problem  –  in  those  cases  he  only  reports  on  organ 
+acceptability.   
+There are many reasons why a feature of the organ, such as 
+a  significant  blemish  on  the  surface  of  the  lung,  may  be 
+perceived by the recovery surgeon as a problem. However, 
+if 
+deemed 
+inconsequential by the recovery surgeon, they are not raised 
+during  the  phone  conversation  with  the  implant  surgeon. 
+Often  during  our 
+the  recovery  surgeons 
+reiterated, “If I don’t feel that it is necessary to talk about 
+anything that doesn’t affect the outcome or the usability of 
+the  lungs,  I  don’t  bother  [discussing  it]  then.”  [Recovery 
+Surgeon  B  Interview]  On  the  other  end  of  the  transplant 
+process, the implant surgeon is at another hospital preparing 
+the  patient  for  surgery  and  assumes  that  if  the  recovery 
+surgeon calls after assessment then there is a concern of the 
+organ  viability  for  transplant.  Thus,  in  many  cases  the 
+practice is for the recovery surgeon to simply move ahead 
+with  organ  recovery  or,  if  there  is  anything  deemed 
+important to convey, to make a short debrief to the implant 
+surgeon indicating their recommendation in proceeding.   
+If  there  is  a  significant  concern  beforehand  with  the 
+viability of the organ, then occasionally the implant surgeon 
+will make the journey with the recovery surgeon to perform 
+her  own  inspection.  However,  this  is  not  done  very  often 
+and  if  it  does  occur  then  “the  fact  that  she’s  there  meant 
+that we thought that they were bad. … ‘Cause otherwise she 
+would  be  back,  sort  of  starting  an  operation  while  I’m 
+taking the lungs out.” [Recovery Surgeon C Interview]  
+However,  it  is  far  more  often  the  case  that  the  implant 
+surgeon  is  not  available  to  accompany  the  recovery  team 
+due to the time pressure on readying the recipient. In those 
+events,  the  implant  surgeon  has  to  rely  upon  what  the 
+
+interviews, 
+
+features 
+
+Figure 1. Surgeon wearing Google Glass during organ 
+
+recovery surgery 
+
+the 
+
+the  contextual  understanding  of 
+
+Data Analysis 
+Within 
+in  situ 
+observations,  the  recordings  enabled  a  more  detailed, 
+reflective  and  systematic  analysis  of  the  unfolding  actions 
+of  the  recovery  surgeon  than  was  possible  during  in-the-
+moment  observations.  A  detailed  transcription  including 
+both talk and action was made of the collected videos and 
+then  an  inductive  data-driven  analysis  was  performed  to 
+find recurring patterns of interaction [13][16]. The focus of 
+the analysis was on how the recovery surgeons created and 
+used  these  videos  to  co-construct  their  understanding  in 
+order to make a decision regarding organ viability.  
+Google Glass as a Head-Mounted Video Capture Device 
+For this investigation, we used the Google Glass as the tool 
+for  recording  video  of  organ  function  during  recovery 
+surgery for the implant surgeon. Google Glass is a wearable 
+technology which features an optical head-mounted display, 
+a touchpad located on the side to control the device, and a 
+front-facing camera which affords users with the ability to 
+take photos and record 720p HD video. The benefit of the 
+Google Glass over an overhead camera or an assistant held 
+camera was the ability for the surgeon to interact with it in a 
+‘touchless’ manner. In other words, with the movement of 
+his  head  and  body,  he  could  decide  where  to  focus  the 
+camera  and  how  much  of  the  field  of  view  he  wished  to 
+capture. In addition, the ability to be ‘hands free’ allowed 
+the surgeon to manipulate the organs at the same time while 
+filming. 
+During  the  organ  recovery,  the  recovery  surgeon  would 
+signal to a researcher when they were ready to video record 
+the organ.  This could occur at any time during the recovery 
+process  as  it  was  at  the  sole  discretion  of  the  recovery 
+surgeon  to  identify  what  and  when  they  wanted  to  utilize 
+the  device  to  capture  a  video.  However,  this  normally 
+would  occur  after  the  donor  was  opened  and  organs  were 
+exposed for assessment. 
+
+747
+
+reiteration  of  current  practices  highlights 
+
+recovery surgeon observes and relates. There are times that 
+the recovery surgeon may send a supplemental picture via 
+camera phone for their discussion. The need of the implant 
+surgeon  to  take  responsibility  for  the  final  outcome 
+necessitates this additional resource for assessment – as we 
+will  discuss  later  in  this  paper,  the  determination  of 
+“acceptable”  is  up  for  interpretation.  As  another  very 
+experienced  recovery  surgeon  shared  during  an  interview, 
+there  is  a  clear  need  to  bring  the  implant  surgeon’s 
+interpretation  of  visuals  into  the  decision-making  process, 
+even when they are not able to be physically in the room. 
+“We  have  [used  camera  phones],  for  communication, 
+where we thought we needed to show the surgeon, “Look, 
+there’s these boo-boos on the lungs. I don’t think they mean 
+anything, but you still have the right to turn them down now 
+that you can see what I’m talking about, not just taking my 
+description  of  it  for  granted.”  [Recovery  Surgeon  B 
+Interview] 
+the 
+This 
+motivation  we  had  in  introducing  a  first  person  video 
+recording device into transplant surgery. The utilitarian goal 
+was to reduce the need to have the implant surgeon travel to 
+the recovery site as well as reduce the need to use insecure 
+personal  phones.  What  we  describe  in  the  next  section, 
+though, is the work that goes into creating the videos in the 
+OR for use during discussions between the surgeons. 
+In  the  following,  we  delve  into  the  ways  in  which  the 
+recovery surgeon used a first-person video recording device 
+– what they chose to capture, how they captured it, and how 
+these  shared  images  changed  or  affected  the  resulting 
+discussion.  As  evidence,  we  present  interactions  from  the 
+captured  videos  rounded  out  by  our  observational  field 
+notes as well as quotes from interviews with the surgeons. 
+We also present snapshots from the videos embedded in the 
+transcription to show the manipulation of organs or deixis 
+that  is  used  by  the  surgeons  in  order  to  provide  the  best 
+view for the implant surgeon.  
+CRAFTING OF VIDEO DURING ASSESSMENT 
+Setting up the View 
+In  three  of  our  six  cases,  we  saw  deliberate  use  of  the 
+camera  to  capture  a  particular  view.  Those  resulted  in 
+videos  that  lasted  less  than  a  minute  and  were  taken  only 
+after  the  recovery  surgeon  fully  assessed  the  organs.  On 
+these  videos,  a  narration  for  the  remote  surgeon  was  also 
+capture.  On  all  of  the  videos,  a  good  deal  of  talk  was 
+captured  –  primarily  between 
+and 
+anesthesiologist or supporting resident. Comments such as 
+lung pressure provide further information or context to what 
+the  implant  surgeon  is  seeing  and  doing.  However,  there 
+were  also  a  number  of  examples  of  surgeons  specifically 
+talking to the camera – elucidating what they are doing for 
+the benefit of the implant surgeon. In the following, we first 
+present a short video that captures the setup of the “view” 
+as well as a narration for the remote surgeon. 
+
+the 
+
+surgeon 
+
+SESSION: HEALTHCARE PROVIDERS
+
+Surgery ID #1  
+1  RS1:  Now  (1.2)  what  we’re  gonna  do  is- 
+ma::ybe  >trying  to  just  sort  of<  take  that 
+uh nick pad out_= 
+2  Re: =[((Pulls out nick pad))]  
+3  RS:         [Yeah, and then          ] 
+(0.7) with your left hand sort of push down 
+on the diaphragm towards the liver (,)=  
+4    Re:  =((Inserts  [hand  ],  pushes  on 
+diaphragm and heart/lungs lift up)) 
+5  RS:                  [Yeah] 
+6  OS: (1.2) Careful with that. That’s 
+actually beating_(.) 
+7  RS: Yeah_ 
+8  Re: (1.2) Do you want any more (?) 
+9  RS: Na::h. That’s that’s it.  
+10 RS: (1.0)        That [shows the anterior 
+wall:: (,)]  
+11 RS:                   [((Moves in closer 
+affecting a zoomed-in view))] 
+
+ 
+ 
+ 
+  
+
+In  this  case,  the  surgeon  conducted  his  investigation  and 
+then put on the camera to selectively record a presentation 
+of  the  organs.  In  lines  1  through  9,  the  video  captured 
+conversation  between  the  recovery  surgeon,  resident,  and 
+another surgeon who was waiting his turn for recovery of a 
+different  organ.  Although  not  directly  for  the  implant 
+surgeon’s benefit, this talk does provide further context of 
+what was captured visually. In line 10, the recovery surgeon 
+switches  to  speaking  for  the  sake  of  the  video  viewer  – 
+elucidating  what  he  was  using  the  camera  to  capture.  In 
+essence  directing  the  eyes  of  the  implant  surgeon  to  an 
+important  piece  of  information  for  decision-making.  The 
+resulting image change is evident in the closer view as well. 
+Thus, in this instance, the recovery surgeon is crafting the 
+image  by  only  capturing  what  he  wants  to  show  and  then 
+narrating over it. 
+There  were  other  times  when  the  talk  that  was  included 
+centered  on  describing  what  act  the  recovery  surgeon  was 
+about to perform and what he hoped to convey in that act 
+solely for the video audience (i.e., the implant surgeon). 
+Surgery ID #2 
+1  RS: And I will (1.2) [pull a lung out(,) 
+and  show  you  what  it  looks  like_] 
+ 
+ 
+
+                                                             
+1  RS=recovery  surgeon,  IS=implant  surgeon;  Re=resident, 
+An=Anesthesiologist, OS=other surgeon 
+
+748
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+2    RS:  ((Inserts  hand  [pulls  up  on  right 
+lung]  and  holds  it  up 
+))  
+ 
+ 
+ 
+ 
+ 
+3  RS: (6.0) ((Places lung down)) And here 
+is the apex_ ((Inserts hand and pulls up 
+lung and holds 
+))   
+ 
+ 
+ 
+ 
+4  RS: (3.0) ((Places lung down again))  
+In this case, the recovery surgeon directed his comments to 
+the  implant  surgeon  by  saying,  “show  you”  in  line  1.  He 
+described what he was about to do as well as why. He then 
+holds the view at the end of line 2 and then again at the end 
+of  line  3  for  a  few  seconds  each  time  to  ensure  a  clear 
+capture of the image. What we see in these two examples is 
+image crafting using the hands or head to lift up or zoom in 
+on  the  organs.  These  actions  coupled  with  talk  elucidated 
+what was important for the remote surgeon’s interest. 
+Choosing  what  to  capture  or  providing  commentary  is  the 
+crafting  work  that  is  taken  up  by  the  recovery  surgeon. 
+Through a form of exposition, he crafts a view in order to 
+support  co-construction  of  knowledge.  These  are  clearly 
+actions  for  the  sole  motivation  of  disciplining  the  images 
+for the remote surgeon to view and ‘see’ what the remote 
+surgeon wants her to see. 
+Capturing Competence 
+Another  prevalent  use  of  the  video  was  to  display  the 
+recovery  surgeon’s  expertise  and  competence.  This  is 
+primarily  due  to  the  number  of  ‘questionable’  cases  that 
+required  an  expert  eye.  As  the  responsibility  for  the  case 
+always  resides  with  the  implant  surgeon  –  they  are 
+ultimately  responsible  for  the  decision  to  take  and  use  an 
+organ  –  there  is  a  great  deal  of  trust  between  the  implant 
+and recovery surgeon. What we observed were a number of 
+instances  where  the  recovery  surgeon  created  a  video  that 
+captured  his  own  competence  in  assessment.  The  crafting 
+process  in  these  examples,  then,  have  less  to  do  with 
+crafting  the  specific  image  for  the  implant  surgeon  to 
+assess,  and  more  to  do  with  crafting  a  visual  narrative  or 
+record of one’s due diligence and assessment process. 
+In the following example, we provide an instance where the 
+demonstration  of  competence  and  experience  made  the 
+difference  between  accepting  and  not  accepting  an  organ. 
+With this case, a 15-year-old boy, who was in a fatal motor 
+vehicle accident, donated both his heart and lungs. Because 
+of  the  age  of  the  donor,  and  the  favorable  preoperative 
+
+749
+
+findings  from  CT  scans  and  echoes  of  the  heart  and  the 
+lungs,  there  was  little  concern  of  the  organs  being 
+unsuitable.  However, due to the blunt force involved in the 
+accident,  inspection  for  any  permanent  damage  to  the 
+organs  that  would  preclude  the  transplant  was  needed.  In 
+this  case,  the  recovery  surgeon  decided  to  capture  the 
+entirety of the inspection of the lungs. 
+Surgery ID #2 
+1  RS: ((Begins to squeeze the lungs)) Stop 
+ventilation. ((waits for lungs to drop))  
+2  RS: ((Feels for tumors and for fluid))  
+3  RS: ((Begins to visually inspect the 
+lungs on right side)) 
+4  RS: ((Moves to other side of table to 
+visually inspect the left lung))  
+5  RS: ((Sees blemishes on the apex of the 
+left lung))  
+6  RS: ((Begins palpation of blemish)) 
+In this video, he stopped ventilation in order for the lungs to 
+deflate and drop down (line 1). This in turn allowed him to 
+properly palpate the lungs and check for hard tumors or the 
+telltale spongy feel and weight of fluid in the lungs (line 2). 
+Satisfied  with  the  probe,  he  began  a  visual  inspection  on 
+one side (line 3) and then the other (line 4). At this point he 
+discovered significant blemishes (line 4), which led him to 
+again  manually  inspect  the  apex  of  the  lung  (line  5).  This 
+palpation allowed him to determine that the blemishes were 
+not indicative of permanent damage. Later, during his call 
+to  the  implant  surgeon  he  reviewed  what  inspections  he 
+performed and referred to the blemishes that he found.  He 
+then  continued  on  to  indicate:  “The  lungs  have  good 
+function  and  I  think  they  would  be  fine.  We  don’t  have  to 
+worry  about  those  bleeding  spots  because  they  will  go 
+away.” 
+In  this  case,  the  blemishes  could  be  construed  as  an 
+indication  of  permanent  damage  –  not  entirely  surprising 
+given 
+the 
+experience of the recovery surgeon allowed him to identify 
+the concern, know the best way to assess the veracity of that 
+concern  (through  palpation),  and  then  dismiss  the  concern 
+when  enough  information  was  gathered.  Transmitting  the 
+visuals  of  the  blemishes  to  the  implant  surgeon  would 
+provide her with the information regarding the possibility of 
+damage.  But,  it  was  the  video  of  him  palpating  the 
+blemishes on the lungs coupled with his final interpretation 
+of 
+to  her  full 
+understanding  of  the  situation  and  the  two  surgeons 
+agreeing to proceed. So even if an implant surgeon sees the 
+organs for herself, the recovery surgeon still needed to add 
+the execution of the crucial palpation examination in order 
+to facilitate the co-construction of their understanding. This 
+was  provided  by  way  of  him  recording  his  palpation  as 
+opposed to simply telling her. 
+This case shows the importance of experience and trust in 
+organ recovery. It also shows how video recordings entailed 
+crafting practices in capturing and transmitting one’s entire 
+
+the  motor-vehicle  accident.  Fortunately, 
+
+them  not  being  a  concern 
+
+that 
+
+led 
+
+process  of  assessment  in  order  to  hopefully  reduce  the 
+chasm in the co-construction of knowledge between them. 
+However,  in  the  following  case,  the  addition  of  visuals 
+leads  to  an  additional  discussion  about  the  suitability  of  a 
+donor heart that might not have occurred otherwise. 
+Surgery ID #6 
+1  RS: Lift up the LV out of the cavity so 
+that we can just see the (.) anterior wall. 
+2  Re: ((inserts hand and picks the heart 
+out of the chest))  
+3  RS: Is that a hematoma on the front wall 
+or is that just [blood (?)] 
+4  RS:          [wipes at splotch] 
+ 
+5  Re:  
+6  RS: (2.0) OK. ((  
+ 
+
+[Just blood.] 
+ 
+
+ 
+
+ )) 
+
+the  blood  splotch.  The 
+
+7  RS: (0.7) I think we have a little bit 
+of a hematoma^ (1.0) That’s probably just 
+from the sternum fracture_   
+In this case, the surgeon started with attempting to capture 
+a view of the heart by lifting it up. But as he looks on, he 
+becomes  aware  of  a  troubling  indicator:  the  left  anterior 
+descending  artery  of  the  heart,  which  is arguably one  of 
+the most important arteries in the body, was running right 
+through 
+recovery  surgeon 
+identified  this  in  line  3  and  tried  to  wipe  at  the  splotch, 
+but  it  did  not  come  off  (line  4).  Then  in  line  6,  the 
+recovery  surgeon  focused  on  the  heart  to  capture  the 
+splotch  in  the  video and then asserted that it might be a 
+hematoma  (line  7).  The  issue  he  then  had  to  address  is 
+whether or not the coronary artery had been damaged and 
+if the blood was coming out of the artery. If that were the 
+case, then the heart would be turned down for transplant.  
+The first investigation supported canceling the transplant. 
+Most  senior  surgeons  would  decide  not  to  take  the  risk 
+because  they  would  not  want  a  damaged  left  anterior 
+descending artery on an implanted heart. The heart would 
+not  work  or  it  would  quickly  fail.  But  the  recovery 
+surgeon  did  not  think  it  was  a  damaged  artery.  His 
+experience  led  him  to  believe  it  was  something  less 
+severe. However, as he had the video at hand, he decided 
+at  this  point  to  contact  the  implant  surgeon  and  pointed 
+out the potential hematoma on the transferred video. This 
+began a discussion between the implant surgeon  and the 
+recovery  surgeon.    They  were  both  able  to  look  at  the 
+organ  and  then  comment  on  it,  and  then  look  at  the 
+hematoma. They decided to investigate the severity of the 
+issue by trying to strip off the adherent clot. At this point, 
+the recovery surgeon decided to record a new video. 
+
+SESSION: HEALTHCARE PROVIDERS
+
+1  RS: ((begins to manipulate the 
+epicardium)) (10.0) ((successfully strips 
+the adherent clot off))  
+We  see  that  the  recovery  surgeon  determined  that  the 
+blood  was  not  inside  of  the  heart,  it  was  not  around  the 
+vessel, and the heart’s function was good. In this case, the 
+outcome was a positive one. The visuals provided a point 
+of discussion and agreement to use the heart. In the end, 
+“The  patient  did  fantastic.  The  patient  weaned  off 
+immediately, already has been discharged. … This human 
+being may never have received the transplant had it not 
+been 
+for  real-time  harvest-to-implant  collaboration, 
+potentially.”  [Recovery  Surgeon  A]  However,  in  this 
+example, we see that the surgeon chose to capture a new 
+video; this time to record the clot’s adherence and show if 
+it is possible to remove it – which it was. Had it not been, 
+this  video  would  have  been  further  evidence  towards 
+rejecting the heart. Thus crafting the image is very much 
+about  guiding  another’s  perception,  interpretation,  and 
+ultimately  the  decision  by  deciding  for  the  remote 
+collaborator what they can and should see. 
+IMPACT OF CRAFTING ON THE WORK 
+More Questions and Involvement 
+An  interesting  change  in  practice  also  was  raised  in  the 
+prior  vignette  (ID#6).  Due  to  his  experience,  the  recovery 
+surgeon did not need to include the implant surgeon in this 
+stage of the procedure. His motivation to include him was 
+due  to  the  interest  in  the  implant  surgeon’s  assessment  of 
+risk. However, the visuals furthered discussion beyond the 
+‘agreement’ the recovery surgeon was expecting. Recovery 
+Surgeon  A  later  reflected  during  his  interview,  “In  some 
+ways,  the  real-time  communication  made  it  an  issue  that 
+may not have been an issue otherwise. In other words, if he 
+hadn’t  known  that  there  was  a  possible  issue,  I  might’ve 
+just harvested the heart, brought it back, and nobody would 
+ever thought about it. But because I made him aware of the 
+issue, then all of a sudden, he got cold feet and then I had to 
+bring him back into the full disorder.” 
+We have seen this in other cases as well. For instance, on 
+reflection  of  the  15-year  old  motor-vehicle  accident  case 
+(ID #2) during the follow-up interview, Recovery Surgeon 
+B further elaborated: “[T]here’s a very short moment when 
+you  see  the  tip  of  the  right  lung  that  actually  looks  pretty 
+ugly. It kinda looks bloody. And that's the kind of thing that 
+needs  my  commentary.  The  [implant]  surgeon  said,  “Oh, 
+what  the  hell  is  this?”  and  “Are  you  sure  this  is  okay?” 
+And  I  said,  “Yeah,  it  is  because  it’s  only  superficial.”  
+Thus, there is often a need to reassure when the visuals are 
+shared with the implant surgeon – even for those with years 
+of experience and an ‘expert eye’.  
+As  additional  visuals  lead  to  more  questions,  recovery 
+surgeons  need  to  consider  what  to  capture,  what  to  say 
+while  presenting  the  visuals,  and  how  to  describe  it 
+afterwards  during  the  conversation.  This  is  potentially  a 
+confusing task as a concern of a recovery surgeon may not 
+
+750
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+be  the  same  as  a  concern  of  an  implant  surgeon.  And  so, 
+one  question  is  if  the  recovery  surgeon  should  err  on  the 
+side of showing and commenting on everything as opposed 
+to only that which he deems important.  Recovery Surgeon 
+B  shared  that,  despite  his  extensive  experience  and  the 
+immense  trust  other  surgeons  have  in  his  assessment, 
+“Some  surgeons  have  different  opinions  about  what  they 
+want  to  accept,  and  therefore,  what  I  think  is  acceptable 
+may  not  be  acceptable  to  a  colleague.”  In  this  regard, 
+crafting  an  image  is  very  much  about  what  one  deems 
+important  enough  to  share  and  how  one  disciplines  the 
+image is very much about imparting one’s own professional 
+vision of an acceptable organ. The need to reassure impacts 
+which visuals are chosen and thus crafting what one wants 
+the  other  person  to  see.  Thus,  crafting  requires  much 
+forethought  to  the  impact  the  images  will  have  on  the 
+subsequent discussion. 
+Pushing the Boundaries of What is Acceptable 
+Despite the extra work for experienced surgeons to explain 
+away perceived problems, the video recordings do provide 
+a benefit in facilitating the decision to push the boundaries 
+for organ acceptance. By ‘push the boundaries’ we are not 
+suggesting surgeons are becoming haphazard in their choice 
+of organs, but rather there is room for discussion in order to 
+co-construct  knowledge  by  harnessing  the  experience  and 
+knowledge,of both actors.  
+As  there  is  an  ever-growing  need  for  organ  transplants, 
+there is a push for surgeons to start accepting more organs. 
+This increases the need for the transplant team to come to 
+an agreement on acceptability even in the face of trying to 
+be  more  inclusive  of  potential  donor  organs.  In  the 
+following  case,  the  potential  for  using  a  lung  led  to  the 
+acceptance of a lung that, in the end, did have a problem, 
+albeit  minor  and  easily  addressed.  The  donor  had  a  prior 
+operation on her right side, which had made the apex of the 
+lung stuck due to an inordinate amount of scar tissue. The 
+team was not sure if they were going to be able to remove 
+the lungs without damaging them beyond use.  
+Surgery ID #4 
+1  RS: Lung’s down (?)  
+2  An: Lung’s down_ 
+3  RS: Okay. (5.0)((pulls down on lung and 
+holds down                    ))  
+ 
+ 
+ 
+4  RS: (1.0) ((speaking to resident)) See 
+because if we injured the lung here, then 
+we know this is the- (0.5) It's all over 
+for us. ((begins cauterizing adhesions))  
+The recovery surgeon knew the delicate job he had before 
+him – that he had to take down all the adhesions first before 
+he could then test the lungs to see if they were damaged. It 
+is interesting to note that he chose to record this work: the 
+
+to  capture 
+
+recovery  surgeon  wanted 
+the  process  of 
+removing the scar tissue so the implant surgeon could see 
+how stuck the lung had been. As a result this was by far our 
+longest  recording  (11:37  in  total).  After  six  minutes  of 
+removing  the  adhesions,  the  recovery  surgeon  felt  he  was 
+ready to start the crucial tests. 
+4  RS: Alright, can I have uh saline(?) 
+(1.5) I just wanna test it, see if there 
+are leaks and then-  
+5  RS: (13.0) You're uh ventilating?  
+6  An: Yeah. 
+7  RS: Can I give- have you give a 
+valsalva(?) 
+8  An: Uh sure. 
+9  RS: (1.0) Do you have a bucket of saline 
+for me?  
+10 An: How many centimeters of water?  
+11 RS: 20, please. (3.0) Feel like the, 
+that’s not- 
+12 An: ((arrives with water))  
+13 RS: Yeah just poor it in here. Is it 
+warm(?)[Sorry. Yeah(?)] 
+14 An: [((nods))      ] 
+15 RS: (2.0) Okay. ((watching for leaks 
+from the ventilated lungs)) (7.0) O:kay.  
+       [Looks pretty good(,)]  
+16 Re: Mmmhmm^. 
+17 RS: Alright^ success:  
+At the end of this case, the recovery surgeon had to test the 
+lungs to see if he had caused holes or tears in the lung. They 
+immersed  the  lungs  in  saline  to  show  there  were  no  air 
+leaks.  At  this  point,  both  the  attending  recovery  surgeon 
+and the assisting resident agreed that they saw no leaks. The 
+recovery  surgeon  then  called  the  implant  surgeon  and  the 
+two  surgeons  had  an  extensive  phone  conversation 
+regarding the lungs. In the end the final decision was short 
+with the single question, “So, can we use them?” and reply, 
+“Yeah,  use  them.”  Unfortunately,  when  the  team  arrived 
+back  to  the  implant  hospital  with  the  lungs,  though,  there 
+were  air  leaks.  In  the  end,  the  lung  was  used,  but  the 
+implant surgeon had to remove the part that was leaking.  
+When Recovery Surgeon C was asked what was the benefit 
+of having the device in this situation, he answered, “At least 
+she  had  proof  that  it  didn’t  leak  before  she  accepted  the 
+lung.” As we mentioned before, the responsibility lies with 
+the  implant  surgeon.  Ultimately,  she  can  only  make 
+decisions with the information made available to her. In this 
+case,  the  information  and  the  methods  of  assessment 
+indicated  that  the  lung  would  be  functional  despite  the 
+concern. It is not clear if leaking had been detected earlier if 
+the implant surgeon would still not have taken the lung and 
+continued  by  removing  the  damaged  section,  but  we  do 
+have  evidence  that  the  visuals  reassured  all  individuals 
+during  decision-making  as  well  as  during  after-the-fact 
+reflection on decision-making. 
+Visuals in telemedicine help push the boundaries in aiding 
+to  make  a  final  decision  in  the  face  of  contra-indicative 
+
+751
+
+evidence. Recovery Surgeon B reflected on his 25 years of 
+practice and how the field has significantly changed: “We 
+are taking lungs that have been subjected to being bashed 
+around,  as  I  say.  Somebody  who’s  been  hit  by  a  car,  and 
+what  I  call  high-speed,  high  deceleration  trauma,  which 
+means that the organs are moving inside the body. … And 
+when I started doing this … we wouldn’t even touch these 
+lungs. We would say, “Oh, they’re not gonna be good.” We 
+do  [use  them]  now.”  This  is  partially  due  to  advanced 
+medical  knowledge  and  partially  due  to  devices  that,  for 
+example,  allow  the  team  to  clear  a  lung  full  of  fluid  by 
+circulating  the  lungs  outside  of  the  body  for  a  few  hours 
+before  being  transplanted.  However,  the  transfer  of  all  of 
+the vital information for consideration, such as the feel of 
+heavy lungs indicating they are very full of fluid, while also 
+seeing the quality of the lungs may be the impetus to allow 
+the implant surgeon to choose to try to save  the  lungs  for 
+later transplant instead of canceling the entire procedure.  
+For  all  intents  and  purposes  the  lungs  would  have  been 
+acceptable.  However,  the  scar  tissue  adhesions  brought  a 
+moment  of  doubt  into  the  minds  of  the  implant  and 
+recovery surgeons. The use of visuals allowed them both to 
+seriously  weigh  this  doubt  and  make  a  decision  together 
+with all of the information before them. What we see then is 
+a  deliberate  crafting  of  the  video  with  the  understanding 
+that  the  evidence  provided  will  fundamentally  affect 
+discussions  and  decision  making.  In  this  regard,  the 
+recovery surgeon’s decisions on what to capture and how to 
+capture  it  is  the  act  of  disciplining  the  images  for 
+communicating an intent for action to their collaborator.  
+DISCUSSION 
+In  this  study  of  video  creation  and  use,  we  were  most 
+interested  in  the  patterns  of  action  and  interaction  that 
+resulted from the use of the device and transmission of the 
+videos. We wanted to unfold the acts of creation and use of 
+images beyond that of simply looking at them and instead 
+show  how  collaborators  interpret  and  work  with  them  in 
+concert. We investigated how the use of such technologies 
+in transplant surgery facilitated organ viability assessments 
+and  how 
+the 
+recovery  and  implant  surgeons.  But  more  importantly,  we 
+explored  how  crafting  the  image  through  selection  and 
+presentation is work that constitutes the difference between 
+simple transmission to one of co-construction. 
+As  we  see  from  the  cases  presented,  the  benefits  of  the 
+videos 
+the 
+assessment of the organs by a remote implant surgeon and 
+to  engage  in  a  dialogue  between  recovery  and  implant 
+surgeons  in  using  organs  that  may  show  some  contra-
+indicative  evidence.  We  also  see  a  number  of  additional 
+costs on the surgeons, such as the need to choose whether 
+they will transfer their entire investigation or only a select 
+video  fragment,  the  need  for  commentary  by  the  recovery 
+surgeon  either  during  or  after  the  recording,  and  often 
+additional discussion that would not have occurred had the 
+
+transformed  communication  between 
+
+telemedicine 
+
+to  support 
+
+is 
+
+it 
+
+in 
+
+transplant 
+
+SESSION: HEALTHCARE PROVIDERS
+
+the 
+
+image 
+
+towards 
+
+implant surgeon not had access to the visuals. We showed 
+how  recoveries  led  by  senior  surgeons  were  also  affected 
+despite the enduring trust between the various partners. But 
+the benefit is that it will also allow for more potential donor 
+organ use due to the ability to discuss problems and make a 
+plan for making sure the organ is useable. 
+Tying  these  findings  back  to  the  prior  work  in  the  social 
+studies  of  science  as  well  as  prior  work  on  imaging 
+interaction  in  surgery,  we  see  that  the  manipulation  is 
+prescribed  by  the  sender,  both  in  terms  of  when  capture 
+occurs as well as what is captured (i.e. the entire process of 
+inspection  or  a  single  view)  and  how  it  is  presented  (e.g. 
+organ  held  up,  zoomed  it).  All  of  this  is  a  form  of 
+disciplining 
+their  collaborator’s 
+understanding.  Remember,  usually  the  recovery  surgeon 
+has already begun the surgery by opening up the donor and 
+conducting  any  exposition  of  the  body  that  was  necessary 
+before  assessing  the  organs  themselves.  Thus,  they  are 
+bringing  in  the  camera  after  they  have  already  disciplined 
+the  body.  They  then  discipline  the  image  by  choosing  the 
+view  or  process  they  wish  to  show  and  overlaying  it  with 
+appropriate  and  meaningful  talk.  Thus,  by  ‘crafting’  we 
+mean that the process of disciplining the image leads to a 
+particular presentation for a particular aim. Because of this 
+the  remote  implant  surgeon  has  no  recourse  but  to  accept 
+the  images  as  a  form  of  truth  and  then  ask  for  further 
+information  via  a  series  of  questions.  Although  they  have 
+more information, they themselves are not disciplining the 
+body or images and thus the interaction with the body and 
+images that has been shown to be so vital in prior work has 
+been taken away from the remote surgeon.  
+This  is  where  we  return  to  a  discussion  of  the  tools  that 
+bring  the  remote  collaborator  back  into  the  fold  of  image 
+creation and use. In the following, we further explore two 
+design opportunities for collaborative image interaction.  
+Collaborative Image Interaction in Surgical Telemedicine 
+In  the  case  of  recorded  video,  such  as  in  the  situations 
+presented  in  this  paper,  we  see  the  need  for  a  mechanism 
+for  linking  explicit  commentary  along  with  the  video 
+captured. The appearance would remain mostly unchanged 
+– capturing the talk by the surgeons during video capture. 
+However,  keywords  would  provide  a  ‘bookmark’  on  the 
+video  that  is  easily  accessed  by  the  implant  surgeon  to 
+either jump to a part of the video that she wishes to view or 
+even to reiterate what is being viewed at any given moment. 
+This  could  be  realized  through  a  hyperlinks  mechanism 
+such  as  the  ones  proposed  by  Shipman  et  al.  [38]  that 
+supports hyperlink for navigating between video sequences 
+or even within one video. 
+Particularly  in  situations  where  there  is  a  live  video  feed 
+between  the  local  and  remote  surgeon,  though,  it  is  clear 
+that  this  would  allow  for  the  real  time  description  by  the 
+surgeon  and  elucidation  if  there  are  further  questions.  In 
+addition,  this  would  support  ‘guidance’  practices  such  as 
+instructing  a  surgeon  in  feeling  the  lungs  and  describing 
+
+752
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+the  predominant 
+
+telepointer  was  used 
+
+what  they  feel  through  a  question  and  answer  process.  A 
+live  feed  could  better  support  the  co-constructive  practice 
+between  the  recovery  and  implant  surgeons  in  deciding 
+whether to use an organ, and ultimately push the boundaries 
+regarding organ recovery assessments.  
+We  could  also  go  much  further  than  simply  transmiting 
+video in a real-time communication channel. For instance, 
+we  know  that  mediated  communication  is  even  more 
+effective when annotation and gesturing tools are provided 
+for shared video of the workspace. For instance, Fussell et 
+al. [12] illustrated that the ability to gesture and annotate a 
+video feed led to shorter, more efficient communication and 
+quicker  task  performance  than  when  simply  utilizing  an 
+audio-video connection.  Bauer et al. [4] found that experts 
+are 90% more likely to point instead of speak when given a 
+choice,  and  a 
+in  99%  of  all 
+communications.  In  addition,  studies  of  shared  drawing 
+environments  have  shown  the  importance  of  these  tools, 
+15% of people’s verbal interactions included gestures such 
+as  circles  and  arrows  [42,43].  And  in  systems  where  pens 
+can  be  used  for  both  drawing  (when  pressed  down  on  the 
+drawing  surface)  and  gesturing  (when  not  pressed  down), 
+nearly  half  of  all  users’  pen  activity  was  for  gesturing 
+purposes [42].  
+However, 
+telecommunication  system 
+design  in  this  line  of  research  is  an  asymmetric  image 
+interaction  paradigm  where  certain 
+interaction 
+functions  are  only  available  to  one  party.  For  instance,  a 
+video of the workspace is transmitted to a remote helper for 
+him to annotate, but the worker does not have the ability to 
+annotate  the  images  himself;  or  the  video  taken  by  the 
+worker  is  transmitted  to  the  helper,  but  the  helper  has  no 
+mechanism  for  manipulating 
+the  video  himself.  The 
+asymmetric  image  interaction  paradigm  does  not  support 
+collaboratively interacting with images to mutually craft (or 
+discipline)  towards  understanding  what  is  being  seen.  We 
+could  provide  manipulation  and  annotation  tools  for  both 
+distributed  parties  to  use  during  discussion  and  decision 
+making. A collaborative image interaction paradigm would 
+provide the option for both distributed parties to annotate or 
+manipulate  the  images  and,  thus,  work  together  with  the 
+images  towards  a  shared  understanding  and  course  of 
+action.  
+CONCLUSION 
+Surgical  telemedicine  will  change  the  professional  vision 
+and the collaborative practices of the surgeon. It is changing 
+what it means to perform surgery on the body and to ‘see’ 
+the  body  through  new  imaging  techniques.  From  our 
+observations of surgical telemedicine in transplant surgery 
+we see the evolution of new practices that allow the remote 
+surgeon  to  ‘see’  the  body  through  the  local  surgeon’s 
+crafting of a view with visuals and talk. We see again how 
+images do not hold within them the information that simply 
+needs  to  be  accessed,  but  rather  that  (1)  local  surgeons 
+discipline 
+impart  particular 
+
+in  order 
+
+images 
+
+image 
+
+the 
+
+to 
+
+753
+
+the 
+
+in 
+
+of 
+
+the 
+
+various 
+
+interactive 
+
+information into the collaborative discussion and (2) remote 
+surgeons are reliant on the crafting of the local surgeon as 
+they  have  no  recourse  for  disciplining 
+images 
+themselves.  The  importance  of  this  second  point  is  the 
+directions  it  can  suggest  for  future  telemedicine  system 
+design. Thus our intention has been to lay a foundation for 
+the  innovation  of  new  collaborative  image  interactive 
+mechanisms for surgical telemedicine. 
+These findings complement prior work in the HCI field that 
+discuss 
+interactional 
+mechanisms  of  image  use  in  the  OR  and  the  constructive 
+way surgical knowledge is created and communicated in an 
+embodied  manner  [28,29,33,34,36].  However,  this  work 
+goes further by showing that new forms of image capturing 
+technologies  allow  one  collaborator  to  craft  a  particular 
+perspective  and 
+the  different 
+perspectives of the collaborators.  
+REFERENCES 
+1.  Margunn  Aanestad.  2003.  The  Camera  as  an  Actor 
+Design-in-Use  of  Telemedicine 
+in 
+Surgery.  Computer  Supported  Cooperative  Work 
+(CSCW) 
+1–20. 
+http://doi.org/10.1023/A:1022492210898 
+
+Infrastructure 
+1, 
+
+further  align 
+
+12, 
+
+turn 
+
+and 
+
+2.  Morana Alac. 2008. Working with Brain Scans: Digital 
+Images  and  Gestural  Interaction  in  fMRI  Laboratory. 
+4, 
+483–508. 
+Social 
+http://doi.org/10.1177/0306312708089715 
+
+Science 
+
+Studies 
+
+38, 
+
+3.  Nigel  R  Armfield,  Sisira  K  Edirippulige,  Natalie 
+Bradford, and Anthony C Smith. 2014. Telemedicine--is 
+the cart being put before the horse? The Medical journal 
+530–3. 
+of 
+http://doi.org/10.5694/mja13.11101 
+
+Australia 
+
+200, 
+
+4.  Martin  Bauer,  Gerd  Kortuem,  and  Zary  Segall.  1999. 
+“Where  are  you  pointing  at?”  A  study  of  remote 
+collaboration  in  a  wearable  videoconference  system. 
+Digest  of  Papers.  Third  International  Symposium  on 
+Wearable  Computers,  IEEE  Comput.  Soc,  151–158. 
+http://doi.org/10.1109/ISWC.1999.806696 
+
+5.  Anne Beaulieu. 2002. Images Are Not the (Only) Truth: 
+Brain  Mapping,  Visual  Knowledge,  and  Iconoclasm. 
+Science,  Technology  &  Human  Values  27,  1,  53–86. 
+http://doi.org/10.1177/016224390202700103 
+
+6.  Owen  Daly-Jones,  Andrew  Monk,  and  Leon  Watts. 
+1998.  Some  advantages  of  video  conferencing  over 
+high-quality audio conferencing: fluency and awareness 
+of  attentional  focus.  International  Journal  of  Human-
+21–58. 
+Computer 
+http://doi.org/10.1006/ijhc.1998.0195 
+
+Studies 
+
+49, 
+
+7.  Nicolas  Demartines,  Didier  Mutter,  Michel  Vix,  et  al. 
+2000. Assessment of telemedicine in surgical education 
+and  patient  care.  Annals  of  surgery  231,  2,  282–91. 
+Retrieved 
+from 
+http://www.pubmedcentral.nih.gov/articlerender.fcgi?art
+id=1420998&tool=pmcentrez&rendertype=abstract 
+
+2015 
+
+May 
+
+25, 
+
+9, 
+
+1, 
+
+8. Gwyneth  Doherty-Sneddon,  Anne  Anderson,  Claire
+O’Malley,  Steve  Langton,  Simon  Garrod,  and  Vicki
+Bruce. 
+video-mediated
+communication: A comparison of dialogue structure and
+task performance. Journal of Experimental Psychology:
+Applied 3, 2, 105–125.
+
+1997.  Face-to-face 
+
+and 
+
+9. Susan  R.  Fussell,  Robert  E.  Kraut,  and  Jane  Siegel.
+2000.  Coordination  of  communication.  Proceedings  of
+the  2000  ACM  conference  on  Computer  supported
+cooperative  work  -  CSCW  ’00,  ACM  Press,  21–30.
+http://doi.org/10.1145/358916.358947
+
+10. Susan R. Fussell, Leslie Setlock, and Robert E. Kraut.
+2003. Effects of head-mounted and scene-oriented video
+systems  on  remote  collaboration  on  physical  tasks.
+Proceedings  of  the  conference  on  Human  factors  in
+computing  systems  -  CHI  ’03,  ACM  Press,  513.
+http://doi.org/10.1145/642611.642701
+
+11. Susan  R.  Fussell,  Leslie  Setlock,  Elizabeth  M.  Parker,
+and  Jie  Yang.  2003.  Assessing  the  value  of  a  cursor
+pointing  device  for  remote  collaboration  on  physical
+tasks. CHI ’03 extended abstracts on Human factors in
+'03,  ACM  Press,  788.
+computing  systems  -  CHI  
+http://doi.org/10.1145/765891.765992
+
+12. Susan  R.  Fussell,  Leslie  Setlock,  Jie  Yang,  Jiazhi  Ou,
+Elizabeth  Mauer,  and  Adam  Kramer.  2004.  Gestures
+Over  Video  Streams  to  Support  Remote  Collaboration
+on  Physical  Tasks.  Human-Computer  Interaction  19,
+273–309. http://doi.org/10.1207/s15327051hci1903_3
+
+13. Harold  Garfinkel.  1967.  Studies  in  Ethnomethodology.
+
+Polity Press, Cambridge, UK.
+
+14. William W. Gaver, Abigail Sellen, Christian Heath, and
+Paul Luff. 1993. One is not enough. Proceedings of the
+SIGCHI  conference  on  Human  factors  in  computing
+335–341.
+systems 
+http://doi.org/10.1145/169059.169268
+
+’93,  ACM  Press, 
+
+-  CHI 
+
+15. Darren Gergle, David R. Millen, Robert E. Kraut, and
+Susan  R.  Fussell. 
+2004.  Persistence  matters.
+Proceedings of the 2004 conference on Human factors
+in computing systems - CHI ’04, ACM Press, 431–438.
+http://doi.org/10.1145/985692.985747
+
+16. Erving  Goffman.  1983.  The 
+
+Interaction  Order:
+American  Sociological  Association,  1982  Presidential
+Address on JSTOR. American Sociological Review 48,
+1,  pp.  1–17.  Retrieved 
+from
+http://www.jstor.org/stable/2095141?seq=1#page_scan_
+tab_contents
+
+June  24,  2015 
+
+17. Charles Goodwin. 1994. Professional Vision. American
+606–633. 
+
+Anthropologist
+http://doi.org/10.1525/aa.1994.96.3.02a00100
+
+96, 
+
+18. Charles  Goodwin. 
+
+of  Color
+Classification.  Mind,  Culture,  and  Activity  7,  1-2,  19–
+36. http://doi.org/10.1080/10749039.2000.9677646
+
+Practices 
+
+2000. 
+
+3, 
+
+SESSION: HEALTHCARE PROVIDERS
+
+19. Christian  Heath  and  Paul  Luff.  2001.  Technology  in
+Press.
+
+action. 
+University 
+http://doi.org/10.1017/CBO9780511489839
+
+Cambridge 
+
+20. Christian Heath and Paul Luff. 2009. Media Space and
+Communicative Asymmetries: Preliminary Observations
+Interaction.  Human–Computer
+of  Video-Mediated 
+Interaction.  Retrieved 
+from
+http://www.tandfonline.com/doi/abs/10.1207/s15327051
+hci0703_3#.VYrW92DZr8E
+
+2015 
+
+June 
+
+24, 
+
+21. Christian Heath. 2000. Configuring Action in Objects:
+From Mutual Space to Media Space. Mind, Culture, and
+81–104. 
+Activity
+http://doi.org/10.1080/10749039.2000.9677649
+
+1-2, 
+
+7, 
+
+22. Jon  Hindmarsh  and  Christian  Heath.  2000.  Embodied
+reference:  A  study  of  deixis  in  workplace  interaction.
+1855–1878.
+Journal 
+http://doi.org/10.1016/S0378-2166(99)00122-8
+
+of  Pragmatics 
+
+32, 
+
+12, 
+
+23. Stefan Hirschauer. 1991. The Manufacture of Bodies in
+Surgery.  Social  Studies  of  Science  21,  2,  279–319.
+http://doi.org/10.1177/030631291021002005
+
+2, 
+
+24. Ellen A. Isaacs and John C. Tang. 1994. What video can
+and  cannot  do  for  collaboration:  A  case  study.
+63–73. 
+2, 
+Multimedia 
+http://doi.org/10.1007/BF01274181
+
+Systems
+
+25. Rose  Johnson,  Kenton  O’Hara,  Abigail  Sellen,  Claire
+Cousins,  and  Antonio  Criminisi.  2011.  Exploring  the
+potential  for  touchless  interaction  in  image-guided
+interventional  radiology.  Proceedings  of 
+the  2011
+annual  conference  on  Human  factors  in  computing
+3323. 
+systems 
+http://doi.org/10.1145/1978942.1979436
+
+’11,  ACM 
+
+-  CHI 
+
+Press,
+
+26. Kelly  Joyce.  2005.  Appealing 
+
+Images:  Magnetic
+Resonance Imaging and the Production of Authoritative
+Knowledge.  Social  Studies  of  Science  35,  3,  437–462.
+http://doi.org/10.1177/0306312705050180
+
+27. Laurent Karsenty. 2009. Cooperative Work and Shared
+Visual Context: An Empirical Study of Comprehension
+Problems in Side-by-Side and Remote Help Dialogues.
+283–315.
+3, 
+Human–Computer 
+http://doi.org/10.1207/S15327051HCI1403_2
+
+Interaction 
+
+14, 
+
+28. Timothy  Koschmann,  Curtis  LeBaron,  Charles
+Goodwin, and Paul Feltovich. 2011. “Can you see the
+cystic artery yet?” A simple matter of trust. Journal of
+521–541. 
+Pragmatics
+http://doi.org/10.1016/j.pragma.2009.09.009
+
+43, 
+
+2, 
+
+29. Timothy  Koschmann,  Curtis  LeBaron,  Charles
+Goodwin,  Alan  Zemel,  and  Gary  Dunnington.  2007.
+Formulating  the  Triangle  of  Doom.  Gesture  7,  1,  97–
+118. http://doi.org/10.1075/gest.7.1.06kos
+
+30. Robert  E.  Kraut,  Susan  R.  Fussell,  and  Jane  Siegel.
+2003. Visual Information as a Conversational Resource
+in  Collaborative  Physical  Tasks.  Human-Computer
+
+754
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Interaction 
+http://doi.org/10.1207/S15327051HCI1812_2 
+
+18, 
+
+1, 
+
+13–49. 
+
+37. Amit  Prasad.  2005.  Making  Images/Making  Bodies: 
+through  Magnetic 
+Visibilizing 
+Resonance  Imaging  (MRI).  Science,  Technology  & 
+2, 
+291–316. 
+Human 
+http://doi.org/10.1177/0162243904271758 
+
+and  Disciplining 
+Values 
+
+30, 
+
+38. Frank Shipman, Andreas Girgensohn, and Lynn Wilcox. 
+2008.  Authoring,  viewing,  and  generating  hypervideo. 
+ACM  Transactions 
+on  Multimedia  Computing, 
+Communications,  and  Applications  5,  2,  1–19. 
+http://doi.org/10.1145/1413862.1413868 
+
+39. Lucy  Suchman.  2000.  Embodied  Practices  of 
+Engineering Work. Mind, Culture, and Activity 7, 1-2, 
+4–18. http://doi.org/10.1080/10749039.2000.9677645 
+
+40. Anthony  Tang,  Michel  Pahud,  Kori  Inkpen,  Hrvoje 
+Benko,  John  C.  Tang,  and  Bill  Buxton.  2010.  Three’s 
+company. Proceedings of the 2010 ACM conference on 
+Computer  supported  cooperative  work  -  CSCW  ’10, 
+ACM 
+271. 
+http://doi.org/10.1145/1718918.1718969 
+
+Press, 
+
+41. John C. Tang and Ellen Isaacs. 1992. Why do users like 
+video? Computer Supported Cooperative Work (CSCW) 
+1, 3, 163–196. http://doi.org/10.1007/BF00752437 
+
+42. Catherine  G.  Wolf,  James  R.  Rhyne,  and  Laura  K. 
+Briggs. 1992. Communication and information retrieval 
+with a pen-based meeting support tool. Proceedings of 
+the  1992  ACM  conference  on  Computer-supported 
+cooperative  work  -  CSCW  ’92,  ACM  Press,  322–329. 
+http://doi.org/10.1145/143457.143539 
+
+43. Catherine  G.  Wolf  and  James  R.  Rhyne.  1993. 
+Gesturing  with  shared  drawing  tools.  INTERACT  ’93 
+and CHI  '93 conference companion on Human factors 
+in computing systems - CHI '93, ACM Press, 137–138. 
+http://doi.org/10.1145/259964.260150 
+
+31. Robert E. Kraut, Darren Gergle, and Susan R. Fussell. 
+2002.  The  use  of  visual  information  in  shared  visual 
+spaces.  Proceedings  of  the  2002  ACM  conference  on 
+Computer  supported  cooperative  work  -  CSCW  ’02, 
+ACM Press, 31. http://doi.org/10.1145/587078.587084 
+32. Helena  M.  Mentis,  Amine  Chellali,  and  Steven 
+Schwaitzberg.  2014.  Learning 
+the  Body  : 
+Supporting  Instruction  al  Practices  in  Laparoscopic 
+Surgical  Procedures.  Proceedings  of  the  32nd  annual 
+ACM  conference  on  Human  factors  in  computing 
+systems, 
+2113–2122. 
+http://doi.org/10.1145/2556288.2557387 
+
+to  See 
+
+33. Helena M. Mentis, Kenton O’Hara, Abigail Sellen, and 
+Rikin  Trivedi.  2012.  Interaction  proxemics  and  image 
+use  in  neurosurgery.  Proceedings  of  the  2012  ACM 
+annual  conference  on  Human  Factors  in  Computing 
+927. 
+’12,  ACM 
+Systems 
+http://doi.org/10.1145/2207676.2208536 
+
+Press, 
+
+CHI 
+
+34. Helena M. Mentis  and  Alex  S.  Taylor.  2013.  Imaging 
+the  body.  Proceedings  of  the  SIGCHI  Conference  on 
+Human Factors in Computing Systems - CHI ’13, ACM 
+Press, 1479. http://doi.org/10.1145/2470654.2466197 
+
+35. Ronald  C.  Merrell,  Bruce  E.  Jarrell,  Noah  S. 
+Schenkman, Bradley Schoener, and Kathy McCullough. 
+2003.  Telemedicine  for  the  Operating  Room  of  the 
+2, 
+Future. 
+91–94. 
+http://doi.org/10.1177/107155170301000206 
+
+Innovation 
+
+Surgical 
+
+10, 
+
+36. Kenton  O’Hara,  Neville  Dastur,  Tom  Carrell,  et  al. 
+2014. Touchless interaction in surgery. Communications 
+70–77. 
+of 
+http://doi.org/10.1145/2541883.2541899 
+
+ACM 
+
+57, 
+
+the 
+
+1, 
+
+- 
+
+ 
+
+ 
+ 
+
+ 
+ 
+
+755
+
+

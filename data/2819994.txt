@@ -1,0 +1,1620 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ SunForum: Understanding Depression in a Chinese 
+
+Online Community 
+
+Guo Li1,2, Xiaomu Zhou3, Tun Lu1,2, Jiang Yang4, Ning Gu1,2 
+
+1School of Computer Science, Fudan University, China 
+
+2Shanghai Key Laboratory of Data Science, Fudan University, China 
+3School of Communication and Information, Rutgers University, USA 
+
+4Alibaba Group, China 
+
+ 
+
+ABSTRACT 
+More  than  350  million  people  worldwide  suffer  from 
+depression. Major depressive disorder has a hugely negative 
+impact on psychological well-being, work, and family life. 
+Yet culture may shape how depressed patients interpret their 
+symptoms,  choose  treatments,  and  behave.  This  paper 
+reports a case study, including participant observations and 
+interviews,  of  the  Chinese  online  depression  community, 
+SunForum. Our findings reveal that Chinese cultural beliefs 
+(e.g.,  the  power  of  inner  self-control)  and  Chinese  beliefs 
+about  traditional  medicine  (e.g.,  the  integrated  body-mind 
+relationship) significantly affect patients’ understandings of 
+depression,  illness  management,  and  social  interactions. 
+These beliefs create problems of understanding depression in 
+society  –  including  family  members,  friends,  co-workers, 
+and  others  –  and  present  various  challenges  for  depressed 
+patients who can become marginalized, suffer discrimination, 
+and lose their jobs. We draw implications for how Chinese 
+society as a whole may respond to the misunderstanding of 
+mental illness and the raising of public awareness. We also 
+propose  specific  social  media  design  to  support  depressed 
+patients as they seek online information and social support. 
+Author Keywords 
+Depression; illness management; mental health; mental 
+illness; online community; social and culture influence; 
+social media 
+ACM Classification Keywords 
+H.5.m. Information interfaces and presentation (e.g., HCI): 
+Miscellaneous.  
+INTRODUCTION 
+According  to  the  most  recent  World  Health  Organization 
+(WHO)  report,  more  than  350  million  people  suffer  from 
+depression around the world [1]. Major depressive disorder 
+has a hugely negative impact on psychological well-being, 
+including disrupting interpersonal relationships and causing 
+
+Permission to make digital or hard copies of all or part of this work for 
+personal or classroom use is granted without fee provided that copies are 
+not made or distributed for profit or commercial advantage and that copies 
+bear  this  notice  and  the  full  citation  on  the  first  page.  Copyrights  for 
+components  of  this  work  owned  by  others  than  ACM  must be  honored. 
+Abstracting with credit is permitted. To copy  otherwise, or republish, to 
+post on servers or to redistribute to lists, requires prior specific permission 
+and/or a fee. Request permissions from Permissions@acm.org. 
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA  
+© 2016 ACM. ISBN 978-1-4503-3592-8/16/02…$15.00  
+DOI: http://dx.doi.org/10.1145/2818048.2819994 
+
+morbidity  and  mortality,  controlled  substance  abuse,  and 
+unemployment [1]. Currently, depression is the fourth most 
+important determinant of burden in people’s life caused by a 
+human disease, and will rank second by the year 2020 [30].  
+In China, there are over 30 million  depressed patients and 
+more  than  90%  of  them  are  not  able  to  receive  prompt 
+diagnosis and treatment [38]. Due to the strong cultural bias 
+against this mental illness, many patients do not actively seek 
+professional  help  [37];  or  if  they  do,  they  go  to  general 
+physicians  to  complain  about  somatic  symptoms  (e.g., 
+headache, dizziness, fatigue, stomachache) [22]. In addition, 
+China’s healthcare system is extremely limited in financial 
+expenditures for the huge numbers of patients and lack of 
+health  insurance  coverage  [29];  and  there  are  very  few 
+mental health services and resources, leading to very limited 
+professional help, dubious therapy, and inhuman treatment 
+for mental illness patients (e.g., in extreme cases, shackled 
+by a chain and imprisoned in a cage) [10].  
+Researchers  find  that  culture  (including  beliefs,  values, 
+norms, etc.) has a huge impact on people’s understanding of 
+depression and on patients’ choice to seek professional help 
+[46]. To explore the reality of the depression population in 
+Chinese  context,  we  investigated  an  online  community, 
+SunForum1,  one  of  the  largest  online  discussion  forums 
+focusing  on  depression  in  China.  This  online  community 
+mostly includes depressed patients, as well as a small portion 
+of  family  members  and  volunteers  (e.g.,  helping  answer 
+patients’ questions, maintain the website, and moderate the 
+discussion  threads).  They  participate  in  online  discussions 
+with  a  wide  range  of  depression  topics  (e.g.,  recovery 
+experiences, social encounters, illness-related questions and 
+answers).  To  date,  there  are  more  than  74,000  registered 
+users, and users have generated more than 900,000 posts. 
+While our study may cover only a limited group of depressed 
+patients, i.e., only those participating in SunForum, through 
+the  lens  of  this  community  we  hope  to  understand  how 
+people with depression understand this illness in a specific 
+culture, where the concept and psychiatric label of this illness 
+have  long  been  rejected  by  the  society,  instead,  being 
+replaced  by  a  more  somatic  label  of  neurasthenia  [22]. 
+Through  analyzing  their  online  discussions  and interviews 
+
+1 http://www.sunofus.com. SunForum is a literal translation of an 
+acronym from the original Chinese characters for the forum title. 
+
+515
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+with  20  members  of  the  community,  we  want  to  discover 
+what and how Chinese cultural beliefs may influence patients’ 
+understandings and management of the illness, how societal 
+attitudes  toward  depression  present  challenges  in  their 
+professional and social life, how they turn to social media for 
+help, how they learn from each other, and whether there are 
+any issues with social media use in supporting the depression 
+population.  By  a  better  understanding  of  this  group  of 
+patients  and  their  social  context,  we  hope  to  learn  how 
+exactly  social  media  may  play  a  role  to  help  depression 
+patients,  such  as  helping  correct  the  misunderstanding  of 
+mental illness due to historical and cultural influences, and 
+enhancing  positive  social  interactions.  We  further  explore 
+how  an  online forum  can  be better  designed  with  specific 
+features to support depressed patients that yield better coping 
+strategies and outcomes.  
+RELATED WORK 
+Depression and Chinese Culture 
+As a common but serious form of mental illness, the core and 
+basic symptoms of depressive disorder are almost universal 
+[8].  According  to  Diagnostic  and  Statistical  Manual  of 
+Mental Disorders, Fourth Edition (DSM-IV), an individual 
+who  suffers  from  major  depressive  disorder  must  have 
+several  depression  symptoms,  including  depressed  mood, 
+diminished  interest  or  pleasure,  weight  loss,  insomnia  or 
+hypersomnia,  feelings  of  worthlessness  or  excessive  or 
+inappropriate guilt, etc.  
+Worldwide,  there  are  many  problematic  attitudes  toward 
+depression,  affecting  how  depressed  patients  understand, 
+express, and seek treatment. For example, a study conducted 
+in  four  European  countries  shows  a  moderate  degree  of 
+personal stigma (i.e., personal negative and unfair thoughts 
+and beliefs) toward depression and a strikingly higher degree 
+of  perceived  social  stigma  (i.e.,  perception  of  how  other 
+people  negatively  think  and  feel  about  depression)  [11]. 
+Furthermore, to assess the nature and severity of experienced 
+and  anticipated  discrimination  with  major  depressive 
+disorder,  a  survey  with  1082  patients  from  35  countries 
+shows 
+these  people  had  experienced 
+discrimination  [25].  This  stigma  and  these  discrimination 
+attitudes  can  significantly  affect  patients’  help-seeking 
+behavior [2, 20]. 
+In  China,  the  epidemiology  of  depression  shows  different 
+patterns compared with many Western countries, e.g., low 
+prevalence,  and 
+in 
+metropolitan China [26]. The experience of depression, such 
+as the expression of illness, coping strategies, help-seeking 
+behaviors, and treatment, is also different from many other 
+countries and significantly shaped by Chinese culture [8, 39]. 
+For  instance,  depression  is  often  clinically  diagnosed  as 
+neurasthenia,  resulting  in  diagnosis  rates  very  low  in 
+depression and very high in neurasthenia [22, 46]. Instead of 
+elaborating  emotional  and  cognitive  manifestations  of 
+depression,  depressed  patients  with  a  Chinese  background 
+(e.g., Chinese from mainland, Taiwan, Hong Kong, Chinese 
+
+insignificant  gender  difference 
+
+that  79%  of 
+
+516
+
+has 
+
+intrigued 
+
+the  U.S,  Malaysia,  and  elsewhere)  often  express 
+in 
+feeling  no  energy, 
+depression  somatically;  such  as 
+sleeplessness,  bodily  aches  [22,  36,  37,  39].  This 
+phenomenon 
+international  medical 
+professionals  and  researchers  from  psychology  and  social 
+medicine, who argue that the understandings and behaviors 
+of  depressed  patients  in  the  Chinese  context  are  highly 
+influenced by its traditional culture.  
+Chinese  culture 
+is  described  as  group  oriented  and 
+collectivistic:  an  individual’s sense  of self  is  embedded  in 
+group  and  social  relationships,  and  the  group  (rather  than 
+individual)  is  the  basic  unit  in  society  [27].  This  is  very 
+different from Western cultural frameworks that emphasize 
+the autonomy of each person and the importance of personal 
+experiences,  goals,  and  values  [8].  With  these  beliefs, 
+Chinese people often neglect or hide their inner experience 
+of emotions and feelings, but are more sensitive to somatic 
+symptoms. Meanwhile, influenced by thousands of years of 
+Confucian  thought,  people  from  Chinese  culture  believe 
+individuals should have the ability to cultivate their morality 
+and exercise their self-control [27]. The symptoms of mental 
+illness  are  perceived  as  problematic  behaviors  that  are 
+negatively  associated  to  one’s  morality.  If  an  individual 
+cannot resolve the inner problems or conflicts by himself, he 
+will be labeled as weak-willed and spineless [42]. Therefore, 
+“mental illness” has long been a taboo term that both patients 
+and  doctors  avoid  using  while  discussing  depression 
+symptoms [28, 42]. 
+In addition to Chinese culture, traditional Chinese medicine 
+also has a huge influence on how people perceive an illness. 
+According  to  the  principles  of  Chinese  medicine,  body 
+(somatic) and mind (mental) are viewed as integrated, each 
+influencing  the  other;  as  such,  many  mental  problems  are 
+thought to be caused by the imbalance of the body and mind 
+(e.g.,  bodily  aches  break 
+to 
+psychological pain and sadness), and treatment of somatic 
+problems can actually help resolve mental problems [45]. In 
+the  practice  of  Chinese  traditional  medicine,  patients  with 
+depression  often  are  diagnosed  as  shen-kui  (weakness  or 
+problems with kidney) because the kidneys are believed to 
+control the function of the cerebrum [46]. These body-mind 
+beliefs in Chinese traditional medicine may also help explain 
+why  depressed  patients  tend  to  use  somatic  symptoms  to 
+describe their mental illness, regardless of the cultural beliefs 
+as described earlier. 
+Furthermore, social and political factors also complicate the 
+expression, understanding, and interpretation of depression. 
+For instance, medical anthropologist Arthur Kleinman found 
+that during the Cultural Revolution (ten-year period starting 
+May  1966),  depression  and  other  psychiatric  labels  were 
+assumed to be associated with wrong political thinking and 
+lack  of  enthusiasm  for  the  communist  program  and 
+revolution. Therefore, patients rarely expressed the negative 
+emotional feelings, and depression became a dangerous term 
+to apply to anyone [22]. Sadly, such thinking and association 
+
+the  balance, 
+
+leading 
+
+SESSION: INTERNATONAL INSIGHTS
+
+still seem to affect the society’s attitude toward depression 
+[46]. 
+Depression and Social Interactions 
+Psychology  and  medicine have  produced rich  accounts on 
+how social interactions affect health outcomes for depressed 
+patients.  For  example,  Nasser  and  Overholser  find  that 
+support from family members and friends can significantly 
+contribute to a positive health outcome for depressed people 
+[34].  While  social  interactions  are  generally  perceived  as 
+having a positive impact on psychological well-being, how 
+much  social  interaction  on  the  Internet  and  what  types  of 
+interactions are beneficial to general populations as well as 
+patients  with  specific  illness  are  still  open  questions.  For 
+instance,  O'Keeffe  et  al.  find  that  preteens  and  teenagers 
+began to “exhibit classic symptoms of depression” after they 
+spent a great deal of time on social media [35]. Following 
+studies,  however,  find  no  evidence  that  depression  is 
+associated with SNS use [16], and studies also confirm that 
+greater  SNS  use  in  a  communicative  fashion  is  associated 
+with  increased  social  capital  and  reduced  loneliness  [6]. 
+Meanwhile, Kalwar and his colleagues find that Asian and 
+Western  users  show  different  scales  of  anxiousness  in  the 
+designed tests [17], and human behavior on the Internet can 
+be  linked  to  various  cultural  attributes  [18,  19].  These 
+valuable insights prompt us to explore how exactly Chinese 
+culture  impacts  depressed  patients’  social  interactions  and 
+their behavior online.  
+Indeed, social interactions among depressed patients should 
+be more carefully examined, because depressed patients may 
+perceive social interactions differently from non-depression 
+populations. Clinical studies find that depressed patients may 
+be more depressed after they  had conversations with other 
+depressed patients [8], and depressed patients rate negative 
+interactions lower (i.e., more socially undesirable) than non-
+depressed  [14].  If  so,  should  depressed  patients  be 
+encouraged  to  interact  among  themselves  more?  Research 
+communities  need  to  carefully  examine  how  exactly 
+depressed patients interact and what specific issues exist on 
+social  media  platforms  designated  for  people  with  mental 
+illness, and explore how we may help improve the design of 
+these online platforms to facilitate healthy social interactions.  
+Depression and Online Support Forums 
+Online  peer  support  forums  have  become  increasingly 
+prevalent for all types of chronic illness. Patients get both 
+informational  and  emotional  support  by  participating  in 
+online  communities  designated 
+illness  or 
+problems, such as diabetes, various types of cancers, etc. [43, 
+44, 47] 
+In the context of depression, Dyer and Thompson find that 
+Journey-of-Hearts, acting as an adjunctive Internet resource, 
+can fill a void in the treatment of depression and grief [12]. 
+Similarly,  Barney  et  al.  analyze  BlueBoard  to  identify 
+depressed patients’ information needs. They find six board 
+themes, i.e., understanding depression, disclosure and stigma, 
+medication, treatment and services, coping with depression, 
+
+to  specific 
+
+517
+
+and comorbid health problems, are the most discussed and 
+needed [3]. Furthermore, Vayreda and Antaki find that there 
+is  a  mismatch  between  a  new  user’s  first  post  and  forum 
+members’  replies  in  bipolarweb,  concluding  that  the 
+unsolicited advice may help new users induct them into the 
+mores of the group [41].  
+Informed  by  these  early  studies,  our  research  will  take  a 
+specific  perspective  –  we  want  to  examine  how  cultural 
+beliefs  may  influence  depressed  patients,  including  their 
+understanding  of the illness, their  experience of  managing 
+the  illness,  as  well  as  their  social  interactions  online  and 
+offline. Located in Chinese context, our study will contribute 
+a unique account with valuable insights on how depressed 
+patients, facing various misunderstandings from the society 
+and  cultural  challenges, take advantage  of social  media to 
+manage their illness and improve their health.  
+METHODS  
+Research Site: SunForum 
+To locate an online forum for our research interest, we used 
+Chinese keywords “depression forum” to search via Google 
+and Chinese search engine Baidu, both returning SunForum 
+as the top-ranking result. The forum provides six discussion 
+zones for people to post and receive replies: (1) Depression 
+Zone (including sub-forums Fighting Depression, Fighting 
+Bipolar Disorder, and Recovery Experience); (2) Neurosis 
+Zone (including sub-forums Anxiety, Obsessive-Compulsive 
+Disorder,  and  Phobia);  (3)  Featured  Zone  (including  sub-
+forums Psychologists, Morita Therapy, Having Babies); (4) 
+Life  with  Sunshine  (for  users  to  post  photos,  videos  and 
+music, make friends, and chat); (5) Religions (including sub-
+forums Buddhism and Christianity); and (6) Forum Affairs 
+(for  publishing  new  donations  and  announcements,  and 
+collecting suggestions provided by the users). Among these 
+forums,  Depression  Zone 
+the  most  active,  with 
+significantly  more  visits,  posts,  and  replies.  In  addition  to 
+posting 
+registered  users  can  also 
+communicate privately via the internal message channel.  
+There are four types of users: administrators, board masters, 
+registered members, and visitors. Non-registered visitors can 
+only browse the content and are not allowed to post or reply. 
+Three administrators have full control of the site, with each 
+having  specific  focuses  (i.e.,  technical  support,  internal 
+management,  and  outreach  for  public  relations).  A  board 
+master is appointed by administrators based on nomination, 
+the quality of his or her previous posts, and  volunteerism. 
+Board masters manage their own assigned discussion zones 
+or  sub-forums,  having  the  power  to  edit,  and  to  delete 
+spammed,  offensive,  or  inappropriate  posts,  to  keep  the 
+discussion forum clean and healthy. Most of the registered 
+users  are  patients  with  depression  or  other  mental  illness, 
+their  family  members,  and  volunteers  (e.g.,  providing 
+technical  support,  organizing  offline  events,  and  offering 
+psychological  consulting).  A 
+few  psychologists  and 
+psychiatrists,  who  host  special  sub-forums,  also  actively 
+participate at SunForum. With their presence, patients and 
+
+these  zones, 
+
+is 
+
+in 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+themes  were 
+
+their  family  members  often  take  advantage  by  asking 
+questions and getting professional advice. All administrators 
+and most of the board masters are or used to be patients with 
+depression. 
+Data Collection and Analysis 
+We  conducted  qualitative  research,  including  participant 
+online observations and interview studies. The first author 
+performed data collection at the research site by registering 
+an account. The researcher’s participation includes creating 
+limited  threads  and  posting  comments  for  the  research 
+purposes,  such  as  announcing  the  research  project,  and 
+recruiting participants for interviews.  The first author read 
+through  over  1000  threads  (selection  strategy  is  described 
+below) in a period of six months and selected a collection of 
+representative threads to share among the research team.  
+In the initial stage of data collection, to build our general and 
+broad understanding of “what’s going on” at SunForum, we 
+first collected all newly posted threads (nearly 700 threads 
+throughout the first three months) across all discussion zones 
+and  their  sub-forums.  We  employed  Grounded  Theory 
+approach to identify emerging themes and potential analytic 
+concepts in these threads [33]. With an open coding scheme, 
+several  preliminary 
+identified,  such  as 
+understanding the nature of depression and sharing coping 
+strategies (recording life experiences via diary, photography), 
+encountered  social  problems  (due 
+to  social  phobia), 
+misunderstanding  (from  family,  friends,  and  society), 
+relationships  (with  family,  coworkers),  choosing  medicine 
+(Chinese traditional medicine vs. Western modern medicine), 
+suicidal  thoughts  and  attempts,  making  friends  (marriage-
+seeking),  learning  and  practicing  religion  (Buddhism, 
+Christianity)  as  part  of  therapy.  Furthermore,  several 
+analytical  concepts  also  emerged,  such  as  the  impact  of 
+Chinese  culture  on  understanding  the  illness,  information 
+sharing  and  exchanging  strategies  of  managing  illness, 
+seeking  social  and  emotional  support,  perceiving  and 
+processing online information. After identifying these core 
+concepts,  we  further  used  more  directed  data-collection 
+methods to collect more than 300 threads, i.e., paying more 
+attention to  the threads surrounding  the  major themes  and 
+core concepts, while also watching for new phenomena. 
+To help answer certain questions that we could not answer 
+by  reading  the  threads,  we  conducted  interviews  with  20 
+users  (10  male  and  10  female;  including  college  students, 
+manufacturing  workers,  housewives, 
+freelancers,  and 
+unemployed people). Our recruiting process proved to be a 
+big  challenge,  although  not  totally  surprising  --  many 
+patients did not want to talk with the researchers; some were 
+in very bad moods at the moment we approached them, and 
+we  did  not  want  to  aggravate  their  illness  by  accidentally 
+asking questions that might trigger negative responses. We 
+used  two  approaches  to  recruit.  First,  we  sent  recruiting 
+messages through the internal message channel at the forum 
+to 40 active users who were already identified as potential 
+interviewees through reading their posts based on the topics 
+
+518
+
+we were interested in pursuing. (This is a similar method to 
+identifying  informants  in  traditional  ethnographic  field-
+based research [4].) Eleven users agreed to join our study. 
+Second, we invited one site administrator to be interviewed, 
+and  through  him,  snowball-sampling  method  was  used  to 
+recruit  eight  more  users  for  the  interviews.  The  20 
+interviewees in total represent two administrators (both are 
+patients), four board masters (all are patients), twelve regular 
+patient members and two family members.  
+Our  interviews  were  semi-structured,  and  questions  were 
+asked based on our general observations online and research 
+inquiries. We also had a range of tailored questions targeting 
+each  specific  interviewee  based  on  their  activities  at 
+SunForum.  Eight  interviews  were  conducted  by  phone 
+(about 50 minutes each on average); five via email and two 
+via  the  internal  message  channel  of  SunForum  due  to  the 
+interviewees’ preference (each contains about 1,500 Chinese 
+characters on  average);  another  five  via instant  messaging 
+(each contains more than 2,000 Chinese characters). For all 
+these  interviews,  we  obtained  users’  consent  to  record 
+interview  content,  and  audio 
+later 
+transcribed. We continued using iterative coding strategy for 
+our  interview  data  and  added  new  subthemes  such  as 
+workplace discrimination, losing jobs, etc. 
+FINDINGS 
+SunForum adopts Discuz, one of the most popular free online 
+discussion  platforms 
+too  much 
+development  cost.  It  is  nonprofit  and  advertisements  are 
+prohibited.  Administrators  examine  each  new  account  to 
+determine whether it is an authentic user or spam. By mid- 
+May  2015,  there  were  over  74,000  registered  members, 
+representing a wide range of geographic areas. While most 
+of the users are located in China, many are Chinese residing 
+in the U.S., Canada, Australia, Malaysia, Singapore, Japan, 
+Germany, France, Korea, New Zealand, etc.  
+
+in  China  without 
+
+interviews  were 
+
+Subject 
+
+Friends of SunForum, share your encouragements! 
+I have to take medicine again. 
+A woman's story 
+Accept Jesus’ love, your days will be full of hope, 
+love, and power! 
+Be patient, happiness may come slowly, as long as it 
+is true; I need real happiness. 
+The pressure that life can't bear - my journey of 
+anxiety depression. 
+Taking Chinese traditional medicine, continue to 
+work hard, overcome depression! 
+To live is to do meaningful things. 
+Every exit is another entrance to a new place 
+Sharing experiences of walking through depression, 
+and collections of valuable threads. 
+
+Replies 
+3676 
+3658 
+3292 
+3233 
+
+3096 
+
+2257 
+
+2189 
+1994 
+1962 
+1837 
+
+Table 1. Top 10 threads that receive the most replies. 
+
+Table 1 lists the top 10 most popular threads, all receiving 
+thousands  of  follow-up  replies.  These  threads  continually 
+attract  members’  attention  and  participation through  many 
+
+SESSION: INTERNATONAL INSIGHTS
+
+years.  The  top  1  thread  asking  for  encouragement  has 
+received  3,676  replies  from  nearly  400  members,  such  as 
+“Don’t give up! Every extremity is a fault; the darkest hour 
+is before dawn.” As well, the thread “Sharing experiences of 
+walking  through  depression,  and  collections  of  valuable 
+threads” was created by one patient to share his experience 
+of fighting depression, incorporating other threads beneficial 
+to fellow patients. His experience on pharmacotherapy and 
+morita 
+therapy  (an  ecological  and  purpose-centered, 
+response-oriented therapy) attracted 226 users to share their 
+own experiences and exchange their opinions. 
+Understanding and Depression Management in China 
+A depressive disorder is a common and serious mental illness 
+that interferes with daily life and normal functioning. It is 
+different from occasional moodiness or sadness. Unlike other 
+somatic diseases that have standard medical indicators, the 
+conception of depression may be very different  in specific 
+culture  contexts.  In  this  section,  we  discuss  how  our 
+participants  understand  their  illness,  and  how  their  social 
+context may affect their reaction to their depression.  
+Lack of understanding: somatization, fear, stigmatization 
+Through our observations online and in interviews, we found 
+that patients discuss their illness from different perspectives, 
+some  focusing  on 
+the  body,  others  on  body-mind 
+relationships. For instance, one of our interviewees strongly 
+believes:  
+
+“[Depression] is that my body is not in a perfect 
+status.  It  may  be  related  to  my  psychological 
+mood,  but  fundamentally  it’s  my  body  that  has 
+some problems, so I would define my situation as 
+my body not being in good health.” (p16, patient, male, 
+age 26) 
+
+While we do not know how many patients on this forum hold 
+this belief, earlier studies indeed find that many depressed 
+patients  with  a  Chinese  cultural  background  would  more 
+likely describe their illness through somatic symptoms [36]. 
+Compared to this purely body-oriented understanding, some 
+patients seem able to consider their somatic symptoms along 
+with psychological symptoms, as described below:  
+
+“I believe depression is a type of mental illness. 
+There are both physiological and psychological 
+symptoms  when  I  am  in  a  major  episode. 
+Physiologically, I suffer stomach pain, headache, 
+insomnia, and I am inefficient in work and feel 
+stupid  and  dumb.  Psychologically,  I  feel 
+emotionally down, worry  excessively, think bad 
+things happening, and lost all interests to the 
+activities I used to enjoy a lot.” (p5, board master, 
+female, age 35) 
+
+Public  health  education  about  depression  has  been  largely 
+missing in China, which explains what we observed and how 
+in general people do not understand the illness and tend to 
+associate  it  with  schizophrenia.  Indeed,  many  people, 
+including the patients, greatly fear the illness. In our study, 
+some patients described when they first were diagnosed and 
+“labeled” as a depressed patient; some feared depression so 
+
+519
+
+much,  they  considered  it  a  “worse”  situation  than  getting 
+cancer. One female patient described in the interview:  
+
+it 
+
+would 
+
+“At first, I was extremely afraid of this illness. 
+I didn’t know whether this illness could be cured, 
+or 
+affect 
+body 
+physiologically, such as getting married, having 
+children.” (p4, board master, female, age 29) 
+
+whether 
+
+my 
+
+The reaction of patients’ family members, after their child or 
+spouse  is  diagnosed  with  depression,  is  also  dramatically 
+different  from  how they  would  react to a somatic disease, 
+wondering  “what’s  wrong  with  them.”  In  such  fear  of 
+depression,  some  parents  from  an  older  generation  would 
+believe there are bad, unlucky things or ghosts that inhabit 
+the patient’s body; some even go further to  ask  help from 
+fortune-tellers or conduct religious rites in an attempt to keep 
+the bad things or ghosts away. One parent told us that her 
+family conducted the religious rites without letting the child 
+patient know about it. 
+Furthermore, people without depression also fear interacting 
+with  depressed  patients,  believing  that  depressed  patients 
+may  take  unusual  and  unpredictable  actions,  e.g.,  sudden 
+irritations leading to violence (similar to schizophrenia), or 
+extreme sorrow and suicide. Therefore, many of them try to 
+keep some distance from depressed patients. An interviewee 
+expressed how his friends acted when he told them that he 
+was depressed: 
+
+“A friend of mine, not knowing I was a depressed 
+patient,  was  talking  with  me  about  his  huge 
+empathy  to  a  depressed  patient  who  tried  to 
+commit suicide, and wished him to get treatment 
+and  support.  However,  after  I  told  him  my 
+depression, he was just disappeared and didn’t 
+contact to me anymore. Another friend, after I 
+told her the truth about my depression, added me 
+to the blacklist of her WeChat2, never talking 
+to me again, probably, thinking I should not be 
+in the same social circle with her anymore.” (p10, 
+patient, female, age 32) 
+
+This fear and stigma may come from lack of understanding 
+depression  as  a  form  of  mental  illness.  However,  Chinese 
+cultural beliefs may have significant impact on how people 
+perceive  the  illness  and  how  they  act  toward  the  patients. 
+Here,  we  report  on  our  investigation  in  light  of  Chinese 
+cultural beliefs:  
+Beliefs and attitudes about depression 
+In  addition  to  values,  norms,  and  personality,  people’s 
+beliefs are a major antecedent of their social behaviors [5]. 
+Deeply rooted in Confucian thought for thousands of years 
+is the idea among Chinese people that individuals have the 
+ability to exercise self-control, emphasizing efforts to self-
+cultivation and self-perfection [27]. In our study, depressed 
+patients  are  often  labeled  as  being  weak-willed  and 
+
+2 WeChat provides text messaging, hold-to-talk voice messaging, 
+broadcast (one-to-many) messaging, sharing of photographs and 
+videos, and location sharing. WeChat has most of the functions 
+that Facebook enables, making it the most popular networking 
+application in China. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+psychologically lopsided. In addition, some symptoms (and 
+related behaviors) of depression, e.g., sleeping excessively, 
+being  constantly  unhappy,  are  regarded  as  laziness,  not 
+trying  hard  enough,  and  weak-mindedness.  Lack  of  true 
+knowledge about depression, even patients themselves also 
+think  they  should  not  be  ill  because  they  used  to  be  very 
+strong, as one patient described:  
+
+“In  2006,  even  I  was  hospitalized,  I  did  not 
+believe I had the illness condition, because I 
+thought only the people who are psychologically 
+fragile and close-minded may get this illness. I 
+am quite outgoing and I should not have this.” 
+(p2, administrator, male, age 28) 
+
+Patients  are  often  criticized  by  their  family  members,  or 
+mocked by their friends. Some of these people firmly believe 
+that depression is just an alternative medical label for people 
+who do not work hard, and they even persuade the patients 
+not  to  take  medicine,  instead  focusing  on  strengthening 
+personal will and making more effort to change the state of 
+mind.  One  patient  interviewee’s  parents  even  refused  to 
+bring her to see doctors, as described below:  
+
+“My parents actually love me dearly; however they 
+don’t understand my illness, calling me a lazy-
+bone, an escapist. They didn’t give me money to 
+see a doctor. Finally when they took me to the 
+hospital, they fiercely argued with the doctors, 
+saying doctors talk nonsense, and wanted to beat 
+them up.” (p12, patient, female, age 32) 
+
+Furthermore, these problematic beliefs about depression and 
+this  stigmatization  may  lead  to  discrimination.  Numerous 
+patients at the forum and our interviewees talked about how 
+they  were  marginalized  and  discriminated  against  at  their 
+workplace, and many even lost their jobs. One interviewee 
+described his situation: 
+
+“When  I  was  working at  the  Institute  for  Drug 
+Control, I took my medical records to ask my boss 
+for  a  sick  leave  and  it  was  granted.  However, 
+after I came back, I was not allowed to work in 
+the laboratory, and I was left with nothing else 
+to  do,  being  completely  discriminated.”  (p2, 
+administrator, male, age 28) 
+
+Managing depression 
+Patients with depression may experience serious conditions, 
+i.e., clinically defined as a major depressive episode. During 
+this  episode,  patients  may  present  many  symptoms, 
+including loss of interest or pleasure in everyday activities, 
+feeling  sad,  anxious,  hopeless,  helpless,  or  worthless,  and 
+recurrent  thoughts  of  death  and  suicide  [1].  While  all 
+depressed  patients  have  to  deal  with  these  issues,  what  is 
+unique  about  Chinese  patients  is  that  they  often  have  to 
+juggle  Western  modern  medicine, 
+traditional  Chinese 
+medical  beliefs,  and  religion,  and  they  experience  a 
+significant lack of medical resources for treating depression.  
+Traditional  Chinese  medicine  has  a  very  long  history  and 
+been widely accepted for treating various diseases. However, 
+unlike many other somatic diseases, there is no reasonable 
+explanation and well-known therapy in traditional Chinese 
+medicine for treating depressive disorders. Patients often are 
+
+diagnosed  as  ganyutizhi  (a  somatic  disease  caused  by 
+problems  with  the  liver)  or  shen-kui  (caused  by  problems 
+with the kidneys). In Western medicine, there are systematic 
+clinical and pathological analyses for depression; therefore, 
+most  patients  in  our  study  trust  Western  medicine  and 
+therapies for treatment, although it is widely believed among 
+Chinese people that Western medicine has more severe side 
+effects than traditional Chinese medicine [13]. 
+While  taking  Western  medicine,  many  patients  also  try 
+traditional  Chinese  medicines  to  relieve  the  side  effects 
+caused by Western medicine and some somatic symptoms of 
+depressive  disorders,  finding  it  very  effective.  Therefore, 
+traditional Chinese medicine can be seen as a complement to 
+Western  medicine  in  treating  depression.  One  interviewee 
+told us his opinion on traditional Chinese medicine and how 
+he used it to treat the side effects of Western medicine: 
+
+“Based on the courses I have taken, there is no 
+prescription for the treatment of depression or 
+bipolar depression. Traditional Chinese medicine 
+is  not  focused  on  mental  illness.  Traditional 
+Chinese  medicine  can  relieve  the  side  effects 
+caused by Western medicine. For example, I would 
+be  extremely  thirsty  (that  water  won’t  help) 
+after  taking  Western  medication.  I  bought 
+traditional Chinese medicine herbals, boiled and 
+then  drank  it.  After  one  week,  the  symptoms 
+improved a lot, feeling no longer thirsty.” (p2, 
+administrator, male, age 28) 
+
+Interestingly  enough,  some  members  also  believe  that 
+religion may also help them recover from depression even 
+though they do not practice religion on a regular basis. In the 
+discussion zone Religions, members share their experience 
+of  coping  with  depression  via  practicing  Buddhism  or 
+Christianity. In this context, belief in religion may be a more 
+strategic  choice,  as  one  member  suffering  both  depression 
+and anxiety disorder described: 
+
+“I  only  have  faith  in  religion  and  practice 
+Buddhism  when  my  depression  shows  up.  I  would 
+get up early to chant Buddhism scriptures, and 
+then my head becomes clear. When my anxiety gets 
+serious, feeling the end of world coming, I start 
+chanting  scriptures  to  easy  the  situation.  I 
+think practicing Buddhism is more efficient than 
+taking medication.” (p12, patient, female, age 32) 
+
+Meanwhile, under the influence of Japanese culture, morita 
+therapy  introduced  from  Japan  is  often  mentioned  and 
+practiced by interviewees. The main idea of morita therapy 
+is “following the way of nature as ideal,” closely related to 
+Taoist  culture  [27],  making  it  very  easy  for  Chinese 
+depressed  patients  to  accept.  Morita  therapy  is  popular  at 
+SunForum, and there is a discussion zone Morita Therapy for 
+discussing and sharing experiences with this approach.  
+There are many problems and challenges for mental health 
+systems  in  China,  for  example,  lack  of  medical  resources 
+(psychiatrists,  hospital  beds),  lack  of  health  insurance 
+coverage,  and  huge  mental  health  burdens  (e.g.,  91.8%  of 
+diagnosed  mental  patients  never  seek  help)  [29].  These 
+
+520
+
+SESSION: INTERNATONAL INSIGHTS
+
+present a lot of challenges for the depressed patients to seek 
+professional help for their illness.  
+The limited number of psychiatrists or professional doctors 
+means that there is little time for patients to fully discuss their 
+illness with doctors. The interviewees often expressed that 
+the doctors were often in a hurry to finish the meeting and 
+simply did not talk to them. One interviewee described the 
+scenario as follows:  
+
+“The  doctor  is  very  busy,  receiving  dozens  of 
+patients a day. He did not have time to chat with 
+me. He, in general, listens to me to describe my 
+symptoms,  and  then  give  prescriptions.  He 
+wouldn’t talk much.” (p19, patient, male, age 27) 
+
+To see qualified doctors, patients in rural areas had to spend 
+a lot of time, energy, and money to travel far to bigger cities. 
+Indeed, there is great imbalance between costs and gains for 
+patients. Because the doctors often have no time to engage in 
+a conversation with patients about their illness, patients do 
+not feel it is worth the time and effort to visit doctors, as one 
+patient family member described: 
+
+“Our trip to Shanghai is not very easy, departing 
+about 6 o’clock in the morning, and arriving at 
+about  11  o’clock.  It  took  about  10  minutes  to 
+see  the  doctor  and  then  prescribe  medication. 
+Then we return. At first time, he (the doctor) 
+told us to take one (pill). The second time visit, 
+with  a  lot  of  efforts  and  spending,  including 
+traveling expenses, the doctor just told us to 
+take one more (pill). Later, I did not go to see 
+doctors  in  Shanghai,  because  the  cost  was  too 
+high.” (p7, family member, female, age 36) 
+
+At  SunForum,  many  members  discuss  medicines  and 
+therapies,  share  their  successful  experience  and  therapies, 
+ask and answer questions about treatments. Many discussion 
+zones,  e.g.,  Recovery  Experience,  Medicine  Therapy, 
+Psychological  Therapy,  and  Other  Therapies,  contain 
+different  kinds  of  knowledge  for  managing  and  treating 
+depressive  disorders.  There  are  also  several  professional 
+psychologists  and  psychiatrists  who  answer  questions  in 
+dedicated discussions. Many patients stay at SunForum after 
+they  have  been  cured,  and  try  to  help  other  patients;  they 
+were  often  consulted  for  specific  treatments  and  personal 
+management  strategies  for  depression.  All  these  kinds  of 
+online interactions cushion the significant impact of the lack 
+of medical resources in China. 
+Information Seeking and Social Interactions Online  
+As  with  many  online  support  communities,  there  are 
+abundant  information  support  and  social  interaction  at 
+SunForum.  In  this  section,  we  focus  on  how  depressed 
+patients  seek,  perceive,  and  process  online  information 
+related to their illness,  as  well  as  social interactions  (both 
+positive and negative). While some of the findings may be 
+similar to previous findings in different communities [43, 44, 
+47], our observations reveal nuanced details within a specific 
+cultural context. 
+
+521
+
+Information sharing, perceiving, and processing 
+As described earlier, the misunderstanding from the culture 
+and society and lack of knowledge resources and education 
+opportunities  may  be  some  of  the  encouraging  factors  for 
+patients and family members to search for knowledge online 
+about  mental  illness.  In  fact,  seven  of  our  interviewees 
+mentioned  that  they  joined  SunForum  due  to  their  initial 
+online  search  for  knowledge  about  depressive  disorders. 
+Patients come to the forum with mental illness in different 
+forms, e.g., mild depression, major depressive disorder, and 
+bipolar disorder. While some information zones may present 
+more knowledge and informational materials, all forums and 
+sub-forums  have  the  discussion  feature  embedded  to 
+facilitate learning and understanding. The knowledge about 
+depression,  including  its  symptoms,  medical  explanations, 
+treatments,  and  consequences,  helps  reduce  the  fear  that 
+comes from knowing nothing about depression, and prepares 
+the patients with knowledge they need to manage the illness. 
+In addition to abundant information about depression across 
+all  sub-forums,  personal  experiences  are  often  shared  in 
+members’ diaries and stories about how they fight depression. 
+At the forum, many members keep writing diaries about their 
+life  and their  illness, including  daily  activities,  symptoms, 
+thoughts  about  depression 
+(desperation  and  hope), 
+medication  they  use,  etc.  Some  members  have  even  been 
+writing this kind of daily log for several years. Members not 
+only learn from each other’s specific strategies, they also find 
+hope  from  knowing  others’  experiences,  as  one  desperate 
+wife described:  
+
+“When I read how other patients described their 
+own situations -- some of them were more severe 
+but eventually got cured, I believed my husband 
+would also be cured certainly. When I saw some 
+patients also couldn’t wash their faces and lay 
+in beds on their own (just like my husband), I 
+knew it was a natural pathologic process and I 
+should wait for medicine to take effects and be 
+patient.” (p7, family member, female, age 36) 
+
+the 
+
+illness.  From 
+
+At SunForum, it is very common that the knowledge learned 
+from  elsewhere  is  reposted.  As  mentioned  earlier,  a  few 
+psychologists and psychiatrists also regularly participate in 
+online  discussions.  Their  answers  to  certain  questions  are 
+often passed along. In addition, patients with long-standing 
+situations  often  share  numerous  strategies  and 
+their 
+understanding  of 
+this  perspective, 
+informational support at SunForum is very effective. Indeed, 
+the  forum  plays  an  important  role  in  helping  patients  and 
+family  members  understand  the  illness  and  its  symptoms, 
+making  them  less  fearful  about  depression,  and  correcting 
+their problematic beliefs about depression.  
+It is worth noting that members of SunForum also make their 
+best effort to educate the general public beyond the forum 
+community,  attempting  to  reduce  fear  and  discrimination 
+about depression in the society. For instance, administrators 
+of the forum and representative members often give lectures 
+to  neighborhood  communities  and  universities,  and 
+participate in TV shows to talk about depression and spread 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+knowledge of depressive disorders to a much larger audience. 
+Furthermore,  SunForum  has  also  organized  members  to 
+write a book, titled A Journey Through Days of Depression, 
+containing  many  real  stories  which  have  been  posted  at 
+SunForum  and  been  further  refined  by  the  corresponding 
+posters, knowledge about depression, etc. The book has been 
+reviewed by experts and published as public health education 
+material, as the administrator promoted: 
+
+“Let more people understand depression in China, 
+so  that  the  society  gradually  increase  its 
+awareness about this mental illness.” (Quote from 
+online threads) 
+
+While informational support is indeed evident, we are also 
+interested in learning how depressed patients perceive and 
+process information they receive at the forum. Earlier studies 
+have examined whether depressed and non-depressed people 
+differ  in  their  perception  and  processing  of  information. 
+Exposed to the same information (mixed with depressing and 
+non-depressing  content),  depressed  people  would  use  far 
+more depressing adjectives to refer to themselves; and the 
+degree  of  depression  also  has  an  impact,  i.e.,  clinically 
+diagnosed severely depressed patients recall more negative 
+than positive information as compared to mildly depressed 
+patients [24]. Differences in how non-depressed, mildly, and 
+severely  depressed  individuals  perceive  information  imply 
+that people with depression may need special consideration 
+when they experience social encounters, online and offline. 
+While our findings show that most of the patients seem able 
+to recognize positive social encounters and embrace them, 
+certain  incidents  cause  patients  to  withdraw  from  the 
+community,  or  ask  their  parents  or  spouses  to  help  find 
+necessary  information,  due  to  their  extreme  sensitivity  to 
+what others say online. One mother of a depressed daughter 
+described it well:  
+
+“[My  daughter]  said  seeing  much  of  this  sad 
+content  caused  irritation.  I  don’t  have  such 
+feelings. Perhaps this is the difference between 
+me  and  my  child.  What  I  see  is  how  people 
+suffering  depression  insist  on  fighting,  and 
+what kinds of rational thinking they have.” (p8, 
+family member, female, age 44) 
+
+Similar cases show that some patients repeatedly call for the 
+same emotional support (e.g., “I’m in pain. Who can help 
+me?”),  while  not  being  able 
+to  perceive  the  useful 
+information  that  other  members,  including  doctors,  have 
+provided,  which  results  in  negative  reactions  within  the 
+community. This impaired perception of help and inability to 
+process information among patients may help explain why 
+many parents on behalf of their children (junior and adult), 
+or  a  spouse  on  behalf  of  the  other  one,  participate  online 
+rather  than  requiring  patients  to  endure  the  process 
+themselves. As such, confederates help filter and pass along 
+valuable information to their loved ones. For these patients, 
+SunForum is a source of valuable information, but it allows 
+patients  to  avoid  social  interactions  with  other  severely 
+depressed patients who may post further depressing content. 
+
+While  it  is  not  uncommon  to  experience  inflammatory 
+remarks on any social media forum [32], depressed patients’ 
+impaired  perception  and  inability  to  process  information, 
+particularly  from  negative  social  encounters,  is  a  serious 
+concern on a site meant to serve depressed people. When a 
+patient is severely depressed and battling suicidal thoughts, 
+a negative encounter with an encouraging comment to death 
+(e.g., “Have  a  nice  trip  on  the  journey  to  death”) 
+could result in tragedy. 
+Online social interactions, good and bad 
+As  we  discussed  earlier,  depressed  patients  are  often 
+discriminated against in the society. In China, people tend to 
+care more about their mianzi (face) (i.e., how others see them) 
+than expressing or revealing their emotions and actual illness 
+situations  to  get  understanding  [27].  In  fact,  mianzi  is 
+identified  as  one  of  the  five  fundamental  Chinese  cultural 
+values  relevant  to  people’s  conflict  behaviors,  along  with 
+harmony, conformity, contextualism, and guanxi [21]. These 
+cultural  values  influence  how  people  understand,  discuss, 
+and  experience  mental  illness,  and  how  they  interact  with 
+others offline and online. 
+Many patients keep their depression secret from colleagues, 
+friends, and even family members in the offline world. At 
+SunForum,  a  digital  space  with  privacy  protection  and 
+freedom, patients don’t have to worry about the mianzi, don’t 
+have  to  afraid  of  revealing  their  secrets.  Privacy  in  this 
+context can only be delivered with an online community, as 
+the interviewee described:  
+
+“Anonymous  brings  a  sense  of  security.  In  the 
+real world, firstly, I fear of knowing by my work 
+partners,  so  they  would  doubt  about  my  work 
+ability  and  then  discriminate  me.  Secondly,  I 
+worry  about  bring  troubles  to  myself,  such  as 
+answering  the  same  questions  about  depression 
+again and again to people who are curious, which 
+would also makes me shameful in my workplace. I 
+think  it  is  the  same  feeling  of  “coming  out” 
+[Note by the authors, admitting in public about 
+being homosexual].” (p10, patient, female, age 32) 
+
+From our reading of the threads and our interviews, most of 
+the members love the community and really want to spend 
+time  at  the  forum.  One  patient  expressed  her  feeling  of 
+gratitude and the sense of belonging to the community: 
+
+“SunForum is full of warmth. When I just got sick, 
+no one around me had this illness. I could not 
+go to work, feeling gross and shamed, and hiding 
+at  home  and  avoiding  seeing  anyone.  I  felt 
+desperate. Now at SunForum we are together! The 
+new  patients  can  find  belonging;  old  patients 
+can share experience. We support each other and 
+face many problems together. It's a really good 
+experience, thanks!!” (Quote from online threads) 
+
+that 
+
+Indeed,  many  members  express 
+they  not  only 
+emotionally  attach  to  the  community,  but  also  rely  on 
+SunForum to start their days, as described by one interviewee:  
+“Every day, my first thing is to get on SunForum, 
+check whether someone replies my post, and check 
+on the status of several friends I deeply care 
+
+522
+
+SESSION: INTERNATONAL INSIGHTS
+
+about. It has become a part of my life. Even when 
+I’m completely cured, I also want to come here, 
+perhaps acting as an experienced person to help 
+those who need help. I have a life here; it’s 
+part of my life!!” (p9, patient, female, age 27) 
+
+The sense of belonging experienced at SunForum may also 
+result from the lack of understanding and avoidance from the 
+people around the patients in the physical world. In fact, this 
+detachment from the physical world may be one of the main 
+reasons for patients to join this online group. Indeed, what 
+members do at SunForum also helps explain why SunForum 
+is vital and able to attract patients to stay even after they get 
+well and stay relatively depression-free for a long time. 
+In addition to direct interactions at the forum, many instant 
+chatting  groups  via  QQ  (instant  messaging  application), 
+WeChat are organized and built for members of SunForum 
+to chat based on similar background, e.g., groups for college 
+students,  postpartum  depressed  mothers,  bipolar  disorder 
+patients,  or  patients  in  different  locations  (e.g.,  Shanghai, 
+Beijing, etc.). These messaging groups are very active. They 
+can provide tangible offline support, and patients can choose 
+how to interact with others. 
+While  seeing  mostly  positive  social  interactions,  we 
+observed a fair amount of negative encounters at SunForum. 
+Some  members  repeatedly  post  the  same  question,  crying 
+desperately  for  help,  yet  not  reading  the  posting  answers 
+carefully, which irritate the members who have offered the 
+help and may start an attack on the person. As well, while 
+most  members  try  extremely  hard  to  comfort  a  depressed 
+patient  with  recurrent  thought  of  death  and  attempts  to 
+suicide, easing the situation and collectively tracking down 
+the  patient’s  activities  at  all  times,  some  members  post 
+inflammatory responses to the patients with their entangled 
+suicidal thoughts, saying “Have a nice trip (to death); 
+forgive me not to accompany you far.” Often, this type 
+of  negative  response  invites  further  arguments  and  more 
+judgmental comments:  
+
+“You are such a boring and unscrupulous person. 
+I’ve  already  warned  you:  don't  bully  patients 
+and  encourage  them  to  commit  suicide.  Are  you 
+shamed? Other members still talk to you because 
+you are also a patient. But I don’t consider you 
+a patient anymore; I see you as a dead for what 
+you do and the words coming from your mouth, full 
+of carrion smell.” (Quote from online threads) 
+
+While this type of friction may originate from some members’ 
+remorselessness toward their fellow patients, other conflicts 
+may be inevitable due to their disagreement on their beliefs 
+in certain treatments. For instance, one patient created three 
+different threads aiming to “fight” with a member who often 
+makes  exaggerated  claims  about  Buddhism  for  curing 
+depression.  
+DISCUSSION AND DESIGN IMPLICATIONS 
+Our empirical findings provide a rich understanding of the 
+influences  of  traditional  Chinese  culture  and  online  social 
+interactions  in  a  sample  of  depressed  patients  and  their 
+
+523
+
+family  members.  As  illustrated,  members  described  how 
+they  understood  depression  in  their  social  and  cultural 
+context,  how  they  managed  the  illness,  and  how  they 
+received huge benefits from engaging an online community 
+as  a  means  to  compensate  for  the  lack  of  medical 
+professional help in China.  In this section, we will further 
+discuss our findings and present implications to raise public 
+health  awareness  and 
+to  better  support  depression 
+populations with social media.  
+Conflicts between Beliefs in Chinese Culture and 
+Depression 
+In China, influenced by the cultural beliefs of collectivism 
+and  the  strength  of  internal  self-control  [27],  people  often 
+neglect  self-value  or  hide  personal  emotional  states. 
+Meanwhile, with the huge influence of Confucian thought, 
+people are educated to use self-supervision and reflection to 
+solve  inner  conflicts.  For  somatic  diseases,  people  could 
+accept the diagnosis of Western medicine easily, as it could 
+present  test  results  from  a  laboratory  or  from  radiology. 
+Mental  illness,  however,  is  diagnosed  based  on  symptoms 
+often  interpreted  not  as  clinical  but  behavioral  issues  in 
+Chinese  cultural  beliefs  [22,  46].  This  is  reflected  in  our 
+study,  as  many  members  reported  that  they  are  judged  by 
+their co-workers, family members, and friends to lack strong 
+will.  Many  people  either  simply  deny  the  concept  of 
+depression, considering it an excuse for failure and for not 
+working hard, or consider it to be the same as schizophrenia, 
+staying away from the patients rather than providing much 
+needed  social  support  and  emotional  help.  Furthermore, 
+many  patients  themselves  describe  their  symptoms  from 
+somatic perspectives when they see doctors [36], or blame 
+themselves for being weak, trying to be strong to overcome 
+the disorder without taking any medication. While our study 
+did not particularly include doctors in our interviews, earlier 
+studies  found  that  Chinese  doctors  tend  to  diagnose 
+“neurasthenia,” focusing on the weakness of neuron nerves 
+(i.e., a somatic description) in a patient who is diagnosed as 
+depressed in the Western medical system [22, 28].  
+In  Chinese  culture,  mainzi  (face)  and  guanxi  (connections 
+and networks) are important cultural characteristics that have 
+strong  implications  on  social  status  and  interpersonal 
+relationships.  Losing  mainzi  or  not  being  able to  maintain 
+and develop guanxi will harm one’s social status and success. 
+With  marginalization,  stigmatization,  and  discrimination 
+against depressed people, patients and their family members 
+fear  admitting  the  disease  that  would  ultimately  hurt  their 
+mainzi  and  damage 
+their  guanxi.  These  cultural 
+characteristics  can  prevent  understanding,  disclosure,  and 
+even treatment of depression for patients and their families. 
+Indeed,  cultural  beliefs  have  a  huge  influence  on  patients. 
+They are the antecedents for patients’ social behaviors [27], 
+which will be reflected in their experience dealing with the 
+illness and the symptoms, including the descriptive language 
+they use when they visit doctors, the treatment decisions they 
+make, the relationships they maintain with doctors, and the 
+outcomes they reach (such as suicide) [23]. Many Chinese 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+depressed  patients  simply  would  not  want  to  share  any 
+information about their illness in the physical world due to 
+its strong negative impact on their mainzi and guanxi.  
+With  the  evolution  of  Chinese  society  and  the  spread  of 
+Western culture and modern medicine, many Chinese people, 
+especially  the  younger  generations,  have  started  to  learn 
+about and accept depression as a form of mental illness. In 
+our study, we observed that some patients’ parents insisted 
+that their children did not have depressive disorders, while 
+the patients themselves accepted the diagnosis. This scenario 
+demonstrates that while traditional Chinese cultures indeed 
+have influences on people’s attitudes toward mental health, 
+the degree of the influence may have started to change. The 
+following  factors  may  contribute  to  these  changes.  First, 
+there  have  been  efforts,  although  not  enough,  to  bring 
+attention to mental health and general well-being in China. 
+For example, many universities and schools have started to 
+provide psychological counseling services for education and 
+treatment,  as  one  of  our  interviewees  described  how  the 
+counseling service in his school had educated him and his 
+parents  about  depression,  and  he  finally  understood  the 
+illness  he  had  been  suffering.  Second,  many  influential 
+celebrities  (e.g.,  popular  singers,  movie  stars,  and  TV 
+anchors) have publicly admitted having clinical depression. 
+For example, after three years of disappearing from public 
+view and finally admitting his depression, a well-known TV 
+anchor  made  an  interesting  claim:  “The  depressed  are  all 
+geniuses.” He has since become a strong advocate for society 
+to understand depressed patients [31]. Third, China passed 
+the Mental Health Law of the People's Republic of China in 
+2012 [7], which could be seen as a significant government 
+effort to promote a better understanding of mental health as 
+well as an important step toward improving general public 
+well-being in Chinese society. 
+Social Media and Promoting Mental Health  
+Our  empirical  findings  illustrate that  social  media  such  as 
+online  discussion  forums  can  play  a  significant  role  in 
+improving mental illness management, taking advantage of 
+patient  expertise  [9],  and  volunteer  professionals.  At 
+SunForum, experienced patients and volunteer doctors work 
+together to contribute valuable knowledge and information 
+about depression, discuss symptoms, and help address new 
+issues. This collaborative helping and learning process [15] 
+can  fill  the  gap  left  by  the  lack  of  access  to  professional 
+doctors  and  professional  knowledge.  In  this  section,  we 
+further discuss our findings in the context of social media 
+toward helping the depressed population, as well as draw out 
+implications for design.  
+Improving public understanding of depression 
+As we have discussed, there are 30 million depressed patients 
+in China, and Chinese society has a poor understanding of 
+this  illness  for  various  reasons  (e.g.,  traditional  Chinese 
+cultural beliefs, Chinese traditional medicine, public health 
+education,  etc.)  Social  media,  such  as  SunForum,  can 
+promote  public  understanding  of  depression,  including 
+
+internal  resources,  e.g.,  accumulation  of  knowledge  and 
+patient  expertise  within  the  online  community,  as  well  as 
+with external approaches, e.g., television shows and books. 
+However, we believe there still are many opportunities for 
+social  media  to  improve  the  public’s  understanding  of 
+depression,  especially  with  the  popularity  and  adoption  of 
+micro-blogging and mobile computing. 
+First,  there  is  a  need  to  systematically  aggregate  mental 
+illness  knowledge  and  useful  coping  strategies  for  the 
+purposes of education and sharing. Many recovered patients 
+eagerly  share their successful  stories  and  experiences,  and 
+these  cases  are  currently  scattered  everywhere  over  the 
+forum,  even  though  there  is  a  designated  sub-forum  for 
+successful  stories.  The  system  should  be  able  to  crosslink 
+these cases, and invite these recovered members to provide 
+further strategies to cope with major depressive episodes. In 
+addition, valuable knowledge from external sources should 
+be aggregated into the forum. Some members have taken the 
+initiative to do this, but that effort is far from adequate.  
+Second, social media and mobile platforms can be used to 
+promote  public  understanding.  At  the  SunForum,  much 
+knowledge and discussion of depression flow only within the 
+community, making it very  difficult for outsiders to learn, 
+understand,  sympathize,  and  support  depressed  patients. 
+Therefore,  social  media  and  mobile  platforms  are  very 
+important  for  sharing  knowledge  with  outsiders  and  the 
+general public. In China, there are many large-scale, high-
+speed  micro-blogging  platforms  (e.g.,  Weibo)  and  mobile 
+platforms (e.g., WeChat) providing spaces for broadcasting 
+different  kinds  of  knowledge  to  a  large  audience.  Our 
+research suggests it would be extremely beneficial to share 
+aggregated  knowledge  and  high-quality  content  about 
+depression  with  the  public  via  micro-blogging  and mobile 
+platforms. 
+Connecting with online medical resources 
+Due  to  the  limited  medical  resources  in  China,  many 
+depressed patients have to invest a lot of money, time, and 
+energy to go to a hospital, or even have no opportunity to 
+receive  treatment.  With  the  increasing  prevalence  of  the 
+Internet,  online  medical  websites  and  services,  including 
+online psychotherapy and online diagnosis, increasingly gain 
+attention. Several interviewees tell us they have tried online 
+prescriptions from China’s most successful online medical 
+website, HaoDaiFu3, to reduce costs. 
+Connecting  online  medical  websites  with  online  support 
+forums  could  benefit  both  sides.  On  the  one  hand,  online 
+medical websites usually lack details of patients, which are 
+often important for diagnosis and prescription. With online 
+communities,  much  detailed  information,  e.g.,  their  mood, 
+their  activities,  and  so  on,  can  be  provided.  On  the  other 
+
+3  The  direct  translation  of  HaoDaiFu  is  Good  Doctors, 
+http://www.haodf.com/,  a  Chinese  online  platform  that  many 
+large health organizations participate to help people who would 
+like to receive professional help via the Internet. 
+
+524
+
+SESSION: INTERNATONAL INSIGHTS
+
+the  post 
+
+hand, the doctors and psychiatrists of medical websites can 
+participate in online forums, answering questions, providing 
+professional advice, and connecting with patients.  
+Dealing with impaired ability of information processing 
+As shown, depressed patients may have impaired perception 
+of  information,  which  can  enhance  depressing  and  sad 
+content,  and  further  they  can  experience  negative  social 
+encounters  (e.g.,  remorseless  comments  about  suicidal 
+thoughts and attempts). However, there is no way for patients 
+to  discern  depressing  and  sad  content  without  reading  it. 
+Linguistic patterns of emotional signals can be used to detect 
+whether 
+is  depressing,  sad,  or  disturbing. 
+Accordingly,  a  mindful  warning  can  be  provided  before 
+users click the thread to read unwanted content. With the help 
+of  professional  experts  or  board  masters,  this  censoring 
+feature could help identify harmful content in advance, while 
+not depriving members’ rights of freedom of speech.  
+Automatically detecting user emotions and pushing positive 
+information  can  also  be  incorporated  to  help  depressed 
+patients.  Positive  content  is  often  accepted  and  needed  by 
+depressed patients, however many of them stop to interact 
+with others online when they are feeling bad and in fact need 
+more  social  interactions.  We  speculate  that  mobile  and 
+ubiquitous computing can be combined to achieve the goal 
+of  actively  pushing  positive  information  and  promoting 
+social  interactions  in  the  future.  For  instance,  wearable 
+devices  can  detect  a  patient’s  mood  change  [40],  as  such, 
+data generated in an online community and sensor data can 
+be  used  jointly  to  identify  depressed  states,  and  promptly 
+follow up with positive information and interactions. 
+CONCLUSION 
+In this paper, we report a case study, including participant 
+observations  and 
+the  Chinese  online 
+depression community, SunForum. Our findings reveal that 
+Chinese cultural beliefs (e.g., the power of inner self-control) 
+and  Chinese  beliefs  about  traditional  medicine  (e.g.,  the 
+integrated  body-mind  relationship)  significantly  affect 
+patients’ understanding of depression, illness management, 
+and social interactions among this online patient population. 
+These beliefs create problems of understanding depression in 
+society  –  including  family  members,  friends,  co-workers, 
+and  others  –  and  present  various  challenges  for  these 
+depressed patients  who  could become  marginalized, suffer 
+discrimination,  and  lose  their  jobs.  Due  to  limited  study 
+scope, we do not claim to generalize our findings to apply to 
+all other depressed patients in China.  Looking through the 
+lens  of  SunForum  to  examine  depressed  patients  in  this 
+Chinese community, we attempt to provide a unique account 
+that  could  reveal  and  highlight  the  cultural  impact  on 
+understanding  and  managing  this  illness.  Furthermore,  we 
+draw implications for how Chinese society as a whole may 
+respond  to  the  misunderstanding  of  mental  illness  and  the 
+raising of public awareness, and also propose specific social 
+media  designs  to  support  depressed  patients  as  they  seek 
+online information and social support. 
+
+interviews,  of 
+
+525
+
+is  supported  by 
+
+ACKNOWLEDGMENTS 
+We thank the reviewers for their valuable suggestions. The 
+work 
+the  National  Natural  Science 
+Foundation of China (NSFC) under Grant No.61332008. 
+REFERENCES  
+ 1. American Psychiatric Association.2013.Diagnostic and 
+Statistical Manual of Mental Disorders, Fifth Edition. 
+American Psychiatric Association. 
+
+ 2. Lisa J. Barney and Kathleen M. Griffiths, et 
+
+al.2006.Stigma About Depression and its Impact On 
+Help-Seeking Intentions.Australian and New Zealand 
+Journal of Psychiatry 40, 1: 51-54. 
+
+ 3. Lisa J. Barney and Kathleen M. Griffiths, et 
+
+al.2011.Explicit and Implicit Information Needs of 
+People with Depression: A Qualitative Investigation of 
+Problems Reported on an Online Depression Support 
+Forum.BMC Psychiatry 11, 1: 88. 
+
+ 4. Harvey Russell Bernard.2013.Social Research Methods: 
+
+Qualitative and Quantitative Approaches. Sage. 
+ 5. Michael Harris Bond.2009.Believing in Beliefs: A 
+
+Scientific but Personal Quest. Springer. 
+
+ 6. Moira Burke and Cameron Marlow, et al.2010.Social 
+
+Network Activity and Social Well-Being.In CHI'2010, 
+1909-1912. 
+
+ 7. H.H. Chen and M.R. Phillips, et al.2012.Mental Health 
+
+Law of the People's Republic of China.Shanghai 
+Archives of Psychiatry 24, 6: 305-321. 
+
+ 8. Yulia E. Chentsova-Dutton and Andrew G. Ryder, et 
+
+al.Understanding Depression Across Cultural Contexts. 
+
+ 9. Andrea Civan-Hartzler and David W. McDonald, et 
+
+al.2010.Bringing the Field Into Focus: User-Centered 
+Design of a Patient Expertise Locator.In CHI'2010, 
+1675-1684. 
+
+10. CNN.2014. Dubious Shrinks, Political Prisoners Inside 
+China's Mental Health Care System.Retrieved July 22, 
+2015 from 
+http://edition.cnn.com/2014/05/06/world/asia/china-
+mental-health/ 
+
+11. Evelien Coppens and Chantal Van Audenhove, et 
+
+al.2013.Public Attitudes Toward Depression and Help-
+Seeking in Four European Countries Baseline Survey 
+Prior to the OSPI-Europe Intervention.Journal of 
+Affective Disorders 150, 2: 320-329. 
+
+12. Kirsti A. Dyer and Cole D. Thompson.2000.Internet 
+Use for Web-Education on the Overlooked Areas of 
+Grief and Loss.CyberPsychology and Behavior 3, 2: 
+255-270. 
+
+13. Therese Hesketh and Weixing Zhu.1997.Health in 
+
+China: Traditional Chinese Medicine: One Country, 
+Two Systems.BMJ 315, 7100: 115-117. 
+
+14. Diane Hoehn-Hyde and Robert S. Schlottmann, et 
+
+al.1982.Perception of Social Interactions in Depressed 
+Psychiatric Patients.Journal of Consulting and Clinical 
+Psychology 50, 2: 209. 
+
+15. Jina Huh and Mark S. Ackerman.2012.Collaborative 
+Help in Chronic Disease Management: Supporting 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Individualized Problems.In CSCW'2012, 853-862. 
+
+16. Lauren A. Jelenchick and Jens C. Eickhoff, et 
+
+al.2013."Facebook Depression?" Social Networking 
+Site Use and Depression in Older Adolescents.Journal 
+of Adolescent Health 52, 1: 128-130. 
+
+17. Santosh Kumar Kalwar.2010.Comparison of Human 
+Anxiety Based on Different Cultural Backgrounds. 
+Cyberpsychology, Behavior, and Social Networking 13, 
+4: 443-446. 
+
+18. Santosh Kumar Kalwar and Kari Heikkinen, et 
+
+al.2013.Quantifying Cultural Attributes for 
+Understanding Human Behavior on the Internet.In 
+Online Communities and Social Computing. Springer, 
+40-49. 
+
+19. Santosh Kumar Kalwar.2014.Conceptualizing and 
+
+Measuring Human Anxiety On the 
+Internet.Lappeenranta University of Technology. 
+
+20. Tahir M. Khan and Syed A. Sulaiman, et 
+
+al.2009.Attitude Toward Depression, its Complications, 
+Prevention and Barriers to Seeking Help Among Ethnic 
+Groups in Penang, Malaysia.Mental Health in Family 
+Medicine 6, 4: 219. 
+
+21. Paul S. Kirkbride and Sara FY Tang, et al.1991.Chinese 
+
+Conflict Preferences and Negotiating Behaviour: 
+Cultural and Psychological Influences.Organization 
+Studies 12, 3: 365-386. 
+
+22. Arthur Kleinman.1986.Social Origins of Distress and 
+
+Disease: Depression, Neurasthenia, and Pain in 
+Modern China. Yale University Press. 
+
+23. Arthur Kleinman.2004.Culture and Depression.New 
+
+England Journal of Medicine 351: 951-952. 
+
+24. Nicholas A. Kuiper and Michael R. 
+
+MacDonald.1982.Self and Other Perception in Mild 
+Depressives.Social Cognition 1, 3: 223-239. 
+
+25. Antonio Lasalvia and Silvia Zoppei, et al.2013.Global 
+Pattern of Experienced and Anticipated Discrimination 
+Reported by People with Major Depressive Disorder: A 
+Cross-Sectional Survey.The Lancet 381, 9860: 55-62. 
+26. S. Lee and A. Tsang, et al.2009.The Epidemiology of 
+
+Depression in Metropolitan China.Psychological 
+Medicine 39, 05: 735-747. 
+
+27. Kwok Leung.2010.Beliefs in Chinese Culture.The 
+Oxford handbook of Chinese psychology: 221-240. 
+28. Guoxiang Liu.2009.Depression in China.The Twenty-
+
+First Century Review, 114: 85-92. 
+
+29. Jin Liu and Hong Ma, et al.2011.Mental Health System 
+
+in China: History, Recent Service Reform and Future 
+Challenges.World Psychiatry 10, 3: 210-216. 
+
+30. Alan D. Lopez and Christopher C.J.L. Murray.1998.The 
+Global Burden of Disease,1990-2020.Nature Medicine 
+4, 11: 1241-1243. 
+
+31. Metro Reader.2005. Cui Yongyuan: "the Depressed are 
+
+All Geniuses".Retrieved July 22, 2015 from 
+http://www.china.com.cn/chinese/CU-c/799421.htm 
+
+32. Michael J. Moore and Tadashi Nakano, et 
+
+al.2012.Anonymity and Roles Associated with 
+Aggressive Posts in an Online Forum.Computers in 
+
+ 
+
+526
+
+Human Behavior 28, 3: 861-867. 
+
+33. Michael J. Muller and Sandra Kogan.2010.Grounded 
+Theory Method in HCI and CSCW.Cambridge: IBM 
+Center for Social Software: 1-46. 
+
+34. E. H. Nasser and J. C. Overholser.2005.Recovery from 
+Major Depression: The Role of Support from Family, 
+Friends, and Spiritual Beliefs.Acta Psychiatrica 
+Scandinavica 111, 2: 125-132. 
+
+35. Gwenn Schurgin O'Keeffe and Kathleen Clarke-
+
+Pearson, et al.2011.The Impact of Social Media on 
+Children, Adolescents, and Families.Pediatrics 127, 4: 
+800-804. 
+
+36. Gordon Parker and Y-C Cheah, et al.2001.Do the 
+Chinese Somatize Depression? A Cross-Cultural 
+Study.Social Psychiatry and Psychiatric Epidemiology 
+36, 6: 287-293. 
+
+37. Gordon Parker and Gemma Gladstone, et 
+
+al.2001.Depression in the Planet's Largest Ethnic 
+Group: The Chinese.American Journal of Psychiatry 
+158, 6: 857-864. 
+
+38. Research and Markets. Research Report On China's 
+
+Antidepressant Market, 2013-2017.Retrieved July 22, 
+2015 from 
+http://www.researchandmarkets.com/reports/2365618/ 
+
+39. Andrew G. Ryder and Jian Yang, et al.2008.The 
+
+Cultural Shaping of Depression: Somatic Symptoms in 
+China, Psychological Symptoms in North 
+America?Journal of Abnormal Psychology 117, 2: 300. 
+
+40. Gaetano Valenza and Mimma Nardelli, et 
+
+al.2014.Wearable Monitoring for Mood Recognition in 
+Bipolar Disorder Based on History-Dependent Long-
+Term Heart Rate Variability Analysis.Biomedical and 
+Health Informatics 5, 18: 1625-1635. 
+
+41. Agnes Vayreda and Charles Antaki.2009.Social Support 
+
+and Unsolicited Advice in a Bipolar Disorder Online 
+Forum.Qualitative Health Research 19, 7: 931-942. 
+
+42. Danfen Wang and Xiaoming Lei, et al.2004.The 
+
+Depression of Chinese and the Reflection Related to 
+their Society and Culture.Chinese General Practice 7, 
+5: 315-317. 
+
+43. Jing Wang and PatrickC. Shih, et al.2015.Life After 
+Weight Loss: Design Implications for Community-
+Based Long-Term Weight Management.CSCW 24, 4: 
+353-384. 
+
+44. Yi-Chia Wang and Robert Kraut, et al.2012.To Stay Or 
+
+Leave?: The Relationship of Emotional and 
+Informational Support to Commitment in Online Health 
+Support Groups.In CSCW'2012, 833-842. 
+
+45. Yu-Wen Ying.2002.The Conception of Depression in 
+Chinese Americans.In Asian American Mental Health. 
+Springer, 173-183. 
+
+46. Dan Zhang.1995.Depression and Culture--A Chinese 
+Perspective.Canadian Journal of Counselling 29, 3: 
+227-233. 
+
+47. Xiaomu Zhou and Si Sun, et al.2014.Sweet Home: 
+
+Understanding Diabetes Management Via a Chinese 
+Online Community.In CHI'2014, 3997-4006.
+
+

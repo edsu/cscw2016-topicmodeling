@@ -1,0 +1,1683 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Supportive Responses to Social Sharing on Facebook 
+
+Once More with Feeling:  
+
+Moira Burke and Mike Develin 
+
+Facebook, Menlo Park, CA 
+{mburke, miked}@fb.com 
+
+ABSTRACT 
+Life  is  more  than  cat  pictures.  There  are  tough  days, 
+heartbreak, and hugs. Under what contexts do people share 
+these  feelings  online,  and  how  do  their  friends  respond? 
+Using millions of de-identified Facebook status updates with 
+poster-annotated  feelings  (e.g.,  feeling  thankful  or  feeling 
+worried),  we  examine  the  magnitude  and  circumstances  in 
+which  people  share  positive  or  negative  feelings  and 
+characterize  the  nature  of  the  responses  they  receive.  We 
+find  that  people  share  greater  proportions  of  both  positive 
+and  negative  emotions  when  their  friend  networks  are 
+smaller  and  denser.  Consistent  with  social  sharing  theory, 
+hearing about a friend’s troubles on Facebook causes friends 
+to  reply  with  more  emotional  and  supportive  comments. 
+Friends’  comments  are  also  more  numerous  and  longer. 
+Posts with positive feelings, on the other hand, receive more 
+likes,  and  their  comments  have  more  positive  language. 
+Feelings that relate to the poster’s self worth, such as feeling 
+defeated,  feeling  unloved,  or  feeling  accomplished  amplify 
+these effects.  
+Author Keywords 
+Emotional support; social network sites; social sharing 
+ACM Classification Keywords 
+H.5.3 Group and Organization Interfaces: Web-based 
+interfaces.  
+INTRODUCTION 
+Humans  have  a  fundamental  need  to  share  feelings  in 
+response to emotional events and to receive feedback from 
+others [44], a behavior known as social sharing. Celebrating 
+our victories amplifies joy [33], and venting frustrations can 
+help  us  cope  [40].  Though  much  of  the  research  on  social 
+sharing  was 
+face-to-face 
+communication,  a  growing  body  of  research  is  examining 
+emotional  expression  on  Twitter,  Facebook,  blogs,  text 
+messaging,  and  other  computer-mediated  communication 
+[1,12,28,29]. 
+
+developed 
+
+based 
+
+on 
+
+Permission to make digital or hard copies of all or part of this work for personal 
+or  classroom  use  is  granted  without  fee  provided  that  copies  are  not  made  or 
+distributed for profit or commercial advantage and that copies bear this notice and 
+the full citation on the first page. Copyrights for components of this work owned 
+by  others  than  ACM  must  be  honored.  Abstracting  with  credit  is  permitted.  To 
+copy otherwise, or republish, to post on servers or to redistribute to lists, requires 
+prior 
+from 
+Permissions@acm.org.  
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA © 2016 
+ACM. ISBN 978-1-4503-3592-8/16/02…$15.00 
+DOI: http://dx.doi.org/10.1145/2818048.2835199 
+
+fee.  Request  permissions 
+
+specific  permission 
+
+and/or 
+
+a 
+
+is 
+
+not 
+
+viewership 
+
+information 
+
+Understanding  emotional  expression  on  Facebook  and  how 
+friends  respond  is  of  particular  importance  because  unlike 
+Twitter  and  blogs,  where  the  audience  is  comprised  of  the 
+general  public,  on  Facebook  people  typically  share  their 
+thoughts with people they also know offline, and their friend 
+networks  usually  include  their  closest  confidants  [24]. 
+Though strangers and weak ties may provide informational 
+support,  emotional  support  typically  comes  from  close 
+friends  [49].  Therefore,  the  way  people  express  their 
+emotions on Facebook and the way their audience responds 
+may  be  qualitatively  different  from  patterns  on  public 
+platforms  organized  around  fan/follower  models.  We  focus 
+on network-visible sharing—status updates that are typically 
+broadcast to the poster’s friend network, rather than private 
+messages—because  much  of  the  previous  research  already 
+covers  dyadic  communication 
+[44]  but  one-to-many 
+broadcasts are a common use of social media [20], and status 
+updates  offer  an  opportunity  to  examine  how  multiple 
+friends  respond  when  no  particular  person  is  obligated  to 
+(because 
+visible). 
+Furthermore,  observing  our  friends  sharing  emotions  on 
+Facebook  and  noting  how  others  respond  shapes  our 
+perceptions  about  social  norms  on  the  site  [9].  With  1.4 
+billion  active  users    [21],  the  site’s  size  makes  it  an 
+important phenomenon to examine, as well. 
+Previous  empirical  work  in  this  space  leaves  several  open 
+questions.  The  first  is  the  relationship  between  audience 
+composition  and  the  valence  (positivity  or  negativity)  of 
+expressed  emotions.  Do  people  share  different  kinds  of 
+emotions online depending on whom they think is listening? 
+The  desire  to  make  a  good  impression  on  others  [22]  and 
+social norms emphasizing positivity [18] may cause people 
+to withhold more negative feelings in the presence of weaker 
+ties.  Yet  empirical  research  examining  the  relationship 
+between  emotional  valence  and  network  features  like  size 
+and density (a proxy for how many close friends might be in 
+the audience) has been mixed, with some research indicating 
+negative emotions are expressed when the audience is larger 
+and  sparser  [29]  and  other  studies  indicating  the  opposite 
+[15,35]. 
+The second open question relates to how audiences respond 
+to  emotional  expression  on  Facebook.  Research  on  offline 
+communication  indicates  that  social  sharing  induces  strong 
+feelings  in  the  recipient,  as  well,  and  recipients  often 
+respond with empathy and hugs [13]. Does social sharing of 
+
+1462
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+especially  more 
+
+interchangeably 
+
+emotion online elicit emotion in viewers, and what form do 
+their responses take? When someone posts a status update on 
+Facebook, any number of friends may see it, but because the 
+site does not reveal who has seen a post, no particular person 
+is  obligated  to  reply.  Audiences  may  not  respond  at  all:  If 
+people perceive social media as venues only appropriate for 
+happy news, they might ignore negative posts in an attempt 
+to  discourage  negativity, 
+extreme 
+expressions  such  as  low  self-worth.  This  has  occurred  on 
+Twitter; tweets expressing enduring loneliness receive fewer 
+responses  [30].  Furthermore,  responses  may  come  in  a 
+variety  of  formats:  lightweight  likes,  comments  that  are 
+visible to other friends, and private messages. What formats 
+do friends choose when responding to emotional posts, what 
+is the substance of their response, and how does it vary with 
+post valence? 
+The present research is the first very large-scale quantitative 
+study  of  social  sharing  of  feelings  in  Facebook  status 
+updates,  examining  (1)  how  network  properties  (size  and 
+density) are associated with the valence of emotions shared, 
+and (2) how characteristics of the emotions shared (valence 
+and  self-relevance)  relate  to  how  the  audience  responds 
+(quantity of responses, emotional and supportive content in 
+comments,  and  whether  the  responses  come  in  network-
+visible  or  private  channels).  Facebook  recently  launched  a 
+feature allowing posters to annotate their status updates with 
+feelings,  like  feeling  blessed  or  feeling  embarrassed  (see 
+Figure  1),  so  we  use  these  annotations  as  gold  standard 
+labels for the poster’s emotion. (As such, we use the terms 
+“feeling”  and  “emotion” 
+throughout.) 
+Though  there  is  adoption  bias  in  the  annotation  tool  (far 
+more  women  than  men  use  it,  consistent  with  previous 
+research on online emotional expression [47], and users are 
+slightly older than average), the scale of the dataset is much 
+greater  than  previous  studies.  This  observational  analysis 
+covers millions of episodes of emotional expression (all de-
+identified and analyzed in aggregate, with no changes to any 
+Facebook user’s experience).  
+This  paper  complements  and  expands  upon  previous 
+smaller-scale studies in several ways. We show that people 
+with  larger  and  more  diverse  friend  networks—and  thus 
+larger  potential  audiences  for  status  updates—share  fewer 
+emotions. More than one third of emotions shared in status 
+updates  with  the  feeling  annotation  widget  in  Figure  1  are 
+feeling  embarrassed), 
+negative  (e.g., 
+indicating  that  when  people  share  emotions  via  network-
+visible  updates,  they  don’t  just  limit  themselves  to  happy 
+news,  at  least  among  this  large  sample  of  Facebook  users. 
+We  document  properties  of  the  responses  to  these  positive 
+and negative status updates, finding that posts with positive 
+feelings  (e.g.,  feeling  excited  or  feeling  optimistic)  elicit 
+more  likes  and  comments  than  posts  without  feeling 
+annotations,  and  posts  with  negative  feelings  (e.g.,  feeling 
+horrible or feeling disgusted) receive even more comments 
+than positive posts. Consistent with offline research, viewers 
+of negative emotional posts respond with increased emotion 
+
+feeling  upset  or 
+
+Figure 1. Adding feelings to a status update. 
+
+ 
+
+and supportive language. Finally, we demonstrate that when 
+people express negative self-worth (e.g., feeling worthless), 
+their friends also respond via private channels.  
+BACKGROUND 
+We begin by reviewing literature on social sharing and how 
+properties  of  one’s  audience  may  influence  the  valence  of 
+emotions shared. We then identify open questions about how 
+listeners should respond. 
+Social Sharing and Emotional Valence 
+Social  sharing  theory  asserts  that  we  need  to  communicate 
+with  others  in  response  to  emotional  events  [44].  These 
+events  elicit  ambiguity  and  challenge  our  beliefs  about 
+ourselves  and  the  world,  and  so  articulating  our  feelings 
+helps  us  clarify  and  resolve  those  emotions.  Beyond  the 
+psychological  effects  attributed 
+to  simply  expressing 
+emotions,  there  is  a  social  component:  Sharing  emotions 
+with others increases intimacy and allows others to provide 
+empathy,  validation,  and  support  [34,44].  The  support  we 
+receive, 
+including  commiseration,  companionship,  and 
+affirmation  helps  us 
+and  produces  positive 
+psychological  states  that  improve  the  immune  system  and 
+buffer stress [14].  
+While  a  variety  of  ties  may  provide  other  forms  of  social 
+support  (such  as  information  or  advice),  emotional  support 
+in  times  of  psychological  distress  typically  comes  from 
+one’s  closest  friends  and  family  [49].  People  may  also 
+expect their close friends not to judge them for sharing bad 
+news,  while  a  stranger  might  [4].  Empirical  studies  of 
+Facebook have borne this out: Participants in online weight-
+loss communities reported seeing Facebook as a place only 
+for sharing victories, because they wanted to “communicate 
+the  impression  of  being  .  .  .  in  control,  positive,  and  not 
+struggling” and would save their challenges and requests for 
+help for more private support groups [39]. College students 
+on  Facebook  were  more  likely  to  turn  to  private  messages 
+than status updates to share more intense, negative emotions 
+[1].  Both  online  and  offline,  people  tend  to  reserve 
+
+cope 
+
+ 
+
+1463
+
+that  causes  us 
+
+disclosing negative emotions with trusted, close friends who 
+are most able to provide meaningful support [1,12,44]. 
+Beyond  expectations  about  the  kinds  of  ties  that  provide 
+emotional  support,  social  media  users  may  also  perceive  a 
+proscriptive  norm  against  sharing  negative  emotions. 
+Humans  are  generally  hesitant  to  share  bad  news  [4],  a 
+phenomenon 
+to  overestimate  others’ 
+happiness  and  success  [27].  These  norms  occur  online,  as 
+well; many empirical studies of Facebook and Twitter reveal 
+positive emotions are more prevalently shared than negative 
+ones  [1,36],  especially  among  people  with  higher  levels  of 
+presentational concerns [2]. 
+On  the  other  hand,  people  may  share  positive  emotions 
+widely  in  order  to  amplify  the  joy;  they  seek  out  others  to 
+help  them  “capitalize”  on  good  news  [33],  even  turning  to 
+strangers when the news is especially good [43]. Survey and 
+diary  studies  of  social  media  users  show  that  people  more 
+often turn to channels with greater visibility, such as public 
+tweets or status updates (as opposed to private messages) to 
+share  positive  news,  and  that  visible  sharing  is  linked  to 
+positive affect and satisfaction [1,12]. 
+Taken together, this research suggests that on social media, 
+people  may  share  positive  emotions  regardless  of  their 
+audience  composition,  but  share  negative  news  in  contexts 
+when they have a smaller audience with a greater proportion 
+of  close  friends.  However,  as  discussed  below,  empirical 
+results on this front are mixed. 
+Network Properties Influencing Emotional Valence 
+Social media audiences vary along several dimensions; two 
+commonly  studied  properties  are  network  size  and  density 
+[37].  Evolutionary  psychology  suggests  that  humans  can 
+only maintain a small number of close confidants, and so as 
+network  sizes  grow,  they  necessarily  are  comprised  of  a 
+greater  number  of  weak  ties  [17].  Empirical  studies  of 
+Facebook  demonstrate  that  most  ties  are  weak  [16],  so  it’s 
+conceivable  that  people  with  large  networks  might  only 
+share positive emotions appropriate for the “lowest common 
+denominator” in their audience [26]. 
+Network  density  measures  the  proportion  of  a  person’s 
+friends  who  are  also  friends  with  each  other,  and  is 
+commonly used as a representation of how “tightly-knit” or 
+close  a  person’s  network  is  [37].  Dense  networks  have  a 
+greater  proportion  of  ties  within  triads  (a  relationship 
+between person A and B in which both are also friends with 
+person  C);  these  ties  are  thought  to  be  stronger  than  ties 
+without  a  mutual  friend  [45].  Presumably,  the  denser  a 
+person’s network, the more comfortable he or she would be 
+sharing negative emotions, because there would be relatively 
+more strong ties available to provide emotional support [48], 
+and fewer weak ties to elicit self-presentation concerns. 
+Analyses of the relationship between network size, density, 
+and emotional expression in social media have been mixed. 
+One  study  of  Twitter  [29]  found  a  positive  relationship 
+between network size and the number of both positive and 
+
+ 
+
+1464
+
+SESSION: UNPACKING SOCIAL NETWORKS
+
+negative  emotional  tweets,  and  surprisingly,  found  that 
+negative  tweets  were  greater  in  sparser,  rather  than  denser, 
+networks.  Conversely,  more  recent  studies  suggest  that 
+negative emotions and personally relevant content are shared 
+more in smaller networks [15,38], positive emotions in large 
+networks [35], and emotions of all kinds are more likely to 
+be  shared  in  denser  networks  [35].  The  Twitter  studies 
+[15,29]  are  somewhat  limited  by  a  lack  of  demographic 
+information  such  as  age  and  gender  which  may  influence 
+emotional  expression  [32].  The  one  Facebook  study  using 
+network  data  [35] 
+is  based  on  a  small  sample  of 
+undergraduates;  their  similarity  in  age  and  life  stage  may 
+cause them to have similar network structures and thus limit 
+the  generalizability  of  results.  Based  on  the  literature  and 
+some of the previous empirical work, we expect that people 
+will be more comfortable sharing negative emotions among 
+closer friends and positive emotions among wider audiences. 
+Therefore, in Study 1, we test the following hypotheses: 
+H1a: People with smaller, denser social networks will share 
+a greater proportion of negative emotions. 
+H1b: People with larger, more sparse networks will share a 
+greater proportion of positive emotions. 
+How Audiences Respond to Emotional Posts 
+Rimé and colleagues [13] have demonstrated that hearing a 
+friend share a negative experience elicits negative emotions 
+in  the  listener,  as  well,  and  that  listeners  often  engage  in 
+“secondary  sharing”  of  emotions  to  trusted  third  parties. 
+Listeners engage in supportive behaviors, such as expressing 
+empathy  and  offering  physical  gestures  (hugs).  How  do 
+these responses by the listener manifest on social media?  
+One  possibility  is  that  viewers  don’t  respond  at  all.  By 
+design,  many  social  media  systems  do  not  reveal  which 
+people have viewed a post, so no single audience member is 
+obligated  to  respond.  If  people  perceive  social  media  as 
+venues  only  appropriate  for  happy  news,  they  might  only 
+respond to happy posts, ignoring negative ones in an attempt 
+to discourage negativity (e.g. [30]).  
+On  the  other  hand,  Facebook  networks  include  strong-tie 
+relationships [7,24], and strong ties often provide emotional 
+support [49].  Close friends may still want to offer support, 
+and previous research suggests they may feel compelled  to 
+do so, in order to process their own feelings [13]. We expect 
+that friends are more likely to reply to than ignore emotional 
+posts, given empirical evidence that Facebook users respond 
+to requests for advice and favors [19] and feel increases in 
+perceived social support through site use [8]. While existing 
+research on the recipient’s response to social sharing focuses 
+on negative emotions, we also expect that positive emotions 
+will elicit feedback, in part because responding to good news 
+can be as simple as a congratulations, and results in bonding 
+and trust [43]. Taken together, we expect that:  
+H2.  Emotional  status  updates  will  receive  more  feedback 
+than posts without emotion.  
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+should 
+
+emotions 
+
+elicit  more 
+
+Furthermore,  responses  to  posts  can  take  many  forms, 
+including  likes,  comments,  private  messages,  phone  calls, 
+and visits. Empirical studies of Facebook show that the post 
+topic  influences  how  people  respond:  posts  about  medical 
+issues  and  those  asking  explicitly  for  support  (e.g.,  with 
+terms like worry about, help me, pray for) receive far more 
+comments than posts about more mundane topics like sleep 
+[47].  However,  medical  posts  and  other  bad  news  receive 
+fewer likes, since likes may be interpreted as endorsement or 
+congratulations, rather than signs of support.  
+From a psychological perspective,  there  are  two  arguments 
+why  “composed”  communication  such  as  comments  and 
+messages might be perceived as more appropriate responses 
+to negative emotion.  Research applying signaling theory to 
+Facebook  communication  (e.g.,  [7,20])  argues  that  likes 
+require  less  effort  to  produce  and  thus  may  signal  that  a 
+relationship  is  less  valuable.  This  signal  may  degrade 
+perceptions  of  social  support.  Furthermore,  by  virtue  of 
+being  textless,  likes  necessarily  cannot  contain  supportive 
+language.  Following  this  argument,  Burke  and  Kraut  [7] 
+demonstrate  people  feel  greater  interpersonal  benefits  after 
+receiving  Facebook  comments  rather  than  likes.  Therefore, 
+negative 
+“composed” 
+communication—comments 
+and  private  messages—in 
+which friends commiserate or attempt to cheer up the poster 
+[47]. Taken together, we propose: 
+H3a:  Posts  with  positive  emotion  will  receive  more  likes 
+than posts with negative emotion.  
+H3b:  Posts  with  negative  emotion  will  receive  more 
+comments  and  private  messages  than  posts  with  positive 
+emotion. 
+Since  recipients  of  social  sharing  experience  emotions 
+themselves and offer social support, we expect that: 
+H4:  Responses  to  posts  with  negative  emotion  will  contain 
+more  emotional  and  supportive  content  than  responses  to 
+posts without emotion. 
+Beyond  valence,  the  nature  of  the  emotion  may  also  affect 
+how viewers respond [13]. In particular, people may respond 
+differently based on the degree to which it reflects how the 
+poster  feels  about  herself.  Feeling  upset  is  very  different 
+from feeling unloved. The former is a diffuse emotion that 
+does not have the self as a point of reference (you could be 
+upset  because  it’s  raining),  while  the  latter  expresses  self-
+worth.  Self-relevant  emotions  (as  described  in  [6])  are 
+closely linked to self-esteem and how we deal with failure. 
+And our friends may respond differently to self-relevant and 
+non-self-relevant emotions. On Twitter, people who express 
+feelings  of  enduring  loneliness  are  less  likely  to  receive  a 
+response [30]. Other empirical work finds that viewing past 
+interactions  on  Facebook  may  boost  self-esteem  and  self-
+affirmation [46]; it’s therefore conceivable that when people 
+post  about  feeling  low  they  receive  empathetic  and  self-
+affirming responses. Therefore, we also ask: 
+
+respond, 
+
+audiences 
+
+RQ1. How do friends respond to positive and negative self-
+relevant posts? 
+We address these research questions and hypotheses with a 
+pair  of  studies.  In  Study  1,  we  examine  the  relationship 
+between  network  properties  (size  and  density)  and  the 
+valence of emotions shared in status updates. In Study 2, we 
+examine  how 
+identifying  how 
+characteristics of posts (emotional valence and whether the 
+emotion  is  self-relevant)  are  associated  with  characteristics 
+of  the  responses  (quantity,  the  amount  of  emotion  and 
+supportive  language  in  comments,  and  the  channel  that 
+replies take: likes, comments, or private messages). 
+STUDY 1 
+To  understand  the  relationship  between  network  properties 
+and the valence of emotions expressed, we analyzed network 
+properties and status updates by a random sample of people 
+who used the feeling annotation tool.  
+Sample 
+A  sample  of  N=1,399,921  English  speakers  in  the  U.S. 
+(Mean  age  =  32.2,  SD=10.9,  79%  female)  who  posted  at 
+least  one  status  update  in  June  2015  that  included  an 
+emotion (using the annotation widget in Figure 1), had been 
+Facebook users for at least six months, and had at least 20 
+friends, were randomly selected. Their status updates for one 
+month (approximately 30 million) and friend networks were 
+included  in  the  analysis.  Significant  steps  were  taken  to 
+ensure  user  privacy:  All  data  were  de-identified  and 
+analyzed  in  aggregate  such  that  no  individual’s  text  was 
+viewed  by  researchers.  All  data  were  observational—no 
+experiment  was  performed  and  no  one’s  experience  on  the 
+site was any different than usual.  
+We sample among people who used the emotion annotation 
+tool  rather  than  classifying  emotion  in  all  users’  post  test 
+(e.g., using LIWC [41]) because the annotation gives us an 
+explicit  signal  of  how  the  poster  was  feeling,  rather  than  a 
+potentially  noisier  signal  based  on  keywords  in  the  text. 
+However,  people  who  use  the  annotation  may  differ  from 
+those  who  don’t;  they  may  be  more  savvy  simply  for 
+knowing of the tool’s existence, or may believe their friends 
+will  be  supportive  to  expressions  of  emotion.  Posters  who 
+used  the  feeling  annotation  tool  were  approximately  four 
+years  younger,  20%  more  likely  to  be  women,  had 
+approximately 50 more friends, logged in an average of 0.6 
+more days in the past month, and had been using Facebook 
+for  approximately  four  fewer  months  than  posters  who  did 
+not use the annotation tool (all ps < 0.001). The gender bias 
+in  the  data  reflects  the  underlying  population  using  the 
+feeling  annotation  tool;  as  in  other  research  [47],  women 
+were  more  likely  to  express  emotion  here.  Therefore  we 
+control  for  age,  gender,  friend  count  (where  applicable), 
+number  of  login  days,  and  tenure  in  all  subsequent 
+regressions,  and  discuss  any  limitations  due  to  these 
+differences in population in the discussion section.  
+
+ 
+
+1465
+
+included 
+
+special,  accomplished, 
+
+Feeling Valence and Self-Relevancy 
+Approximately  15%  of  their  posts  included  a  feeling 
+annotation.  Two  judges  independently  coded  the  top  200 
+feelings  (which  comprised  90%  of  feelings  usage)  on  a  3-
+point valence scale (positive, ambiguous, or negative). Inter-
+rater  reliability  was  good  (Cohen’s  kappa  =  0.77),  and 
+disagreements  were  resolved  by  consensus.  Positive  terms 
+included refreshed, optimistic, ecstatic; ambiguous included 
+normal,  drunk,  curious,  ready;  negative  included  grumpy, 
+disappointed,  furious.  (See  Appendix  for  complete  list). 
+Among  posts  with  any  feeling,  51%  were  positive,  38% 
+were  negative,  and  11%  were  ambiguous.  Ambiguous 
+feelings were omitted from analysis. 
+The two judges also rated each feeling with a binary variable 
+indicating  whether  the  feeling  was  self-relevant  using  the 
+general description in [6]  (kappa = 0.74). Feelings that were 
+strong, 
+self-relevant 
+unwanted, worthless, alone (see Appendix). 
+Network properties 
+For each participant, we calculated the number of Facebook 
+friends (network size) at the beginning of the data collection 
+window.  The  median  participant  had  372  friends  (Mean  = 
+594, SD = 714.9). We also calculated network density using 
+the standard formula, the ratio of the existing connections to 
+the  total  number  of  possible  connections  in  the  one-step 
+egocentric  network  for  the  user.  The  median  density  was 
+0.07  (Mean  =  0.08,  SD=0.05).  Network  size  and  density 
+were negatively correlated (r = -0.19). 
+Model 
+To  understand  the  relationship  between  emotional  valence 
+and  network  properties,  we  performed 
+linear 
+regressions; one estimating the percentage of total posts with 
+a  negative  emotion,  and  one  estimating  the  percentage  of 
+posts with a positive emotion. (Self-relevant emotions were 
+included in their respective valence category.) In both cases 
+we control for the poster’s age, gender, number of login days 
+in  the  past  month,  tenure,  and  number  of  posts  in  the  past 
+month. Age and login days were centered; tenure, number of 
+posts, network size, and density were standardized; network 
+size  was  logged  (base  2)  to  account  for  skew  before 
+standardization. All variance inflation factors were less than 
+2 indicating multicollinearity was not an issue. 
+Results 
+Before  examining 
+relationship  between  network 
+properties and emotional valence, we begin with some basic 
+descriptive  statistics.  Overall,  8.1%  of  posts  on  Facebook 
+include  a  feeling  annotation  (calculated  across  all  English 
+posts in the U.S., not just those in our sample). Of the posts 
+that included a positive or negative feeling annotation, 57% 
+were  positive  and  43%  were  negative.  Figure  2  shows  the 
+ratio  of  positive  to  negative  feeling  annotations  used, 
+grouped by poster age. Teens and young adults exhibited a 
+greater  proportion  of    negativity  and  self-relevance  than 
+older  posters  (Figure  2,  top),  consistent  with  previous 
+research [11,47]. These numbers are conservative, since they 
+
+two 
+
+the 
+
+ 
+
+1466
+
+SESSION: UNPACKING SOCIAL NETWORKS
+
+ 
+
+Figure 2.  Expressions of feelings by age bracket. Top: Teens
+and  young  adults  use  relatively  more  negative  feelings  on
+Facebook,  while  older  adults  share  a  greater  proportion  of
+positive  feelings.  Bottom:  Teens  and  young  adults  share  a
+greater  proportion  of  self-relevant  feelings  than  older  adults. 
+Plot  points  are  larger  than  error  bars  (bootstrapped  95%
+confidence intervals). 
+
+that 
+
+those 
+
+only  include  posts  with  explicit  feeling  annotations,  and 
+many posts may include emotion in the text itself, which we 
+do not detect here. We address potential differences between 
+posts  with  annotated  feelings  and 
+include 
+emotional text in the Discussion section. 
+Table  1  shows  the  results  of  the  two  regressions  with 
+coefficients  translated  to  percentages  for  readability.  The 
+intercept  represents  a  woman  with  the  mean  value  for  all 
+continuous variables (age 32, 594 friends, logged in 27 days 
+and  made  19  posts  in  the  past  month,  and  had  been  using 
+Facebook  for  5.3  years).  On  average  10.2%  of  her  posts 
+included  a  negative  emotion  annotation,  and  17.4%,  a 
+positive emotion. Age and gender had modest effects: Older 
+users  and  women  were  somewhat  more  positive.  More 
+engaged users (those who logged in more often and posted 
+more)  and  those  who  had  had  Facebook  accounts  longer 
+used fewer emotion annotations in their status updates. The 
+final two rows confirm H1a and reject H1b: As network size 
+increased, people shared a smaller proportion of emotions of 
+either valence. One standard deviation in friend count (on a 
+log  scale)  is  associated  with  an  0.7%  drop  in  negative  and 
+0.8% drop in positive emotions (both p < 0.001). Controlling 
+for network size, however, we see that in denser networks, 
+people  share  more  of  each  kind  of  emotion.  One  standard 
+deviation increase in density is associated with an additional 
+0.3%  negative  and  1.0%  positive  posts  (both  p  <  0.001). 
+These results are discussed after Study 2. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Positive 
+
+% posts 
+SE 
+17.4%  
+0.0% 
+0.1% ***  0.0% 
+0.1% ** 
+0.0% 
+-0.6% ***  0.0% 
+-0.1% ***  0.0% 
+-7.0% ***  0.0% 
+-0.8% ***  0.0% 
+1.0% ***  0.0% 
+
+Negative 
+% posts 
+SE 
+ 10.2%  
+0.0% 
+-0.2% ***  0.0% 
+-0.1% * 
+0.0% 
+-0.1% ***  0.0% 
+-0.6% ***  0.0% 
+-3.2% ***  0.0% 
+-0.7% ***  0.0% 
+0.3% ***  0.0% 
+
+  
+ 
+Intercept 
+Age 
+Is male 
+Login days 
+Tenure  
+Number of posts 
+Network size 
+Network density 
+N=1,399,921                  R2 = 0.05                          R2 = 0.12 
+* p < 0.05    ** p < 0.01 *** p < 0.001     
+Table  1.  Linear  regressions  estimating  the  percentages  of  a 
+person’s  posts  in  a  month  that  include  a  negative  (left)  or 
+positive (right) emotion annotation.  
+
+STUDY 2 
+Study 1 demonstrated that people share more emotions, both 
+positive  and  negative,  when  they  have  smaller,  denser 
+networks.  We  next  examine  how  characteristics  of  the 
+emotions shared (valence and self-relevance) are associated 
+with  characteristics  of  the  responses:  quantity,  supportive 
+and emotional content, and channel (like, comment, private 
+message).  
+Sample 
+A  sample  of  N=31.7  million  de-identified  text-based  status 
+updates, comprised of a random sample of 14.2 million posts 
+with  attached  feeling  annotations  and  a  random  sample  of 
+17.5  million  without  feeling  annotations  (to  serve  as  a 
+baseline), was analyzed on Facebook’s servers. As in Study 
+1,  all  data  were  analyzed  in  aggregate  and  no  users’ 
+experiences  were  affected.  Posts  were  drawn  from  English 
+speakers in the United States in early 2014, excluding one-
+week  windows  around  holidays  (e.g.  Valentine’s  Day, 
+Mother’s Day) that might skew feelings and feedback. The 
+sample  represented  19.3  million  unique  posters  aged  13-64 
+(M=29.9).  The  two  populations  (those  who  used  feeling 
+annotations  and  those  who  didn’t)  are  different,  but  we 
+control  for  many  of  the  demographic  and  engagement 
+differences in the following regressions. As in Study 1, the 
+14.2 million posts with feeling annotations were categorized 
+according to the valence and self-relevance of the emotion. 
+The  posts  without  an  explicit  feeling  annotation  form  a 
+baseline for comparison; since these posts may still express 
+emotion in their text this is a conservative comparison point. 
+Feedback Counts and Support in Comments 
+For  each  post,  three  forms  of  feedback  within  a  24-hour 
+period  were  counted:  (a)  likes,  (b)  comments  (excluding 
+those  written  by  the  original  poster),  and  (c)  number  of 
+incoming  messages,  defined  as  counts  of  private  chat 
+sessions  initiated  by  someone  other  than  the  poster,  taking 
+place at least three hours after any previous chat session. No 
+text from private messages was analyzed, only counts. The 
+majority of feedback occurred during the first 24 hours, and 
+
+into 
+
+results  are  qualitatively  the  same  when  considering  a  72-
+hour period (not shown). 
+In addition to studying counts of feedback, we analyzed the 
+tone of comments received. Scripts automatically parsed all 
+comments  (but  not  private  messages) 
+lowercase, 
+punctuation-free  unigrams  and  applied  three  dictionaries  to 
+the  remaining  bags  of  words:  the  “positive  emotion”  and 
+“negative emotion” dictionaries from the Linguistic Inquiry 
+and Word Count (LIWC) package [41], and a dictionary of 
+support  terms,  described  below.  This  dictionary  method 
+counts the percentage of terms from a given list that occur in 
+a piece of text (e.g., positive emotions include love, nice, and 
+sweet and negative emotions include hurt, ugly, and nasty). 
+Terms were stemmed (e.g, frustrat represents both frustrated 
+and  frustrating).  Though  LIWC  mischaracterizes  negations 
+(e.g., “That’s not good” would be coded as positive), these 
+negations  wash  out  in  large  samples  and  the  tool  has  been 
+shown  to  effectively  surface  many  socio-psychological 
+phenomena [41]. We created a dictionary of “support” terms 
+by  culling  words  from  Hallmark  cards  and  websites 
+providing  examples  of  sympathy  or  condolences,  and 
+extended  LIWC  with  this  “support”  dictionary:  affection, 
+awful, better, bless, care, caring, comfort, condolence, feel, 
+frustrat,  god,  grief,  hang,  heart,  help,  hope,  hopeful,  hug, 
+loss, lov, luck, pain, pray, sad, shock, sorry, sorrow, special, 
+strength,  strong,  suck,  support,  sympathy,  terrible,  think, 
+thought,  warm.  This  dictionary  was  created  without  any 
+knowledge  of  the  actual  comment  text.  Average  comment 
+length, in words, was also included as a dependent measure. 
+In  the  end,  we  had  seven  dependent  variables  at  the  post 
+level:  separate  counts  of  likes,  comments,  and  messages 
+received, average comment length, percent positive emotion 
+in comments (averaged across pooled comment text for that 
+post),  percent  negative  emotion  in  comments,  and  percent 
+support in comments. 
+Modeling Responses to Posts with Feelings  
+To understand the nature of responses to posts with feelings, 
+we performed a series of regressions. Dummy variables were 
+created to represent the four combinations of feeling valence 
+(positive,  negative)  and  self-relevance  (yes,  no).  Control 
+variables  likely  to  affect  both  expression  of  emotion  and 
+feedback volume included poster gender and age [32], how 
+long  they  had  been  on  Facebook,  and  friend  count  bracket 
+(potential audience size). 
+We  performed  separate  regressions  for  each  of  the  seven 
+dependent  variables  (likes,  comments,  messages,  average 
+comment 
+in 
+comments,  percentage  of  negative  emotion  in  comments, 
+and  percentage  of  supportive  text  in  comments).  Feedback 
+counts—likes, comments, messages, and comment length—
+were log-transformed after adding 1. For outcomes related to 
+comment  text  (positive  emotion,  negative  emotion,  and 
+supportive 
+linear 
+regressions on percentages. Because of the large volume of 
+
+length,  percentage  of  positive  emotion 
+
+text),  we  performed  untransformed 
+
+ 
+
+1467
+
+data (31.7 million observations), regressions were performed 
+on aggregated data with robust standard errors. 
+Results 
+First,  we  examine  feedback  received  by  posts  with  and 
+without feeling annotations. 
+Comments.  Table  2  shows  a  regression  estimating  the 
+number of comments received based on post characteristics. 
+The omitted levels for categorical variables  were set to the 
+most common categories, so the intercept represents a post 
+without  a  feeling  annotation  written  by  an  18-24  year-old 
+woman  with  201-500  friends  and  more  than  two  years  of 
+Facebook  experience.  On  average,  her  post  received  0.77 
+comments  (e0.57–1=  0.77).  A  similar  post  with  positive 
+feelings  would  receive  5.2%  more  comments  (Mean=0.81, 
+all  subsequent  p  <  10-16).  (For  simplicity,  we  refer  to  non-
+
+Age 
+
+SESSION: UNPACKING SOCIAL NETWORKS
+
+feeling  excited)  as  simply 
+self-relevant  feelings  (e.g., 
+“feelings”  and  refer  to  self-relevant  feelings  (e.g.,  feeling 
+unloved)  as  “self-relevant  feelings.”  These  two  categories 
+are mutually exclusive, not nested.) Negative feelings elicit 
+even more comments (36% more than a non-feeling post). A 
+post-hoc  comparison  confirms  that  posts  with  negative 
+emotion  receive  29%  more  comments  than  posts  with 
+positive emotion (Beta=0.12, SE=0.01, p<0.001).  
+However,  self-relevant  posts,  especially  negative  self-
+relevant ones, receive far more comments, even compared to 
+posts with other feelings: positive self-relevancy elicits 14% 
+more  comments  and  negative  self-relevancy  garners  72% 
+more comments. A post-hoc test confirms that the effect is 
+greater for negative self-relevancy than other negative non-
+self-relevant emotions (Beta=0.12, SE=0.01, p < 0.001). 
+Figure 3 displays these response rates to posts with the four 
+kinds  of  feelings,  relative  to  a  post  without  feelings.  Each 
+panel  represents  one  of  the  seven  dependent  variables. 
+Overall, with the exception of likes and positive comments, 
+we  see  that  friends  respond  more  to  posts  with  negative 
+emotions,  especially  negative  self-relevant  emotions.  We 
+now discuss the other dependent variables in turn.  
+Comment  length.  Friends  respond  with  much  longer 
+comments  to  posts  with  negative  feelings,  especially  to 
+negative  self-relevant  ones  (see  Figure  3d).  While  the 
+average post without feelings elicits 5.4-word comments on 
+average,  negative  feelings  get  21%  longer  comments,  and 
+negative self-relevant posts get 51% longer comments. We’ll 
+address the tone of these comments shortly.  
+Likes.  Likes  follow  a  different  pattern  than  comments, 
+consistent  with  the  idea  that  people  are  uncomfortable 
+clicking  the  “like”  icon  for  negative  posts,  since  likes 
+suggest endorsement or congratulations, rather than support. 
+Instead,  we  see  that  positive  posts  garner  far  more  likes: 
+positive feelings are associated with a 58% increase in likes, 
+and  positive  self-relevancy  garners  71%  more 
+likes, 
+supporting  Hypothesis  3a.  On  the  other  hand,  negative 
+feelings  elicit  32%  fewer  likes,  and  negative  self-relevant 
+feelings, 34% fewer likes (see Figure 3a). 
+Number of private messages. Both likes and comments are 
+visible  to  other  friends,  but  we  see  support  being  enacted 
+over private channels, as well. We included counts of private 
+messages as a dependent variable (no text was analyzed) and 
+found  that  negative  self-relevant  posts  result  in  24%  more 
+chat sessions initiated by other friends (see Figure 3c). These 
+results  suggest  that  friends  reach  out  to  privately  check-in 
+with the poster and offer support. Hypothesis 3b is partially 
+supported 
+feelings  elicit  more 
+comments,  but  only  negative  self-relevant  feelings  elicit 
+more  private  messages).  In  general,  however,  posting  a 
+feeling  results  in  a  very  slight  reduction  in  messaging, 
+perhaps because viewers reply through comments and likes 
+instead.  One  interpretation  is  that  social  chat  sessions  that 
+would  have  occurred  (had  one  friend  not  posted  an 
+
+(posts  with  negative 
+
+1468
+
+  
+
+  
+
+  
+
+  
+
+  
+
+ 
+Controls 
+Is male 
+Site tenure 
+
+Ln(comments +1) 
+Intercept 
+ 
+Feelings 
+
+0-35 days 
+36-90 days 
+3-12 months 
+1-2 years 
+Friend count 
+
+Comments
+  
+SE 
+(Est.)
+Coef. 
+0.77 
+0.57 ***  0.00 
+ 
+ 
+0.02 ***  0.00 
+0.81 
+Positive (non self-relevant) 
+0.88 
+Positive self-relevant 
+0.06 ***  0.00 
+1.05 
+Negative (non self-relevant)  0.15 ***  0.00 
+Negative self-relevant 
+0.27 ***  0.00 
+1.33 
+ 
+ 
+0.69 
+-0.05 ***  0.00 
+ 
+ 
+-0.06 ***  0.00 
+0.68 
+0.65 
+-0.07 ***  0.00 
+0.65 
+-0.07 ***  0.00 
+0.65 
+-0.07 ***  0.00 
+ 
+ 
+-0.02 
+-0.59 ***  0.00 
+0.14 
+-0.44 ***  0.00 
+0.22 
+-0.38 ***  0.00 
+-0.33 ***  0.00 
+0.28 
+0.33 
+-0.29 ***  0.00 
+0.44 
+-0.21 ***  0.00 
+0.61 
+-0.10 ***  0.00 
+0.01 ***  0.00 
+0.79 
+ 
+ 
+0.65 
+-0.07 ***  0.00 
+1.15 
+0.19 ***  0.00 
+0.29 ***  0.00 
+1.37 
+1.44 
+0.32 ***  0.00 
+0.34 ***  0.00 
+1.50 
+*** p < 10-16                                            N = 31.7 million posts 
+Table 2. Model of comments received by posts with feelings. All 
+standard errors are below 0.001. Posts with feelings elicit more 
+comments  than  posts  without  feelings,  and  negative  feelings 
+elicit  more comments than  positive feelings.  Feelings that are 
+self-relevant amplify these effects. 
+ 
+
+0-10 
+11-20 
+21-30 
+31-40 
+41-50 
+51-100 
+101-200 
+501+ 
+
+13-17 
+25-34 
+35-44 
+45-54 
+55-64 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+emotional  status  update)  were  replaced  by  other  social 
+interactions (likes and comments).  
+Positive  emotion  in  comments.  In  addition  to  feedback 
+volume,  we  also  analyzed  the  emotional  content  of  post 
+comments. As noted previously, all analyses were performed 
+automatically  with  scripts;  researchers  did  not  read  any 
+comments.  The  average  post  without  feelings  elicited 
+
+Figure 3. Relative difference in responses based on use of feeling
+annotations. Each row shows one outcome. Each point shows the
+percentage difference in that outcome for a post that includes a
+feeling,  relative  to  a  post  without  a  feeling.  Posts  with  positive
+feelings  elicit  more  (a)  likes  and  (e)  positive  comments,  while
+negative feelings elicit (b) more comments, (d) longer comments,
+and  (e,f)  comments  with  more  emotional  and  (g)  supportive
+language.  Posts  about  self-relevant  feelings,  especially  negative
+ones, amplify these effects. Negative self-relevant posts also elicit
+more private messages (c). Plot points are larger than error bars
+(bootstrapped 95% confidence intervals). 
+
+comments  that  contained  3.1%  positive  emotion  words, 
+0.7%  negative  emotion,  and  0.9%  supportive  text.  Not 
+surprisingly,  posts  with  positive  feelings,  such  as  feeling 
+awesome, elicited far more positive emotion in comments (a 
+24%  relative  increase).  Figure  3  (panels  e-g)  show  the 
+relative  difference  in  positive  emotion,  negative  emotion, 
+and supportive text found in comments to posts with various 
+levels  of  feelings.  In  general,  however,  even  posts  with 
+negative feelings elicited more positive comment text; given 
+the context we might infer commenters are saying things like 
+hope you’re feeling better or sending happiness your way.  
+Negative  emotion  in  comments.  We  see  a  big  increase  in 
+the  use  of  negative  emotion  words  (Fig  3f)  in  response  to 
+posts  containing  negative  feelings,  while  the  use  of  these 
+words  is  significantly  reduced  in  responses  to  positive 
+feelings. Comments on posts with negative feelings contain 
+78%  more  negative-emotion  words  than  comments  on 
+ordinary  posts,  as  the  responder  commiserates  with  the 
+poster  (presumably  phrases  like  that  sucks  or  i  feel  your 
+pain). Negative self-relevant feelings show an even stronger 
+effect,  as  these  contain  more  than  double  the  negative 
+emotion compared to a typical comment (110% more). For 
+positive feelings, we see an unsurprising significant drop-off 
+in comment negativity (-29%). 
+Supportive  language  in  comments.  Recipients  of  social 
+sharing often respond by offering support [13], and the data 
+show that this occurs on Facebook, as well.  Figure 3g shows 
+a  large  effect  in  response  to  posts  with  negative  feelings, 
+which  elicit  2.44  times  as  many  support  words  as  non-
+feeling  posts.  Self-relevancy  again  amplifies  these  effects; 
+negative self-relevant posts elicit 2.6 times as many support 
+words as a non-feeling post. These multipliers are per word, 
+so  given  that  there  are  more  comments  and  the  average 
+comment is longer, the effect in terms of raw words is even 
+larger. Hypothesis 4 is supported. 
+In  summary,  positive  feelings  elicit  likes  and  positive 
+comments, and negative feelings elicit more comments and 
+messages, where friends have room to respond with emotion 
+and  support.  RQ2  asked  how  friends  respond  to  negative 
+self-relevant 
+results 
+demonstrate that friends respond in greater volume and with 
+more emotion to negative, self-relevant feelings. 
+Responses to Specific Feelings 
+In the previous analyses feeling terms were grouped by their 
+valence  and  whether  they  were  self-relevant,  but  the  effect 
+size may vary with individual feelings. Figure 4 (top panel) 
+presents  the  ten  feelings  with  the  highest  usage  rates; 
+response  percentages  are  relative  to  a  post  with  no  feeling 
+annotation.  We  can  see  that  the  most  sympathetic,  sad, 
+produces  a  significant  positive  lift  in  comments,  and  those 
+comments are longer, have more negative emotion, and are 
+more  supportive.    Sad  also  elicits  a  bump  in  private 
+messages, which few feelings do.  Many of the feelings that 
+could  be  followed  with  an  “about  what”  question  receive 
+more  comments:  sick,  annoyed,  and  excited.  Meanwhile, 
+
+feelings,  and  collectively, 
+
+these 
+
+ 
+
+1469
+
+SESSION: UNPACKING SOCIAL NETWORKS
+
+Figure 4. Relative difference in responses based on use of specific feelings.  Top panel shows the most commonly used feelings; a post
+with feeling tired receives less feedback than a post without feelings, while feeling sad receives far more comments, longer comments,
+and comments with negative emotion and supportive language. The bottom panel shows the feelings that elicit the most comments. 
+Note that the very personal feelings, devastated and heartbroken, elicit far more private messages, as well. 
+
+in  addition 
+
+in  private  messages 
+
+generic  statuses  like  happy,  tired,  and  wonderful  induce 
+fewer comments than the average post. 
+Figure  4  (bottom  panel)  shows  the  feelings  that  elicit  the 
+most  comments.  Consistent  with  the  regression  results,  the 
+theme  is  clear:  other  than  old  (which  is  ambiguous)  all  of 
+these  are  negative,  and  several  are  self-relevant.  The  most 
+personal  ones,  devastated  and  heartbroken,  reveal  a  large 
+bump 
+to  comments, 
+indicating  that  friends  may  be  providing  support  over 
+backchannels when needed. 
+DISCUSSION 
+The present study extends previous dyadic research on social 
+sharing  by  examining  contemporary  practices  of  one-to-
+many broadcasts in social media. On the whole, the research 
+demonstrates 
+that  when  people  have  smaller,  denser 
+networks,  they  share  more  positive  and  negative  emotions, 
+and friends respond in greater volume to posts with emotion, 
+especially  negative  emotion.  Responses  to  posts  with 
+negative  emotion  are  more  emotional  themselves  and 
+contain  more 
+extreme 
+expressions  of  negative  self-worth  (e.g.,  feeling  unloved) 
+often  elicit  private  responses  from  friends.  Figure  5  (top) 
+
+supportive 
+
+language;  more 
+
+shows the terms most disproportionately found in comments 
+responding to negative feelings: phrases like sorry, hugs and 
+references to prayer are common. The support shifts offline, 
+as well (talk, call). 
+A  key  distinction  between  this  research  and  previous 
+analyses  of  social  sharing  is  the  focus  on  responses,  rather 
+than  just  the  posters.  Rimé  and  colleagues  [13]  note  that 
+hearing others share emotions elicits emotions in the listener, 
+and those listeners often respond with empathy and support. 
+Beyond  demonstrating  that  this  also  occurs  in  Facebook 
+comments,  the  present  study  may  also  shed  light  on  how 
+“secondary sharing” occurs in social media. Rimé’s research 
+on  dyads  shows  that  when  people  hear  about  negative 
+events, they often feel compelled to share the story again to 
+a  third  party,  in  order  to  process  their  own  emotions.  This 
+secondary sharing is more likely to occur the more intensely 
+negative  the  original  emotion.  We  see  here  that  intensely 
+negative  emotions  generally  evoke  longer,  more  emotional 
+comment  threads  on  Facebook.  It’s  possible  that  these 
+comment  threads  are  one  way  secondary  sharing  manifests 
+on  social  media,  with  mutual  friends  of  the  original  poster 
+
+ 
+
+1470
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+expect more of the differences to be explained by perceived 
+audience:  People  have  difficulty  estimating  how  many 
+people  will  see  their  Facebook  posts  [3]  and  thus  may  be 
+more  directly  influenced  by  other  factors  that  contribute  to 
+their  mental  image  of  audience,  such  as  which  ties  are 
+visible  in  their  News  Feeds  or  have  responded  in  the  past, 
+rather  than  their  actual  network  size.  Future  work  should 
+take 
+the  poster’s  expectations  of  audience  size  and 
+supportiveness into account. 
+The  current  study  opens  many  avenues  for  future  research, 
+particularly for longer-term repercussions of expressions of 
+emotion. After you vent to your friends online, do you feel 
+better? Offline research suggests that the story is not simple: 
+In  some  cases,  putting  upsetting  feelings  into  words  helps 
+with recovery, but it depends on the nature of the emotional 
+event, and may also reactivate negative feelings (see [23,42] 
+for  reviews).  Do  sociotechnical  affordances  of  the  Internet 
+like reduced time pressure and lack of nonverbal cues make 
+it easier to express and recover from negative experiences? 
+Additional  surveys  of  people  who  have  recently  expressed 
+feelings  and  received  varying  kinds  of  responses  would 
+illuminate  these  answers.  In  particular,  we  do  not  yet 
+understand what happens if friends don’t respond. Previous 
+research  demonstrates 
+that  merely  broadcasting  status 
+updates  out  to  a  circle  of  friends  is  not  directly  linked  to 
+improvements  in  well-being;  in  fact,  it  is  linked  to  higher 
+levels of loneliness [10]. Those broadcasts must be met with 
+feedback  for  people  to  reap  the  benefits  of  their  networks. 
+Are  people  who  receive  supportive  comments  to  negative 
+feelings more likely to post positive feelings later, indicating 
+that  they  are  feeling  better?  The  providers  of  support  may 
+also  experience  improvements  in  psychological  well-being 
+as a result of helping, or they might feel somewhat worse as 
+a result of empathizing [25]. Finally, it would be valuable to 
+investigate  whether  emotional  transactions  of  this  form 
+increase tie strength between the poster and the responder. 
+How  social  network  properties  such  as  size  and  density 
+affect  the  nature  of  responses  is  an  additional  avenue  for 
+future 
+receive  more  emotional 
+their  networks  are  denser,  or  more 
+comments  when 
+backchannel messages when their audiences are larger? The 
+current study demonstrates that people share more emotions 
+when their networks are smaller and denser, but we do not 
+know  if  smaller,  denser  networks  provide  more  emotional 
+support, or if larger networks are better in this regard, having 
+more people to provide support. When audiences are larger, 
+potential  responders  may  have  their  own  self-presentation 
+concerns,  so  may  turn  to  private  messaging  rather  than 
+network-visible channels like comments to offer support. 
+How  does  the  identity  of  the  responder  matter?  Does 
+feedback on personal feelings come disproportionately from 
+close friends and family? While one’s closest confidants are 
+typically the providers of emotional support [49], in times of 
+psychological  distress,  strong  ties  may  actually  exacerbate 
+feelings  of  stress  or  embarrassment  [8].  The  present  study 
+
+research.  Do  people 
+
+Figure 5. Comment terms that occur disproportionately in 
+response to negative feelings (top), and positive feelings (bottom). 
+
+ 
+
+related 
+
+collectively  offering  support  to  each  other  and  trying  to 
+reappraise the situation.  
+Intensely  negative  emotions  also  evoked  more  private 
+responses  in  the  present  study.  This  may  explain  why 
+previous research found that intensely lonely tweets received 
+fewer  public  Twitter  replies  [30];  friends  may  have 
+responded  through  private  channels  unavailable  to  the 
+researchers.  Though  we  do  not  analyze  the  text  of  any 
+private  messages,  the  notion  that  people  turn  to  more 
+intimate,  dyadic  channels  in  times  of  sadness  is  consistent 
+with previous research on social media [1,12]. 
+A  fundamental  assertion  of  this  and  previous  work  is  that 
+audience  composition  matters  when  people  are  considering 
+sharing  their  emotions  online.  Much  previous  research 
+indicates that audience size and the proportion of closer ties 
+is 
+the  disclosure  of  negative  emotions 
+[1,12,29,35],  but  results  have  varied.  Our  findings  are 
+partially  consistent  with  previous  quantitative  Facebook 
+research  [35],  in  that  people  shared  more  emotions  when 
+their friend networks were denser. Whether this is for self-
+presentation concerns (e.g., expecting that weak ties will be 
+more  likely  to  judge)  or  an  expectation  of  support  from 
+strong  ties  is  left  to  future  work.  However,  our  results 
+diverge from previous studies [29,35] that found a positive 
+correlation  between  network  size  and  the  expression  of 
+positive emotions; we found that both positive and negative 
+emotions  were  expressed  less  often  in  larger  networks. 
+Differences between Twitter and Facebook may account for 
+some of the results: Tweets are typically public, so posting 
+good  news  to  Twitter  in  effect  posts  it  to  the  world,  so 
+follower count may not matter as much there. Differences in 
+adoption rates may also mean that Twitter audiences are less 
+likely  to  contain  the  poster’s  closest  confidants  [24].  We 
+
+to 
+
+ 
+
+1471
+
+type  moderate 
+
+tie  strength  and  relationship 
+
+treats all commenters as equal; future work should examine 
+how 
+the 
+relationship between emotional support provided online and 
+changes  in  the  poster’s  mood,  self-esteem,  and  perceived 
+social  support.  Positive  news  might  be  more  exciting  and 
+fulfilling  when  a  variety  of  acquaintances  share  in  the  joy 
+with likes and congratulatory comments. On the other hand, 
+weak  ties  may  be  less  comfortable  expressing  empathy  in 
+response  to  negative  feelings,  or  the  poster  may  interpret 
+comments from weak ties as unhelpful platitudes. 
+We  make  no  claims  about  the  overall  percentages  of 
+emotions  expressed  on  Facebook;  we  merely  treat  the 
+number of posts using the feeling annotation tool as a high-
+quality  lower  bound.  In  Study  2,  when  we  compare  posts 
+with  emotion  annotations  to  those  without,  the  posts 
+“without”  may  still  contain  emotion.  Therefore,  it  makes  a 
+relatively  conservative  baseline.  And  the  present  study  is 
+correlational;  we  cannot  determine  whether  revealing 
+feelings  on  Facebook  causes  friends  to  respond  in  a  more 
+supportive way, or if we are simply comparing differences in 
+responsiveness  by  the  friends  of  two  kinds  of  people:  the 
+kind of people who post feelings, and the kind who do not. 
+There  are  many  unobserved  variables  that  likely  influence 
+one’s  propensity  to  disclose  personal  thoughts  online,  and 
+how supportive their social network is. Teens, in particular, 
+may intentionally obscure their thoughts so that parents and 
+other outsiders don’t understand [5]. We control for many of 
+the major factors, including age, gender, number of friends, 
+and tenure on the site, but cannot directly control for factors 
+like  depression,  cohesiveness  among  friends,  or  exogenous 
+events.  People  who  use  the  feeling  annotation  tool  may  be 
+more technologically savvy or more emotionally open than 
+people who do not. Sensitivity tests repeating the regressions 
+on  each  age  bucket  separately  revealed  effects  were 
+qualitatively  similar,  but  unmeasured  confounds  remain. 
+While  the  results  generalize  well  to  women  and  the  highly 
+engaged users who chose to use the feeling annotation tool, 
+caution  should  be  used  when  applying  the  results  to  other 
+populations. 
+We  assume  that  when  people  share  feelings  on  Facebook, 
+especially  negative  ones,  that  those  feelings  are  genuine. 
+Studying feedback mitigates some of these concerns; friends 
+would  not  respond  so  consistently  if  they  interpreted  the 
+feelings  as  disingenuous.  In  some  cases,  a  person  might 
+exaggerate the extent to which they feel blue to solicit more 
+sympathy,  but  perhaps  that  is  legitimately  what  he  or  she 
+needs.  Previous  research  also  indicates  that  emotional 
+language  in  Facebook  posts  correlates  moderately  with 
+external measures of happiness [31].  
+CONCLUSION 
+Millions of feelings are shared on Facebook every day. The 
+present  study  demonstrates  that  posts  with  explicit  feeling 
+annotations,  such  as  “feeling  wonderful”  or  “feeling 
+heartbroken” receive far more responses than ordinary posts. 
+Positive  feelings  elicit  more  feedback  than  text  without 
+
+ 
+
+1472
+
+SESSION: UNPACKING SOCIAL NETWORKS
+
+feelings,  and  negative  feelings  elicit  even  more  responses 
+than positive. The nature of those responses differs, as well, 
+with positive feelings receiving more likes and emotionally 
+positive  comments,  and  negative  feelings  getting  longer, 
+more  empathetic  comments.  Feelings  related  to  low  self-
+worth heighten these effects, and are also linked to an upturn 
+in  private  messages,  where  friends  can  provide  emotional 
+support.  The  results  mirror  face-to-face  support  provision, 
+with friends lifting each other up in times of sadness and joy. 
+ACKNOWLEDGMENTS 
+We’d  like  to  thank  Funda  Kivran-Swaine,  Adrien  Friggeri, 
+Mor  Naaman,  Michael  Bernstein,  Jeremy  Birnholtz,  Annie 
+Steele, and the reviewers of this paper for their feedback. 
+REFERENCES 
+1.  Natalya N Bazarova, Yoon Hyung Choi, Victoria 
+Schwanda Sosik, Dan Cosley, and Janis Whitlock. 
+2015. Social Sharing of Emotions on Facebook: 
+Channel Differences, Satisfaction, and Replies. CSCW 
+'15: Proceedings of the 18th ACM Conference on 
+Computer Supported Cooperative Work & Social 
+Computing, 154–164. 
+http://doi.org/10.1145/2675133.2675297 
+
+2.  Natalya N Bazarova, Jessie G Taft, Yoon Hyung Choi, 
+
+and Dan Cosley. 2012. Managing Impressions and 
+Relationships on Facebook: Self- Presentational and 
+Relational Concerns Revealed Through the Analysis of 
+Language Style. Journal of Language and Social 
+Psychology 32, 2, 0261927X12456384–141. 
+http://doi.org/10.1177/0261927X12456384 
+
+3.  Michael S Bernstein, Eytan Bakshy, Moira Burke, and 
+Brian Karrer. 2013. Quantifying the invisible audience 
+in social networks. CHI '13: Proceedings of the SIGCHI 
+Conference on Human Factors in Computing Systems. 
+http://doi.org/10.1145/2470654.2470658 
+
+4.  Charles F Bond Jr. and Evan L Anderson. 1987. The 
+
+reluctance to transmit bad news: Private discomfort or 
+public display? Journal of Experimental Social 
+Psychology 23, 2, 176–187. 
+http://doi.org/10.1016/0022-1031(87)90030-8 
+5.  danah boyd and Alice Marwick. 2011. Social 
+steganography: Privacy in networked publics. 
+International Communication Association. 
+Jonathon D Brown and Margaret A Marshall. 2001. 
+Self-Esteem and Emotion: Some Thoughts About 
+Feelings. Personality and Social Psychology Bulletin 
+27, 575–584. 
+
+6. 
+
+7.  Moira Burke and Robert E Kraut. 2014. Growing closer 
+
+on Facebook: Changes in tie strength through social 
+network site use. CHI 2014, 4187–4196. 
+http://doi.org/10.1145/2556288.2557094 
+
+8.  Moira Burke and Robert Kraut. 2013. Using Facebook 
+
+after losing a job: Differential benefits of strong and 
+weak ties. CHI 2013, 1419–1430. 
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+http://doi.org/10.1145/2441776.2441936 
+
+Journal of Computer-Mediated Communication. 
+
+9.  Moira Burke, Cameron Marlow, and Thomas Lento. 
+2009. Feed me: motivating newcomer contribution in 
+social network sites. CHI '09: Proceedings of the 
+SIGCHI Conference on Human Factors in Computing 
+Systems. http://doi.org/10.1145/1518701.1518847 
+
+10.  Moira Burke, Cameron Marlow, and Thomas Lento. 
+2010. Social network activity and social well-being. 
+CHI '10: Proceedings of the SIGCHI Conference on 
+Human Factors in Computing Systems, 1909–1912. 
+http://doi.org/10.1145/1753326.1753613 
+
+11.  Pamara F Chang, Yoon Hyung Choi, Natalya N 
+Bazarova, and Corinna E Löckenhoff. 2015. Age 
+Differences in Online Social Networking: Extending 
+Socioemotional Selectivity Theory to Social Network 
+Sites. Journal of Broadcasting & Electronic Media 59, 
+2, 221–239. 
+http://doi.org/10.1080/08838151.2015.1029126 
+
+12.  Mina Choi and Catalina L Toma. 2014. Social sharing 
+
+through interpersonal media: Patterns and effects on 
+emotional well-being. Computers in Human Behavior 
+36, 530–541. http://doi.org/10.1016/j.chb.2014.04.026 
+
+13.  Veronique Christophe and Bernard Rimé. 1997. 
+
+Exposure to the social sharing of emotion: Emotional 
+impact, listener responses and secondary social sharing. 
+European Journal of Social Psychology 27, 1, 37–54.  
+
+14.  Sheldon Cohen, Benjamin Gottlieb, and Lynn 
+
+Underwood. 2004. Social relationships and health. 
+American Psychologist 59, 8, 676. 
+
+15.  Munmun De Choudhury, Scott Counts, and Michael 
+Gamon. 2012. Not all moods are created equal! 
+Exploring human emotional states in social media. 
+Sixth International AAAI Conference on Weblogs and 
+Social Media.  
+
+16.  Pasquale De Meo, Emilio Ferrara, Giacomo Fiumara, 
+and Alessandro Provetti. 2014. On Facebook, most ties 
+are weak. Communications of the ACM 57, 11. 
+http://doi.org/10.1145/2684442.2629438 
+
+17.  Robin Dunbar. 1992. Neocortex size as a constraint on 
+group size in primates. Journal of Human Evolution 22, 
+6, 469–493. 
+
+18.  Paul Ekman, E Richard Sorenson, and Wallace V 
+
+Friesen. 1969. Pan-Cultural Elements in Facial Displays 
+of Emotion. Science 164, 3875, 86–88. 
+http://doi.org/10.1126/science.164.3875.86 
+
+19.  Nichole Ellison, Rebecca Gray, Jessica Vitak, Cliff 
+
+Lampe, and Andrew T Fiore. 2013. Calling all 
+Facebook friends: Exploring requests for help on 
+Facebook. ICWSM. 
+
+20.  Nicole B Ellison, Jessica Vitak, Rebecca Gray, and Cliff 
+
+Lampe. 2014. Cultivating social resources on social 
+network sites: Facebook relationship maintenance 
+behaviors and their role in social capital processes. 
+
+21.  Facebook. 2015. Facebook Statistics. Retrieved July 17, 
+
+2015 from http://newsroom.fb.com/company-info/ 
+22.  Erving Goffman. 2002. The presentation of self in 
+
+everyday life. 1959. Garden City, NY. 
+
+23.  James Gross. 2013. Handbook of Emotion Regulation, 
+
+Second Edition.  
+
+24.  Keith Hampton, Lauren Sessions Goulet, Lee Rainie, 
+and Kristen Purcell. 2011. Social networking sites and 
+our lives. Retrieved from 
+http://pewinternet.org/Reports/2011/Technology-and-
+social-networks.aspx 
+
+25.  Keith Hampton, Lee Rainie, Weixu Lu, Inyoung Shin, 
+and Kristen Purcell. 2015. Social Media and the Cost of 
+Caring. Pew Research Center, Washington, D.C. 
+
+26.  Bernie Hogan. 2010. The presentation of self in the age 
+
+of social media: distinguishing performances and 
+exhibitions online. Bulletin of Science. 
+
+27.  Alexander Jordan, Benoit Monin, Carol Dweck, 
+
+Benjamin Lovett, Oliver John, and James Gross. 2011. 
+Misery Has More Company Than People Think: 
+Underestimating the Prevalence of Others(cid:1) Negative 
+Emotions. Personality and Social Psychology Bulletin 
+37, 1, 120. 
+
+28.  Sepandar D Kamvar and Jonathan Harris. 2011. We feel 
+
+fine and searching the emotional web. ACM, New 
+York, New York, USA. 
+http://doi.org/10.1145/1935826.1935854 
+
+29.  Funda Kivran-Swaine and Mor Naaman. 2011. Network 
+
+properties and social sharing of emotions in social 
+awareness streams. Proceedings of the ACM 2011 
+conference on Computer supported cooperative work, 
+379–382. 
+
+30.  Funda Kivran-Swaine, Jeremy Ting, Jed R Brubaker, 
+
+and Rannie Teodoro. 2014. Understanding Loneliness in 
+Social Awareness Streams: Expressions and Responses. 
+ICSWM 2014. 
+
+31.  Adam D I Kramer. 2010. An unobtrusive behavioral 
+
+model of gross national happiness. CHI 2010, 287–290. 
+32.  Marianne LaFrance and Mahzarin Banaji. 1992. Toward 
+
+a reconsideration of the gender-emotion relationship. 
+Emotion and social behavior. 
+
+33.  Christopher A Langston. 1994. Capitalizing on and 
+
+coping with daily-life events: Expressive responses to 
+positive events. Journal of Personality and Social 
+Psychology 67, 6, 1112–1125. 
+http://doi.org/10.1037/0022-3514.67.6.1112 
+
+34.  Jean-Philippe Laurenceau, Lisa Feldman Barrett, and 
+
+Paula R Pietromonaco. 1998. Intimacy as an 
+interpersonal process: The importance of self-
+disclosure, partner disclosure, and perceived partner 
+responsiveness in interpersonal exchanges. Journal of 
+
+ 
+
+1473
+
+SESSION: UNPACKING SOCIAL NETWORKS
+
+47.  Yi-Chia C Wang, Moira Burke, and Robert E Kraut. 
+
+2013. Gender, topic, and audience response: An analysis 
+of user-generated content on Facebook. CHI 2013. 
+48.  Barry Wellman and Kenneth Frank. 2001. Network 
+capital in a multi-level world: Getting support from 
+personal communities. Social capital: Theory and 
+research, 233–273. 
+
+49.  Barry Wellman and Scot Wortley. 1990. Different 
+Strokes from Different Folks: Community Ties and 
+Social Support. American Journal of Sociology 96, 3, 
+558–588. 
+
+feelings 
+
+ 
+APPENDIX: FEELING TERMS 
+Positive 
+(not  self-relevant):  warm,  blessed, 
+amazing,  wonderful,  determined,  hopeful,  relaxed,  excited, 
+happy, great, inspired, refreshed, stoked, awesome, ecstatic, 
+amused,  relieved,  grateful,  pumped,  lucky,  rested,  better, 
+good,  mischievous,  safe,  motivated,  fantastic,  in  love, 
+focused, free, silly, satisfied, fresh, stuffed, thankful, lovely, 
+optimistic,  comfortable,  peaceful,  funny,  energized,  chill, 
+positive,  super,  nice,  amazed,  content,  honored,  fabulous, 
+fortunate, joyful, calm, well, giddy 
+
+ 
+
+Positive  self-relevant  feelings:  special,  accomplished, 
+confident,  loved,  pretty,  creative,  proud,  sexy,  appreciated, 
+beautiful,  whole,  strong,  smart,  productive,  healthy, 
+complete, empowered 
+
+ 
+
+surprised, 
+
+Neutral  feelings  (not  self-relevant):  nostalgic,  meh, 
+hungry,  thirsty,  ready,  spoiled,  human,  confused,  curious, 
+crazy, 
+emotional,  busy, 
+challenged,  entertained,  cool,  shocked,  hot,  hyper,  full, 
+awake,  drunk,  unsure,  blah,  impatient,  OK,  alive,  tipsy, 
+thoughtful, undecided, goofy, evil, fine, adventurous, some, 
+type, of, way, perplexed, puzzled 
+
+restless, 
+
+rough, 
+
+ 
+
+Neutral self-relevant feelings: weird, different, old, normal 
+
+ 
+
+(not 
+
+feelings 
+
+Negative 
+self-relevant):  overwhelmed, 
+annoyed,  disappointed,  sad,  exhausted,  sick,  tired,  sleepy, 
+lazy,  angry,  sore,  frustrated,  yucky,  irritated,  worried, 
+heartbroken,  crappy,  down,  uncomfortable,  awful,  bored, 
+conflicted, pissed, off, uneasy, disgusted, stressed, anxious, 
+pained,  nervous,  pissed,  guilty,  cold,  ashamed,  nauseous, 
+upset, aggravated, hungover, l ow, bummed, scared, furious, 
+lost, drained, stuck, miserable, terrible, fed, up, dumb, blue, 
+hurt,  jealous,  mad,  grumpy,  sorry,  horrible,  bad,  worse, 
+betrayed, 
+in,  pain,  discouraged, 
+embarrassed, sarcastic, trapped, homesick 
+
+concerned,  numb, 
+
+ 
+
+Negative  self-relevant  feelings:  weak,  nerdy,  helpless, 
+depressed, 
+lonely,  broken,  defeated,  hopeless,  alone, 
+unappreciated,  worthless,  unloved,  fat,  insecure,  stupid, 
+devastated, unwanted, incomplete, awkward, unimportant 
+
+Personality and Social Psychology 74, 5, 1238–1251. 
+http://doi.org/10.1037/0022-3514.74.5.1238 
+
+35.  Han Lin, William Tov, and Lin Qiu. 2014. Emotional 
+
+disclosure on social networking sites: The role of 
+network structure and psychological needs. Computers 
+in Human Behavior 41, 342–350. 
+http://doi.org/10.1016/j.chb.2014.09.045 
+
+36.  Ruoyun Lin and Sonja Utz. 2015. The emotional 
+
+responses of browsing Facebook: Happiness, envy, and 
+the role of tie strength. Computers in Human Behavior 
+52, 29–38. http://doi.org/10.1016/j.chb.2015.04.064 
+
+37.  Peter V Marsden. 1990. Network data and 
+
+measurement. Annual review of sociology 16, 435–463. 
+38.  Mor Naaman, Jeffrey Boase, and Chih-Hui Lai. 2010. Is 
+it really about me?: message content in social awareness 
+streams. Proceedings of the 2010 ACM conference on 
+Computer supported cooperative work, 189–192. 
+
+39.  Mark W Newman, Debra Lauterbach, Sean A Munson, 
+Paul Resnick, and Margaret Morris. 2011. It's not that I 
+don‘t have problems, I’m just not putting them on 
+Facebook: challenges and opportunities in using online 
+social networks for health. CSCW 2011. 
+
+40.  James Pennebaker and Cindy Chung. 2007. Expressive 
+writing, emotional upheavals, and health. Handbook of 
+health psychology, 263–284. 
+
+41.  James Pennebaker, Martha Francis, and Roger Booth. 
+2001. Linguistic inquiry and word count: LIWC 2001. 
+Word Journal Of The International Linguistic 
+Association. 
+
+42.  James Pennebaker, Emmanuelle Zech, and Bernard 
+
+Rimé. 2001. Disclosing and sharing emotion: 
+Psychological, social, and health consequences. 
+Handbook of bereavement …. 
+
+43.  Harry T Reis, Shannon M Smith, Cheryl L Carmichael, 
+
+et al. 2010. Are you happy for me? How sharing 
+positive events with others provides personal and 
+interpersonal benefits. Journal of Personality and Social 
+Psychology 99, 2, 311–329. 
+http://doi.org/10.1037/a0018344 
+
+44.  Bernard Rimé. 2009. Emotion Elicits the Social Sharing 
+
+of Emotion: Theory and Empirical Review. Emotion 
+Review 1, 1, 60–85. 
+http://doi.org/10.1177/1754073908097189 
+
+45.  Georg Simmel. 1955. Conﬂict and the web of group 
+
+afﬁliations. Trans. K. Wolff and R. Bendix. New York: 
+Free Press. 
+
+46.  Catalina Toma. 2013. Feeling Better But Doing Worse: 
+Effects of Facebook Self-Presentation on Implicit Self-
+Esteem and Cognitive Task Performance. Media 
+Psychology. 
+
+ 
+ 
+
+ 
+
+1474
+
+

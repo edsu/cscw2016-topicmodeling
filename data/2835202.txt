@@ -1,0 +1,1646 @@
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+Assignment Techniques for Crowdsourcing Sensitive Tasks
+
+L. Elisa Celis
+
+´Ecole Polytechnique F´ed´erale
+
+de Lausanne, Switzerland
+
+elisa.celis@epﬂ.ch
+
+Sai Praneeth Reddy
+
+Ishaan Preet Singh
+
+Indian Institute of Technology
+
+Indian Institute of Technology
+
+Delhi, India
+
+cs5110294@iitd.ac.in
+
+Delhi, India
+
+cs5110280@iitd.ac.in
+
+Shailesh Vaya
+
+Xerox Research Centre India
+
+Bangalore, India
+
+shailesh.vaya@xerox.com
+
+ABSTRACT
+Protecting the privacy of crowd workers has been an impor-
+tant topic in crowdsourcing, however, task privacy has largely
+been ignored despite the fact that many tasks, e.g., form dig-
+itization, live audio transcription or image tagging often con-
+tain sensitive information. Although assigning an entire job to
+a worker may leak private information, jobs can often be split
+into small components that individually do not. We study the
+problem of distributing such tasks to workers with the goal of
+maximizing task privacy using such an approach.
+We introduce information loss functions to formally mea-
+sure the amount of private information leaked as a function
+of the task assignment. We then design assignment mecha-
+nisms for three different assignment settings: PUSH, PULL
+and a new setting Tug Of War (TOW), which is an inter-
+mediate approach that balances ﬂexibility for both workers
+and requesters. Our assignment algorithms have zero privacy
+loss for PUSH, and tight theoretical guarantees for PULL.
+For TOW, our assignment algorithm provably outperforms
+PULL; importantly the privacy loss is independent of the
+number of tasks, even when workers collude. We further an-
+alyze the performance and privacy tradeoffs empirically on
+simulated and real-world collusion networks and ﬁnd that our
+algorithms outperform the theoretical guarantees.
+
+Author Keywords
+Crowdsourcing; Microtasks; Privacy; Social Networks
+
+ACM Classiﬁcation Keywords
+H.1.m Information systems: Models and Principles; K.4.m
+Computing Milieux: Computing and Society
+
+INTRODUCTION
+Crowdsourcing, a term ﬁrst coined by Wired magazine in
+2006, is “the act of taking a job traditionally performed by
+
+Permission to make digital or hard copies of all or part of this work for personal or 
+classroom use is granted without fee provided that copies are not made or distributed 
+for  profit  or  commercial  advantage  and  that  copies  bear  this  notice  and  the  full 
+citation on the first page. Copyrights for components of this work owned by others 
+than  the  author(s)  must  be  honored.  Abstracting  with  credit  is  permitted.  To  copy 
+otherwise,  or  republish,  to  post  on  servers  or  to  redistribute  to  lists,  requires  prior 
+specific permission and/or a fee. Request permissions from Permissions@acm.org.
+CSCW '16, February 27-March 02, 2016, San Francisco, CA, USA 
+Copyright is held by the owner/author(s). Publication rights licensed to ACM.
+ACM 978-1-4503-3592-8/16/02...$15.00
+DOI: http://dx.doi.org/10.1145/2818048.2835202
+
+836
+
+a designated agent (usually an employee) and outsourcing it
+to an undeﬁned, generally large group of people in the form
+of an open call.” [17] Often, companies have large volumes
+of relatively simple jobs which can be easily completed by
+humans but not (yet) computers; e.g., image labelling, object
+recognition, video tagging, text digitisation or translation and
+transcription.
+However, given the fact that there is little control over crowd
+workers, revealing private information can have risks and in-
+formation contained in tasks has been a target of malicious
+attacks [15, 16]. For example, a worker (or worse – a col-
+luding group of workers) may be able to decipher the name
+and prescription on a medicine bottle given an image to label,
+or steal the identity of a person from a form in a transcrip-
+tion task [13]. There are often ethical, institutional, ﬁnancial
+or legal reasons to preserve private information embedded in
+tasks, especially with user sourced or healthcare data. For
+example, crowdsourcing the evaluation of standardised tests
+can be problematic since student work is protected by privacy
+laws [7]. Such legal issues or business best practices (such as
+six sigma) mean that along with practical safety, theoretical
+guarantees are necessary. Even if we construct algorithms
+that perform well in practice, legal and ethical considerations
+must be satisﬁed before implementation in real world appli-
+cations, making theoretical guarantees a prerequisite in many
+scenarios. Traditional approaches for achieving data security,
+such as encryption, do not work here since a crowdworker
+must have access to some data in order to complete their task.
+Similarly, recent approaches towards data privacy such as k-
+anonymity and differential privacy cannot be applied since
+they function by processing of the data (e.g., by modifying
+some of the entries in a database) whereas when crowdsourc-
+ing we are still in the process of acquiring the data.
+Instead, we use the following insight: if the private data is
+broken down into enough components, no single component
+would allow the worker to reconstruct the original content
+of the data.
+In this manner, we can prevent the release of
+private information while still releasing all of the data. As
+long as no single worker has access to multiple components,
+privacy is maintained. Such approaches have been used in
+practice, e.g., for digitisation tasks; however, no formal guar-
+antees have been provided. Moreover, all proposed solutions
+of this form assume that there is no collusion between work-
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+ers. We instead provide a solution for cases with a known un-
+derlying collusion network in which nodes collude with their
+√
+neighbours. For common assignment settings our approach
+works for such graphs that have maximum degree in o(
+n),
+where n is the number of workers, and tasks that can be split
+into o(
+
+√
+n) components.
+
+Our Contributions
+In this work, we address the challenge of creating and posting
+tasks on a crowdsourcing platform while maintaining privacy
+with respect to task content. We consider a generic class of
+tasks where each task can be split into multiple components
+such that each component can be independently completed by
+a crowdworker, and no single component leaks conﬁdential
+information.1 We make three main contributions:
+1. We formalise the notion of a information loss I, and intro-
+duce the Reliable Information Ratio IRIR as a ﬂexible and
+robust metric of effective information loss.
+2. We consider two common task assignment settings (PUSH
+and PULL) and introduce a third hybrid setting (TOW),
+and present task assignment algorithms for all three. We
+provide theoretical guarantees and analyse their tradeoffs
+as a function of the collusion network and task properties.
+3. We empirically evaluate our algorithms on the class of
+Watts-Strogatz collusion graphs, and a real-world social
+network.
+
+Rekatsinas et al.
+[35] consider partitioning large data
+amongst adversarial data centres and state that assuming no
+collusion is “necessary in application domains that require re-
+lease of private user information”. Hence, the fact that we can
+provide any bounds on the amount of information lost when
+collusion occurs is of interest. Moreover, the TOW assign-
+ment setting should be of independent interest; it would be
+simple for a platform to implement, would not change the
+worker or requester experience, and could allow for better
+guarantees including, but not limited, to privacy.
+
+APPROACH
+
+Private Information Loss
+We ﬁrst introduce a general deﬁnition of information loss
+which can be adapted to speciﬁc domains. We call a sin-
+gle unit of private information a gem. The exact deﬁnition
+will be domain speciﬁc and depend on the type of informa-
+tion which is to be protected; e.g., the identity of a person in
+a photograph, the matching of an illness to a patient, uncov-
+ering the grade of a student. We deﬁne an information loss
+function I : A → R
++ as a mapping from a given assignment
+of tasks to workers A ∈ A to a measure of the number of
+gems lost. The ideal scenario would be to have an assign-
+ment mechanism that produces an assignment A(cid:2) such that
+A(cid:2) = argminA∈AI(A). When not attainable, we instead pro-
+vide theoretical guarantees that upper bound the information
+lost when using our assignment mechanism.
+
+1We assume that multiple jobs are independent; i.e., no sensitive in-
+formation can be gleaned from components that come from different
+jobs. Our approach (with appropriate modiﬁcations to the guaran-
+tees) can be extended to the dependent case.
+
+Intuitive information loss functions exist, such as the number
+of gems revealed (we call this I1). More complex metrics can
+also be used; in this paper we study an additional information
+loss function IRIR that captures the effective information loss
+in settings where the identiﬁcation of a gem is a noisy process.
+
+Collusion Networks
+Recent evidence has shown that crowdworkers may collude
+maliciously [40]. In a collusion network, vertices are crowd-
+workers and edges represent a pair of workers that can col-
+lude, i.e., share task content and, hence, collectively discover
+gems. Here, we will assume that collusion means every
+worker has access to it’s neighbours datasets, which is reason-
+able in practice [10]. If collusion is possible between vertices
+up to distance k, we can simply take the augmented graph
+G + G2 + ··· + Gk.
+The social network graph of crowd workers can be inferred in
+a worst-case manner (i.e., over-estimating link probabilities)
+using information such as location, interests and groups [22,
+41]. Such information about crowdworkers is surprisingly
+easy to attain, even in restrictive settings [29]. Alternatively,
+we could use a more restricted platform (such as an actual
+social network), or use auxiliary information about workers
+(such as their expertise, and past performance) to construct
+such a graph [5, 37, 18]. We might have an overestimate
+of the collusion network, but we can use it as a worst-case
+scenario in order to provide the strongest possible guarantees.
+Of course, if the whole graph is colluding (such as a fully
+connected graph), we have no hope of giving a good privacy
+guarantee. However, in social networks it is believed that the
+degree is O(log(n)), which more than sufﬁces for guarantees.
+Recall that the information loss is a function of the task as-
+signment. If there is no collusion, the information loss does
+not change if we permute the assignment. However, with col-
+lusion the topology of the network comes into play and the
+assignment mechanism must take it into account.
+
+Assignment Settings
+Our main results fall into three categories of assignment set-
+tings. Different crowdsourcing paradigms allow different
+amounts of control over 1) the selection of a worker, and 2)
+the assignment of a task. We consider three such settings
+which capture the essence of the available degrees of free-
+dom.
+The PULL setting is common in microtask assignment, pop-
+ularised by platforms such as Amazon Mechanical Turk. In
+this setting, tasks are posted in a queue, and crowd workers ar-
+rive in an online manner and “pull” a task off the queue. The
+requester cannot directly control which worker gets which
+task, other than potentially placing a blanket ban on a certain
+kind of worker, e.g., with geographic or reputation-based re-
+strictions, or limit the number of tasks a single worker can ac-
+cept. Given the restrictiveness of this setting, the best strategy
+we can hope for is simply to randomise the order of the tasks
+in the queue. By connecting this assignment algorithm to the
+well-studied balls-and-bins problem, we can upper bound in-
+formation loss with high probability.
+
+837
+
+that
+
+PUSH is the traditional employment setting where an em-
+ployer has all the tasks and workers, and can assign a task to
+any worker (who may have a work capacity). We show that
+zero information is lost, as long as there are enough work-
+ers. The lower bound on the number of workers depends
+on the topology of the collusion network (which we assume
+is known). We prove that we require roughly mΔ workers,
+where Δ is the maximum degree of the network and m is the
+number of components in a task. Importantly, this bound does
+not depend on the number of tasks to be crowdsourced. Em-
+pirically, our algorithms perform even better and the number
+of workers required seems to depend on the average rather
+than the maximum degree.
+We introduce a hybrid setting, which we call “tug-of-war”
+(TOW),
+interlaces worker and requester preferences
+(similar in spirit to [9]). Workers arrive in an online man-
+ner (as in PULL) and must be assigned a task, but the task
+can be chosen depending on the worker’s attributes (as in
+PUSH). Hence, we can use their history, or social graph etc.
+to minimise I. Allowing the hybrid TOW assignment setting
+would require one additional layer (already present in some
+platforms) that gathers information about crowdworkers, ei-
+ther through veriﬁed social networks, ﬁnancial information,
+or task history. The problem in this case is that when we
+are almost out of tasks, our options are limited and we may
+be forced to assign multiple components of the same task to
+a single worker (or to neighbouring workers). However, we
+show that this can only occur roughly CΔ times where C is
+the maximum number of times a worker arrives. The above
+bound can be large. However, while not achieving optimality
+as with PUSH, the number of gems lost is still independent of
+the number of tasks. This is a strong contrast to PULL where
+the dependence is linear. Hence, this task assignment setting
+proves to be a good compromise between PUSH and PULL,
+and is of practical interest when privacy is a concern in crowd-
+sourcing. More generally, we expect the added ﬂexibility to
+the requester while maintaining the freedom for workers to
+arrive at will strikes a natural balance which could be useful
+to applications beyond privacy where requesters can use the
+worker’s task history to their advantage when assigning tasks.
+
+RELATED WORK
+Crowdsourcing is of growing public interest and has estab-
+lished itself in mainstream business practice and research
+methodology, using a variety of methods to engage humans
+to solve large or complex problems. Parts of almost all large
+jobs can be split into simpler tasks and crowdsourced [23].
+This has been especially popular in areas such as docu-
+ment processing [20], data labelling [6], audio transcrip-
+tion/translation, judging the relevance of search results and
+many others that require minimal skills. Moreover, there are
+many frameworks that allow tasks to be completed on online
+marketplaces [24].
+There is an increasing concern and study of the privacy of in-
+dividuals in online social networks [14], and more recently,
+of crowd workers [29]. Also, a number of questions have
+been raised about the privacy of the information in tasks to be
+crowdsourced [20]. A bottleneck to the expansion of crowd-
+
+838
+
+SESSION: ENGAGING THE CROWD
+
+sourcing to many domains has been the privacy of the data
+given to workers [25, 43]. An analysis of Amazon’s Me-
+chanical Turk found it vulnerable to coordinated attacks by
+crowdworkers [28]. There are many platforms that assist
+users in their daily lives such as Solent which helps edit doc-
+uments, or PlateMate that informs users of the calorie con-
+tent of food through user uploaded pictures. These systems
+use the power of the crowd but operate on possibly sensitive
+user generated content [27]. Some protocols that trade perfor-
+mance and quality of work with privacy have been proposed
+and studied [19]. For example, specialised approaches exists
+that degrade the quality of images to be labelled using noise
+and random perturbations [39], while [13] blurs videos so that
+crowdworkers can not identify faces. Some approaches that
+provide k-anonymity and differential privacy have been pro-
+posed [44, 36] but these require processing of the data which
+is often not possible. For example, anonymising form data
+before crowdsourcing transcription would require knowledge
+of data ﬁled in forms, which would only by available after
+transcription.
+Simultaneously,
+there have also been many advances in
+matching users to tasks, to better improve the work qual-
+ity [38, 21, 11]. We extend this idea, of using some min-
+imal information about users, to actually preserve data pri-
+vacy. [35] considers the related problem of data sharing, and
+presents a framework for partitioning private data across mul-
+tiple non-colluding adversaries with the goal of distributing
+data such that an adversary cannot glean any private infor-
+mation. However, their focus is on partitioning the data set
+into components; we instead assume such a partition is given
+or easy to attain, but that we may be forced to give workers
+multiple components.
+
+APPLICATIONS
+Along with healthcare related applications, any crowdsourc-
+ing task that is based on user generated content along with
+many miscellaneous applications such as labelling of satel-
+lite imagery, or reviewing closed circuit videos, are tasks
+that would beneﬁt from crowdsourcing but deal with sensi-
+tive data.
+Form digitisation in the context of crowdsourcing has been
+widely studied, due in part to its wide use in industry [30,
+8].
+Insurance forms are often handwritten and need to be
+digitised (2009’s HITECH Act alone sanctioned over 20
+billion dollars as stimulate to encourage electronic health
+records[4]). The number of such forms can be large, has high
+variance, and require little to no skilled labor [33] making
+it ideally suited for crowd work. However, health insurance
+forms could reveal very sensitive information about a patient.
+In the US, the Health Insurance Portability and Accountabil-
+ity Act (HIPAA) guarantees privacy to patients, and outlines
+very stringent requirements for processing of healthcare re-
+lated forms [32], which is a signiﬁcant barrier for crowd-
+sourcing.
+Concretely, if we distribute the contents of a form such that
+one worker get the ﬁrst name of the patient, another gets the
+last name of the doctor, another gets the billing code and so
+on, then workers have no context and thus have no private
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+PRELIMINARIES
+
+Notation
+We consider a particular type of task that is to be crowd-
+sourced, and let an instance be a speciﬁc embodiment of that
+task; e.g., if the task is digitising handwritten health insurance
+forms, an instance would be a particular ﬁlled form (we will
+use this as a running example to clarify notation). Hence, in
+this context, we consider one task, but many instances that
+are to be completed. A component is a portion of a task that
+can be completed independently, possibly a single ﬁeld in the
+form. Form ﬁelds (such as name, age etc.), or groups of ﬁelds
+are components that can be digitised individually and multi-
+ple ﬁelds can be combined to get the completed ﬁnal task.
+Recall that we call a single unit of private information a gem.
+A Privacy Preserving Partition (or simply Partition) of a task
+is a collection of components such that no single component
+can be used to ﬁnd a gem, and if all components are com-
+pleted then we can reconstruct a completed task. If the iden-
+tity of the person who ﬁlled the form is a gem, then the ﬁrst
+name ﬁeld along with gender and age may form one set of
+components, while last name and weight might be a second.
+Individually, a component does not reveal a gem but both sets
+combined may leak the identity. Let the number of compo-
+nents in such a partition be m. 2. Let n be the number of
+crowd workers, f the number of instances and Δ the maxi-
+mum degree in the graph G = G(cid:5) + G(cid:5)2, where G(cid:5) is the col-
+lusion network of crowdworkers. Hence, G is the graph such
+that if (u, v) is an edge ∈ G, then u can reach v in two steps.
+This simulates the situation where a node has access to all
+gems assigned to itself and those assigned to it’s neighbours
+(in G(cid:5)).
+
+number of crowdworkers
+number of instances of a task
+
+n
+f
+m number of components in a task
+C maximum capacity of a worker
+G the collusion graph
+Δ maximum degree of G
+p
+q
+
+probability of a true positive
+probability of a false positive
+Table 1. Notation
+
+Modelling Information Loss
+Recall that for an assignment A of tasks to workers, an infor-
+mation loss function I : A → R
++ is a measure of the number
+of gems lost. Our goal is to ﬁnd an assignment that minimizes
+the information loss function. The ﬁrst information loss func-
+tion which comes to mind is simply a count of the number of
+gems lost. We call this
+
+(cid:2)
+
+I1 =
+
+# gems lost from j.
+
+(1)
+
+task j
+
+2Note that our results improve as m decreases, so it is important in a
+practical setting to design small partitions. This is outside the scope
+of this paper but studied in [35]
+
+839
+
+Figure 1. An example insurance form.
+
+√
+
+information. Figure 1, shows a snippet of a patient record,
+which is split into components so that it can be digitised.
+Fields with the same color form a component. For example,
+the pink ﬁelds include Birthdate and Sex. These together do
+not reveal any personal information. However, if you com-
+bine this with the name from the blue ﬁelds, then we could
+learn who was admitted to a hospital. If all the components
+are digitised separately, they can be combined to give the
+complete digitised form. Note that the number of such parts
+into which a task can be split obviously needs to be less than
+the number of workers to guarantee perfect privacy; other-
+wise we necessarily have to assign multiple parts of the same
+task to at least one worker. For our results, we assume that the
+number of parts is o(
+n) where n is the number of workers.
+In practice, we expect the number of parts to be in the 10s for
+a task, while the number of workers is conservatively in the
+10000s (for example, Amazon Mechanical Turk has over half
+a million workers).
+The application of our techniques will of course be domain
+speciﬁc but can be done in a number of different ways; for
+example, splitting tasks temporally may be of interest. In a
+system such as PlateMate [31], a single picture from a user
+may not compromise privacy, but a week’s pictures together
+may reveal information about a user’s location or habits. Sim-
+ilarly, in audio transcription or translation, crowdworkers get-
+ting a single word or phrase to transcribe won’t learn any
+personal information. Crowdsourced assistive technology ap-
+plications, e.g., Legion:Scribe [26], create real time captions
+from audio for deaf workers. To improve latency, it splits
+the task into many small independent task. This has the ad-
+ditional beneﬁt of providing privacy as long as the segments
+are small enough and no single worker (or set of colluders) is
+assigned multiple segments.
+While the idea of splitting tasks in order to improve privacy is
+not new [2, 3], guarantees on the performance (and hence the
+satisfaction of HIPPA-like requirements) have not been val-
+idated theoretically or empirically. Moreover, existing work
+has not considered the possibility of colluding workers. Our
+work takes a concrete step towards closing these gaps by pro-
+viding strong statistical guarantees on the amount of informa-
+tion loss, even when accounting for colluding behavior.
+
+SESSION: ENGAGING THE CROWD
+
+(a) f = 100, q = 0.3, varying k
+
+(b) f = 100, k = 5, varying q
+
+(c) k = 5, q = 0.3, varying f
+
+Figure 2. PULL experiments: The number of gems discovered and IRIR, n = 100, m = 5, β = 0.4, p = 0.9 on a Watts-Strogatzcollusion network.
+
+The cost of information loss can of course be non-linear.
+Hence, we deﬁne a generalisation
+
+(cid:2)
+
+Ig =
+
+g(# gems lost from j) ,
+
+(2)
+
+task j
+
+where g is a positive monotonically increasing convex func-
+tion. We have been considering tasks where an instance is
+compromised if two or more components of the same instance
+are given to a particular worker. Let Is be a variant of Ig
+which equals the total number of times each task is compro-
+mised. A simple metric such as Is is a useful measure of how
+many gems have spread to how many people. Formally,
+
+(cid:2)
+
+(cid:2)
+
+1{i has gem from j}.
+
+(3)
+
+worker i
+
+task j
+
+Is =
+
+While functions of the form above capture worst case bounds,
+they implicitly assume that every crowd worker is malicious,
+and, moreover, can perfectly identify gems. However, we can
+often present an anonymised version of a task, or partition a
+task such that it is a priori not clear which parts of the task go
+together [35]. For example, given a last name ﬁeld and ﬁrst
+name ﬁeld in a form, it would not be clear whether they were
+actually from the same form; snippets of an audio stream
+would not seem to be from the same source as long as their
+pitch/tone and other aspects were changed. While we lose
+a gem if the worker can de-anonymise the task or piece to-
+gether multiple components of the same job, these processes
+can be noisy. Hence, inspired by the signal-to-noise ratio, we
+introduce the reliable information ratio (RIR):
+
+IRIR =
+
+Ii
+
+RIR
+
+=
+
+E
+E
+
+#i’s gem true positives
+#i’s gem false positives
+
+(4)
+
+(cid:4)
+(cid:4)
+
+(cid:2)
+
+worker i
+
+(cid:3)
+(cid:3)
+
+A true positive refers to when the worker learns some infor-
+mation correctly from a pair of components of a task (say ﬁrst
+name and last name) while a false positive refers to incorrect
+information learnt by the worker (if the ﬁrst name and last
+name were actually from different forms). The greater the
+number of false positives, the less reliable and discernible the
+true positives become. Clearly, if Ii
+(cid:6) 1, then the iden-
+tiﬁcation of a gem is such a noisy process that it renders it
+effectively useless.
+
+RIR
+
+840
+
+This fact comes into focus when one considers the utility of
+detecting a gem. Let #i
+c be the number of gems worker i
+identiﬁes correctly and #i
+c be the number of gems worker i
+identiﬁes incorrectly (with a λ penalty for each such false
+positive). Then, if the worker’s utility for detecting gems is
+E[util] = E[#i
+
+c] for some λ ∈ [0, 1]
+(cid:6)
+
+c] − λE[#i
+
+(cid:5)
+
+E[util] = E[#i
+c]
+
+(5)
+≤ λ, the utility of trying to ﬁnd a gem is negative. λ
+
+If Ii
+can be set based on the level of security required.
+
+RIR
+
+RIR
+
+.
+
+1 − λ
+Ii
+
+REMARK 1. For this paper, we consider a generic class of
+tasks that can be split into components such that a gem is re-
+vealed if and only if two or more components of the same job
+are given to a particular worker. Form digitisation, among
+others, falls into this category.
+When calculating the Reliable Information Ratio Ii
+RIR for a
+worker i, we let pi be the probability of a true positive given
+a pair of components from the same instance of a task and
+qi > 0 be the probability of a false positive given a pair from
+different instances. If a worker is not malicious, pi = 0 and
+hence IRIR = 0.
+
+THEORETICAL RESULTS
+
+PULL Assignment Model
+In the PULL assignment model, crowd workers arrive in an
+online manner and take the next task from the queue. This
+is the assignment model used in a majority of crowdsourcing
+platforms including Amazon Mechanical Turk. This gives
+the requester almost no control with which to ensure privacy.
+Crowdworkers can arrive multiple times in an arbitrary order.
+However, we neutralise this by randomly permuting the order
+of the tasks; this effectively gives a random permutation of
+the crowd workers.
+
+Connection to Balls and Bins
+Imagine the components of a task instance as balls, where the
+balls corresponding to job j are of “color” j. Further, imagine
+the crowd-workers as bins. Then, one can see a one to one
+correspondence between task assignment in the PULL model
+and throwing of sets of colored balls into the bins at random.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(c) k = 5, β = 0.4, varying m
+(a) m = 5, β = 0.4, varying k
+Figure 3. PUSH experiments: The number of nodes (workers) removed, n = 100, f = 100 on a Watts-Strogatz collusion network.
+
+(b) m = 5, k = 5, varying β
+
+, . . . , Xm
+
+We will use the fact that the balls and bins process is well
+approximated by a Poisson process to prove our results; it is
+well known that after throwing m balls into n bins, the distri-
+bution of the number of balls in a given bin is approximately
+Poisson with mean m
+n . This analogy can be carried further
+and the joint distribution of the number of balls in all bins is
+well approximated by a process where the load at each bin is
+an independent Poisson random variable with mean m
+n . For-
+n denote the number of balls in the ith
+mally, let Xm
+1
+bin after throwing m balls, and let Ym
+n be indepen-
+1
+dent Poisson random variables with mean m
+n . Adapting an
+argument by Gonnet [12], one can reconstruct the following
+result from [1]:
+THEOREM 1
+
+(THEOREM FROM [1]). Consider a non-
++ → R+. Then, E[ f (X1, . . . , Xn)] ≤
+2πenE[ f (Y1, . . . , Yn)]. Further, if E[ f (X1, . . . , Xn)] is either
+monotonically increasing or monotonically decreasing with
+m. E[ f (X1, . . . , Xn)] ≤ 4E[ f (Y1, . . . , Yn)].
+In particular, it is often convenient to consider a function that
+is a 0/1 event which depends on the load of each bin.
+
+√
+negative function f
+
+, . . . , Ym
+
+: Zn
+
+1
+
++ → {0, 1}.
+
+DEFINITION 1. Load Based Event: A load based event is
+
+, . . . , Ym
+
+, . . . , Xm
+
+n )] ≤ p =⇒ Pr[L(Xm
+
+an indicator function L : Zn
+Then, the Corollary below follows from Theorem 1.
+COROLLARY 1. Let L be a load based event.
+n )] ≤ 5
+, . . . , Xm
+
+√
+Then
+Pr[L(Ym
+np.
+1
+Moreover, if the probability of the event is monotonically in-
+n )] ≤ 4p.
+creasing or decreasing with m, then Pr[L(Xm
+1
+Simple Information Function Is
+We consider the simple function Is to show how Theorem 1
+and Corollary 1 can be useful in getting bounds on informa-
+tion functions. To illustrate this point, we assume all workers
+arrive an equal number of times, although the proof can be
+extended as long as no worker arrives more than log(n) times
+using standard techniques from the balls and bins literature.
+THEOREM 2. The function Is deﬁned above is less than
+with high probability when m ≤ n.3
+10n f
+3We believe this assumption to be reasonable since we would need
+at least as many workers as parts in order to ensure no collisions.
+
+(cid:8)
+1 + m
+n
+
+1 − e−m/n
+
+(cid:9)(cid:10)
+
+(cid:7)
+
+PROOF. Let L(Xm
+
+i ) be the load based event for the event
+that two or more balls of a ﬁxed color c fall into bin i. Note
+that it is monotonic in m. Hence, we can approximate it via a
+Poisson process to get a bound on E[Is]:
+
+1i has gem from j
+
+⎤⎥⎥⎥⎥⎥⎥⎥⎥⎥⎦
+
+(6)
+
+(7)
+
+⎤⎥⎥⎥⎥⎥⎥⎥⎦
+
+(cid:18)
+
+E[Is] = E
+
+= E
+
+(cid:2)
+
+(cid:2)
+
+worker i
+
+task j
+
+(cid:2)
+
+⎡⎢⎢⎢⎢⎢⎢⎢⎢⎢⎣
+⎡⎢⎢⎢⎢⎢⎢⎢⎣
+
+(cid:2)
+⎡⎢⎢⎢⎢⎢⎢⎢⎣
+
+bin i
+
+(cid:2)
+
+color c
+
+(cid:2)
+
+L(Xm
+i )
+
+⎤⎥⎥⎥⎥⎥⎥⎥⎦ = 4n f E[L(Ym
+
+L(Ym
+i )
+
+i )]. (8)
+
+≤ 4E
+
+bin i
+
+color c
+
+(cid:17)
+
+(cid:19)(cid:20)
+
+m
+n
+
+is a Poisson random variable with mean m
+
+Since Ym
+i
+E[L(Ym
+equal to 2, we get that
+
+i )] is simply the probability that Ym
+i
+
+n and
+is greater than or
+
+E[Is] ≤ 4n f
+
+1 − e
+
+−m/n
+
+.
+
+1 +
+
+(9)
+Note that in many practical settings m (cid:6) n (we expect m to be
+around 10 for a task, while the number of workers is conser-
+vatively in the 10000s), so E[Is] ≈ 5m f , which, interestingly,
+does not depend on n.
+A similar argument using Corollary 1 shows that Is ≤ 2E[Is]
+with high probability, giving the desired bound.
+Reliable Information Ratio IRIR
+We ﬁrst bound IRIR for a generic probability p of a true pos-
+itive and probability q of a false positive.
+THEOREM 3. With high probability, IRIR ≤ 10m
+The proof of this theorem is similar in structure to the proof
+of Theorem 2 and is omitted due to space constraints.
+
+n · p
+
+√
+
+q
+
+.
+
+Application to Digitisation Tasks
+Recall the form digitisation task we introduced earlier. Note
+that in this setting, handwriting similarity can make it more
+difﬁcult for a worker to distinguish between forms.4 Hence,
+we can cluster tasks in a way that increases q, the probability
+4There is a vast literature on handwriting similarity recognition.
+
+841
+
+λ
+
+RIR
+
+of a false positive, by presenting components of tasks with
+similar handwriting to the same worker. Combining this with
+some additional randomisation techniques, we get the follow-
+ing Corollary of Theorem 3:
+COROLLARY 2. If q ≥ 10m
+n p, then IRIR ≤ λn with high
+√
+
+probability.
+Note that this means that the average expected utility for a
+worker is negative since Ii
+≤ λ. Hence, we would like
+to boost q in order to cross this bound. A similar boosting
+approach could be used with any type of task, as long as a
+relevant similarity metric can be deﬁned. In audio, this might
+be the pitch and tone of speech; in images this could be the
+clarity or colour palette.
+PUSH Assignment Model
+With regards to the amount of control the requester gets, the
+PUSH assignment setting is at the opposite end of the spec-
+trum compared to PULL. We have the maximum amount of
+knowledge about the workers and control over the assign-
+ment. This is closer to the standard employment model where
+we have a ﬁxed number of workers, and know their charac-
+teristics and networks, and can simply assign tasks at will.
+We assume we are given an undirected collusion graph G(cid:5)
+with a vertex for each crowdworker, and an edge (u, v) mean-
+ing that u and v know each other and may collude. We cre-
+ate the graph G(cid:5) + G(cid:5)2. This is necessary since a node u in
+G(cid:5) might have access to tasks from two of her neighbours v
+and w and may get a gem if both of them are assigned com-
+ponents from the same task. Now, we lose a gem if two or
+more components from the same task are assigned to a single
+crowdworker or, in the collusion case, to two neighbouring
+crowdworkers. Informally, our assignment algorithm ensures
+no gems are lost as long as the the degree of the graph is small
+relative to the number of workers.
+THEOREM 4. Given a collusion graph G(cid:5) and G = G(cid:5) +
+G(cid:5)2, assume n ≥ m(Δ +1). Then there exists an algorithm that
+assigns components to crowd workers in linear time such that
+Is = IRIR = 0.
+Note that, if there is no collusion, then n ≥ m sufﬁces.5
+Note that an edge uv in this graph implies that we should not
+assign two components of the same task to {u, v} since either
+we would assign to the same node, or the two nodes can share
+information. However, if uv is not an edge, we can safely
+assign to these vertices. Hence, given a proper coloring of G,
+if we assign the components of a task to vertices of the same
+color, we know that no information is leaked on that task.6
+
+Algorithm 1 Graph coloring
+Coloring: Color the graph with Δ + 1 colors.
+Pruning: Let C(m) be the set of colors that have been used
+fewer than m times. ∀ c ∈ C(m), remove all vertices with
+color c from the graph and remove c as a color.
+5In most settings, m is a constant and Δ ∈ o(n) so this condition is
+satisﬁed.
+6Note that we have switched from PULL and are now coloring work-
+ers, whereas earlier we were coloring tasks.
+
+842
+
+SESSION: ENGAGING THE CROWD
+
+Algorithm 1 is a simple algorithm that performs optimally for
+large enough graphs.
+LEMMA 1. Algorithm 1 removes at most (m − 1)(Δ + 1)
+vertices, and produces a proper coloring of the pruned graph
+where at least one color has ≥ m vertices.
+(cid:21)Δ+1
+PROOF. After the coloring step, let ki = |Ci| mod m where
+i=1 ki ≤ (m −
+Ci is the set of vertices of color i. Hence,
+1)(Δ + 1). This means we have cut out at most (m − 1)(Δ + 1)
+vertices. Since n ≥ m(Δ + 1), there exists at least one color
+with at least m vertices.
+We use Algorithm 2 to assign tasks given such a coloring.
+Since for every group si > m, no worker gets two compo-
+nents from the same task. Once a group has been completely
+assigned, we have also assigned tasks to all workers in the
+corresponding group. Now, we continue the same process
+with the next group and its tasks and so on until all the tasks
+are assigned.
+
+Algorithm 2 Distributing Tasks
+Let si be the number of nodes of color i; {J1, J2, . . . , J f} be
+the set of tasks with components j(cid:5)
+
+, . . . , j(cid:5)
+
+, j(cid:5)
+
+i,m each.
+
+i,1
+
+i,2
+
+to the size of each group:
+
+1. Divide tasks: Divide the tasks into sets pro-
+to color
+to color 2 give
+
+portional
+1 give tasks {J1, J2, . . . , J f s1/n},
+{J1+ f∗s1/n, . . . , J f∗(s1+s2)/n}, and so on.
+2. Assign tasks: Now, within the tasks assigned to a
+group (e.g., group 1 is {J1, J2, . . . , J f∗s1/n}) create an
+ordered list of components of tasks:
+
+j(cid:5)
+
+1,1
+
+, j(cid:5)
+
+2,1
+
+j(cid:5)
+
+1,m
+
+, j(cid:5)
+
+2,m
+
+, . . . , j(cid:5)
+
+...
+, . . . , j(cid:5)
+
+f s1/n,1
+
+f s1/n,m
+
+In other words, the ﬁrst components of all the tasks in
+the partition, followed by the second components of
+all the tasks and so on.
+
+3. Assign the ﬁrst f m
+
+to the ﬁrst worker of group 1, the next f m
+ond worker of the group and so on.
+
+n components in the above ordering
+n to the sec-
+
+The proof of Theorem 4 follows as we are assigning the m dif-
+ferent components of a task to m workers of the same color.
+Since we take a greedy coloring, and straightforwardly dis-
+tribute tasks it is clear the process is linear in the size of the
+inputs.
+
+REMARK 2. In our empirical analysis, we see that the de-
+pendence seems to be on the average rather than maximum
+degree.
+
+Worker Capacities
+The most generous assumption we made in the PUSH model
+is that we can assign tasks at will. Though this can be done in
+a balanced manner, we now consider the case where workers
+have (potentially) different known capacities which bound the
+number of components they are able or willing to complete.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+(a) f = 100, q = 0.3, varying k
+
+Figure 4. TOW experiments: The number of gems discovered and Ir, n = 100, m = 5, β = 0.4, p = 0.9 on a Watts-Strogatz collusion network.
+
+(b) f = 100, k = 5, varying q
+
+(c) k = 5, q = 0.3, varying f
+
+For a worker u, let cu be her capacity. We begin with an
+extension of the above coloring algorithm to get the following
+theorem.
+THEOREM 5. Given a collusion graph G, if n ≥ m f (Δ+1),
+there exists a linear-time algorithm that assigns components
+to crowd workers such that I1 = I2 = IRIR = 0.
+The proof is straightforward and omitted due to space con-
+straints. A problem with the above approach is that it seems
+that we are not taking advantage of vertices with very high
+capacity, and hence require more vertices overall. However,
+there are two issues with trying to achieve a better bound;
+1) there must be enough high capacity vertices, and 2) they
+must not be clustered in the graph in a way that we cannot
+group at least m of them into the same color. Hence, both the
+distribution of capacities and the graph structure come into
+play and we can construct examples which show this bound
+is tight. Our empirical results suggest, however, that we can
+dramatically outperform this bound.
+
+TOW Assignment Model
+We now consider the intermediate case where the graph and
+the capacities are a priori unknown. Using information about
+crowdworkers has been suggested in some works to im-
+prove work quality, and we propose a platform in which the
+workers’ social network (or information from which a collu-
+sion graph can be generated) is available. As in the PULL
+model, workers arrive in an online manner, potentially mul-
+tiple times. However, this time we know their edges when
+they arrive, and we can use this information to assign a task.
+While this gives us more control over the assignment, we also
+weaken our assumptions on the arrival of workers and allow
+it to be arbitrary (rather than uniform).
+Without loss of generality, we assume a worker arrives and
+asks for exactly one job; a worker who wants more than one
+job can arrive again after their initial job is completed.7 We
+also make the worst case assumption that workers continue
+to arrive until all tasks are completed; as we will see in the
+proof, in this case fewer assignments means fewer collisions.
+
+7This process is similar to the process on Amazon Mechanical Turk
+and many other platforms
+
+THEOREM 6. Consider a collusion graph G(cid:5), and G =
+G(cid:5) + G(cid:5)2 as before. Let C = maxu cu and assume workers
+continue to arrive until all jobs are completed. Then there ex-
+ists an algorithm that assigns components to crowd workers
+such I1 ≤ C(Δ + 1), Is ≤ mC(Δ + 1) and IRIR ≤ m2CΔ · p
+q
+and runs in linear time.
+
+PROOF. Recall that when a worker arrives, her edges are
+known. For each worker we maintain an array of colors of
+size equal to the number of arrivals. Maintain an online multi-
+coloring as workers arrive such that no two entries in the array
+are of the same color. Moreover, a valid coloring is one in
+which the intersection of the colors at the two endpoints of an
+edge is empty.
+We will multi-color the vertices greedily as they arrive. Let
+C be the maximum number of arrivals of a single vertex (i.e.,
+the maximum number of tasks assigned to a single worker).
+Hence, we may require up to C(Δ + 1) colors. For each active
+color (i.e., color which has been used at least once), we let
+Ja be the current job being assigned to vertices with color
+a. Whenever a vertex arrives and is colored with a, the next
+component of Ja is given to that vertex. If Ja ﬁnishes, we
+set a new previously unassigned job as Ja.
+Given color a, we will always have a component in Ja to as-
+sign unless we have run out of jobs. Consider the case where
+we have no more jobs. When a vertex arrives, if possible, we
+assign to it a color a which has components remaining in Ja.
+In the case that no such color is available, we must still give
+it a component. Note that this will create a collision (other-
+wise we could have colored the vertex with the color of that
+component to begin with). In the worst case, this can occur
+for up to CΔ colors, where each has all m components of the
+same job. The bounds on I1 and Is are just the number of
+such violations/components.
+To bound IRIR, we observe that the worst case is when a ver-
+tex arrives for the ﬁrst time, all Δ (at most) of its neighbors
+have arrived C times already and are colored identically; sum-
+ming over all vertices gives us the bound on IRIR.
+Importantly, in Theorem 6 we give worst case bounds. As
+in Remark 3, we can often take C = 1. Moreover, if we
+consider the random worker arrival model as in PULL, we
+
+843
+
+regain those bounds when f = CΔ, hence the probability of
+collision is very small and once again Is ≈ IRIR ≈ 0. We
+consider this random arrival model in our empirical results,
+and indeed show the performance is indeed improved.
+
+REMARK 3. In many cases, as with Amazon Mechanical
+Turk (AMT), the requester is allowed to cap the number of
+times a worker is allowed to complete a hit. In such a setting,
+Is = IRIR = 0. Note that this is not an improvement on
+Theorem 4 since here we assume that workers continue to
+arrive as long as we have tasks available, so effectively, n =
+∞ and the conditions required trivially hold.8
+
+EXPERIMENTAL RESULTS
+We ﬁrst evaluate our task assignment algorithms with a real
+world network as the underlying collusion network. We as-
+sume the worst case, that all nodes with a social connection
+will collude. Nonetheless, we obtain favourable results which
+are often considerably better than theoretical bounds. Further,
+to evaluate the variation of results as we change the charac-
+teristics of the collusion network, we use the Watts-Strogatz
+small world network model. Note that each simulation was
+run 50 times and graphs have error bars or show both the
+mean (μ) and mean plus variance (σ + μ).
+
+SESSION: ENGAGING THE CROWD
+
+high localised connectivity, e.g., one with many communi-
+ties that are highly interconnected within the community but
+sparsely connected across communities, do not pose a prob-
+√
+lem, nor do graphs with cliques (as long as the cliques are
+of size o(
+n)). Indeed, our synthetic experiments use Watts-
+Strogatz graphs, which are clique-heavy. 10
+
+Real World Graph
+
+Figure 5. No. of nodes removed in PUSH, with a 1 hop collusion network.
+
+Assumptions on Parameters
+Our theoretical results are phrased in terms of parameters of
+the collusion graph, workers, and tasks; we brieﬂy discuss
+our assumptions here. For TOW, we need not make any as-
+sumptions on the parameters. However, the information loss
+turns out to be a function of m, Δ, and C. Again, we expect
+C to be small; in fact, C can often be controlled directly by
+the requester (e.g., on Amazon Mechanical Turk) by setting
+a maximum number of tasks a worker is allowed to take. For
+
+PUSH and PULL we require that m (cid:6) √
+
+n and Δ (cid:6) √
+
+n.
+
+Worst Case Graphs
+While we expect the above assumptions to hold in practice,
+we brieﬂy consider worst-case graphs; in particular graphs
+with high maximum degree Δ. Such graphs could force us
+to lose many gems, and our theoretical guarantees for cer-
+tain kinds of information loss (I1 and Is), would not hold,
+although others (IRIR) would actually improve. Note, how-
+ever, that an edge assumes collusion, meaning bidirectional
+sharing of information. Unidirectional sharing (for example,
+by posting tasks on a public forum) does not sufﬁce for col-
+lusion since the user that posted their tasks is not given ad-
+ditional information; instead, an (overestimate) of colluding
+edges could be drawn by making all workers who publicly
+post tasks into a clique. While this could lead to a higher
+√
+maximum degree than what would be expected in a social net-
+work, at least Ω(
+n) workers would have to post their tasks
+before it violates our assumptions.9 Note that graphs with
+
+8An alternate practical strategy on AMT-like platforms is to simply
+remove the tasks once fewer than CΔ remain, and re-post them with
+the next batch. This would reduce the information loss to 0.
+9An alternative approach would be to collapse a large clique into an
+”effective” node (at the expense of n), which, in some cases, would
+once again satisfy the requirements of our algorithms.
+
+844
+
+Figure 6. No. of nodes removed in PUSH, with a 2 hop collusion network.
+
+We ﬁrst test our algorithms for PUSH and TOW using the
+social network of an online community for students at UC
+Irvine (from [34]). We assume that two nodes are connected
+if they have sent a message to each other. The resulting graph
+has an average degree of 14, and maximum degree of 255.
+For PUSH, we proved that we will need to remove at most
+(m − 1)Δ nodes where Δ is the max degree of the graph used
+in the colouring. In Figure 5 we see a relation with the aver-
+age degree instead of the maximum degree and in Figure 6,
+we notice that the variation is with the square of the average
+degree. Hence, for social network like graphs, our algorithm
+performs much better than the bounds we established.
+For TOW, we assumed a 2 hop collusion network and
+achieved almost the same results as in the 1 hop case. We
+observe that as the number of tasks is varied, as expected
+from our theoretical results, the number of gems compro-
+mised remains constant, i.e., independent of the number of
+tasks; this is a stark contrast to PULL11, in which the num-
+ber of gems compromised increases linearly with the number
+10If cliques or strongly knit communities are known and causing a
+problem with parameters, they could be compressed into a single
+node for assignment purposes.
+11Note that this is equivalent to comparing with a random assignment
+of tasks to workers conditioned on the same set of workers arriving
+in PULL and TOW.
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+of tasks (see Figure 7). Moreover, we observe that IRIR for
+TOW decreases as we increase the number of tasks (see Fig-
+ure 8).
+Comparing the performance of our assignment with random
+assignment, we see that there is considerable improvement
+and the number of gems compromised in random assignment
+increases with the number of tasks, but is nearly constant in
+TOW.
+
+Figure 7. Gems compromised in PULL vs TOW.
+
+Figure 8. RIR in TOW, with m=5.
+
+Synthetic Experiments
+The well-studied Watts-Strogatz small world network
+model [42] has been shown to have many properties of real
+world social networks. Hence, we used this model to create
+graphs with different characteristics so as to see the effect of
+graph structure on our algorithms
+DEFINITION 2. GWS (n, k, β) Deﬁne a Watts-Strogatz ran-
+dom graph GWS (n, k, β) = G(V, E) as follows: Let |V| = n.
+Label the vertices 0, . . . , n − 1, and let (i, j) ∈ E if and only
+if i ∈ [ j − k/2, j + k/2] mod n. Now, select and randomly
+rewire each edge independently with probability β.
+
+number of nodes in the network
+n
+number of tasks to be completed
+f
+m number of components in a task
+k
+β
+p
+q
+
+average degree in the GWS
+probability of rerouting an edge in GWS
+probability of getting a true positive
+probability of getting a false positive
+
+Table 2. Parameters
+
+845
+
+PULL
+Though the number of gems revealed I1 can be high, the Re-
+liable Information ratio is very low (see Figure 2). I1 in-
+creases sub-linearly with respect to k and linearly with respect
+to f , whereas IRIR decreases exponentially. While this may
+seem surprising, note that the more tasks in the system, the
+higher the load of any given worker; in particular, this means
+the variance in the system disappears so all workers have rel-
+atively high load and hence high noise.
+PUSH
+While we proved theoretically that at most (m − 1)(Δ + 1)
+would need to be removed for a perfect coloring, we see a
+dependence on the average degree, i.e., k in GWS as well as on
+m. In particular, the number is independent of f . The number
+of nodes removed varies almost linearly with both m and k
+but is constant when varying Δ while maintaining the average
+degree. We accomplish this by varying β, which does not
+affect the average degree, but changes Δ. Also, the required
+number of nodes is considerably lower than our worst case
+bound. In Figure 3 c) the worst case bound is ∼ 8m, while
+one standard deviation away from the mean is ∼ 1.7m.
+TOW
+As we would expect, the number of gems which can be leaked
+increases with the degree of the graph since more people can
+collude. However, RIR quickly reaches a value less than
+0.025 (Fig 4). Hence, most leaks are not effective. While per-
+haps initially counterintuitive, this arises from the fact that the
+number of non-compromised tasks given to each worker is in-
+creasing and adding noise to the system. However, a practical
+value of k may be low. Hence we also vary the number of jobs
+distributed for a low value k. IRIR remains low in this case,
+and importantly, I1 does not depend on the number of tasks.
+Also, the number of gems compromised in a random assign-
+ment is over a 100 times more. Hence, though we cannot
+achieve 0 information loss as in PUSH, it is a signiﬁcant im-
+provement over PULL since it depends only on the network
+structure and not on the amount of work.
+
+CONCLUSION AND FUTURE WORK
+We formalised the concept of privacy in crowdsourcing and
+presented provable guarantees on information loss while
+crowdsourcing jobs, which could open up crowdsourcing to
+a myriad of relatively sensitive applications including but not
+limited to healthcare data and crowdsourcing on user gener-
+ated or personal content.
+We believe that a further important contribution of this work
+is introducing the hybrid TOW assignment setting where
+workers PULL a task but requesters can PUSH the speciﬁc in-
+stantiation of the task to the worker. This type of assignment
+mechanism, though not used in practice, maintains the ben-
+eﬁts of an on-demand work force while allowing requesters
+the ﬂexibility of assigning tasks in a manner which maintains
+privacy.
+In fact, the applications of such a setting are not
+limited to guaranteeing privacy but could be used to provide
+quality assurances, speciﬁc demographics, and other proper-
+ties requesters could desire.
+
+REFERENCES
+1. Micah Adler, Soumen Chakrabarti, Michael
+
+Mitzenmacher, and Lars Rasmussen. 1998. Parallel
+Randomized Load Balancing. Random Structures and
+Algorithms (1998), 159–188.
+
+2. Chithralekha Balamurugan, Shourya Roy, and Sujit
+
+Gujar. 2013. Methods and systems for creating tasks of
+digitizing electronic document. (May 29 2013). US
+Patent App. 13/904,319.
+
+3. Chithralekha Balamurugan, Shourya Roy, Jacki O’neill,
+and Sujit Gujar. 2014. Method and system for a text data
+entry from an electronic document. (Oct. 21 2014). US
+Patent 8,867,838.
+
+4. David Blumenthal. 2010. Launching HIteCH. New
+
+England Journal of Medicine 362, 5 (2010), 382–385.
+
+5. Alessandro Bozzon, Marco Brambilla, Stefano Ceri,
+Matteo Silvestri, and Giuliano Vesci. 2013. Choosing
+the right crowd: expert ﬁnding in social networks. In
+Proceedings of the 16th International Conference on
+Extending Database Technology. ACM, 637–648.
+6. Jonathan Bragg, Daniel S Weld, and others. 2013.
+
+Crowdsourcing multi-label classiﬁcation for taxonomy
+creation. In First AAAI conference on human
+computation and crowdsourcing.
+
+7. Bo Brinkman. 2013. An analysis of student privacy
+
+rights in the use of plagiarism detection systems. Science
+and engineering ethics 19, 3 (2013), 1255–1266.
+
+8. Kuang Chen, Akshay Kannan, Yoriyasu Yano, Joseph M
+
+Hellerstein, and Tapan S Parikh. 2012. Shreddr:
+pipelined paper digitization for low-resource
+organizations. In Proceedings of the 2nd ACM
+Symposium on Computing for Development. ACM, 3.
+
+9. Djellel Eddine Difallah, Gianluca Demartini, and
+
+Philippe Cudr´e-Mauroux. 2013. Pick-A-Crowd: Tell Me
+What You Like, and Ill Tell You What to Do. In
+Proceedings of the 22nd international conference on
+World Wide Web. International World Wide Web
+Conferences Steering Committee, 367–374.
+
+10. Noah E Friedkin. 1983. Horizons of observability and
+
+limits of informal control in organizations. Social Forces
+62, 1 (1983), 54–77.
+
+11. Gagan Goel, Afshin Nikzad, and Adish Singla. 2014.
+Allocating tasks to workers with matching constraints:
+truthful mechanisms for crowdsourcing markets. In
+Proceedings of the companion publication of the 23rd
+international conference on World wide web companion.
+International World Wide Web Conferences Steering
+Committee, 279–280.
+
+12. Gaston H Gonnet. 1981. Expected length of the longest
+probe sequence in hash code searching. Journal of the
+ACM (JACM) 28, 2 (1981), 289–304.
+
+SESSION: ENGAGING THE CROWD
+
+13. Mitchell Gordon, Walter S Lasecki, Winnie Leung,
+
+Ellen Lim, Steven P Dow, and Jeffrey P Bigham. 2014.
+Glance Privacy: Obfuscating Personal Identity While
+Coding Behavioral Video. In Second AAAI Conference
+on Human Computation and Crowdsourcing.
+14. Ralph Gross and Alessandro Acquisti. 2005.
+
+Information revelation and privacy in online social
+networks. In Proceedings of the 2005 ACM workshop on
+Privacy in the electronic society. ACM, 71–80.
+
+15. Christopher G Harris. 2011. Dirty deeds done dirt cheap:
+
+a darker side to crowdsourcing. In Privacy, Security,
+Risk and Trust (PASSAT) and 2011 IEEE Third
+International Conference on Social Computing
+(SocialCom). IEEE, 1314–1317.
+
+16. Kashmir Hill and Zack O’Malley Greenburg. 2010. The
+
+Black Market Price of Your Personal Info. Forbes
+Magazine. http://www.forbes.com/2010/11/29/
+black-market-price-of-your-info-personal-finance.
+html
+
+17. Jeff Howe. 2008. Crowdsourcing: How the power of the
+crowd is driving the future of business. Wired Magazine,
+Random House.
+
+18. Srikanth Jagabathula, Lakshminarayanan Subramanian,
+
+and Ashwin Venkataraman. 2014. Reputation-based
+worker ﬁltering in crowdsourcing. In Advances in
+Neural Information Processing Systems. 2492–2500.
+19. Hiroshi Kajino, Yukino Baba, and Hisashi Kashima.
+2014. Instance-Privacy Preserving Crowdsourcing. In
+Second AAAI Conference on Human Computation and
+Crowdsourcing.
+
+20. Ehud D Karnin, Eugene Walach, and Tal Drory. 2010.
+Crowdsourcing in the document processing practice.
+Springer.
+
+21. Roman Khazankin, Harald Psaier, Daniel Schall, and
+
+Schahram Dustdar. 2011. Qos-based task scheduling in
+crowdsourcing environments. In Service-Oriented
+Computing. Springer, 297–311.
+
+22. Ashiqur R KhudaBukhsh, Jaime G Carbonell, and
+Peter J Jansen. 2014. Detecting Non-Adversarial
+Collusion in Crowdsourcing. In Second AAAI
+Conference on Human Computation and
+Crowdsourcing.
+
+23. Aniket Kittur, Jeffrey V Nickerson, Michael Bernstein,
+Elizabeth Gerber, Aaron Shaw, John Zimmerman, Matt
+Lease, and John Horton. 2013. The future of crowd
+work. In Proceedings of the 2013 conference on
+Computer supported cooperative work. ACM,
+1301–1318.
+
+24. Aniket Kittur, Boris Smus, Susheel Khamkar, and
+
+Robert E Kraut. 2011. Crowdforge: Crowdsourcing
+complex work. In Proceedings of the 24th annual ACM
+symposium on User interface software and technology.
+ACM, 43–52.
+
+846
+
+CSCW '16, FEBRUARY 27–MARCH2, 2016, SAN FRANCISCO, CA, USA
+
+25. Nicolas Kokkalis, Thomas K¨ohn, Carl Pfeiffer, Dima
+Chornyi, Michael S Bernstein, and Scott R Klemmer.
+2013. EmailValet: Managing email overload through
+private, accountable crowdsourcing. In Proceedings of
+the 2013 conference on Computer supported
+cooperative work. ACM, 1291–1300.
+
+26. Walter Lasecki, Christopher Miller, Adam Sadilek,
+
+Andrew Abumoussa, Donato Borrello, Raja
+Kushalnagar, and Jeffrey Bigham. 2012. Real-time
+captioning by groups of non-experts. In Proceedings of
+the 25th annual ACM symposium on User interface
+software and technology. ACM, 23–34.
+
+27. Walter S Lasecki, Mitchell Gordon, Jaime Teevan, Ece
+Kamar, and Jeffrey P Bigham. 2015. Preserving Privacy
+in Crowd-Powered Systems. (2015).
+
+28. Walter S Lasecki, Jaime Teevan, and Ece Kamar. 2014.
+
+Information extraction and manipulation threats in
+crowd-powered systems. In Proceedings of the 17th
+ACM conference on Computer supported cooperative
+work & social computing. ACM, 248–256.
+
+29. Matthew Lease, Jessica Hullman, Jeffrey P Bigham,
+
+Michael Bernstein, Juho Kim, Walter Lasecki, Saeideh
+Bakhshi, Tanushree Mitra, and Robert C Miller. 2013.
+Mechanical turk is not anonymous. Social Science
+Research Network (2013).
+
+30. Greg Little and Yu-An Sun. 2011. Human OCR: Insights
+
+from a complex human computation process. In
+Workshop on Crowdsourcing and Human Computation,
+Services, Studies and Platforms, ACM CHI. Citeseer.
+
+31. Jon Noronha, Eric Hysen, Haoqi Zhang, and
+
+Krzysztof Z Gajos. 2011. Platemate: crowdsourcing
+nutritional analysis from food photographs. In
+Proceedings of the 24th annual ACM symposium on
+User interface software and technology. ACM, 1–12.
+32. U.S. Department of Health & Human Services. 2000.
+
+Summary of the HIPPA Privacy Rule. http://www.hhs.
+gov/ocr/privacy/hipaa/understanding/summary/
+33. Jacki O’Neill, Shourya Roy, Antonietta Grasso, and
+David Martin. 2013. Form digitization in BPO: from
+outsourcing to crowdsourcing?. In Proceedings of the
+SIGCHI conference on Human factors in computing
+systems. ACM, 197–206.
+
+34. Tore Opsahl and Pietro Panzarasa. 2009. Clustering in
+
+weighted networks. Social networks 31, 2 (2009),
+155–163.
+
+35. Theodoros Rekatsinas, Amol Deshpande, and Ashwin
+Machanavajjhala. 2013. SPARSI: Partitioning Sensitive
+Data Amongst Multiple Adversaries. Proc. VLDB
+Endow. 6, 13 (Aug. 2013), 1594–1605. DOI:
+http://dx.doi.org/10.14778/2536258.2536270
+36. Pierangela Samarati and Latanya Sweeney. 1998.
+
+Generalizing data to provide anonymity when disclosing
+information. In PODS, Vol. 98. 188.
+
+37. Cristina Sarasua and Matthias Thimm. 2013. Microtask
+
+available, send us your CV!. In Cloud and Green
+Computing (CGC), 2013 Third International Conference
+on. IEEE, 521–524.
+
+38. Benjamin Satzger, Harald Psaier, Daniel Schall, and
+
+Schahram Dustdar. 2013. Auction-based crowdsourcing
+supporting skill management. Information Systems 38, 4
+(2013), 547–560.
+
+39. Lav R Varshney. 2012. Privacy and reliability in
+crowdsourcing service delivery. In SRII Global
+Conference (SRII), 2012 Annual. IEEE, 55–60.
+
+40. Lav R Varshney, Aditya Vempaty, and Pramod K
+
+Varshney. 2014. Assuring privacy and reliability in
+crowdsourcing with coding. In Information Theory and
+Applications Workshop (ITA), 2014. IEEE, 1–6.
+
+41. Gang Wang, Tianyi Wang, Haitao Zheng, and Ben Y
+Zhao. 2014. Man vs. machine: Practical adversarial
+detection of malicious crowdsourcing workers. In 23rd
+USENIX Security Symposium, USENIX Association, CA.
+42. Duncan J Watts and Steven H Strogatz. 1998. Collective
+
+dynamics of small-worldnetworks. nature 393, 6684
+(1998), 440–442.
+
+43. Stephen M Wolfson and Matthew Lease. 2011. Look
+
+before you leap: legal pitfalls of crowdsourcing.
+Proceedings of the American Society for Information
+Science and Technology 48, 1 (2011), 1–10.
+
+44. Sai Wu, Xiaoli Wang, Sheng Wang, Zhenjie Zhang, and
+
+Anthony KH Tung. 2014. K-anonymity for
+crowdsourcing database. Knowledge and Data
+Engineering, IEEE Transactions on 26, 9 (2014),
+2207–2221.
+
+847
+
+

@@ -72,5 +72,3 @@ def topics(sources=papers, num_words=5, num_topics=5, passes=10, iterations=50, 
     for topic in topics:
         num += 1
         print("%s. %s" % (num, ', '.join([t[1] for t in topic[0]])))
-
-stopwords = set([w.strip() for w in open("data/stopwords.txt")])

@@ -8,9 +8,7 @@ import string
 import argparse
 
 from glob import glob
-from gensim import corpora, models, similarities
-
-punctuation = set(string.punctuation)
+from gensim import corpora, models
 
 def papers():
     for filename in glob("data/*[0-9].txt"):
@@ -21,65 +19,58 @@ def abstracts():
         yield words(filename)
 
 def words(filename):
-    stop_words = get_stop_words('data/stop_words.txt')
     text = codecs.open(filename, 'r', 'utf8').read()
-    words = text.lower().split(' ')
-    new_words = []
-    for word in words:
-        word = word.strip()
-        if not word:
-            continue
-        if word in stop_words:
-            continue
-        if re.match(r'^(@|\#|http)', word):
-            continue
-        if len(word) < 4:
-            continue
+    return [w for w in re.split(r'\W+', text) if w and len(w) >= 4]
 
-        word = ''.join(ch for ch in word if ch not in punctuation)
-        new_words.append(word)
-    return new_words
-
-def get_stop_words(path):
-    stops = {}
-    for word in open('data/stop_words.txt'):
-        word = word.strip().lower()
-        stops[word] = True
-    return stops
-
-def get_dictionary(path):
-    if not os.path.isfile(path):
-        dictionary = corpora.Dictionary(abstracts())
+def get_dictionary(sources):
+    return corpora.Dictionary(sources())
+    if refresh or not os.path.isfile(path):
+        dictionary = corpora.Dictionary(sources())
         dictionary.save(path)
     else:
         dictionary = corpora.Dictionary.load(path)
     return dictionary
 
-def get_corpus(path, dictionary):
+def remove_stopwords(sources, stopwords):
+    def f():
+        for doc in sources():
+            new_doc = []
+            for word in doc:
+                if word.lower() not in stopwords:
+                    new_doc.append(word)
+            yield new_doc
+    return f
+
+def get_corpus(dictionary):
     def ids():
         for doc in abstracts():
             yield dictionary.doc2bow(doc)
-    if not os.path.isfile(path):
-        corpus = corpora.MmCorpus.serialize(path, ids())
-    else:
-        corpus = corpora.MmCorpus(path)
+    path = "data/corpus.mm"
+    corpora.MmCorpus.serialize(path, ids())
+    corpus = corpora.MmCorpus(path)
     return corpus
 
-def topics(corpus=papers, num_words=5, num_topics=10):
-    dictionary_file = "data/%s.dict" % corpus.__name__
-    dictionary = get_dictionary(dictionary_file)
+def topics(sources=papers, num_words=5, num_topics=5, passes=10, iterations=50, ignore=None):
 
-    model_file = "data/%s.mm" % corpus.__name__
-    corpus = get_corpus(model_file, dictionary)
+    if ignore is not None:
+        sources = remove_stopwords(sources, ignore)
+
+    dictionary = get_dictionary(sources)
+    corpus = get_corpus(dictionary)
 
     lda = models.ldamodel.LdaModel(
         corpus, 
         id2word=dictionary,
-        num_topics=num_topics
+        num_topics=num_topics,
+        passes=passes,
+        iterations=iterations
     )
 
-    count = 0
-    for topic in lda.show_topics(num_topics=num_topics, num_words=num_words, formatted=False):
-        count += 1 
-        print("topic #%i: %s" % (count, ', '.join(t[0] for t in topic[1])))
-        print()
+    topics = lda.top_topics(corpus, num_words=num_words)
+
+    num = 0
+    for topic in topics:
+        num += 1
+        print("%s. %s" % (num, ', '.join([t[1] for t in topic[0]])))
+
+stopwords = set([w.strip() for w in open("data/stopwords.txt")])
